@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scratch d'analyse par phase (scripts jetables produisant tmp/*.json et les
+    // rapports PHASE_*.md) — hors code produit.
+    "tmp/**",
   ]),
 ]);
 

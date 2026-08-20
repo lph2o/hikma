@@ -1,0 +1,37 @@
+<svg
+  width="220"
+  height="60"
+  viewBox="0 0 220 60"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Chargement en cours"
+>
+  <style>
+    text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+    }
+    .hikma-letter {
+      animation: hikma-word-wave 1.6s ease-in-out infinite;
+    }
+    .hikma-letter:nth-child(1) { animation-delay: 0s;    }
+    .hikma-letter:nth-child(2) { animation-delay: 0.15s; }
+    .hikma-letter:nth-child(3) { animation-delay: 0.3s;  }
+    .hikma-letter:nth-child(4) { animation-delay: 0.45s; }
+    .hikma-letter:nth-child(5) { animation-delay: 0.6s;  }
+
+    @keyframes hikma-word-wave {
+      0%, 100% { fill: #182028; opacity: 0.4; }
+      50%      { fill: #C8A058; opacity: 1;   }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hikma-letter { animation: none; fill: #C8A058; opacity: 1; }
+    }
+  </style>
+
+  <text x="110" y="42" text-anchor="middle">
+    <tspan class="hikma-letter">H</tspan><tspan class="hikma-letter">i</tspan><tspan class="hikma-letter">k</tspan><tspan class="hikma-letter">m</tspan><tspan class="hikma-letter">a</tspan>
+  </text>
+</svg>

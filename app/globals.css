@@ -1,26 +1,464 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* ---- Fonts ---- */
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+  --font-arabic: var(--font-amiri);
+
+  /* ---- Typography scale (Hikma) ---- */
+  --text-h1: 32px;
+  --text-h1--line-height: 1.2;
+  --text-h2: 24px;
+  --text-h2--line-height: 1.3;
+  --text-h3: 20px;
+  --text-h3--line-height: 1.3;
+  --text-h4: 16px;
+  --text-h4--line-height: 1.4;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-md: 15px;
+  --text-body-md--line-height: 1.6;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 1.6;
+  --text-caption: 12px;
+  --text-caption--line-height: 1.4;
+  --text-display: 56px;
+  --text-display--line-height: 1.1;
+  --text-label: 12px;
+  --text-label--line-height: 1.3;
+
+  /* ---- Hikma brand colors ---- */
+  --color-hikma-teal-950: var(--hikma-teal-950);
+  --color-hikma-teal-900: var(--hikma-teal-900);
+  --color-hikma-teal-800: var(--hikma-teal-800);
+  --color-hikma-teal-700: var(--hikma-teal-700);
+  --color-hikma-teal-600: var(--hikma-teal-600);
+  --color-hikma-teal-500: var(--hikma-teal-500);
+  --color-hikma-teal-100: var(--hikma-teal-100);
+  --color-hikma-gold: var(--hikma-gold);
+  --color-hikma-gold-muted: var(--hikma-gold-muted);
+  --color-hikma-gold-bright: var(--hikma-gold-bright);
+  --color-hikma-ivory: var(--hikma-ivory);
+  --color-hikma-cream: var(--hikma-cream);
+  --color-hikma-charcoal: var(--hikma-charcoal);
+  --color-hikma-charcoal-deep: var(--hikma-charcoal-deep);
+  --color-primary-fur: var(--primary-fur);
+  --color-secondary-fur: var(--secondary-fur);
+  --color-tertiary-fur: var(--tertiary-fur);
+  --color-streak: var(--streak);
+  --color-primary-strong: var(--primary-strong);
+  --color-error: var(--error);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-interactive: var(--surface-interactive);
+  --color-surface-featured: var(--surface-featured);
+  --color-focus: var(--focus);
+  --color-border-subtle: var(--border-subtle);
+
+  /* ---- shadcn / coss semantic colors (mapped to Hikma) ---- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success-text: var(--success-text);
+  --color-error-text: var(--error-text);
+  --color-warning-text: var(--warning-text);
+  --color-info-text: var(--info-text);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-code: var(--code);
+  --color-code-foreground: var(--code-foreground);
+  --color-code-highlight: var(--code-highlight);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* ---- Radii ---- */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ---- Shadows (Hikma : diffuses, chaudes, jamais noires dures) ---- */
+  --shadow-card: 0 1px 2px rgba(46, 42, 28, 0.04), 0 8px 24px -12px rgba(46, 42, 28, 0.1);
+  --shadow-elevated: 0 2px 4px rgba(46, 42, 28, 0.06), 0 16px 40px -16px rgba(46, 42, 28, 0.16);
+  --shadow-focus: 0 0 0 3px color-mix(in srgb, var(--focus) 24%, transparent);
+
+  /* ---- Landing atmosphere (derived only from approved Hikma tokens) ---- */
+  --landing-atmosphere: radial-gradient(circle at 75% 20%, color-mix(in srgb, var(--hikma-teal-800) 4.5%, transparent), transparent 38%), radial-gradient(circle at 15% 75%, color-mix(in srgb, var(--hikma-gold) 5.5%, transparent), transparent 35%), var(--hikma-ivory);
+  --landing-preview-shadow: 0 2px 4px color-mix(in srgb, var(--hikma-charcoal) 6%, transparent), 0 18px 42px -20px color-mix(in srgb, var(--hikma-charcoal) 22%, transparent);
+
+  /* ---- Motion (Hikma : transform/opacity uniquement) ---- */
+  --ease-hikma: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-soft-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---- Animations ---- */
+  --animate-skeleton: skeleton 2s -1s infinite linear;
+  --animate-caret-blink: 1s ease-out infinite caret-blink;
+  --animate-toast-success-odd: toast-success-odd 0.32s cubic-bezier(0.5, 1, 0.89, 1);
+  --animate-toast-success-even: toast-success-even 0.32s cubic-bezier(0.5, 1, 0.89, 1);
+  --animate-toast-error-odd: toast-error-odd 0.28s cubic-bezier(0.5, 1, 0.89, 1);
+  --animate-toast-error-even: toast-error-even 0.28s cubic-bezier(0.5, 1, 0.89, 1);
+  --animate-feedback-in: feedback-in 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-reward-pulse: reward-pulse 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes skeleton {
+    to {
+      background-position: -200% 0;
+    }
+  }
+  @keyframes caret-blink {
+    0%,
+    70%,
+    to {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes toast-success-odd {
+    0% {
+      scale: 1;
+    }
+    30% {
+      scale: 1.025;
+    }
+    60% {
+      scale: 0.99;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+  @keyframes toast-error-odd {
+    0% {
+      translate: 0 0;
+    }
+    25% {
+      translate: -3px 0;
+    }
+    50% {
+      translate: 3px 0;
+    }
+    75% {
+      translate: -3px 0;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
+  @keyframes toast-success-even {
+    0% {
+      scale: 1;
+    }
+    30% {
+      scale: 1.025;
+    }
+    60% {
+      scale: 0.99;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+  @keyframes toast-error-even {
+    0% {
+      translate: 0 0;
+    }
+    25% {
+      translate: -3px 0;
+    }
+    50% {
+      translate: 3px 0;
+    }
+    75% {
+      translate: -3px 0;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
+  @keyframes feedback-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes reward-pulse {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  /* ---- Hikma brand ---- */
+  --hikma-teal-950: #001820;
+  --hikma-teal-900: #002828;
+  --hikma-teal-800: #083838;
+  --hikma-teal-700: #0b5552;
+  --hikma-teal-600: #16706a;
+  --hikma-teal-500: #2a887a;
+  --hikma-teal-100: #ddedea;
+  --hikma-gold: #c8a058;
+  --hikma-gold-muted: #b89050;
+  --hikma-gold-bright: #f0d090;
+  --hikma-ivory: #f8f8f0;
+  --hikma-cream: #fffdf8;
+  --hikma-charcoal: #182028;
+  --hikma-charcoal-deep: #102020;
+
+  /* Backwards-compatible brand aliases consumed by existing primitives. */
+  --primary-fur: var(--hikma-teal-800);
+  --secondary-fur: var(--hikma-cream);
+  --tertiary-fur: var(--hikma-gold-muted);
+  --streak: #ff8f00;
+  --success: #2eb872;
+  --warning: #ffc107;
+  --error: #ef4444;
+  --info: #2d7a58;
+
+  /* ---- Variantes texte AA (WCAG AA : contraste ≥ 4.5:1 sur fond clair) ---- */
+  --primary-strong: var(--hikma-teal-700);
+  --success-text: #1b7a47;
+  --error-text: #b3261e;
+  --warning-text: #7a5e00;
+  --info-text: #1f6e52;
+
+  /* ---- Hikma neutrals ---- */
+  --text-primary: var(--hikma-charcoal);
+  --text-secondary: #536666;
+  --border: #d7e0dc;
+  --border-subtle: #e4ece8;
+  --surface: var(--hikma-cream);
+  --surface-elevated: #fffdf8;
+  --surface-subtle: #f1f6f3;
+  --surface-interactive: var(--hikma-teal-100);
+  --surface-featured: #f1f6f3;
+  --background: var(--hikma-ivory);
+  --focus: var(--hikma-teal-700);
+
+  /* ---- shadcn / coss semantic tokens mapped to Hikma ---- */
+  --foreground: var(--text-primary);
+  --card: #fffdf8;
+  --card-foreground: var(--text-primary);
+  --popover: #fffdf8;
+  --popover-foreground: var(--text-primary);
+  --primary: var(--primary-fur);
+  --primary-foreground: #ffffff;
+  --secondary: var(--hikma-cream);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--surface);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--hikma-teal-100);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--error);
+  --destructive-foreground: #ffffff;
+  --success-foreground: #ffffff;
+  --warning-foreground: #2e2a1c;
+  --info-foreground: #ffffff;
+  --ring: var(--hikma-teal-700);
+  --input: var(--border);
+
+  --code: var(--surface);
+  --code-foreground: var(--text-primary);
+  --code-highlight: #ece9df;
+
+  --chart-1: var(--primary-fur);
+  --chart-2: var(--success);
+  --chart-3: var(--warning);
+  --chart-4: var(--tertiary-fur);
+  --chart-5: var(--info);
+
+  --radius: 0.625rem;
+
+  --sidebar: #eef4f1;
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--hikma-teal-800);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--hikma-teal-100);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--hikma-teal-700);
+}
+
+.landing-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.landing-shell::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  background: var(--landing-atmosphere);
+  content: "";
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.landing-product-preview-card {
+  border-color: color-mix(in srgb, var(--hikma-teal-700) 22%, var(--border-subtle));
+  box-shadow: var(--landing-preview-shadow);
+}
+
+.dark {
+  --background: var(--hikma-charcoal-deep);
+  --text-primary: #e7f2ed;
+  --text-secondary: #a9c0ba;
+  --surface: #163433;
+  --surface-elevated: #1b4645;
+  --surface-subtle: #122827;
+  --surface-interactive: #245b58;
+  --surface-featured: #1f4b49;
+  --border: #315957;
+  --border-subtle: #284b49;
+  --focus: #79c8bd;
+
+  --foreground: var(--text-primary);
+  --card: #163433;
+  --card-foreground: var(--text-primary);
+  --popover: #163433;
+  --popover-foreground: var(--text-primary);
+  --secondary: #1b4645;
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--surface);
+  --muted-foreground: var(--text-secondary);
+  --accent: #245b58;
+  --accent-foreground: var(--text-primary);
+  --input: var(--border);
+
+  --code: #163433;
+  --code-foreground: var(--text-primary);
+  --code-highlight: #24504d;
+
+  --sidebar: #0e2222;
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-accent: #1f4b49;
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border);
+  --sidebar-primary: var(--hikma-teal-600);
+  --sidebar-primary-foreground: #e7f2ed;
+  --sidebar-ring: #79c8bd;
+
+  /* ---- Variantes texte AA (mode sombre : tons clairs) ---- */
+  --primary: var(--hikma-teal-700);
+  --primary-foreground: #e7f2ed;
+  --primary-strong: #79c8bd;
+  --success-text: #4cc38a;
+  --error-text: #f87171;
+  --warning-text: #f5c542;
+  --info-text: #57b98c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-geist-mono);
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ---- Accessibilité : réduction des animations ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes onboarding-confetti-fall {
+  from { opacity: 0; transform: translate3d(0, -24px, 0) rotate(0deg); }
+  20% { opacity: 1; }
+  to { opacity: 0; transform: translate3d(var(--confetti-x), 220px, 0) rotate(180deg); }
+}
+
+.onboarding-confetti {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  animation: onboarding-confetti-fall 1.8s ease-out both;
+}
+
+.onboarding-confetti-1 { --confetti-x: -180px; margin-left: -150px; }
+.onboarding-confetti-2 { --confetti-x: -110px; margin-left: -80px; animation-delay: 80ms; background: var(--color-primary); }
+.onboarding-confetti-3 { --confetti-x: -40px; margin-left: -15px; animation-delay: 140ms; background: var(--color-hikma-gold-bright); }
+.onboarding-confetti-4 { --confetti-x: 55px; margin-left: 30px; animation-delay: 60ms; background: var(--color-primary); }
+.onboarding-confetti-5 { --confetti-x: 125px; margin-left: 90px; animation-delay: 180ms; }
+.onboarding-confetti-6 { --confetti-x: 190px; margin-left: 145px; animation-delay: 100ms; background: var(--color-hikma-gold-bright); }
+
+@media (prefers-reduced-motion: reduce) {
+  .onboarding-confetti { animation: none; opacity: 0.8; }
 }

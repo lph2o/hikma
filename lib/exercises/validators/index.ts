@@ -1,0 +1,1 @@
+export { validateGeneratedExercise } from "./validator";
