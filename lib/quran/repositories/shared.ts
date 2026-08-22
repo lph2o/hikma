@@ -46,6 +46,33 @@ export async function countRows(
   return count ?? 0;
 }
 
+/**
+ * Exécute une requête FILTRÉE et paginée (PostgREST plafonne chaque réponse à
+ * 1000 lignes par défaut) en concaténant toutes les pages. Le constructeur
+ * `run(from, to)` doit déjà être chaîné (select/eq/order) et appliquer
+ * `.range(from, to)`. Déterministe, sans omission ni doublon : la boucle
+ * s'arrête à la première page incomplète.
+ *
+ * Phase 68B — corrige le plafond 1000 lignes qui tronquait silencieusement
+ * les sourates >1000 occurrences (8, 9, 22, 28, 39) dans le fetch MASAQ.
+ */
+export async function selectAllPages<T>(
+  run: (from: number, to: number) => PromiseLike<{
+    data: T[] | null;
+    error: { message: string } | null;
+  }>,
+): Promise<T[]> {
+  const rows: T[] = [];
+  for (let from = 0; ; from += SELECT_PAGE_SIZE) {
+    const { data, error } = await run(from, from + SELECT_PAGE_SIZE - 1);
+    if (error) throw new Error(error.message);
+    const batch = (data ?? []) as T[];
+    rows.push(...batch);
+    if (batch.length < SELECT_PAGE_SIZE) break;
+  }
+  return rows;
+}
+
 export async function upsertInChunks<T extends Record<string, unknown>>(
   client: SupabaseClient,
   table: string,

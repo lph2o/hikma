@@ -136,6 +136,19 @@ export function OnboardingForm({
     setStep((current) => Math.min(LAST_STEP, current + 1));
   }
 
+  /** Fast-track pour utilisateurs déjà familiers (Phase 71A — P1-01). */
+  function fastTrack() {
+    setProfile((current) => ({
+      ...current,
+      learningGoal: current.learningGoal ?? "understand_surahs",
+      arabicReadingLevel: current.arabicReadingLevel ?? "correct",
+      quranFamiliarity: current.quranFamiliarity ?? "regular_recitation",
+      learningPace: current.learningPace ?? "flexible",
+    }));
+    setError(null);
+    setStep(7);
+  }
+
   function finish() {
     if (!selected) {
       setError("Nous n’avons pas pu préparer une sourate de départ. Réessaie dans un instant.");
@@ -175,7 +188,7 @@ export function OnboardingForm({
 
   return (
     <div className="relative flex w-full max-w-2xl flex-col gap-6">
-      <ProgressRail stage={uxStage} />
+      <ProgressRail stage={uxStage} step={step} />
 
       {step === 0 ? (
         <StepShell eyebrow="HIKMA" title="Comprends le Coran, mot par mot." description="Apprends les mots que tu récites, découvre leur sens et construis progressivement ton vocabulaire coranique." hero>
@@ -185,6 +198,7 @@ export function OnboardingForm({
             Ton parcours sera adapté à ton rythme.
           </div>
           <Button size="xl" className="w-full" onClick={next}>Commencer <ArrowRight aria-hidden="true" /></Button>
+          <Button variant="ghost" className="w-full" onClick={fastTrack}>Je connais déjà le Coran</Button>
         </StepShell>
       ) : null}
 
@@ -224,6 +238,7 @@ export function OnboardingForm({
             </div>
             {catalog.some((item) => item.state === "IN_PREPARATION") ? <div className="rounded-xl border border-border-subtle bg-surface-subtle px-4 py-3 text-left"><Caption className="font-semibold uppercase tracking-[0.12em] text-hikma-gold-muted">Bientôt disponibles</Caption><BodySmall className="mt-1 text-text-secondary">D’autres sourates arrivent progressivement. Elles ne sont pas encore démarrables.</BodySmall></div> : null}
           </div>
+          {selected ? <SurahInfoCard item={selected} /> : null}
           <NavButtons onBack={back} onNext={next} onSkip={skipOptional} />
         </StepShell>
       ) : null}
@@ -241,14 +256,20 @@ export function OnboardingForm({
   );
 }
 
-function ProgressRail({ stage }: { stage: number }) {
+function ProgressRail({ stage, step }: { stage: number; step: number }) {
   const labels = ["Bienvenue", "À propos de toi", "Ton expérience", "Ton rythme", "Ton parcours", "Prêt à apprendre"];
+  /** Phase 71B — P2-02 : compteur d'étape lisible.
+   *  step 0 = welcome (hors compteur), steps 1-7 = "Étape X/7", step 8 = confirmation. */
+  const stepLabel = step <= 0 ? null : step >= 8 ? "Confirmation" : `Étape ${step} sur 7`;
   return (
     <div className="flex flex-col gap-3" aria-label="Progression de ton parcours">
       <div className="flex items-center gap-1.5" aria-hidden="true">
         {labels.map((label, index) => <span key={label} className={cn("h-1.5 flex-1 rounded-full transition-[background-color,transform] duration-250 ease-[var(--ease-hikma)]", index <= stage ? "bg-hikma-gold" : "bg-border-subtle", index === stage && "scale-y-150")} />)}
       </div>
-      <div className="flex items-center justify-between gap-3"><Caption className="font-medium text-text-secondary">{labels[stage]}</Caption><Caption className="text-hikma-gold-muted">C’est presque prêt ✨</Caption></div>
+      <div className="flex items-center justify-between gap-3">
+        <Caption className="font-medium text-text-secondary">{labels[stage]}</Caption>
+        {stepLabel ? <Caption className="tabular-nums text-hikma-gold-muted">{stepLabel}</Caption> : <Caption className="text-hikma-gold-muted">C’est presque prêt ✨</Caption>}
+      </div>
     </div>
   );
 }
@@ -267,6 +288,30 @@ function ChoiceButton({ label, description, icon: Icon, selected, onClick }: { l
 
 function NavButtons({ onBack, onNext, onSkip }: { onBack: () => void; onNext: () => void; onSkip: () => void }) {
   return <div className="flex flex-col-reverse gap-3 pt-1 sm:flex-row sm:items-center sm:justify-between"><Button variant="ghost" onClick={onBack}><ArrowLeft aria-hidden="true" /> Retour</Button><div className="flex flex-col gap-2 sm:flex-row sm:items-center"><Button variant="ghost" onClick={onSkip}>Plus tard</Button><Button onClick={onNext}>Continuer <ArrowRight aria-hidden="true" /></Button></div></div>;
+}
+
+/** Phase 71B — P2-01 : fiche info de la sourate sélectionnée. */
+function SurahInfoCard({ item }: { item: SurahCatalogItem }) {
+  return (
+    <Card className="border-hikma-gold/24 bg-surface-subtle shadow-none">
+      <CardContent className="gap-4 p-5 sm:p-6">
+        <div className="flex items-center gap-4">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-full border border-hikma-gold/40 bg-hikma-gold/10">
+            <ArabicText scale="word" className="text-hikma-gold-muted">{item.nameArabic}</ArabicText>
+          </div>
+          <div className="min-w-0 text-left">
+            <H3 className="text-base">{item.nameTransliteration}</H3>
+            <Caption className="text-text-secondary">{item.lessonCount} leçons · {item.formCount} formes</Caption>
+          </div>
+        </div>
+        <BodySmall className="text-text-secondary">
+          {item.state === "REFERENCE"
+            ? "Un parcours de référence avec des explications complètes pour chaque mot."
+            : "Un parcours prêt à démarrer avec une couverture lexicale adaptée."}
+        </BodySmall>
+      </CardContent>
+    </Card>
+  );
 }
 
 function SurahChoice({ item, selected, onClick, recommended = false }: { item: SurahCatalogItem; selected: boolean; onClick: () => void; recommended?: boolean }) {

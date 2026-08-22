@@ -56,14 +56,16 @@ export type ComposeDailyPlanInput = {
   reviewDueCount: number;
   /** Couverture (Phase 37), déjà calculée ; null = indisponible (erreur). */
   coveragePercent: number | null;
+  /** true si aucune session active ni leçon terminée (Phase 71A — P1-02). */
+  firstVisit?: boolean;
 };
 
 /** Compose le plan sans recalculer aucune décision pédagogique. */
 export function composeDailyPlan(input: ComposeDailyPlanInput): DailyPlan {
-  const { selection, goal, reviewDueCount, coveragePercent } = input;
+  const { selection, goal, reviewDueCount, coveragePercent, firstVisit = false } = input;
 
   return {
-    action: composeAction(selection),
+    action: composeAction(selection, firstVisit, goal.goalValue),
     goal: {
       type: goal.type,
       current: goal.current,
@@ -82,9 +84,15 @@ export function composeDailyPlan(input: ComposeDailyPlanInput): DailyPlan {
  * Aucun lien n'est reconstruit à partir d'une logique concurrente : le slug de
  * leçon provient de `selection` ; pour `all_done`/`none`, on retombe sur
  * `/review` (route réelle, comportement identique au dashboard actuel).
+ *
+ * `firstVisit` (Phase 71A — P1-02) adapte le libellé des recommandations
+ * pour le tout premier lancement ("Commencer ma première leçon" au lieu de
+ * "Découvrir").
  */
-function composeAction(selection: ActivePathSelection): DailyPlanAction {
-  const lessonHref = selection.lessonSlug ? `/learn/${selection.lessonSlug}` : null;
+function composeAction(selection: ActivePathSelection, firstVisit = false, dailyGoal?: number): DailyPlanAction {
+  const baseHref = selection.lessonSlug ? `/learn/${selection.lessonSlug}` : null;
+  // Phase 71B — P2-05 : pré-leçon pour première visite.
+  const lessonHref = firstVisit && baseHref ? `${baseHref}?welcome=1` : baseHref;
 
   switch (selection.kind) {
     case "active_session":
@@ -109,9 +117,13 @@ function composeAction(selection: ActivePathSelection): DailyPlanAction {
     case "fallback":
       return {
         kind: selection.kind,
-        label: "Découvrir",
+        label: firstVisit ? "Commencer ma première leçon" : "Découvrir",
         href: lessonHref,
-        context: selection.surahName ? `Découvre ${selection.surahName}.` : null,
+        context: firstVisit && selection.surahName
+          ? `Ta première sourate : ${selection.surahName}.${dailyGoal ? ` Objectif du jour : ${dailyGoal} mots.` : ""}`
+          : selection.surahName
+            ? `Découvre ${selection.surahName}.`
+            : null,
       };
     case "all_done":
       return {

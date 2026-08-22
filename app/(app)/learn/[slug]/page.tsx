@@ -32,15 +32,22 @@ import { createClient } from "@/lib/supabase/server";
 import type { LessonAyahContext } from "@/lib/learning/queries";
 import type { WordContextData } from "@/lib/learning/types";
 import { resolveSenseExplanation } from "@/lib/learning/sense-explanation";
+import { Card, CardContent } from "@/components/ui/card";
+import { H2, BodyMedium, Caption } from "@/components/ui/typography";
+import { Mascot } from "@/components/ui/mascot";
+import { BookOpenIcon } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
 export default async function LessonPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ welcome?: string }>;
 }) {
   const { slug } = await params;
+  const showWelcome = (await searchParams)?.welcome === "1";
   const client = await createClient();
   const {
     data: { user },
@@ -212,6 +219,14 @@ export default async function LessonPage({
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-col gap-8 px-5 py-6 sm:px-8 sm:py-8">
+      {showWelcome ? (
+        <PreLesson
+          surahName={surahName}
+          lessonTitle={lesson.title}
+          wordCount={bank.length}
+          exerciseCount={exercises.length}
+        />
+      ) : null}
       <LessonPlayer
         lessonId={lesson.id}
         lessonTitle={lesson.title}
@@ -240,5 +255,57 @@ export default async function LessonPage({
         audioUnavailable={audio.registered === 0}
       />
     </main>
+  );
+}
+
+/**
+ * Phase 71B P2-05 / Phase 71C D-01 — transition onboarding → première leçon.
+ *
+ * Présente la leçon à venir avec une introduction narrative courte,
+ * sans jargon technique. Le principe : ACTION > EXPLICATION.
+ */
+function PreLesson({
+  surahName,
+  lessonTitle,
+  wordCount,
+  exerciseCount,
+}: {
+  surahName: string | null;
+  lessonTitle: string;
+  wordCount: number;
+  exerciseCount: number;
+}) {
+  return (
+    <Card className="border-hikma-gold/32 bg-surface-featured">
+      <CardContent className="gap-6 p-6 text-center sm:p-8">
+        <Mascot variant="learn" size="md" decorative />
+        <div className="flex flex-col gap-2">
+          <H2>Ta première leçon</H2>
+          <BodyMedium className="text-text-secondary">
+            {surahName ? `Tu commences avec ${surahName} — ${lessonTitle}.` : lessonTitle}
+          </BodyMedium>
+        </div>
+        <div className="flex items-center justify-center gap-4">
+          <Caption className="tabular-nums">
+            <span className="font-semibold text-foreground">{wordCount}</span>{" "}
+            mot{wordCount > 1 ? "s" : ""} à découvrir
+          </Caption>
+          <span className="text-border-subtle" aria-hidden="true">·</span>
+          <Caption className="tabular-nums">
+            <span className="font-semibold text-foreground">{exerciseCount}</span>{" "}
+            exercice{exerciseCount > 1 ? "s" : ""}
+          </Caption>
+        </div>
+        <BodyMedium className="text-text-secondary">
+          Tu vas découvrir les mots de cette sourate un par un.
+          Essaie de retrouver leur sens — Hikma t’accompagnera à chaque réponse.
+          Plus tard, ces mots reviendront au bon moment pour que tu les retiennes durablement.
+        </BodyMedium>
+        <div className="flex items-center justify-center gap-2 text-sm text-hikma-gold-muted">
+          <BookOpenIcon aria-hidden="true" className="size-4" />
+          Commence quand tu es prêt.
+        </div>
+      </CardContent>
+    </Card>
   );
 }

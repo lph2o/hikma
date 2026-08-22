@@ -209,6 +209,25 @@ describe("getCoachLine", () => {
     ).toBe("Continue ton apprentissage à ton rythme.");
   });
 
+  // Phase 71A — P1-02 : firstVisit change le libellé des recommandations.
+  it("firstVisit utilise le libellé 'Commencer ma première leçon'", () => {
+    const plan = composeDailyPlan(input({ selection: selection({ kind: "recommendation", surahNumber: 1, surahName: "Al-Fātiḥah", lessonSlug: "basmala" }), firstVisit: true }));
+    expect(plan.action.label).toBe("Commencer ma première leçon");
+    expect(plan.action.context).toBe("Ta première sourate : Al-Fātiḥah. Objectif du jour : 5 mots.");
+  });
+
+  it("firstVisit garde 'Découvrir' pour le fallback sans surahName", () => {
+    const plan = composeDailyPlan(input({ selection: selection({ kind: "fallback", surahNumber: null, surahName: null, lessonSlug: "basmala" }), firstVisit: true }));
+    expect(plan.action.label).toBe("Commencer ma première leçon");
+    expect(plan.action.context).toBeNull();
+  });
+
+  it("sans firstVisit, le libellé reste 'Découvrir'", () => {
+    const plan = composeDailyPlan(input({ selection: selection({ kind: "recommendation", surahNumber: 1, surahName: "Al-Fātiḥah", lessonSlug: "basmala" }) }));
+    expect(plan.action.label).toBe("Découvrir");
+    expect(plan.action.context).toBe("Découvre Al-Fātiḥah.");
+  });
+
   it("données incohérentes → retourne toujours une chaîne valide non vide", () => {
     // Combinaisons impossibles : objectif dépassé + première visite + révisions + session.
     const weird: DailyPlan = composeDailyPlan(

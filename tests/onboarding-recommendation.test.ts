@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isOnboardingComplete, recommendStartingSurah } from "../lib/learning/onboarding";
+import { isOnboardingComplete, isStartableSurah, recommendStartingSurah } from "../lib/learning/onboarding";
 
 const catalog = [
   { surahNumber: 1, nameArabic: "الفاتحة", nameTransliteration: "Al-Fatihah", lessonCount: 8, formCount: 26, state: "REFERENCE" as const, firstLessonSlug: "basmala" },
@@ -44,6 +44,29 @@ describe("recommendStartingSurah", () => {
 describe("onboarding version gate", () => {
   it("requires the new version even when the legacy flag is true", () => {
     expect(isOnboardingComplete({ onboarded: true, onboarding_version: 1 })).toBe(false);
+  });
+
+  // Phase 71A — P1-03 : surah guard (isStartableSurah).
+  it("isStartableSurah identifie les sourates REFERENCE et READY", () => {
+    expect(isStartableSurah(catalog[0])).toBe(true);  // REFERENCE
+    expect(isStartableSurah(catalog[1])).toBe(true);  // READY
+    expect(isStartableSurah(catalog[2])).toBe(true);  // READY
+    expect(isStartableSurah(catalog[3])).toBe(false); // IN_PREPARATION
+  });
+
+  it("recommendStartingSurah n'accepte jamais une sourate IN_PREPARATION avec un choix explicite", () => {
+    const result = recommendStartingSurah({ ...emptyProfile, preferredSurahNumber: 107 }, catalog);
+    expect(result?.surahNumber).toBe(1); // fallback, pas 107
+  });
+
+  it("recommendStartingSurah renvoie le choix explicite si REFERENCE", () => {
+    const result = recommendStartingSurah({ ...emptyProfile, preferredSurahNumber: 1 }, catalog);
+    expect(result?.surahNumber).toBe(1);
+  });
+
+  it("recommendStartingSurah renvoie le choix explicite si READY", () => {
+    const result = recommendStartingSurah({ ...emptyProfile, preferredSurahNumber: 112 }, catalog);
+    expect(result?.surahNumber).toBe(112);
   });
 
   it("accepts only a completed current version", () => {

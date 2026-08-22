@@ -100,6 +100,7 @@ export default async function DashboardPage() {
     goal,
     reviewDueCount,
     coveragePercent: coverage?.coveragePercent ?? null,
+    firstVisit,
   });
   const coachLine = getCoachLine({ plan, profile, firstVisit });
   // Résumé hebdomadaire : dérivé des journaux déjà chargés (aucune requête).

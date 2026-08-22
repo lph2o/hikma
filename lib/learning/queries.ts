@@ -1080,37 +1080,51 @@ export async function getWordLinguisticEvidence(
       | null;
   };
 
-  const { data: lingRows, error } = await client
-    .from("linguistic_occurrences")
-    .select(
-      "id, surah_number, ayah_number, position, masaq_word, masaq_stem, masaq_gloss_en, pos, case_mood, syntactic_roles, lemma_mapping_status, word_occurrences!inner(word_id)",
-    )
-    .eq("surah_number", surahNumber)
-    .in("word_occurrences.word_id", wordIds)
-    .order("ayah_number")
-    .order("position");
-  if (error) throw new Error(`linguistic_occurrences : ${error.message}`);
+  // Phase 68B — chunking des deux `.in()` (IN_FILTER_CHUNK_SIZE = 250).
+  // Une sourate entière produit >1000 occurrences (ex. 9 → 2498), et le filtre
+  // `.in("linguistic_occurrence_id", …)` dépassant ~395-397 UUIDs déclenchait
+  // « fetch failed » (Header overflow HTTP/1.1 — cf. constante
+  // IN_FILTER_CHUNK_SIZE). Sémantique métier inchangée : chaque word_id
+  // n'appartient qu'à un seul lot, donc la politique « première occurrence par
+  // mot » (ordre ayah_number, position) est préservée ; les segments d'une
+  // occurrence restent dans le même lot (ordre segment_no préservé).
+  const lingRows = await selectInChunks<LingRow>(
+    [...new Set(wordIds)],
+    "linguistic_occurrences",
+    (batch) =>
+      client
+        .from("linguistic_occurrences")
+        .select(
+          "id, surah_number, ayah_number, position, masaq_word, masaq_stem, masaq_gloss_en, pos, case_mood, syntactic_roles, lemma_mapping_status, word_occurrences!inner(word_id)",
+        )
+        .eq("surah_number", surahNumber)
+        .in("word_occurrences.word_id", batch)
+        .order("ayah_number")
+        .order("position"),
+  );
+  if (lingRows.length === 0) return map;
 
-  const rows = (lingRows ?? []) as unknown as LingRow[];
-  if (rows.length === 0) return map;
-
-  const lingIds = rows.map((r) => r.id);
-  const { data: segRows, error: segError } = await client
-    .from("linguistic_segments")
-    .select("linguistic_occurrence_id, segment_no, segment_text, morph_type, morph_tag, segment_kind")
-    .in("linguistic_occurrence_id", lingIds)
-    .order("segment_no");
-  if (segError) throw new Error(`linguistic_segments : ${segError.message}`);
-
-  const segsByOcc = new Map<string, LinguisticEvidenceSegment[]>();
-  for (const s of (segRows ?? []) as Array<{
+  const lingIds = lingRows.map((r) => r.id);
+  const segRows = await selectInChunks<{
     linguistic_occurrence_id: string;
     segment_no: number;
     segment_text: string;
     morph_type: string;
     morph_tag: string;
     segment_kind: LinguisticEvidenceSegment["kind"];
-  }>) {
+  }>(
+    lingIds,
+    "linguistic_segments",
+    (batch) =>
+      client
+        .from("linguistic_segments")
+        .select("linguistic_occurrence_id, segment_no, segment_text, morph_type, morph_tag, segment_kind")
+        .in("linguistic_occurrence_id", batch)
+        .order("segment_no"),
+  );
+
+  const segsByOcc = new Map<string, LinguisticEvidenceSegment[]>();
+  for (const s of segRows) {
     const arr = segsByOcc.get(s.linguistic_occurrence_id) ?? [];
     arr.push({
       segmentNo: s.segment_no,
@@ -1123,7 +1137,7 @@ export async function getWordLinguisticEvidence(
   }
 
   const seen = new Set<string>();
-  for (const r of rows) {
+  for (const r of lingRows) {
     const wo = Array.isArray(r.word_occurrences)
       ? r.word_occurrences[0]
       : r.word_occurrences;

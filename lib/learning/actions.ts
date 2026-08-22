@@ -70,6 +70,7 @@ import {
   isQuranFamiliarity,
   CURRENT_ONBOARDING_VERSION,
   isOnboardingComplete,
+  isStartableSurah,
 } from "@/lib/learning/onboarding";
 
 export type ActionResult = {
@@ -708,7 +709,7 @@ export async function completeOnboarding(
   const selectedSurah = profile.preferredSurahNumber == null
     ? null
     : catalog.find((item) => item.surahNumber === profile.preferredSurahNumber);
-  if (profile.preferredSurahNumber != null && (!selectedSurah || selectedSurah.state === "IN_PREPARATION")) {
+  if (profile.preferredSurahNumber != null && (!selectedSurah || !isStartableSurah(selectedSurah))) {
     return { ok: false, error: "Cette sourate n’est pas encore disponible pour commencer." };
   }
 
@@ -782,7 +783,7 @@ export async function updateLearningPreferences(
   const selectedSurah = profile.preferredSurahNumber == null
     ? null
     : catalog.find((item) => item.surahNumber === profile.preferredSurahNumber);
-  if (profile.preferredSurahNumber != null && (!selectedSurah || selectedSurah.state === "IN_PREPARATION")) {
+  if (profile.preferredSurahNumber != null && (!selectedSurah || !isStartableSurah(selectedSurah))) {
     return { ok: false, error: "Cette sourate n’est pas encore disponible pour commencer." };
   }
   try {
