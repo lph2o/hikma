@@ -1,6 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { ArrowRightIcon, BookOpenIcon, RefreshCcwIcon } from "lucide-react";
-import { Mascot } from "@/components/ui/mascot";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { HikmaProgress } from "@/components/ui/hikma";
@@ -58,12 +59,16 @@ import { shouldShowReminder, type ReminderDecision } from "@/lib/learning/remind
 
 export const dynamic = "force-dynamic";
 
+// Espace privé : non indexable (aussi protégé par l'auth — robots n'est pas
+// un contrôle de sécurité, seulement un signal d'indexation).
+export const metadata: Metadata = { robots: { index: false, follow: false } };
+
 export default async function DashboardPage() {
   const client = await createClient();
   const {
     data: { user },
   } = await client.auth.getUser();
-  if (!user) return <DashboardAnon />;
+  if (!user) redirect("/login");
 
   const settings = await getUserSettings(client, user.id);
   const catalog = await getSurahCatalog(client);
@@ -172,28 +177,6 @@ export default async function DashboardPage() {
         surahCoverage={surahCoverage}
       />
     </>
-  );
-}
-
-function DashboardAnon() {
-  return (
-    <main className="mx-auto flex w-full max-w-2xl flex-col items-center gap-8 px-5 py-12 text-center sm:px-8 sm:py-16">
-      <Mascot variant="welcome" size="lg" message="Bienvenue sur Hikma" />
-      <div className="flex flex-col gap-3">
-        <H1>Comprends le Coran, mot par mot.</H1>
-        <BodyLarge className="text-text-secondary">
-          Apprends le sens des mots, reconnais-les dans les versets et avance à ton rythme.
-        </BodyLarge>
-      </div>
-      <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-        <Button render={<Link href="/learn/basmala" />} size="lg" className="w-full sm:w-auto">
-          Commencer avec Al-Fatiha
-        </Button>
-        <Button render={<Link href="/login" />} size="lg" variant="outline" className="w-full sm:w-auto">
-          Créer un compte
-        </Button>
-      </div>
-    </main>
   );
 }
 

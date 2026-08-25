@@ -1,0 +1,93 @@
+{
+  "phase": "89C",
+  "title": "PHASE_89C_DATA_CHUNKING — R-003 getCoverageBySurah",
+  "objective": "Rendre la requête `.in(\"word_id\", hugeArray)` de getCoverageBySurah robuste aux grands volumes via le helper de chunking validé (88J/88K), sans modifier le moindre résultat métier.",
+  "verdict": "PHASE_89C_COMPLETE",
+  "database_writes": 0,
+  "rootCause": {
+    "problem": "getCoverageBySurah exécutait `client.from(\"word_occurrences\").select(...).in(\"word_id\", ids)` sur TOUS les mots compris de l'utilisateur, sans chunking. Cet ensemble croît sans borne (jusqu'au corpus ~21 296 formes) et dépasse le seuil `.in()` (~396 ids / ~14,7 Ko d'URL) → « TypeError: fetch failed » (header overflow) sur le dashboard — même classe que CAT-000/88J.",
+    "reproduced": "Baseline sur DB réelle : 500 word_ids réels → `word_occurrences : TypeError: fetch failed` (avant correctif)."
+  },
+  "correction": {
+    "file": "lib/learning/queries.ts — getCoverageBySurah",
+    "change": "La requête word_occurrences est désormais exécutée via `selectInChunks(comprehendedWordIds, \"word_occurrences\", (batch) => client.from(\"word_occurrences\").select(\"ayahs!inner(surah_id), ayah_id\").in(\"word_id\", batch))` — helper existant de la Phase 52, même pattern validé 88J (LESSON_ID_CHUNK_SIZE) / 88K, taille IN_FILTER_CHUNK_SIZE = 250.",
+    "semantics_preserved": [
+      "déduplication identique (le helper déduplique via Set, comme le `[...new Set(...)]` d'origine)",
+      "fusion déterministe (chaque word_id n'appartient qu'à un lot)",
+      "erreurs propagées (premier échec → throw avec label, jamais de résultat partiel)",
+      "ordre final garanti : computeCoverageBySurah trie par surahNumber et filtre coveredAyahs > 0 — indépendant de l'ordre des lots",
+      "le comptage Map<surah_id, Set<ayah_id>> est indépendant de l'ordre des lignes"
+    ]
+  },
+  "baseline": {
+    "file": "reports/phase-89c-baseline-before.json",
+    "method": "scripts/phase-89c-r003-equivalence.ts before — getCoverageBySurah (version courante) sur des entrées réelles déterministes (premiers N word_ids triés de quran_words), lecture seule.",
+    "results": {
+      "empty": "OK (0 sourates)",
+      "single": "OK (1 sourate)",
+      "small_10": "OK (20 sourates)",
+      "medium_200": "OK (80 sourates)",
+      "boundary_minus_1_249": "OK (80 sourates)",
+      "boundary_exact_250": "OK (80 sourates)",
+      "boundary_plus_1_251": "OK (80 sourates)",
+      "large_multichunk_500": "ERROR — word_occurrences : TypeError: fetch failed (BUG R-003 reproduit)",
+      "duplicated_input_500_entrees_250_distincts": "OK (80 sourates)",
+      "no_occurrences": "OK (0 sourates)"
+    }
+  },
+  "after": {
+    "file": "reports/phase-89c-equivalence-after.json",
+    "method": "scripts/phase-89c-r003-equivalence.ts after — mêmes entrées, comparaison stricte (JSON) avec la baseline.",
+    "equivalence_table": [
+      { "case": "empty", "before": "[]", "after": "[]", "verdict": "EQUAL" },
+      { "case": "single", "before": "1 sourate", "after": "1 sourate", "verdict": "EQUAL" },
+      { "case": "small (10)", "before": "20 sourates", "after": "20 sourates", "verdict": "EQUAL" },
+      { "case": "medium (200)", "before": "80 sourates", "after": "80 sourates", "verdict": "EQUAL" },
+      { "case": "boundary (249)", "before": "80 sourates", "after": "80 sourates", "verdict": "EQUAL" },
+      { "case": "boundary (250)", "before": "80 sourates", "after": "80 sourates", "verdict": "EQUAL" },
+      { "case": "boundary (251)", "before": "80 sourates", "after": "80 sourates", "verdict": "EQUAL" },
+      { "case": "large (500)", "before": "ERROR fetch failed", "after": "OK (91 sourates)", "verdict": "FIXED_BY_R003" },
+      { "case": "duplicated input", "before": "80 sourates", "after": "80 sourates", "verdict": "EQUAL" },
+      { "case": "no occurrences", "before": "[]", "after": "[]", "verdict": "EQUAL" }
+    ],
+    "global": { "regressions": 0, "globalPass": true },
+    "split_check_500": {
+      "method": "getCoverageBySurah(500) comparé à l'union de getCoverageBySurah(250) + getCoverageBySurah(250)",
+      "surahSetEqual": true,
+      "countBoundsOk": true,
+      "conclusion": "aucune perte, aucun doublon, aucune sourate fantôme au volume critique"
+    }
+  },
+  "tests": {
+    "r003_specific": "8 nouveaux tests dans tests/in-chunking.test.ts (describe getCoverageBySurah) : empty, 1 id, 250, 251, 500, 1001, déduplication, erreur propagée — mock filtrant réellement les .in() (omission/doublon) et comptant les appels (absence de N+1).",
+    "build": "PASS (exit 0)",
+    "typecheck": "PASS (0 erreur)",
+    "typecheck_scripts_scope": "0 erreur sur scripts/phase-89c-r003-equivalence.ts",
+    "lint": "PASS (exit 0, 0 erreur)",
+    "vitest": "983/983 PASS (975 + 8 nouveaux)"
+  },
+  "database": { "DATABASE_WRITES": 0, "access": "SELECT uniquement (script d'équivalence et tests sur mock)" },
+  "regressions": 0,
+  "discovered_but_not_fixed": [
+    {
+      "id": "DISC-001",
+      "location": "lib/learning/queries.ts — getQuranCoverage : `.in(\"word_id\", wordIds)` (compte des occurrences couvertes, count exact head)",
+      "problem": "Même classe que R-003 : l'ensemble des mots compris croît sans borne et n'est pas chunké non plus (le .in() de status est lui minuscule).",
+      "why_not_fixed": "Hors périmètre strict de la phase 89C (R-003 uniquement) ; recommandé en priorité dans la phase 89D+ ou une micro-phase dédiée.",
+      "impact_if_unfixed": "Le même « fetch failed » peut survenir sur la carte de couverture du dashboard à très fort volume (seuil ~396 ids)."
+    }
+  ],
+  "remaining_risks": [
+    { "id": "R-004", "phase": "89D", "status": "OPEN", "summary": "password reset absent" },
+    { "id": "R-005", "phase": "89E", "status": "OPEN", "summary": "SEO / metadata" },
+    { "id": "R-011", "phase": "89E", "status": "OPEN", "summary": "/surahs/[number] 404 visiteurs" },
+    { "id": "R-012", "phase": "89E", "status": "OPEN", "summary": "404 → /dashboard" },
+    { "id": "R-006", "phase": "89F", "status": "OPEN", "summary": "pages légales" },
+    { "id": "R-009", "phase": "89F", "status": "OPEN", "summary": "licence audio" },
+    { "id": "R-007", "phase": "89G", "status": "OPEN", "summary": "security headers / config prod" },
+    { "id": "R-008", "phase": "89H", "status": "OPEN", "summary": "observabilité" },
+    { "id": "DISC-001", "phase": "recommandé 89D+", "status": "OPEN", "summary": "getQuranCoverage : même .in(word_id) non chunké" }
+  ],
+  "next_phase": "PHASE_89D_AUTH — R-004_PASSWORD_RESET",
+  "final_verdict": "PHASE_89C_COMPLETE — R-003 RESOLVED. Équivalence stricte avant/après sur données réelles (9/10 EQUAL, 1 FIXED_BY_R003), split-check 500 ids sans perte ni doublon, 8 tests unitaires dédiés, BUILD/TYPECHECK/LINT/TESTS (983/983) = PASS, DATABASE_WRITES = 0."
+}

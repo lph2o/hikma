@@ -1,0 +1,191 @@
+{
+  "phase": "89",
+  "verdict": "PRODUCTION_BLOCKED",
+  "databaseWrites": 0,
+  "method": "Analyse statique du repo réel + requêtes Supabase READ-ONLY paginées + npm run build / vitest / tsc / eslint réels.",
+  "browserE2e": "BROWSER_E2E_NOT_AVAILABLE — responsive/a11y/mobile/RTL = audit statique uniquement.",
+  "issues": [
+    {
+      "id": "R-001",
+      "category": "BUILD",
+      "severity": "CRITICAL",
+      "status": "OPEN",
+      "location": "tsconfig include **/*.ts → scripts/ (309 erreurs TS legacy, ex. TS2345 generics supabase-js)",
+      "problem": "`npm run build` échoue (exit 1) à la passe typecheck sur les scripts d'audit/import legacy.",
+      "evidence": "npm run build re-exécuté en direct : 309 erreurs `error TS`, 0 dans app/lib/components. La compilation Next réussit ; seule la passe typecheck échoue.",
+      "userImpact": "Aucun au runtime (code servi 0 erreur). Bloque un pipeline CI/CD strict et un déploiement standard sans bypass typecheck.",
+      "technicalImpact": "Déploiement automatisé impossible tel quel ; risque d'introduire ignoreBuildErrors (mauvais réflexe).",
+      "recommendation": "Exclure scripts/ de l'include tsconfig (ou tsconfig séparé) OU corriger les generics supabase-js des scripts legacy.",
+      "blocking": "YES"
+    },
+    {
+      "id": "R-002",
+      "category": "SECURITY / ACCESS",
+      "severity": "CRITICAL",
+      "status": "OPEN",
+      "location": "app/(app)/layout.tsx — la coquille renvoie children sans garde quand user == null",
+      "problem": "Les routes applicatives /dashboard, /profile, /review, /activity, /surahs sont publiquement atteignables (périmètre privé non verrouillé).",
+      "evidence": "Layout (app) sans redirection applicative pour les visiteurs ; états anon publics sur ces pages. Aucune fuite DB vérifiée (RLS + guards serveur !user sur chaque action).",
+      "userImpact": "Confusion produit : « zone privée » (progression, profil, révision) visible/atteignable par tout visiteur ; mélange onboarding/dashboard/public.",
+      "technicalImpact": "Aucune fuite de données constatée (RLS solide), mais le périmètre d'accès n'est pas celui d'une application à zones protégées.",
+      "recommendation": "Trancher le périmètre produit : /dashboard, /profile, /review, /activity exigent l'auth (redirect /login ou état anon explicite) ; garder /learn et /surahs publics (contenu lexical public + bandeau essai).",
+      "blocking": "YES"
+    },
+    {
+      "id": "R-003",
+      "category": "PERFORMANCE / QUERY LIMITS",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "lib/learning/queries.ts getCoverageBySurah : `.in(\"word_id\", ids)` non chunké",
+      "problem": "Requête `.in()` non chunkée sur l'ensemble des mots compris par l'utilisateur (croît jusqu'au corpus ~21 296 mots).",
+      "evidence": "Même pattern que CAT-000/88J (IN_FILTER_CHUNK_SIZE=250) appliqué ailleurs, oublié ici. Dépassement du seuil ~395-397 UUIDs → `fetch failed` (header overflow) sur le dashboard.",
+      "userImpact": "Dashboard cassé pour les utilisateurs à forte progression (erreur réseau silencieuse).",
+      "technicalImpact": "Bug de la même classe que la régression 88J, à fort volume.",
+      "recommendation": "Envelopper getCoverageBySurah dans selectInChunks(word_id, …).",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-004",
+      "category": "AUTHENTICATION",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "lib/learning/actions.ts (authenticate) ; components/app/login-form.tsx",
+      "problem": "Aucun flux « mot de passe oublié » (resetPasswordForEmail jamais appelé), aucun lien de récupération, aucune relance de confirmation email.",
+      "evidence": "Grep du code : resetPasswordForEmail absent ; login-form sans lien forgot-password.",
+      "userImpact": "Un utilisateur qui oublie son mot de passe est définitivement bloqué.",
+      "technicalImpact": "Flux auth incomplet pour un produit public.",
+      "recommendation": "Ajouter resetPasswordForEmail + page de reset + lien login ; vérifier l'état email_confirmé.",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-005",
+      "category": "SEO / PUBLIC WEB",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "app/layout.tsx (metadata racine) ; public/",
+      "problem": "Pages publiques (sourates, leçons, mots) sans metadata propre ; pas de robots.txt, sitemap.xml, manifest, image OG, canonical.",
+      "evidence": "Grep : un seul `export const metadata` (racine). public/ : aucun robots/sitemap/manifest/og-image.",
+      "userImpact": "Mauvais référencement, partage social pauvre, indexation non contrôlée des pages publiques.",
+      "technicalImpact": "Visibilité SEO nulle sur le contenu public.",
+      "recommendation": "generateMetadata par route publique, robots.txt, sitemap, og-image, viewport theme-color.",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-006",
+      "category": "LEGAL / TRUST",
+      "severity": "HIGH",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "location": "aucune page Privacy Policy / Terms / Mentions / contact",
+      "problem": "Collecte de données personnelles (email, progression) sans politique de confidentialité ni conditions publiées.",
+      "evidence": "Aucune page légale ; aucune attribution des sources publiée.",
+      "userImpact": "Risque de conformité et de confiance utilisateur.",
+      "technicalImpact": "Sans objet (produit).",
+      "recommendation": "Produire Privacy Policy + Terms + attribution des sources coraniques/audio avant lancement public.",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-007",
+      "category": "PRODUCTION CONFIGURATION",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "next.config.ts ; .env ; proxy.ts",
+      "problem": "next.config vide (aucun security header), pas de domaine/redirect auth/email de confirmation configurés, aucune config d'images.",
+      "evidence": "next.config.ts : aucun headers(); .env : clés Supabase dev uniquement.",
+      "userImpact": "En-têtes de sécurité absents en production ; URLs de confirmation/redirect à valider.",
+      "technicalImpact": "Durcissement HTTP manquant ; config domaine à finaliser au déploiement.",
+      "recommendation": "Compléter next.config.ts (CSP, X-Content-Type-Options, Referrer-Policy, poweredByHeader:false), configurer site URL + redirect URLs Supabase, documenter les variables (README).",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-008",
+      "category": "OBSERVABILITY",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "projet entier",
+      "problem": "Aucun error tracking, analytics, monitoring, uptime, ni monitoring DB.",
+      "evidence": "Seuls des console.error épars ; aucun service d'observabilité.",
+      "userImpact": "Erreurs runtime post-lancement invisibles.",
+      "technicalImpact": "Aucune visibilité sur les chutes, requêtes lentes ou usage réel.",
+      "recommendation": "Ajouter error tracking (Sentry), analytics minimal, monitoring de base avant/au lancement.",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-009",
+      "category": "LEGAL / CONTENT",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "location": "lib/quran/ayah-audio.ts (CDN islamic.network) ; word-audio (bucket privé, URLs signées)",
+      "problem": "Licence de redistribution des récitations (Alafasy…) à confirmer pour un usage commercial.",
+      "evidence": "Audio versets via CDN tiers ; mention « redistribution commerciale REVIEW_REQUIRED ».",
+      "userImpact": "Risque de droits si offre payante.",
+      "technicalImpact": "Aucun (audio mot bien protégé par URLs signées).",
+      "recommendation": "Documenter/fixer la licence des récitations avant toute monétisation.",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-010",
+      "category": "SECURITY",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "location": "app/admin/page.tsx",
+      "problem": "Route /admin accessible sans authentification ni rôle (lecture de tables publiques uniquement).",
+      "evidence": "Page admin sans garde ; ne lit que des tables publiques, aucune écriture.",
+      "userImpact": "Exposition d'un « admin » interne (état de la base, dernier import) à tout visiteur.",
+      "technicalImpact": "Aucune fuite de données privées, mais surface non voulue.",
+      "recommendation": "Gater /admin (auth + rôle) ou retirer la route du bundle public.",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-011",
+      "category": "UX / NAVIGATION",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "location": "app/(app)/surahs/[number]/page.tsx : `if (!user) notFound()`",
+      "problem": "/surahs/[number] renvoie 404 aux visiteurs anonymes alors que /surahs et /learn/[slug] sont publics.",
+      "evidence": "Code lu : garde notFound() pour !user.",
+      "userImpact": "Un visiteur cliquant une sourate depuis le catalogue public tombe sur 404.",
+      "technicalImpact": "Incohérence public/privé de navigation.",
+      "recommendation": "Rendre /surahs/[number] public (contenu lexical public + bandeau essai) ou rediriger vers /login.",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-012",
+      "category": "UX / 404",
+      "severity": "LOW",
+      "status": "OPEN",
+      "location": "app/not-found.tsx",
+      "problem": "Le bouton « Retour à l'accueil » de la 404 pointe vers /dashboard (coquille applicative) au lieu de la landing /.",
+      "evidence": "Code lu : lien → /dashboard.",
+      "userImpact": "Visiteur perdu dirigé vers la zone applicative au lieu de la landing.",
+      "technicalImpact": "Sans objet.",
+      "recommendation": "Pointer vers / pour les visiteurs, /dashboard pour les connectés.",
+      "blocking": "NO"
+    },
+    {
+      "id": "R-013",
+      "category": "DOCUMENTATION",
+      "severity": "NOTE",
+      "status": "PASS",
+      "location": "reports/ et documentation de couverture",
+      "problem": "La narration « 559 gloses » sous-estime la couverture FR réelle.",
+      "evidence": "DB : 6095 word_translations FR validées (dont les 559) ; 10 nouvelles sourates à 100 % de résolution FR.",
+      "userImpact": "Aucun — constat positif.",
+      "technicalImpact": "Documentation de couverture à mettre à jour (6095 mots validés).",
+      "recommendation": "Mettre à jour la documentation de couverture lexicale FR.",
+      "blocking": "NO"
+    }
+  ],
+  "summary": {
+    "counts": {
+      "critical": 2,
+      "high": 6,
+      "medium": 3,
+      "low": 1,
+      "note": 1
+    },
+    "blockingIds": [
+      "R-001",
+      "R-002"
+    ]
+  }
+}

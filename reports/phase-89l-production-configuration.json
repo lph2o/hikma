@@ -1,0 +1,163 @@
+{
+  "phase": "89L",
+  "title": "PRODUCTION CONFIGURATION & LAUNCH READINESS",
+  "verdict": "PRODUCTION_READY_WITH_WARNINGS",
+  "database_writes": 0,
+  "summary": {
+    "code_ready": true,
+    "config_ready": "PARTIEL (env runtime documenté ; domaine/HTTPS/Supabase = actions manuelles)",
+    "external_service_ready": "NOT_VERIFIED (Supabase prod, backups, alertes)",
+    "legal_ready": true,
+    "deployment_ready": "NO — aucune plateforme configurée (déploiement = action manuelle)",
+    "build": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "tests": "1046/1046 PASS"
+  },
+  "environment": {
+    "runtime_vars": [
+      { "variable": "NEXT_PUBLIC_SUPABASE_URL", "required": true, "public": true, "dev": "SET", "production": "TO_CONFIGURE", "status": "SET (dev) — à configurer pour le projet Supabase de production" },
+      { "variable": "NEXT_PUBLIC_SUPABASE_ANON_KEY", "required": true, "public": true, "dev": "SET", "production": "TO_CONFIGURE", "status": "SET (dev) — clé anon du projet de production" },
+      { "variable": "NEXT_PUBLIC_SITE_URL", "required": true, "public": true, "dev": "EMPTY (fallback hôte requête)", "production": "REQUIRED — domaine final https://", "status": "NOT_SET en dev (comportement voulu) ; à configurer en prod (active aussi HSTS via 89G)" },
+      { "variable": "ADMIN_EMAILS", "required": false, "public": false, "dev": "EMPTY (admin désactivé)", "production": "OPTIONNEL — liste d'emails admin, vide = désactivé" },
+      { "variable": "VERCEL_GIT_COMMIT_SHA / RENDER_GIT_COMMIT", "required": false, "public": false, "dev": "ABSENT (release='dev')", "production": "RECOMMANDÉ (release tracking observabilité)" }
+    ],
+    "cli_only_vars": ["SUPABASE_SERVICE_ROLE_KEY (96 usages, scripts/ uniquement)", "SUPABASE_ACCESS_TOKEN (migrations)", "APPLY/DRY_RUN/VALIDATE/STYLE/SURAH/IMPORT/BATCH_LIMIT/PILOT_RUN_ID/USE_CACHE (flags scripts one-shot)"],
+    "aucune_secret_en_next_public": true,
+    "aucun_secret_expose": true
+  },
+  "deployment": {
+    "platform": "NOT_CONFIGURED — aucun fichier vercel.json/netlify.toml/Dockerfile/fly.toml dans le repo",
+    "compatibility": "Next.js 16.3 / Node (app router, SSR, instrumentation, route handler nodejs) — compatible Vercel, Node server, Docker",
+    "build_command": "npm run build",
+    "start_command": "npm start (next start)",
+    "scripts": "dev/build/start/lint/typecheck/typecheck:scripts/test + pipeline d'import (tsx, CLI uniquement)",
+    "node": "v25.5.0 local ; engines absent (NOTE : ajouter engines.node recommandé)"
+  },
+  "domain": {
+    "status": "NOT_CONFIGURED",
+    "impact": "NEXT_PUBLIC_SITE_URL détermine canonical, OG, sitemap, robots, redirectTo reset password, et active HSTS (89G)",
+    "actions": "Choisir le domaine, configurer DNS, TLS/HTTPS, puis NEXT_PUBLIC_SITE_URL=https://<domaine>"
+  },
+  "https": {
+    "status": "NOT_VERIFIED (dépend du domaine/plateforme)",
+    "hsts": "Activé automatiquement dès NEXT_PUBLIC_SITE_URL en https:// (89G, vérifié : absent en local HTTP)"
+  },
+  "supabase": {
+    "rlS": "Vérifié (auth.uid()=user_id sur toutes les tables utilisateur ; aucune mutation anonyme)",
+    "site_url": "MANUAL_ACTION_REQUIRED — à définir sur le domaine final dans Supabase Auth",
+    "redirect_urls": "MANUAL_ACTION_REQUIRED — ajouter <siteUrl>/reset-password (documenté 89D)",
+    "email_confirmation": "MANUAL_ACTION_REQUIRED — vérifier le template de confirmation",
+    "password_reset_template": "MANUAL_ACTION_REQUIRED — vérifier le template Reset password (lien → <siteUrl>/reset-password)",
+    "providers": "Email/password uniquement (aucun OAuth) — pas de redirect OAuth à configurer",
+    "production_project": "NOT_VERIFIED — confirmer un projet Supabase de production distinct du dev"
+  },
+  "authentication": {
+    "login_signup": "PASS (formulaire unique)",
+    "password_reset_code": "PASS (89D — tests unitaires + runtime pages)",
+    "password_reset_external_e2e": "NOT_VERIFIED (aucune boîte mail réelle ; configuration Supabase requise)",
+    "session": "Cookie sb-<ref>-auth-token (@supabase/ssr, httpOnly=false défaut) — atténué par CSP script-src 'self'",
+    "private_routes": "PASS (dashboard/profile/review/activity → /login, runtime vérifié)",
+    "admin": "PASS (anonyme → /login, non-admin → 404, ADMIN_EMAILS vide = désactivé ; aucun rôle hardcodé)"
+  },
+  "security": {
+    "csp_identical_89g": true,
+    "no_unsafe_eval_prod": true,
+    "headers": "CSP, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, X-Frame-Options actifs ; HSTS conditionnel https",
+    "secrets_scan": "CLEAN — aucun service_role/private key dans app/components/lib/instrumentation ; service role ABSENT du bundle .next/static",
+    "admin_bypass": "AUCUN",
+    "route_privee_accessible": "NON"
+  },
+  "csp": {
+    "status": "INCHANGÉE depuis 89G (vérifié runtime : mêmes directives, connect-src Supabase + wss, media-src CDN audio uniquement, frame-ancestors 'none', object-src 'none', aucune nouvelle origine)"
+  },
+  "cookies": {
+    "count": 1,
+    "detail": "Cookie de session Supabase uniquement ; aucun cookie ajouté par la notice (localStorage hikma:consent:v1)",
+    "third_party": "AUCUN"
+  },
+  "privacy": {
+    "tracking": "NONE",
+    "analytics": "NONE",
+    "marketing": "NONE",
+    "notice": "Informative (89H-I), testée navigateur réel, aucun appel réseau au clic",
+    "pages": "/privacy /terms /sources en ligne, cohérentes"
+  },
+  "seo": {
+    "metadata": "PASS (racine + par route)",
+    "robots": "PASS (privés Disallow)",
+    "sitemap": "PASS (116 URLs publiques, aucun privé)",
+    "canonical_og": "PASS (dépendra du domaine via NEXT_PUBLIC_SITE_URL)",
+    "donnees_utilisateur_indexables": "AUCUNE"
+  },
+  "observability": {
+    "error_tracking": "ENABLED (instrumentation.ts + client + /observability)",
+    "sanitisation": "PASS (tokens redacted, query/cookies/headers/emails/userIds exclus)",
+    "rate_limit": "PASS (30/min/IP, 16KB cap)",
+    "tracking": "NONE (l'observabilité n'est pas un tracker : aucun cookie, aucune donnée personnelle)",
+    "log_retention": "NOT_VERIFIED (dépend de la plateforme)",
+    "alerting": "NOT_VERIFIED (à configurer sur les logs plateforme)"
+  },
+  "audio_licensing": {
+    "status": "EDUCATIONAL=VERIFIED / COMMERCIAL=NOT_VERIFIED",
+    "source": "alquran.cloud/terms-and-conditions (14/06/2026)",
+    "restrictions": "Redistribution non-commerciale ; bundle commercial possible mais droits des récitateurs (retrait possible)",
+    "conclusion": "Lancement gratuit/éducatif : OK. Monétisation : à résoudre avant."
+  },
+  "performance": {
+    "r003": "RESOLVED (getCoverageBySurah chunkée 250)",
+    "r89j_01": "RESOLVED (getQuranCoverage count exact par lots, 89K)",
+    "disc_89k_001": "DISCOVERED / NOT_IN_SCOPE (getCoverageBySurah rows > 1000 occurrences par lot — marginal)",
+    "disc_89k_002": "DISCOVERED / NOT_IN_SCOPE (jusqu'à 5-6 requêtes .in par page dashboard pour utilisateur avancé)",
+    "n1": "AUCUN évident",
+    "in_non_chunks_restants": "Aucun connu dans les chemins de production (audit 89J + 89K)"
+  },
+  "routes": {
+    "public": "200 sur / /login /surahs /surahs/1 /learn /privacy /terms /sources /robots.txt /sitemap.xml",
+    "private": "Dashboard/profile/review/activity → digest NEXT_REDIRECT /login (89B intacte)",
+    "admin": "307 (anonyme)",
+    "invalid": "/random-invalid-route → 404 ; /surahs/9999 /learn/invalid /mots/invalid → 200 avec corps 404 (quirk Next 16 documenté, crawlers JS-rendering OK)",
+    "observability_methods": "GET 405 · POST 200 · OPTIONS 204 (géré par Next)"
+  },
+  "tests": {
+    "typecheck": "PASS (0 erreur)",
+    "typecheck_scripts": "309 erreurs legacy VISIBLES dans leur scope dédié (conception 89A — isolées du build, non cachées)",
+    "lint": "PASS (0 erreur)",
+    "vitest": "1046/1046 PASS (67 fichiers)",
+    "build": "PASS (0 erreur TS, exit 0)"
+  },
+  "secrets_scan": {
+    "source_code": "CLEAN",
+    "bundle_client": "CLEAN (aucun service_role)",
+    "env_dans_bundle": "Uniquement l'URL Supabase publique (attendue, non secrète)",
+    "reports": "Aucune valeur secrète affichée (status SET/NOT_SET uniquement)"
+  },
+  "backup": {
+    "status": "NOT_VERIFIED",
+    "detail": "Backups/PITR Supabase = configuration du projet (hors repo) — à activer avant mise en ligne"
+  },
+  "manual_actions_required": [
+    { "id": "M-01", "where": "Supabase Dashboard → Auth → URL Configuration", "what": "Site URL = domaine final", "expected": "https://<domaine>", "verify": "Ouvrir le lien de confirmation email" },
+    { "id": "M-02", "where": "Supabase Dashboard → Auth → URL Configuration → Redirect URLs", "what": "Ajouter <siteUrl>/reset-password", "expected": "https://<domaine>/reset-password", "verify": "Parcours forgot password réel (89D)" },
+    { "id": "M-03", "where": "Supabase Dashboard → Auth → Email Templates", "what": "Vérifier template Reset password + confirmation", "expected": "Lien vers /reset-password", "verify": "E2E email avec compte de test" },
+    { "id": "M-04", "where": "Plateforme de déploiement (Vercel/Node/Docker)", "what": "Déployer avec npm run build ; configurer les 4 variables runtime", "expected": "NEXT_PUBLIC_SUPABASE_URL, ANON_KEY, SITE_URL, ADMIN_EMAILS", "verify": "Smoke post-déploiement" },
+    { "id": "M-05", "where": "DNS / TLS", "what": "Domaine + certificat HTTPS", "expected": "https actif", "verify": "HSTS présent dans les headers" },
+    { "id": "M-06", "where": "Supabase Dashboard → Database → Backups", "what": "Activer backups/PITR", "expected": "Backups planifiés actifs", "verify": "Page backups du projet" },
+    { "id": "M-07", "where": "Plateforme de logs", "what": "Activer l'ingestion des logs + alertes P0/P1", "expected": "Erreurs visibles + alertes", "verify": "Journaliser une erreur contrôlée" },
+    { "id": "M-08", "where": "Production Supabase project", "what": "Confirmer un projet de production distinct (ou promotion du projet actuel)", "expected": "Projet prod avec RLS", "verify": "verify:rls sur le projet de production" }
+  ],
+  "risks": [
+    { "id": "R-89L-01", "severity": "HIGH (externe)", "issue": "Password reset E2E réel non vérifié + config Supabase requise", "blocking": "NON au code — action manuelle avant mise en ligne" },
+    { "id": "R-89L-02", "severity": "HIGH (externe)", "issue": "Licence audio commerciale NOT_VERIFIED (89J/89F)", "blocking": "NON pour lancement gratuit — OUI pour monétisation" },
+    { "id": "R-89L-03", "severity": "MEDIUM", "issue": "Backups/alertes/domaine non configurés", "blocking": "NON — actions manuelles M-05/M-06/M-07" },
+    { "id": "R-89L-04", "severity": "LOW", "issue": "engines absent de package.json ; .next 1.2 Go (cache)", "blocking": "NON" }
+  ],
+  "not_verified": ["Password reset E2E (email réel)", "Backups/PITR", "Alertes plateforme", "Domaine/HTTPS final", "Projet Supabase de production", "Rétention des logs", "Viewport mobile < 640px réel", "Lecteurs d'écran réels"],
+  "discovered": [],
+  "recommendations": [
+    "Suivre les 8 actions manuelles M-01→M-08 avant mise en ligne.",
+    "Après déploiement : smoke complet (routes, auth, reset password, audio, observabilité) sur le domaine de production.",
+    "À plus long terme : décision licence audio commerciale ; pagination .range() de getCoverageBySurah (DISC-89K-001) ; engines.node."
+  ],
+  "next_phase": "AUCUNE phase d'implémentation requise côté code — exécuter les actions manuelles M-01→M-08 puis un déploiement pilote contrôlé (hors périmètre de cette phase, ne pas déployer ici)"
+}

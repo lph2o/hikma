@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { ArrowLeftIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,18 +21,15 @@ import {
 
 export const dynamic = "force-dynamic";
 
+// Espace privé : signal d'indexation noindex (l'auth reste le vrai contrôle).
+export const metadata: Metadata = { robots: { index: false, follow: false } };
+
 export default async function ActivityPage() {
   const client = await createClient();
   const {
     data: { user },
   } = await client.auth.getUser();
-  if (!user) {
-    return (
-      <main className="mx-auto flex w-full max-w-2xl flex-col items-center gap-6 px-5 py-12 text-center">
-        <H1>Connecte-toi pour voir ton activité.</H1>
-      </main>
-    );
-  }
+  if (!user) redirect("/login");
 
   const settings = await getUserSettings(client, user.id);
   const timezone = settings?.timezone ?? null;

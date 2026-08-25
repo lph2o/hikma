@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import { LandingPage } from "@/components/app/landing";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
+
+// Canonical explicite (résolu contre metadataBase). La landing n'a aucune
+// variation d'URL indexable → aucune chance de duplication de contenu.
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 /**
  * Page d'accueil (Phase 24D) :

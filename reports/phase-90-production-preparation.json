@@ -1,0 +1,243 @@
+{
+  "phase": "90",
+  "title": "Production Deployment Preparation & External Prerequisites",
+  "verdict": "PHASE_90_PRODUCTION_PREPARATION_COMPLETE",
+  "code_production_ready": "YES",
+  "deployment_production_ready": "NO",
+  "deployment_blockers": "EXTERNAL/MANUAL — aucun bug de code",
+  "database_writes": 0,
+  "production_changes": 1,
+  "production_changes_detail": "package.json : ajout de engines.node >=20.9.0 (contrat runtime, honoré par Vercel et les plateformes qui lisent engines)",
+  "P0": 0,
+  "P1": 0,
+  "P2": 1,
+  "NOTE": 4,
+  "MANUAL": 8,
+  "NOT_VERIFIED": 8,
+  "regressions": 0,
+  "baseline": {
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "node_local": "25.5.0",
+    "next_required_node": ">=20.9.0",
+    "dirty_files_before": 102,
+    "dirty_files_after": 103,
+    "inherited_dirty_files": 102,
+    "phase_90_new_files": 1,
+    "note": "Les 102 fichiers dirty pré-existants (rapports 89R inclus) sont hérités des phases 89D-89O; PHASE 90 n'a ajouté que package.json (modification) et les 2 rapports"
+  },
+  "environment": {
+    "inventory": [
+      {
+        "name": "NEXT_PUBLIC_SUPABASE_URL",
+        "usage": "Supabase clients (browser + SSR)",
+        "required_prod": "YES",
+        "present_locally": "YES",
+        "secret": "NO",
+        "build_time_inlined": "YES",
+        "source": ".env / .env.example"
+      },
+      {
+        "name": "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+        "usage": "Supabase clients (clé anon)",
+        "required_prod": "YES",
+        "present_locally": "YES",
+        "secret": "NO",
+        "build_time_inlined": "YES",
+        "source": ".env / .env.example"
+      },
+      {
+        "name": "NEXT_PUBLIC_SITE_URL",
+        "usage": "metadataBase, canonical, OG, robots, sitemap, redirectTo reset-password",
+        "required_prod": "YES",
+        "present_locally": "YES",
+        "secret": "NO",
+        "build_time_inlined": "YES",
+        "note": "Doit être définie AVANT le build de production (inlinée au build); sans elle, fallback http://localhost:3000",
+        "source": ".env / .env.example"
+      },
+      {
+        "name": "SUPABASE_SERVICE_ROLE_KEY",
+        "usage": "Scripts d'import uniquement (scripts/) — absent de app/components/lib",
+        "required_prod": "NO",
+        "present_locally": "YES",
+        "secret": "YES",
+        "build_time_inlined": "NO",
+        "source": ".env / .env.example"
+      },
+      {
+        "name": "SUPABASE_ACCESS_TOKEN",
+        "usage": "Scripts de migration uniquement (scripts/)",
+        "required_prod": "NO",
+        "present_locally": "YES",
+        "secret": "YES",
+        "build_time_inlined": "NO",
+        "source": ".env / .env.example"
+      },
+      {
+        "name": "ADMIN_EMAILS",
+        "usage": "Contrôle d'accès /admin (si vide/absent, personne n'est admin)",
+        "required_prod": "NO",
+        "present_locally": "YES",
+        "secret": "NO",
+        "build_time_inlined": "NO",
+        "source": ".env / .env.example"
+      },
+      {
+        "name": "VERCEL_GIT_COMMIT_SHA / RENDER_GIT_COMMIT",
+        "usage": "Champ release de l'observabilité (fallback dev)",
+        "required_prod": "NO",
+        "present_locally": "NO",
+        "secret": "NO",
+        "build_time_inlined": "NO",
+        "source": "plateforme de déploiement (automatique)"
+      }
+    ],
+    "production_env_complete": "NOT_VERIFIED",
+    "secret_scan": "CLEAN",
+    "service_role_client_exposure": 0
+  },
+  "domain": {
+    "real_domain_configured": "NO",
+    "status": "NOT_VERIFIED",
+    "simulation_domain": "https://hikma.example (simulation uniquement)",
+    "required_when_available": ["DNS A/AAAA/CNAME", "HTTPS et certificat TLS", "redirection HTTP vers HTTPS", "www/non-www", "NEXT_PUBLIC_SITE_URL au build", "cohérence canonical/robots/sitemap/OG", "Supabase redirect URLs"]
+  },
+  "deployment_platform": {
+    "status": "NOT_CONFIGURED",
+    "note": "Aucune plateforme choisie (Vercel/Coolify/VPS etc.) — décision humaine",
+    "build_command": "npm run build",
+    "start_command": "npm start",
+    "node_contract": "engines.node >=20.9.0 ajouté (honoré par Vercel)"
+  },
+  "supabase": {
+    "project_type": "UNKNOWN (non vérifiable depuis le repo)",
+    "rls": "VERIFIED (lecture anonyme = 0 ligne, auth.uid() = user_id)",
+    "migrations": "Présentes (scripts/apply-migrations.ts) — non exécutées pendant cette phase",
+    "auth_redirect_urls": "NOT_VERIFIED (configuration externe)",
+    "backups": "NOT_VERIFIED_EXTERNAL",
+    "database_writes": 0
+  },
+  "auth": {
+    "flow_implementation": "VERIFIED (resetPasswordForEmail + exchangeCodeForSession + /reset-password)",
+    "real_email_e2e": "NOT_VERIFIED",
+    "admin": "PASS (noindex + guard + comportement sans ADMIN_EMAILS documenté)"
+  },
+  "monitoring": {
+    "status": "PARTIAL",
+    "detail": "Observabilité 89I implémentée et vérifiée (endpoint POST-only, rate limit, redaction, truncation); aucune plateforme d'alertes/uptime configurée — MANUAL_REQUIRED"
+  },
+  "licensing": {
+    "audio_educational": "VERIFIED",
+    "audio_commercial": "NOT_VERIFIED",
+    "monetization_blocked": "YES",
+    "note": "R-009 non résolu; pilote gratuit/éducatif approprié, monétisation en attente de preuve de licence"
+  },
+  "og_asset": {
+    "finding": "89R-001 (P2) : og:image logo_hikma.png = 838 813 octets",
+    "audit": {
+      "format": "PNG 1254x1254 RGBA 8-bit non-interlacé",
+      "transparent_pixels": "63% alpha=0, 81% alpha<128",
+      "unique_colors": 91289,
+      "core_colors_alpha_ge_200": 989,
+      "conclusion": "989 couleurs de base distinctes = dégradés (calligraphie); quantification lossy risquerait un banding visible; QA visuelle impossible dans cet environnement"
+    },
+    "lossless_recompress_test": {
+      "re_deflate_level_9": "-4%",
+      "optimal_filters_level_9": "-4%",
+      "optimal_filters_zlib_filtered": "-6%",
+      "conclusion": "Gain marginal — le PNG est déjà bien compressé"
+    },
+    "decision": "NE PAS MODIFIER — le gain lossless est marginal et la voie lossy ne peut pas être vérifiée visuellement; reste P2 (compression post-lancement avec QA humaine)"
+  },
+  "node_runtime": {
+    "local_node": "25.5.0",
+    "next_required": ">=20.9.0",
+    "action": "engines.node >=20.9.0 ajouté à package.json (contrat runtime explicite, honore par Vercel; aucune dépendance, aucun changement de comportement local)"
+  },
+  "seo": {
+    "canonical": "PASS (absolu HTTPS, insensible aux query params : /?utm_source=x -> https://hikma.example, /surahs/1?foo=bar -> https://hikma.example/surahs/1)",
+    "og": "PASS (og:url, og:image https absolu, twitter complet)",
+    "robots_txt": "PASS (Allow /, Disallow privé+auth, Sitemap https)",
+    "sitemap": "PASS (116 URLs, aucune privée/localhost/doublure)",
+    "private_routes": "PASS (dashboard, profile, review, activity, admin = noindex, nofollow + auth guard)",
+    "404": "PASS (/random-invalid -> 404; routes dynamiques invalides -> contenu 404 streamé, quirk Next 16 documenté)"
+  },
+  "env_leaks_check": {
+    "status": "NO_LEAK",
+    "false_positives_excluded": [
+      "http://www.sitemaps.org/schemas/sitemap/0.9 (namespace XML obligatoire du sitemap)",
+      "http://www.w3.org/2000/svg (namespace SVG des icônes inline)"
+    ],
+    "confirmed_absent": ["localhost", "127.0.0.1", ":3000", ":3100", "URLs http:// non sécurisées"]
+  },
+  "security": {
+    "xss": "SAFE (0 sink)",
+    "postgrest_injection": "SAFE",
+    "idor": "SAFE",
+    "open_redirect": "SAFE",
+    "redos": "SAFE",
+    "csp": "INTACT vs 89G — unsafe-eval: 0 occurrence en production",
+    "headers": "PASS (CSP, nosniff, referrer-policy, x-frame-options DENY, HSTS preload)",
+    "cookies": "1 cookie de session Supabase (aucun tracking)",
+    "secrets": "CLEAN"
+  },
+  "validation": {
+    "TYPECHECK": "PASS",
+    "LINT": "PASS (0 erreur, 20 warnings pré-existants)",
+    "VITEST": "1058/1058 PASS (68 fichiers)",
+    "BUILD": "PASS (exit 0, avec NEXT_PUBLIC_SITE_URL=https://hikma.example)",
+    "RUNTIME_SMOKE": "PASS",
+    "NPM_AUDIT": "0 vulnérabilités",
+    "DATABASE_WRITES": 0
+  },
+  "manual_prerequisites": [
+    "Domaine de production + DNS + HTTPS",
+    "NEXT_PUBLIC_SITE_URL définie au build",
+    "Choix de la plateforme de déploiement + configuration env",
+    "Projet Supabase de production (migrations + RLS)",
+    "Redirect URLs Supabase (dont /reset-password)",
+    "Test E2E réel du password reset",
+    "Backups / PITR",
+    "Monitoring / alertes plateforme",
+    "Google Search Console + Bing Webmaster + soumission sitemap (post-déploiement)",
+    "Licence audio commerciale (R-009) avant monétisation"
+  ],
+  "not_verified": [
+    "Domaine réel / DNS / HTTPS",
+    "Plateforme de déploiement",
+    "Valeurs de l'environnement de production",
+    "Projet Supabase de production (type DEV/STAGING/PROD)",
+    "Redirect URLs Supabase",
+    "Password reset E2E réel (email)",
+    "Backups / PITR",
+    "Monitoring / alertes",
+    "Licence audio commerciale (R-009)",
+    "Indexation réelle Google/Bing (post-déploiement)"
+  ],
+  "deployment_checklist": [
+    { "item": "Domaine", "status": "MANUAL" },
+    { "item": "DNS", "status": "MANUAL" },
+    { "item": "HTTPS", "status": "MANUAL" },
+    { "item": "NEXT_PUBLIC_SITE_URL", "status": "MANUAL" },
+    { "item": "Supabase production", "status": "MANUAL" },
+    { "item": "Migrations", "status": "MANUAL" },
+    { "item": "RLS", "status": "PASS (vérifiée read-only)" },
+    { "item": "Auth redirect URLs", "status": "MANUAL" },
+    { "item": "Password reset E2E", "status": "NOT_VERIFIED" },
+    { "item": "ADMIN_EMAILS", "status": "MANUAL" },
+    { "item": "Backups/PITR", "status": "NOT_VERIFIED" },
+    { "item": "Monitoring", "status": "MANUAL" },
+    { "item": "Audio licensing", "status": "NOT_VERIFIED (commercial)" },
+    { "item": "Google Search Console", "status": "MANUAL (post-déploiement)" },
+    { "item": "Bing Webmaster", "status": "MANUAL (post-déploiement)" },
+    { "item": "Sitemap submission", "status": "MANUAL (post-déploiement)" }
+  ],
+  "go_no_go": {
+    "decision": "CONDITIONAL_GO",
+    "code_production_ready": "YES",
+    "deployment_production_ready": "NO",
+    "explanation": "Le code ne bloque rien. Les seuls éléments restants sont externes/manuels (domaine, plateforme, env, Supabase prod, redirect URLs, reset E2E, backups, monitoring, licence audio commerciale). Déploiement pilote gratuit/éducatif approprié une fois la checklist exécutée."
+  },
+  "next_action": "CONFIGURE_PRODUCTION_ENVIRONMENT — pas de nouvelle phase de développement"
+}

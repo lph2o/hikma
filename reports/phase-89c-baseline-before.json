@@ -1,0 +1,3030 @@
+{
+  "mode": "before",
+  "generatedAt": "2026-08-25T19:20:00.287Z",
+  "cases": {
+    "empty": {
+      "inputCount": 0,
+      "distinctCount": 0,
+      "status": "ok",
+      "result": [],
+      "error": null
+    },
+    "single": {
+      "inputCount": 1,
+      "distinctCount": 1,
+      "status": "ok",
+      "result": [
+        {
+          "surahNumber": 29,
+          "surahName": "L'araignée",
+          "totalAyahs": 69,
+          "coveredAyahs": 1,
+          "coveragePercent": 1
+        }
+      ],
+      "error": null
+    },
+    "small": {
+      "inputCount": 10,
+      "distinctCount": 10,
+      "status": "ok",
+      "result": [
+        {
+          "surahNumber": 2,
+          "surahName": "La vache",
+          "totalAyahs": 286,
+          "coveredAyahs": 4,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 3,
+          "surahName": "La famille de 'imran",
+          "totalAyahs": 200,
+          "coveredAyahs": 1,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 4,
+          "surahName": "Les femmes",
+          "totalAyahs": 176,
+          "coveredAyahs": 2,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 7,
+          "surahName": "Al-A'raf",
+          "totalAyahs": 206,
+          "coveredAyahs": 2,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 9,
+          "surahName": "Le repentir",
+          "totalAyahs": 129,
+          "coveredAyahs": 1,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 11,
+          "surahName": "Houd",
+          "totalAyahs": 123,
+          "coveredAyahs": 4,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 21,
+          "surahName": "Les prophètes",
+          "totalAyahs": 112,
+          "coveredAyahs": 2,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 23,
+          "surahName": "Les croyants",
+          "totalAyahs": 118,
+          "coveredAyahs": 1,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 24,
+          "surahName": "La lumière",
+          "totalAyahs": 64,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 26,
+          "surahName": "Les poètes",
+          "totalAyahs": 227,
+          "coveredAyahs": 1,
+          "coveragePercent": 0
+        },
+        {
+          "surahNumber": 29,
+          "surahName": "L'araignée",
+          "totalAyahs": 69,
+          "coveredAyahs": 1,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 34,
+          "surahName": "Saba'",
+          "totalAyahs": 54,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 35,
+          "surahName": "Le Créateur",
+          "totalAyahs": 45,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 36,
+          "surahName": "Ya-Sin",
+          "totalAyahs": 83,
+          "coveredAyahs": 2,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 38,
+          "surahName": "Sad",
+          "totalAyahs": 88,
+          "coveredAyahs": 1,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 39,
+          "surahName": "Les groupes",
+          "totalAyahs": 75,
+          "coveredAyahs": 1,
+          "coveragePercent": 1
+        },
+        {
+          "surahNumber": 41,
+          "surahName": "Les versets explicites",
+          "totalAyahs": 54,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 44,
+          "surahName": "La fumée",
+          "totalAyahs": 59,
+          "coveredAyahs": 2,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 53,
+          "surahName": "L'étoile",
+          "totalAyahs": 62,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 54,
+          "surahName": "La lune",
+          "totalAyahs": 55,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        }
+      ],
+      "error": null
+    },
+    "medium": {
+      "inputCount": 200,
+      "distinctCount": 200,
+      "status": "ok",
+      "result": [
+        {
+          "surahNumber": 1,
+          "surahName": "L'ouverture",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 2,
+          "surahName": "La vache",
+          "totalAyahs": 286,
+          "coveredAyahs": 89,
+          "coveragePercent": 31
+        },
+        {
+          "surahNumber": 3,
+          "surahName": "La famille de 'imran",
+          "totalAyahs": 200,
+          "coveredAyahs": 52,
+          "coveragePercent": 26
+        },
+        {
+          "surahNumber": 4,
+          "surahName": "Les femmes",
+          "totalAyahs": 176,
+          "coveredAyahs": 51,
+          "coveragePercent": 29
+        },
+        {
+          "surahNumber": 5,
+          "surahName": "La table servie",
+          "totalAyahs": 120,
+          "coveredAyahs": 47,
+          "coveragePercent": 39
+        },
+        {
+          "surahNumber": 6,
+          "surahName": "Les bestiaux",
+          "totalAyahs": 165,
+          "coveredAyahs": 19,
+          "coveragePercent": 12
+        },
+        {
+          "surahNumber": 7,
+          "surahName": "Al-A'raf",
+          "totalAyahs": 206,
+          "coveredAyahs": 31,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 8,
+          "surahName": "Le butin",
+          "totalAyahs": 75,
+          "coveredAyahs": 30,
+          "coveragePercent": 40
+        },
+        {
+          "surahNumber": 9,
+          "surahName": "Le repentir",
+          "totalAyahs": 129,
+          "coveredAyahs": 41,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 10,
+          "surahName": "Jonas",
+          "totalAyahs": 109,
+          "coveredAyahs": 15,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 11,
+          "surahName": "Houd",
+          "totalAyahs": 123,
+          "coveredAyahs": 18,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 12,
+          "surahName": "Joseph",
+          "totalAyahs": 111,
+          "coveredAyahs": 22,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 13,
+          "surahName": "Le tonnerre",
+          "totalAyahs": 43,
+          "coveredAyahs": 7,
+          "coveragePercent": 16
+        },
+        {
+          "surahNumber": 14,
+          "surahName": "Abraham",
+          "totalAyahs": 52,
+          "coveredAyahs": 12,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 15,
+          "surahName": "Al-Hijr",
+          "totalAyahs": 99,
+          "coveredAyahs": 6,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 16,
+          "surahName": "Les abeilles",
+          "totalAyahs": 128,
+          "coveredAyahs": 24,
+          "coveragePercent": 19
+        },
+        {
+          "surahNumber": 17,
+          "surahName": "Le voyage nocturne",
+          "totalAyahs": 111,
+          "coveredAyahs": 17,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 18,
+          "surahName": "La caverne",
+          "totalAyahs": 110,
+          "coveredAyahs": 12,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 19,
+          "surahName": "Marie",
+          "totalAyahs": 98,
+          "coveredAyahs": 4,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 20,
+          "surahName": "Ta-Ha",
+          "totalAyahs": 135,
+          "coveredAyahs": 4,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 21,
+          "surahName": "Les prophètes",
+          "totalAyahs": 112,
+          "coveredAyahs": 5,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 22,
+          "surahName": "Le pèlerinage",
+          "totalAyahs": 78,
+          "coveredAyahs": 28,
+          "coveragePercent": 36
+        },
+        {
+          "surahNumber": 23,
+          "surahName": "Les croyants",
+          "totalAyahs": 118,
+          "coveredAyahs": 6,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 24,
+          "surahName": "La lumière",
+          "totalAyahs": 64,
+          "coveredAyahs": 18,
+          "coveragePercent": 28
+        },
+        {
+          "surahNumber": 25,
+          "surahName": "Le discernement",
+          "totalAyahs": 77,
+          "coveredAyahs": 4,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 26,
+          "surahName": "Les poètes",
+          "totalAyahs": 227,
+          "coveredAyahs": 14,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 27,
+          "surahName": "Les fourmis",
+          "totalAyahs": 93,
+          "coveredAyahs": 13,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 28,
+          "surahName": "Le récit",
+          "totalAyahs": 88,
+          "coveredAyahs": 11,
+          "coveragePercent": 13
+        },
+        {
+          "surahNumber": 29,
+          "surahName": "L'araignée",
+          "totalAyahs": 69,
+          "coveredAyahs": 17,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 30,
+          "surahName": "Les romains",
+          "totalAyahs": 60,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 31,
+          "surahName": "Louqman",
+          "totalAyahs": 34,
+          "coveredAyahs": 16,
+          "coveragePercent": 47
+        },
+        {
+          "surahNumber": 32,
+          "surahName": "La prosternation",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 33,
+          "surahName": "Les coalisés",
+          "totalAyahs": 73,
+          "coveredAyahs": 25,
+          "coveragePercent": 34
+        },
+        {
+          "surahNumber": 34,
+          "surahName": "Saba'",
+          "totalAyahs": 54,
+          "coveredAyahs": 5,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 35,
+          "surahName": "Le Créateur",
+          "totalAyahs": 45,
+          "coveredAyahs": 12,
+          "coveragePercent": 27
+        },
+        {
+          "surahNumber": 36,
+          "surahName": "Ya-Sin",
+          "totalAyahs": 83,
+          "coveredAyahs": 3,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 37,
+          "surahName": "Les rangés",
+          "totalAyahs": 182,
+          "coveredAyahs": 4,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 38,
+          "surahName": "Sad",
+          "totalAyahs": 88,
+          "coveredAyahs": 5,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 39,
+          "surahName": "Les groupes",
+          "totalAyahs": 75,
+          "coveredAyahs": 17,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 40,
+          "surahName": "Le Pardonneur",
+          "totalAyahs": 85,
+          "coveredAyahs": 9,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 41,
+          "surahName": "Les versets explicites",
+          "totalAyahs": 54,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 42,
+          "surahName": "La concertation",
+          "totalAyahs": 53,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 43,
+          "surahName": "L'ornement",
+          "totalAyahs": 89,
+          "coveredAyahs": 8,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 44,
+          "surahName": "La fumée",
+          "totalAyahs": 59,
+          "coveredAyahs": 4,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 46,
+          "surahName": "Al-Ahqaf",
+          "totalAyahs": 35,
+          "coveredAyahs": 7,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 47,
+          "surahName": "Mouhammad",
+          "totalAyahs": 38,
+          "coveredAyahs": 12,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 48,
+          "surahName": "La victoire éclatante",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 49,
+          "surahName": "Les appartements",
+          "totalAyahs": 18,
+          "coveredAyahs": 10,
+          "coveragePercent": 56
+        },
+        {
+          "surahNumber": 50,
+          "surahName": "Qaf",
+          "totalAyahs": 45,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 51,
+          "surahName": "Qui éparpillent",
+          "totalAyahs": 60,
+          "coveredAyahs": 5,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 52,
+          "surahName": "Le mont At-Tour",
+          "totalAyahs": 49,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 53,
+          "surahName": "L'étoile",
+          "totalAyahs": 62,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 54,
+          "surahName": "La lune",
+          "totalAyahs": 55,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 55,
+          "surahName": "Le Tout Miséricordieux",
+          "totalAyahs": 78,
+          "coveredAyahs": 2,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 57,
+          "surahName": "Le fer",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 58,
+          "surahName": "La discussion",
+          "totalAyahs": 22,
+          "coveredAyahs": 12,
+          "coveragePercent": 55
+        },
+        {
+          "surahNumber": 59,
+          "surahName": "L'exode",
+          "totalAyahs": 24,
+          "coveredAyahs": 8,
+          "coveragePercent": 33
+        },
+        {
+          "surahNumber": 60,
+          "surahName": "L'éprouvée",
+          "totalAyahs": 13,
+          "coveredAyahs": 6,
+          "coveragePercent": 46
+        },
+        {
+          "surahNumber": 61,
+          "surahName": "Le rang",
+          "totalAyahs": 14,
+          "coveredAyahs": 1,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 62,
+          "surahName": "Le vendredi",
+          "totalAyahs": 11,
+          "coveredAyahs": 2,
+          "coveragePercent": 18
+        },
+        {
+          "surahNumber": 63,
+          "surahName": "Les hypocrites",
+          "totalAyahs": 11,
+          "coveredAyahs": 5,
+          "coveragePercent": 45
+        },
+        {
+          "surahNumber": 64,
+          "surahName": "La grande perte",
+          "totalAyahs": 18,
+          "coveredAyahs": 4,
+          "coveragePercent": 22
+        },
+        {
+          "surahNumber": 65,
+          "surahName": "Le divorce",
+          "totalAyahs": 12,
+          "coveredAyahs": 7,
+          "coveragePercent": 58
+        },
+        {
+          "surahNumber": 66,
+          "surahName": "L'interdiction",
+          "totalAyahs": 12,
+          "coveredAyahs": 2,
+          "coveragePercent": 17
+        },
+        {
+          "surahNumber": 68,
+          "surahName": "La plume",
+          "totalAyahs": 52,
+          "coveredAyahs": 3,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 69,
+          "surahName": "L'inéluctable",
+          "totalAyahs": 52,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 70,
+          "surahName": "Les voies d'ascension",
+          "totalAyahs": 44,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 71,
+          "surahName": "Noé",
+          "totalAyahs": 28,
+          "coveredAyahs": 1,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 72,
+          "surahName": "Les djinns",
+          "totalAyahs": 28,
+          "coveredAyahs": 3,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 73,
+          "surahName": "L'enveloppé",
+          "totalAyahs": 20,
+          "coveredAyahs": 3,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 74,
+          "surahName": "Celui qui se couvre",
+          "totalAyahs": 56,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 75,
+          "surahName": "La résurrection",
+          "totalAyahs": 40,
+          "coveredAyahs": 2,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 76,
+          "surahName": "L'homme",
+          "totalAyahs": 31,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 83,
+          "surahName": "Les fraudeurs",
+          "totalAyahs": 36,
+          "coveredAyahs": 2,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 84,
+          "surahName": "La déchirure",
+          "totalAyahs": 25,
+          "coveredAyahs": 2,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 89,
+          "surahName": "L'aube",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 94,
+          "surahName": "L'ouverture",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 96,
+          "surahName": "L'adhérence",
+          "totalAyahs": 19,
+          "coveredAyahs": 1,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 98,
+          "surahName": "La preuve",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 107,
+          "surahName": "L'entraide",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        }
+      ],
+      "error": null
+    },
+    "boundary_minus_1": {
+      "inputCount": 249,
+      "distinctCount": 249,
+      "status": "ok",
+      "result": [
+        {
+          "surahNumber": 1,
+          "surahName": "L'ouverture",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 2,
+          "surahName": "La vache",
+          "totalAyahs": 286,
+          "coveredAyahs": 89,
+          "coveragePercent": 31
+        },
+        {
+          "surahNumber": 3,
+          "surahName": "La famille de 'imran",
+          "totalAyahs": 200,
+          "coveredAyahs": 52,
+          "coveragePercent": 26
+        },
+        {
+          "surahNumber": 4,
+          "surahName": "Les femmes",
+          "totalAyahs": 176,
+          "coveredAyahs": 51,
+          "coveragePercent": 29
+        },
+        {
+          "surahNumber": 5,
+          "surahName": "La table servie",
+          "totalAyahs": 120,
+          "coveredAyahs": 47,
+          "coveragePercent": 39
+        },
+        {
+          "surahNumber": 6,
+          "surahName": "Les bestiaux",
+          "totalAyahs": 165,
+          "coveredAyahs": 19,
+          "coveragePercent": 12
+        },
+        {
+          "surahNumber": 7,
+          "surahName": "Al-A'raf",
+          "totalAyahs": 206,
+          "coveredAyahs": 31,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 8,
+          "surahName": "Le butin",
+          "totalAyahs": 75,
+          "coveredAyahs": 30,
+          "coveragePercent": 40
+        },
+        {
+          "surahNumber": 9,
+          "surahName": "Le repentir",
+          "totalAyahs": 129,
+          "coveredAyahs": 41,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 10,
+          "surahName": "Jonas",
+          "totalAyahs": 109,
+          "coveredAyahs": 15,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 11,
+          "surahName": "Houd",
+          "totalAyahs": 123,
+          "coveredAyahs": 18,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 12,
+          "surahName": "Joseph",
+          "totalAyahs": 111,
+          "coveredAyahs": 22,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 13,
+          "surahName": "Le tonnerre",
+          "totalAyahs": 43,
+          "coveredAyahs": 7,
+          "coveragePercent": 16
+        },
+        {
+          "surahNumber": 14,
+          "surahName": "Abraham",
+          "totalAyahs": 52,
+          "coveredAyahs": 12,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 15,
+          "surahName": "Al-Hijr",
+          "totalAyahs": 99,
+          "coveredAyahs": 6,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 16,
+          "surahName": "Les abeilles",
+          "totalAyahs": 128,
+          "coveredAyahs": 24,
+          "coveragePercent": 19
+        },
+        {
+          "surahNumber": 17,
+          "surahName": "Le voyage nocturne",
+          "totalAyahs": 111,
+          "coveredAyahs": 17,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 18,
+          "surahName": "La caverne",
+          "totalAyahs": 110,
+          "coveredAyahs": 12,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 19,
+          "surahName": "Marie",
+          "totalAyahs": 98,
+          "coveredAyahs": 4,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 20,
+          "surahName": "Ta-Ha",
+          "totalAyahs": 135,
+          "coveredAyahs": 4,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 21,
+          "surahName": "Les prophètes",
+          "totalAyahs": 112,
+          "coveredAyahs": 5,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 22,
+          "surahName": "Le pèlerinage",
+          "totalAyahs": 78,
+          "coveredAyahs": 28,
+          "coveragePercent": 36
+        },
+        {
+          "surahNumber": 23,
+          "surahName": "Les croyants",
+          "totalAyahs": 118,
+          "coveredAyahs": 6,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 24,
+          "surahName": "La lumière",
+          "totalAyahs": 64,
+          "coveredAyahs": 18,
+          "coveragePercent": 28
+        },
+        {
+          "surahNumber": 25,
+          "surahName": "Le discernement",
+          "totalAyahs": 77,
+          "coveredAyahs": 4,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 26,
+          "surahName": "Les poètes",
+          "totalAyahs": 227,
+          "coveredAyahs": 14,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 27,
+          "surahName": "Les fourmis",
+          "totalAyahs": 93,
+          "coveredAyahs": 13,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 28,
+          "surahName": "Le récit",
+          "totalAyahs": 88,
+          "coveredAyahs": 11,
+          "coveragePercent": 13
+        },
+        {
+          "surahNumber": 29,
+          "surahName": "L'araignée",
+          "totalAyahs": 69,
+          "coveredAyahs": 17,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 30,
+          "surahName": "Les romains",
+          "totalAyahs": 60,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 31,
+          "surahName": "Louqman",
+          "totalAyahs": 34,
+          "coveredAyahs": 16,
+          "coveragePercent": 47
+        },
+        {
+          "surahNumber": 32,
+          "surahName": "La prosternation",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 33,
+          "surahName": "Les coalisés",
+          "totalAyahs": 73,
+          "coveredAyahs": 25,
+          "coveragePercent": 34
+        },
+        {
+          "surahNumber": 34,
+          "surahName": "Saba'",
+          "totalAyahs": 54,
+          "coveredAyahs": 5,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 35,
+          "surahName": "Le Créateur",
+          "totalAyahs": 45,
+          "coveredAyahs": 12,
+          "coveragePercent": 27
+        },
+        {
+          "surahNumber": 36,
+          "surahName": "Ya-Sin",
+          "totalAyahs": 83,
+          "coveredAyahs": 3,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 37,
+          "surahName": "Les rangés",
+          "totalAyahs": 182,
+          "coveredAyahs": 4,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 38,
+          "surahName": "Sad",
+          "totalAyahs": 88,
+          "coveredAyahs": 5,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 39,
+          "surahName": "Les groupes",
+          "totalAyahs": 75,
+          "coveredAyahs": 17,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 40,
+          "surahName": "Le Pardonneur",
+          "totalAyahs": 85,
+          "coveredAyahs": 9,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 41,
+          "surahName": "Les versets explicites",
+          "totalAyahs": 54,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 42,
+          "surahName": "La concertation",
+          "totalAyahs": 53,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 43,
+          "surahName": "L'ornement",
+          "totalAyahs": 89,
+          "coveredAyahs": 8,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 44,
+          "surahName": "La fumée",
+          "totalAyahs": 59,
+          "coveredAyahs": 4,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 46,
+          "surahName": "Al-Ahqaf",
+          "totalAyahs": 35,
+          "coveredAyahs": 7,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 47,
+          "surahName": "Mouhammad",
+          "totalAyahs": 38,
+          "coveredAyahs": 12,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 48,
+          "surahName": "La victoire éclatante",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 49,
+          "surahName": "Les appartements",
+          "totalAyahs": 18,
+          "coveredAyahs": 10,
+          "coveragePercent": 56
+        },
+        {
+          "surahNumber": 50,
+          "surahName": "Qaf",
+          "totalAyahs": 45,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 51,
+          "surahName": "Qui éparpillent",
+          "totalAyahs": 60,
+          "coveredAyahs": 5,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 52,
+          "surahName": "Le mont At-Tour",
+          "totalAyahs": 49,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 53,
+          "surahName": "L'étoile",
+          "totalAyahs": 62,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 54,
+          "surahName": "La lune",
+          "totalAyahs": 55,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 55,
+          "surahName": "Le Tout Miséricordieux",
+          "totalAyahs": 78,
+          "coveredAyahs": 2,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 57,
+          "surahName": "Le fer",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 58,
+          "surahName": "La discussion",
+          "totalAyahs": 22,
+          "coveredAyahs": 12,
+          "coveragePercent": 55
+        },
+        {
+          "surahNumber": 59,
+          "surahName": "L'exode",
+          "totalAyahs": 24,
+          "coveredAyahs": 8,
+          "coveragePercent": 33
+        },
+        {
+          "surahNumber": 60,
+          "surahName": "L'éprouvée",
+          "totalAyahs": 13,
+          "coveredAyahs": 6,
+          "coveragePercent": 46
+        },
+        {
+          "surahNumber": 61,
+          "surahName": "Le rang",
+          "totalAyahs": 14,
+          "coveredAyahs": 1,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 62,
+          "surahName": "Le vendredi",
+          "totalAyahs": 11,
+          "coveredAyahs": 2,
+          "coveragePercent": 18
+        },
+        {
+          "surahNumber": 63,
+          "surahName": "Les hypocrites",
+          "totalAyahs": 11,
+          "coveredAyahs": 5,
+          "coveragePercent": 45
+        },
+        {
+          "surahNumber": 64,
+          "surahName": "La grande perte",
+          "totalAyahs": 18,
+          "coveredAyahs": 4,
+          "coveragePercent": 22
+        },
+        {
+          "surahNumber": 65,
+          "surahName": "Le divorce",
+          "totalAyahs": 12,
+          "coveredAyahs": 7,
+          "coveragePercent": 58
+        },
+        {
+          "surahNumber": 66,
+          "surahName": "L'interdiction",
+          "totalAyahs": 12,
+          "coveredAyahs": 2,
+          "coveragePercent": 17
+        },
+        {
+          "surahNumber": 68,
+          "surahName": "La plume",
+          "totalAyahs": 52,
+          "coveredAyahs": 3,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 69,
+          "surahName": "L'inéluctable",
+          "totalAyahs": 52,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 70,
+          "surahName": "Les voies d'ascension",
+          "totalAyahs": 44,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 71,
+          "surahName": "Noé",
+          "totalAyahs": 28,
+          "coveredAyahs": 1,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 72,
+          "surahName": "Les djinns",
+          "totalAyahs": 28,
+          "coveredAyahs": 3,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 73,
+          "surahName": "L'enveloppé",
+          "totalAyahs": 20,
+          "coveredAyahs": 3,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 74,
+          "surahName": "Celui qui se couvre",
+          "totalAyahs": 56,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 75,
+          "surahName": "La résurrection",
+          "totalAyahs": 40,
+          "coveredAyahs": 2,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 76,
+          "surahName": "L'homme",
+          "totalAyahs": 31,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 83,
+          "surahName": "Les fraudeurs",
+          "totalAyahs": 36,
+          "coveredAyahs": 2,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 84,
+          "surahName": "La déchirure",
+          "totalAyahs": 25,
+          "coveredAyahs": 2,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 89,
+          "surahName": "L'aube",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 94,
+          "surahName": "L'ouverture",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 96,
+          "surahName": "L'adhérence",
+          "totalAyahs": 19,
+          "coveredAyahs": 1,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 98,
+          "surahName": "La preuve",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 107,
+          "surahName": "L'entraide",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        }
+      ],
+      "error": null
+    },
+    "boundary_exact": {
+      "inputCount": 250,
+      "distinctCount": 250,
+      "status": "ok",
+      "result": [
+        {
+          "surahNumber": 1,
+          "surahName": "L'ouverture",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 2,
+          "surahName": "La vache",
+          "totalAyahs": 286,
+          "coveredAyahs": 89,
+          "coveragePercent": 31
+        },
+        {
+          "surahNumber": 3,
+          "surahName": "La famille de 'imran",
+          "totalAyahs": 200,
+          "coveredAyahs": 52,
+          "coveragePercent": 26
+        },
+        {
+          "surahNumber": 4,
+          "surahName": "Les femmes",
+          "totalAyahs": 176,
+          "coveredAyahs": 51,
+          "coveragePercent": 29
+        },
+        {
+          "surahNumber": 5,
+          "surahName": "La table servie",
+          "totalAyahs": 120,
+          "coveredAyahs": 47,
+          "coveragePercent": 39
+        },
+        {
+          "surahNumber": 6,
+          "surahName": "Les bestiaux",
+          "totalAyahs": 165,
+          "coveredAyahs": 19,
+          "coveragePercent": 12
+        },
+        {
+          "surahNumber": 7,
+          "surahName": "Al-A'raf",
+          "totalAyahs": 206,
+          "coveredAyahs": 31,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 8,
+          "surahName": "Le butin",
+          "totalAyahs": 75,
+          "coveredAyahs": 30,
+          "coveragePercent": 40
+        },
+        {
+          "surahNumber": 9,
+          "surahName": "Le repentir",
+          "totalAyahs": 129,
+          "coveredAyahs": 41,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 10,
+          "surahName": "Jonas",
+          "totalAyahs": 109,
+          "coveredAyahs": 15,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 11,
+          "surahName": "Houd",
+          "totalAyahs": 123,
+          "coveredAyahs": 18,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 12,
+          "surahName": "Joseph",
+          "totalAyahs": 111,
+          "coveredAyahs": 22,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 13,
+          "surahName": "Le tonnerre",
+          "totalAyahs": 43,
+          "coveredAyahs": 7,
+          "coveragePercent": 16
+        },
+        {
+          "surahNumber": 14,
+          "surahName": "Abraham",
+          "totalAyahs": 52,
+          "coveredAyahs": 12,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 15,
+          "surahName": "Al-Hijr",
+          "totalAyahs": 99,
+          "coveredAyahs": 6,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 16,
+          "surahName": "Les abeilles",
+          "totalAyahs": 128,
+          "coveredAyahs": 24,
+          "coveragePercent": 19
+        },
+        {
+          "surahNumber": 17,
+          "surahName": "Le voyage nocturne",
+          "totalAyahs": 111,
+          "coveredAyahs": 17,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 18,
+          "surahName": "La caverne",
+          "totalAyahs": 110,
+          "coveredAyahs": 12,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 19,
+          "surahName": "Marie",
+          "totalAyahs": 98,
+          "coveredAyahs": 4,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 20,
+          "surahName": "Ta-Ha",
+          "totalAyahs": 135,
+          "coveredAyahs": 4,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 21,
+          "surahName": "Les prophètes",
+          "totalAyahs": 112,
+          "coveredAyahs": 5,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 22,
+          "surahName": "Le pèlerinage",
+          "totalAyahs": 78,
+          "coveredAyahs": 28,
+          "coveragePercent": 36
+        },
+        {
+          "surahNumber": 23,
+          "surahName": "Les croyants",
+          "totalAyahs": 118,
+          "coveredAyahs": 6,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 24,
+          "surahName": "La lumière",
+          "totalAyahs": 64,
+          "coveredAyahs": 18,
+          "coveragePercent": 28
+        },
+        {
+          "surahNumber": 25,
+          "surahName": "Le discernement",
+          "totalAyahs": 77,
+          "coveredAyahs": 4,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 26,
+          "surahName": "Les poètes",
+          "totalAyahs": 227,
+          "coveredAyahs": 14,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 27,
+          "surahName": "Les fourmis",
+          "totalAyahs": 93,
+          "coveredAyahs": 13,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 28,
+          "surahName": "Le récit",
+          "totalAyahs": 88,
+          "coveredAyahs": 11,
+          "coveragePercent": 13
+        },
+        {
+          "surahNumber": 29,
+          "surahName": "L'araignée",
+          "totalAyahs": 69,
+          "coveredAyahs": 17,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 30,
+          "surahName": "Les romains",
+          "totalAyahs": 60,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 31,
+          "surahName": "Louqman",
+          "totalAyahs": 34,
+          "coveredAyahs": 16,
+          "coveragePercent": 47
+        },
+        {
+          "surahNumber": 32,
+          "surahName": "La prosternation",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 33,
+          "surahName": "Les coalisés",
+          "totalAyahs": 73,
+          "coveredAyahs": 25,
+          "coveragePercent": 34
+        },
+        {
+          "surahNumber": 34,
+          "surahName": "Saba'",
+          "totalAyahs": 54,
+          "coveredAyahs": 5,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 35,
+          "surahName": "Le Créateur",
+          "totalAyahs": 45,
+          "coveredAyahs": 12,
+          "coveragePercent": 27
+        },
+        {
+          "surahNumber": 36,
+          "surahName": "Ya-Sin",
+          "totalAyahs": 83,
+          "coveredAyahs": 3,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 37,
+          "surahName": "Les rangés",
+          "totalAyahs": 182,
+          "coveredAyahs": 4,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 38,
+          "surahName": "Sad",
+          "totalAyahs": 88,
+          "coveredAyahs": 5,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 39,
+          "surahName": "Les groupes",
+          "totalAyahs": 75,
+          "coveredAyahs": 17,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 40,
+          "surahName": "Le Pardonneur",
+          "totalAyahs": 85,
+          "coveredAyahs": 9,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 41,
+          "surahName": "Les versets explicites",
+          "totalAyahs": 54,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 42,
+          "surahName": "La concertation",
+          "totalAyahs": 53,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 43,
+          "surahName": "L'ornement",
+          "totalAyahs": 89,
+          "coveredAyahs": 8,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 44,
+          "surahName": "La fumée",
+          "totalAyahs": 59,
+          "coveredAyahs": 4,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 46,
+          "surahName": "Al-Ahqaf",
+          "totalAyahs": 35,
+          "coveredAyahs": 7,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 47,
+          "surahName": "Mouhammad",
+          "totalAyahs": 38,
+          "coveredAyahs": 12,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 48,
+          "surahName": "La victoire éclatante",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 49,
+          "surahName": "Les appartements",
+          "totalAyahs": 18,
+          "coveredAyahs": 10,
+          "coveragePercent": 56
+        },
+        {
+          "surahNumber": 50,
+          "surahName": "Qaf",
+          "totalAyahs": 45,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 51,
+          "surahName": "Qui éparpillent",
+          "totalAyahs": 60,
+          "coveredAyahs": 5,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 52,
+          "surahName": "Le mont At-Tour",
+          "totalAyahs": 49,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 53,
+          "surahName": "L'étoile",
+          "totalAyahs": 62,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 54,
+          "surahName": "La lune",
+          "totalAyahs": 55,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 55,
+          "surahName": "Le Tout Miséricordieux",
+          "totalAyahs": 78,
+          "coveredAyahs": 2,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 57,
+          "surahName": "Le fer",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 58,
+          "surahName": "La discussion",
+          "totalAyahs": 22,
+          "coveredAyahs": 12,
+          "coveragePercent": 55
+        },
+        {
+          "surahNumber": 59,
+          "surahName": "L'exode",
+          "totalAyahs": 24,
+          "coveredAyahs": 8,
+          "coveragePercent": 33
+        },
+        {
+          "surahNumber": 60,
+          "surahName": "L'éprouvée",
+          "totalAyahs": 13,
+          "coveredAyahs": 6,
+          "coveragePercent": 46
+        },
+        {
+          "surahNumber": 61,
+          "surahName": "Le rang",
+          "totalAyahs": 14,
+          "coveredAyahs": 1,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 62,
+          "surahName": "Le vendredi",
+          "totalAyahs": 11,
+          "coveredAyahs": 2,
+          "coveragePercent": 18
+        },
+        {
+          "surahNumber": 63,
+          "surahName": "Les hypocrites",
+          "totalAyahs": 11,
+          "coveredAyahs": 5,
+          "coveragePercent": 45
+        },
+        {
+          "surahNumber": 64,
+          "surahName": "La grande perte",
+          "totalAyahs": 18,
+          "coveredAyahs": 4,
+          "coveragePercent": 22
+        },
+        {
+          "surahNumber": 65,
+          "surahName": "Le divorce",
+          "totalAyahs": 12,
+          "coveredAyahs": 7,
+          "coveragePercent": 58
+        },
+        {
+          "surahNumber": 66,
+          "surahName": "L'interdiction",
+          "totalAyahs": 12,
+          "coveredAyahs": 2,
+          "coveragePercent": 17
+        },
+        {
+          "surahNumber": 68,
+          "surahName": "La plume",
+          "totalAyahs": 52,
+          "coveredAyahs": 3,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 69,
+          "surahName": "L'inéluctable",
+          "totalAyahs": 52,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 70,
+          "surahName": "Les voies d'ascension",
+          "totalAyahs": 44,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 71,
+          "surahName": "Noé",
+          "totalAyahs": 28,
+          "coveredAyahs": 1,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 72,
+          "surahName": "Les djinns",
+          "totalAyahs": 28,
+          "coveredAyahs": 3,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 73,
+          "surahName": "L'enveloppé",
+          "totalAyahs": 20,
+          "coveredAyahs": 3,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 74,
+          "surahName": "Celui qui se couvre",
+          "totalAyahs": 56,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 75,
+          "surahName": "La résurrection",
+          "totalAyahs": 40,
+          "coveredAyahs": 2,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 76,
+          "surahName": "L'homme",
+          "totalAyahs": 31,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 83,
+          "surahName": "Les fraudeurs",
+          "totalAyahs": 36,
+          "coveredAyahs": 2,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 84,
+          "surahName": "La déchirure",
+          "totalAyahs": 25,
+          "coveredAyahs": 2,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 89,
+          "surahName": "L'aube",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 94,
+          "surahName": "L'ouverture",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 96,
+          "surahName": "L'adhérence",
+          "totalAyahs": 19,
+          "coveredAyahs": 1,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 98,
+          "surahName": "La preuve",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 107,
+          "surahName": "L'entraide",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        }
+      ],
+      "error": null
+    },
+    "boundary_plus_1": {
+      "inputCount": 251,
+      "distinctCount": 251,
+      "status": "ok",
+      "result": [
+        {
+          "surahNumber": 1,
+          "surahName": "L'ouverture",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 2,
+          "surahName": "La vache",
+          "totalAyahs": 286,
+          "coveredAyahs": 89,
+          "coveragePercent": 31
+        },
+        {
+          "surahNumber": 3,
+          "surahName": "La famille de 'imran",
+          "totalAyahs": 200,
+          "coveredAyahs": 52,
+          "coveragePercent": 26
+        },
+        {
+          "surahNumber": 4,
+          "surahName": "Les femmes",
+          "totalAyahs": 176,
+          "coveredAyahs": 51,
+          "coveragePercent": 29
+        },
+        {
+          "surahNumber": 5,
+          "surahName": "La table servie",
+          "totalAyahs": 120,
+          "coveredAyahs": 47,
+          "coveragePercent": 39
+        },
+        {
+          "surahNumber": 6,
+          "surahName": "Les bestiaux",
+          "totalAyahs": 165,
+          "coveredAyahs": 19,
+          "coveragePercent": 12
+        },
+        {
+          "surahNumber": 7,
+          "surahName": "Al-A'raf",
+          "totalAyahs": 206,
+          "coveredAyahs": 31,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 8,
+          "surahName": "Le butin",
+          "totalAyahs": 75,
+          "coveredAyahs": 30,
+          "coveragePercent": 40
+        },
+        {
+          "surahNumber": 9,
+          "surahName": "Le repentir",
+          "totalAyahs": 129,
+          "coveredAyahs": 41,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 10,
+          "surahName": "Jonas",
+          "totalAyahs": 109,
+          "coveredAyahs": 15,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 11,
+          "surahName": "Houd",
+          "totalAyahs": 123,
+          "coveredAyahs": 18,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 12,
+          "surahName": "Joseph",
+          "totalAyahs": 111,
+          "coveredAyahs": 22,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 13,
+          "surahName": "Le tonnerre",
+          "totalAyahs": 43,
+          "coveredAyahs": 7,
+          "coveragePercent": 16
+        },
+        {
+          "surahNumber": 14,
+          "surahName": "Abraham",
+          "totalAyahs": 52,
+          "coveredAyahs": 12,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 15,
+          "surahName": "Al-Hijr",
+          "totalAyahs": 99,
+          "coveredAyahs": 6,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 16,
+          "surahName": "Les abeilles",
+          "totalAyahs": 128,
+          "coveredAyahs": 24,
+          "coveragePercent": 19
+        },
+        {
+          "surahNumber": 17,
+          "surahName": "Le voyage nocturne",
+          "totalAyahs": 111,
+          "coveredAyahs": 17,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 18,
+          "surahName": "La caverne",
+          "totalAyahs": 110,
+          "coveredAyahs": 12,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 19,
+          "surahName": "Marie",
+          "totalAyahs": 98,
+          "coveredAyahs": 4,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 20,
+          "surahName": "Ta-Ha",
+          "totalAyahs": 135,
+          "coveredAyahs": 4,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 21,
+          "surahName": "Les prophètes",
+          "totalAyahs": 112,
+          "coveredAyahs": 5,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 22,
+          "surahName": "Le pèlerinage",
+          "totalAyahs": 78,
+          "coveredAyahs": 28,
+          "coveragePercent": 36
+        },
+        {
+          "surahNumber": 23,
+          "surahName": "Les croyants",
+          "totalAyahs": 118,
+          "coveredAyahs": 6,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 24,
+          "surahName": "La lumière",
+          "totalAyahs": 64,
+          "coveredAyahs": 18,
+          "coveragePercent": 28
+        },
+        {
+          "surahNumber": 25,
+          "surahName": "Le discernement",
+          "totalAyahs": 77,
+          "coveredAyahs": 4,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 26,
+          "surahName": "Les poètes",
+          "totalAyahs": 227,
+          "coveredAyahs": 14,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 27,
+          "surahName": "Les fourmis",
+          "totalAyahs": 93,
+          "coveredAyahs": 13,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 28,
+          "surahName": "Le récit",
+          "totalAyahs": 88,
+          "coveredAyahs": 11,
+          "coveragePercent": 13
+        },
+        {
+          "surahNumber": 29,
+          "surahName": "L'araignée",
+          "totalAyahs": 69,
+          "coveredAyahs": 17,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 30,
+          "surahName": "Les romains",
+          "totalAyahs": 60,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 31,
+          "surahName": "Louqman",
+          "totalAyahs": 34,
+          "coveredAyahs": 16,
+          "coveragePercent": 47
+        },
+        {
+          "surahNumber": 32,
+          "surahName": "La prosternation",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 33,
+          "surahName": "Les coalisés",
+          "totalAyahs": 73,
+          "coveredAyahs": 25,
+          "coveragePercent": 34
+        },
+        {
+          "surahNumber": 34,
+          "surahName": "Saba'",
+          "totalAyahs": 54,
+          "coveredAyahs": 5,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 35,
+          "surahName": "Le Créateur",
+          "totalAyahs": 45,
+          "coveredAyahs": 12,
+          "coveragePercent": 27
+        },
+        {
+          "surahNumber": 36,
+          "surahName": "Ya-Sin",
+          "totalAyahs": 83,
+          "coveredAyahs": 3,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 37,
+          "surahName": "Les rangés",
+          "totalAyahs": 182,
+          "coveredAyahs": 4,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 38,
+          "surahName": "Sad",
+          "totalAyahs": 88,
+          "coveredAyahs": 5,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 39,
+          "surahName": "Les groupes",
+          "totalAyahs": 75,
+          "coveredAyahs": 17,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 40,
+          "surahName": "Le Pardonneur",
+          "totalAyahs": 85,
+          "coveredAyahs": 9,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 41,
+          "surahName": "Les versets explicites",
+          "totalAyahs": 54,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 42,
+          "surahName": "La concertation",
+          "totalAyahs": 53,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 43,
+          "surahName": "L'ornement",
+          "totalAyahs": 89,
+          "coveredAyahs": 8,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 44,
+          "surahName": "La fumée",
+          "totalAyahs": 59,
+          "coveredAyahs": 4,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 46,
+          "surahName": "Al-Ahqaf",
+          "totalAyahs": 35,
+          "coveredAyahs": 7,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 47,
+          "surahName": "Mouhammad",
+          "totalAyahs": 38,
+          "coveredAyahs": 12,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 48,
+          "surahName": "La victoire éclatante",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 49,
+          "surahName": "Les appartements",
+          "totalAyahs": 18,
+          "coveredAyahs": 10,
+          "coveragePercent": 56
+        },
+        {
+          "surahNumber": 50,
+          "surahName": "Qaf",
+          "totalAyahs": 45,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 51,
+          "surahName": "Qui éparpillent",
+          "totalAyahs": 60,
+          "coveredAyahs": 5,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 52,
+          "surahName": "Le mont At-Tour",
+          "totalAyahs": 49,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 53,
+          "surahName": "L'étoile",
+          "totalAyahs": 62,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 54,
+          "surahName": "La lune",
+          "totalAyahs": 55,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 55,
+          "surahName": "Le Tout Miséricordieux",
+          "totalAyahs": 78,
+          "coveredAyahs": 2,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 57,
+          "surahName": "Le fer",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 58,
+          "surahName": "La discussion",
+          "totalAyahs": 22,
+          "coveredAyahs": 12,
+          "coveragePercent": 55
+        },
+        {
+          "surahNumber": 59,
+          "surahName": "L'exode",
+          "totalAyahs": 24,
+          "coveredAyahs": 8,
+          "coveragePercent": 33
+        },
+        {
+          "surahNumber": 60,
+          "surahName": "L'éprouvée",
+          "totalAyahs": 13,
+          "coveredAyahs": 6,
+          "coveragePercent": 46
+        },
+        {
+          "surahNumber": 61,
+          "surahName": "Le rang",
+          "totalAyahs": 14,
+          "coveredAyahs": 1,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 62,
+          "surahName": "Le vendredi",
+          "totalAyahs": 11,
+          "coveredAyahs": 2,
+          "coveragePercent": 18
+        },
+        {
+          "surahNumber": 63,
+          "surahName": "Les hypocrites",
+          "totalAyahs": 11,
+          "coveredAyahs": 5,
+          "coveragePercent": 45
+        },
+        {
+          "surahNumber": 64,
+          "surahName": "La grande perte",
+          "totalAyahs": 18,
+          "coveredAyahs": 4,
+          "coveragePercent": 22
+        },
+        {
+          "surahNumber": 65,
+          "surahName": "Le divorce",
+          "totalAyahs": 12,
+          "coveredAyahs": 7,
+          "coveragePercent": 58
+        },
+        {
+          "surahNumber": 66,
+          "surahName": "L'interdiction",
+          "totalAyahs": 12,
+          "coveredAyahs": 2,
+          "coveragePercent": 17
+        },
+        {
+          "surahNumber": 68,
+          "surahName": "La plume",
+          "totalAyahs": 52,
+          "coveredAyahs": 3,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 69,
+          "surahName": "L'inéluctable",
+          "totalAyahs": 52,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 70,
+          "surahName": "Les voies d'ascension",
+          "totalAyahs": 44,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 71,
+          "surahName": "Noé",
+          "totalAyahs": 28,
+          "coveredAyahs": 1,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 72,
+          "surahName": "Les djinns",
+          "totalAyahs": 28,
+          "coveredAyahs": 3,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 73,
+          "surahName": "L'enveloppé",
+          "totalAyahs": 20,
+          "coveredAyahs": 3,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 74,
+          "surahName": "Celui qui se couvre",
+          "totalAyahs": 56,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 75,
+          "surahName": "La résurrection",
+          "totalAyahs": 40,
+          "coveredAyahs": 2,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 76,
+          "surahName": "L'homme",
+          "totalAyahs": 31,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 83,
+          "surahName": "Les fraudeurs",
+          "totalAyahs": 36,
+          "coveredAyahs": 2,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 84,
+          "surahName": "La déchirure",
+          "totalAyahs": 25,
+          "coveredAyahs": 2,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 89,
+          "surahName": "L'aube",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 94,
+          "surahName": "L'ouverture",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 96,
+          "surahName": "L'adhérence",
+          "totalAyahs": 19,
+          "coveredAyahs": 1,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 98,
+          "surahName": "La preuve",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 107,
+          "surahName": "L'entraide",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        }
+      ],
+      "error": null
+    },
+    "large_multichunk": {
+      "inputCount": 500,
+      "distinctCount": 500,
+      "status": "error",
+      "result": null,
+      "error": "word_occurrences : TypeError: fetch failed"
+    },
+    "duplicated_input": {
+      "inputCount": 500,
+      "distinctCount": 250,
+      "status": "ok",
+      "result": [
+        {
+          "surahNumber": 1,
+          "surahName": "L'ouverture",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 2,
+          "surahName": "La vache",
+          "totalAyahs": 286,
+          "coveredAyahs": 89,
+          "coveragePercent": 31
+        },
+        {
+          "surahNumber": 3,
+          "surahName": "La famille de 'imran",
+          "totalAyahs": 200,
+          "coveredAyahs": 52,
+          "coveragePercent": 26
+        },
+        {
+          "surahNumber": 4,
+          "surahName": "Les femmes",
+          "totalAyahs": 176,
+          "coveredAyahs": 51,
+          "coveragePercent": 29
+        },
+        {
+          "surahNumber": 5,
+          "surahName": "La table servie",
+          "totalAyahs": 120,
+          "coveredAyahs": 47,
+          "coveragePercent": 39
+        },
+        {
+          "surahNumber": 6,
+          "surahName": "Les bestiaux",
+          "totalAyahs": 165,
+          "coveredAyahs": 19,
+          "coveragePercent": 12
+        },
+        {
+          "surahNumber": 7,
+          "surahName": "Al-A'raf",
+          "totalAyahs": 206,
+          "coveredAyahs": 31,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 8,
+          "surahName": "Le butin",
+          "totalAyahs": 75,
+          "coveredAyahs": 30,
+          "coveragePercent": 40
+        },
+        {
+          "surahNumber": 9,
+          "surahName": "Le repentir",
+          "totalAyahs": 129,
+          "coveredAyahs": 41,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 10,
+          "surahName": "Jonas",
+          "totalAyahs": 109,
+          "coveredAyahs": 15,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 11,
+          "surahName": "Houd",
+          "totalAyahs": 123,
+          "coveredAyahs": 18,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 12,
+          "surahName": "Joseph",
+          "totalAyahs": 111,
+          "coveredAyahs": 22,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 13,
+          "surahName": "Le tonnerre",
+          "totalAyahs": 43,
+          "coveredAyahs": 7,
+          "coveragePercent": 16
+        },
+        {
+          "surahNumber": 14,
+          "surahName": "Abraham",
+          "totalAyahs": 52,
+          "coveredAyahs": 12,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 15,
+          "surahName": "Al-Hijr",
+          "totalAyahs": 99,
+          "coveredAyahs": 6,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 16,
+          "surahName": "Les abeilles",
+          "totalAyahs": 128,
+          "coveredAyahs": 24,
+          "coveragePercent": 19
+        },
+        {
+          "surahNumber": 17,
+          "surahName": "Le voyage nocturne",
+          "totalAyahs": 111,
+          "coveredAyahs": 17,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 18,
+          "surahName": "La caverne",
+          "totalAyahs": 110,
+          "coveredAyahs": 12,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 19,
+          "surahName": "Marie",
+          "totalAyahs": 98,
+          "coveredAyahs": 4,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 20,
+          "surahName": "Ta-Ha",
+          "totalAyahs": 135,
+          "coveredAyahs": 4,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 21,
+          "surahName": "Les prophètes",
+          "totalAyahs": 112,
+          "coveredAyahs": 5,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 22,
+          "surahName": "Le pèlerinage",
+          "totalAyahs": 78,
+          "coveredAyahs": 28,
+          "coveragePercent": 36
+        },
+        {
+          "surahNumber": 23,
+          "surahName": "Les croyants",
+          "totalAyahs": 118,
+          "coveredAyahs": 6,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 24,
+          "surahName": "La lumière",
+          "totalAyahs": 64,
+          "coveredAyahs": 18,
+          "coveragePercent": 28
+        },
+        {
+          "surahNumber": 25,
+          "surahName": "Le discernement",
+          "totalAyahs": 77,
+          "coveredAyahs": 4,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 26,
+          "surahName": "Les poètes",
+          "totalAyahs": 227,
+          "coveredAyahs": 14,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 27,
+          "surahName": "Les fourmis",
+          "totalAyahs": 93,
+          "coveredAyahs": 13,
+          "coveragePercent": 14
+        },
+        {
+          "surahNumber": 28,
+          "surahName": "Le récit",
+          "totalAyahs": 88,
+          "coveredAyahs": 11,
+          "coveragePercent": 13
+        },
+        {
+          "surahNumber": 29,
+          "surahName": "L'araignée",
+          "totalAyahs": 69,
+          "coveredAyahs": 17,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 30,
+          "surahName": "Les romains",
+          "totalAyahs": 60,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 31,
+          "surahName": "Louqman",
+          "totalAyahs": 34,
+          "coveredAyahs": 16,
+          "coveragePercent": 47
+        },
+        {
+          "surahNumber": 32,
+          "surahName": "La prosternation",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 33,
+          "surahName": "Les coalisés",
+          "totalAyahs": 73,
+          "coveredAyahs": 25,
+          "coveragePercent": 34
+        },
+        {
+          "surahNumber": 34,
+          "surahName": "Saba'",
+          "totalAyahs": 54,
+          "coveredAyahs": 5,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 35,
+          "surahName": "Le Créateur",
+          "totalAyahs": 45,
+          "coveredAyahs": 12,
+          "coveragePercent": 27
+        },
+        {
+          "surahNumber": 36,
+          "surahName": "Ya-Sin",
+          "totalAyahs": 83,
+          "coveredAyahs": 3,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 37,
+          "surahName": "Les rangés",
+          "totalAyahs": 182,
+          "coveredAyahs": 4,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 38,
+          "surahName": "Sad",
+          "totalAyahs": 88,
+          "coveredAyahs": 5,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 39,
+          "surahName": "Les groupes",
+          "totalAyahs": 75,
+          "coveredAyahs": 17,
+          "coveragePercent": 23
+        },
+        {
+          "surahNumber": 40,
+          "surahName": "Le Pardonneur",
+          "totalAyahs": 85,
+          "coveredAyahs": 9,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 41,
+          "surahName": "Les versets explicites",
+          "totalAyahs": 54,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 42,
+          "surahName": "La concertation",
+          "totalAyahs": 53,
+          "coveredAyahs": 6,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 43,
+          "surahName": "L'ornement",
+          "totalAyahs": 89,
+          "coveredAyahs": 8,
+          "coveragePercent": 9
+        },
+        {
+          "surahNumber": 44,
+          "surahName": "La fumée",
+          "totalAyahs": 59,
+          "coveredAyahs": 4,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 46,
+          "surahName": "Al-Ahqaf",
+          "totalAyahs": 35,
+          "coveredAyahs": 7,
+          "coveragePercent": 20
+        },
+        {
+          "surahNumber": 47,
+          "surahName": "Mouhammad",
+          "totalAyahs": 38,
+          "coveredAyahs": 12,
+          "coveragePercent": 32
+        },
+        {
+          "surahNumber": 48,
+          "surahName": "La victoire éclatante",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 49,
+          "surahName": "Les appartements",
+          "totalAyahs": 18,
+          "coveredAyahs": 10,
+          "coveragePercent": 56
+        },
+        {
+          "surahNumber": 50,
+          "surahName": "Qaf",
+          "totalAyahs": 45,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 51,
+          "surahName": "Qui éparpillent",
+          "totalAyahs": 60,
+          "coveredAyahs": 5,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 52,
+          "surahName": "Le mont At-Tour",
+          "totalAyahs": 49,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 53,
+          "surahName": "L'étoile",
+          "totalAyahs": 62,
+          "coveredAyahs": 3,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 54,
+          "surahName": "La lune",
+          "totalAyahs": 55,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 55,
+          "surahName": "Le Tout Miséricordieux",
+          "totalAyahs": 78,
+          "coveredAyahs": 2,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 57,
+          "surahName": "Le fer",
+          "totalAyahs": 29,
+          "coveredAyahs": 7,
+          "coveragePercent": 24
+        },
+        {
+          "surahNumber": 58,
+          "surahName": "La discussion",
+          "totalAyahs": 22,
+          "coveredAyahs": 12,
+          "coveragePercent": 55
+        },
+        {
+          "surahNumber": 59,
+          "surahName": "L'exode",
+          "totalAyahs": 24,
+          "coveredAyahs": 8,
+          "coveragePercent": 33
+        },
+        {
+          "surahNumber": 60,
+          "surahName": "L'éprouvée",
+          "totalAyahs": 13,
+          "coveredAyahs": 6,
+          "coveragePercent": 46
+        },
+        {
+          "surahNumber": 61,
+          "surahName": "Le rang",
+          "totalAyahs": 14,
+          "coveredAyahs": 1,
+          "coveragePercent": 7
+        },
+        {
+          "surahNumber": 62,
+          "surahName": "Le vendredi",
+          "totalAyahs": 11,
+          "coveredAyahs": 2,
+          "coveragePercent": 18
+        },
+        {
+          "surahNumber": 63,
+          "surahName": "Les hypocrites",
+          "totalAyahs": 11,
+          "coveredAyahs": 5,
+          "coveragePercent": 45
+        },
+        {
+          "surahNumber": 64,
+          "surahName": "La grande perte",
+          "totalAyahs": 18,
+          "coveredAyahs": 4,
+          "coveragePercent": 22
+        },
+        {
+          "surahNumber": 65,
+          "surahName": "Le divorce",
+          "totalAyahs": 12,
+          "coveredAyahs": 7,
+          "coveragePercent": 58
+        },
+        {
+          "surahNumber": 66,
+          "surahName": "L'interdiction",
+          "totalAyahs": 12,
+          "coveredAyahs": 2,
+          "coveragePercent": 17
+        },
+        {
+          "surahNumber": 68,
+          "surahName": "La plume",
+          "totalAyahs": 52,
+          "coveredAyahs": 3,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 69,
+          "surahName": "L'inéluctable",
+          "totalAyahs": 52,
+          "coveredAyahs": 2,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 70,
+          "surahName": "Les voies d'ascension",
+          "totalAyahs": 44,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 71,
+          "surahName": "Noé",
+          "totalAyahs": 28,
+          "coveredAyahs": 1,
+          "coveragePercent": 4
+        },
+        {
+          "surahNumber": 72,
+          "surahName": "Les djinns",
+          "totalAyahs": 28,
+          "coveredAyahs": 3,
+          "coveragePercent": 11
+        },
+        {
+          "surahNumber": 73,
+          "surahName": "L'enveloppé",
+          "totalAyahs": 20,
+          "coveredAyahs": 3,
+          "coveragePercent": 15
+        },
+        {
+          "surahNumber": 74,
+          "surahName": "Celui qui se couvre",
+          "totalAyahs": 56,
+          "coveredAyahs": 1,
+          "coveragePercent": 2
+        },
+        {
+          "surahNumber": 75,
+          "surahName": "La résurrection",
+          "totalAyahs": 40,
+          "coveredAyahs": 2,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 76,
+          "surahName": "L'homme",
+          "totalAyahs": 31,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 83,
+          "surahName": "Les fraudeurs",
+          "totalAyahs": 36,
+          "coveredAyahs": 2,
+          "coveragePercent": 6
+        },
+        {
+          "surahNumber": 84,
+          "surahName": "La déchirure",
+          "totalAyahs": 25,
+          "coveredAyahs": 2,
+          "coveragePercent": 8
+        },
+        {
+          "surahNumber": 89,
+          "surahName": "L'aube",
+          "totalAyahs": 30,
+          "coveredAyahs": 1,
+          "coveragePercent": 3
+        },
+        {
+          "surahNumber": 94,
+          "surahName": "L'ouverture",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 96,
+          "surahName": "L'adhérence",
+          "totalAyahs": 19,
+          "coveredAyahs": 1,
+          "coveragePercent": 5
+        },
+        {
+          "surahNumber": 98,
+          "surahName": "La preuve",
+          "totalAyahs": 8,
+          "coveredAyahs": 2,
+          "coveragePercent": 25
+        },
+        {
+          "surahNumber": 107,
+          "surahName": "L'entraide",
+          "totalAyahs": 7,
+          "coveredAyahs": 1,
+          "coveragePercent": 14
+        }
+      ],
+      "error": null
+    },
+    "no_occurrences": {
+      "inputCount": 1,
+      "distinctCount": 1,
+      "status": "ok",
+      "result": [],
+      "error": null
+    }
+  }
+}

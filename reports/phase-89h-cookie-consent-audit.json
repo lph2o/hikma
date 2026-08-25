@@ -1,0 +1,185 @@
+{
+  "phase": "89H",
+  "title": "COOKIE CONSENT / PRIVACY UX & COMPLIANCE AUDIT",
+  "verdict": "PHASE_89H_AUDIT_COMPLETE_IMPLEMENTATION_RECOMMENDED",
+  "database_writes": 0,
+  "scope": "AUDIT + CONCEPTION uniquement — aucun fichier de production modifié, aucun cookie ajouté, aucune page légale modifiée",
+  "scenario": "A",
+  "scenario_detail": "Hikma n'utilise AUCUN traceur nécessitant un consentement (uniquement le cookie de session d'authentification, strictement nécessaire). Un gros CMP marketing serait inutile : une notice informative minimale suffit (sous validation juridique), avec un store de consentement versionné prêt pour l'avenir.",
+  "technical_audit": {
+    "code_scan": "Aucun usage de localStorage, sessionStorage, indexedDB, document.cookie, analytics, tracking, gtag, pixel ou CMP dans app/lib/components (grep exhaustif — seuls faux positifs lexicaux : 'progress', 'plausible', 'segment').",
+    "dependencies": "Aucune dépendance analytics/tracking/consent dans package.json (scan automatisé).",
+    "scripts_tiers": "Aucun script tiers, aucune iframe, aucun embed (vérifié en 89G : script-src 'self' uniquement).",
+    "fonts": "Poppins/Amiri auto-hébergées via next/font/google au build — aucune requête Google au runtime.",
+    "browser_runtime": "BROWSER_RUNTIME = NOT_AVAILABLE (aucun navigateur E2E) — inventaire confirmé par lecture du code + vérifications réseau directes (curl)."
+  },
+  "cookies": [
+    {
+      "name": "sb-<project-ref>-auth-token",
+      "source": "@supabase/ssr (createBrowserClient / createServerClient)",
+      "purpose": "Session d'authentification (JWT access + refresh) — persistance de la connexion, rafraîchissement de session, accès aux routes privées",
+      "duration": "maxAge 400 jours (défaut @supabase/ssr, non prorogé automatiquement par Hikma)",
+      "party": "First-party",
+      "attributes": "path=/, sameSite=lax, httpOnly=false (défauts @supabase/ssr v0.12.4 — httpOnly=false requis pour le client navigateur)",
+      "necessary": true,
+      "consent": "NON — strictement nécessaire à la fourniture du service d'authentification (exemption Art. 82 Loi Informatique et Libertés)",
+      "evidence": "lib/supabase/server.ts + client.ts (createServerClient/createBrowserClient sans cookieOptions custom) ; DEFAULT_COOKIE_OPTIONS dans node_modules/@supabase/ssr/dist/main/utils/constants.js"
+    }
+  ],
+  "cookies_total": 1,
+  "storage": [
+    {
+      "type": "localStorage/sessionStorage/indexedDB",
+      "usage": "AUCUN dans le code applicatif",
+      "risk": "Aucun"
+    }
+  ],
+  "third_party_services": [
+    {
+      "service": "Supabase (auth + REST)",
+      "domain": "NEXT_PUBLIC_SUPABASE_URL",
+      "data": "Requêtes API authentifiées (données de compte/progression)",
+      "cookies": "Cookie first-party sb-<ref>-auth-token uniquement (aucun cookie tiers Supabase)",
+      "tracking": "Aucun",
+      "necessary": true,
+      "consent": "NON requis",
+      "license": "CGU Supabase (hébergeur, DPA disponible)"
+    },
+    {
+      "service": "Al Quran Cloud — récitations audio",
+      "domain": "cdn.islamic.network",
+      "data": "Aucune donnée personnelle (lecture média via <audio>)",
+      "cookies": "AUCUN — vérifié au runtime : réponse sans header Set-Cookie (content-type audio/mpeg, cache-control 6048000)",
+      "tracking": "Aucun",
+      "necessary": true,
+      "consent": "NON requis (ressource technique, pas un traceur)",
+      "license": "Usage éducatif autorisé ; usage commercial NOT_VERIFIED (R-009 — distinct des cookies)"
+    },
+    {
+      "service": "Google Fonts",
+      "domain": "aucun (auto-hébergé)",
+      "data": "Aucune",
+      "cookies": "Aucun",
+      "tracking": "Aucun",
+      "necessary": false,
+      "consent": "Sans objet",
+      "license": "OFL (auto-hébergé)"
+    }
+  ],
+  "supabase_auth": {
+    "cookies": "1 cookie first-party de session : sb-<project-ref>-auth-token",
+    "finalite": "Authentification uniquement — sans lui, aucune session, aucune route privée, aucun progrès persistant",
+    "necessary": true,
+    "consent": "Exempté de consentement (strictement nécessaire)",
+    "note": "httpOnly=false est le défaut @supabase/ssr (le client navigateur lit/écrit le cookie pour le refresh) — standard, non un défaut de sécurité"
+  },
+  "audio": {
+    "domains": "cdn.islamic.network (lecture <audio> uniquement)",
+    "cookies": "Aucun (vérifié : pas de Set-Cookie)",
+    "tracking": "Aucun",
+    "license": "R-009 reste NOT_VERIFIED — question juridique distincte des cookies, hors périmètre 89H"
+  },
+  "future_monitoring": {
+    "note": "Prospectif uniquement — RIEN n'est ajouté.",
+    "analytics_privacy_friendly": "Plausible / PostHog (mode EU, sans cookie ou avec cookie de 13 mois max) / Matomo auto-hébergé peuvent entrer dans l'exemption CNIL mesure d'audience (Art. 82) si configurés : finalité limitée à l'audience, données anonymes, pas de recoupement, pas de suivi cross-site, durée ≤ 13 mois, conservation ≤ 25 mois (CNIL, page mesure d'audience, 04/07/2025).",
+    "analytics_consent_requis": "Google Analytics standard (recoupement, transferts hors UE sans garanties) et tout outil de marketing/pixel nécessiteraient un consentement explicite et un CMP.",
+    "consequence_cmp": "Si un outil consent-requis est ajouté un jour, le store de consentement versionné prévu en 89H suffira (architecture future-proof) — pas de réécriture."
+  },
+  "legal_analysis": {
+    "base_legale_cookie_session": "Exemption de consentement pour les traceurs strictement nécessaires à la fourniture du service demandé par l'utilisateur — Art. 82 Loi Informatique et Libertés / Art. 5(3) ePrivacy.",
+    "obligation_information": "Même pour les cookies exemptés, les utilisateurs doivent être INFORMÉS de leur dépôt (information préalable) — d'où la recommandation d'une notice informative minimale + lien vers /privacy.",
+    "regle_equivalence": "Si un jour un consentement est requis : refuser doit être aussi simple qu'accepter (CNIL, lignes directrices modificatives 2020 ; CNIL 'que dit la loi').",
+    "dark_patterns": "Interdits : asymétrie acceptation/refus, refus caché, poursuite de navigation = consentement (CJUE — Planet49).",
+    "sources": [
+      { "source": "CNIL — Cookies et traceurs : que dit la loi ?", "url": "https://www.cnil.fr/fr/cookies-et-autres-traceurs/que-dit-la-loi", "date": "2020-09-29" },
+      { "source": "CNIL — Lignes directrices modificatives et recommandation", "url": "https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies/lignes-directrices-modificatives-et-recommandation", "date": "2020-09-29" },
+      { "source": "CNIL — Cookies : solutions pour les outils de mesure d'audience (conditions d'exemption)", "url": "https://www.cnil.fr/fr/cookies-solutions-pour-les-outils-de-mesure-daudience", "date": "2025-07-04" },
+      { "source": "EDPB — Guidelines 2/2023 Technical Scope of Art. 5(3) ePrivacy (final)", "url": "https://www.edpb.europa.eu/documents/guideline/guidelines-22023-on-technical-scope-of-art-53-of-eprivacy-directive_en", "date": "2024-10" }
+    ],
+    "disclaimer": "Analyse documentaire, pas un avis juridique définitif. À faire valider par un juriste avant mise en ligne publique."
+  },
+  "ux_benchmark": {
+    "method": "Analyse des patterns professionnels reconnus (OneTrust, Usercentrics, Cookiebot, Didomi, Axeptio, Osano) et des exigences CNIL.",
+    "patterns_observes": {
+      "floating_card": "Carte flottante en coin (desktop) — discrète, premium, souvent utilisée par les sites éditoriaux haut de gamme (Axeptio).",
+      "bottom_sheet": "Panneau bas (mobile) — thumb-friendly, iOS/Android natifs (Usercentrics, Didomi).",
+      "centered_modal": "Modal centré — institutionnel, fort engagement (OneTrust, Cookiebot).",
+      "dark_patterns_a_eviter": "Bouton accepter surdimensionné/doré, refus en petit lien gris, refus derrière 'Personnaliser', re-demande agressive, wording ambigu ('OK', 'Continuer', 'Je comprends')."
+    },
+    "forces_faiblesses": [
+      { "solution": "Floating card (desktop)", "forces": "Discrétion, premium, ne bloque pas la lecture", "faiblesses": "Risque de non-découverte sur petits écrans", "mobile": "Bof — préférer bottom sheet" },
+      { "solution": "Bottom sheet (mobile)", "forces": "Ergonomie pouce, hauteur naturelle", "faiblesses": "Peut couvrir le contenu en portrait", "mobile": "Excellent" },
+      { "solution": "Modal centré", "forces": "Clarté, sérieux institutionnel", "faiblesses": "Interruption forte, peut sembler lourde si inutile", "mobile": "Correct si scroll interne" }
+    ]
+  },
+  "hikma_concept": {
+    "recommended": "Concept A/B hybride — notice informative minimale",
+    "detail": "Scénario A : AUCUN traceur à consentement. La solution honnête n'est pas un CMP mais une NOTICE INFORMATIVE premium à un niveau unique : 'Hikma utilise uniquement un cookie de session nécessaire à ton compte. Nous ne déposons aucun cookie publicitaire ni traceur.' + boutons 'Comprendre' (→ /privacy) et 'Fermer'. Aucun accept/refuser requis.",
+    "future_proof": "Le composant embarque dès le départ un store de consentement versionné (localStorage clé hikma:consent:v1, jamais lu avant choix si un jour nécessaire) + catégories prêtes (necessary always-on / audience / external content) pour que V2 (analytics exempté), V3 (monétisation), V4 (marketing) n'exigent pas de réécriture.",
+    "direction_artistique": "Tokens existants : ivory/cream surfaces, teal pour les actions, gold en micro-accent de marque uniquement (jamais pour hiérarchiser acceptation). Poppins, rayons doux existants, ombres diffuses.",
+    "gold_rule": "GOLD n'est PAS utilisé pour rendre 'Accepter' attrayant — en scénario A il n'y a d'ailleurs ni accepter ni refuser.",
+    "buttons": "Hiérarchie égale si un jour CMP : 'Tout refuser' / 'Personnaliser' / 'Tout accepter' — même style, même taille, contraste AA, cibles ≥ 44px.",
+    "mobile": "Bottom sheet (safe-area insets, scroll interne, pas de clavier bloquant).",
+    "animation": "200–300 ms, fade + translate léger, aucun bounce, prefers-reduced-motion respecté.",
+    "retrait": "Lien discret mais visible dans le footer de la landing ('Confidentialité') + page /privacy — le store versionné permet la modification à tout moment.",
+    "microcopy": {
+      "titres": [
+        "Ta vie privée, simplement",
+        "Un seul cookie, pour ton compte",
+        "Hikma n'utilise pas de traceurs"
+      ],
+      "descriptions": [
+        "Hikma dépose uniquement le cookie de session nécessaire à ta connexion. Aucun cookie publicitaire, aucun traqueur, aucune revente de données.",
+        "Ton compte et ta progression ne reposent que sur un cookie de session indispensable. Nous ne collectons rien d'autre sur ton appareil.",
+        "Pas de publicité, pas de tracking : Hikma se limite au strict nécessaire pour te connecter et enregistrer ta progression."
+      ],
+      "boutons": ["Comprendre", "Voir la politique", "Fermer"]
+    }
+  },
+  "accessibility": {
+    "spec": "rôle dialog, aria-labelledby/describedby, focus trap si modal, fermeture clavier (Esc), focus visible, ordre de tabulation logique, contraste WCAG AA, cibles tactiles ≥ 44px, prefers-reduced-motion, lecteurs d'écran (libellés explicites)."
+  },
+  "mobile": {
+    "spec": "bottom sheet avec safe-areas iOS/Android, scroll interne, largeurs 320–430px sans overflow, orientation portrait/paysage, RTL."
+  },
+  "rtl": {
+    "spec": "Miroir complet : icônes, flèches, alignements, ordre des boutons, bottom sheet — vérification LTR/RTL dès la conception."
+  },
+  "dark_pattern_review": {
+    "result": "PASS — le concept recommandé (scénario A) ne comporte ni acceptation, ni refus, ni hiérarchie manipulatrice ; le gold reste décoratif ; aucun wording ambigu.",
+    "obligations_futures": "Si un CMP est un jour requis : refus au même niveau que l'acceptation (1 clic), pas de 'Continuer' = consentement, pas de re-demande agressive."
+  },
+  "risks": [
+    { "id": "RISK-89H-001", "severity": "LOW", "detail": "httpOnly=false sur le cookie de session (défaut @supabase/ssr) — XSS = vol de session ; atténué par la CSP (script-src 'self') et l'absence de contenu utilisateur non échappé. Surveiller." },
+    { "id": "RISK-89H-002", "severity": "NOTE", "detail": "maxAge 400 jours du cookie de session — durée par défaut @supabase/ssr, acceptable pour un cookie nécessaire." }
+  ],
+  "not_verified": [
+    "Comportement navigateur réel (aucun E2E) — inventaire basé sur lecture du code + vérifications réseau.",
+    "Validation juridique professionnelle de la classification (avis légal requis avant mise en ligne).",
+    "Politique cookie séparée / page dédiée — non nécessaire en scénario A (la notice + /privacy suffisent), à réévaluer si un traceur est ajouté."
+  ],
+  "adversarial_review": {
+    "q1_cookie_invente": "NON — un seul cookie, identifié dans @supabase/ssr (constants.js + docs).",
+    "q2_tracker_invente": "NON — aucun tracker dans le code ni les dépendances.",
+    "q3_storage_cookie_sans_preuve": "NON — aucun localStorage/sessionStorage/indexedDB dans le code.",
+    "q4_tout_cookie_consentement": "NON — cookie de session classé strictement nécessaire (exemption Art. 82).",
+    "q5_supabase_oublie": "NON — audité (cookie, attributs, finalité).",
+    "q6_tiers_oublies": "NON — Supabase, CDN audio (Set-Cookie vérifié absent), fonts auto-hébergées.",
+    "q7_mobile": "NON — bottom sheet spécifié.",
+    "q8_rtl": "NON — miroir complet spécifié.",
+    "q9_retrait": "NON — store versionné + accès footer/privacy.",
+    "q10_dark_pattern": "NON — scénario A sans acceptation ; règles CNIL documentées pour l'avenir.",
+    "q11_gold_manipulation": "NON — gold réservé à la décoration.",
+    "q12_licence_consentement_confondus": "NON — R-009 (licence audio) séparé explicitement.",
+    "q13_affirmation_juridique_sans_source": "NON — 4 sources officielles citées (CNIL ×3, EDPB).",
+    "q14_test_navigateur_fabrique": "NON — BROWSER_RUNTIME = NOT_AVAILABLE déclaré.",
+    "q15_hors_perimetre": "NON — aucun fichier de production modifié."
+  },
+  "recommendations": [
+    "Phase d'implémentation 89H-I : notice informative premium à 1 niveau (scénario A) + store de consentement versionné hikma:consent:v1 + catégories prêtes — ~1 composant client + 1 test.",
+    "Ajouter au /privacy la mention explicite du cookie de session (info préalable obligatoire même pour cookies nécessaires).",
+    "Avant tout ajout d'analytics : choisir une solution configurable dans l'exemption CNIL (finalité limitée, anonyme, ≤13 mois, pas de recoupement) et la documenter.",
+    "Faire valider la classification par un juriste avant lancement public."
+  ],
+  "next_phase": "PHASE_89H_I — IMPLEMENTATION notice informative premium + store de consentement versionné (séparée, basée exclusivement sur ces conclusions) ; puis PHASE_89I_BROWSER_E2E"
+}

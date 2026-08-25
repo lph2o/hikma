@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- script CLI one-shot legacy : types Supabase pragmatiques */
 /**
  * Phase 88E-B repair — Batch MASAQ updates via SQL function.
  * Faster than 7,585 individual UPDATE calls.

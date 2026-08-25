@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LessonPlayer } from "@/components/learn/lesson-player";
@@ -40,6 +41,32 @@ import { Mascot } from "@/components/ui/mascot";
 import { BookOpenIcon } from "lucide-react";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  try {
+    const client = await createClient();
+    const { data } = await client
+      .from("lessons")
+      .select("title")
+      .eq("slug", slug)
+      .limit(1);
+    const title = (data?.[0] as { title: string } | undefined)?.title;
+    return {
+      title: title ? `${title} — leçon` : "Leçon",
+      description: title
+        ? `Une leçon guidée pour apprendre le sens des mots du Coran : ${title}.`
+        : "Une leçon guidée pour apprendre le sens des mots du Coran avec Hikma.",
+      alternates: { canonical: `/learn/${slug}` },
+    };
+  } catch {
+    return { title: "Leçon" };
+  }
+}
 
 export default async function LessonPage({
   params,

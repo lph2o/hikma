@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRightIcon, CheckCircle2Icon, LockKeyholeIcon } from "lucide-react";
 import { ArabicText } from "@/components/ui/arabic-text";
@@ -23,6 +24,13 @@ import { createClient } from "@/lib/supabase/server";
 import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Sourates du Coran",
+  description:
+    "Parcours les sourates du Coran et apprends le sens de leurs mots, verset par verset, avec Hikma.",
+  alternates: { canonical: "/surahs" },
+};
 
 type ProgressEntry = { item: SurahCatalogItem; progress: SurahProgress | null };
 

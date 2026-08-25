@@ -1,0 +1,81 @@
+{
+  "phase": "89M",
+  "name": "INPUT_SECURITY_XSS_HARDENING",
+  "verdict": "PHASE_89M_COMPLETE",
+  "database_writes": 0,
+  "baseline": { "build": "PASS", "typecheck": "PASS", "lint": "PASS (0 erreur)", "tests_before": 1046 },
+  "xss_reflected": 0,
+  "xss_stored": 0,
+  "dom_xss": 0,
+  "html_injection": 0,
+  "unsafe_url_injection": 0,
+  "server_validation_gaps": 0,
+  "dangerous_dom_sinks": 0,
+  "secret_exposure": 0,
+  "csp_regression": 0,
+  "pedagogical_regression": 0,
+  "inputs_audited": [
+    { "input": "réponse libre pédagogique (FORM_TO_MEANING / MEANING_TO_FORM)", "client": "value à state memory", "server": "validateAnswer/gradeFreeResponse (string pur)", "persisted": "JAMAIS — seul correct:boolean dans user_word_progress/review_items", "rendered": "ExerciseFeedback userAnswer/correctContent en React text", "context": "text", "risk": "AUCUN", "sink": "none" },
+    { "input": "retry d'écriture arabe (mini-review)", "client": "state memory", "server": "isArabicRewriteExact (string pur, non persistant)", "persisted": "JAMAIS", "rendered": "Ta réponse : {value} en React text", "context": "text", "risk": "AUCUN", "sink": "none" },
+    { "input": "displayName (onboarding + préférences)", "client": "maxLength=60", "server": "≤60 chars après trim", "persisted": "user_settings.display_name", "rendered": "Auto-échappé React text (saluer)", "context": "text", "risk": "AUCUN", "sink": "none" },
+    { "input": "email / password / reset (auth)", "client": "form", "server": "Supabase signIn/signUp/updateUser/resetPasswordForEmail + authErrorMessage (chaînes fixes)", "persisted": "Supabase Auth only", "rendered": "jamais réaffiché", "context": "n/a", "risk": "AUCUN", "sink": "none" },
+    { "input": "goal quotidien / reminder / timezone", "client": "input num/time", "server": "Number.isInteger>0 / regex HH:MM / timezone IANA", "persisted": "user_settings validation serveur", "rendered": "jamais en HTML", "context": "value", "risk": "AUCUN", "sink": "none" },
+    { "input": "observabilité (POST /observability)", "client": "window.onerror", "server": "sanitizeClientPayload (liste blanche, redaction cookies/query/tokens, 16KB cap, rate-limit)", "persisted": "logs stdout", "rendered": "n/a", "context": "json", "risk": "AUCUN", "sink": "none" },
+    { "input": "URL internes (slugs lesson/surah/mot)", "client": "render Link href", "server": "données DB uniquement (jamais d'input utilisateur dans l'URL)", "persisted": "n/a", "rendered": "href statique", "context": "attribute interne", "risk": "AUCUN", "sink": "aucune valeur utilisateur jamais en href" }
+  ],
+  "dangerous_sinks_search": [
+    "dangerouslySetInnerHTML", "innerHTML", "outerHTML", "insertAdjacentHTML", "document.write",
+    "eval", "new Function", "setTimeout(string)", "setInterval(string)", "window.open",
+    "textContent assignment", "javascript:", "data:", "react-markdown", "DOMPurify"
+  ],
+  "dangerous_sinks_found": [],
+  "threat_model": {
+    "xss_reflected": "Aucun chemin : aucune réponse utilisateur n'est réinjectée dans un sink HTML ; React text encoding seul.",
+    "xss_stored": "Aucun chemin : AUCUNE réponse libre n'est persistée (seul correct:boolean + wordId le sont). display_name ≤60 est réaffiché en React text.",
+    "dom_xss": "Aucun sink DOM : pas de innerHTML/textContent affecté, pas d'URL utilisateur en href/src.",
+    "url_injection": "Aucune valeur utilisateur n'atteint jamais href/src/router.push.",
+    "client_only_validation": "Aucun : toutes les préférences/objectifs/reminders validées côté serveur ; les réponses libres sont notées par le moteur pur (pas de bypass serveur pertinent — elles ne sont jamais persistées)."
+  },
+  "design_constraint": "Sécurité obtenue par ENCODAGE AU RENDU (React text) + validation serveur + sinks sûrs — PAS par filtrage des caractères spéciaux. Les réponses pédagogiques légitimes (accents, apostrophes, < >, arabe, diacritiques) restent pleinement fonctionnelles.",
+  "security": {
+    "csp_89g": "INCHANGÉE (lib/config/csp.ts non modifié en 89M ; aucun unsafe-eval prod, aucun wildcard)",
+    "secrets": "aucun",
+    "service_role_client": false,
+    "new_trackers": "aucun",
+    "new_cookies": "aucun",
+    "new_external": "aucun",
+    "dangerous_protocol_urls": "aucune"
+  },
+  "persistence": {
+    "free_text_answers": "NON persistées (jamais envoyées au serveur — restent en client memory, affichées éphémèrement)",
+    "display_name": "persisté ≤60 chars, réaffiché en React text",
+    "validation_server": "validateur enum sur onboarding/préférences, max 60 displayName, entier positif goal, HH:MM reminder, timezone IANA"
+  },
+  "tests_after": 1053,
+  "tests_added": 7,
+  "tests": {
+    "unit": "tests/input-security.test.ts (7 tests : injections inertes FR/AR, validateAnswer garde la réponse brute, isArabicRewriteExact littéral, apostrophe/chevrons/arabe légitimes)",
+    "build": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS (0 erreur)",
+    "browser_e2e": "NOT_VERIFIED (pas de navigateur réel — assertion par invariants pur de la chaîne de notation)",
+    "csp": "PASS (non touchée)"
+  },
+  "pedagogical_regressions": 0,
+  "security_regressions": 0,
+  "not_verified": [
+    "Comportement navigateur réel (rendu DOM) — pas d'E2E : l'invariant est couvert par test de la chaîne pure, React garantit l'encodage text par construction",
+    "Éventuels payloads exotiques/regex DoS dans gradeFreeResponse — non testés individuellement (volume de variantes illimité)"
+  ],
+  "risks": [
+    { "id": "RISK-89M-001", "severity": "NOTE", "desc": "Aucune limite de longueur côté serveur sur les réponses libres (l'input est un <input> texte, non nagligeable). Volume limité par la nature de l'exercice ; aucune persistance → pas de surface de stockage.", "evidence": "gradeFreeResponse sans clamp de longueur" }
+  ],
+  "discovered_not_in_scope": [
+    "DISC-89M-001 (NOTE) : display_name stocké en clair dans user_settings (identité nominale) — conforme /privacy, hors scope sécurité input"
+  ],
+  "recommendations": [
+    "Continuer à rendre toute donnée utilisateur en React text (jamais innerHTML/dangerouslySetInnerHTML)",
+    "Si un éditeur riche/Markdown est un jour ajouté : requérir alors un sanitizer HTML ciblé + source fiable — non nécessaire aujourd'hui"
+  ],
+  "next_phase": "PRODUCTION_DEPLOYMENT_PILOT"
+}

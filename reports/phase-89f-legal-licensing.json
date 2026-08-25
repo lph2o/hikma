@@ -1,0 +1,94 @@
+{
+  "phase": "89F",
+  "title": "LEGAL & LICENSING — R-006 + R-009",
+  "verdict": "PHASE_89F_COMPLETE",
+  "database_writes": 0,
+  "summary": {
+    "r006_legal": "RESOLVED (pages /privacy, /terms, /sources publiées, liens footer landing)",
+    "r009_audio_licensing": "DOCUMENTED — statut honnête NOT_VERIFIED affiché publiquement, aucune licence inventée",
+    "build": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "tests": "1008/1008 PASS"
+  },
+  "root_cause": {
+    "r006": "Aucune page légale ni attribution des sources : un visiteur ne savait pas quelles données étaient collectées ni d'où venaient les contenus.",
+    "r009": "L'audio des versets provient d'un CDN tiers (Al Quran Cloud) ; l'usage éducatif est autorisé mais l'usage commercial dépend des droits des récitateurs, jamais confirmés par écrit."
+  },
+  "changes": [
+    {
+      "file": "app/privacy/page.tsx",
+      "role": "Politique de confidentialité : données collectées (compte, préférences, progression), stockage Supabase, cookie de session unique, aucun analytics, tiers, conservation/suppression, droits."
+    },
+    {
+      "file": "app/terms/page.tsx",
+      "role": "Conditions d'utilisation : service pédagogique, compte, propriété intellectuelle, usage acceptable, limites de responsabilité."
+    },
+    {
+      "file": "app/sources/page.tsx",
+      "role": "Attribution des 9 sources (texte uthmani Tanzil, Hamidullah, Kazimirski PD, Sahih International, Piccardo, MASAQ CC BY 4.0, lexique éditorial Hikma, Al Quran Cloud audio, HF word audio) avec badges de statut honnêtes (Vérifié / À revoir / Non vérifié)."
+    },
+    {
+      "file": "components/app/legal-doc.tsx",
+      "role": "Coquille partagée des pages légales (logo, navigation croisée, indexables)."
+    },
+    {
+      "file": "components/app/landing.tsx",
+      "role": "Liens footer : Confidentialité, Conditions, Sources."
+    }
+  ],
+  "routes": {
+    "public": ["/privacy", "/terms", "/sources"]
+  },
+  "audio_licensing": {
+    "ayah_audio": {
+      "provider": "Al Quran Cloud (cdn.islamic.network)",
+      "reciter_default": "Al-Afasy",
+      "commercial_use": "NOT_VERIFIED — streaming/embedding éducatif autorisé ; droits des récitateurs non confirmés par écrit",
+      "status": "NOT_VERIFIED"
+    },
+    "word_audio": {
+      "provider": "Hugging Face — zaibihassan/Quranic-Word-By-Word-Audio-Data",
+      "license_declared": "Apache-2.0",
+      "provenance": "REVIEW_REQUIRED — provenance des enregistrements non divulguée",
+      "status": "REVIEW_REQUIRED"
+    }
+  },
+  "security": {
+    "no_invention": "Aucune licence déclarée comme valide sans preuve ; le statut Non vérifié est affiché publiquement sur /sources.",
+    "private_routes": "Protections 89B intactes."
+  },
+  "tests": {
+    "build": "PASS (exit 0)",
+    "typecheck": "PASS (0 erreur)",
+    "lint": "PASS (0 erreur)",
+    "vitest": "1008/1008 PASS (64 fichiers — aucun test modifié)",
+    "runtime_smoke": "PASS sur build production (port 3100) : /privacy 200, /terms 200, /sources 200 ; badges de statut rendus (Vérifié ×8, À revoir ×8, Non vérifié ×4) ; footer landing contient les 3 liens"
+  },
+  "e2e": {
+    "browser_e2e": "NOT_VERIFIED — aucun navigateur réel ; validation HTTP sur build production."
+  },
+  "regressions": "0 — aucun test modifié, aucune donnée modifiée.",
+  "not_verified": [
+    "Licence commerciale des récitations Al Quran Cloud (à confirmer par écrit avant toute monétisation).",
+    "Revue juridique professionnelle des textes (avis légal définitif hors périmètre).",
+    "Adresse e-mail de contact dédiée (canal actuel : issues du dépôt GitHub lph2o/hikma)."
+  ],
+  "discovered": [
+    {
+      "id": "DISC-003",
+      "detail": "Pas de suppression de compte en libre-service dans l'app (processus manuel via contact). Hors périmètre 89F, recommandé avant lancement commercial (RGPD)."
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-009-REMAINING",
+      "severity": "HIGH",
+      "detail": "Usage commercial de l'audio non confirmé — ne pas monétiser l'audio avant confirmation écrite ou remplacement du récitateur."
+    }
+  ],
+  "next_phase": {
+    "phase": "PHASE_89G_PRODUCTION_CONFIG",
+    "risks": ["R-007_Security_Headers"]
+  }
+}

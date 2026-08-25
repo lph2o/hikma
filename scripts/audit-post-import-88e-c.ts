@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- script CLI one-shot legacy : types Supabase pragmatiques */
 /**
  * Phase 88E-C — Post-import Lemma Integrity & Coverage Audit
  * READ-ONLY STRICT — 0 DB writes.

@@ -1,0 +1,128 @@
+{
+  "phase": "89N",
+  "name": "ADVERSARIAL_INPUT_APP_SECURITY",
+  "verdict": "PHASE_89N_AUDIT_COMPLETE",
+  "phase_type": "AUDIT + TESTS CIBLÉS (aucun correctif production nécessaire)",
+  "database_writes": 0,
+  "baseline": { "build": "PASS", "typecheck": "PASS", "lint": "PASS (0 erreur)", "tests_before": 1053 },
+  "attack_classes_audited": [
+    "Supabase/PostgREST injection",
+    "open redirect / URL manipulation",
+    "IDOR / authorization",
+    "payload exhaustion / ReDoS",
+    "log injection",
+    "rate limiting / abuse",
+    "path / dynamic param manipulation",
+    "stored/reflected/DOM XSS (2e revue indépendante)"
+  ],
+  "findings": [
+    {
+      "id": "89N-001",
+      "severity": "SAFE",
+      "title": "Injection Supabase/PostgREST",
+      "root_cause": "none",
+      "evidence": "Tous les .select() utilisent des chaînes de colonnes STATIQUES (queries.ts:778/1138, actions.ts:367, persistSkillAttempt, persistRetention). Aucun .rpc(), .or(), .and(), .ilike(), .like(), .filter() dynamique, aucun nom de colonne/table piloté par l'input. Les événements utilisateur (wordId) servent uniquement de valeurs .eq()/.in() encodées par PostgREST.",
+      "exploitability": "aucune",
+      "status": "SAFE"
+    },
+    {
+      "id": "89N-002",
+      "severity": "SAFE",
+      "title": "Open redirect",
+      "root_cause": "none",
+      "evidence": "Tous les redirect() sont des chemins internes littéraux (/login, /dashboard, /onboarding, /). Aucun redirectTo/callbackUrl/?next= utilisateur. Le seul URL dynamique (getSiteUrl) dérive de NEXT_PUBLIC_SITE_URL ou du header host serveur ; il ne redirige JAMAIS le client vers une URL d'attaque. reset-password : ?code= va uniquement dans exchangeCodeForSession puis replaceState; aucun reflet dans un href.",
+      "exploitability": "aucune",
+      "status": "SAFE"
+    },
+    {
+      "id": "89N-003",
+      "severity": "SAFE",
+      "title": "IDOR / authorization",
+      "root_cause": "none",
+      "evidence": "Chaque Server Action data-mutating dérive user.id de auth.getUser() côté serveur (jamais client). Aucun endpoint n'accepte un userId client. RLS auth.uid()=user_id actif : vérifié en DB réelle — un client anonyme reçoit 0 ligne (sans erreur) sur user_settings, user_word_progress, lesson_sessions, review_items. persistWordAttempts écrit avec user_id session.",
+      "exploitability": "aucune",
+      "status": "SAFE"
+    },
+    {
+      "id": "89N-004",
+      "severity": "SAFE",
+      "title": "Payload exhaustion / ReDoS",
+      "root_cause": "none",
+      "evidence": "Toutes les regex de normalisation (grading.ts, normalize-text.ts) sont linéaires (classes de caractères + drapeau g, pas de quantificateurs imbriqués/alternations chevauchantes). Test empirique local : gradeFreeResponse 100K FR (3 ms), 80K AR (2 ms), Unicode combinantes/zero-width (4 ms), validateAnswer 200K (3 ms), isArabicRewriteExact 50K (0 ms). Aucun hang.",
+      "exploitability": "aucune",
+      "status": "SAFE"
+    },
+    {
+      "id": "89N-005",
+      "severity": "SAFE",
+      "title": "Log injection",
+      "root_cause": "none",
+      "evidence": "Observabilité : serializeEvent = JSON.stringify (échappe \\n\\r et séquences ANSI → impossible de forger une 2e ligne de log). Messages tronqués (2000) et stack tronquée (4000). Erreurs serveur → strings fixes au client (classifyLessonSubmitError, authErrorMessage le plus souvent). Aucun cookie/JWT/token/password loggé.",
+      "exploitability": "aucune",
+      "status": "SAFE"
+    },
+    {
+      "id": "89N-006",
+      "severity": "SAFE",
+      "title": "Rate limiting / abuse auth et reset",
+      "root_cause": "none",
+      "evidence": "/observability : limiter en route (30/min/IP, 16 KB cap). Auth (signIn/signUp/reset) délégué au rate-limiting natif GoTrue/Supabase (contrôle externe accepté — pas un gap de code). Aucun endpoint coûteux appelable sans session logeant des données.",
+      "exploitability": "aucune",
+      "status": "SAFE"
+    },
+    {
+      "id": "89N-007",
+      "severity": "SAFE",
+      "title": "Path / param dynamique",
+      "root_cause": "none",
+      "evidence": "/surahs/[number], /learn/[slug], /mots/[id] : utilsent notFound() (quirk Next 16 streamé documenté 89B/89E) ; aucun 500, aucune requête coûteuse ; valeurs non numériques/UUID invalides → 404. Aucune donnée utilisateur dans ces chemins.",
+      "exploitability": "aucune",
+      "status": "SAFE"
+    },
+    {
+      "id": "89N-008",
+      "severity": "SAFE",
+      "title": "XSS (2e revue indépendante)",
+      "root_cause": "none",
+      "evidence": "Confirmé 89M + traçage de bout en bout : aucune réponse libre n'est persistée (seul correct:boolean) ; display_name ≤60 est réaffiché en React text ; aucun dangerouslySetInnerHTML/innerHTML/eval/window.open ; aucune valeur utilisateur en href/src. Pipeline de notation = strings pures.",
+      "exploitability": "aucune",
+      "status": "SAFE"
+    }
+  ],
+  "severity_counts": { "CRITICAL": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 0, "NOTE": 2 },
+  "notes": [
+    "NOTE-89N-001 : aucune limite de longueur serveur sur les réponses libres — sans impact réel (jamais persistées ni envoyées au serveur ; 200K traités en 3 ms côté client). À revisiter seulement si un jour persistées.",
+    "NOTE-89N-002 : brute-force auth = contrôle natif GoTrue (externe) non vérifié en E2E real ; dépend de la config du projet Supabase de production."
+  ],
+  "security": {
+    "csp_89g": "INCHANGÉE (lib/config/csp.ts, next.config.ts non modifiés en 89N ; aucun unsafe-eval prod, aucun wildcard)",
+    "secrets": "aucun",
+    "service_role_client": false,
+    "rls_enforced": true,
+    "new_trackers": 0,
+    "new_cookies": 0,
+    "new_external": 0
+  },
+  "tests_after": 1058,
+  "tests_added": 5,
+  "tests": [
+    "tests/input-security.test.ts +5 (régression DoS/abus) : gradeFreeResponse 100K FR / 80K AR / Unicode-mixed / validateAnswer 200K / isArabicRewriteExact 50K → temps borné et verdict cohérent"
+  ],
+  "build": "PASS",
+  "typecheck": "PASS",
+  "lint": "PASS (0 erreur)",
+  "browser_e2e": "NOT_VERIFIED (pas de navigateur réel ; invariants couverts par tests de la chaîne pure + React text-encoding par construction)",
+  "not_verified": [
+    "Configuration GoTrue du projet Supabase de production (rate-limit, emails) — externe, hors repo",
+    "Comportement navigateur réel (rendu DOM, Mutation/DOMPurify-level) — pas d'E2E navigateur dans cette phase"
+  ],
+  "discovered_not_in_scope": [
+    "DISC-89N-001 (NOTE) : brute-force/email-abuse reposent sur les limites natives GoTrue — à confirmer sur le projet prod (M-07 de 89L)."
+  ],
+  "recommendations": [
+    "Conserver le modèle : encodage au rendu React + user.id dérivé session + RLS, jamais de filtre HTML en entrée",
+    "Ne PAS chiffrer de limite sur les réponses libres tant qu'elles ne sont pas persistées",
+    "Avant lancement : confirmer le rate-limiting GoTrue et les Redirect URLs du projet prod"
+  ],
+  "next_phase": "PRODUCTION_DEPLOYMENT_PILOT"
+}

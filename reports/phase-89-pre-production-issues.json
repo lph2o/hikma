@@ -1,0 +1,162 @@
+{
+  "phase": "PHASE_89_PRE_PRODUCTION_AUDIT",
+  "generatedAt": "2026-08-25T00:00:00Z",
+  "method": "static analysis of the real repository + read-only Supabase query (SELECT only, paginated) + real `next build` / `vitest` / `tsc` / `eslint` runs",
+  "browserE2e": "NOT_RUN — aucun navigateur E2E réel exécuté dans cet environnement ; les vérifications responsive/a11y/mobile sont statiques. BROWSER_E2E_NOT_AVAILABLE pour ces sections.",
+  "databaseWrites": 0,
+  "issues": [
+    {
+      "issue_id": "IMG-001",
+      "category": "BUILD",
+      "severity": "BLOCKER",
+      "status": "OPEN",
+      "location": "tsconfig.json include **/*.ts → scripts/** ; 309 erreurs TS (TS2345/TS2304/TS2552)",
+      "evidence": "`next build` échoue (exit 1) sur les erreurs TS des scripts d'audit legacy (ex. scripts/audit-editorial-proposals-88f-a.ts(154,93): Argument of type 'SupabaseClient<any,\"public\"...>' not assignable). La compilation Next (9.4s) réussit, seul la passe de typecheck échoue.",
+      "impact": "Le `npm run build` standard ne passe pas → un pipeline CI/CD strict échoue ; il faut soit restaurer ignoreBuildErrors (non recommandé), soit exclure scripts/ de tsconfig, soit corriger les signatures supabase-js. Le code de production (app/lib/components) est lui 0 erreur TS.",
+      "recommendation": "Exclure `scripts/` de l'include tsconfig (ou ajouter un tsconfig scripts séparé), OU aligner les generics supabase-js dans les scripts legacy. Les 309 erreurs ne touchent pas le runtime servi.",
+      "blocking_for_launch": "Oui si vous comptez déployer via `npm run build` sans bypass typecheck. Non au runtime (le code servi est 0 erreur)."
+    },
+    {
+      "issue_id": "SEC-002",
+      "category": "SECURITY",
+      "severity": "BLOCKER",
+      "status": "OPEN",
+      "location": "app/(app)/layout.tsx (Phase 88F-BC turn) — la coquille ne redirige plus les visiteurs hors des routes applicatives",
+      "evidence": "Le layout (app) renvoie `{children}` sans coquille ni redirection quand `user == null`. Les routes /dashboard, /profile, /review, /activity, /surahs, /learn sont donc atteignables anonymement. La DB est correctement protégée par RLS (auth.uid() = user_id sur toutes les tables utilisateur) et chaque action serveur vérifie `!user` → 0 fuite de données constatée.",
+      "impact": "Aucune fuite de données vérifiée (RLS + guards solides). MAIS les « données privées » du dashboard (stats, progression) sont exposées à tout visiteur non connecté via des états anon publics, et des routes censées être privées (profil/révision/activité) affichent des CTA de connexion au lieu de protéger. Confusion produit (onboarding/dashboard/public mélangés).",
+      "recommendation": "Définir clairement le périmètre : /dashboard, /profile, /review, /activity, /mots privés → exiger l'auth (redirect /login ou état anon explicite comme la landing), garder /learn, /surahs, /surahs/[number] publics. Décision produit à trancher (voir U-001).",
+      "blocking_for_launch": "Oui (exposition publique de la « zone privée ») — à confirmer comme décision produit."
+    },
+    {
+      "issue_id": "IMG-003",
+      "category": "PERFORMANCE / QUERY LIMITS",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "lib/learning/queries.ts getCoverageBySurah (~l.2183) : `.in(\"word_id\", ids)` NON chunké",
+      "evidence": "getCoverageBySurah reçoit `comprehendedWordIds` = l'ensemble des words maîtrisés par l'utilisateur (croît avec la progression, jusqu'au corpus ~21296 mots). Il fait un `.in(\"word_id\", ids)` sans selectInChunks. C'est EXACTEMENT le pattern CAT-000/88J que les autres requêtes ont chunké (IN_FILTER_CHUNK_SIZE=250).",
+      "impact": "Un utilisateur avec beaucoup de mots compris → URL GET `word_id=in.(...)` > seuil ~395-397 UUIDs (~14 Ko) → `fetch failed` (header overflow) sur le dashboard, même bug que CAT-000 venant d'être corrigé ailleurs.",
+      "recommendation": "Envelopper getCoverageBySurah (et tout read ciblé qui grandit sans borne) dans selectInChunks(word_id, …).",
+      "blocking_for_launch": "Non bloquant immédiat (nécessite un gros volume de progression), mais correctif hautement prioritaire — même classe de bug que la régression 88J."
+    },
+    {
+      "issue_id": "AUTH-004",
+      "category": "AUTHENTICATION",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "lib/learning/actions.ts authenticate ; components/app/login-form.tsx",
+      "evidence": "Aucun flux « mot de passe oublié » (resetPasswordForEmail jamais appelé), aucun lien « mot de passe oublié » dans login-form. Rien ne gère l'email confirmé ni la relance de confirmation.",
+      "impact": "Utilisateur qui oublie son mot de passe est bloqué définitivement (aucun recovery). UX d'authentification incomplète pour une mise en ligne publique.",
+      "recommendation": "Ajouter resetPasswordForEmail + page de reset, et bouton « mot de passe oublié » ; vérifier l'état email_confirmé côté UI.",
+      "blocking_for_launch": "High — à corriger avant/peu après le lancement."
+    },
+    {
+      "issue_id": "SEO-005",
+      "category": "SEO / PUBLIC WEB",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "app/layout.tsx (metadata racine) ; public/",
+      "evidence": "Seule la racine exporte metadata (title « Hikma », 1 description). Aucun generateMetadata sur /surahs, /learn/[slug], /mots/[id]. Aucun robots.txt, sitemap.xml, manifest.json, image Open Graph, canonical, dans public/.",
+      "impact": "Pages publiques (sourates, leçons démo, mots) mal référencées et mal résumées au partage social ; indexation non contrôlée.",
+      "recommendation": "Ajouter generateMetadata par route publique, robots.txt, sitemap, og-image, viewport export (theme-color).",
+      "blocking_for_launch": "High pour un lancement public axé SEO/conversion."
+    },
+    {
+      "issue_id": "LEG-006",
+      "category": "LEGAL / TRUST",
+      "severity": "HIGH",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "location": "aucune page Privacy Policy / Terms / Mentions présentes",
+      "evidence": "Aucune page « Politique de confidentialité », « Conditions », « Mentions », « Gestion des cookies ». Aucune page de contact/produit. Collecte de données (auth Supabase, e-mail) sans page de vie privée publiée.",
+      "impact": "Risque légal / confiance pour une collecte de données personnelles (e-mail, progression) en public. RBU nécessite une politique de confidentialité minimale.",
+      "recommendation": "Produire Privacy Policy + Terms (au minimum) avant le lancement public ; attribution des sources coraniques/audio à vérifier (voir AUDIO-009).",
+      "blocking_for_launch": "High (conformité-CONFORT dépend de la juridiction — à faire valider par le propriétaire)."
+    },
+    {
+      "issue_id": "CFG-007",
+      "category": "PRODUCTION CONFIGURATION",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "next.config.ts ; .env ; proxy.ts",
+      "evidence": "`next.config.ts` est vide : aucun headers de sécurité (CSP, X-Content-Type-Options, Referrer-Policy, poweredByHeader), aucune config images. Pas de domaine de production / URLs de redirect auth / email de confirmation configurés (le .env n'a que les clés Supabase dev/anon/service). Pas de `output` explicite.",
+      "impact": "En production : absence d'en-têtes de sécurité, URLs de confirmation/redirect à vérifier, pas de CDN/image tuning. Le proxy.ts (session refresh) n'est pas un garde d'auth (délibéré).",
+      "recommendation": "Compléter next.config.ts (security headers, poweredByHeader:false), configurer le site URL / redirect URLs côté Supabase, documenter toutes les variables de déploiement (voir README).",
+      "blocking_for_launch": "High (en-têtes de sécurité + config domaine) à finaliser au déploiement."
+    },
+    {
+      "issue_id": "AUDIO-008",
+      "category": "LEGAL / CONTENT",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "location": "lib/quran/ayah-audio.ts (CDN islamic.network), word-audio (bucket privé, URLs signées)",
+      "evidence": "Audio de versets servi via CDN tiers (cdn.islamic.network) avec mention « Redistribution commerciale : REVIEW_REQUIRED (droits des réciteurs) ». Audio mots Muallim en bucket privé avec lecture via URLs signées (bonne souche).",
+      "impact": "Pour une mise en ligne commerciale, la licence de redistribution des récitations (Alafasy, etc.) est à confirmer ; les URLs signées limitent bien l'exposition.",
+      "recommendation": "Documenter/fixer la licence des récitations avant toute offre payante.",
+      "blocking_for_launch": "Non (usage éducatif initial) ; à confirmer avant monétisation."
+    },
+    {
+      "issue_id": "SEC-009",
+      "category": "SECURITY",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "location": "app/admin/page.tsx",
+      "evidence": "La route /admin est accessible sans aucune authentification ni rôle. Elle ne lit que des tables publiques (surahs, ayahs, quran_words, word_occurrences, translations, recitations, imports) et ne permet pas d'écrire.",
+      "impact": "Pas de fuite de données privées (tables publiques), mais exposition d'un « admin » interne, révélant l'état de la base et le dernier import à tout visiteur.",
+      "recommendation": "Gater /admin (auth + rôle admin) ou retirer la route du bundle public.",
+      "blocking_for_launch": "Non (lecture publique uniquement), mais à corriger."
+    },
+    {
+      "issue_id": "UX-010",
+      "category": "UX / NAVIGATION",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "location": "app/(app)/surahs/[number]/page.tsx : `if (!user) notFound()`",
+      "evidence": "/surahs/[number] renvoie un 404 pour un visiteur anonyme, alors que /surahs et /learn/[slug] sont publics. Un visiteur qui clique une sourate depuis le catalogue public tombe sur 404.",
+      "impact": "Incohérence public/privé sur la navigation sourates ; expérience visiteur cassée sur les pages sourate.",
+      "recommendation": "Soit rendre /surahs/[number] public (contenu lexical public + bandeau essai), soit renvoyer vers /login si la consultation programmée est privée.",
+      "blocking_for_launch": "Non, mais à harmoniser avec la stratégie public (leçons publiques)."
+    },
+    {
+      "issue_id": "UX-011",
+      "category": "UX / 404",
+      "severity": "LOW",
+      "status": "OPEN",
+      "location": "app/not-found.tsx : lien « Retour à l'accueil » → /dashboard",
+      "evidence": "La page 404 pointe vers /dashboard, qui est un espace applicatif (pour un visiteur anonyme : CTA de connexion) au lieu de la landing /.",
+      "impact": "Un visiteur perdu sur une 404 est dirigé vers la coquille applicative plutôt que la landing marketing.",
+      "recommendation": "Pointer le bouton vers / (landing) pour les visiteurs, ou /dashboard pour les connectés.",
+      "blocking_for_launch": "Non."
+    },
+    {
+      "issue_id": "OBS-012",
+      "category": "OBSERVABILITY",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "location": "projet entier — aucun error tracking / analytics / monitoring",
+      "evidence": "Seuls des `console.error` épars (ex. [coverage] getQuranCoverage) existent. Aucun service de logs centralisé, error tracking (Sentry/OpenTelemetry), analytics, uptime, ou monitoring DB.",
+      "impact": "Aucune visibilité post-lancement sur les erreurs runtime, les chutes, les requêtes DB lentes ou l'usage réel.",
+      "recommendation": "Ajouter error tracking (Sentry), analytics (données minimales), et monitoring de base avant/au lancement.",
+      "blocking_for_launch": "IMPORTANT (non fatal, mais fortement recommandé)."
+    },
+    {
+      "issue_id": "CHANGE-013",
+      "category": "NOT REGRESSION (audit confirme l'état positif)",
+      "severity": "NON-BLOCKING NOTE",
+      "status": "PASS",
+      "location": "Vérifications positives de la phase",
+      "evidence": "975/975 tests PASS ; DB : 34 parcours/34 unités/547 leçons/4503 lesson_words/114 sourates/6236 ayahs/21296 mots/77430 occurrences ; intégrité 0 orphelin, 0 doublon ; 10 nouvelles sourates → 100% résolution FR ; 6095 word_translations FR validées (et non 559) ; RLS complet sur toutes les tables utilisateur ; 0 secret en prod ; audio signé TTL 1h ; grading free-text de haute qualité (non-contamination).",
+      "impact": "Aucune — l'état fondé sur données réelles est sain et la couverture lexicale FR est supérieure à la documentation (6095 vs 559).",
+      "recommendation": "Mettre à jour la documentation de couverture FR (6095 mots validés, ~not 559) pour refléter la réalité runtime.",
+      "blocking_for_launch": "Non."
+    }
+  ],
+  "summary": {
+    "blockers": ["IMG-001", "SEC-002"],
+    "high": ["IMG-003", "AUTH-004", "SEO-005", "LEG-006", "CFG-007", "OBS-012"],
+    "medium": ["AUDIO-008", "SEC-009", "UX-010"],
+    "low": ["UX-011"],
+    "nonBlockingNotes": ["CHANGE-013"],
+    "counts": { "blocker": 2, "high": 6, "medium": 3, "low": 1, "note": 1 }
+  },
+  "verdict": "PHASE_89_PRE_PRODUCTION_BLOCKED",
+  "verdictRationale": "Au moins un BLOCKER est identifié : (1) IMG-001 — `next build` échoue sur 309 erreurs TS legacy dans scripts/ empêchant un build propre sans bypass ; (2) SEC-002 — les routes applicatives privées (/dashboard, /profile, /review, /activity) sont publiquement atteignables (0 fuite DB grâce à RLS, mais périmètre produit non garanti). Aucun de ces deux points ne casse le runtime servi, mais ils bloquent une « mise en ligne » avec un pipeline de déploiement sain et un périmètre d'accès clair. Les fixes HIGH (performance coversee, reset password, SEO/legal, config headers, observabilité) doivent être traités avant/au lancement. Ne pas considérer COMPLETE tant qu'ils ne sont pas soit corrigés, soit explicitement assumés."
+}

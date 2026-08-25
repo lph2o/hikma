@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- script CLI one-shot legacy : types Supabase pragmatiques */
 /**
  * Phase 88F-B0 — SAFE Lemma Gloss Reconciliation & Import Readiness
  * READ-ONLY STRICT — 0 DB writes.

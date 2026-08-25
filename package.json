@@ -2,11 +2,16 @@
   "name": "hikma",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "typecheck:scripts": "tsc --noEmit -p tsconfig.scripts.json",
     "test": "vitest run",
     "quran:import": "tsx scripts/import-quran.ts",
     "db:migrate": "tsx scripts/apply-migrations.ts",

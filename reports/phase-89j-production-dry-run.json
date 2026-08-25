@@ -1,0 +1,206 @@
+{
+  "phase": "89J",
+  "title": "PRODUCTION DEPLOY DRY-RUN & FINAL PRE-LAUNCH AUDIT",
+  "verdict": "PRODUCTION_READY_WITH_WARNINGS",
+  "database_writes": 0,
+  "executive_summary": "Le build, le typecheck, le lint et les 1038 tests passent ; la matrice de 27 routes est conforme (protections 89B intactes, 404 réelles, SEO, legal, observabilité opérationnels) ; aucun secret exposé ; aucun cookie/tracker ajouté. Aucun CRITICAL. Deux points importants : (1) DISC-001 — getQuranCoverage (couverture du dashboard) utilise encore un .in(\"word_id\") non chunké, même classe que CAT-000/R-003, qui casse la métrique à fort volume ; (2) R-009 — licence audio : usage personnel/éducatif clairement autorisé par les conditions officielles (14/06/2026), mais l'usage commercial reste NOT_VERIFIED (droits des récitateurs). Plusieurs éléments externes (email E2E reset, backups, alertes, domaine/HTTPS) sont NOT_VERIFIED car hors repo. Rien ne bloque une mise en ligne gratuite et éducative aujourd'hui.",
+  "build": {
+    "build": "PASS (exit 0, ✓ Compiled successfully in 8.3s)",
+    "typecheck": "PASS (0 erreur)",
+    "lint": "PASS (0 erreur)",
+    "tests": "1038/1038 PASS (67 fichiers)",
+    "warnings": "1 warning Turbopack : process.version dans instrumentation.ts (Edge Runtime incompatible) — sans impact sur un déploiement Node",
+    "errors": "0",
+    "output_size": ".next ≈ 1.2 Go (inclut cache) — à surveiller côté disque, non bloquant",
+    "routes_generees": "ƒ /, /_not-found, /activity, /admin, /dashboard, /login, /observability, /privacy, /profile, /reset-password, /review, /sources, /surahs/[number], /terms, /learn/[slug], /mots/[id], ... (liste vérifiée runtime)"
+  },
+  "environment": {
+    "node": "v25.5.0 (runtime local) — engines absent de package.json (NOTE : à préciser)",
+    "npm": "11.8.0",
+    "next": "16.3.0 | react 19.2.8 | @supabase/supabase-js ^2.112.3 | @supabase/ssr ^0.12.4",
+    "variables_inventory": [
+      { "variable": "NEXT_PUBLIC_SUPABASE_URL", "purpose": "Supabase URL (auth + REST)", "scope": "PUBLIC", "required": true, "secret_exposed": "NO" },
+      { "variable": "NEXT_PUBLIC_SUPABASE_ANON_KEY", "purpose": "Clé anon publique", "scope": "PUBLIC", "required": true, "secret_exposed": "NO" },
+      { "variable": "NEXT_PUBLIC_SITE_URL", "purpose": "URL publique (canonical, OG, reset redirectTo, HSTS)", "scope": "PUBLIC", "required": true, "secret_exposed": "NO" },
+      { "variable": "ADMIN_EMAILS", "purpose": "Accès /admin (vide = désactivé)", "scope": "SERVER", "required": "si /admin", "secret_exposed": "NO" },
+      { "variable": "VERCEL_GIT_COMMIT_SHA / RENDER_GIT_COMMIT", "purpose": "Release tracking observabilité", "scope": "SERVER", "required": "recommandé", "secret_exposed": "NO" },
+      { "variable": "SUPABASE_SERVICE_ROLE_KEY", "purpose": "Import CLI uniquement (scripts/)", "scope": "SERVER", "required": "pipeline import", "secret_exposed": "NO" },
+      { "variable": "SUPABASE_ACCESS_TOKEN", "purpose": "Migrations CLI uniquement (scripts/)", "scope": "SERVER", "required": "migrations", "secret_exposed": "NO" }
+    ],
+    "secrets_scan": "CLEAN — aucun secret dans app/components/lib/instrumentation/next.config ; aucune variable NEXT_PUBLIC_ ne porte de secret"
+  },
+  "routes": {
+    "total_testees": 27,
+    "matrix": [
+      { "path": "/", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/login", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/signup", "access": "N/A (route inexistante)", "status": 404, "result": "PASS — l'inscription est intégrée à /login (bascule) ; aucun lien vers /signup" },
+      { "path": "/forgot-password", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/reset-password", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/onboarding", "access": "AUTH (anonyme → redirect)", "status": 307, "result": "PASS" },
+      { "path": "/learn", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/surahs", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/surahs/1", "access": "PUBLIC (mode visiteur)", "status": 200, "result": "PASS" },
+      { "path": "/surahs/9999", "access": "404 (streamée)", "status": 200, "result": "PASS* (corps = 404, quirk Next 16)" },
+      { "path": "/mots/<word_id valide>", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/mots/<uuid invalide>", "access": "404 (streamée)", "status": 200, "result": "PASS* (corps = 404 : « introuvable » ×2)" },
+      { "path": "/learn/<slug invalide>", "access": "404 (streamée)", "status": 200, "result": "PASS* (corps = 404)" },
+      { "path": "/dashboard", "access": "PRIVATE", "status": "200 streamé + digest NEXT_REDIRECT → /login", "result": "PASS (89B intacte)" },
+      { "path": "/profile", "access": "PRIVATE", "status": "200 streamé + digest", "result": "PASS" },
+      { "path": "/review", "access": "PRIVATE", "status": "200 streamé + digest", "result": "PASS" },
+      { "path": "/activity", "access": "PRIVATE", "status": "200 streamé + digest", "result": "PASS" },
+      { "path": "/admin", "access": "ADMIN", "status": 307, "result": "PASS (→ /login)" },
+      { "path": "/privacy", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/terms", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/sources", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/robots.txt", "access": "PUBLIC", "status": 200, "result": "PASS" },
+      { "path": "/sitemap.xml", "access": "PUBLIC", "status": 200, "result": "PASS (116 <loc>)" },
+      { "path": "/observability", "access": "SYSTEM (POST)", "status": "405 (GET)", "result": "PASS (POST 200 / 400 valide-invalide)" },
+      { "path": "/definitely-not-a-page", "access": "PUBLIC", "status": 404, "result": "PASS (vraie page 404, pas de redirect dashboard)" }
+    ],
+    "aucune_route_privee_publique": true
+  },
+  "security": {
+    "rls": "Vérifié (phases 89/89B) : auth.uid()=user_id sur toutes les tables utilisateur ; aucune mutation anonyme",
+    "csp": "PASS — 1 header CSP, aucun unsafe-eval en prod, aucune origine inconnue, Supabase en connect-src, audio CDN en media-src uniquement, frame-ancestors 'none'",
+    "headers": "X-Content-Type-Options, Referrer-Policy, Permissions-Policy, X-Frame-Options présents ; HSTS conditionnel https (absent en local, correct)",
+    "secrets": "Aucun secret dans le repo (scan final) ; service role hors bundle",
+    "privates": "/dashboard /profile /review /activity → login ; /admin → 307 + 404 non-admin (89B/R-010)"
+  },
+  "privacy": {
+    "cookies": 1,
+    "tracking": "NONE",
+    "analytics": "NONE",
+    "storage": "localStorage hikma:consent:v1 uniquement (notice, aucun cookie ajouté, aucun appel réseau au clic)",
+    "notice": "Testée en navigateur réel en 89H-I (visible → Compris → persistée → réapparaît après vidage)"
+  },
+  "seo": {
+    "metadata": "PASS (racine + par route)",
+    "robots": "PASS (privés Disallow)",
+    "sitemap": "PASS (116 URLs publiques, aucun dashboard/profile/review/activity/admin)",
+    "404": "PASS (page publique, pas de redirect dashboard)",
+    "canonical_og": "PASS (racine + sourates)"
+  },
+  "auth": {
+    "login_signup_logout": "Code présent et fonctionnel (formulaire unique login/inscription)",
+    "password_reset": "Flux implémenté (89D) — PASSWORD_RESET_E2E = NOT_VERIFIED (aucune boîte mail réelle testée ; Redirect URL Supabase <siteUrl>/reset-password à configurer)",
+    "private_routes": "PASS",
+    "admin": "PASS",
+    "session": "Cookie de session @supabase/ssr (httpOnly=false, défaut) — atténué par CSP"
+  },
+  "legal": {
+    "privacy_terms_sources": "PASS — pages publiques cohérentes avec le comportement réel (cookie de session, notice localStorage, aucune analytics)",
+    "contact": "Canal GitHub issues (aucun email dédié) — documenté",
+    "audio_license": "R-009 = NOT_VERIFIED (usage commercial)"
+  },
+  "audio": {
+    "provider": "Al Quran Cloud (cdn.islamic.network)",
+    "reciter": "ar.alafasy (défaut)",
+    "license_source": "https://alquran.cloud/terms-and-conditions (dernière mise à jour 14/06/2026)",
+    "commercial_use": "NOT_VERIFIED — conditions officielles : « Recitations are licensed ... for free, non-commercial redistribution » ; « You may bundle them into a commercial product, but ... copyrights lie with the reciters and they may ask you to remove the content »",
+    "personal_educational": "VERIFIED — « You may stream, embed and download them for personal and educational use »",
+    "redistribution": "NON-COMMERCIAL uniquement (selon conditions officielles)",
+    "attribution_required": "NOT_VERIFIED (attribution exigée pour les traductions ; pas d'exigence explicite audio, courtoisie recommandée)",
+    "conclusion": "Mise en ligne GRATUITE et éducative : audio OK. Toute monétisation future : à résoudre avec le fournisseur ou remplacer le récitateur."
+  },
+  "observability": {
+    "instrumentation": "PASS (boot + onRequestError)",
+    "instrumentation_client": "PASS (window.onerror + unhandledrejection)",
+    "endpoint": "POST valide 200 / invalide 400 / GET 405 / rate-limit 429 / 16KB cap",
+    "sanitisation": "PASS — tokens redacted, query supprimée, cookies/headers/email/userId/progression exclus (tests unitaires)",
+    "alertes": "NOT_VERIFIED — à configurer sur les logs de la plateforme de déploiement"
+  },
+  "performance": {
+    "chunking_r003": "PASS (getCoverageBySurah chunkée 250)",
+    "disc_001": "PRÉSENT — getQuranCoverage (dashboard, ligne 2086) : .in(\"word_id\", wordIds) NON chunké sur tous les mots compris de l'utilisateur — même classe que CAT-000/R-003 ; casse la couverture du dashboard à fort volume (>~396 ids)",
+    "n1": "Aucun N+1 évident identifié",
+    "bundle": "Aucun SDK lourd ; instrumentation ~1 KB ; .next 1.2 Go (cache)",
+    "benchmarks": "NOT_MEASURED (aucun navigateur de mesure)"
+  },
+  "ux": {
+    "desktop": "PASS (notice, landing, pages vérifiées en navigateur réel)",
+    "mobile": "PARTIEL — bottom sheet validé par code ; viewport < 640px non testé réellement",
+    "rtl": "PASS (miroir vérifié runtime)",
+    "dark_mode": "PASS (adaptation vérifiée)",
+    "a11y": "PASS statique (labels, focus, contrastes AA, zones ≥ 44px) ; lecteurs d'écran réels non testés",
+    "reduced_motion": "PASS (global CSS existant)"
+  },
+  "deployment": {
+    "platform_compatibility": "Compatible Next.js 16 / Node standard (Vercel, Node server, Docker) ; instrumentation + route handler nodejs supportés",
+    "domain_https": "NEXT_PUBLIC_SITE_URL à configurer avec le domaine final (canonical, OG, reset redirect, HSTS automatique via 89G)",
+    "supabase_redirect_urls": "À configurer : <siteUrl>/reset-password (documenté 89D)",
+    "output_mode": "Standard (app router, SSR) — pas de static export requis"
+  },
+  "backup_recovery": {
+    "status": "NOT_VERIFIED — paramètres de backup Supabase (PITR, exports) hors repo ; à configurer dans le projet Supabase avant lancement"
+  },
+  "risks": [
+    { "id": "R-89J-01", "severity": "HIGH", "issue": "DISC-001 — getQuranCoverage .in(word_id) non chunké (dashboard)", "evidence": "lib/learning/queries.ts:2086 ; dashboard/page.tsx:84", "impact": "Métrique « couverture lexicale » du dashboard cassée quand l'utilisateur a >~396 mots compris", "action": "Appliquer selectInChunks (pattern R-003/88J) — phase dédiée", "blocking": "NON au jour du lancement (utilisateurs débutants), OUI à l'échelle" },
+    { "id": "R-89J-02", "severity": "HIGH", "issue": "R-009 — licence audio usage commercial NOT_VERIFIED", "evidence": "alquran.cloud/terms-and-conditions (14/06/2026) : redistribution non-commerciale ; bundle commercial possible mais droits des récitateurs", "impact": "Toute monétisation (abonnement/pub) nécessite résolution ou remplacement du récitateur", "action": "Contacter Al Quran Cloud / choisir un récitateur à licence commerciale avant monétisation", "blocking": "NON pour lancement gratuit — OUI pour monétisation" },
+    { "id": "R-89J-03", "severity": "MEDIUM", "issue": "PASSWORD_RESET_E2E non vérifié (aucun email réel)", "evidence": "Flux 89D implémenté, tests unitaires PASS", "impact": "Risque opérationnel sur le parcours de récupération", "action": "Test avec compte de test + boîte mail + Redirect URLs Supabase avant lancement", "blocking": "NON (code testé), à valider" },
+    { "id": "R-89J-04", "severity": "MEDIUM", "issue": "Backup / recovery NOT_VERIFIED", "evidence": "Configuration Supabase hors repo", "action": "Activer PITR/exports dans le projet Supabase", "blocking": "NON (externe)" },
+    { "id": "R-89J-05", "severity": "MEDIUM", "issue": "Alertes d'erreur NON configurées", "evidence": "Observabilité 89I opérationnelle (logs) ; alerting dépend de la plateforme", "action": "Configurer alertes P0/P1 sur les logs au déploiement", "blocking": "NON (externe)" },
+    { "id": "R-89J-06", "severity": "LOW", "issue": "Warning build : process.version dans instrumentation.ts (Edge)", "evidence": "Turbopack warning build 89J", "action": "Remplacer par un garde typeof process ou une valeur statique", "blocking": "NON" },
+    { "id": "R-89J-07", "severity": "LOW", "issue": "notFound streamées : /surahs/9999, /mots/<invalide>, /learn/<invalide> → HTTP 200 avec contenu 404", "evidence": "Vérifié runtime (corps = 404) ; quirk Next 16 (NOTE-89E-001)", "impact": "SEO marginal (crawlers JS-rendering voient la 404)", "action": "Optionnel : middleware pour statut strict", "blocking": "NON" },
+    { "id": "R-89J-08", "severity": "NOTE", "issue": "/signup n'est pas une route (inscription dans /login)", "evidence": "Aucun lien vers /signup ; bascule intégrée au login", "action": "Aucune — documenter", "blocking": "NON" },
+    { "id": "R-89J-09", "severity": "NOTE", "issue": "engines absent de package.json", "evidence": "Node v25 local ; plateforme à définir", "action": "Ajouter engines.node (recommandé)", "blocking": "NON" },
+    { "id": "R-89J-10", "severity": "NOTE", "issue": "Contact : aucun email dédié (GitHub issues)", "evidence": "Pages légales 89F", "action": "Ajouter une adresse avant lancement large", "blocking": "NON" }
+  ],
+  "regressions": "0 — 1038/1038 tests ; protections 89B/89D/89E/89F/89G/89I re-vérifiées runtime ; aucune donnée modifiée",
+  "not_verified": [
+    "PASSWORD_RESET_E2E (email réel)",
+    "Backup / recovery Supabase",
+    "Alertes plateforme",
+    "Domaine final + HTTPS + HSTS",
+    "Redirect URLs Supabase (configuration externe)",
+    "Viewport mobile < 640px (browser réel)",
+    "Lecteurs d'écran réels",
+    "Benchmarks performance (réseau/bundle)",
+    "Usage commercial de l'audio (R-009)"
+  ],
+  "external_configuration_required": [
+    "Supabase : env de production, Redirect URLs (<siteUrl>/reset-password), backups/PITR, templates email reset",
+    "Déploiement : domaine, DNS, HTTPS, variables d'environnement (NEXT_PUBLIC_SITE_URL etc.)",
+    "Observabilité : alertes P0/P1 sur logs plateforme",
+    "Audio : résolution licence avant toute monétisation"
+  ],
+  "pre_launch_checklist": {
+    "build_production_pass": true,
+    "typecheck_pass": true,
+    "tests_pass": true,
+    "lint_pass": true,
+    "private_routes_protected": true,
+    "admin_protected": true,
+    "password_reset_e2e_verified": false,
+    "supabase_rls_verified": true,
+    "csp_verified": true,
+    "cookies_audited": true,
+    "privacy_notice_verified": true,
+    "privacy_page_verified": true,
+    "terms_verified": true,
+    "sources_verified": true,
+    "audio_license_verified": false,
+    "seo_verified": true,
+    "robots_verified": true,
+    "sitemap_verified": true,
+    "404_verified": true,
+    "observability_verified": true,
+    "error_alerts_configured": false,
+    "production_env_configured": false,
+    "domain_configured": false,
+    "https_verified": false,
+    "supabase_redirect_urls_configured": false,
+    "backup_recovery_verified": false,
+    "mobile_verified": "partiel",
+    "rtl_verified": true,
+    "accessibility_verified": "statique",
+    "final_browser_e2e_verified": "partiel (navigateur réel sur parcours public + notice ; auth E2E complet non testé)"
+  },
+  "recommended_fix_order": [
+    { "prio": "P0", "items": ["Aucun blocker identifié"] },
+    { "prio": "P1", "items": ["R-89J-01 DISC-001 : chunking getQuranCoverage", "R-89J-02 : décision licence audio avant monétisation", "PASSWORD_RESET_E2E avec compte de test"] },
+    { "prio": "P2", "items": ["R-89J-03/04/05 : Redirect URLs, backups, alertes", "Configuration domaine + HTTPS + env de prod"] },
+    { "prio": "P3", "items": ["R-89J-06 warning Edge process.version", "R-89J-07 middleware 404 strict", "R-89J-09 engines.node", "R-89J-10 email de contact"] }
+  ],
+  "next_recommended_phase": "PHASE 89J-AUDIT-FIX : corriger R-89J-01 (DISC-001 getQuranCoverage chunking) puis configurer l'environnement de production (env, Redirect URLs, backups, alertes) — prompt dédié recommandé avant toute mise en ligne"
+}

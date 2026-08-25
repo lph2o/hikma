@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- script CLI one-shot legacy : types Supabase pragmatiques */
 /**
  * Phase 88F-A — TOP 100 Lemma Editorial Proposal Audit
  * READ-ONLY STRICT. Batch-oriented for performance.

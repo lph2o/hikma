@@ -1,0 +1,104 @@
+{
+  "phase": "89K",
+  "title": "R-89J-01 — GET QURAN COVERAGE CHUNKING FIX",
+  "verdict": "PHASE_89K_COMPLETE",
+  "database_writes": 0,
+  "summary": {
+    "r89j_01": "RESOLVED",
+    "build": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "tests": "1046/1046 PASS",
+    "real_db_validation": "PASS (7 EQUAL, 2 FIXED_BY_89K, 0 MISMATCH)"
+  },
+  "root_cause": "getQuranCoverage (dashboard, métrique « couverture lexicale ») exécutait un count `.in(\"word_id\", wordIds)` NON chunké sur tous les mots compris de l'utilisateur (croît sans borne jusqu'à ~21 296 formes). Au-delà du seuil PostgREST (~396 ids / ~14,7 Ko d'URL) → « TypeError: fetch failed » — même classe que CAT-000 / 88J / 88K / R-003. Reproduit sur DB réelle : 500 ids → fetch failed (baseline).",
+  "fix": {
+    "file": "lib/learning/queries.ts",
+    "detail": "La requête de couverture passe d'un count unique à un count EXACT par lots de 250 (mêmes primitives que selectInChunks : chunk + Promise.all + propagation d'erreur + déduplication Set), head:true par lot, somme des counts.",
+    "why_not_selectInChunks_rows": "Découverte de la validation DB : selectInChunks compte les LIGNES, or le plafond REST de 1 000 lignes par GET tronque silencieusement — validé sur données réelles : 250 mots (1 376 occurrences) → exactement 1 000 lignes retournées → métrique fausse (baseline : avant 1 376 vs après 1 000). Le count head:true par lot est le seul moyen de compter sans troncature.",
+    "semantics": "Identique à l'ancienne requête : mêmes filtres (word_occurrences.word_id ∈ mots compris), même déduplication (Set), même propagation d'erreur (throw → null via try/catch, comportement antérieur conservé), empty input → 0 sans requête .in."
+  },
+  "before": [
+    { "case": "empty", "result": "OK 0" },
+    { "case": "single", "result": "OK 1" },
+    { "case": "small_249", "result": "OK 1375" },
+    { "case": "boundary_250", "result": "OK 1376" },
+    { "case": "boundary_251", "result": "OK 1377" },
+    { "case": "large_500", "result": "ERROR TypeError: fetch failed" },
+    { "case": "very_large_1001", "result": "ERROR (fetch failed)" },
+    { "case": "duplicates_500_in_250", "result": "OK 1376" },
+    { "case": "missing_ids", "result": "OK 0" }
+  ],
+  "after": [
+    { "case": "empty", "result": "OK 0" },
+    { "case": "single", "result": "OK 1" },
+    { "case": "small_249", "result": "OK 1375" },
+    { "case": "boundary_250", "result": "OK 1376" },
+    { "case": "boundary_251", "result": "OK 1377" },
+    { "case": "large_500", "result": "OK 1942" },
+    { "case": "very_large_1001", "result": "OK 3673" },
+    { "case": "duplicates_500_in_250", "result": "OK 1376" },
+    { "case": "missing_ids", "result": "OK 0" }
+  ],
+  "equivalence": [
+    { "case": "empty", "input": 0, "verdict": "EQUAL" },
+    { "case": "single", "input": 1, "verdict": "EQUAL" },
+    { "case": "small_249", "input": 249, "verdict": "EQUAL (1375 = 1375)" },
+    { "case": "boundary_250", "input": 250, "verdict": "EQUAL (1376 = 1376)" },
+    { "case": "boundary_251", "input": 251, "verdict": "EQUAL (1377 = 1377)" },
+    { "case": "large_500", "input": 500, "verdict": "FIXED_BY_89K (ERROR → OK 1942)" },
+    { "case": "very_large_1001", "input": 1001, "verdict": "FIXED_BY_89K (ERROR → OK 3673)" },
+    { "case": "duplicates", "input": "500 (250 distincts)", "verdict": "EQUAL (1376 = 1376, dédupliqué)" },
+    { "case": "missing", "input": "1 (id inexistant)", "verdict": "EQUAL (0 = 0)" }
+  ],
+  "real_db_validation": {
+    "method": "scripts/phase-89k-r89j-01-quran-coverage-chunking.ts — SELECT uniquement sur la DB réelle (1 000 word_ids réels) ; réplique exacte des deux implémentations",
+    "large_500": "BEFORE fetch failed → AFTER OK 1942 (2 lots de 250)",
+    "very_large_1001": "BEFORE fetch failed → AFTER OK 3673 (4 lots)",
+    "no_data_loss": true,
+    "no_duplication": true,
+    "no_false_positive": "missing_ids → 0",
+    "bonus_finding": "L'ancien count non dédupliqué renvoyait un compte erroné (1376 au lieu de 1000) sur liste surdimensionnée — preuve supplémentaire du comportement PostgREST dégradé"
+  },
+  "tests": {
+    "build": "PASS (exit 0)",
+    "typecheck": "PASS (0 erreur, app + scripts)",
+    "lint": "PASS (0 erreur)",
+    "vitest": "1046/1046 PASS (67 fichiers — 1038 existants + 8 nouveaux tests getQuranCoverage)",
+    "new_tests": "empty (1 requête, 0 %) / 1 / 250 (1 lot) / 251 (2 lots ≤ 250) / 500 / 1001 (5 lots) / déduplication (500 lignes → 250 ids) / erreur d'un lot → null (jamais de résultat partiel)"
+  },
+  "dashboard": {
+    "metric_unchanged": "getQuranCoverage continue de retourner {coveragePercent, coveredOccurrences, totalOccurrences, comprehendedWordIds} avec exactement la même sémantique (équivalence prouvée sur DB réelle aux petits volumes ; les grands volumes échouaient avant)",
+    "ui": "Aucune modification UI",
+    "callers": "app/(app)/dashboard/page.tsx:84 (inchangé)"
+  },
+  "security": {
+    "rls": "Intacte — mêmes filtres, même client, mêmes permissions (SELECT word_occurrences public, user_word_progress filtré user_id + RLS)",
+    "auth_user_isolation": "Intacte",
+    "csp": "Inchangée",
+    "routes": "Inchangées"
+  },
+  "database": "DATABASE_WRITES = 0 — script read-only, correctif SELECT uniquement",
+  "regressions": "0 — 1046/1046 tests, build PASS, aucun test affaibli",
+  "discovered_not_in_scope": [
+    {
+      "id": "DISC-89K-001",
+      "severity": "LOW/NOTE",
+      "detail": "getCoverageBySurah (corrigé en 89C) compte aussi via des LIGNES (ayah_id + surah_id) : un lot de 250 mots dépassant 1 000 occurrences cumulées serait tronqué par le plafond REST (aujourd'hui ~900/lot en moyenne sur le corpus — sous la limite, mais marginal). Recommandé : paginer .range() par lot ou documenter la limite. NON corrigé (hors périmètre)."
+    },
+    {
+      "id": "DISC-89K-002",
+      "severity": "NOTE",
+      "detail": "Les fonctions de lecture du dashboard font désormais jusqu'à 5-6 requêtes .in par page pour un utilisateur très avancé — acceptable (aucun N+1), à surveiller en perf."
+    }
+  ],
+  "final": {
+    "CHUNKING_CORRECT": "YES",
+    "SEMANTICS_PRESERVED": "YES",
+    "ERROR_PROPAGATION_PRESERVED": "YES",
+    "NO_DATA_LOSS": "YES",
+    "NO_DUPLICATES": "YES",
+    "NO_REGRESSION": "YES"
+  },
+  "next_phase": "PRODUCTION_CONFIGURATION (env, Redirect URLs, backups, alertes, domaine) — hors périmètre 89K"
+}

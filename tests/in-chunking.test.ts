@@ -4,10 +4,12 @@ import {
   LESSON_ID_CHUNK_SIZE,
   getSurahCatalog,
   getSurahProgressByUser,
+  getCoverageBySurah,
   getValidatedFrenchLemmaMeaningsByWord,
   getValidatedFrenchMeanings,
   getWordLemmaMappingsByWordIds,
   getUserWordProgress,
+  getQuranCoverage,
 } from "../lib/learning/queries";
 
 /**
@@ -28,8 +30,12 @@ function filteringClient(tables: Record<string, Row[]>, fail?: { table: string; 
   const builder = (table: string) => {
     let inColumn: string | null = null;
     let inValues: string[] = [];
+    let countMode = false;
     const chain: Record<string, unknown> = {
-      select: () => chain,
+      select: (_column?: string, opts?: { count?: string }) => {
+        if (opts?.count === "exact") countMode = true;
+        return chain;
+      },
       eq: () => chain,
       not: () => chain,
       order: () => chain,
@@ -55,7 +61,7 @@ function filteringClient(tables: Record<string, Row[]>, fail?: { table: string; 
           const set = new Set(inValues);
           data = all.filter((r) => set.has(String(r[column])));
         }
-        resolve({ data, error: null });
+        resolve({ data, error: null, count: countMode ? data.length : undefined });
         return undefined;
       },
     };
@@ -326,6 +332,134 @@ describe("chunking des .in() volumineux — getSurahCatalog lesson_words (Phase 
   });
 });
 
+/**
+ * Phase 89C (R-003) — chunking du `.in("word_id", …)` de getCoverageBySurah.
+ * 3 sourates ; chaque mot a une occurrence dans l'ayah `a{i%9}` (0-2 → s1,
+ * 3-5 → s2, 6-8 → s3) pour tester le comptage d'ayahs distincts par sourate.
+ */
+function coverageTables(n: number) {
+  const surahs = [
+    { id: "s1", number: 1, name_translation: "Al-Fatiha", ayah_count: 7 },
+    { id: "s2", number: 2, name_translation: "Al-Baqara", ayah_count: 286 },
+    { id: "s3", number: 3, name_translation: "Al-Imran", ayah_count: 200 },
+  ];
+  const surahOfAyah = (i: number) => (i < 3 ? "s1" : i < 6 ? "s2" : "s3");
+  const word_occurrences = ids(n).map((wid, i) => ({
+    word_id: wid,
+    ayah_id: `a${i % 9}`,
+    ayahs: [{ surah_id: surahOfAyah(i % 9) }],
+  }));
+  return { surahs, word_occurrences };
+}
+
+/** Agrégation indépendante : même sémantique que getCoverageBySurah. */
+function expectedCoverage(
+  rows: Array<{ word_id: string; ayah_id: string; ayahs: Array<{ surah_id: string }> }>,
+  surahs: Array<{ id: string; number: number; name_translation: string; ayah_count: number }>,
+) {
+  const surahAyahs = new Map<string, Set<string>>();
+  for (const r of rows) {
+    const sid = r.ayahs[0].surah_id;
+    if (!surahAyahs.has(sid)) surahAyahs.set(sid, new Set());
+    surahAyahs.get(sid)!.add(r.ayah_id);
+  }
+  return surahs
+    .map((s) => ({
+      surahNumber: s.number,
+      surahName: s.name_translation,
+      totalAyahs: s.ayah_count,
+      coveredAyahs: surahAyahs.get(s.id)?.size ?? 0,
+      coveragePercent: surahAyahs.get(s.id)?.size
+        ? Math.round(((surahAyahs.get(s.id)!.size) / s.ayah_count) * 100)
+        : 0,
+    }))
+    .filter((s) => s.coveredAyahs > 0)
+    .sort((a, b) => a.surahNumber - b.surahNumber);
+}
+
+describe("chunking des .in() volumineux — getCoverageBySurah word_id (Phase 89C R-003)", () => {
+  it("A. tableau vide → aucune requête, résultat []", async () => {
+    const client = filteringClient({});
+    const result = await getCoverageBySurah(client as never, []);
+    expect(result).toEqual([]);
+    expect(client._callsFor("word_occurrences")).toHaveLength(0);
+  });
+
+  it("B. 1 word_id → 1 requête, résultat agrégé correct", async () => {
+    const tables = coverageTables(1);
+    const client = filteringClient(tables);
+    const result = await getCoverageBySurah(client as never, ids(1));
+    expect(client._callsFor("word_occurrences")).toHaveLength(1);
+    expect(result).toEqual(expectedCoverage(tables.word_occurrences, tables.surahs));
+  });
+
+  it("C. exactement chunk size (250) → 1 requête", async () => {
+    const tables = coverageTables(IN_FILTER_CHUNK_SIZE);
+    const client = filteringClient(tables);
+    await getCoverageBySurah(client as never, ids(IN_FILTER_CHUNK_SIZE));
+    expect(client._callsFor("word_occurrences")).toHaveLength(1);
+  });
+
+  it("D. chunk size + 1 (251) → 2 requêtes, résultat complet, aucun doublon", async () => {
+    const n = IN_FILTER_CHUNK_SIZE + 1;
+    const tables = coverageTables(n);
+    const client = filteringClient(tables);
+    const result = await getCoverageBySurah(client as never, ids(n));
+    const calls = client._callsFor("word_occurrences");
+    expect(calls).toHaveLength(2);
+    for (const call of calls) {
+      expect(call.inValues.length).toBeLessThanOrEqual(IN_FILTER_CHUNK_SIZE);
+    }
+    const queried = calls.flatMap((call) => call.inValues);
+    expect(new Set(queried).size).toBe(queried.length);
+    expect(queried.length).toBe(n);
+    expect(result).toEqual(expectedCoverage(tables.word_occurrences, tables.surahs));
+  });
+
+  it("E. 500 word_ids → 2 requêtes, aucune perte (équivalence d'agrégation stricte)", async () => {
+    const n = 500;
+    const tables = coverageTables(n);
+    const client = filteringClient(tables);
+    const result = await getCoverageBySurah(client as never, ids(n));
+    expect(client._callsFor("word_occurrences")).toHaveLength(2);
+    expect(result).toEqual(expectedCoverage(tables.word_occurrences, tables.surahs));
+    expect(result.map((r) => r.coveredAyahs).sort()).toEqual([3, 3, 3]);
+  });
+
+  it("F. 1001 word_ids → 5 requêtes (≤ 250 chacune), résultat complet", async () => {
+    const n = 1001;
+    const tables = coverageTables(n);
+    const client = filteringClient(tables);
+    const result = await getCoverageBySurah(client as never, ids(n));
+    const calls = client._callsFor("word_occurrences");
+    expect(calls).toHaveLength(5);
+    for (const call of calls) {
+      expect(call.inValues.length).toBeLessThanOrEqual(IN_FILTER_CHUNK_SIZE);
+    }
+    expect(result).toEqual(expectedCoverage(tables.word_occurrences, tables.surahs));
+  });
+
+  it("G. déduplication : entrée avec doublons → identifiants dédupliqués avant requêtes, même résultat", async () => {
+    const distinct = ids(500);
+    const duplicated = [...distinct, ...distinct];
+    const tables = coverageTables(500);
+    const client = filteringClient(tables);
+    const result = await getCoverageBySurah(client as never, duplicated);
+    const queried = client._callsFor("word_occurrences").flatMap((call) => call.inValues);
+    expect(queried).toHaveLength(500);
+    expect(new Set(queried).size).toBe(500);
+    expect(result).toEqual(expectedCoverage(tables.word_occurrences, tables.surahs));
+  });
+
+  it("H. une erreur sur un chunk est propagée (jamais de résultat partiel)", async () => {
+    const tables = coverageTables(500);
+    const client = filteringClient(tables, { table: "word_occurrences", callIndex: 2 });
+    await expect(getCoverageBySurah(client as never, ids(500))).rejects.toThrow(
+      "word_occurrences : erreur injectée (word_occurrences)",
+    );
+  });
+});
+
 describe("chunking des .in() volumineux — getSurahProgressByUser lesson_ids (Phase 88K)", () => {
   const cases: Array<{ label: string; lessons: number; expectedChunks: number }> = [
     { label: "0 lesson ID", lessons: 0, expectedChunks: 0 },
@@ -383,5 +517,117 @@ describe("chunking des .in() volumineux — getSurahProgressByUser lesson_ids (P
     await expect(getSurahProgressByUser(client as never, "u-1")).rejects.toThrow(
       "lesson_sessions : erreur injectée (lesson_sessions)",
     );
+  });
+});
+
+/**
+ * Phase 89K (R-89J-01) — chunking du `.in("word_id", …)` de getQuranCoverage.
+ * Chaque mot distinct a exactement une occurrence ; la couverture = nombre
+ * d'occurrences des mots compris. `selectInChunks` ne pouvant pas compter
+ * (plafond REST 1 000 lignes, validé sur DB réelle : 250 mots / 1 376
+ * occurrences → troncature à 1 000), le correctif utilise un count exact par
+ * lot (head:true) avec les mêmes primitives (chunk + Promise.all + erreurs).
+ */
+function coverageProgressTables(n: number, progressRows = n) {
+  const distinct = ids(n);
+  const word_occurrences = distinct.map((wid, i) => ({ id: `occ-${i}`, word_id: wid }));
+  const user_word_progress = Array.from({ length: progressRows }, (_, i) => ({
+    word_id: distinct[i % distinct.length],
+    status: "mastered",
+  }));
+  return { word_occurrences, user_word_progress };
+}
+
+describe("chunking des .in() volumineux — getQuranCoverage word_id (Phase 89K R-89J-01)", () => {
+  it("A. aucun mot compris → 1 seule requête (total), couverture 0, aucune requête .in", async () => {
+    const tables = coverageProgressTables(10, 0);
+    const client = filteringClient(tables);
+    const result = await getQuranCoverage(client as never, "u-1");
+    expect(result).not.toBeNull();
+    expect(result?.coveredOccurrences).toBe(0);
+    expect(result?.totalOccurrences).toBe(10);
+    expect(result?.coveragePercent).toBe(0);
+    expect(client._callsFor("word_occurrences")).toHaveLength(1); // total uniquement
+  });
+
+  it("B. 1 word_id → 1 requête de couverture, résultat correct", async () => {
+    const tables = coverageProgressTables(1);
+    const client = filteringClient(tables);
+    const result = await getQuranCoverage(client as never, "u-1");
+    expect(result?.coveredOccurrences).toBe(1);
+    expect(result?.totalOccurrences).toBe(1);
+    expect(result?.coveragePercent).toBe(100);
+    expect(client._callsFor("word_occurrences")).toHaveLength(2);
+  });
+
+  it("C. exactement chunk size (250) → 1 requête de couverture", async () => {
+    const tables = coverageProgressTables(IN_FILTER_CHUNK_SIZE);
+    const client = filteringClient(tables);
+    const result = await getQuranCoverage(client as never, "u-1");
+    expect(result?.coveredOccurrences).toBe(IN_FILTER_CHUNK_SIZE);
+    expect(client._callsFor("word_occurrences")).toHaveLength(2);
+  });
+
+  it("D. chunk size + 1 (251) → 2 requêtes de couverture, résultat complet, aucun doublon", async () => {
+    const n = IN_FILTER_CHUNK_SIZE + 1;
+    const tables = coverageProgressTables(n);
+    const client = filteringClient(tables);
+    const result = await getQuranCoverage(client as never, "u-1");
+    const calls = client._callsFor("word_occurrences");
+    expect(calls).toHaveLength(3); // total + 2 lots
+    for (const call of calls.slice(1)) {
+      expect(call.inColumn).toBe("word_id");
+      expect(call.inValues.length).toBeLessThanOrEqual(IN_FILTER_CHUNK_SIZE);
+    }
+    const queried = calls.slice(1).flatMap((c) => c.inValues);
+    expect(new Set(queried).size).toBe(queried.length);
+    expect(queried.length).toBe(n);
+    expect(result?.coveredOccurrences).toBe(n);
+    expect(result?.coveragePercent).toBe(100);
+  });
+
+  it("E. 500 word_ids → 2 requêtes de couverture, aucune perte", async () => {
+    const tables = coverageProgressTables(500);
+    const client = filteringClient(tables);
+    const result = await getQuranCoverage(client as never, "u-1");
+    expect(client._callsFor("word_occurrences")).toHaveLength(3);
+    expect(result?.coveredOccurrences).toBe(500);
+    expect(result?.totalOccurrences).toBe(500);
+    expect(result?.coveragePercent).toBe(100);
+  });
+
+  it("F. 1001 word_ids → 5 requêtes de couverture (≤ 250 chacune), résultat complet", async () => {
+    const n = 1001;
+    const tables = coverageProgressTables(n);
+    const client = filteringClient(tables);
+    const result = await getQuranCoverage(client as never, "u-1");
+    const calls = client._callsFor("word_occurrences");
+    expect(calls).toHaveLength(6); // total + 5 lots
+    for (const call of calls.slice(1)) {
+      expect(call.inValues.length).toBeLessThanOrEqual(IN_FILTER_CHUNK_SIZE);
+    }
+    expect(result?.coveredOccurrences).toBe(n);
+  });
+
+  it("G. déduplication : progression avec doublons → ids dédupliqués avant découpage, même résultat", async () => {
+    const distinct = ids(250);
+    const duplicated = [...distinct, ...distinct]; // 500 lignes de progression, 250 distincts
+    const tables = coverageProgressTables(250, duplicated.length);
+    const client = filteringClient(tables);
+    const result = await getQuranCoverage(client as never, "u-1");
+    const queried = client
+      ._callsFor("word_occurrences")
+      .slice(1)
+      .flatMap((c) => c.inValues);
+    expect(queried).toHaveLength(250);
+    expect(new Set(queried).size).toBe(250);
+    expect(result?.coveredOccurrences).toBe(250);
+  });
+
+  it("H. une erreur sur un lot de couverture → null (jamais de résultat partiel, comportement antérieur conservé)", async () => {
+    const tables = coverageProgressTables(500);
+    const client = filteringClient(tables, { table: "word_occurrences", callIndex: 2 });
+    const result = await getQuranCoverage(client as never, "u-1");
+    expect(result).toBeNull();
   });
 });

@@ -1,0 +1,312 @@
+{
+  "phase": "89R",
+  "title": "Production Launch Readiness / Manual Prerequisites Audit",
+  "verdict": "CONDITIONAL_GO",
+  "code_production_ready": "YES",
+  "deployment_production_ready": "NO",
+  "deployment_reason": "Prérequis externes uniquement (domaine, DNS, HTTPS, variables de production, projet Supabase production, redirect URLs, backups, monitoring, test E2E reset) — aucun bug de code",
+  "database_writes": 0,
+  "production_changes": 0,
+  "baseline": {
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "typescript": "^5",
+    "node": "25.5.0",
+    "npm": "11.8.0",
+    "dirty_files_before": 100,
+    "dirty_files_after": 100,
+    "phase_89r_new_files": 2,
+    "changes_since_89q": "Aucun changement de production depuis 89Q (les 100 fichiers dirty sont hérités de 89D-89O)",
+    "reports_present": ["phase-89n-input-security.json", "phase-89o-final-seo.json", "phase-89p-final-prelaunch.json", "phase-89q-final-production-readiness.json"]
+  },
+  "environment": {
+    "PRODUCTION_ENV_COMPLETE": "NOT_VERIFIED",
+    "variables": [
+      {
+        "name": "NEXT_PUBLIC_SUPABASE_URL",
+        "present_locally": "YES",
+        "required_prod": "YES",
+        "public": "YES",
+        "build_time": "YES",
+        "used_in": "Supabase clients (browser + SSR)",
+        "documented_in_env_example": "YES"
+      },
+      {
+        "name": "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+        "present_locally": "YES",
+        "required_prod": "YES",
+        "public": "YES",
+        "build_time": "YES",
+        "used_in": "Supabase clients (clé anon, sûre côté client)",
+        "documented_in_env_example": "YES"
+      },
+      {
+        "name": "NEXT_PUBLIC_SITE_URL",
+        "present_locally": "YES",
+        "required_prod": "YES",
+        "public": "YES",
+        "build_time": "YES",
+        "used_in": "metadataBase, canonical, OG, robots, sitemap, redirectTo reset-password",
+        "documented_in_env_example": "YES",
+        "note": "Inlinée au BUILD par Next ; sans elle, fallback http://localhost:3000 — doit être définie au build production"
+      },
+      {
+        "name": "SUPABASE_SERVICE_ROLE_KEY",
+        "present_locally": "YES",
+        "required_prod": "NO",
+        "public": "NO",
+        "secret": "YES",
+        "used_in": "Scripts d'import uniquement (scripts/) — ABSENT de app/components/lib",
+        "documented_in_env_example": "YES",
+        "client_exposure": "ZERO"
+      },
+      {
+        "name": "SUPABASE_ACCESS_TOKEN",
+        "present_locally": "YES",
+        "required_prod": "NO",
+        "public": "NO",
+        "secret": "YES",
+        "used_in": "Scripts de migration (scripts/) uniquement",
+        "documented_in_env_example": "YES",
+        "client_exposure": "ZERO"
+      },
+      {
+        "name": "ADMIN_EMAILS",
+        "present_locally": "YES",
+        "required_prod": "NO",
+        "public": "NO",
+        "used_in": "Contrôle d'accès /admin (si vide/absent, personne n'est admin)",
+        "documented_in_env_example": "YES"
+      },
+      {
+        "name": "VERCEL_GIT_COMMIT_SHA / RENDER_GIT_COMMIT",
+        "present_locally": "NO",
+        "required_prod": "NO",
+        "public": "NO",
+        "used_in": "Champ release de l'observabilité (lib/observability/sanitize.ts), fallback dev",
+        "documented_in_env_example": "NO"
+      }
+    ],
+    "secret_scan": "CLEAN",
+    "service_role_client_exposure": 0
+  },
+  "domain": {
+    "real_domain_configured": "NO",
+    "status": "NOT_VERIFIED",
+    "simulation_domain": "https://hikma.example (SIMULATION UNIQUEMENT — jamais considéré comme domaine réel)",
+    "required_after_domain": ["DNS", "certificat TLS/HTTPS", "redirection HTTP vers HTTPS", "www/non-www", "NEXT_PUBLIC_SITE_URL au build", "cohérence sitemap/robots/canonical/OG"]
+  },
+  "supabase": {
+    "production_project_verified": "NOT_VERIFIED",
+    "rls": "VERIFIED (lecture anon = 0 ligne sur les tables user, auth.uid() = user_id)",
+    "migrations": "Présentes dans scripts/apply-migrations.ts — NON appliquées automatiquement pendant cette phase",
+    "database_writes": 0,
+    "auth_redirect_urls": "NOT_VERIFIED — configuration externe (Dashboard Supabase : Site URL + Redirect URLs dont <siteUrl>/reset-password)"
+  },
+  "password_reset": {
+    "implementation": "VERIFIED (resetPasswordForEmail + exchangeCodeForSession + /reset-password + nouveau mot de passe)",
+    "real_e2e_email": "NOT_VERIFIED — aucun email réel envoyé ni testé sur domaine de production",
+    "procedure": "Après déploiement : demander un reset, recevoir l'email, cliquer le lien, définir un nouveau mot de passe, se reconnecter, vérifier rejet de l'ancien"
+  },
+  "admin": {
+    "code_verified": "PASS",
+    "robots": "noindex, nofollow",
+    "auth_guard": "VERIFIED",
+    "behavior_without_admin_emails": "Aucun utilisateur admin — route désactivée par défaut (documenté dans .env.example)"
+  },
+  "backups": {
+    "status": "NOT_VERIFIED_EXTERNAL",
+    "note": "Backups/PITR Supabase = configuration du projet, non vérifiable depuis le repo"
+  },
+  "observability": {
+    "endpoint_implemented": "VERIFIED (89I : instrumentation, /observability, rate limit, redaction, truncation)",
+    "observability_get_returns": "405 (POST-only — comportement attendu, pas un défaut)",
+    "platform_monitoring": "MANUAL_REQUIRED — aucune plateforme d'alertes/uptime configurée"
+  },
+  "audio": {
+    "educational_use": "VERIFIED",
+    "commercial_use": "NOT_VERIFIED",
+    "monetization_blocked": "YES",
+    "note": "R-009 non résolu — un pilote gratuit/éducatif reste approprié, la monétisation attend la preuve de licence commerciale"
+  },
+  "legal_pages": {
+    "privacy": "PASS (HTTP 200, canonical, contenu)",
+    "terms": "PASS (HTTP 200, canonical, contenu)",
+    "sources": "PASS (HTTP 200, canonical, contenu)"
+  },
+  "seo": {
+    "status": "PASS (vérifié sur build production avec domaine simulé)",
+    "canonical": "PASS — présent sur toutes les pages publiques indexables, absolu HTTPS, insensible aux query params",
+    "og": "PASS — og:title/description/url/image/site_name/locale fr_FR/type + twitter:card/title/description/image, tout en https absolu",
+    "og_image": "HTTP 200, 838 Ko (NOTE performance — poids élevé pour un logo, optimisation post-lancement)",
+    "robots_txt": "PASS — Allow: /, Disallow zones privées + auth, Sitemap https absolu",
+    "sitemap": "PASS — 116 URLs (root + /surahs + 114 sourates), aucune privée, aucune localhost/dev, aucune doublure",
+    "private_routes_noindex": "PASS — dashboard, profile, review, activity, admin = noindex, nofollow",
+    "public_routes": "PASS — /, /surahs, /surahs/[n], /learn/[slug], /mots/[id], /privacy, /terms, /sources",
+    "404": "PASS — /random-invalid -> 404 ; routes dynamiques invalides -> HTTP 200 avec contenu 404 streamé (quirk Next 16 documenté, non vulnérabilité)"
+  },
+  "security": {
+    "xss": "SAFE (0 sink dangereux, 89M/89N, aucune régression)",
+    "postgrest_injection": "SAFE (selects statiques, 89N)",
+    "idor": "SAFE (user.id dérivé de session, RLS auth.uid(), 89N)",
+    "open_redirect": "SAFE (aucun paramètre next/redirect traité, 89N)",
+    "redos": "SAFE (89N, tests de timing présents)",
+    "csp": "INTACT vs 89G — unsafe-eval: 0 occurrence en production, unsafe-inline documenté (exigence App Router)",
+    "headers": "PASS — CSP, X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin, Permissions-Policy, X-Frame-Options DENY, HSTS preload",
+    "cookies": "1 cookie de session Supabase SSR (aucun tracking)",
+    "secrets": "CLEAN"
+  },
+  "performance": {
+    "status": "PASS avec 1 NOTE",
+    "notes": [
+      "og:image logo_hikma.png = 838 Ko (poids élevé — compresser en post-lancement)",
+      "Aucune autre régression de performance évidente détectée"
+    ]
+  },
+  "dependencies": {
+    "npm_audit": "0 vulnérabilités (production)",
+    "updates_applied": "AUCUNE (aucune mise à jour automatique pendant cette phase)"
+  },
+  "deployment": {
+    "platform": "NOT_CONFIGURED",
+    "build_command": "npm run build",
+    "start_command": "npm start",
+    "node_version": "25.5.0 (vérifier la version supportée par la plateforme cible)",
+    "migrations": "npm run db:migrate (manuel, hors cette phase)"
+  },
+  "classification": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "NOTE": 3,
+    "MANUAL": 8,
+    "NOT_VERIFIED": 8
+  },
+  "findings": [
+    {
+      "id": "89R-001",
+      "severity": "P2",
+      "title": "og:image trop lourd (838 Ko)",
+      "evidence": "HTTP 200, 838813 octets",
+      "action": "Compresser/redimensionner le logo en post-lancement (non bloquant)"
+    },
+    {
+      "id": "89R-002",
+      "severity": "NOTE",
+      "title": "Routes dynamiques invalides -> HTTP 200 avec contenu 404 streamé",
+      "evidence": "/surahs/999 renvoie 200 + contenu introuvable (quirk Next 16 documenté)",
+      "action": "Aucune — comportement framework documenté, non vulnérabilité"
+    },
+    {
+      "id": "89R-003",
+      "severity": "NOTE",
+      "title": "GET /observability -> 405",
+      "evidence": "Route handler POST-only (endpoint d'observabilité) — comportement attendu",
+      "action": "Aucune"
+    },
+    {
+      "id": "89R-004",
+      "severity": "NOTE",
+      "title": "Node 25.5.0 local vs version plateforme cible",
+      "evidence": "package.json sans engines explicite",
+      "action": "Vérifier la version Node supportée par la plateforme de déploiement choisie"
+    },
+    {
+      "id": "89R-M01",
+      "severity": "MANUAL",
+      "title": "Domaine de production + DNS + HTTPS",
+      "evidence": "Aucun domaine réel configuré (hikma.example = simulation)",
+      "action": "Acheter/configurer le domaine, DNS, certificat TLS, redirections"
+    },
+    {
+      "id": "89R-M02",
+      "severity": "MANUAL",
+      "title": "NEXT_PUBLIC_SITE_URL au build",
+      "evidence": "Variable build-time inlinée par Next",
+      "action": "Définir l'URL de production dans l'environnement de la plateforme AVANT le build"
+    },
+    {
+      "id": "89R-M03",
+      "severity": "MANUAL",
+      "title": "Projet Supabase de production",
+      "evidence": "Configuration externe non vérifiable depuis le repo",
+      "action": "Créer/configurer le projet, appliquer les migrations, vérifier RLS"
+    },
+    {
+      "id": "89R-M04",
+      "severity": "MANUAL",
+      "title": "Redirect URLs Supabase",
+      "evidence": "Configuration Dashboard Supabase",
+      "action": "Ajouter Site URL + <siteUrl>/reset-password aux Redirect URLs"
+    },
+    {
+      "id": "89R-M05",
+      "severity": "MANUAL",
+      "title": "Test E2E réel du password reset",
+      "evidence": "Aucun email réel envoyé/testé",
+      "action": "Exécuter le cycle complet après déploiement sur le domaine réel"
+    },
+    {
+      "id": "89R-M06",
+      "severity": "MANUAL",
+      "title": "Backups / PITR Supabase",
+      "evidence": "Configuration projet, non vérifiable depuis le repo",
+      "action": "Vérifier/activer les backups et la stratégie de restauration"
+    },
+    {
+      "id": "89R-M07",
+      "severity": "MANUAL",
+      "title": "Monitoring / alertes plateforme",
+      "evidence": "Observabilité 89I implémentée mais aucune plateforme d'alertes branchée",
+      "action": "Brancher logs/alertes uptime et erreurs sur la plateforme choisie"
+    },
+    {
+      "id": "89R-M08",
+      "severity": "MANUAL",
+      "title": "Licence audio commerciale (R-009)",
+      "evidence": "Usage éducatif vérifié, usage commercial non démontré",
+      "action": "Obtenir la preuve de licence commerciale avant toute monétisation (le pilote gratuit/éducatif reste approprié)"
+    }
+  ],
+  "manual_prerequisites": [
+    "Domaine de production + DNS + HTTPS",
+    "NEXT_PUBLIC_SITE_URL définie au build",
+    "Projet Supabase de production + migrations + RLS",
+    "Redirect URLs Supabase (dont /reset-password)",
+    "Test E2E réel du password reset",
+    "Backups / PITR",
+    "Monitoring / alertes",
+    "Décision licence audio commerciale (R-009)"
+  ],
+  "not_verified": [
+    "Domaine réel / DNS / HTTPS",
+    "Environnement de production complet (valeurs des variables sur la plateforme)",
+    "Projet Supabase de production",
+    "Redirect URLs Supabase",
+    "Password reset E2E réel (email)",
+    "Backups / PITR",
+    "Monitoring / alertes plateforme",
+    "Licence audio commerciale (R-009)",
+    "Indexation réelle Google/Bing (post-déploiement, Search Console)"
+  ],
+  "validation": {
+    "TYPECHECK": "PASS",
+    "LINT": "PASS (0 erreur, 20 warnings pré-existants)",
+    "VITEST": "1058/1058 PASS (68 fichiers)",
+    "BUILD": "PASS (exit 0, build avec NEXT_PUBLIC_SITE_URL=https://hikma.example)",
+    "RUNTIME_SMOKE": "PASS",
+    "DATABASE_WRITES": 0,
+    "NPM_AUDIT": "0 vulnérabilités"
+  },
+  "files_changed": {
+    "phase_89r": ["reports/phase-89r-production-launch-readiness.json", "reports/phase-89r-production-launch-readiness-summary.md"],
+    "inherited": "100 fichiers dirty hérités des phases 89D-89O (aucun attribué à 89R)"
+  },
+  "go_no_go": {
+    "decision": "CONDITIONAL_GO",
+    "code_production_ready": "YES",
+    "deployment_production_ready": "NO",
+    "explanation": "Rien dans le code ne bloque le déploiement pilote gratuit/éducatif ; 8 actions manuelles externes sont nécessaires pour passer à DEPLOYMENT_PRODUCTION_READY = YES"
+  },
+  "next_action": "Aucune nouvelle phase de développement nécessaire. Exécuter la checklist manuelle (domaine, env, Supabase prod, redirect URLs, reset E2E, backups, monitoring, licence audio) puis déployer le pilote."
+}

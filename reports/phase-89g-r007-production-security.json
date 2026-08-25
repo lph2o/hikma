@@ -1,0 +1,125 @@
+{
+  "phase": "89G",
+  "title": "PRODUCTION CONFIG & SECURITY HEADERS — R-007",
+  "verdict": "PHASE_89G_COMPLETE",
+  "r007": "RESOLVED",
+  "database_writes": 0,
+  "baseline": {
+    "build": "PASS",
+    "typecheck": "PASS (0 erreur)",
+    "lint": "PASS (0 erreur)",
+    "vitest": "1008/1008 PASS (avant ajout des tests R-007)"
+  },
+  "root_cause": "next.config.ts était vide (aucun header de sécurité, aucun hardening) : aucune protection clickjacking, MIME sniffing, referrer leak ou permissions navigateur.",
+  "headers": {
+    "Content-Security-Policy": "CSP construite par module pur (lib/config/csp.ts) — voir section csp",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
+    "X-Frame-Options": "DENY",
+    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload — activé uniquement si NEXT_PUBLIC_SITE_URL commence par https://",
+    "poweredByHeader": "false"
+  },
+  "csp": {
+    "directives": [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob:",
+      "font-src 'self' data:",
+      "connect-src 'self' <SUPABASE_URL> wss://<SUPABASE_HOST>",
+      "media-src 'self' https://cdn.islamic.network blob:",
+      "frame-ancestors 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "object-src 'none'"
+    ],
+    "no_wildcard": true,
+    "unsafe_eval_production": "ABSENT — unsafe-eval ajouté uniquement en dev (NODE_ENV=development, source maps/outils Next.js), jamais en production",
+    "unsafe_inline_justification": "script-src: requis par le App Router Next.js (scripts inline de bootstrap RSC) ; style-src: styles inline React/Tailwind. Durcissement par nonces = amélioration future documentée."
+  },
+  "supabase": {
+    "connect_src": "Origine réelle dérivée de NEXT_PUBLIC_SUPABASE_URL (ex. https://akgblkwddjslbgoaxdfh.supabase.co) + wss:// réservé pour Realtime (non utilisé aujourd'hui)",
+    "auth": "compatible — les flux Auth (login, reset, session) utilisent fetch vers la même origine",
+    "storage": "non utilisé"
+  },
+  "audio": {
+    "media_src": "https://cdn.islamic.network uniquement (Al Quran Cloud) + blob: — pas de media-src *",
+    "reachable": "HTTP 206 (1024 octets) sur /quran/audio/128/ar.alafasy/1.mp3 — vérifié au runtime",
+    "legal": "R-009 reste NOT_VERIFIED (hors périmètre 89G)"
+  },
+  "fonts": {
+    "mechanism": "next/font/google (Poppins, Amiri, Geist_Mono) — auto-hébergées au build, servies depuis la même origine",
+    "font_src": "'self' data: — aucune origine Google nécessaire"
+  },
+  "images": {
+    "mechanism": "images locales (public/*.png), aucune image distante, pas de next/image remote",
+    "img_src": "'self' data: blob:"
+  },
+  "environment": {
+    "variables_necessaires": ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY", "NEXT_PUBLIC_SITE_URL"],
+    "variables_serveur": ["SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_ACCESS_TOKEN", "ADMIN_EMAILS"],
+    "aucune_valeur_secrete_affichee": true
+  },
+  "secrets": {
+    "scan": "Aucun secret réel trouvé dans app/lib/components/next.config.ts (service_role, private_key, sk_live, ghp_)",
+    "next_public_secrets": "Aucune variable NEXT_PUBLIC_ ne contient de secret (anon key et URL sont publiques par conception)"
+  },
+  "security": {
+    "clickjacking": "frame-ancestors 'none' + X-Frame-Options: DENY",
+    "mime_sniffing": "X-Content-Type-Options: nosniff",
+    "referrer": "strict-origin-when-cross-origin",
+    "permissions": "camera, microphone, geolocation, payment désactivées",
+    "coop_corp": "non ajoutés — aucune ressource cross-origin ne les exige ; risque de casser des flux Auth/audio sans bénéfice"
+  },
+  "runtime": {
+    "server": "build production, port 3100 (dev server utilisateur sur 3000 non touché)",
+    "headers_verifies": {
+      "csp_unique": true,
+      "script_src_prod": "'self' 'unsafe-inline' (sans unsafe-eval)",
+      "hsts_absent_non_https": true,
+      "routes": {
+        "/login": 200,
+        "/surahs/1": 200,
+        "/privacy": 200,
+        "/forgot-password": 200,
+        "/dashboard": "200 streamé avec digest NEXT_REDIRECT (89B intacte)",
+        "/admin": "307 → /login",
+        "/robots.txt": 200,
+        "/sitemap.xml": "200 (116 <loc>)"
+      }
+    }
+  },
+  "tests": {
+    "build": "PASS (exit 0)",
+    "typecheck": "PASS (0 erreur)",
+    "lint": "PASS (0 erreur)",
+    "vitest": "1018/1018 PASS (65 fichiers — 1008 existants + 10 nouveaux tests CSP)",
+    "csp_specific": "10 tests : pas de wildcard, object-src/frame-ancestors/base-uri/form-action, origine Supabase dans connect-src, CDN audio dans media-src uniquement, robustesse sans env, HSTS conditionnel HTTPS, pas de doublon, unsafe-eval dev uniquement"
+  },
+  "regressions": "0 — aucun test modifié, aucune route cassée (vérifié runtime), données DB intactes",
+  "risks": [
+    {
+      "id": "RISK-89G-001",
+      "severity": "LOW",
+      "detail": "CSP avec unsafe-inline (scripts/styles) — durcissement par nonces possible plus tard (middleware + injection de nonce), hors périmètre 89G."
+    }
+  ],
+  "discovered": [
+    {
+      "id": "DISC-004",
+      "severity": "NOTE",
+      "detail": "Le dev-mode peut loguer des violations CSP liées aux source maps Next.js malgré unsafe-eval dev ; sans incidence sur le build production. À surveiller en dev uniquement."
+    }
+  ],
+  "not_verified": [
+    "Comportement exact derrière le CDN/plateforme de production finale (headers gérés par la plateforme).",
+    "Configuration TLS du domaine final (HSTS activé automatiquement quand NEXT_PUBLIC_SITE_URL sera en https://).",
+    "Violations CSP observées dans un vrai navigateur (aucun navigateur E2E disponible)."
+  ],
+  "recommendations": [
+    "Configurer NEXT_PUBLIC_SITE_URL=https://<domaine> en production pour activer HSTS.",
+    "Ajouter les Redirect URLs Supabase (déjà documenté en 89D) — indépendant des headers."
+  ],
+  "next_phase": "PHASE_89H_OBSERVABILITY — R-008"
+}

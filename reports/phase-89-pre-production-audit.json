@@ -1,0 +1,69 @@
+{
+  "phase": "PHASE_89_PRE_PRODUCTION_READINESS_AUDIT",
+  "generatedAt": "2026-08-25T00:00:00Z",
+  "scope": "Audit global read-only de l'application réelle (repository + Supabase réel + build VS tests)",
+  "verdict": "PHASE_89_PRE_PRODUCTION_BLOCKED",
+  "verdictRationale": "2 BLOCKER identifiés : IMG-001 (next build échoue sur 309 erreurs TS legacy dans scripts/ — le code servi est 0 erreur) et SEC-002 (routes privées /dashboard, /profile, /review, /activity publiquement atteignables sans garde applicatif — aucune fuite DB grâce à RLS solide). 6 HIGH, 3 MEDIUM, 1 LOW (détail : reports/phase-89-pre-production-issues.json). La base, le lexique, le curriculum et le runtime production sont sains.",
+  "constraints": {
+    "databaseWrites": 0,
+    "browserE2e": "BROWSER_E2E_NOT_AVAILABLE — aucune vérification navigateur réelle ; responsive/a11y/mobile = audit STATIQUE uniquement.",
+    "filesCreatedByAudit": ["scripts/phase-89-pre-production-audit.ts", "reports/phase-89-pre-production-audit.json", "reports/phase-89-pre-production-issues.json"],
+    "productionFilesModified": 0
+  },
+
+  "1_build_runtime": {
+    "nextBuild": "FAIL (exit 1) à la passe typecheck : 309 erreurs TS dans scripts/ (supabase-js generics drift, TS2345/TS2304) + 1 dans tests/ (regex flag es2018, target ES2017). Compilation Next (9.4s) réussit ; 0 erreur TS dans app/lib/components.",
+    "typescript": "0 erreur sur le code production ; 310 erreurs legacy pages scripts/+tests (non servies).",
+    "eslint": "0 erreur / 0 warning sur les fichiers audités (eslint-config-next core-web-vitals + typescript).",
+    "vitest": "975/975 PASS (63 fichiers, 14,6s).",
+    "lockfile": "package-lock.json v3 cohérent.",
+    "env_secrets": "OK : .env git-ignore ; seuls anon URL/KEY côté client ; SERVICE_ROLE/ACCESS_TOKEN uniquement dans scripts disonnets.",
+    "server_client_separation": "Correcte (createClient server vs client ; écritures via Server Actions)."
+  },
+  "2_database_integrity": {
+    "counts_readOnly_paginated": { "learning_paths": 34, "units": 34, "lessons": 547, "lesson_words": 4503, "surahs": 114, "ayahs": 6236, "quran_words": 21296, "word_occurrences": 77430 },
+    "integrity": { "lessonsWithoutWords": 0, "lesson_words_with_missing_word": 0, "lesson_words_with_missing_lesson": 0, "occurrences_with_missing_word": 0, "occurrences_with_missing_ayah": 0, "word_translations_with_missing_word": 0, "duplicate_lesson_word_pairs": 0, "wlm_safe_missing_word": 0, "wlm_missing_lemma": 0 },
+    "note": "Intégrité EXCELLENTE : 0 orphelin, 0 doublon. Lectures paginées (range) pour éviter la troncature 1000 lignes REST."
+  },
+  "3_lexical": {
+    "sources": "6 (api, editorial, historical_dictionary, quran_translation, word_audio, linguistic)",
+    "wordTranslationsFr": 6095, "wordTranslationsFrValidated": 6095,
+    "lemmas": 1593, "lemmaTranslationsFr": 204, "lemmaTranslationsFrValidated": 200,
+    "wordLemmaMappingSafe": 220,
+    "distinctWordsWithValidatedFr": 6095, "distinctLemmasWithValidatedFr": 200,
+    "fresh10SurahFrenchResolutionPct": { "51": 100, "64": 100, "66": 100, "67": 100, "71": 100, "75": 100, "77": 100, "79": 100, "80": 100, "89": 100 },
+    "finding": "Couverture FR RÉELLE = 6095 mots validés, bien au-delà de la narration « 559 » (sous-ensemble d'une phase). Les 10 nouvelles sourates sont à 100% de résolution FR (forme OU lemme validé). Documentation à mettre à jour sur ce point."
+  },
+  "4_curriculum": { "consistency": "PASS — 34 parcours/34 unités/547 leçons publiées/4503 lesson_words ; 0 leçon sans mot ; statuts et ordres cohérents." },
+  "5_auth": { "signup_login_logout": "PASS", "session_refresh": "proxy.ts (Next 16)", "rls": "auth.uid()=user_id sur toutes les tables utilisateur", "anon_guards": "Toutes les actions vérifient !user → {ok:false} ou no-op", "gap_password_reset": "ABSENT — HIGH (AUTH-004)" },
+  "6_onboarding": { "consistency": "PASS — /onboarding exige auth, redirige connecté-fini vers /dashboard ; layout isolé anti-boucle ; version onboarding=2." },
+  "7_dashboard": { "anon_handling": "PASS (DashboardAnon) mais expose une zone applicative anonyme (SEC-002)", "queries": "Promise.all parallélisé ; getCoverageBySurah .in(word_id) NON chunké (IMG-003)" },
+  "8_surahs": { "catalog": "PASS (chunking 88J ok)", "detail": "/surahs/[number] → notFound pour visiteur (UX-010)" },
+  "9_lessons": { "public_lessons": "PASS — /learn/[slug] public avec TrialBanner pour visiteur ; aucune écriture DB anonyme" },
+  "10_exercises": { "variety": "11 types présents ; contrôle d'évidence lexicale en place" },
+  "11_free_text": { "quality": "PASS — grading pur sans I/O, normalisation contrôlée, non-contamination, distinguo CORRECT/INCORRECT/AMBIGUOUS protégeant les homographes" },
+  "12_review_srs": { "logic": "pure, lit real dueCount/studiedCount ; scheduler Leitner ; aucune progression artificielle pendant l'audit" },
+  "13_word_detail": { "public_word": "PASS — /mots/[id] lecture publique, notFound si absent" },
+  "14_audio": { "word_muallim": "bucket privé word-audio, URLs signées TTL 1h, policy storage lecture restreinte (bonne sécurité)", "ayah_cdn": "islamic.network (Alafasy…) — licence redistribution à confirmer pour commercial (AUDIO-008)" },
+  "15_arabic_rtl": { "static": "Amiri + Poppins, ArabicText, dir/lang gérés ; NOT vérifié au navigateur (BROWSER_E2E_NOT_AVAILABLE)" },
+  "16_responsive_mobile": { "status": "RESPONSIVE_BROWSER_AUDIT = NOT_AVAILABLE", "static": "layouts md:lg présents, collapse single-column attendu" },
+  "17_accessibility": { "status": "STATIC ONLY", "observed": "focus-visible:ring, aria-live, sr-only, roles tab/radiogroup/progressbar. Aucun BLOCKER a11y identifié statiquement ; NON validé au navigateur." },
+  "18_performance": { "chunking": "bonne couverture (.in catalog/lesson_words chunkés) ; GAP : getCoverageBySurah word_id non chunké (IMG-003 HIGH)", "n1": "aucun N+1 évident" },
+  "19_security": { "rls": "complet", "secrets": "0 secret hardcodé ; service_role hors bundle ; .env ignoré", "audio": "URLs signées ≠ exposé", "endpoints": "aucune route API (Server Actions)", "gaps": "/admin public (SEC-009), routes privées non gated (SEC-002), pas de security headers (CFG-007)" },
+  "20_error_handling": { "static": "try/catch, états anon, not-found ; aucune stack trace exposée observée" },
+  "21_seo": { "metadata_root_only": true, "per_route": false, "robots_sitemap_manifest_og": "ABSENTS", "verdict": "HIGH (SEO-005)" },
+  "22_production_config": { "nextConfigEmpty": true, "securityHeaders": false, "imageConfig": false, "domainAuthRedirect": "à configurer", "envProd": "manque", "verdict": "HIGH (CFG-007)" },
+  "23_legal_trust": { "privacyTermsContact": "ABSENTS", "attribution_sources": "présent en DB, non publié", "verdict": "HIGH LEGAL_REVIEW_REQUIRED (LEG-006)" },
+  "24_design_system": { "consistency": "Excellent langage Hikma (teal=action, gold=progression, ivory, Poppins/Amiri) respecté ; audit design récurrent existant." },
+  "25_empty_loading_error_states": { "loading": "(app)/loading + dashboard/loading", "root_error": "app/error.tsx", "empty": "états anon présents" },
+  "26_observability": { "logs": "console.error épars", "errorTracking": "AUCUN", "analytics": "AUCUN", "monitoring": "AUCUN", "verdict": "IMPORTANT (OBS-012)" },
+  "27_release_checklist": {
+    "blocker": ["IMG-001 : build produisible sans ignoreBuildErrors (exclure scripts/ ou corriger types legacy)", "SEC-002 : verrouiller /dashboard,/profile,/review,/activity (auth ou dégradé assumé)"],
+    "high": ["IMG-003 chunker getCoverageBySurah", "AUTH-004 mot de passe oublié + confirmation email", "SEO-005 metadata/robots/sitemap/OG", "LEG-006 Privacy+Terms", "CFG-007 security headers + config domaine", "OBS-012 error tracking/analytics"],
+    "medium": ["AUDIO-008 licence récitations", "SEC-009 /admin", "UX-010 /surahs 404 anon"],
+    "low": ["UX-011 404 → landing"],
+    "note": ["CHANGE-013 : documenter couverture FR réelle (6095)"]
+  },
+  "recommendations": "Traiter IMG-001 + SEC-002 (BLOCKER) puis les HIGH avant mise en ligne ; re-exécuter un BROWSER E2E réel (mobile, a11y, RTL, reset password). La base et le runtime sont sains.",
+  "finalVerdict": "PHASE_89_PRE_PRODUCTION_BLOCKED"
+}

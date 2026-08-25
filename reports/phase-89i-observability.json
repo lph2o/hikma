@@ -1,0 +1,157 @@
+{
+  "phase": "89I",
+  "title": "OBSERVABILITY / ERROR TRACKING — R-008",
+  "verdict": "PHASE_89I_COMPLETE",
+  "database_writes": 0,
+  "summary": {
+    "r008": "RESOLVED — couche d'observabilité native Next 16, zéro dépendance, zéro donnée hors serveur",
+    "recommended_error_tracking": "NATIVE_NEXT16 (zéro-dépendance) — Sentry documenté comme drop-in futur",
+    "recommended_analytics": "NONE",
+    "build": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "tests": "1030/1030 PASS"
+  },
+  "audit_initial": {
+    "existant": "Aucun système (ni Sentry, ni PostHog, ni instrumentation) — app/error.tsx existait (log console local), pas de global-error.tsx, pas d'instrumentation.ts",
+    "erreurs_detectables_avant": "Aucune (erreurs serveur invisibles hors console, erreurs client invisibles hors navigateur)",
+    "documentation": "API vérifiée dans les docs officielles installées (node_modules/next/dist/docs — instrumentation.md, instrumentation-client.md) et les types Next 16.3 (server/instrumentation/types.d.ts)"
+  },
+  "provider_comparison": [
+    {
+      "provider": "Sentry (@sentry/nextjs)",
+      "error_tracking": "Complet (dashboard, alertes, source maps, releases)",
+      "analytics": "Non",
+      "privacy": "beforeSend/scrubbing possible, mais transfert d'événements vers un tiers (ingest.sentry.io)",
+      "consent": "Zone grise vs 89H scénario A (zéro traceur) — à documenter",
+      "csp": "Nécessiterait l'ajout de l'origine ingest.sentry.io en connect-src",
+      "cost": "Gratuit 5 000 erreurs/mois",
+      "complexity": "Modérée (DSN, source maps, SENTRY_AUTH_TOKEN secret)",
+      "verdict": "Excellent, mais sur-dimensionné pour le pré-lancement et rompt la simplicité privacy de 89H"
+    },
+    {
+      "provider": "PostHog",
+      "error_tracking": "Oui (avec analytics)",
+      "analytics": "Oui — non souhaité (R-008 ne couvre que l'observabilité)",
+      "privacy": "Consentement probablement requis pour la partie analytics",
+      "consent": "Dépendance 89H",
+      "verdict": "Écarté : analytics hors périmètre, surcharge consentement"
+    },
+    {
+      "provider": "Plausible",
+      "error_tracking": "Non (analytics uniquement)",
+      "analytics": "Oui, privacy-friendly (exemption CNIL possible)",
+      "verdict": "Écarté pour R-008 : pas d'error tracking ; à réévaluer en phase analytics future"
+    },
+    {
+      "provider": "OpenTelemetry / self-hosted",
+      "error_tracking": "Oui",
+      "complexity": "Élevée (collecteur, export, infra)",
+      "verdict": "Écarté : sur-dimensionné pour le volume pré-lancement"
+    },
+    {
+      "provider": "NATIVE Next.js 16 (retenu)",
+      "error_tracking": "onRequestError (serveur) + listeners navigateur (client) + ingestion POST /observability",
+      "analytics": "Non",
+      "privacy": "Aucune donnée hors serveur ; sanitisation systématique",
+      "consent": "Aucune dépendance — 89H scénario A préservé",
+      "csp": "Inchangée (aucune nouvelle origine)",
+      "cost": "0",
+      "complexity": "Minimale — 5 fichiers + tests",
+      "verdict": "Minimum viable aligné sur les priorités de la phase (RELIABILITY > MINIMAL DATA)"
+    }
+  ],
+  "architecture": {
+    "instrumentation_ts": "register() (boot) + onRequestError(error, {path, method}, ctx) → événement JSON structuré sur stdout (logs plateforme)",
+    "instrumentation_client_ts": "Écouteurs window 'error' + 'unhandledrejection' avant hydratation → reportClientError",
+    "observability_route": "POST /observability : validation, re-sanitisation serveur, limite 16 KB, rate-limit mémoire 30/min/IP, journal JSON ; GET → 405",
+    "error_tsx": "Error boundary client → reportClientError (au lieu du console.error local)",
+    "release_tracking": "VERCEL_GIT_COMMIT_SHA / RENDER_GIT_COMMIT (serveur uniquement) ou 'dev'",
+    "environments": "dev : journal console local sans réseau ; production : ingestion serveur"
+  },
+  "data_collected": {
+    "serveur": "path (pathname sans query), method, routeType, renderSource, revalidateReason, name/message/stack d'erreur (tronqués), ts, env, release",
+    "client": "name, message, stack (tronqués), pathname, source (window.onerror / unhandledrejection / error-boundary)"
+  },
+  "data_excluded": {
+    "jamais": ["cookies", "headers", "Authorization", "tokens/JWT", "query string", "corps de requête", "email", "userId", "progression", "réponses pédagogiques", "session replay"]
+  },
+  "sanitization": {
+    "redactSensitive": "redacte access_token/refresh_token/id_token/token/code/api_key/password/secret=... dans les messages",
+    "truncate": "message ≤ 2000 caractères, stack ≤ 4000",
+    "allowlist_client": "seuls name/message/stack/path/source sont acceptés — tout autre champ ignoré",
+    "tests": "12 tests unitaires couvrant redaction, troncature, liste blanche, payloads invalides, rate limiter"
+  },
+  "privacy": {
+    "consent": "Aucune dépendance consentement — cohérent avec 89H scénario A",
+    "cookies_storage": "Aucun cookie, aucun localStorage ajouté",
+    "session_replay": "DISABLED (par défaut et de conception)"
+  },
+  "csp": {
+    "status": "INCHANGÉE — aucune nouvelle origine (ingestion même origine, connect-src 'self' couvre la requête)"
+  },
+  "performance": {
+    "bundle": "Aucun SDK ajouté ; instrumentation-client ~1 KB",
+    "requests": "1 POST par erreur client (keepalive), rien au chargement normal"
+  },
+  "environments": {
+    "development": "journal console local",
+    "preview_production": "ingestion + logs serveur (env et release taggés dans chaque événement)"
+  },
+  "alerting": {
+    "definition": "P0 (site indisponible) / P1 (explosion d'erreurs, auth cassée) / P2 (erreur récurrente) — à configurer sur les logs plateforme (dépend du fournisseur de déploiement, hors périmètre)"
+  },
+  "tests": {
+    "build": "PASS (exit 0)",
+    "typecheck": "PASS (0 erreur)",
+    "lint": "PASS (0 erreur)",
+    "vitest": "1030/1030 PASS (66 fichiers — 1018 existants + 12 nouveaux tests observabilité)",
+    "runtime": {
+      "boot_logged": true,
+      "post_valide": "200 + événement journalisé avec token=[REDACTED], query supprimée, champ inconnu ignoré",
+      "post_invalide": "400",
+      "get": "405",
+      "rate_limit": "429 après 30/min",
+      "csp": "connect-src inchangé (aucune nouvelle origine)"
+    }
+  },
+  "browser_e2e": "NOT_VERIFIED — aucun navigateur réel ; comportement client validé par lecture du code + tests unitaires + ingestion testée par HTTP",
+  "security_review": {
+    "secrets": "Aucun secret dans les nouveaux fichiers (scan) ; aucun DSN ; pas de variable d'environnement ajoutée",
+    "endpoint_public": "POST /observability ouvert (log uniquement) — mitigé par taille plafonnée + rate-limit + re-sanitisation",
+    "csp_89g": "non affaiblie"
+  },
+  "regressions": "0 — aucune route cassée (runtime vérifié), tests existants intacts, DB intacte",
+  "not_verified": [
+    "Comportement navigateur réel (erreurs client → ingestion) sans E2E navigateur.",
+    "Configuration des alertes plateforme (dépend du fournisseur de déploiement)."
+  ],
+  "discovered": [
+    {
+      "id": "DISC-005",
+      "severity": "NOTE",
+      "detail": "app/global-error.tsx absent — seule l'erreur du segment racine passe par error.tsx ; une erreur du layout racine n'a pas de boundary dédiée. Ajout recommandé en phase UX (hors périmètre 89I, l'instrumentation-client capture déjà les erreurs non gérées)."
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-89I-001",
+      "severity": "LOW",
+      "detail": "Rate-limit mémoire (par process) — en multi-instance, chaque instance a son propre compteur ; acceptable au volume pré-lancement."
+    },
+    {
+      "id": "RISK-89I-002",
+      "severity": "NOTE",
+      "detail": "Sans fournisseur externe, la visibilité repose sur les logs de la plateforme de déploiement (Vercel/Node) — à activer avant lancement."
+    }
+  ],
+  "recommendations": [
+    "Avant le lancement : activer l'ingestion des logs plateforme et configurer les alertes P0/P1 dessus.",
+    "Quand le volume le justifie (ou alerting avancé requis) : intégrer Sentry comme drop-in (instrumentation.ts onRequestError → Sentry.captureException ; beforeSend scrub ; origine ingest.sentry.io en connect-src ; DSN public dans .env, SENTRY_AUTH_TOKEN serveur pour les source maps).",
+    "Ajouter global-error.tsx (DISC-005) en phase UX."
+  ],
+  "next_phase": {
+    "phase": "PHASE_89J_DEPLOY_DRY_RUN",
+    "risks": ["R-007 deploy config", "R-008 alerting plateforme", "R-009 audio licence (reste NOT_VERIFIED)"]
+  }
+}

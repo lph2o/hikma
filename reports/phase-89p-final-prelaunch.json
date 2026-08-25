@@ -1,0 +1,101 @@
+{
+  "phase": "89P",
+  "name": "FINAL_PRELAUNCH_AUDIT_PRODUCTION_READINESS",
+  "verdict": "PHASE_89P_FINAL_PRELAUNCH_AUDIT_COMPLETE",
+  "production_ready": "YES_WITH_MANUAL_ACTIONS",
+  "code_readiness": "COMPLETE",
+  "external_deployment_readiness": "NOT_VERIFIED",
+  "database_writes": 0,
+  "methodology": "AUDIT → FINDINGS → CLASSIFICATION → CORRECTIONS MINIMALES (VERIFIED uniquement) → VALIDATION → RAPPORT. Re-vérification contre l'état ACTUEL du repo ; les conclusions déjà prouvées en 89L→89O ont été re-confirmées sans refaire le travail inutilement.",
+  "stack": { "next": "16.3.0", "react": "19.2.8", "typescript": "strict", "app_router": true, "node_engines": "absente (recommandé: pinner node LTS, noté LOW)" },
+  "baseline": { "build": "PASS", "typecheck": "PASS", "lint": "PASS (0 erreur, 20 warnings pre-existants)", "tests": "1058/1058 PASS (68 files)" },
+  "severity_counts": { "CRITICAL": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 2, "NOTE": 5, "PASS": 20 },
+  "environment": {
+    "NEXT_PUBLIC_SUPABASE_URL": "SET (dev)",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "SET (dev)",
+    "SUPABASE_SERVICE_ROLE_KEY": "serveur uniquement, jamais NEXT_PUBLIC_",
+    "SUPABASE_ACCESS_TOKEN": "scripts only",
+    "NEXT_PUBLIC_SITE_URL": "ABSENTE de .env → domaine prod NON configuré (NOT_VERIFIED/manual)",
+    "ADMIN_EMAILS": "optionnelle, absente = admin désactivé (safe)",
+    "build_time_inlining": "Strict : NEXT_PUBLIC_* inlinés au build, y compris NEXT_PUBLIC_SITE_URL. Build simulé avec https://hikma.example → canonical/sitemap/robots/og/og:image tous en https absolu, AUCUN localhost/http-dev, 116/116 loc → hikma.example."
+  },
+  "supabase": {
+    "rls_enforced": "VERIFIED (read-only) : client anonyme → 0 ligne sans erreur sur user_settings, user_word_progress, lesson_sessions, review_items, user_word_skill_progress.",
+    "service_role_client": false,
+    "anon_key_only_production_code": true,
+    "project_production": "NOT_VERIFIED - séparation projet dev/prod à confirmer (configuration externe)"
+  },
+  "authentication": {
+    "login": "signInWithPassword + authErrorMessage (msg fixes)",
+    "signup": "signUp + confirmation email requise + redirect onboarding/dashboard",
+    "logout": "signOut + redirect /",
+    "password_reset": "resetPasswordForEmail + exchangeCodeForSession + hasRecoverySession exigée avant updateUser (amr=recovery), anti-énumération par message neutre",
+    "recovery_session": "hasRecoverySession (amr recovery exigé avant updateUser)",
+    "auth_getUser_server": "toutes les Server Actions dérivent user.id de auth.getUser() côté serveur, jamais client"
+  },
+  "authorization": {
+    "idors": 0,
+    "evidence": "Aucun endpoint n'accepte un userId client ; user.id dérivé de la session ; RLS auth.uid()=user_id activée (vérifié READ-ONLY).",
+    "routes_privees": "dashboard, profile, review, activity protégés par redirect(/login) ; admin par redirect + isAdminEmail"
+  },
+  "input_security": {
+    "xss": 0,
+    "sinks": "aucun dangerouslySetInnerHTML/innerHTML/eval/document.write",
+    "free_text_persisted": false,
+    "reDoS": "non, testé 89N (regex linéaires, ≤4ms isolé sur 200K chars)"
+  },
+  "postgrest_injection": 0,
+  "open_redirect": 0,
+  "seo": {
+    "canonical": "explicite sur toutes les pages publiques indexables (8 routes), query-param clean (vérifié runtime /?utm=x et /surahs/1?a=b)",
+    "robots_txt": "200, User-agent:*, Allow:/, Disallow zones privées, Sitemap https correct",
+    "sitemap": "200, 116 URLs https absolues, aucune route privée, aucune 404",
+    "og": "og:url + og:image présents, https absolu (og:url ajouté en root layout)",
+    "private_noindex": "VERIFIED : dashboard/profile/review/activity/admin → noindex,nofollow au runtime",
+    "404": "comportement Next 16 streamé (HTTP 200 + contenu 404) documenté, non vulnérabilité",
+    "public_priv_separation": "cohérente (sitemap ∩ indexables correct, pas de fuite privée)"
+  },
+  "security_headers": {
+    "csp": "inchangée depuis 89G (script-src unsafe-inline requis App Router, unsafe-eval DEV uniquement)",
+    "x_content_type": "nosniff",
+    "referrer": "strict-origin-when-cross-origin",
+    "permissions": "camera/mic/geo/payment=()",
+    "frame": "DENY / frame-ancestors 'none'",
+    "hsts": "conditionnel URL https"
+  },
+  "privacy": { "cookies": 1, "tracking": "NONE", "cookie_session": "sb-<ref>-auth-token (Supabase SSR)", "notice": "hikma:consent:v1 localStorage" },
+  "observability": { "rate_limit": true, "truncation": true, "redaction": true, "json_safe": true, "no_sensitive_logs": "vérifié 89N" },
+  "audio": { "educational": "VERIFIED", "commercial": "NOT_VERIFIED (R-009 non résolu - monétisation à résoudre avant)" },
+  "backups": "NOT_VERIFIED_EXTERNAL (configuration Supabase/projet, hors repo)",
+  "domain": "NOT_CONFIGURED (NEXT_PUBLIC_SITE_URL absente de .env)",
+  "https": "NOT_CONFIGURED (dépend domaine) - HSTS s'activera avec URL https",
+  "deployment_platform": "NOT_CONFIGURED (aucun vercel/netlify/dockerfile)",
+  "git_scope": "L'état hold 97 fichiers dirty provient des phases 89D→89O (NE PAS attribuer à 89P). 89P = AUDIT PUR, aucun fichier de production modifié ; ajoute uniquement les rapports 89P.",
+  "regressions": 0,
+  "discovered": [
+    "DISC-89P-001 (LOW): pas de `engines.node` dans package.json (recommandé: pinner node LTS pour la plateforme)",
+    "DISC-89P-002 (NOTE): role d'admin géré par ADMIN_EMAILS au lieu d'un rôle DB (défaut sûr, documenté)"
+  ],
+  "not_verified": [
+    "Domaine production / DNS / HTTPS (aucun domaine configuré)",
+    "Projet Supabase de production + séparation dev/prod",
+    "Supabase Redirect URLs (dont /reset-password)",
+    "Password reset E2E réel avec boîte mail (aucun email réel envoyé)",
+    "Backups Supabase / PITR / restauration",
+    "Plateforme de déploiement + logs + alertes",
+    "Indexation réelle par Google (à confirmer post-déploiement)",
+    "Licence audio COMMERCIALE (R-009 NOT_VERIFIED)"
+  ],
+  "manual_actions_required": [
+    "Configurer le domaine + HTTPS + NEXT_PUBLIC_SITE_URL (M-02/M-04 89L)",
+    "Créer/configurer le projet Supabase de production (M-03)",
+    "Redirect URLs Supabase dont /reset-password + template email (M-05)",
+    "Vérifier backups/PITR (M-06)",
+    "Configurer logs/alertes plateforme (M-07)",
+    "Test E2E réel du password reset (M-08)",
+    "Décider ADMIN_EMAILS (activer ou laisser désactivé)",
+    "Résoudre R-009 avant toute monétisation"
+  ],
+  "recommended_next_action": "Exécuter les 8 actions manuelles (M-01→M-08) puis lancer un déploiement pilote contrôlé gratuit/éducatif.",
+  "next_phase": "AUCUNE nouvelle phase d'implémentation requise côté code — GO pour le déploiement pilote contrôlé après actions manuelles."
+}

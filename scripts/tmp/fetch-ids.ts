@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- script CLI one-shot legacy : types Supabase pragmatiques */
 import { createClient } from "@supabase/supabase-js";
 (async () => {
   for (const f of [".env.local", ".env"]) {

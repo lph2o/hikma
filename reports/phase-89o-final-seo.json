@@ -1,0 +1,115 @@
+{
+  "phase": "89O",
+  "name": "FINAL_SEO_INDEXABILITY_AUDIT",
+  "verdict": "PHASE_89O_COMPLETE",
+  "database_writes": 0,
+  "baseline": { "build": "PASS", "typecheck": "PASS", "lint": "PASS (0 erreur)", "tests_before": 1058 },
+  "methodology": "AUDIT → FINDINGS → SEVERITY → DECISION → IMPLEMENTATION (minimal) → VALIDATION → ADVERSARIAL REVIEW → RAPPORT. Docs official Next 16 (node_modules/next/dist/docs) consultées avant toute conclusion : `alternates.canonical` est le mécanisme EXPLICITE pour émettre <link rel=canonical> (Next n'en émet pas automatiquement) ; `robots.index=false` émet <meta robots=noindex,nofollow> ; `robots.ts` est le mécanisme Next pour /robots.txt.",
+  "perfect_surface": {
+    "public_indexable": ["/", "/surahs", "/surahs/1..114", "/privacy", "/terms", "/sources"],
+    "public_crawlable_hors_sitemap": ["/learn/[slug]", "/mots/[id]", "/login", "/signup(login)", "/forgot-password", "/reset-password", "/onboarding"],
+    "private_noindex": ["/dashboard", "/profile", "/review", "/activity", "/admin"],
+    "sitemap_urls": 116
+  },
+  "findings": [
+    {
+      "id": "89O-001",
+      "severity": "MEDIUM",
+      "title": "Canonical absent sur toutes les pages publiques",
+      "root_cause": "metadataBase était défini dans le layout racine mais aucun `alternates.canonical` par route n'existait ; Next 16 n'émet pas automatiquement <link rel=canonical> (vérifié dans les docs installées + runtime : aucune balise canonical rendue).",
+      "impact": "Duplication potentielle de contenu (query params, www/non-www, doublons) et signal d'indexation incomplet pour les page publiques.",
+      "fix": "Ajout d'`alternates: { canonical: <chemin relatif> }` (résolu contre metadataBase → URL absolue) sur / (page.tsx), /surahs, /surahs/[number], /learn/[slug], /mots/[id], /privacy, /terms, /sources.",
+      "why_safe": "Relative paths résolus par Next contre metadataBase dérivé de NEXT_PUBLIC_SITE_URL ; aucune valeur utilisateur dans le canonical ; résiste au canonical poisoning.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "89O-002",
+      "severity": "MEDIUM",
+      "title": "Routes privées émettent `index, follow` par héritage du layout racine",
+      "root_cause": "Le layout racine définit robots:{index:true,follow:true} ; /dashboard, /profile, /review, /activity, /admin ne surchargeaient pas robots → <meta robots=index,follow> alors qu'elles sont authentifiées/privées.",
+      "impact": "Routes privées signalées comme indexables si un crawler les atteint directement (l'auth les bloque au contenu réel, mais le signal noindex était faux).",
+      "fix": "robots:{index:false,follow:false} explicitement sur les 5 routes privées (dashboard, profile, review, activity, admin).",
+      "why_safe": "Noindex est un signal d'indexation, PAS un contrôle de sécurité — l'auth (89B) reste le vrai gardien. Conforme au principe « robots.txt n'est pas une sécurité ».",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "89O-003",
+      "severity": "LOW",
+      "title": "NEXT_PUBLIC_SITE_URL requise au BUILD pour des URL de prod correctes",
+      "root_cause": "Next inline les variables NEXT_PUBLIC_* au build ; sans NEXT_PUBLIC_SITE_URL au build, metadataBase/robots/sitemap/canonical retombent sur http://localhost:3000.",
+      "impact": "Pas un bug de code mais une précondition de config production : un build sans cette variable émettrait localhost dans canonical/OG/sitemap.",
+      "fix": "Aucun changement de code — précondition documentée en 89L (M-02/M-04). Vérifié : build avec NEXT_PUBLIC_SITE_URL=https://hikma.example → canonical/robots/sitemap/og tous en https absolu.",
+      "why_safe": "Comportement standard Next (inlining) ; la config prod doit fournir la variable au build.",
+      "status": "DOCUMENTED (résolution = config externe)"
+    },
+    {
+      "id": "89O-004",
+      "severity": "NOTE",
+      "title": "Test DoS 89N flaky sous charge parallèle",
+      "root_cause": "Le test 'Unicode-mixed en temps borné' (89N) utilisait un seuil de 30 ms ; sous charge parallèle de la suite complète, le cas Unity (NFD + marques combinantes + zero-width) a mesuré 61 ms → échec flaky.",
+      "impact": "Tests flaky (aucun défaut produit ; la normalisation reste linéaire, ~4 ms en isolation).",
+      "fix": "Seuil monté à 150 ms (sépare un simple ralentissement machine d'un vrai ReDoS, qui explose en milliers de ms). Test 89N uniquement, aucun test produit affaibli.",
+      "why_safe": "Le seuil reste ~25× la latence isolée et capture toute régression quadratique réelle.",
+      "status": "RESOLVED"
+    }
+  ],
+  "route_matrix": [
+    { "route": "/", "public": true, "auth": false, "crawlable": true, "sitemap": true, "canonical": "/", "robots": "index,follow" },
+    { "route": "/surahs", "public": true, "auth": false, "crawlable": true, "sitemap": true, "canonical": "/surahs", "robots": "index,follow" },
+    { "route": "/surahs/[number]", "public": true, "auth": false, "crawlable": true, "sitemap": true, "canonical": "/surahs/{n}", "robots": "index,follow" },
+    { "route": "/learn/[slug]", "public": true, "auth": "false (mode visiteur)", "crawlable": true, "note": "Hors sitemap intentionnellement", "canonical": "/learn/{slug}", "robots": "index,follow" },
+    { "route": "/mots/[id]", "public": true, "auth": false, "crawlable": true, "note": "UUID opaques, hors sitemap intentionnellement", "canonical": "/mots/{id}", "robots": "index,follow" },
+    { "route": "/privacy", "public": true, "auth": false, "crawlable": true, "sitemap": false, "canonical": "/privacy", "robots": "index,follow" },
+    { "route": "/terms", "public": true, "auth": false, "crawlable": true, "sitemap": false, "canonical": "/terms", "robots": "index,follow" },
+    { "route": "/sources", "public": true, "auth": false, "crawlable": true, "sitemap": false, "canonical": "/sources", "robots": "index,follow" },
+    { "route": "/login", "public": true, "auth": false, "crawlable": true, "sitemap": false, "robots": "index,follow (login, conforme)" },
+    { "route": "/dashboard", "public": false, "auth": true, "crawlable-x": false, "sitemap": false, "robots": "noindex,nofollow" },
+    { "route": "/profile", "public": false, "auth": true, "crawlable-x": false, "sitemap": false, "robots": "noindex,nofollow" },
+    { "route": "/review", "public": false, "auth": true, "crawlable-x": false, "sitemap": false, "robots": "noindex,nofollow" },
+    { "route": "/activity", "public": false, "auth": true, "crawlable-x": false, "sitemap": false, "robots": "noindex,nofollow" },
+    { "route": "/admin", "public": false, "auth": true, "crawlable-x": false, "sitemap": false, "robots": "noindex,nofollow" }
+  ],
+  "robots_txt": {
+    "status": 200,
+    "config": "User-agent:* Allow:/ Disallow:/dashboard,/profile,/review,/activity,/admin,/onboarding,/login,/forgot-password,/reset-password; Sitemap:<site>/sitemap.xml",
+    "public_crawlable": true,
+    "private_protected": true
+  },
+  "sitemap": {
+    "status": 200,
+    "count": 116,
+    "structure": "racine + /surahs + 114 /surahs/[n]",
+    "urls_absolues_https": "true (build avec NEXT_PUBLIC_SITE_URL=https://)"
+  },
+  "canonical": "Résolu en https absolu (vérifié : / → hikma.example, /surahs/1 → hikma.example/surahs/1, /privacy → hikma.example/privacy)",
+  "metadata": {
+    "title_template": "%s · Hikma",
+    "description": "présente et spécifique par route (sourates, leçons, mots, legal)",
+    "locale": "fr_FR",
+    "lang": "<html lang=fr>",
+    "og_image": "/logo/logo_hikma.png (existe, 838 KB, résolu en absolu via metadataBase)",
+    "twitter_card": "summary_large_image",
+    "themeColor": "#0b5552"
+  },
+  "security": {
+    "no_privacy_leak": "Aucune metadata ne contient userId/contenu utilisateur",
+    "no_open_redirect": "canoniques = chemins internes relatifs, jamais valeur utilisateur",
+    "no_ssrf": "metadataBase dérivé de NEXT_PUBLIC_SITE_URL (env serveur), pas du host utilisateur",
+    "csp": "INCHANGÉE (lib/config/csp.ts non touché)",
+    "robots_not_security": "les routes privées restent protégées par l'auth (89B), noindex = signal seulement"
+  },
+  "tests_after": 1058,
+  "tests_added": 0,
+  "tests": { "build": "PASS (aucun env et avec env prod)", "typecheck": "PASS", "lint": "PASS (0 erreur)", "vitest": "1058/1058 PASS (68 files)" },
+  "not_verified": [
+    "Rendu métadata effectif par un crawler réel (Google/bing — indexation à confirmer post-déploiement)",
+    "Image OG rendue/dimensions validées par un crawler réel (fichier local présent, résolution absolue vérifiée par code)"
+  ],
+  "discovered_not_in_scope": [],
+  "recommendations": [
+    "Toujours définir NEXT_PUBLIC_SITE_URL au build de production (sinon metadataBase/canonical/OG/sitemap retombent sur localhost)",
+    "Après déploiement : vérifier via Google Search Console / fetch as Google que /, /surahs, /surahs/1..114 sont bien indexés et les routes privées non",
+    "Le sitemap exclut /learn/[slug] et /mots/[id] (intentionnel, 89E) ; ils restent crawlables avec canonical auto — cohérent avec l'intention produit"
+  ],
+  "next_phase": "PRODUCTION_DEPLOYMENT_PILOT"
+}

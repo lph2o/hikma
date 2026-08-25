@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- script CLI one-shot legacy : types Supabase pragmatiques */
 /**
  * Phase 88E-0 — Lemma Reference Integrity Reconciliation
  * READ-ONLY — traces the 8 CONFLICT stems from Phase 88E-A

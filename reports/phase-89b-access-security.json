@@ -1,0 +1,80 @@
+{
+  "phase": "89B",
+  "title": "PHASE_89B_ACCESS_SECURITY — R-002 ROUTES PRIVÉES + R-010 ADMIN",
+  "objective": "Un utilisateur non authentifié atteignant /dashboard, /profile, /review ou /activity doit être redirigé vers /login ; /admin doit être ADMIN ONLY ou désactivé.",
+  "verdict": "PHASE_89B_COMPLETE",
+  "database_writes": 0,
+  "boundaries": {
+    "PUBLIC": ["/", "/login", "/signup (groupe auth)", "/onboarding", "/learn", "/learn/[slug]", "/learn/units/[slug]", "/mots/[id]", "/surahs", "/surahs/[number]", "/design-system"],
+    "PRIVATE_AUTH_REQUIRED": ["/dashboard", "/profile", "/review", "/activity"],
+    "ADMIN_ONLY": ["/admin"]
+  },
+  "approach": "Guards serveur par page (convention existante : chaque page récupérait déjà l'utilisateur via client.auth.getUser()). Choix assumé vs garde centralisée dans proxy.ts : zéro risque edge-runtime, aucune complexité de propagation de cookies sur les réponses de redirection, cohérent avec le style du codebase. Les routes publiques (leçons essai, sourates, mots, onboarding) restent intactes.",
+  "changes": [
+    {
+      "file": "app/(app)/dashboard/page.tsx",
+      "change": "if (!user) redirect(\"/login\") ; suppression de l'état anonyme DashboardAnon et de l'import Mascot devenu inutilisé."
+    },
+    {
+      "file": "app/(app)/profile/page.tsx",
+      "change": "if (!user) redirect(\"/login\") ; suppression du bloc anonyme et de l'import Link devenu inutilisé."
+    },
+    {
+      "file": "app/(app)/review/page.tsx",
+      "change": "if (!user) redirect(\"/login\") ; suppression du bloc anonyme (les états A/B/C « rien à réviser » authentifiés sont conservés)."
+    },
+    {
+      "file": "app/(app)/activity/page.tsx",
+      "change": "if (!user) redirect(\"/login\") ; suppression du bloc anonyme."
+    },
+    {
+      "file": "app/admin/page.tsx",
+      "change": "ADMIN ONLY : visiteur anonyme → redirect(\"/login\") ; utilisateur authentifié non admin → notFound() (404, la route n'existe pas pour eux). Admin déterminé par la variable d'env ADMIN_EMAILS (liste d'e-mails séparés par des virgules) — aucun système de rôle DB inventé. Si ADMIN_EMAILS vide/absent → personne n'est admin (désactivé par défaut)."
+    },
+    {
+      "file": ".env.example",
+      "change": "Documentation de la variable ADMIN_EMAILS."
+    }
+  ],
+  "validation": {
+    "build": { "command": "npm run build", "result": "PASS", "exit": 0 },
+    "typecheck": { "command": "npx tsc --noEmit", "result": "PASS", "tsErrors": 0 },
+    "lint": { "command": "npm run lint", "result": "PASS (exit 0)", "errors": 0, "warnings": 17 pre-existants inchangés },
+    "tests": { "command": "npm test", "result": "PASS", "tests": "975/975" },
+    "runtimeE2e": {
+      "method": "next start sur le port 3100 (le dev server de l'utilisateur tourne sur 3000, non touché) + curl sans session",
+      "results": {
+        "/dashboard": "redirigé vers /login (digest NEXT_REDIRECT + meta-refresh)",
+        "/profile": "redirigé vers /login",
+        "/review": "redirigé vers /login",
+        "/activity": "redirigé vers /login",
+        "/admin": "307 → /login (anonyme) ; 404 pour un utilisateur non admin (notFound)",
+        "/login": "200, aucun redirect",
+        "/": "200, aucun redirect",
+        "/learn/basmala": "200, aucun redirect (leçon publique conservée)",
+        "/surahs": "200, aucun redirect (catalogue public conservé)"
+      },
+      "note": "Next 16 : la redirection émise après le flush du shell (layout (app) anonyme) est streamée — statut 200 avec <meta http-equiv=refresh url=/login> + digest NEXT_REDIRECT dans le payload RSC. Un navigateur réel aboutit bien sur /login. /admin, sans layout intermédiaire, renvoie un 307 classique. Comportement standard de Next, vérifié par le digest de redirection."
+    }
+  },
+  "integrity": {
+    "publicRoutesPreserved": true,
+    "onboardingPreserved": true,
+    "authCallbacksPreserved": true,
+    "noDatabaseWrites": true,
+    "noNewRoleSystem": "admin via env ADMIN_EMAILS, aucun schéma DB modifié"
+  },
+  "remainingRisks": [
+    { "id": "R-003", "phase": "89C", "status": "OPEN", "summary": "getCoverageBySurah .in() non chunké" },
+    { "id": "R-004", "phase": "89D", "status": "OPEN", "summary": "password reset absent" },
+    { "id": "R-005", "phase": "89E", "status": "OPEN", "summary": "SEO / metadata" },
+    { "id": "R-011", "phase": "89E", "status": "OPEN", "summary": "/surahs/[number] 404 visiteurs" },
+    { "id": "R-012", "phase": "89E", "status": "OPEN", "summary": "404 → /dashboard" },
+    { "id": "R-006", "phase": "89F", "status": "OPEN", "summary": "pages légales" },
+    { "id": "R-009", "phase": "89F", "status": "OPEN", "summary": "licence audio" },
+    { "id": "R-007", "phase": "89G", "status": "OPEN", "summary": "security headers / config prod" },
+    { "id": "R-008", "phase": "89H", "status": "OPEN", "summary": "observabilité" }
+  ],
+  "nextStep": "PHASE_89C_DATA_CHUNKING — R-003 getCoverageBySurah",
+  "finalVerdict": "PHASE_89B_COMPLETE — R-002 et R-010 résolus : routes privées verrouillées (redirection /login), /admin ADMIN ONLY (désactivé par défaut), routes publiques et onboarding intacts. BUILD/TYPECHECK/LINT/TESTS = PASS, runtime vérifié sur le build production."
+}

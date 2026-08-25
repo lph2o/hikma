@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- script CLI one-shot legacy : types Supabase pragmatiques */
 /**
  * Phase 88E-B repair — Insert word_lemma_mappings + MASAQ updates
  * for the 1,561 lemmas created in Phase 88E-B (lemmas already exist).

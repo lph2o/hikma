@@ -1,4 +1,5 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { Mascot } from "@/components/ui/mascot";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,6 +20,9 @@ import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
 
+// Espace privé : signal d'indexation noindex (l'auth reste le vrai contrôle).
+export const metadata: Metadata = { robots: { index: false, follow: false } };
+
 function ProfileStat({ label, value }: { label: string; value: string }) {
   return (
     <Card>
@@ -36,20 +40,7 @@ export default async function ProfilePage() {
     data: { user },
   } = await client.auth.getUser();
 
-  if (!user) {
-    return (
-      <main className="mx-auto flex w-full max-w-2xl flex-col items-center gap-6 px-6 py-16 text-center">
-        <Mascot variant="profile" size="xl" message="Connecte-toi" />
-        <H1>Profil</H1>
-        <BodyMedium className="text-muted-foreground">
-          Connecte-toi pour voir ta progression et tes statistiques.
-        </BodyMedium>
-        <Button render={<Link href="/login" />} size="lg" className="min-h-12">
-          Se connecter
-        </Button>
-      </main>
-    );
-  }
+  if (!user) redirect("/login");
 
   const settings = await getUserSettings(client, user.id);
   const catalog = await getSurahCatalog(client);

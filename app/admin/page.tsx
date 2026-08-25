@@ -1,9 +1,28 @@
+import type { Metadata } from "next";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { notFound, redirect } from "next/navigation";
 import { BodyMedium, Caption, H1, H2 } from "@/components/ui/typography";
 import { createClient } from "@/lib/supabase/server";
 import type { QuranImport } from "@/types/quran";
 
 export const dynamic = "force-dynamic";
+
+// Espace admin : non indexable (l'accès reste contrôlé par ADMIN_EMAILS + auth).
+export const metadata: Metadata = { robots: { index: false, follow: false } };
+
+/**
+ * Liste des e-mails autorisés à consulter /admin, depuis l'environnement.
+ * Aucun rôle DB n'est requis : si ADMIN_EMAILS est vide ou absent, personne
+ * n'est admin (la route est désactivée par défaut).
+ */
+function isAdminEmail(email: string | undefined | null): boolean {
+  const adminEmails = (process.env.ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+  if (adminEmails.length === 0) return false;
+  return adminEmails.includes((email ?? "").toLowerCase());
+}
 
 const TABLES = [
   { key: "surahs", label: "Sourates" },
@@ -50,6 +69,14 @@ async function latestImport(
 
 export default async function AdminPage() {
   const client = await createClient();
+  const {
+    data: { user },
+  } = await client.auth.getUser();
+
+  // ADMIN ONLY : visiteur anonyme → login ; utilisateur non autorisé → 404.
+  if (!user) redirect("/login");
+  if (!isAdminEmail(user.email)) notFound();
+
   const counts = await Promise.all(
     TABLES.map(async (t) => ({ ...t, count: await countTable(client, t.key) })),
   );

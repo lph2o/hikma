@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import { Mascot } from "@/components/ui/mascot";
 import { Button } from "@/components/ui/button";
@@ -15,26 +17,16 @@ import { ReviewPlayer } from "@/components/learn/review-player";
 
 export const dynamic = "force-dynamic";
 
+// Espace privé : signal d'indexation noindex (l'auth reste le vrai contrôle).
+export const metadata: Metadata = { robots: { index: false, follow: false } };
+
 export default async function ReviewPage() {
   const client = await createClient();
   const {
     data: { user },
   } = await client.auth.getUser();
 
-  if (!user) {
-    return (
-      <main className="mx-auto flex w-full max-w-2xl flex-col items-center gap-6 px-6 py-16 text-center">
-        <Mascot variant="login" size="xl" message="Connecte-toi pour réviser" />
-        <H1>Réviser</H1>
-        <BodyMedium className="text-muted-foreground">
-          Connecte-toi pour réviser tes mots et ancrer ton apprentissage.
-        </BodyMedium>
-        <Button render={<Link href="/login" />} size="lg" className="min-h-12">
-          Se connecter
-        </Button>
-      </main>
-    );
-  }
+  if (!user) redirect("/login");
 
   const [items, overview] = await Promise.all([
     getDueReviewItems(client, user.id),

@@ -2080,12 +2080,33 @@ export async function getQuranCoverage(
 
     let coveredOccurrences = 0;
     if (wordIds.length > 0) {
-      const { count, error } = await client
-        .from("word_occurrences")
-        .select("id", { count: "exact", head: true })
-        .in("word_id", wordIds);
-      if (error) throw new Error(`word_occurrences : ${error.message}`);
-      coveredOccurrences = count ?? 0;
+      // Phase 89K (R-89J-01) : count EXACT par lots de 250 (mêmes primitives
+      // que selectInChunks : chunk + Promise.all + propagation d'erreur).
+      //
+      // Pourquoi pas `selectInChunks` en lignes ici ? Le plafond REST de 1 000
+      // lignes par GET tronque silencieusement : validé sur DB réelle, 250 mots
+      // (1 376 occurrences) renvoyait exactement 1 000 lignes → métrique fausse
+      // (baseline 89K : avant 1 376 vs après 1 000). `head:true` + count exact
+      // par lot est le seul moyen de compter sans troncature.
+      //
+      // L'ensemble des mots compris croît sans borne (jusqu'au corpus ~21 296
+      // formes) et l'ancienne requête unique `.in("word_id", wordIds)` dépassait
+      // le seuil PostgREST (~396 ids) → « TypeError: fetch failed » sur le
+      // dashboard (reproduit sur 500 word_ids réels). Résultat strictement
+      // équivalent à la requête unique : déduplication identique (Set), erreurs
+      // propagées (→ null via le try/catch, comme avant).
+      const batches = chunk(wordIds, IN_FILTER_CHUNK_SIZE);
+      const counts = await Promise.all(
+        batches.map(async (batch) => {
+          const { count, error } = await client
+            .from("word_occurrences")
+            .select("id", { count: "exact", head: true })
+            .in("word_id", batch);
+          if (error) throw new Error(`word_occurrences : ${error.message}`);
+          return count ?? 0;
+        }),
+      );
+      coveredOccurrences = counts.reduce((sum, c) => sum + c, 0);
     }
 
     return {
@@ -2115,17 +2136,28 @@ export async function getCoverageBySurah(
 ): Promise<SurahCoverage[]> {
   if (comprehendedWordIds.length === 0) return [];
 
-  const ids = [...new Set(comprehendedWordIds)];
-  const { data, error } = await client
-    .from("word_occurrences")
-    .select("ayahs!inner(surah_id), ayah_id")
-    .in("word_id", ids);
-  if (error) throw new Error(`word_occurrences : ${error.message}`);
+  // Phase 89C (R-003) : requête chunkée par word_id via `selectInChunks`
+  // (IN_FILTER_CHUNK_SIZE = 250, helper validé Phase 52/88J/88K).
+  // L'ensemble des mots compris d'un utilisateur croît sans borne (jusqu'au
+  // corpus ~21 296 formes) et dépassait le seuil `.in()` (~396 ids / ~14,7 Ko)
+  // → « TypeError: fetch failed » sur le dashboard (reproduit en baseline sur
+  // 500 word_ids réels). Résultat strictement équivalent à la requête unique :
+  // fusion déterministe, déduplication identique (Set), erreurs propagées,
+  // ordre final garanti par computeCoverageBySurah (tri par surahNumber).
+  const occRows = await selectInChunks<{ ayah_id: string; ayahs: Array<{ surah_id: string }> }>(
+    comprehendedWordIds,
+    "word_occurrences",
+    (batch) =>
+      client
+        .from("word_occurrences")
+        .select("ayahs!inner(surah_id), ayah_id")
+        .in("word_id", batch),
+  );
 
   // Comptage manuel : Map<surah_id, Set<ayah_id>>
   const surahAyahs = new Map<string, Set<string>>();
   // supabase-js : la relation !inner produit un tableau (to-one mal typé sans génération).
-  for (const row of (data ?? []) as unknown as Array<{ ayah_id: string; ayahs: Array<{ surah_id: string }> }>) {
+  for (const row of occRows as unknown as Array<{ ayah_id: string; ayahs: Array<{ surah_id: string }> }>) {
     const surahRel = Array.isArray(row.ayahs) ? row.ayahs[0] : row.ayahs;
     if (!surahRel) continue;
     const surahId = (surahRel as { surah_id: string }).surah_id;

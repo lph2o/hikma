@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import Link from "next/link";
 import { AlertTriangleIcon, InfoIcon } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -65,6 +66,17 @@ export function LoginForm() {
           placeholder="••••••••"
         />
       </div>
+
+      {mode === "sign-in" ? (
+        <div className="-mt-1 flex justify-end">
+          <Link
+            href="/forgot-password"
+            className="text-sm text-muted-foreground hover:underline"
+          >
+            Mot de passe oublié&nbsp;?
+          </Link>
+        </div>
+      ) : null}
 
       {state.error ? (
         <Alert variant="error">

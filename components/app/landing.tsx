@@ -192,6 +192,15 @@ export function LandingPage({ authenticated = false }: { authenticated?: boolean
           <Link href={accountCta.href} className="hover:text-text-primary">
             {accountCta.label}
           </Link>
+          <Link href="/privacy" className="hover:text-text-primary">
+            Confidentialité
+          </Link>
+          <Link href="/terms" className="hover:text-text-primary">
+            Conditions
+          </Link>
+          <Link href="/sources" className="hover:text-text-primary">
+            Sources
+          </Link>
           <span>Apprendre avec patience.</span>
         </div>
       </footer>

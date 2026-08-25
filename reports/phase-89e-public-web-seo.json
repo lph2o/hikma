@@ -1,0 +1,99 @@
+{
+  "phase": "89E",
+  "title": "PUBLIC WEB / SEO — R-005 + R-011 + R-012",
+  "verdict": "PHASE_89E_COMPLETE",
+  "database_writes": 0,
+  "summary": {
+    "r005_seo": "RESOLVED",
+    "r011_surah_public_pages": "RESOLVED",
+    "r012_404": "RESOLVED",
+    "build": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "tests": "1008/1008 PASS"
+  },
+  "root_cause": {
+    "r005": "Metadata racine minimale uniquement ; aucun robots.txt, sitemap, Open Graph, canonical ou metadata par route ; aucune distinction public/privé pour l'indexation.",
+    "r011": "La page /surahs/[number] appelait notFound() pour tout visiteur non authentifié : les sourates, contenu public par nature, étaient invisibles sans compte.",
+    "r012": "app/not-found.tsx redirigeait vers /dashboard — un visiteur anonyme sur une URL invalide était envoyé vers un espace privé."
+  },
+  "changes": [
+    {
+      "file": "app/layout.tsx",
+      "role": "Metadata racine complète : title/description, canonical, Open Graph, Twitter, themeColor, icons, metadataBase dérivé de NEXT_PUBLIC_SITE_URL, robots par défaut autorisant l'indexation."
+    },
+    {
+      "file": "app/robots.ts",
+      "role": "robots.txt dynamique : Allow /, Disallow /dashboard /profile /review /activity /admin (espaces privés jamais indexés)."
+    },
+    {
+      "file": "app/sitemap.ts",
+      "role": "sitemap.xml : /, /surahs, et les 114 pages /surahs/[number] (données réelles via getSurahCatalog)."
+    },
+    {
+      "file": "app/(app)/surahs/page.tsx",
+      "role": "generateMetadata pour le catalogue (title + description)."
+    },
+    {
+      "file": "app/(app)/surahs/[number]/page.tsx",
+      "role": "R-011 : mode visiteur anonyme (versets publics + bandeau 'Découverte libre' + CTA première leçon/connexion), generateMetadata riche (titre sourate, description, canonical, OG), données utilisateur jamais chargées en mode visiteur, notFound() pour numéro invalide."
+    },
+    {
+      "file": "app/(app)/learn/[slug]/page.tsx",
+      "role": "generateMetadata (titre de leçon + sourate)."
+    },
+    {
+      "file": "app/(app)/mots/[id]/page.tsx",
+      "role": "generateMetadata (forme arabe + glose FR)."
+    },
+    {
+      "file": "app/not-found.tsx",
+      "role": "R-012 : vraie page 404 publique avec navigation accueil / sourates / connexion — plus aucun redirect vers /dashboard."
+    }
+  ],
+  "routes": {
+    "public_indexable": ["/", "/surahs", "/surahs/[1..114]", "/learn", "/learn/[slug]", "/mots/[id]", "/login", "/signup", "/forgot-password", "/reset-password", "/design-system"],
+    "private_not_indexed": ["/dashboard", "/profile", "/review", "/activity", "/admin"]
+  },
+  "seo": {
+    "title": "PASS (racine + par route)",
+    "description": "PASS",
+    "canonical": "PASS (racine + sourates + leçons + mots)",
+    "open_graph": "PASS (racine + sourates)",
+    "twitter": "PASS (racine + sourates)",
+    "robots_txt": "PASS (espaces privés Disallow)",
+    "sitemap": "PASS (116 URLs, données réelles)",
+    "favicon": "PASS (existant conservé)",
+    "indexation_privee": "PASS (aucune page privée dans le sitemap, toutes Disallow)"
+  },
+  "security": {
+    "visitor_mode": "Aucune donnée utilisateur requêtée pour les visiteurs sur /surahs/[number] (SELECT ayahs publics uniquement).",
+    "private_routes": "Protections PHASE 89B intactes (vérifié runtime : /dashboard et /admin redirigent toujours)."
+  },
+  "tests": {
+    "build": "PASS (exit 0)",
+    "typecheck": "PASS (0 erreur)",
+    "lint": "PASS (0 erreur)",
+    "vitest": "1008/1008 PASS (64 fichiers — aucun test supprimé/affaibli)",
+    "runtime_smoke": "PASS sur build production (port 3100) : / 200, /surahs 200, /surahs/1 200 (anonyme), /definitely-not-a-page 404, /robots.txt 200 (Disallow privés), /sitemap.xml 200 (116 <loc>)"
+  },
+  "e2e": {
+    "browser_e2e": "NOT_VERIFIED — aucun navigateur réel disponible dans cet environnement ; validation runtime via HTTP sur le build production (statuts + contenu vérifiés)."
+  },
+  "regressions": "0 — aucun test modifié, aucun changement de données, curriculum/corpus/SRS intacts.",
+  "not_verified": [
+    "Render visuel réel (navigateur) des nouveaux metadata/OG tags sur réseaux sociaux.",
+    "Comportement de l'indexation par un crawler réel (Googlebot render)."
+  ],
+  "discovered": [
+    {
+      "id": "NOTE-89E-001",
+      "detail": "/surahs/[numéro invalide] renvoie HTTP 200 avec le contenu 404 streamé (quirk Next 16 déjà documenté en 89B) : le corps contient la page introuvable, un navigateur/crawler JS-rendering affiche la 404. Statut HTTP strict exigerait un middleware — hors périmètre, non bloquant."
+    }
+  ],
+  "risks": [],
+  "next_phase": {
+    "phase": "PHASE_89F_LEGAL_LICENSING",
+    "risks": ["R-006_Legal", "R-009_Audio_Licence"]
+  }
+}

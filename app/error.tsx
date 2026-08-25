@@ -5,6 +5,7 @@
 
 import { useEffect } from "react";
 import { ErrorState } from "@/components/ui/error-state";
+import { reportClientError } from "@/lib/observability/client";
 
 export default function Error({
   error,
@@ -14,8 +15,8 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Journal serveur uniquement — jamais affiché à l'utilisateur.
-    console.error(error);
+    // Observabilité : journal serveur (via ingestion) — jamais affiché.
+    reportClientError(error, "error-boundary");
   }, [error]);
 
   return (

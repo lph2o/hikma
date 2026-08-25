@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +10,32 @@ import { getWordDetail } from "@/lib/learning/queries";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  try {
+    const client = await createClient();
+    const { data } = await client
+      .from("quran_words")
+      .select("arabic")
+      .eq("id", id)
+      .limit(1);
+    const arabic = (data?.[0] as { arabic: string } | undefined)?.arabic;
+    return {
+      title: arabic ? `Mot ${arabic}` : "Mot du Coran",
+      description: arabic
+        ? `Le sens du mot coranique ${arabic}, son contexte et ses occurrences, avec Hikma.`
+        : "Le sens d'un mot du Coran, son contexte et ses occurrences, avec Hikma.",
+      alternates: { canonical: `/mots/${id}` },
+    };
+  } catch {
+    return { title: "Mot du Coran" };
+  }
+}
 
 export default async function WordPage({
   params,

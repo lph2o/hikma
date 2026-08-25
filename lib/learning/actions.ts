@@ -25,6 +25,12 @@
 import { redirect } from "next/navigation";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/server";
+import { getSiteUrl } from "@/lib/auth/site-url";
+import {
+  hasRecoverySession,
+  requestPasswordResetCore,
+  updatePasswordCore,
+} from "@/lib/auth/password-reset";
 import {
   replayWordResults,
   type SkillAttempt,
@@ -911,6 +917,54 @@ export async function signOut(): Promise<void> {
   const client = await createClient();
   await client.auth.signOut();
   redirect("/");
+}
+
+// ---------------------------------------------------------------------------
+// Mot de passe oublié / réinitialisation (Phase 89D, R-004)
+// ---------------------------------------------------------------------------
+
+/**
+ * Demande l'envoi d'un lien de réinitialisation (anti-énumération : message
+ * neutre identique pour un e-mail existant ou inexistant).
+ */
+export async function requestPasswordReset(
+  _prev: AuthState,
+  formData: FormData,
+): Promise<AuthState> {
+  const email = String(formData.get("email") ?? "").trim().toLowerCase();
+  const client = await createClient();
+  const baseRedirectTo = await getSiteUrl();
+  return requestPasswordResetCore(email, baseRedirectTo, (redirectTo) =>
+    client.auth.resetPasswordForEmail(email, { redirectTo }),
+  );
+}
+
+/**
+ * Met à jour le mot de passe — UNIQUEMENT en session de récupération
+ * (lien de réinitialisation échangé, amr = recovery). Une session normale ne
+ * peut pas réinitialiser le mot de passe via ce parcours.
+ */
+export async function updatePassword(
+  _prev: AuthState,
+  formData: FormData,
+): Promise<AuthState> {
+  const password = String(formData.get("password") ?? "");
+  const confirm = String(formData.get("confirmPassword") ?? "");
+  const client = await createClient();
+  const {
+    data: { session },
+  } = await client.auth.getSession();
+
+  if (!hasRecoverySession(session)) {
+    return {
+      error: "Session de réinitialisation invalide ou expirée. Redemande un lien.",
+      info: null,
+    };
+  }
+
+  return updatePasswordCore(password, confirm, (p) =>
+    client.auth.updateUser({ password: p }),
+  );
 }
 
 // ---------------------------------------------------------------------------
