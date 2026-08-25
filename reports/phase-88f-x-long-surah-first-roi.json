@@ -1,0 +1,1392 @@
+{
+  "phase": "88F-X",
+  "verdict": "PHASE_88F_X_COMPLETE",
+  "read_only": true,
+  "database_writes": 0,
+  "timestamp": "2026-08-24T11:59:14.742Z",
+  "durationSeconds": 29.56,
+  "baseline": {
+    "quran_words": 21296,
+    "fr_union": 5493,
+    "fr_occurrences": 56300,
+    "fr_percentage": 0.2579,
+    "lemma_tr_fr": 200,
+    "word_tr_fr": 4532,
+    "READY": 29,
+    "IN_PREPARATION": 84,
+    "REFERENCE": 1,
+    "total_untranslated_safe_lemmas": 1497
+  },
+  "longSurahThreshold": 482,
+  "top20_long": [
+    {
+      "rank": 1,
+      "number": 46,
+      "name": "Al-Ahqaf",
+      "totalForms": 482,
+      "totalOccurrences": 25900,
+      "distinctLemmas": 144,
+      "coveragePct": 0.8402,
+      "missingForms": 77,
+      "safeLemmas": 32,
+      "reviewWordTr": 43,
+      "totalActions": 75,
+      "globalForms": 168,
+      "globalOccs": 542,
+      "surahsAffected": 84,
+      "formsPerAction": 1.03,
+      "globalFormsPerAction": 2.24,
+      "longSurahRoi": 14.67,
+      "topLemmas": [
+        {
+          "lemma": "ذكر",
+          "globalForms": 36,
+          "globalOccs": 120,
+          "surahs": 51
+        },
+        {
+          "lemma": "ذر",
+          "globalForms": 19,
+          "globalOccs": 36,
+          "surahs": 22
+        },
+        {
+          "lemma": "عد",
+          "globalForms": 12,
+          "globalOccs": 21,
+          "surahs": 14
+        },
+        {
+          "lemma": "خلف",
+          "globalForms": 11,
+          "globalOccs": 23,
+          "surahs": 17
+        },
+        {
+          "lemma": "شيئ",
+          "globalForms": 7,
+          "globalOccs": 76,
+          "surahs": 36
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "number": 13,
+      "name": "Ar-Ra'd",
+      "totalForms": 601,
+      "totalOccurrences": 24807,
+      "distinctLemmas": 191,
+      "coveragePct": 0.8253,
+      "missingForms": 105,
+      "safeLemmas": 50,
+      "reviewWordTr": 47,
+      "totalActions": 97,
+      "globalForms": 187,
+      "globalOccs": 573,
+      "surahsAffected": 76,
+      "formsPerAction": 1.08,
+      "globalFormsPerAction": 1.93,
+      "longSurahRoi": 12.26,
+      "topLemmas": [
+        {
+          "lemma": "ذر",
+          "globalForms": 19,
+          "globalOccs": 36,
+          "surahs": 22
+        },
+        {
+          "lemma": "ظلم",
+          "globalForms": 17,
+          "globalOccs": 91,
+          "surahs": 38
+        },
+        {
+          "lemma": "حكم",
+          "globalForms": 14,
+          "globalOccs": 55,
+          "surahs": 25
+        },
+        {
+          "lemma": "غير",
+          "globalForms": 11,
+          "globalOccs": 124,
+          "surahs": 44
+        },
+        {
+          "lemma": "ذهب",
+          "globalForms": 8,
+          "globalOccs": 14,
+          "surahs": 10
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "number": 29,
+      "name": "Al-'Ankabut",
+      "totalForms": 663,
+      "totalOccurrences": 28482,
+      "distinctLemmas": 197,
+      "coveragePct": 0.8356,
+      "missingForms": 109,
+      "safeLemmas": 35,
+      "reviewWordTr": 69,
+      "totalActions": 104,
+      "globalForms": 194,
+      "globalOccs": 515,
+      "surahsAffected": 85,
+      "formsPerAction": 1.05,
+      "globalFormsPerAction": 1.87,
+      "longSurahRoi": 11.85,
+      "topLemmas": [
+        {
+          "lemma": "ذكر",
+          "globalForms": 36,
+          "globalOccs": 120,
+          "surahs": 51
+        },
+        {
+          "lemma": "ذر",
+          "globalForms": 19,
+          "globalOccs": 36,
+          "surahs": 22
+        },
+        {
+          "lemma": "حسب",
+          "globalForms": 16,
+          "globalOccs": 33,
+          "surahs": 20
+        },
+        {
+          "lemma": "قرى",
+          "globalForms": 10,
+          "globalOccs": 45,
+          "surahs": 22
+        },
+        {
+          "lemma": "امرأ",
+          "globalForms": 8,
+          "globalOccs": 16,
+          "surahs": 11
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "number": 36,
+      "name": "Ya-Sin",
+      "totalForms": 529,
+      "totalOccurrences": 23944,
+      "distinctLemmas": 168,
+      "coveragePct": 0.8185,
+      "missingForms": 96,
+      "safeLemmas": 37,
+      "reviewWordTr": 58,
+      "totalActions": 95,
+      "globalForms": 187,
+      "globalOccs": 476,
+      "surahsAffected": 80,
+      "formsPerAction": 1.01,
+      "globalFormsPerAction": 1.97,
+      "longSurahRoi": 11.75,
+      "topLemmas": [
+        {
+          "lemma": "ذكر",
+          "globalForms": 36,
+          "globalOccs": 120,
+          "surahs": 51
+        },
+        {
+          "lemma": "أمر",
+          "globalForms": 36,
+          "globalOccs": 135,
+          "surahs": 53
+        },
+        {
+          "lemma": "خلف",
+          "globalForms": 11,
+          "globalOccs": 23,
+          "surahs": 17
+        },
+        {
+          "lemma": "مرسل",
+          "globalForms": 8,
+          "globalOccs": 38,
+          "surahs": 16
+        },
+        {
+          "lemma": "عهد",
+          "globalForms": 8,
+          "globalOccs": 15,
+          "surahs": 9
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "number": 22,
+      "name": "Al-Hajj",
+      "totalForms": 808,
+      "totalOccurrences": 27484,
+      "distinctLemmas": 294,
+      "coveragePct": 0.7636,
+      "missingForms": 191,
+      "safeLemmas": 94,
+      "reviewWordTr": 89,
+      "totalActions": 183,
+      "globalForms": 351,
+      "globalOccs": 1140,
+      "surahsAffected": 90,
+      "formsPerAction": 1.04,
+      "globalFormsPerAction": 1.92,
+      "longSurahRoi": 10.63,
+      "topLemmas": [
+        {
+          "lemma": "ذكر",
+          "globalForms": 36,
+          "globalOccs": 120,
+          "surahs": 51
+        },
+        {
+          "lemma": "أمر",
+          "globalForms": 36,
+          "globalOccs": 135,
+          "surahs": 53
+        },
+        {
+          "lemma": "ظلم",
+          "globalForms": 17,
+          "globalOccs": 91,
+          "surahs": 38
+        },
+        {
+          "lemma": "حكم",
+          "globalForms": 14,
+          "globalOccs": 55,
+          "surahs": 25
+        },
+        {
+          "lemma": "غير",
+          "globalForms": 11,
+          "globalOccs": 124,
+          "surahs": 44
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "number": 34,
+      "name": "Saba",
+      "totalForms": 598,
+      "totalOccurrences": 25670,
+      "distinctLemmas": 186,
+      "coveragePct": 0.791,
+      "missingForms": 125,
+      "safeLemmas": 57,
+      "reviewWordTr": 65,
+      "totalActions": 122,
+      "globalForms": 219,
+      "globalOccs": 589,
+      "surahsAffected": 83,
+      "formsPerAction": 1.02,
+      "globalFormsPerAction": 1.8,
+      "longSurahRoi": 10.5,
+      "topLemmas": [
+        {
+          "lemma": "أمر",
+          "globalForms": 36,
+          "globalOccs": 135,
+          "surahs": 53
+        },
+        {
+          "lemma": "ظلم",
+          "globalForms": 17,
+          "globalOccs": 91,
+          "surahs": 38
+        },
+        {
+          "lemma": "خلف",
+          "globalForms": 11,
+          "globalOccs": 23,
+          "surahs": 17
+        },
+        {
+          "lemma": "قرى",
+          "globalForms": 10,
+          "globalOccs": 45,
+          "surahs": 22
+        },
+        {
+          "lemma": "أولاد",
+          "globalForms": 7,
+          "globalOccs": 11,
+          "surahs": 7
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "number": 39,
+      "name": "Az-Zumar",
+      "totalForms": 761,
+      "totalOccurrences": 28946,
+      "distinctLemmas": 215,
+      "coveragePct": 0.8357,
+      "missingForms": 125,
+      "safeLemmas": 46,
+      "reviewWordTr": 76,
+      "totalActions": 122,
+      "globalForms": 180,
+      "globalOccs": 548,
+      "surahsAffected": 79,
+      "formsPerAction": 1.02,
+      "globalFormsPerAction": 1.48,
+      "longSurahRoi": 10.26,
+      "topLemmas": [
+        {
+          "lemma": "أمر",
+          "globalForms": 36,
+          "globalOccs": 135,
+          "surahs": 53
+        },
+        {
+          "lemma": "حكم",
+          "globalForms": 14,
+          "globalOccs": 55,
+          "surahs": 25
+        },
+        {
+          "lemma": "بشر",
+          "globalForms": 11,
+          "globalOccs": 39,
+          "surahs": 24
+        },
+        {
+          "lemma": "ميت",
+          "globalForms": 8,
+          "globalOccs": 15,
+          "surahs": 13
+        },
+        {
+          "lemma": "أحسن",
+          "globalForms": 7,
+          "globalOccs": 40,
+          "surahs": 26
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "number": 8,
+      "name": "Al-Anfal",
+      "totalForms": 762,
+      "totalOccurrences": 27025,
+      "distinctLemmas": 199,
+      "coveragePct": 0.7467,
+      "missingForms": 193,
+      "safeLemmas": 56,
+      "reviewWordTr": 119,
+      "totalActions": 175,
+      "globalForms": 201,
+      "globalOccs": 419,
+      "surahsAffected": 75,
+      "formsPerAction": 1.1,
+      "globalFormsPerAction": 1.15,
+      "longSurahRoi": 6.96,
+      "topLemmas": [
+        {
+          "lemma": "حسب",
+          "globalForms": 16,
+          "globalOccs": 33,
+          "surahs": 20
+        },
+        {
+          "lemma": "عد",
+          "globalForms": 12,
+          "globalOccs": 21,
+          "surahs": 14
+        },
+        {
+          "lemma": "طائف",
+          "globalForms": 11,
+          "globalOccs": 24,
+          "surahs": 14
+        },
+        {
+          "lemma": "ألف",
+          "globalForms": 10,
+          "globalOccs": 13,
+          "surahs": 7
+        },
+        {
+          "lemma": "ذهب",
+          "globalForms": 8,
+          "globalOccs": 14,
+          "surahs": 10
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "number": 28,
+      "name": "Al-Qasas",
+      "totalForms": 935,
+      "totalOccurrences": 30004,
+      "distinctLemmas": 248,
+      "coveragePct": 0.7701,
+      "missingForms": 215,
+      "safeLemmas": 75,
+      "reviewWordTr": 131,
+      "totalActions": 206,
+      "globalForms": 213,
+      "globalOccs": 550,
+      "surahsAffected": 78,
+      "formsPerAction": 1.04,
+      "globalFormsPerAction": 1.03,
+      "longSurahRoi": 6.81,
+      "topLemmas": [
+        {
+          "lemma": "أجل",
+          "globalForms": 11,
+          "globalOccs": 34,
+          "surahs": 20
+        },
+        {
+          "lemma": "قرى",
+          "globalForms": 10,
+          "globalOccs": 45,
+          "surahs": 22
+        },
+        {
+          "lemma": "حرم",
+          "globalForms": 9,
+          "globalOccs": 27,
+          "surahs": 13
+        },
+        {
+          "lemma": "امرأ",
+          "globalForms": 8,
+          "globalOccs": 16,
+          "surahs": 11
+        },
+        {
+          "lemma": "زين",
+          "globalForms": 8,
+          "globalOccs": 23,
+          "surahs": 18
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "number": 9,
+      "name": "At-Tawbah",
+      "totalForms": 1400,
+      "totalOccurrences": 33651,
+      "distinctLemmas": 338,
+      "coveragePct": 0.6779,
+      "missingForms": 451,
+      "safeLemmas": 139,
+      "reviewWordTr": 280,
+      "totalActions": 419,
+      "globalForms": 556,
+      "globalOccs": 1424,
+      "surahsAffected": 97,
+      "formsPerAction": 1.08,
+      "globalFormsPerAction": 1.33,
+      "longSurahRoi": 6.72,
+      "topLemmas": [
+        {
+          "lemma": "أمر",
+          "globalForms": 36,
+          "globalOccs": 135,
+          "surahs": 53
+        },
+        {
+          "lemma": "ذر",
+          "globalForms": 19,
+          "globalOccs": 36,
+          "surahs": 22
+        },
+        {
+          "lemma": "ظلم",
+          "globalForms": 17,
+          "globalOccs": 91,
+          "surahs": 38
+        },
+        {
+          "lemma": "حسب",
+          "globalForms": 16,
+          "globalOccs": 33,
+          "surahs": 20
+        },
+        {
+          "lemma": "نذر",
+          "globalForms": 14,
+          "globalOccs": 32,
+          "surahs": 16
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "number": 23,
+      "name": "Al-Mu'minun",
+      "totalForms": 712,
+      "totalOccurrences": 27615,
+      "distinctLemmas": 137,
+      "coveragePct": 0.6194,
+      "missingForms": 271,
+      "safeLemmas": 1,
+      "reviewWordTr": 270,
+      "totalActions": 271,
+      "globalForms": 2,
+      "globalOccs": 57,
+      "surahsAffected": 26,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0.01,
+      "longSurahRoi": 1.72,
+      "topLemmas": [
+        {
+          "lemma": "أعلم",
+          "globalForms": 2,
+          "globalOccs": 57,
+          "surahs": 26
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "number": 10,
+      "name": "Yunus",
+      "totalForms": 1074,
+      "totalOccurrences": 33920,
+      "distinctLemmas": 155,
+      "coveragePct": 0.6043,
+      "missingForms": 425,
+      "safeLemmas": 1,
+      "reviewWordTr": 424,
+      "totalActions": 425,
+      "globalForms": 2,
+      "globalOccs": 57,
+      "surahsAffected": 26,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0,
+      "longSurahRoi": 1.52,
+      "topLemmas": [
+        {
+          "lemma": "أعلم",
+          "globalForms": 2,
+          "globalOccs": 57,
+          "surahs": 26
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "number": 30,
+      "name": "Ar-Rum",
+      "totalForms": 544,
+      "totalOccurrences": 24488,
+      "distinctLemmas": 97,
+      "coveragePct": 0.6507,
+      "missingForms": 190,
+      "safeLemmas": 0,
+      "reviewWordTr": 190,
+      "totalActions": 190,
+      "globalForms": 0,
+      "globalOccs": 0,
+      "surahsAffected": 0,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0,
+      "longSurahRoi": 1.43,
+      "topLemmas": []
+    },
+    {
+      "rank": 14,
+      "number": 42,
+      "name": "Ash-Shuraa",
+      "totalForms": 555,
+      "totalOccurrences": 24395,
+      "distinctLemmas": 116,
+      "coveragePct": 0.6468,
+      "missingForms": 196,
+      "safeLemmas": 0,
+      "reviewWordTr": 196,
+      "totalActions": 196,
+      "globalForms": 0,
+      "globalOccs": 0,
+      "surahsAffected": 0,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0,
+      "longSurahRoi": 1.42,
+      "topLemmas": []
+    },
+    {
+      "rank": 15,
+      "number": 41,
+      "name": "Fussilat",
+      "totalForms": 594,
+      "totalOccurrences": 25310,
+      "distinctLemmas": 118,
+      "coveragePct": 0.6431,
+      "missingForms": 212,
+      "safeLemmas": 0,
+      "reviewWordTr": 212,
+      "totalActions": 212,
+      "globalForms": 0,
+      "globalOccs": 0,
+      "surahsAffected": 0,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0,
+      "longSurahRoi": 1.4,
+      "topLemmas": []
+    },
+    {
+      "rank": 16,
+      "number": 16,
+      "name": "An-Nahl",
+      "totalForms": 1085,
+      "totalOccurrences": 32789,
+      "distinctLemmas": 167,
+      "coveragePct": 0.5585,
+      "missingForms": 479,
+      "safeLemmas": 1,
+      "reviewWordTr": 478,
+      "totalActions": 479,
+      "globalForms": 2,
+      "globalOccs": 57,
+      "surahsAffected": 26,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0,
+      "longSurahRoi": 1.36,
+      "topLemmas": [
+        {
+          "lemma": "أعلم",
+          "globalForms": 2,
+          "globalOccs": 57,
+          "surahs": 26
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "number": 26,
+      "name": "Ash-Shu'ara",
+      "totalForms": 748,
+      "totalOccurrences": 26524,
+      "distinctLemmas": 106,
+      "coveragePct": 0.5241,
+      "missingForms": 356,
+      "safeLemmas": 1,
+      "reviewWordTr": 355,
+      "totalActions": 356,
+      "globalForms": 2,
+      "globalOccs": 57,
+      "surahsAffected": 26,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0.01,
+      "longSurahRoi": 1.36,
+      "topLemmas": [
+        {
+          "lemma": "أعلم",
+          "globalForms": 2,
+          "globalOccs": 57,
+          "surahs": 26
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "number": 43,
+      "name": "Az-Zukhruf",
+      "totalForms": 624,
+      "totalOccurrences": 25223,
+      "distinctLemmas": 112,
+      "coveragePct": 0.633,
+      "missingForms": 229,
+      "safeLemmas": 0,
+      "reviewWordTr": 229,
+      "totalActions": 229,
+      "globalForms": 0,
+      "globalOccs": 0,
+      "surahsAffected": 0,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0,
+      "longSurahRoi": 1.36,
+      "topLemmas": []
+    },
+    {
+      "rank": 19,
+      "number": 19,
+      "name": "Maryam",
+      "totalForms": 673,
+      "totalOccurrences": 24758,
+      "distinctLemmas": 87,
+      "coveragePct": 0.5037,
+      "missingForms": 334,
+      "safeLemmas": 1,
+      "reviewWordTr": 333,
+      "totalActions": 334,
+      "globalForms": 2,
+      "globalOccs": 57,
+      "surahsAffected": 26,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0.01,
+      "longSurahRoi": 1.34,
+      "topLemmas": [
+        {
+          "lemma": "أعلم",
+          "globalForms": 2,
+          "globalOccs": 57,
+          "surahs": 26
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "number": 40,
+      "name": "Ghafir",
+      "totalForms": 779,
+      "totalOccurrences": 29278,
+      "distinctLemmas": 140,
+      "coveragePct": 0.6213,
+      "missingForms": 295,
+      "safeLemmas": 0,
+      "reviewWordTr": 295,
+      "totalActions": 295,
+      "globalForms": 0,
+      "globalOccs": 0,
+      "surahsAffected": 0,
+      "formsPerAction": 1,
+      "globalFormsPerAction": 0,
+      "longSurahRoi": 1.32,
+      "topLemmas": []
+    }
+  ],
+  "top20_short_info": [
+    {
+      "rank": 1,
+      "number": 65,
+      "name": "At-Talaq",
+      "totalForms": 232,
+      "coveragePct": 0.7759,
+      "missingForms": 52,
+      "safeLemmas": 15,
+      "totalActions": 48,
+      "globalForms": 111,
+      "longSurahRoi": 16.01
+    },
+    {
+      "rank": 2,
+      "number": 80,
+      "name": "'Abasa",
+      "totalForms": 122,
+      "coveragePct": 0.6311,
+      "missingForms": 45,
+      "safeLemmas": 27,
+      "totalActions": 45,
+      "globalForms": 110,
+      "longSurahRoi": 14.6
+    },
+    {
+      "rank": 3,
+      "number": 32,
+      "name": "As-Sajdah",
+      "totalForms": 304,
+      "coveragePct": 0.8816,
+      "missingForms": 36,
+      "safeLemmas": 15,
+      "totalActions": 36,
+      "globalForms": 57,
+      "longSurahRoi": 14.31
+    },
+    {
+      "rank": 4,
+      "number": 84,
+      "name": "Al-Inshiqaq",
+      "totalForms": 92,
+      "coveragePct": 0.75,
+      "missingForms": 23,
+      "safeLemmas": 11,
+      "totalActions": 21,
+      "globalForms": 35,
+      "longSurahRoi": 14.29
+    },
+    {
+      "rank": 5,
+      "number": 54,
+      "name": "Al-Qamar",
+      "totalForms": 256,
+      "coveragePct": 0.6406,
+      "missingForms": 92,
+      "safeLemmas": 53,
+      "totalActions": 86,
+      "globalForms": 226,
+      "longSurahRoi": 13.35
+    },
+    {
+      "rank": 6,
+      "number": 66,
+      "name": "At-Tahrim",
+      "totalForms": 207,
+      "coveragePct": 0.7681,
+      "missingForms": 48,
+      "safeLemmas": 21,
+      "totalActions": 43,
+      "globalForms": 86,
+      "longSurahRoi": 13.1
+    },
+    {
+      "rank": 7,
+      "number": 61,
+      "name": "As-Saf",
+      "totalForms": 173,
+      "coveragePct": 0.8439,
+      "missingForms": 27,
+      "safeLemmas": 12,
+      "totalActions": 27,
+      "globalForms": 45,
+      "longSurahRoi": 12.83
+    },
+    {
+      "rank": 8,
+      "number": 52,
+      "name": "At-Tur",
+      "totalForms": 260,
+      "coveragePct": 0.7769,
+      "missingForms": 58,
+      "safeLemmas": 31,
+      "totalActions": 58,
+      "globalForms": 123,
+      "longSurahRoi": 12.71
+    },
+    {
+      "rank": 9,
+      "number": 51,
+      "name": "Adh-Dhariyat",
+      "totalForms": 298,
+      "coveragePct": 0.8255,
+      "missingForms": 52,
+      "safeLemmas": 34,
+      "totalActions": 50,
+      "globalForms": 97,
+      "longSurahRoi": 12.4
+    },
+    {
+      "rank": 10,
+      "number": 76,
+      "name": "Al-Insan",
+      "totalForms": 210,
+      "coveragePct": 0.681,
+      "missingForms": 67,
+      "safeLemmas": 44,
+      "totalActions": 65,
+      "globalForms": 137,
+      "longSurahRoi": 11.87
+    },
+    {
+      "rank": 11,
+      "number": 58,
+      "name": "Al-Mujadila",
+      "totalForms": 322,
+      "coveragePct": 0.8012,
+      "missingForms": 64,
+      "safeLemmas": 26,
+      "totalActions": 61,
+      "globalForms": 103,
+      "longSurahRoi": 10.67
+    },
+    {
+      "rank": 12,
+      "number": 77,
+      "name": "Al-Mursalat",
+      "totalForms": 136,
+      "coveragePct": 0.6765,
+      "missingForms": 44,
+      "safeLemmas": 29,
+      "totalActions": 44,
+      "globalForms": 86,
+      "longSurahRoi": 10.64
+    },
+    {
+      "rank": 13,
+      "number": 31,
+      "name": "Luqman",
+      "totalForms": 397,
+      "coveragePct": 0.8388,
+      "missingForms": 64,
+      "safeLemmas": 27,
+      "totalActions": 62,
+      "globalForms": 88,
+      "longSurahRoi": 10.55
+    },
+    {
+      "rank": 14,
+      "number": 89,
+      "name": "Al-Fajr",
+      "totalForms": 117,
+      "coveragePct": 0.7009,
+      "missingForms": 35,
+      "safeLemmas": 20,
+      "totalActions": 34,
+      "globalForms": 50,
+      "longSurahRoi": 10.53
+    },
+    {
+      "rank": 15,
+      "number": 49,
+      "name": "Al-Hujurat",
+      "totalForms": 248,
+      "coveragePct": 0.7097,
+      "missingForms": 72,
+      "safeLemmas": 21,
+      "totalActions": 70,
+      "globalForms": 112,
+      "longSurahRoi": 10.43
+    },
+    {
+      "rank": 16,
+      "number": 88,
+      "name": "Al-Ghashiyah",
+      "totalForms": 80,
+      "coveragePct": 0.6125,
+      "missingForms": 31,
+      "safeLemmas": 23,
+      "totalActions": 31,
+      "globalForms": 52,
+      "longSurahRoi": 9.58
+    },
+    {
+      "rank": 17,
+      "number": 68,
+      "name": "Al-Qalam",
+      "totalForms": 250,
+      "coveragePct": 0.756,
+      "missingForms": 61,
+      "safeLemmas": 27,
+      "totalActions": 61,
+      "globalForms": 80,
+      "longSurahRoi": 9.43
+    },
+    {
+      "rank": 18,
+      "number": 74,
+      "name": "Al-Muddaththir",
+      "totalForms": 209,
+      "coveragePct": 0.6794,
+      "missingForms": 67,
+      "safeLemmas": 30,
+      "totalActions": 65,
+      "globalForms": 101,
+      "longSurahRoi": 9.41
+    },
+    {
+      "rank": 19,
+      "number": 45,
+      "name": "Al-Jathiyah",
+      "totalForms": 365,
+      "coveragePct": 0.8986,
+      "missingForms": 37,
+      "safeLemmas": 10,
+      "totalActions": 37,
+      "globalForms": 26,
+      "longSurahRoi": 9.39
+    },
+    {
+      "rank": 20,
+      "number": 69,
+      "name": "Al-Haqqah",
+      "totalForms": 217,
+      "coveragePct": 0.6866,
+      "missingForms": 68,
+      "safeLemmas": 39,
+      "totalActions": 66,
+      "globalForms": 103,
+      "longSurahRoi": 9.22
+    }
+  ],
+  "top30Lemmas": [
+    {
+      "lemma": "أمر",
+      "lemmaId": "a1ab4fa7-1769-4a6f-972d-fec47523223a",
+      "forms": 36,
+      "occs": 135,
+      "surahs": 53,
+      "quality": 1
+    },
+    {
+      "lemma": "ذكر",
+      "lemmaId": "cfee91db-2bcb-4c63-b9fd-c795565b547a",
+      "forms": 36,
+      "occs": 120,
+      "surahs": 51,
+      "quality": 1
+    },
+    {
+      "lemma": "ذر",
+      "lemmaId": "53b60e93-b323-4903-aab7-7585c6d37233",
+      "forms": 19,
+      "occs": 36,
+      "surahs": 22,
+      "quality": 1
+    },
+    {
+      "lemma": "ظلم",
+      "lemmaId": "96f82b20-98ec-4c14-b3d8-b89c6eda1003",
+      "forms": 17,
+      "occs": 91,
+      "surahs": 38,
+      "quality": 1
+    },
+    {
+      "lemma": "حسب",
+      "lemmaId": "afc73651-eb6f-4850-833a-b6f011b55940",
+      "forms": 16,
+      "occs": 33,
+      "surahs": 20,
+      "quality": 1
+    },
+    {
+      "lemma": "حكم",
+      "lemmaId": "eac89d75-bcf1-4df8-b898-18fa43baada4",
+      "forms": 14,
+      "occs": 55,
+      "surahs": 25,
+      "quality": 1
+    },
+    {
+      "lemma": "نذر",
+      "lemmaId": "a419e8f2-668b-46d3-8af0-2ee2b279e2d3",
+      "forms": 14,
+      "occs": 32,
+      "surahs": 16,
+      "quality": 1
+    },
+    {
+      "lemma": "عد",
+      "lemmaId": "76720cd4-2d0d-478c-b97d-4ba5853334e3",
+      "forms": 12,
+      "occs": 21,
+      "surahs": 14,
+      "quality": 1
+    },
+    {
+      "lemma": "غير",
+      "lemmaId": "80337b95-0ca3-4ee1-b3d2-8fda1ae8f2ed",
+      "forms": 11,
+      "occs": 124,
+      "surahs": 44,
+      "quality": 1
+    },
+    {
+      "lemma": "بشر",
+      "lemmaId": "f558bdca-2090-49c8-9046-fd71d8cd7496",
+      "forms": 11,
+      "occs": 39,
+      "surahs": 24,
+      "quality": 1
+    },
+    {
+      "lemma": "أجل",
+      "lemmaId": "f7b9b54c-207d-4f92-a762-5d7ac69f5498",
+      "forms": 11,
+      "occs": 34,
+      "surahs": 20,
+      "quality": 1
+    },
+    {
+      "lemma": "طائف",
+      "lemmaId": "0186c84d-cc2c-4865-9e99-6775df8cb007",
+      "forms": 11,
+      "occs": 24,
+      "surahs": 14,
+      "quality": 1
+    },
+    {
+      "lemma": "خلف",
+      "lemmaId": "64f9e40f-05a0-4487-951e-0dd6c66f5c46",
+      "forms": 11,
+      "occs": 23,
+      "surahs": 17,
+      "quality": 1
+    },
+    {
+      "lemma": "آتي",
+      "lemmaId": "a390a2bf-64ea-4751-82ed-db7bd909c77f",
+      "forms": 10,
+      "occs": 53,
+      "surahs": 31,
+      "quality": 1
+    },
+    {
+      "lemma": "قرى",
+      "lemmaId": "f23872ac-d6ff-4c52-ad6e-eb96d4f18ff6",
+      "forms": 10,
+      "occs": 45,
+      "surahs": 22,
+      "quality": 1
+    },
+    {
+      "lemma": "أذن",
+      "lemmaId": "204bf81a-370e-43d1-9c02-d5ea41212298",
+      "forms": 10,
+      "occs": 16,
+      "surahs": 12,
+      "quality": 1
+    },
+    {
+      "lemma": "ألف",
+      "lemmaId": "0afe4bc9-82b2-433f-802a-07d24d5d7b61",
+      "forms": 10,
+      "occs": 13,
+      "surahs": 7,
+      "quality": 1
+    },
+    {
+      "lemma": "بعد",
+      "lemmaId": "dd8602dc-6087-43e2-a1e7-744bbddeb9b1",
+      "forms": 9,
+      "occs": 173,
+      "surahs": 51,
+      "quality": 1
+    },
+    {
+      "lemma": "غني",
+      "lemmaId": "9412d1e0-dd77-4df2-8df2-931d1c909ce1",
+      "forms": 9,
+      "occs": 34,
+      "surahs": 28,
+      "quality": 1
+    },
+    {
+      "lemma": "حرم",
+      "lemmaId": "50a88ac9-4d20-45fb-a1c6-96f0a5dd9742",
+      "forms": 9,
+      "occs": 27,
+      "surahs": 13,
+      "quality": 1
+    },
+    {
+      "lemma": "مرسل",
+      "lemmaId": "04e15393-f4a4-4a4f-adbf-61f017dbcd2b",
+      "forms": 8,
+      "occs": 38,
+      "surahs": 16,
+      "quality": 1
+    },
+    {
+      "lemma": "شهيد",
+      "lemmaId": "32efdf8e-8bc0-4bd3-b457-780b8dde61a2",
+      "forms": 8,
+      "occs": 30,
+      "surahs": 19,
+      "quality": 1
+    },
+    {
+      "lemma": "زين",
+      "lemmaId": "930253f4-aab7-4aed-a007-3623065c60f0",
+      "forms": 8,
+      "occs": 23,
+      "surahs": 18,
+      "quality": 1
+    },
+    {
+      "lemma": "امرأ",
+      "lemmaId": "b2e097ba-39b8-447c-b70f-ee2b158b2795",
+      "forms": 8,
+      "occs": 16,
+      "surahs": 11,
+      "quality": 1
+    },
+    {
+      "lemma": "ميت",
+      "lemmaId": "d3707956-0d9f-457a-9a96-0a3690b294d6",
+      "forms": 8,
+      "occs": 15,
+      "surahs": 13,
+      "quality": 1
+    },
+    {
+      "lemma": "كلم",
+      "lemmaId": "a248575a-0d9a-4fb8-9dbf-0654f9434eb4",
+      "forms": 8,
+      "occs": 15,
+      "surahs": 12,
+      "quality": 1
+    },
+    {
+      "lemma": "عهد",
+      "lemmaId": "1df86c4f-7318-4198-9a16-4869c8e29e99",
+      "forms": 8,
+      "occs": 15,
+      "surahs": 9,
+      "quality": 1
+    },
+    {
+      "lemma": "ذهب",
+      "lemmaId": "9e446bf7-1d70-4443-9412-03476f8b1e7d",
+      "forms": 8,
+      "occs": 14,
+      "surahs": 10,
+      "quality": 1
+    },
+    {
+      "lemma": "أيد",
+      "lemmaId": "d7bc4cca-c763-4de6-9caf-c59e809123b7",
+      "forms": 8,
+      "occs": 12,
+      "surahs": 9,
+      "quality": 1
+    },
+    {
+      "lemma": "نبأ",
+      "lemmaId": "43ea47f8-4b45-43a5-be4a-b28d38579d66",
+      "forms": 8,
+      "occs": 9,
+      "surahs": 6,
+      "quality": 1
+    }
+  ],
+  "scenarios": {
+    "A_LONG_SURAH_FIRST": {
+      "description": "Traiter la meilleure longue sourate: S46 Al-Ahqaf",
+      "surah": 46,
+      "safeLemmas": 32,
+      "wordTranslations": 43,
+      "totalActions": 75,
+      "globalForms": 168,
+      "globalOccs": 542,
+      "surahsAffected": 84,
+      "newFrForms": 129,
+      "newReady": 30,
+      "thresholdsAfter": {
+        "1": 30,
+        "0.8": 43,
+        "0.9": 30,
+        "0.95": 30
+      }
+    },
+    "B_LEXICAL_FIRST_TOP30": {
+      "description": "Traduire les 30 lemmes SAFE à plus forte propagation (toutes sourates confondues)",
+      "newFrForms": 170,
+      "newReady": 29,
+      "thresholdsAfter": {
+        "1": 29,
+        "0.8": 45,
+        "0.9": 29,
+        "0.95": 29
+      }
+    },
+    "C_HYBRID": {
+      "description": "LONG-SURAH-FIRST sur S46 — résout une sourate READY tout en propageant ses lemmes globalement",
+      "newFrForms": 129,
+      "newReady": 30,
+      "thresholdsAfter": {
+        "1": 30,
+        "0.8": 43,
+        "0.9": 30,
+        "0.95": 30
+      }
+    },
+    "thresholdsBaseline": {
+      "1": 29,
+      "0.8": 43,
+      "0.9": 29,
+      "0.95": 29
+    }
+  },
+  "recommendation": {
+    "nextLongSurah": 46,
+    "name": "Al-Ahqaf",
+    "totalForms": 482,
+    "totalOccurrences": 25900,
+    "coveragePct": 0.8402,
+    "missingForms": 77,
+    "safeLemmas": 32,
+    "wordTranslations": 43,
+    "totalActions": 75,
+    "globalFormsUnlocked": 168,
+    "globalOccsUnlocked": 542,
+    "globalSurahsAffected": 84,
+    "longSurahRoi": 14.67,
+    "rationale": "Sourate longue, riche lexicalement, SAFE lemmas à forte propagation, bon ratio global_forms/action.",
+    "alternatives": [
+      {
+        "number": 13,
+        "name": "Ar-Ra'd",
+        "totalForms": 601,
+        "safeLemmas": 50,
+        "globalForms": 187,
+        "totalActions": 97,
+        "longSurahRoi": 12.26
+      },
+      {
+        "number": 29,
+        "name": "Al-'Ankabut",
+        "totalForms": 663,
+        "safeLemmas": 35,
+        "globalForms": 194,
+        "totalActions": 104,
+        "longSurahRoi": 11.85
+      },
+      {
+        "number": 36,
+        "name": "Ya-Sin",
+        "totalForms": 529,
+        "safeLemmas": 37,
+        "globalForms": 187,
+        "totalActions": 95,
+        "longSurahRoi": 11.75
+      },
+      {
+        "number": 22,
+        "name": "Al-Hajj",
+        "totalForms": 808,
+        "safeLemmas": 94,
+        "globalForms": 351,
+        "totalActions": 183,
+        "longSurahRoi": 10.63
+      },
+      {
+        "number": 34,
+        "name": "Saba",
+        "totalForms": 598,
+        "safeLemmas": 57,
+        "globalForms": 219,
+        "totalActions": 122,
+        "longSurahRoi": 10.5
+      }
+    ]
+  },
+  "integrity": {
+    "orphan_quran": 0,
+    "orphan_wlm": 0,
+    "orphan_lo": 0,
+    "orphan_lt": 0,
+    "dir_wlm_conflict": 0,
+    "S98": true,
+    "S92": true,
+    "S82": true,
+    "S85": true,
+    "S90": true,
+    "S70": true,
+    "classifySurahReadiness_unchanged": true
+  },
+  "invariants": {
+    "database_writes": 0,
+    "lexical_writes": 0,
+    "translation_writes": 0,
+    "curriculum_writes": 0,
+    "masaq_writes": 0,
+    "migrations": 0,
+    "seeds": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error · 0 warning",
+    "readOnlyStaticCheck": "PASS"
+  }
+}

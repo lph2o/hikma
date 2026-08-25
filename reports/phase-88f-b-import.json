@@ -1,0 +1,119 @@
+{
+  "phase": "88F-B",
+  "mode": "APPLY",
+  "timestamp": "2026-08-23T21:20:00.000Z",
+  "verdict": "PHASE_88F_B_COMPLETE",
+  "baselineB0": {
+    "totalProposals": 30,
+    "readyForImport": 30,
+    "trueNewForms": 183,
+    "trueNewOccurrences": 221
+  },
+  "import": {
+    "proposals": 30,
+    "inserted": 30,
+    "existingSame": 0,
+    "existingSameLemmaIds": [],
+    "conflict": 0,
+    "conflicts": [],
+    "errors": 0,
+    "databaseWrites": 30,
+    "translationWrites": 30
+  },
+  "atomicityNote": "INSERT bulk unique (une seule statement Postgres) — atomique, aucune écriture partielle possible",
+  "snapshotDb": {
+    "before": {
+      "lemma_translations": 32,
+      "word_translations": 4490,
+      "quran_words": 21296,
+      "word_lemma_mapping": 220,
+      "linguistic_occurrences": 22485,
+      "lemmas": 1593,
+      "learning_paths": 24,
+      "units": 24,
+      "lessons": 191
+    },
+    "after": {
+      "lemma_translations": 62,
+      "word_translations": 4490,
+      "quran_words": 21296,
+      "word_lemma_mapping": 220,
+      "linguistic_occurrences": 22485,
+      "lemmas": 1593,
+      "learning_paths": 24,
+      "units": 24,
+      "lessons": 191
+    },
+    "lemmaTranslationsDelta": 30,
+    "invariantDelta": {
+      "word_translations": 0,
+      "quran_words": 0,
+      "word_lemma_mapping": 0,
+      "linguistic_occurrences": 0,
+      "lemmas": 0,
+      "learning_paths": 0,
+      "units": 0,
+      "lessons": 0
+    }
+  },
+  "coverage": {
+    "before": {
+      "quranWordsTotal": 21296,
+      "wordTranslationsFrValidated": 4490,
+      "lemmaTranslationsFrValidated": 28,
+      "formsCoveredByWord": 4490,
+      "formsCoveredByLemma": 606,
+      "unionFr": 4803,
+      "formsWithoutFr": 16493,
+      "occurrencesCovered": 55556,
+      "occurrencesTotal": 77430,
+      "readySurahs": 23,
+      "inPreparationSurahs": 90,
+      "referenceSurahs": 1
+    },
+    "after": {
+      "quranWordsTotal": 21296,
+      "wordTranslationsFrValidated": 4490,
+      "lemmaTranslationsFrValidated": 58,
+      "formsCoveredByWord": 4490,
+      "formsCoveredByLemma": 1180,
+      "unionFr": 4986,
+      "formsWithoutFr": 16310,
+      "occurrencesCovered": 55777,
+      "occurrencesTotal": 77430,
+      "readySurahs": 23,
+      "inPreparationSurahs": 90,
+      "referenceSurahs": 1
+    },
+    "gain": {
+      "newForms": 183,
+      "newOccurrences": 221,
+      "matchesBaselineB0": true,
+      "note": "formes dédupliquées par word_id ; union word_translation ∪ lemma_translation, jamais d'addition simple"
+    },
+    "surahReady": { "before": 23, "after": 23 },
+    "surahInPreparation": { "before": 90, "after": 90 }
+  },
+  "validation": {
+    "A": { "ok": true, "detail": "30/30 lemma_id présents" },
+    "B": { "ok": true, "detail": "langue/source/validation OK pour 30/30" },
+    "C": { "ok": true, "detail": "30/30 textes identiques à B0" },
+    "D": { "ok": true, "detail": "clés dupliquées (lemma_id,language,source_id) = 0" },
+    "E": { "ok": true, "detail": "conflits = 0" },
+    "F": { "ok": true, "detail": "lemma_translations orphelines = 0" }
+  },
+  "invariants": { "ok": true, "delta": { "word_translations": 0, "quran_words": 0, "word_lemma_mapping": 0, "linguistic_occurrences": 0, "lemmas": 0, "learning_paths": 0, "units": 0, "lessons": 0 } },
+  "rerunVerification": {
+    "note": "2e passage APPLY (idempotence) : EXISTING_SAME=30 · delta 0 · verdict PHASE_88F_B_COMPLETE · aucune écriture",
+    "existingSame": 30,
+    "inserted": 0,
+    "lemmaTranslations": "62 → 62",
+    "ok": true
+  },
+  "tests": {
+    "run": true,
+    "result": "954/954 PASS (63 files) — vitest run",
+    "typecheck": "npx tsc --noEmit : 0 nouvelle erreur (56 erreurs pré-existantes dans scripts 88E/88F antérieurs)",
+    "eslint": "scripts/import-lemma-glosses-88f-b.ts : 0 erreur"
+  }
+}

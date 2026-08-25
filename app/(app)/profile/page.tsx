@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BodyMedium, Caption, H1 } from "@/components/ui/typography";
 import { GoalSettings } from "@/components/app/goal-settings";
+import { ReminderPreferences } from "@/components/app/reminder-preferences";
 import { LearningPreferences } from "@/components/app/learning-preferences";
 import {
   getSurahCatalog,
@@ -99,6 +100,16 @@ export default async function ProfilePage() {
           <GoalSettings
             currentType={settings?.daily_goal_type ?? "words"}
             currentValue={settings?.daily_goal_value ?? 5}
+          />
+        </CardContent>
+      </Card>
+
+      {/* Rappels (Phase 80) */}
+      <Card>
+        <CardContent className="flex flex-col gap-4 p-6">
+          <ReminderPreferences
+            enabled={settings?.reminder_enabled ?? false}
+            time={settings?.reminder_time ?? "19:00"}
           />
         </CardContent>
       </Card>

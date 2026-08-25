@@ -36,7 +36,7 @@ import {
 } from "./language";
 import { SKILLS, type Skill } from "./skills";
 import type { SkillProgressState } from "./skill-progress";
-import { computeCoveragePercent, COMPREHENDED_STATUSES } from "./coverage";
+import { computeCoveragePercent, computeCoverageBySurah, computeAyahCoverages, COMPREHENDED_STATUSES, type SurahCoverage, type AyahCoverage } from "./coverage";
 
 /**
  * Taille maximale d'un filtre `.in()` (identifiants par requête).
@@ -52,20 +52,35 @@ import { computeCoveragePercent, COMPREHENDED_STATUSES } from "./coverage";
 export const IN_FILTER_CHUNK_SIZE = 250;
 
 /**
- * Exécute une requête `.in()` par lots de `IN_FILTER_CHUNK_SIZE` identifiants
- * (en parallèle) puis concatène les lignes. Déterministe, sans effet de bord :
+ * Taille maximale d'un filtre `.in("lesson_id", …)` (Phase 88J).
+ *
+ * Phase 52 a fixé `IN_FILTER_CHUNK_SIZE = 250` pour les `.in()` sur `word_id`,
+ * mais la publication 88H (356 nouvelles leçons → 547 leçons publiées au
+ * total) a franchi le seuil mesuré en 88I (≈ 396 ids / ≈ 14,7 Ko d'URL) sur la
+ * requête `lesson_words` de `getSurahCatalog` → `TypeError: fetch failed`
+ * (finding CAT-000). 200 laisse une marge ~1,8× sous le seuil, conformément à
+ * la recommandation de l'audit 88I.
+ */
+export const LESSON_ID_CHUNK_SIZE = 200;
+
+/**
+ * Exécute une requête `.in()` par lots d'identifiants (en parallèle) puis
+ * concatène les lignes. Déterministe, sans effet de bord :
  * - tableau vide → aucun appel ;
  * - identifiants dédupliqués (un id n'apparaît que dans un seul lot) ;
  * - la première erreur rencontrée est propagée avec `label`.
  * Le nombre de requêtes est proportionnel au nombre de lots, jamais au nombre
  * d'identifiants (aucun N+1).
+ * `chunkSize` par défaut : `IN_FILTER_CHUNK_SIZE` (word_id, Phase 52).
+ * `getSurahCatalog` passe `LESSON_ID_CHUNK_SIZE` pour lesson_id (Phase 88J).
  */
 async function selectInChunks<T>(
   ids: readonly string[],
   label: string,
   run: (batch: string[]) => PromiseLike<{ data: T[] | null; error: { message: string } | null }>,
+  chunkSize: number = IN_FILTER_CHUNK_SIZE,
 ): Promise<T[]> {
-  const batches = chunk([...new Set(ids)], IN_FILTER_CHUNK_SIZE);
+  const batches = chunk([...new Set(ids)], chunkSize);
   const results = await Promise.all(batches.map(run));
   const rows: T[] = [];
   for (const { data, error } of results) {
@@ -262,21 +277,34 @@ export async function getSurahCatalog(
   const lessonIds = lessons.map((l) => l.id);
 
   // 3. Mots distincts de chaque parcours (forms réellement enseignées).
-  const { data: lwRows, error: lwError } = await client
-    .from("lesson_words")
-    .select("lesson_id, word_id")
-    .in("lesson_id", lessonIds)
-    .order("position", { ascending: true });
-  if (lwError) throw new Error(`lesson_words : ${lwError.message}`);
+  //    Phase 88J : requête chunkée par lesson_id (LESSON_ID_CHUNK_SIZE = 200).
+  //    Phase 52 n'avait sécurisé que les `.in()` sur `word_id` ; depuis la
+  //    publication 88H, les 547 leçons publiées dépassent le seuil `.in()`
+  //    (≈ 396 ids / ≈ 14,7 Ko) et la requête levait « TypeError: fetch
+  //    failed » (finding CAT-000 de l'audit 88I). Résultat strictement
+  //    équivalent à la requête unique : fusion déterministe, aucun doublon,
+  //    aucun mot perdu (chaque lesson_id n'appartient qu'à un lot, l'ordre
+  //    `position` de chaque leçon est donc préservé).
+  const lwRows = await selectInChunks<{ lesson_id: string; word_id: string }>(
+    lessonIds,
+    "lesson_words",
+    (batch) =>
+      client
+        .from("lesson_words")
+        .select("lesson_id, word_id")
+        .in("lesson_id", batch)
+        .order("position", { ascending: true }),
+    LESSON_ID_CHUNK_SIZE,
+  );
   const wordIdsByLesson = new Map<string, string[]>();
-  for (const row of (lwRows ?? []) as Array<{ lesson_id: string; word_id: string }>) {
+  for (const row of lwRows) {
     const arr = wordIdsByLesson.get(row.lesson_id) ?? [];
     if (!arr.includes(row.word_id)) arr.push(row.word_id);
     wordIdsByLesson.set(row.lesson_id, arr);
   }
 
   // 4. Résolution FR réelle (FORME → LEMME → fallback EN) en une seule passe.
-  const allWordIds = [...new Set((lwRows ?? []).map((r: { word_id: string }) => r.word_id))];
+  const allWordIds = [...new Set(lwRows.map((r) => r.word_id))];
   const [formMap, lemmaMap] = await Promise.all([
     getValidatedFrenchMeanings(client, allWordIds),
     getValidatedFrenchLemmaMeaningsByWord(client, allWordIds),
@@ -402,17 +430,24 @@ export async function getSurahProgressByUser(
   const lessonIds = lessons.map((l) => l.id);
 
   // 4. Mots `is_new` par leçon — seul critère de complétion (même règle que
-  // `getLessonWordMap` utilisé par le dashboard).
+  // `getLessonWordMap` utilisé par le dashboard). Phase 88K : requête chunkée
+  // par lesson_id (LESSON_ID_CHUNK_SIZE = 200) — même régression que 88J
+  // (547 leçons publiées > seuil `.in()` ≈ 396 ids).
   const lessonWordIds = new Map<string, string[]>();
   if (lessonIds.length > 0) {
-    const { data: lwRows, error: lwError } = await client
-      .from("lesson_words")
-      .select("lesson_id, word_id")
-      .eq("is_new", true)
-      .in("lesson_id", lessonIds)
-      .order("position", { ascending: true });
-    if (lwError) throw new Error(`lesson_words : ${lwError.message}`);
-    for (const row of (lwRows ?? []) as Array<{ lesson_id: string; word_id: string }>) {
+    const lwRows = await selectInChunks<{ lesson_id: string; word_id: string }>(
+      lessonIds,
+      "lesson_words",
+      (batch) =>
+        client
+          .from("lesson_words")
+          .select("lesson_id, word_id")
+          .eq("is_new", true)
+          .in("lesson_id", batch)
+          .order("position", { ascending: true }),
+      LESSON_ID_CHUNK_SIZE,
+    );
+    for (const row of lwRows) {
       const arr = lessonWordIds.get(row.lesson_id) ?? [];
       arr.push(row.word_id);
       lessonWordIds.set(row.lesson_id, arr);
@@ -426,17 +461,23 @@ export async function getSurahProgressByUser(
       ? await getUserWordProgress(client, userId, allNewWordIds)
       : new Map<string, UserWordProgress>();
 
-  // 6. Sessions actives sur les leçons du catalogue (batch).
+  // 6. Sessions actives sur les leçons du catalogue (batch). Phase 88K :
+  // requête chunkée par lesson_id (même seuil `.in()` que lesson_words).
   const activeLessonIds = new Set<string>();
   if (lessonIds.length > 0) {
-    const { data: sessionRows, error: sessionError } = await client
-      .from("lesson_sessions")
-      .select("lesson_id")
-      .eq("user_id", userId)
-      .eq("status", "in_progress")
-      .in("lesson_id", lessonIds);
-    if (sessionError) throw new Error(`lesson_sessions : ${sessionError.message}`);
-    for (const row of (sessionRows ?? []) as Array<{ lesson_id: string }>) {
+    const sessionRows = await selectInChunks<{ lesson_id: string }>(
+      lessonIds,
+      "lesson_sessions",
+      (batch) =>
+        client
+          .from("lesson_sessions")
+          .select("lesson_id")
+          .eq("user_id", userId)
+          .eq("status", "in_progress")
+          .in("lesson_id", batch),
+      LESSON_ID_CHUNK_SIZE,
+    );
+    for (const row of sessionRows) {
       activeLessonIds.add(row.lesson_id);
     }
   }
@@ -1359,6 +1400,8 @@ export type LessonAyahContext = {
   arabic: string;
   /** Traduction française réelle (Hamidullah) du VERSET — null si absente. */
   french: string | null;
+  /** Numéro global de l'ayah (1–6236), pour le CDN audio. Null si absent. */
+  globalAyahNumber: number | null;
 };
 
 /**
@@ -1412,7 +1455,7 @@ export async function getLessonAyahContext(
 
   const { data: ayahRows, error: ayahError } = await client
     .from("ayahs")
-    .select("id, surah_id, ayah_number, text_uthmani")
+    .select("id, surah_id, ayah_number, global_ayah_number, text_uthmani")
     .in("id", candidateIds);
   if (ayahError) throw new Error(`ayahs : ${ayahError.message}`);
 
@@ -1453,6 +1496,7 @@ export async function getLessonAyahContext(
       ayahNumber: a.ayah_number,
       arabic: a.text_uthmani,
       french: frenchByAyah.get(a.id) ?? null,
+      globalAyahNumber: a.global_ayah_number ?? null,
     };
   });
 
@@ -1476,6 +1520,7 @@ export async function getLessonAyahContext(
       ayahNumber: r.ayahNumber,
       arabic: r.arabic,
       french: r.french,
+      globalAyahNumber: r.globalAyahNumber,
     });
   }
   return out;
@@ -1982,7 +2027,7 @@ export async function getGlobalWordStats(
   };
 }
 
-/** Couverture coranique d'un utilisateur (Phase 37B) — lecture seule. */
+/** Couverture coranique d'un utilisateur (Phase 37B, enrichie 83B) — lecture seule. */
 export type QuranCoverage = {
   /** Pourcentage entier 0..100 (arrondi, à présenter avec « ≈ »). */
   coveragePercent: number;
@@ -1990,6 +2035,8 @@ export type QuranCoverage = {
   coveredOccurrences: number;
   /** Total des occurrences du corpus, depuis `word_occurrences` (jamais hardcodé). */
   totalOccurrences: number;
+  /** word_ids compris (familiar | mastered) — réutilisable par getCoverageBySurah. */
+  comprehendedWordIds: string[];
 };
 
 /**
@@ -2045,6 +2092,7 @@ export async function getQuranCoverage(
       coveragePercent: computeCoveragePercent(coveredOccurrences, totalOccurrences),
       coveredOccurrences,
       totalOccurrences,
+      comprehendedWordIds: wordIds,
     };
   } catch (err) {
     console.error(
@@ -2054,6 +2102,147 @@ export async function getQuranCoverage(
     );
     return null;
   }
+}
+
+/**
+ * Couverture lexicale par sourate (Phase 83B).
+ * 1 seule query batch — GROUP BY sourate, COUNT(DISTINCT ayah).
+ * Retourne [] si comprehendedWordIds est vide.
+ */
+export async function getCoverageBySurah(
+  client: SupabaseClient,
+  comprehendedWordIds: string[],
+): Promise<SurahCoverage[]> {
+  if (comprehendedWordIds.length === 0) return [];
+
+  const ids = [...new Set(comprehendedWordIds)];
+  const { data, error } = await client
+    .from("word_occurrences")
+    .select("ayahs!inner(surah_id), ayah_id")
+    .in("word_id", ids);
+  if (error) throw new Error(`word_occurrences : ${error.message}`);
+
+  // Comptage manuel : Map<surah_id, Set<ayah_id>>
+  const surahAyahs = new Map<string, Set<string>>();
+  // supabase-js : la relation !inner produit un tableau (to-one mal typé sans génération).
+  for (const row of (data ?? []) as unknown as Array<{ ayah_id: string; ayahs: Array<{ surah_id: string }> }>) {
+    const surahRel = Array.isArray(row.ayahs) ? row.ayahs[0] : row.ayahs;
+    if (!surahRel) continue;
+    const surahId = (surahRel as { surah_id: string }).surah_id;
+    if (!surahAyahs.has(surahId)) surahAyahs.set(surahId, new Set());
+    surahAyahs.get(surahId)!.add(row.ayah_id);
+  }
+
+  const surahIds = [...surahAyahs.keys()];
+  if (surahIds.length === 0) return [];
+
+  const { data: surahRows, error: surahError } = await client
+    .from("surahs")
+    .select("id, number, name_translation, ayah_count")
+    .in("id", surahIds);
+  if (surahError) throw new Error(`surahs : ${surahError.message}`);
+
+  const rows = (surahRows ?? []).map((s) => ({
+    surah_number: (s as { number: number }).number,
+    name_translation: (s as { name_translation: string | null }).name_translation,
+    ayah_count: (s as { ayah_count: number }).ayah_count,
+    covered_ayahs: surahAyahs.get((s as { id: string }).id)?.size ?? 0,
+  }));
+
+  return computeCoverageBySurah(rows);
+}
+
+/**
+ * Couverture lexicale de tous les ayahs d'une sourate (Phase 84B, corrigé 84C).
+ *
+ * Approche robuste en deux étapes pour éviter le filtrage embedded supabase-js
+ * avec `!inner` (`.eq("ayahs.surah_id", ...)` non fiable) :
+ * 1. Query `ayahs` → tous les ayah_id + métadonnées.
+ * 2. Query `word_occurrences` en batch + `user_word_progress` + `translations`.
+ *
+ * 3 queries batch max (ayahs → occurrences + progress ∥ translations),
+ * aucun N+1. Retourne les ayahs triés avec leurs occurrences et statuts.
+ */
+export async function getSurahAyahCoverage(
+  client: SupabaseClient,
+  userId: string,
+  surahId: string,
+): Promise<AyahCoverage[]> {
+  // 1. Récupère d'abord tous les ayahs de la sourate (source de vérité).
+  const { data: ayahRows, error: ayahError } = await client
+    .from("ayahs")
+    .select("id, ayah_number, global_ayah_number, text_uthmani")
+    .eq("surah_id", surahId)
+    .order("ayah_number", { ascending: true });
+  if (ayahError) throw new Error(`ayahs : ${ayahError.message}`);
+
+  type AyahRow = {
+    id: string;
+    ayah_number: number;
+    global_ayah_number: number;
+    text_uthmani: string;
+  };
+  const ayahs = (ayahRows ?? []) as AyahRow[];
+  if (ayahs.length === 0) return [];
+
+  const ayahById = new Map(ayahs.map((a) => [a.id, a]));
+  const ayahIds = ayahs.map((a) => a.id);
+
+  // 2. Occurrences + progression + traductions.
+  const { data: occRows, error: occError } = await client
+    .from("word_occurrences")
+    .select("id, ayah_id, word_id, position, text")
+    .in("ayah_id", ayahIds)
+    .order("ayah_id")
+    .order("position", { ascending: true });
+  if (occError) throw new Error(`word_occurrences : ${occError.message}`);
+
+  type OccRow = {
+    id: string;
+    ayah_id: string;
+    word_id: string;
+    position: number;
+    text: string;
+  };
+  const occurrences = (occRows ?? []) as unknown as OccRow[];
+
+  const wordIds = [...new Set(occurrences.map((o) => o.word_id))];
+
+  const [progressMap, { data: frRows, error: frError }] = await Promise.all([
+    getUserWordProgress(client, userId, wordIds),
+    client
+      .from("translations")
+      .select("ayah_id, text")
+      .eq("language", "fr")
+      .in("ayah_id", ayahIds),
+  ]);
+  if (frError) throw new Error(`translations : ${frError.message}`);
+
+  const frenchByAyah = new Map<string, string>();
+  for (const t of (frRows ?? []) as Array<{ ayah_id: string; text: string }>) {
+    frenchByAyah.set(t.ayah_id, stripHtml(t.text));
+  }
+
+  // 3. Agrégation en mémoire avec les métadonnées d'ayah de l'étape 1.
+  return computeAyahCoverages(
+    occurrences.map((o) => {
+      const ayah = ayahById.get(o.ayah_id);
+      const progress = progressMap.get(o.word_id);
+      return {
+        occurrenceId: o.id,
+        ayahId: o.ayah_id,
+        wordId: o.word_id,
+        position: o.position,
+        text: o.text,
+        ayahNumber: ayah?.ayah_number ?? 0,
+        globalAyahNumber: ayah?.global_ayah_number ?? 0,
+        textUthmani: ayah?.text_uthmani ?? "",
+        status: progress?.status ?? null,
+        mastery: progress?.mastery ?? null,
+        translationFr: frenchByAyah.get(o.ayah_id) ?? null,
+      };
+    }),
+  );
 }
 
 /** Résout le path_id d'une unité par son slug (toutes sourates confondues). */

@@ -1,0 +1,312 @@
+{
+  "phase": "88F-AY",
+  "verdict": "PHASE_88F_AY_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "editorialReadyForImport": true,
+  "timestamp": "2026-08-24T16:52:35.583Z",
+  "durationSeconds": 23.2,
+  "surah": {
+    "number": 86,
+    "name": "At-Tariq"
+  },
+  "baseline": {
+    "totalForms": 55,
+    "coveredForms": 31,
+    "unresolvedForms": 24,
+    "coveragePct": 56.3636,
+    "paths": {
+      "pathA_wordTr": 31,
+      "pathB_lemma": 0,
+      "pathC_wlm": 0
+    },
+    "classALemmaReachable": 0
+  },
+  "editorialGlosses": [
+    {
+      "word_id": "cd850ee3-8c4f-490c-b87f-00c9e3124cd7",
+      "arabic": "رَجْعِهِۦ",
+      "ayah": "86:8",
+      "gloss": "le ramener / le faire revenir",
+      "rationale": "Src: Hamidullah \"Allah est certes capable de le ressusciter.\" | EN hint: \"return him\" | 86:8",
+      "hamidullahSnippet": "Allah est certes capable de le ressusciter.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "b2e91561-9edc-46de-a7bb-dfc1a6885da8",
+      "arabic": "فَصْلٌۭ",
+      "ayah": "86:13",
+      "gloss": "décisive / qui tranche / tranchante",
+      "rationale": "Src: Hamidullah \"Ceci [le Coran] est certes, une parole décisive [qui tranche entre le vrai et le faux],\" | EN hint: \"decisive\" | 86:13",
+      "hamidullahSnippet": "Ceci [le Coran] est certes, une parole décisive [qui tranche entre le vrai et le faux],",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "a2142692-692a-48c3-99b8-12c761057dc6",
+      "arabic": "وَٱلطَّارِقِ",
+      "ayah": "86:1",
+      "gloss": "le nocturne / l'étoile de l'aube / celui qui frappe de nuit",
+      "rationale": "Src: Hamidullah \"Par le ciel et par l’astre nocturne.\" | EN hint: \"and the night comer\" | 86:1",
+      "hamidullahSnippet": "Par le ciel et par l’astre nocturne.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "4e0dd5de-d87b-4895-8388-1124b74055e4",
+      "arabic": "وَٱلتَّرَآئِبِ",
+      "ayah": "86:7",
+      "gloss": "et les côtes / les os de la poitrine",
+      "rationale": "Src: Hamidullah \"sortie d’entre les lombes et les côtes.\" | EN hint: \"and the ribs\" | 86:7",
+      "hamidullahSnippet": "sortie d’entre les lombes et les côtes.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "aecad4d7-018c-46d8-8ebd-86a3efa87e5d",
+      "arabic": "وَأَكِيدُ",
+      "ayah": "86:16",
+      "gloss": "et Je trame / et Moi aussi Je complote",
+      "rationale": "Src: Hamidullah \"et Moi aussi Je me sers de Mon plan.\" | EN hint: \"But I am planning\" | 86:16",
+      "hamidullahSnippet": "et Moi aussi Je me sers de Mon plan.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "30e6094f-7237-4b23-bcb1-bcb2e59218cb",
+      "arabic": "فَمَهِّلِ",
+      "ayah": "86:17",
+      "gloss": "laisse-les / accorde-leur un délai / diffère-les",
+      "rationale": "Src: Hamidullah \"Accorde (ô Prophète) donc un délai aux infidèles: accorde-leur un court délai.\" | EN hint: \"So give respite\" | 86:17",
+      "hamidullahSnippet": "Accorde (ô Prophète) donc un délai aux infidèles: accorde-leur un court délai.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "627f6fb2-bf71-4889-9fd9-439e80be9e43",
+      "arabic": "ٱلسَّرَآئِرُ",
+      "ayah": "86:9",
+      "gloss": "les secrets / les choses cachées",
+      "rationale": "Src: Hamidullah \"Le jour où les cœurs dévoileront leurs secrets,\" | EN hint: \"the secrets\" | 86:9",
+      "hamidullahSnippet": "Le jour où les cœurs dévoileront leurs secrets,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "efdd9a75-287c-4784-af78-1bb82834230c",
+      "arabic": "ٱلطَّارِقُ",
+      "ayah": "86:2",
+      "gloss": "le nocturne / l'étoile de l'aube / celui qui frappe de nuit",
+      "rationale": "Src: Hamidullah \"Et qui te dira ce qu’est l’astre nocturne?\" | EN hint: \"the night comer (is)\" | 86:2",
+      "hamidullahSnippet": "Et qui te dira ce qu’est l’astre nocturne?",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "dc0f8e64-24ba-492b-8301-25d2694d61b7",
+      "arabic": "ٱلرَّجْعِ",
+      "ayah": "86:11",
+      "gloss": "le retour / qui fait revenir (la pluie)",
+      "rationale": "Src: Hamidullah \"Par le ciel qui fait revenir la pluie !\" | EN hint: \"returns\" | 86:11",
+      "hamidullahSnippet": "Par le ciel qui fait revenir la pluie !",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "23315fea-56f7-4993-98a6-f4663d34c368",
+      "arabic": "رُوَيْدًۢا",
+      "ayah": "86:17",
+      "gloss": "pour un peu (de temps) / un court délai",
+      "rationale": "Src: Hamidullah \"Accorde (ô Prophète) donc un délai aux infidèles: accorde-leur un court délai.\" | EN hint: \"little\" | 86:17",
+      "hamidullahSnippet": "Accorde (ô Prophète) donc un délai aux infidèles: accorde-leur un court délai.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "3c5244a7-9e7a-496d-b141-6c16ff2d6c68",
+      "arabic": "نَاصِرٍۢ",
+      "ayah": "86:10",
+      "gloss": "un soutien / un secoureur / un défenseur",
+      "rationale": "Src: Hamidullah \"Il n’aura alors ni force ni secoureur.\" | EN hint: \"any helper\" | 86:10",
+      "hamidullahSnippet": "Il n’aura alors ni force ni secoureur.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "e8c8be3e-700e-4f2f-ad6c-ca6610fc4e33",
+      "arabic": "ٱلنَّجْمُ",
+      "ayah": "86:3",
+      "gloss": "l'étoile",
+      "rationale": "Src: Hamidullah \"C’est l’étoile vivement brillante.\" | EN hint: \"(It is) the star\" | 86:3",
+      "hamidullahSnippet": "C’est l’étoile vivement brillante.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "228bbd19-a678-491d-b687-231e968ba714",
+      "arabic": "تُبْلَى",
+      "ayah": "86:9",
+      "gloss": "seront éprouvés / seront mis à nu",
+      "rationale": "Src: Hamidullah \"Le jour où les cœurs dévoileront leurs secrets,\" | EN hint: \"will be tested\" | 86:9",
+      "hamidullahSnippet": "Le jour où les cœurs dévoileront leurs secrets,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "be43293b-8c60-440b-87c8-ad0e6fe81009",
+      "arabic": "ٱلصَّدْعِ",
+      "ayah": "86:12",
+      "gloss": "la fissure / la fente / qui s'ouvre",
+      "rationale": "Src: Hamidullah \"et par la terre qui se fend <sup foot_note=212575>1</sup> !\" | EN hint: \"cracks open\" | 86:12",
+      "hamidullahSnippet": "et par la terre qui se fend <sup foot_note=212575>1</sup> !",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "340d4fac-df2b-47e8-8651-3d10a8f6b2fe",
+      "arabic": "يَكِيدُونَ",
+      "ayah": "86:15",
+      "gloss": "complotent / trament un complot / ruminent",
+      "rationale": "Src: Hamidullah \"Ils se servent d’une ruse,\" | EN hint: \"are plotting\" | 86:15",
+      "hamidullahSnippet": "Ils se servent d’une ruse,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "6a7ce341-37a5-4a62-9094-ea6617a4ce33",
+      "arabic": "حَافِظٌۭ",
+      "ayah": "86:4",
+      "gloss": "un gardien / un protecteur / un veilleur",
+      "rationale": "Src: Hamidullah \"Il n’est pas d’âme qui n’ait sur elle un gardien.\" | EN hint: \"(is) a protector\" | 86:4",
+      "hamidullahSnippet": "Il n’est pas d’âme qui n’ait sur elle un gardien.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "f57a68fe-47f9-4e10-86a6-2ce089549864",
+      "arabic": "دَافِقٍۢ",
+      "ayah": "86:6",
+      "gloss": "jaillissant / émis / projeté",
+      "rationale": "Src: Hamidullah \"Il a été créé d’une giclée d’eau.\" | EN hint: \"ejected\" | 86:6",
+      "hamidullahSnippet": "Il a été créé d’une giclée d’eau.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "f68fb85d-776b-498e-9e80-1ff97ef3b60a",
+      "arabic": "بِٱلْهَزْلِ",
+      "ayah": "86:14",
+      "gloss": "une chose futile / une plaisanterie / à prendre à la légère",
+      "rationale": "Src: Hamidullah \"et non point une plaisanterie frivole !\" | EN hint: \"(is) for amusement\" | 86:14",
+      "hamidullahSnippet": "et non point une plaisanterie frivole !",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "921d8c0b-47b4-4262-b3bc-ab05a2211ce2",
+      "arabic": "أَمْهِلْهُمْ",
+      "ayah": "86:17",
+      "gloss": "accorde-leur un délai / diffère-les",
+      "rationale": "Src: Hamidullah \"Accorde (ô Prophète) donc un délai aux infidèles: accorde-leur un court délai.\" | EN hint: \"Give respite to them \" | 86:17",
+      "hamidullahSnippet": "Accorde (ô Prophète) donc un délai aux infidèles: accorde-leur un court délai.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "1725e608-2dde-4725-b21a-c8e067d5f312",
+      "arabic": "لَقَادِرٌۭ",
+      "ayah": "86:8",
+      "gloss": "capable / est capable de",
+      "rationale": "Src: Hamidullah \"Allah est certes capable de le ressusciter.\" | EN hint: \"(is) Able\" | 86:8",
+      "hamidullahSnippet": "Allah est certes capable de le ressusciter.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "63c1e996-18b9-4f53-97a4-07c5f1ad239e",
+      "arabic": "ٱلصُّلْبِ",
+      "ayah": "86:7",
+      "gloss": "les lombes / la colonne vertébrale / le dos",
+      "rationale": "Src: Hamidullah \"sortie d’entre les lombes et les côtes.\" | EN hint: \"the backbone\" | 86:7",
+      "hamidullahSnippet": "sortie d’entre les lombes et les côtes.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "4a3aa600-c4af-4252-a3c5-5060d064f944",
+      "arabic": "ٱلثَّاقِبُ",
+      "ayah": "86:3",
+      "gloss": "l'étoile perçante / l'étoile brillante",
+      "rationale": "Src: Hamidullah \"C’est l’étoile vivement brillante.\" | EN hint: \"the piercing\" | 86:3",
+      "hamidullahSnippet": "C’est l’étoile vivement brillante.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "2c336827-a8b7-4c05-8b8c-02a19f7421d0",
+      "arabic": "مِمَّ",
+      "ayah": "86:5",
+      "gloss": "de quoi il a été créé / de quoi il est créé",
+      "rationale": "Src: Hamidullah \"Que l’homme considère donc de quoi il a été créé.\" | EN hint: \"from what\" | 86:5",
+      "hamidullahSnippet": "Que l’homme considère donc de quoi il a été créé.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "857cb8e4-22df-490b-8cef-c985bbd4dcbd",
+      "arabic": "لَقَوْلٌۭ",
+      "ayah": "86:13",
+      "gloss": "c'est assurément une parole / c'est certes une parole décisive",
+      "rationale": "Src: Hamidullah \"Ceci [le Coran] est certes, une parole décisive [qui tranche entre le vrai et le faux],\" | EN hint: \"(is) surely a Word\" | 86:13",
+      "hamidullahSnippet": "Ceci [le Coran] est certes, une parole décisive [qui tranche entre le vrai et le faux],",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    }
+  ],
+  "validation": {
+    "totalGlosses": 24,
+    "expectedGlosses": 24,
+    "uniqueWordIds": 24,
+    "emptyGlosses": 0,
+    "validationIssues": 0,
+    "identitySafe": true
+  },
+  "simulation": {
+    "baselineCovered": 31,
+    "baselineTotal": 55,
+    "newWordTranslations": 24,
+    "afterImport": 55,
+    "afterImportPct": 100,
+    "ready": true
+  },
+  "globalReconciliation": {
+    "readyCount": 35,
+    "notReadyCount": 78,
+    "referenceCount": 1,
+    "total": 114,
+    "consistencyCheck": true,
+    "s86NotReady": true,
+    "readySurahs": [
+      13,
+      29,
+      36,
+      46,
+      62,
+      70,
+      82,
+      84,
+      85,
+      87,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114
+    ]
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "wlmCreated": 0,
+    "curriculumWrites": 0,
+    "noHikmaLemmaIdUsed": true,
+    "runtimeModelPure": true
+  }
+}

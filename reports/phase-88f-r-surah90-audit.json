@@ -1,0 +1,992 @@
+{
+  "phase": "88F-R",
+  "verdict": "PHASE_88F_R_COMPLETE",
+  "read_only": true,
+  "database_writes": 0,
+  "timestamp": "2026-08-24T10:50:04.064Z",
+  "durationSeconds": 26.89,
+  "targetSurah": {
+    "number": 90,
+    "name": "Al-Balad"
+  },
+  "baseline": {
+    "totalForms": 73,
+    "coveredForms": 51,
+    "missingForms": 22,
+    "coveragePct": 0.6986,
+    "totalOccurrences": 6854,
+    "missingOccurrences": 22,
+    "readiness": "IN_PREPARATION",
+    "globalReady": 27,
+    "globalInPrep": 86,
+    "globalRef": 1
+  },
+  "classification": {
+    "A": 15,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F": 7,
+    "G": 0,
+    "H": 0,
+    "I": 0
+  },
+  "missingForms": [
+    {
+      "word_id": "7507cc02-e717-4651-a249-007e6d51265c",
+      "arabic": "حِلٌّۢ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "حل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "(are)-free-(to-dwell)",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_GEN",
+        "PV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et toi, tu es un résident dans cette cité <sup foot_note=212581>1</sup> -"
+      ],
+      "kazimirski_samples": [
+        "Le territoire que tu es venu habiter; "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « حل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "71e75ebe-d171-40f8-95fb-60f4b2157a0b",
+      "arabic": "وَوَالِدٍۢ",
+      "lemma_id": "de8a9306-d6a4-42b3-92d5-edcd4754d41e",
+      "lemma_arabic": "والد",
+      "masaq_stems": [
+        "والد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-the-begetter",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_DEF_ACC",
+        "CONJ",
+        "NOUN_ACTIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et par le père et ce qu’il engendre !"
+      ],
+      "kazimirski_samples": [
+        "Ni par le père, ni par l’enfant."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "de8a9306-d6a4-42b3-92d5-edcd4754d41e",
+      "safe_gloss_text": "(à écrire pour « والد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "963e7859-f23a-4c93-b975-6abce8e26a31",
+      "arabic": "كَبَدٍ",
+      "lemma_id": "1c375332-d4ff-4c93-bb88-7c3f4057743c",
+      "lemma_arabic": "كبد",
+      "masaq_stems": [
+        "كبد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "hardship",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Nous avons, certes, créé l’homme pour une vie de lutte."
+      ],
+      "kazimirski_samples": [
+        "Nous avons créé l’homme dans la misère."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "1c375332-d4ff-4c93-bb88-7c3f4057743c",
+      "safe_gloss_text": "(à écrire pour « كبد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "b48fb309-11f3-4a90-899f-efd583024665",
+      "arabic": "يَقْدِرَ",
+      "lemma_id": "f3c289bc-56dc-45bc-b061-3e995c5ec86d",
+      "lemma_arabic": "قدر",
+      "masaq_stems": [
+        "قدر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "has-power",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Pense-t-il que personne ne pourra rien contre lui ?"
+      ],
+      "kazimirski_samples": [
+        "S’imagine-t-il que nul n’est plus fort que lui? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "f3c289bc-56dc-45bc-b061-3e995c5ec86d",
+      "safe_gloss_text": "(à écrire pour « قدر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "8d389027-3ac7-44a7-8adf-9f82ec155a4a",
+      "arabic": "أَهْلَكْتُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "أهلك"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "i-have-squandered",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Il dit : \"J’ai gaspillé beaucoup de biens.\""
+      ],
+      "kazimirski_samples": [
+        "S’écrie: J’ai dépensé d’énormes sommes! "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « أهلك » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "3ec8d741-4032-47a3-ac19-33e171c36ec5",
+      "arabic": "لُّبَدًا",
+      "lemma_id": "2ff27895-60dd-4d20-9a43-dd3a1a65b17a",
+      "lemma_arabic": "لبد",
+      "masaq_stems": [
+        "لبد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "abundant",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Il dit : \"J’ai gaspillé beaucoup de biens.\""
+      ],
+      "kazimirski_samples": [
+        "S’écrie: J’ai dépensé d’énormes sommes! "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "2ff27895-60dd-4d20-9a43-dd3a1a65b17a",
+      "safe_gloss_text": "(à écrire pour « لبد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "837c2e97-c934-4d9c-98db-6eb6d0c7c95e",
+      "arabic": "يَرَهُۥٓ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "ر"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "sees-him",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Pense-t-il que nul ne l’a vu?"
+      ],
+      "kazimirski_samples": [
+        "Pense-t-il que personne ne le voit? "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « ر » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "e2ef621f-2ae2-40b2-921c-79333a6f46c8",
+      "arabic": "عَيْنَيْنِ",
+      "lemma_id": "d367a8d9-184a-453c-a2ca-123601e0cbb7",
+      "lemma_arabic": "عين",
+      "masaq_stems": [
+        "عين"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "two-eyes",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE",
+        "NSUFF_FEM_DU_ACC"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ne lui avons-Nous pas assigné deux yeux,"
+      ],
+      "kazimirski_samples": [
+        "Ne lui avons-nous pas donné deux yeux,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "d367a8d9-184a-453c-a2ca-123601e0cbb7",
+      "safe_gloss_text": "(à écrire pour « عين »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "82fe47ab-ef07-4ac7-9671-f4abd23f0eb9",
+      "arabic": "وَلِسَانًۭا",
+      "lemma_id": "3ca40c25-a3e0-45ae-a616-857121881509",
+      "lemma_arabic": "لسان",
+      "masaq_stems": [
+        "لسان"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-a-tongue",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "CONJ",
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et une langue et deux lèvres ?"
+      ],
+      "kazimirski_samples": [
+        "Une langue et deux lèvres? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "3ca40c25-a3e0-45ae-a616-857121881509",
+      "safe_gloss_text": "(à écrire pour « لسان »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "30d1a094-9090-4f45-b72e-cab96108a69b",
+      "arabic": "وَشَفَتَيْنِ",
+      "lemma_id": "822c6680-d0c4-4142-9df7-6b425045ec61",
+      "lemma_arabic": "شف",
+      "masaq_stems": [
+        "شف"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-two-lips",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "NOUN_CONCRETE",
+        "NSUFF_FEM_DU_ACC",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et une langue et deux lèvres ?"
+      ],
+      "kazimirski_samples": [
+        "Une langue et deux lèvres? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "822c6680-d0c4-4142-9df7-6b425045ec61",
+      "safe_gloss_text": "(à écrire pour « شف »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "dee5a22c-fb04-4d41-aa6b-32fe4da31da9",
+      "arabic": "ٱلنَّجْدَيْنِ",
+      "lemma_id": "50ac5462-0bc9-44ea-834e-20c10b8e9016",
+      "lemma_arabic": "نجد",
+      "masaq_stems": [
+        "نجد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "the-two-ways",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_ABSTRACT",
+        "NSUFF_MASC_DU_ACC"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ne l’avons-Nous pas guidé aux deux voies <sup foot_note=212582>1</sup>."
+      ],
+      "kazimirski_samples": [
+        "Ne l’avons-nous pas conduit sur les deux grandes routes (du bien et du mal)? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "50ac5462-0bc9-44ea-834e-20c10b8e9016",
+      "safe_gloss_text": "(à écrire pour « نجد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "0d3b84e2-fa53-43a7-800d-5266503ff5f1",
+      "arabic": "ٱقْتَحَمَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "اقتحم"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "he-has-attempted",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Or, il ne s’engage pas dans la voie difficile ! <sup foot_note=212583>1</sup>"
+      ],
+      "kazimirski_samples": [
+        "Et cependant il n’a pas encore descendu la pente? "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « اقتحم » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "260ee025-2031-4953-b84c-4739598eccf7",
+      "arabic": "ٱلْعَقَبَةَ",
+      "lemma_id": "81adab26-de6e-46f8-8ac1-8c80abb9a821",
+      "lemma_arabic": "عقب",
+      "masaq_stems": [
+        "عقب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "the-steep-path",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Or, il ne s’engage pas dans la voie difficile ! <sup foot_note=212583>1</sup>"
+      ],
+      "kazimirski_samples": [
+        "Et cependant il n’a pas encore descendu la pente? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "81adab26-de6e-46f8-8ac1-8c80abb9a821",
+      "safe_gloss_text": "(à écrire pour « عقب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "b87cd95e-0890-4686-8c0e-35ea8039d303",
+      "arabic": "ٱلْعَقَبَةُ",
+      "lemma_id": "81adab26-de6e-46f8-8ac1-8c80abb9a821",
+      "lemma_arabic": "عقب",
+      "masaq_stems": [
+        "عقب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "the-steep-path-(is)",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et qui te dira ce qu’est la voie difficile ?"
+      ],
+      "kazimirski_samples": [
+        "Qu’est-ce qui peut apprendre ce que c’est que la pente? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "81adab26-de6e-46f8-8ac1-8c80abb9a821",
+      "safe_gloss_text": "(à écrire pour « عقب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "407f8c0e-168d-49d2-b185-c0dd92c084d5",
+      "arabic": "فَكُّ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "فك"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "(it-is)-freeing",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "C’est délier un joug [affranchir un esclave],"
+      ],
+      "kazimirski_samples": [
+        "C’est de racheter les captifs,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « فك » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "a89eed27-50eb-4e3b-9c53-5852b01b6c1a",
+      "arabic": "رَقَبَةٍ",
+      "lemma_id": "9f789b55-42ce-4d39-b74f-31b771ac5e2f",
+      "lemma_arabic": "رقب",
+      "masaq_stems": [
+        "رقب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-neck",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "C’est délier un joug [affranchir un esclave],"
+      ],
+      "kazimirski_samples": [
+        "C’est de racheter les captifs,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "9f789b55-42ce-4d39-b74f-31b771ac5e2f",
+      "safe_gloss_text": "(à écrire pour « رقب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "a59fa103-5e58-42a9-9620-bf30de4b7f74",
+      "arabic": "إِطْعَـٰمٌۭ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "إطعام"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "feeding",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_DEF_GEN",
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "ou nourrir, en un jour de famine,"
+      ],
+      "kazimirski_samples": [
+        "De nourrir, aux jours de la disette,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « إطعام » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "89bcf596-aaab-430a-b2c5-e170584fdfd0",
+      "arabic": "مَسْغَبَةٍۢ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "مسغب"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "severe-hunger",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND_MEEM",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "ou nourrir, en un jour de famine,"
+      ],
+      "kazimirski_samples": [
+        "De nourrir, aux jours de la disette,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « مسغب » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "a2e82db7-174e-4d2a-8337-eb150d7344ad",
+      "arabic": "مَقْرَبَةٍ",
+      "lemma_id": "cf2aab6c-b0a1-49ce-a8bd-cfc54dd0f77c",
+      "lemma_arabic": "مقرب",
+      "masaq_stems": [
+        "مقرب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "near-relationship",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "un orphelin proche parent."
+      ],
+      "kazimirski_samples": [
+        "L’orphelin qui est notre proche,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "cf2aab6c-b0a1-49ce-a8bd-cfc54dd0f77c",
+      "safe_gloss_text": "(à écrire pour « مقرب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "eddd81de-7b11-42d8-9e73-b3e106675ec7",
+      "arabic": "مَتْرَبَةٍۢ",
+      "lemma_id": "ce925d88-5775-4dca-8c1a-0c72a4aae8ee",
+      "lemma_arabic": "مترب",
+      "masaq_stems": [
+        "مترب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "misery",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "ou un pauvre dans le dénouement."
+      ],
+      "kazimirski_samples": [
+        "Ou le pauvre qui est plongé dans le dénuement,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "ce925d88-5775-4dca-8c1a-0c72a4aae8ee",
+      "safe_gloss_text": "(à écrire pour « مترب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "e0d6e755-5d9b-4df5-a0ff-729e7fe1879e",
+      "arabic": "بِٱلْمَرْحَمَةِ",
+      "lemma_id": "c64087ef-456c-423c-a530-3572e07c0de1",
+      "lemma_arabic": "مرحم",
+      "masaq_stems": [
+        "مرحم"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "to-compassion",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG",
+        "PREP"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et c’est être, en outre, de ceux qui croient et s’enjoignent mutuellement l’endurance, et s’enjoignent mutuellement la miséricorde."
+      ],
+      "kazimirski_samples": [
+        "Et qui en outre est du nombre de ceux dpi croient et se recommandent mutuellement la patience, qui se recommandent la compassion."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "c64087ef-456c-423c-a530-3572e07c0de1",
+      "safe_gloss_text": "(à écrire pour « مرحم »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "ff1a7114-17df-4bc4-8bdc-a6ffb6edf28e",
+      "arabic": "مُّؤْصَدَةٌۢ",
+      "lemma_id": "d24716dc-1aa0-4087-91f2-da8a00d47aaa",
+      "lemma_arabic": "مؤصد",
+      "masaq_stems": [
+        "مؤصد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "closed-in",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_PASSIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Le Feu se refermera sur eux."
+      ],
+      "kazimirski_samples": [
+        "Au-dessus d’eux s’étendra le feu."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "d24716dc-1aa0-4087-91f2-da8a00d47aaa",
+      "safe_gloss_text": "(à écrire pour « مؤصد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    }
+  ],
+  "safeGlossCandidates": [
+    {
+      "lemma_id": "de8a9306-d6a4-42b3-92d5-edcd4754d41e",
+      "lemma_arabic": "والد",
+      "gloss": "(à écrire pour « والد »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "1c375332-d4ff-4c93-bb88-7c3f4057743c",
+      "lemma_arabic": "كبد",
+      "gloss": "(à écrire pour « كبد »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "f3c289bc-56dc-45bc-b061-3e995c5ec86d",
+      "lemma_arabic": "قدر",
+      "gloss": "(à écrire pour « قدر »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "2ff27895-60dd-4d20-9a43-dd3a1a65b17a",
+      "lemma_arabic": "لبد",
+      "gloss": "(à écrire pour « لبد »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "d367a8d9-184a-453c-a2ca-123601e0cbb7",
+      "lemma_arabic": "عين",
+      "gloss": "(à écrire pour « عين »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "3ca40c25-a3e0-45ae-a616-857121881509",
+      "lemma_arabic": "لسان",
+      "gloss": "(à écrire pour « لسان »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "822c6680-d0c4-4142-9df7-6b425045ec61",
+      "lemma_arabic": "شف",
+      "gloss": "(à écrire pour « شف »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "50ac5462-0bc9-44ea-834e-20c10b8e9016",
+      "lemma_arabic": "نجد",
+      "gloss": "(à écrire pour « نجد »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "81adab26-de6e-46f8-8ac1-8c80abb9a821",
+      "lemma_arabic": "عقب",
+      "gloss": "(à écrire pour « عقب »)",
+      "forms_in_S90": 2,
+      "forms_safe": 2
+    },
+    {
+      "lemma_id": "9f789b55-42ce-4d39-b74f-31b771ac5e2f",
+      "lemma_arabic": "رقب",
+      "gloss": "(à écrire pour « رقب »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "cf2aab6c-b0a1-49ce-a8bd-cfc54dd0f77c",
+      "lemma_arabic": "مقرب",
+      "gloss": "(à écrire pour « مقرب »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "ce925d88-5775-4dca-8c1a-0c72a4aae8ee",
+      "lemma_arabic": "مترب",
+      "gloss": "(à écrire pour « مترب »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "c64087ef-456c-423c-a530-3572e07c0de1",
+      "lemma_arabic": "مرحم",
+      "gloss": "(à écrire pour « مرحم »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "d24716dc-1aa0-4087-91f2-da8a00d47aaa",
+      "lemma_arabic": "مؤصد",
+      "gloss": "(à écrire pour « مؤصد »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    }
+  ],
+  "safeWordTrCandidates": [],
+  "reviewWordTrCandidates": [
+    {
+      "word_id": "7507cc02-e717-4651-a249-007e6d51265c",
+      "arabic": "حِلٌّۢ",
+      "masaq_stems": [
+        "حل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « حل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "8d389027-3ac7-44a7-8adf-9f82ec155a4a",
+      "arabic": "أَهْلَكْتُ",
+      "masaq_stems": [
+        "أهلك"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « أهلك » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "837c2e97-c934-4d9c-98db-6eb6d0c7c95e",
+      "arabic": "يَرَهُۥٓ",
+      "masaq_stems": [
+        "ر"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « ر » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "0d3b84e2-fa53-43a7-800d-5266503ff5f1",
+      "arabic": "ٱقْتَحَمَ",
+      "masaq_stems": [
+        "اقتحم"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « اقتحم » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "407f8c0e-168d-49d2-b185-c0dd92c084d5",
+      "arabic": "فَكُّ",
+      "masaq_stems": [
+        "فك"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « فك » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "a59fa103-5e58-42a9-9620-bf30de4b7f74",
+      "arabic": "إِطْعَـٰمٌۭ",
+      "masaq_stems": [
+        "إطعام"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « إطعام » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "89bcf596-aaab-430a-b2c5-e170584fdfd0",
+      "arabic": "مَسْغَبَةٍۢ",
+      "masaq_stems": [
+        "مسغب"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « مسغب » UNMAPPED quality=0 — word_translation à écrire."
+    }
+  ],
+  "simulations": [
+    {
+      "name": "BASELINE",
+      "forms": 51,
+      "pct": 69.9,
+      "ready": false,
+      "remaining": 22
+    },
+    {
+      "name": "SAFE_GLOSSES",
+      "forms": 66,
+      "pct": 90.4,
+      "ready": false,
+      "remaining": 7
+    },
+    {
+      "name": "SAFE_PLUS_REVIEW",
+      "forms": 73,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    },
+    {
+      "name": "COMPLETE",
+      "forms": 73,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    }
+  ],
+  "exactActionsToReady": {
+    "totalLemmaGlosses": 14,
+    "safeLemmaGlosses": 14,
+    "safeWordTranslations": 0,
+    "reviewWordTranslations": 7,
+    "totalActions": 21,
+    "safeActions": 14,
+    "reviewActions": 7,
+    "estimatedNewFormsSafeOnly": 15,
+    "estimatedNewFormsComplete": 22
+  },
+  "integrity": {
+    "orphan_quran_words_lemma": 0,
+    "orphan_word_lemma_mapping": 0,
+    "orphan_linguistic_occurrences": 0,
+    "orphan_lemma_translations": 0,
+    "duplicate_word_lemma_mapping": 0,
+    "duplicate_lemma_translations": 0,
+    "duplicate_FR_glosses": 0,
+    "contradictory_direct_vs_wlm": 0,
+    "S98_still_READY": true,
+    "S92_still_READY": true,
+    "S82_still_READY": true,
+    "S85_still_READY": true,
+    "classifySurahReadiness_unchanged": true,
+    "curriculum_unchanged": true
+  },
+  "invariants": {
+    "database_writes": 0,
+    "lexical_writes": 0,
+    "translation_writes": 0,
+    "curriculum_writes": 0,
+    "masaq_writes": 0,
+    "migrations": 0,
+    "seeds": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error",
+    "readOnlyStaticCheck": "PASS (only doc comment)"
+  },
+  "nextPhase": {
+    "phase": "88F-S",
+    "name": "S90 AL-BALAD RESOLUTION",
+    "actions": "14 lemma_translations + 7 word_translations = 21 writes",
+    "expected": "73/73 → 100 % → READY"
+  }
+}

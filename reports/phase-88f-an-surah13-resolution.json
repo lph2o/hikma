@@ -1,0 +1,128 @@
+{
+  "phase": "88F-AN",
+  "verdict": "PHASE_88F_AN_COMPLETE",
+  "s13Ready": true,
+  "mode": "IDEMPOTENCE",
+  "timestamp": "2026-08-24T15:24:48.990Z",
+  "durationSeconds": 31.36,
+  "surah": {
+    "number": 13,
+    "name": "Ar-Ra'd"
+  },
+  "baseline": {
+    "totalForms": 601,
+    "coveredForms": 601,
+    "unresolvedForms": 0,
+    "coveragePct": 100,
+    "runtimePaths": {
+      "pathA_wordTr": 584,
+      "pathB_lemma": 1,
+      "pathC_wlm": 16
+    },
+    "classALemmaReachable": 0
+  },
+  "preflight": {
+    "expectedGlosses": 135,
+    "actualGlosses": 135,
+    "uniqueWordIds": 135,
+    "glossValidation": {
+      "NEW": 0,
+      "EXISTING_SAME": 135,
+      "CONFLICT": 0,
+      "MISSING": 0,
+      "NOT_IN_S13": 0
+    },
+    "emptyGlosses": 0,
+    "identitySafe": true
+  },
+  "import": {
+    "mode": "IDEMPOTENCE",
+    "wouldInsert": 0
+  },
+  "postRuntime": {
+    "totalForms": 601,
+    "coveredForms": 601,
+    "coveragePct": 100,
+    "runtimePaths": {
+      "pathA_wordTr": 584,
+      "pathB_lemma": 1,
+      "pathC_wlm": 16
+    },
+    "readiness": "READY",
+    "ready": true
+  },
+  "protectedTables": {
+    "quran_words": 0,
+    "word_lemma_mapping": 0,
+    "linguistic_occurrences": 0,
+    "lemma_translations": 0,
+    "translations": 0,
+    "curriculum": 0,
+    "learning_paths": 0,
+    "allDeltaZero": true
+  },
+  "idempotence": {
+    "NEW": 0,
+    "EXISTING_SAME": 135,
+    "CONFLICT": 0,
+    "dbDelta": 0,
+    "pass": true
+  },
+  "globalReady": {
+    "readyCount": 27,
+    "inPreparationCount": 86,
+    "referenceCount": 1,
+    "total": 114,
+    "s13Ready": true,
+    "s46Ready": true,
+    "s36Ready": true,
+    "s29Ready": true,
+    "readySurahs": [
+      13,
+      29,
+      36,
+      46,
+      87,
+      91,
+      93,
+      94,
+      95,
+      96,
+      97,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114
+    ]
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqWrites": 0,
+    "wlmCreated": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "noEnglishFallback": true,
+    "noPlaceholderGlosses": true,
+    "classifySurahReadinessUnchanged": true
+  },
+  "globalFrUnion": {
+    "before": 5243,
+    "after": 5243,
+    "delta": 0,
+    "wordTranslationsBefore": 5022,
+    "wordTranslationsAfter": 5022
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "phase": "88F-Q",
+  "verdict": "PHASE_88F_Q_COMPLETE",
+  "mode": "APPLY",
+  "target": {
+    "number": 85,
+    "name": "Al-Buruj"
+  },
+  "timestamp": "2026-08-24T10:40:56.298Z",
+  "baseline": {
+    "number": 85,
+    "name": "Al-Buruj",
+    "totalForms": 98,
+    "coveredForms": 80,
+    "coveragePct": 0.8163,
+    "readiness": "IN_PREPARATION"
+  },
+  "preflight": {
+    "batchA": {
+      "ready": 13,
+      "existingSame": 0,
+      "conflicts": 0
+    },
+    "batchB": {
+      "ready": 5,
+      "existingSame": 0,
+      "conflicts": 0
+    }
+  },
+  "writes": {
+    "batchA": [
+      {
+        "lemma_id": "30eae095-6508-48c6-b5f4-ac305370b71a",
+        "id": "c5bba8b6-3bdf-4c21-9ac7-974d73b32acd"
+      },
+      {
+        "lemma_id": "17aede51-873c-4133-bf39-85377b4ae3c8",
+        "id": "cccb2046-5efd-4650-a125-5b33cec65b63"
+      },
+      {
+        "lemma_id": "da7b0617-e248-45ab-9ee7-a7f571ce1dbb",
+        "id": "549c694e-7140-43fc-8e9b-bac8b6ea8246"
+      },
+      {
+        "lemma_id": "d1b451fe-7589-451f-8d11-b511fae1a39a",
+        "id": "9906b056-13c2-45a6-a886-6c58583a1eea"
+      },
+      {
+        "lemma_id": "b2213b20-2d26-4eaf-ae2d-984761443c64",
+        "id": "a44c6fbb-69d8-4d8d-954e-d7ee55fd027a"
+      },
+      {
+        "lemma_id": "bee67b4d-c6de-4b0a-b9d2-af3289103ec4",
+        "id": "d839aa18-7e1c-4ffc-b788-5abdb7d91e58"
+      },
+      {
+        "lemma_id": "6de01566-7105-4693-89e7-cde9e67bb4d5",
+        "id": "f5e9ab6f-dcfa-4aa9-8f11-c6dbbc54f8b6"
+      },
+      {
+        "lemma_id": "7abd7022-bf0c-4c7e-8440-c60c4f4fc35a",
+        "id": "97881fea-bea9-4f05-8e65-02d482462382"
+      },
+      {
+        "lemma_id": "3e5c528b-10f0-4510-aaf5-823675fc9ad8",
+        "id": "aaafe167-9d91-4de2-8661-ea735e78471b"
+      },
+      {
+        "lemma_id": "809b7aeb-a4e7-4e35-9117-9e72425bd777",
+        "id": "d74c0d61-5af4-4b2d-a9e1-c332818d311c"
+      },
+      {
+        "lemma_id": "7a8faf2f-2aa5-4167-8f7a-de6d3581a841",
+        "id": "639c0b0c-4176-42f4-883b-0ce07cb01850"
+      },
+      {
+        "lemma_id": "0c71fb06-0d56-477b-9efb-4cfc8f3a1315",
+        "id": "a60291b5-86ca-4bb9-af02-1cf6708b7848"
+      },
+      {
+        "lemma_id": "af80f399-f2b9-4be2-9ac4-cb4c6895ab48",
+        "id": "52f2f906-dc21-418c-b4b6-96077be0867b"
+      }
+    ],
+    "batchB": [
+      {
+        "word_id": "07e811a1-415f-4569-8c9b-5130b6cdaa41",
+        "id": "8173d03e-fe77-4f3c-84bc-117d8437bbd9"
+      },
+      {
+        "word_id": "730a207b-700a-41dc-be49-f384474c5d32",
+        "id": "066de10f-b4c7-4062-a841-35901b38d4fb"
+      },
+      {
+        "word_id": "cfec775a-b358-467f-b469-856d04c937e9",
+        "id": "aa197253-3219-412b-9fd4-dde64672b5b5"
+      },
+      {
+        "word_id": "4a2f03b3-c41f-4f84-bccd-df3276e9a954",
+        "id": "ee947376-0197-43fd-b6a0-ad5fa24871b0"
+      },
+      {
+        "word_id": "2e5d73da-c90a-4221-acc0-a7ee0fda0033",
+        "id": "b9ed408b-b366-409b-90da-51c13450d300"
+      }
+    ],
+    "total": 18
+  },
+  "validation": {
+    "batchA": {
+      "present": "13/13",
+      "badLang": 0,
+      "badVal": 0,
+      "badText": 0,
+      "ok": true
+    },
+    "batchB": {
+      "present": "5/5",
+      "badLang": 0,
+      "badVal": 0,
+      "badText": 0,
+      "ok": true
+    }
+  },
+  "after": {
+    "s85": {
+      "number": 85,
+      "name": "Al-Buruj",
+      "totalForms": 98,
+      "coveredForms": 98,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s98": {
+      "number": 98,
+      "name": "Al-Bayyinah",
+      "totalForms": 79,
+      "coveredForms": 79,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s92": {
+      "number": 92,
+      "name": "Al-Layl",
+      "totalForms": 62,
+      "coveredForms": 62,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s82": {
+      "number": 82,
+      "name": "Al-Infitar",
+      "totalForms": 66,
+      "coveredForms": 66,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "global": {
+      "frUnion": 5371,
+      "lemmaTr": 165,
+      "lemmaTrFr": 161,
+      "wordTrFr": 4512,
+      "READY": 27,
+      "IN_PREPARATION": 86,
+      "REFERENCE": 1
+    },
+    "delta": {
+      "frUnion": 25,
+      "lemmaTrFr": 13,
+      "wordTrFr": 5,
+      "READY": 1,
+      "IN_PREPARATION": -1
+    }
+  },
+  "invariants": {
+    "protectedTablesDelta": "aucun",
+    "masaqWrites": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "classifySurahReadinessUnchanged": true
+  },
+  "idempotence": {
+    "mode": "APPLY=2",
+    "batchA": {
+      "existingSame": 13,
+      "ready": 0,
+      "conflicts": 0
+    },
+    "batchB": {
+      "existingSame": 5,
+      "ready": 0,
+      "conflicts": 0
+    },
+    "new": 0,
+    "dataWrites": 0,
+    "protectedDelta": "aucun",
+    "delta": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error · 0 warning"
+  }
+}

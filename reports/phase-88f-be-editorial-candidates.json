@@ -1,0 +1,5914 @@
+{
+  "1_metadata": {
+    "phase": "88F-BE",
+    "stage": "FINAL_EDITORIAL_AUTHORING",
+    "readOnly": true,
+    "writeOperations": 0,
+    "timestamp": "2026-08-24T22:30:38.101Z",
+    "inputFile": "reports/phase-88f-be-editorial-evidence-review.json"
+  },
+  "2_inputEvidence": {
+    "source": "reports/phase-88f-be-editorial-evidence-review.json",
+    "totalPairs": 560,
+    "uniqueWordIds": 559
+  },
+  "3_targetSurahs": [
+    77,
+    64,
+    89,
+    79,
+    80,
+    71,
+    75,
+    67,
+    66,
+    51
+  ],
+  "4_targetPairs": 560,
+  "5_uniqueWordIds": 559,
+  "6_authoredCandidates": [
+    {
+      "word_id": "76d4dab1-59ba-4ec0-b5c5-2a5bc6bb81fb",
+      "arabic": "ذَرْوًۭا",
+      "gloss_fr": "éparpillement / dispersion",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ذ-ر-و 'disperser'. Nom verbal.",
+      "contextual_basis": "Hamidullah 'qui éparpillent', Kazimirski 'celles qui éparpillent'. Les vents qui dispersent.",
+      "rationale": "Nom: dispersion. Contexte: les vents qui éparpillent la poussière."
+    },
+    {
+      "word_id": "7f4b0bd8-811e-4e88-bedc-ce2c5baf3acc",
+      "arabic": "وَٱلذَّٰرِيَـٰتِ",
+      "gloss_fr": "celles qui éparpillent / les vents",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ذ-ر-و 'disperser'. Participe actif pluriel féminin.",
+      "contextual_basis": "Hamidullah 'les vents qui éparpillent', Kazimirski 'celles qui éparpillent'. Les vents.",
+      "rationale": "Nom: les éparpilleuses. Contexte: serment inaugural de la sourate par les vents."
+    },
+    {
+      "word_id": "a7b9ea5b-987d-4c74-a630-433ef48b1a5c",
+      "arabic": "وِقْرًۭا",
+      "gloss_fr": "fardeau / charge",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine و-ق-ر 'être lourd'. Nom.",
+      "contextual_basis": "Hamidullah 'porteurs de fardeaux', Kazimirski 'portent un fardeau'. Les nuages lourds de pluie.",
+      "rationale": "Nom: charge, fardeau. Contexte: serment par les nuages portant un lourd fardeau."
+    },
+    {
+      "word_id": "e95824a9-4469-404e-866c-84b1a04fa90d",
+      "arabic": "فَٱلْحَـٰمِلَـٰتِ",
+      "gloss_fr": "celles qui portent un fardeau",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ح-م-ل 'porter'. Participe actif pluriel féminin.",
+      "contextual_basis": "Hamidullah 'les porteurs de fardeaux', Kazimirski 'celles qui portent un fardeau'. Les nuages porteurs de pluie.",
+      "rationale": "Nom: porteuses. Contexte: serment par les nuages porteurs de pluie."
+    },
+    {
+      "word_id": "1271b47e-54b7-46bb-b3ea-6cef9a54e9b0",
+      "arabic": "فَٱلْجَـٰرِيَـٰتِ",
+      "gloss_fr": "celles qui glissent / courent",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ج-ر-ي 'courir/glisser'. Participe actif pluriel féminin.",
+      "contextual_basis": "Hamidullah 'les glisseurs agiles', Kazimirski 'celles qui courent avec légèreté'. Les navires ou les astres.",
+      "rationale": "Nom: celles qui glissent. Contexte: serment par les glisseurs — navires ou corps célestes."
+    },
+    {
+      "word_id": "b349f5fd-092a-4309-9bd4-2d8080d229ee",
+      "arabic": "فَٱلْمُقَسِّمَـٰتِ",
+      "gloss_fr": "celles qui distribuent / répartissent",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ق-س-م 'diviser/distribuer'. Participe actif pluriel féminin.",
+      "contextual_basis": "Hamidullah 'les distributeurs selon un commandement', Kazimirski 'celles qui distribuent d'après les ordres'. Les anges répartiteurs.",
+      "rationale": "Nom: distributrices. Contexte: serment par les anges qui répartissent les affaires."
+    },
+    {
+      "word_id": "e37753ae-90fc-4a00-9b66-9057fc0be450",
+      "arabic": "لَصَادِقٌۭ",
+      "gloss_fr": "véridique / certainement vrai",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ص-د-ق 'être vrai'. Forme intensive + لَ emphatique.",
+      "contextual_basis": "Hamidullah 'certainement vrai', Kazimirski 'c'est la vérité'. Ce qui est promis est vrai.",
+      "rationale": "Adjectif emphatique: assurément vrai. Contexte: la promesse divine est véridique."
+    },
+    {
+      "word_id": "719ff1b6-667d-42a3-9efa-4b0a102882ca",
+      "arabic": "ٱلْحُبُكِ",
+      "gloss_fr": "voies / traces du ciel",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ح-ب-ك 'tisser/tramer'. Nom pluriel.",
+      "contextual_basis": "Hamidullah 'voies parfaitement tracées', Kazimirski 'ciel traversé de raies'. Structure cosmique.",
+      "rationale": "Nom: voies, sillons célestes. Contexte: serment par le ciel aux voies tracées."
+    },
+    {
+      "word_id": "1f3caaad-7e5b-406d-b98f-b006ae7603f4",
+      "arabic": "مُّخْتَلِفٍۢ",
+      "gloss_fr": "divergent / contradictoire",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine خ-ل-ف 'différer'. Participe actif (forme VIII).",
+      "contextual_basis": "Hamidullah 'vous divergez', Kazimirski 'divisés d'opinions'. Discorde humaine.",
+      "rationale": "Adjectif: divergent. Contexte: les opinions humaines sont divergentes."
+    },
+    {
+      "word_id": "e7b57dc3-eb28-4987-9e47-199afa5a0e66",
+      "arabic": "قَوْلٍۢ",
+      "gloss_fr": "parole / dire",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ق-و-ل 'dire'. Nom à l'oblique.",
+      "contextual_basis": "Hamidullah 'vous divergez sur ce que vous dites', Kazimirski 'vous êtes divisés d'opinions'. Discorde sur les paroles.",
+      "rationale": "Nom: parole, discours. Contexte: divergence dans les discours humains."
+    },
+    {
+      "word_id": "dff72184-294f-46f9-a598-72a365e8a511",
+      "arabic": "أُفِكَ",
+      "gloss_fr": "être détourné / être écarté",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine أ-ف-ك 'détourner/écarter'. Forme I passif accompli 3ms.",
+      "contextual_basis": "Hamidullah 'est détourné de lui', Kazimirski 'on se détournera de celui qui se détourne'. Détournement de la foi.",
+      "rationale": "Verbe passif: être détourné. Contexte: celui qui se détourne de la vérité en est lui-même écarté."
+    },
+    {
+      "word_id": "1de5d5c1-467b-4419-85b8-228e5e087136",
+      "arabic": "ٱلْخَرَّٰصُونَ",
+      "gloss_fr": "menteurs / conjectureurs",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine خ-ر-ص 'conjecturer/mentir'. Forme intensive pluriel.",
+      "contextual_basis": "Hamidullah 'menteurs', Kazimirski 'menteurs'. Ceux qui parlent sans savoir.",
+      "rationale": "Nom: ceux qui conjecturent/mentent. Contexte: malédiction sur ceux qui nient sans preuve."
+    },
+    {
+      "word_id": "20c82be0-4702-45a1-88b9-d11f307e10fa",
+      "arabic": "مُحْسِنِينَ",
+      "gloss_fr": "bienfaisants",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ح-س-ن 'être bon/beau'. Participe actif pluriel (forme IV).",
+      "contextual_basis": "Hamidullah 'de bienfaisants', Kazimirski 'avaient pratiqué le bien'. Les croyants vertueux.",
+      "rationale": "Adjectif: bienfaisants. Contexte: les croyants étaient des bienfaisants."
+    },
+    {
+      "word_id": "de88e696-3c50-4f50-b095-64b77bba676b",
+      "arabic": "ءَاخِذِينَ",
+      "gloss_fr": "prenant / recevant",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine أ-خ-ذ 'prendre/saisir'. Forme de participe actif pluriel.",
+      "contextual_basis": "Hamidullah 'recevant', Kazimirski 'jouissant de'. Les bienheureux reçoivent leur récompense.",
+      "rationale": "Verbe prendre/recevoir, forme participiale. Contexte: réception des bienfaits au Paradis."
+    },
+    {
+      "word_id": "e5d348db-776f-4dad-8821-ba096498b037",
+      "arabic": "يَهْجَعُونَ",
+      "gloss_fr": "dormir / sommeiller",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ه-ج-ع 'dormir'. Inaccompli 3mp.",
+      "contextual_basis": "Hamidullah 'ils dormaient peu', Kazimirski 'ils dormaient peu la nuit'. Les croyants pieux passant la nuit en prière.",
+      "rationale": "Verbe: dormir. Contexte: les pieux dormaient peu la nuit."
+    },
+    {
+      "word_id": "998ae1f4-d909-4bb5-b820-720245674c0b",
+      "arabic": "وَبِٱلْأَسْحَارِ",
+      "gloss_fr": "aux heures avant l'aube",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine س-ح-ر 'aube/temps avant l'aube'. Nom pluriel avec préposition بِ.",
+      "contextual_basis": "Hamidullah 'aux dernières heures de la nuit', Kazimirski 'au lever de l'aurore'. Moment de prière nocturne.",
+      "rationale": "Nom: les aubes. Contexte: les croyants implorant le pardon aux heures avant l'aube."
+    },
+    {
+      "word_id": "184ea0aa-186f-40d8-beef-71c5b1351a48",
+      "arabic": "لِّلْمُوقِنِينَ",
+      "gloss_fr": "pour ceux qui ont la certitude",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ي-ق-ن 'être certain'. Participe actif pluriel.",
+      "contextual_basis": "Hamidullah 'ceux qui croient avec certitude', Kazimirski 'ceux qui croient fermement'. Les croyants convaincus.",
+      "rationale": "Nom: les certifiants. Contexte: signes pour ceux qui ont la certitude."
+    },
+    {
+      "word_id": "1c2afbab-d46e-4aac-9e2a-5383588fb7dd",
+      "arabic": "رِزْقُكُمْ",
+      "gloss_fr": "votre subsistance / votre provision",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ر-ز-ق 'pourvoir'. Nom + suffixe possessif 2mp.",
+      "contextual_basis": "Hamidullah 'votre subsistance', Kazimirski 'de la nourriture pour vous'. La subsistance dans le ciel.",
+      "rationale": "Nom: provision. Contexte: votre subsistance est dans le ciel."
+    },
+    {
+      "word_id": "9001fc3c-d03e-468e-9670-8df59cbb3e51",
+      "arabic": "فَوَرَبِّ",
+      "gloss_fr": "par le Seigneur de",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ر-ب-ب. Préposition فَ + وَ + رَبّ.",
+      "contextual_basis": "Hamidullah 'Par le Seigneur du ciel et de la terre', Kazimirski 'J'en jure par le Seigneur'. Serment solennel.",
+      "rationale": "Serment: par le Seigneur. Contexte: serment divin attestant la vérité du message."
+    },
+    {
+      "word_id": "22dee676-60fa-42c7-a207-74d2a9716957",
+      "arabic": "سَمِينٍۢ",
+      "gloss_fr": "gras / engraissé",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine س-م-ن 'être gras'. Adjectif.",
+      "contextual_basis": "Hamidullah 'veau gras', Kazimirski 'veau gras'. Le veau offert par Abraham.",
+      "rationale": "Adjectif: gras. Contexte: le veau gras préparé pour les hôtes."
+    },
+    {
+      "word_id": "9fa0c62a-506e-420b-be81-e21502e94835",
+      "arabic": "فَجَآءَ",
+      "gloss_fr": "venir / arriver",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ج-ي-ء 'venir'. Accompli 3ms.",
+      "contextual_basis": "Hamidullah 'alla...et apporta', Kazimirski 'il apporta'. Abraham allant chercher le veau.",
+      "rationale": "Verbe: venir. Contexte: Abraham allant chercher le veau pour ses hôtes."
+    },
+    {
+      "word_id": "cf3e7a09-215e-4b9d-ae1a-fbdb2aa40d76",
+      "arabic": "بِعِجْلٍۢ",
+      "gloss_fr": "avec un veau",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ع-ج-ل 'veau'. Nom avec préposition بِ.",
+      "contextual_basis": "Hamidullah 'apporta un veau gras', Kazimirski 'il apporta un veau gras'. Hospitalité d'Abraham.",
+      "rationale": "Nom: veau. Contexte: Abraham apporte un veau gras à ses hôtes."
+    },
+    {
+      "word_id": "b35010e6-be76-426f-97bf-1e1f7d2d6734",
+      "arabic": "فَقَرَّبَهُۥٓ",
+      "gloss_fr": "approcher / présenter",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ق-ر-ب 'approcher'. Forme II accompli 3ms + suffixe objet 3ms.",
+      "contextual_basis": "Hamidullah 'il l'approcha d'eux', Kazimirski 'il le présenta à ses hôtes'. Abraham offrant le veau.",
+      "rationale": "Verbe: approcher, présenter. Contexte: Abraham présentant le repas à ses hôtes."
+    },
+    {
+      "word_id": "494f4da9-e624-401f-8b73-c96a6aa095f0",
+      "arabic": "وَبَشَّرُوهُ",
+      "gloss_fr": "lui annoncer une bonne nouvelle",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ب-ش-ر 'annoncer une bonne nouvelle'. Forme II accompli 3mp + suffixe objet 3ms.",
+      "contextual_basis": "Hamidullah 'lui annoncèrent une bonne nouvelle', Kazimirski 'lui annoncèrent la naissance'. Abraham recevant l'annonce d'un fils.",
+      "rationale": "Verbe: annoncer une bonne nouvelle. Contexte: les anges annonçant un fils à Abraham."
+    },
+    {
+      "word_id": "ea1e6901-7006-40e1-8db5-0e9d055e04ef",
+      "arabic": "خِيفَةًۭ ۖ",
+      "gloss_fr": "crainte / peur",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine خ-و-ف 'craindre'. Nom verbal.",
+      "contextual_basis": "Hamidullah 'il ressentit de la peur', Kazimirski 'il conçut quelque crainte'. Abraham face aux anges.",
+      "rationale": "Nom: crainte. Contexte: Abraham ressentant de la crainte devant les anges."
+    },
+    {
+      "word_id": "2c41fb34-6106-4edd-9bf1-ff7c6c6c30e9",
+      "arabic": "ٱمْرَأَتُهُۥ",
+      "gloss_fr": "son épouse",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine م-ر-أ 'femme'. Nom + suffixe possessif 3ms.",
+      "contextual_basis": "Hamidullah 'sa femme', Kazimirski 'sa femme'. L'épouse d'Abraham.",
+      "rationale": "Nom: épouse. Contexte: la femme d'Abraham s'avançant."
+    },
+    {
+      "word_id": "6a8e50db-d6ce-4ce5-85b4-7c6cc595fe55",
+      "arabic": "عَقِيمٌۭ",
+      "gloss_fr": "stérile",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ع-ق-م 'être stérile'. Adjectif.",
+      "contextual_basis": "Hamidullah 'stérile', Kazimirski 'stérile'. Description de Sarah.",
+      "rationale": "Adjectif: stérile. Contexte: Sarah se décrit comme stérile."
+    },
+    {
+      "word_id": "7a50ade2-042b-4bba-ac76-7c16c2aa82b3",
+      "arabic": "وَجْهَهَا",
+      "gloss_fr": "son visage / sa face",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine و-ج-ه 'faire face'. Nom + suffixe possessif 3fs.",
+      "contextual_basis": "Hamidullah 'se frappa le visage', Kazimirski 'se frappa le visage'. Sarah dans la surprise.",
+      "rationale": "Nom: visage. Contexte: la femme d'Abraham se frappant le visage."
+    },
+    {
+      "word_id": "8aa870c8-77ab-4386-aac3-626f0fa32510",
+      "arabic": "فَأَقْبَلَتِ",
+      "gloss_fr": "s'avancer / venir",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ق-ب-ل 'faire face/avancer'. Forme IV accompli 3fs.",
+      "contextual_basis": "Hamidullah 's'avança', Kazimirski 'survint'. La femme d'Abraham s'approchant.",
+      "rationale": "Verbe: s'avancer. Contexte: la femme d'Abraham s'avançant vers les hôtes."
+    },
+    {
+      "word_id": "97fee1d0-f1d8-4d01-9a9c-24949ce5dccb",
+      "arabic": "صَرَّةٍۢ",
+      "gloss_fr": "cri / clameur",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ص-ر-ر 'crier'. Nom.",
+      "contextual_basis": "Hamidullah 'en criant', Kazimirski 'elle poussa un cri'. La femme d'Abraham s'exclamant.",
+      "rationale": "Nom: cri. Contexte: la femme d'Abraham criant de surprise."
+    },
+    {
+      "word_id": "b2132e9d-8621-4e64-8fbe-a0e5e0dbbd31",
+      "arabic": "فَصَكَّتْ",
+      "gloss_fr": "frapper / se frapper",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ص-ك-ك 'frapper'. Accompli 3fs.",
+      "contextual_basis": "Hamidullah 'se frappa le visage', Kazimirski 'se frappa le visage'. Geste de surprise de Sarah.",
+      "rationale": "Verbe: frapper. Contexte: Sarah se frappant le visage de stupeur."
+    },
+    {
+      "word_id": "d155de8a-23c2-46e1-8a95-80c72d8fe0e0",
+      "arabic": "عَجُوزٌ",
+      "gloss_fr": "vieille femme",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ع-ج-ز 'être âgé/incapable'. Nom.",
+      "contextual_basis": "Hamidullah 'une vieille femme', Kazimirski 'une vieille femme stérile'. Sarah se désignant.",
+      "rationale": "Nom: vieille femme. Contexte: Sarah se décrit comme trop âgée pour enfanter."
+    },
+    {
+      "word_id": "d9ba6fca-4a18-491a-9136-6f1b98d33588",
+      "arabic": "لِنُرْسِلَ",
+      "gloss_fr": "pour envoyer / lancer",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ر-س-ل 'envoyer'. Préposition لِ + inaccompli 1p subjonctif.",
+      "contextual_basis": "Hamidullah 'pour lancer sur eux', Kazimirski 'pour lancer contre lui'. Les pierres envoyées.",
+      "rationale": "Verbe: envoyer. Contexte: Dieu envoie des pierres contre les peuples rebelles."
+    },
+    {
+      "word_id": "67385353-c8ae-48fa-b0d7-e71791de079c",
+      "arabic": "أَرْسَلْنَـٰهُ",
+      "gloss_fr": "envoyer / dépêcher",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ر-س-ل 'envoyer'. Forme IV accompli 1p + suffixe objet 3ms.",
+      "contextual_basis": "Hamidullah 'Nous l'envoyâmes', Kazimirski 'nous l'envoyâmes'. Mission de Moïse.",
+      "rationale": "Verbe envoyer. Contexte: envoi de Moïse comme messager."
+    },
+    {
+      "word_id": "860e1f08-35db-4c1b-b01b-22632fc982e0",
+      "arabic": "سَـٰحِرٌ",
+      "gloss_fr": "magicien / sorcier",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine س-ح-ر. Même mot que سَاحِرٌ avec orthographe coranique différente.",
+      "contextual_basis": "Hamidullah 'magicien', Kazimirski 'sorcier'. Pharaon accusant Moïse.",
+      "rationale": "Nom: magicien. Variante orthographique coranique."
+    },
+    {
+      "word_id": "ba4c818d-bd5c-4ca6-8feb-77f2a721a9e5",
+      "arabic": "بِرُكْنِهِۦ",
+      "gloss_fr": "avec ses partisans / son pouvoir",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ر-ك-ن 's'appuyer/soutenir'. Nom avec préposition بِ et suffixe 3ms.",
+      "contextual_basis": "Hamidullah 'confiant en sa puissance', Kazimirski 'appuyé sur ses forces'. Pharaon s'appuyant sur son pouvoir.",
+      "rationale": "Nom: soutien, pilier. Contexte: Pharaon se détournant, confiant en sa force."
+    },
+    {
+      "word_id": "940853a9-04aa-4680-bf1b-6bcb1c7cb316",
+      "arabic": "ٱلْعَقِيمَ",
+      "gloss_fr": "stérile / dévastateur",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ع-ق-م 'être stérile'. Adjectif.",
+      "contextual_basis": "Hamidullah 'vent dévastateur', Kazimirski 'vent stérile'. Vent qui ne laisse rien derrière lui.",
+      "rationale": "Adjectif: stérile, qui ne produit rien. Contexte: le vent stérile/dévastateur envoyé contre 'Âd."
+    },
+    {
+      "word_id": "832cc0a3-432e-444c-b566-75c84ba1278b",
+      "arabic": "جَعَلَتْهُ",
+      "gloss_fr": "en faire / le réduire à",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ج-ع-ل 'faire/rendre'. Accompli 3fs + suffixe objet 3ms.",
+      "contextual_basis": "Hamidullah 'sans le réduire en poussière', Kazimirski 'qu'il ne l'eût aussitôt converti en poussière'. Action du vent.",
+      "rationale": "Verbe: faire de, réduire à. Contexte: le vent réduisant tout en poussière."
+    },
+    {
+      "word_id": "a5695d11-ea98-4cc3-92e6-4c4eefba13cf",
+      "arabic": "أَتَتْ",
+      "gloss_fr": "venir / arriver",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine أ-ت-ي 'venir'. Forme accomplie 3fs.",
+      "contextual_basis": "Hamidullah 'n'épargnant rien sur son passage', Kazimirski 'il ne passa sur aucun être'. Le vent dévastateur qui vient.",
+      "rationale": "Verbe venir/arriver. Contexte: le vent qui arrive sur le peuple 'Âd."
+    },
+    {
+      "word_id": "f4d8aef6-7751-4a8e-bf1e-37de7539ca39",
+      "arabic": "كَٱلرَّمِيمِ",
+      "gloss_fr": "comme la poussière / le chaume",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ر-م-م 'être usé/délabré'. Comparaison avec كَ.",
+      "contextual_basis": "Hamidullah 'réduire en poussière', Kazimirski 'converti en poussière'. Le vent réduisant tout à néant.",
+      "rationale": "Comparaison: comme ce qui est réduit en miettes. Contexte: destruction totale par le vent."
+    },
+    {
+      "word_id": "40968541-e443-44a3-aacc-a065f1babaae",
+      "arabic": "فَعَتَوْا۟",
+      "gloss_fr": "être rebelles / défier",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ع-ت-و 'être arrogant/rebelle'. Accompli 3mp.",
+      "contextual_basis": "Hamidullah 'défièrent le commandement', Kazimirski 'furent rebelles aux ordres'. Les peuples rebelles.",
+      "rationale": "Verbe: se rebeller. Contexte: les peuples défiant l'ordre divin."
+    },
+    {
+      "word_id": "c085fdfb-f2f0-4764-9bfa-10b90d162723",
+      "arabic": "قِيَامٍۢ",
+      "gloss_fr": "se tenir debout / se lever",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ق-و-م 'se lever'. Nom verbal pluriel.",
+      "contextual_basis": "Hamidullah 'ni se mettre debout ni être secourus', Kazimirski 'ne pouvaient se soutenir debout'. Impuissance des peuples châtiés.",
+      "rationale": "Nom: station debout. Contexte: les peuples châtiés ne pouvaient même plus se tenir debout."
+    },
+    {
+      "word_id": "ee64b097-d883-4bc5-9c91-f5e67f9cadfa",
+      "arabic": "مُنتَصِرِينَ",
+      "gloss_fr": "ceux qui sont secourus / victorieux",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ن-ص-ر 'secourir'. Participe actif pluriel (forme VIII).",
+      "contextual_basis": "Hamidullah 'ni être secourus', Kazimirski 'ni se sauver'. Impuissance totale.",
+      "rationale": "Adjectif: secourus. Contexte: les peuples châtiés ne purent être secourus."
+    },
+    {
+      "word_id": "4aab51f2-5e7a-46e6-8826-60e2a975b943",
+      "arabic": "بِأَيْي۟دٍۢ",
+      "gloss_fr": "avec force / puissance",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine أ-ي-د 'force/puissance'. Nom pluriel à l'oblique avec préposition بِ.",
+      "contextual_basis": "Hamidullah 'par Notre puissance', Kazimirski 'avec nos mains'. Force divine dans la construction du ciel.",
+      "rationale": "Nom: forces, puissance. Contexte: Dieu a bâti le ciel par Sa puissance."
+    },
+    {
+      "word_id": "a5b9c971-8a9a-4db1-89d4-b7adaa92ee64",
+      "arabic": "لَمُوسِعُونَ",
+      "gloss_fr": "ceux qui étendent / élargissent",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine و-س-ع 'élargir/étendre'. Participe actif pluriel.",
+      "contextual_basis": "Hamidullah 'Nous l'étendons constamment', Kazimirski 'nous le fîmes à notre aise'. Dieu étendant le ciel.",
+      "rationale": "Nom: ceux qui étendent. Contexte: Dieu étend le ciel continuellement."
+    },
+    {
+      "word_id": "12e9aa20-13de-43e2-98c5-7b7e48a98ae2",
+      "arabic": "فَرَشْنَـٰهَا",
+      "gloss_fr": "étendre / aplanir",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ف-ر-ش 'étendre/aplanir'. Accompli 1p + suffixe objet 3fs.",
+      "contextual_basis": "Hamidullah 'Nous l'avons étendue', Kazimirski 'Nous avons étendu la terre'. La terre étendue par Dieu.",
+      "rationale": "Verbe: étendre. Contexte: Dieu a étendu la terre."
+    },
+    {
+      "word_id": "b998f056-2507-4400-a723-b1fd4841c749",
+      "arabic": "ٱلْمَـٰهِدُونَ",
+      "gloss_fr": "ceux qui étendent / aplanissent",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine م-ه-د 'aplanir/étendre'. Participe actif pluriel.",
+      "contextual_basis": "Hamidullah 'Nous l'avons étendue', Kazimirski 'Nous avons étendu la terre comme un tapis'. La terre étendue.",
+      "rationale": "Nom: ceux qui aplanissent. Contexte: Dieu a étendu la terre."
+    },
+    {
+      "word_id": "e01006e8-c69a-4182-9959-882e4a029899",
+      "arabic": "فَفِرُّوٓا۟",
+      "gloss_fr": "fuyez / cherchez refuge",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ف-ر-ر 'fuir'. Impératif pluriel.",
+      "contextual_basis": "Hamidullah 'Fuyez donc vers Allah', Kazimirski 'Cherchez donc refuge auprès de Dieu'. Appel à se tourner vers Dieu.",
+      "rationale": "Verbe: fuir vers. Contexte: fuite spirituelle vers Dieu."
+    },
+    {
+      "word_id": "06fb5b0d-7631-4c3e-aaf8-e8cf7a96486c",
+      "arabic": "مَجْنُونٌ",
+      "gloss_fr": "fou / possédé",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ج-ن-ن 'couvrir/être fou'. Participe passif.",
+      "contextual_basis": "Hamidullah 'magicien ou possédé', Kazimirski 'magicien ou possédé'. Accusation récurrente contre les prophètes.",
+      "rationale": "Adjectif: fou, possédé. Contexte: accusation des peuples contre les messagers."
+    },
+    {
+      "word_id": "88c95581-09af-4dd7-a42a-752030998d77",
+      "arabic": "سَاحِرٌ",
+      "gloss_fr": "magicien / sorcier",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine س-ح-ر 'ensorceler'. Participe actif.",
+      "contextual_basis": "Hamidullah 'magicien', Kazimirski 'magicien'. Accusation contre les messagers.",
+      "rationale": "Nom: magicien. Contexte: les peuples anciens traitaient les messagers de magiciens."
+    },
+    {
+      "word_id": "e664a492-93b6-41a0-bbdd-9302ce13133d",
+      "arabic": "أَتَوَاصَوْا۟",
+      "gloss_fr": "se transmettre / se léguer",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine و-ص-ي 'recommander/léguer'. Forme VI à l'accompli 3mp.",
+      "contextual_basis": "Hamidullah 'se sont transmis cette injonction', Kazimirski 'se seraient-ils transmis cette conduite comme un legs'. Idée d'héritage de croyance.",
+      "rationale": "Forme réfléchie de transmission. Contexte: transmission d'une croyance entre générations."
+    },
+    {
+      "word_id": "96102db7-44f5-4c40-88b6-6bf2b5190e1e",
+      "arabic": "بِمَلُومٍۢ",
+      "gloss_fr": "blâmable / à blâmer",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ل-و-م 'blâmer'. Participe passif.",
+      "contextual_basis": "Hamidullah 'tu ne seras pas blâmé', Kazimirski 'tu n'encourras aucun reproche'. Le Prophète n'est pas à blâmer.",
+      "rationale": "Adjectif: blâmable. Contexte: le Prophète ne doit pas se sentir blâmé pour le rejet des mécréants."
+    },
+    {
+      "word_id": "45b94a52-1f99-451b-90d2-3e199412e53a",
+      "arabic": "وَٱلْإِنسَ",
+      "gloss_fr": "les hommes / l'humanité",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine أ-ن-س 'être familier/humain'. Nom collectif.",
+      "contextual_basis": "Hamidullah 'les hommes', Kazimirski 'les hommes'. Opposé aux djinns.",
+      "rationale": "Nom: les humains. Contexte: Dieu a créé les djinns et les hommes pour L'adorer."
+    },
+    {
+      "word_id": "cd1ca283-10fd-4aa4-9dd1-e9893d17b1a0",
+      "arabic": "لِيَعْبُدُونِ",
+      "gloss_fr": "pour qu'ils M'adorent",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ع-ب-د 'adorer'. لِ + inaccompli 3mp + suffixe objet 1s.",
+      "contextual_basis": "Hamidullah 'pour qu'ils M'adorent', Kazimirski 'afin qu'ils m'adorent'. Finalité de la création.",
+      "rationale": "Verbe: adorer. Contexte: les djinns et les hommes n'ont été créés que pour adorer Dieu."
+    },
+    {
+      "word_id": "f0b6c046-5bb2-4b73-8bb8-76900293cf27",
+      "arabic": "يُطْعِمُونِ",
+      "gloss_fr": "Me nourrir / M'alimenter",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ط-ع-م 'nourrir'. Forme IV inaccompli 3mp + suffixe objet 1s.",
+      "contextual_basis": "Hamidullah 'qu'ils me nourrissent', Kazimirski 'qu'ils me nourrissent'. Dieu n'a pas besoin de subsistance.",
+      "rationale": "Verbe: nourrir. Contexte: Dieu dit qu'Il ne demande pas à être nourri."
+    },
+    {
+      "word_id": "6355eb46-ed36-4881-bc39-d77d79122bfb",
+      "arabic": "ٱلْمَتِينُ",
+      "gloss_fr": "le Fort / l'Inébranlable",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine م-ت-ن 'être ferme/fort'. Adjectif.",
+      "contextual_basis": "Hamidullah 'le Détenteur de la force, l'Inébranlable', Kazimirski 'le Fort, l'Inébranlable'. Attribut divin.",
+      "rationale": "Adjectif divin: Celui dont la force est absolue."
+    },
+    {
+      "word_id": "bd7649b8-a304-479c-bb34-27ee3edb95c8",
+      "arabic": "ٱلرَّزَّاقُ",
+      "gloss_fr": "le Grand Pourvoyeur",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ر-ز-ق 'pourvoir'. Forme intensive (fa''āl).",
+      "contextual_basis": "Hamidullah 'le Grand Pourvoyeur', Kazimirski 'le dispensateur de la nourriture'. Attribut divin.",
+      "rationale": "Nom divin: Celui qui pourvoit abondamment."
+    },
+    {
+      "word_id": "2371d4c0-fdac-4ed8-9fb6-f4841e64c425",
+      "arabic": "ذَنُوبًۭا",
+      "gloss_fr": "une part / une portion",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ذ-ن-ب 'queue/part'. Nom à l'accusatif indéfini.",
+      "contextual_basis": "Même contexte que ذَنُوبِ: part de châtiment.",
+      "rationale": "Nom: part. Variante accusative de ذَنُوب."
+    },
+    {
+      "word_id": "ee8872bf-aebd-4b11-9729-158c944c6805",
+      "arabic": "أَصْحَـٰبِهِمْ",
+      "gloss_fr": "compagnons / leurs semblables",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ص-ح-ب 'accompagner'. Pluriel de صاحب avec suffixe possessif 3mp.",
+      "contextual_basis": "Hamidullah 'pareille à celle de leurs compagnons', Kazimirski 'portion pareille à ceux qui ont agi autrefois'. Partage du châtiment.",
+      "rationale": "Nom: compagnons, semblables. Contexte: les injustes partagent le sort de leurs prédécesseurs."
+    },
+    {
+      "word_id": "f5e7c2e9-b2cc-4532-830c-56bb3568a9a8",
+      "arabic": "ذَنُوبِ",
+      "gloss_fr": "part / portion (de châtiment)",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ذ-ن-ب 'queue/part'. Nom.",
+      "contextual_basis": "Hamidullah 'une part de tourments', Kazimirski 'la portion'. Partage du châtiment.",
+      "rationale": "Nom: part, portion. Contexte: part de châtiment réservée aux injustes."
+    },
+    {
+      "word_id": "f9be4cb9-4c6b-4aaa-ae0f-b16736f5ffb7",
+      "arabic": "يَسْتَعْجِلُونِ",
+      "gloss_fr": "Me demander de hâter",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ع-ج-ل 'hâter'. Forme X inaccompli 3mp + suffixe objet 1s.",
+      "contextual_basis": "Hamidullah 'ce que vous cherchiez à hâter', Kazimirski 'la peine que vous hâtiez'. Les impies réclamant le châtiment.",
+      "rationale": "Verbe: demander de hâter. Contexte: les impies demandant qu'on hâte leur châtiment."
+    },
+    {
+      "word_id": "877b70e7-7e0a-48b3-a66f-d44fe9e4030a",
+      "arabic": "يَوْمِهِمُ",
+      "gloss_fr": "leur jour",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "51"
+      ],
+      "lexical_basis": "Racine ي-و-م 'jour'. Nom + suffixe possessif 3mp.",
+      "contextual_basis": "Hamidullah 'le jour dont ils sont menacés', Kazimirski 'le jour qui leur est réservé'. Jour du Jugement.",
+      "rationale": "Nom: jour. Contexte: le Jour du Jugement qui attend les mécréants."
+    },
+    {
+      "word_id": "11837ef3-ae45-4916-bbb5-9116c7ca88b5",
+      "arabic": "أَمْرِهِمْ",
+      "gloss_fr": "leur affaire / leur sort",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine أ-م-ر 'affaire/commandement'. Nom + suffixe possessif 3mp.",
+      "contextual_basis": "Hamidullah: ont goûté la conséquence de leur affaire. Kazimirski: subirent leur sort.",
+      "rationale": "Nom: affaire, sort. Contexte: les peuples anciens subirent les conséquences de leurs actes."
+    },
+    {
+      "word_id": "1ecee066-8afd-4db0-a9de-613750655f57",
+      "arabic": "تَّأْتِيهِمْ",
+      "gloss_fr": "leur venir / arriver à eux",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine أ-ت-ي 'venir'. Inaccompli 3fs + suffixe objet 3mp.",
+      "contextual_basis": "Hamidullah 'leur venaient', Kazimirski 'vinrent à eux'. Les messagers venant aux peuples.",
+      "rationale": "Verbe: venir à. Contexte: les messagers venaient avec des preuves."
+    },
+    {
+      "word_id": "444cfb95-85a0-4525-b76b-ffab4d58c5d7",
+      "arabic": "بِأَنَّهُۥ",
+      "gloss_fr": "parce que / du fait que",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine ب + أَنَّ. Locution conjonctive.",
+      "contextual_basis": "Hamidullah 'Il en est ainsi parce que', Kazimirski 'car'. Cause du châtiment des peuples passés.",
+      "rationale": "Locution: parce que. Contexte: explication de la raison du châtiment."
+    },
+    {
+      "word_id": "be4dc78a-6cc5-4a10-86e5-2367bfb123de",
+      "arabic": "أَبَشَرٌۭ",
+      "gloss_fr": "un être humain / un simple mortel",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine ب-ش-ر 'être humain/chair'. Nom avec أَ interrogatif.",
+      "contextual_basis": "Hamidullah/Kazimirski: les messagers venaient avec des preuves, et les gens disaient 'un être humain nous guiderait-il?'.",
+      "rationale": "Nom: être humain. Contexte: objection des mécréants qu'un simple humain soit messager."
+    },
+    {
+      "word_id": "78c4ba92-ab53-42d0-874d-19ac2c82fdea",
+      "arabic": "أَنزَلْنَا ۚ",
+      "gloss_fr": "faire descendre / révéler",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine ن-ز-ل 'descendre'. Forme IV accompli 1p.",
+      "contextual_basis": "Hamidullah 'que Nous avons fait descendre', Kazimirski 'que Dieu vous a envoyée'. La lumière/révélation.",
+      "rationale": "Verbe: révéler. Contexte: Dieu a révélé la lumière (le Coran)."
+    },
+    {
+      "word_id": "7438ad6a-3614-4e0c-8481-821083ac9bba",
+      "arabic": "ٱلتَّغَابُنِ ۗ",
+      "gloss_fr": "déception mutuelle / jour de la duperie",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine غ-ب-ن 'tromper/duper'. Nom verbal de forme VI (réciprocité).",
+      "contextual_basis": "Hamidullah 'jour de la duperie', Kazimirski 'jour de l'illusion'. Nom de la sourate.",
+      "rationale": "Nom: tromperie réciproque. Contexte: le Jour où chacun verra qui a gagné ou perdu."
+    },
+    {
+      "word_id": "d5b537eb-18ed-4864-b9bf-0f7c56748e80",
+      "arabic": "ٱلْجَمْعِ ۖ",
+      "gloss_fr": "rassemblement / réunion",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine ج-م-ع 'rassembler'. Nom verbal.",
+      "contextual_basis": "Hamidullah 'jour du Rassemblement', Kazimirski 'journée de la réunion'. Jour du Jugement.",
+      "rationale": "Nom: rassemblement. Contexte: Dieu réunira tous les hommes au Jour du Jugement."
+    },
+    {
+      "word_id": "2db5bb61-1f4b-4133-a35d-1c6285ebbbea",
+      "arabic": "أَصَابَ",
+      "gloss_fr": "atteindre / frapper",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine ص-و-ب 'atteindre'. Forme IV accompli 3ms.",
+      "contextual_basis": "Hamidullah 'n'atteint l'homme', Kazimirski 'n'atteint l'homme'. Aucun malheur sans permission divine.",
+      "rationale": "Verbe: atteindre. Contexte: nul malheur n'atteint sans la permission de Dieu."
+    },
+    {
+      "word_id": "9dde9b55-6935-41e5-8361-b6ce6a55c0d8",
+      "arabic": "ٱلرَّسُولَ ۚ",
+      "gloss_fr": "le messager / l'envoyé",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine ر-س-ل 'envoyer'. Nom.",
+      "contextual_basis": "Hamidullah 'obéissez au Messager', Kazimirski 'écoutez son apôtre'. Obéissance au Prophète.",
+      "rationale": "Nom: messager. Contexte: ordre d'obéir au Messager."
+    },
+    {
+      "word_id": "ca7dea30-f959-41c6-9b18-7e236e70da24",
+      "arabic": "أَزْوَٰجِكُمْ",
+      "gloss_fr": "vos épouses",
+      "status": "CONFIDENT",
+      "confidence": "HIGH",
+      "surahs": [
+        "64"
+      ],
+      "lexical_basis": "Racine ز-و-ج 'paire/époux'. Nom pluriel + suffixe possessif 2mp.",
+      "contextual_basis": "Hamidullah 'vos épouses', Kazimirski 'vos épouses'. Mise en garde.",
+      "rationale": "Nom: épouses. Contexte: certaines épouses et enfants peuvent être une épreuve."
+    }
+  ],
+  "7_editorialReviewRequired": [
+    {
+      "word_id": "8e688183-210a-44c0-9d26-deb0767b6b5d",
+      "arabic": "فِتْنَتَكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "51"
+      ],
+      "meaning": "your trial",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "3e08d7a0-0ef5-4053-a686-c7d3d42ea8d2",
+      "arabic": "ءَاخَرَ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "51"
+      ],
+      "meaning": "another",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4a500d04-5425-4cd3-aa44-cb81d164bfc6",
+      "arabic": "كَافِرٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "(is) a disbeliever",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "59c96b2b-7bdd-4088-972e-036a4f063328",
+      "arabic": "فَمِنكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and among you",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8138c377-2550-46c0-bd69-d79b211b3460",
+      "arabic": "مُّؤْمِنٌۭ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "(is) a believer",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "53206772-64ec-4cf1-ac5f-6010bf14fa04",
+      "arabic": "وَصَوَّرَكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and He formed you",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "6678739b-8892-4978-b0b8-dff5da9c7d92",
+      "arabic": "صُوَرَكُمْ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "your forms",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b8b1fb60-d0eb-48f5-9070-814a0619f73a",
+      "arabic": "فَأَحْسَنَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and perfected",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "da556455-7c73-4fbe-b01e-576d731b4b4b",
+      "arabic": "تُعْلِنُونَ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "you declare",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "f11cfe86-eca1-48bd-8728-e6b68978cb52",
+      "arabic": "تُسِرُّونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "you conceal",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "43eada56-c2e5-4dbe-a431-366738ef3609",
+      "arabic": "فَذَاقُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "So they tasted",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "48246ef4-2199-4ffe-a5b7-56e69cc8189d",
+      "arabic": "نَبَؤُا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "(the) news",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "2fa7e7d6-b574-4014-975e-4de05c2ca5a0",
+      "arabic": "وَتَوَلَّوا۟ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and turned away",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7936d666-fb0f-430b-85cf-3a606060075c",
+      "arabic": "يَهْدُونَنَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "guide us",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "88304548-d17f-483a-8631-065feb09d1fd",
+      "arabic": "وَّٱسْتَغْنَى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "And can do without them",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "97199e67-e485-4665-b92e-78434512afd9",
+      "arabic": "فَكَفَرُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "But they disbelieved",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d275e85d-5c8d-4bb7-a75a-68a933032120",
+      "arabic": "كَانَت",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "was",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "032fd38f-9330-4cfe-ab56-a7c7b4ce5d0b",
+      "arabic": "زَعَمَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "Claim",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "53db2c12-8ec4-420a-b92c-251da3bbb32a",
+      "arabic": "يُبْعَثُوا۟ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "will they be raised",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "901e912e-6762-4696-99b8-e3ff85905cf2",
+      "arabic": "عَمِلْتُمْ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "you did",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b26f48ed-34b9-4e1e-ab1d-782a96fc91c3",
+      "arabic": "لَتُنَبَّؤُنَّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "surely you will be informed",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "bf9c3143-1195-4fd7-ba7b-0460cdd15362",
+      "arabic": "لَتُبْعَثُنَّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "surely you will be raised",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "36f71330-bba1-4751-9924-7d8d0082e690",
+      "arabic": "فَـَٔامِنُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "so believe",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e31d028a-bdfa-4944-a042-41ba70592e43",
+      "arabic": "وَٱلنُّورِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and the Light",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9b10ece5-a505-4d5f-9451-3c5847d5ebad",
+      "arabic": "وَيُدْخِلْهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and He will admit him",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "9cb164b4-5eab-4dc5-ac06-63841072384b",
+      "arabic": "مُّصِيبَةٍ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "disaster",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e013c121-f059-4ebc-8b00-f9866388d2bb",
+      "arabic": "قَلْبَهُۥ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "his heart",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9c2eb354-3534-439b-950c-2efa3e64b3db",
+      "arabic": "رَسُولِنَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "Our Messenger",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "1b431287-ba44-4617-ac7c-060839592d53",
+      "arabic": "وَتَصْفَحُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and overlook",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "257bfa3a-dace-4c04-ac48-610bed245467",
+      "arabic": "وَأَوْلَـٰدِكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and your children",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "30655413-025f-451d-99b4-279f160956f1",
+      "arabic": "فَٱحْذَرُوهُمْ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "so beware of them",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "b87367f5-cbb7-46d3-8aea-acebd8b6fd7f",
+      "arabic": "وَتَغْفِرُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and forgive",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c51b2500-f332-4a95-94b8-e68379d36689",
+      "arabic": "تَعْفُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "pardon",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "99c24d1a-1da5-486f-bf4c-21243f49ce5e",
+      "arabic": "فِتْنَةٌۭ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "(are) a trial",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "07e38ce0-3cff-4860-ac97-53bfeb005226",
+      "arabic": "نَفْسِهِۦ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64",
+        "75"
+      ],
+      "meaning": "himself",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "28678111-c9c4-4c81-86b0-d99de1451685",
+      "arabic": "يُوقَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "is saved",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "34d04fb0-737f-408f-93ef-b0117f29748e",
+      "arabic": "شُحَّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "(from) stinginess",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4471eddf-15c1-402b-a400-388297af0483",
+      "arabic": "لِّأَنفُسِكُمْ ۗ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "for yourselves",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d9a21d17-0cb9-4d90-bc0a-06284ac6578e",
+      "arabic": "وَٱسْمَعُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "and listen",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "541feefd-8de1-4ecc-b638-c62ed1332a6e",
+      "arabic": "شَكُورٌ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "Most Appreciative",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "756e9df9-f020-4f4f-951a-2738c7b2e062",
+      "arabic": "تُقْرِضُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "you loan",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "ee83441f-ddd7-4277-9f3a-25446d7a978c",
+      "arabic": "يُضَـٰعِفْهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "He will multiply it",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "ff83e9c2-d42a-432a-97df-24236284f626",
+      "arabic": "حَلِيمٌ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "64"
+      ],
+      "meaning": "Most Forbearing",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "12ea3e17-0ddd-48ab-92a7-cdee0669a563",
+      "arabic": "تُحَرِّمُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "you prohibit",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "61f90380-1871-4778-b473-edf4911baaae",
+      "arabic": "تَبْتَغِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "seeking",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "86d9ea04-e8f5-47f6-9138-2d7184357982",
+      "arabic": "أَزْوَٰجِكَ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "your wives",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "fa536dbe-4601-43e6-bf16-db677d4883d7",
+      "arabic": "مَرْضَاتَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(to) please",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b20fc34c-6aaf-441e-94e9-c3aed1200591",
+      "arabic": "تَحِلَّةَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(the) dissolution",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "dc75a6aa-5d97-48d7-87aa-c96dcb2b97e4",
+      "arabic": "أَيْمَـٰنِكُمْ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(of) your oaths",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "328a92b7-065a-4ab9-9e4a-bf5e02114bda",
+      "arabic": "عَرَّفَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "he made known",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "502c00b9-884d-4d7b-bfd8-fd622232fcac",
+      "arabic": "وَأَعْرَضَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and avoided",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "70b2acf2-6f5d-4109-a3ab-8ee8ab4a32e6",
+      "arabic": "نَبَّأَنِىَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "Has informed me",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "75d5076c-89bd-4124-b00e-3b9d898a70ab",
+      "arabic": "وَأَظْهَرَهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and made it apparent",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "8bee5a55-f427-4edd-bb95-08498e2825fb",
+      "arabic": "أَنۢبَأَكَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "informed you",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9ca2998e-a609-47cf-9a1c-bac73bed3967",
+      "arabic": "نَبَّأَهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "he informed her",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "a999391b-d9ee-4cde-8a56-27a8b95adbe8",
+      "arabic": "نَبَّأَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "she informed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "fa690650-b214-4f53-8189-9f60359d1e74",
+      "arabic": "أَزْوَٰجِهِۦ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(of) his wives",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "6c2d2f6e-a7ff-4780-b259-7a44e66b2ffa",
+      "arabic": "وَصَـٰلِحُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and (the) righteous",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "88e99826-cc87-4f69-a91e-542031a0a4fd",
+      "arabic": "قُلُوبُكُمَا ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "your hearts",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b3fbfbd0-d001-4d63-8a59-e8473883ba0f",
+      "arabic": "صَغَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(are) inclined",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "baf2ae09-42e3-4b7b-8059-f57d56de4bab",
+      "arabic": "تَتُوبَآ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "you both turn",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e44c86d9-cb39-46bb-8f31-f3929f7f3d95",
+      "arabic": "وَجِبْرِيلُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and Jibreel",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "eef3e5d2-eaee-4c94-a5cd-cdab6d60793c",
+      "arabic": "ظَهِيرٌ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(are his) assistants",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "1bfa1d66-7316-46ca-827e-7b6f8546c73b",
+      "arabic": "وَأَبْكَارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and virgins",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "30ffc48a-983d-428f-8516-8cf28c12acbf",
+      "arabic": "أَزْوَٰجًا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "wives",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "447902b2-6188-4bd2-8f62-3e553894709e",
+      "arabic": "ثَيِّبَـٰتٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "previously married",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "53de6837-5393-4575-a2d5-7e28ed3d229a",
+      "arabic": "يُبْدِلَهُۥٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "He will substitute for him",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "74c44e86-445b-4c4f-ae53-f7445cdb9941",
+      "arabic": "مُسْلِمَـٰتٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "submissive",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "87effb57-09fb-4f47-9e0d-44e988698662",
+      "arabic": "قَـٰنِتَـٰتٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "obedient",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8c5c6aad-42da-41cf-9726-a9307278e48a",
+      "arabic": "مِّنكُنَّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "than you",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b3a0ef99-c4a3-4e8f-adca-9bf90d495e7f",
+      "arabic": "سَـٰٓئِحَـٰتٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "who fast",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "bc35800f-9eb2-487a-b823-e2fd2be0a94b",
+      "arabic": "عَـٰبِدَٰتٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "who worship",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c488825b-9b56-4c08-bf3c-bb83fb50023c",
+      "arabic": "طَلَّقَكُنَّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "he divorced you",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "cfc78900-1c86-41d3-98d5-40eac8f058db",
+      "arabic": "تَـٰٓئِبَـٰتٍ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "repentant",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "f94a442b-5c16-4f24-aabc-daaf15fbf964",
+      "arabic": "مُّؤْمِنَـٰتٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "faithful",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "150eed4c-059e-490a-91d5-f209103b2507",
+      "arabic": "غِلَاظٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "stern",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "6af54025-d94e-4d7d-9472-1444381dd1d0",
+      "arabic": "وَٱلْحِجَارَةُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and stones",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8867c89f-7e22-4511-9253-7c481f458453",
+      "arabic": "وَأَهْلِيكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and your families",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9a5a38e3-485b-4444-92b3-9665d14d6e66",
+      "arabic": "يُؤْمَرُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "they are commanded",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "e5815a7a-ca3e-4ab1-a6d2-036cb3c45b33",
+      "arabic": "يَعْصُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "they disobey",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "ed6e5290-faa9-49c9-87c2-9361d239c034",
+      "arabic": "مَلَـٰٓئِكَةٌ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(are) Angels",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "f1661afa-64ef-429a-935a-b85ad24bd4c2",
+      "arabic": "قُوٓا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "Protect",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "1c00fa80-9263-4413-be19-19881a3adca9",
+      "arabic": "نَّصُوحًا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "sincere",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "2c1f86b7-5e79-484f-bc90-91efffe443a2",
+      "arabic": "وَيُدْخِلَكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and admit you",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "773cb62c-7ac3-495a-9626-2ff3f2a713cd",
+      "arabic": "مَعَهُۥ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "with him",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9fa81d12-03f6-4e0e-930a-b0dee96bfb00",
+      "arabic": "أَتْمِمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "Perfect",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b229864f-b943-4238-aa87-10cd34cf5960",
+      "arabic": "نُورَنَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "our light",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "c6707229-e8ac-40f7-a448-4576018bb514",
+      "arabic": "نُورُهُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "Their light",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e20eb08a-9a7c-41e0-9539-8d4238d2befa",
+      "arabic": "وَبِأَيْمَـٰنِهِمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and on their right",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "ebb45094-251c-4c0e-9803-69aa6d390028",
+      "arabic": "يُخْزِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "will be disgraced",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "f3a2c9ef-c472-4284-ac96-18bd03fa4914",
+      "arabic": "يُكَفِّرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "remove",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "45f610c8-d66f-4882-833c-1d5bf693ff4a",
+      "arabic": "يُغْنِيَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "they availed",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "596c8c08-db4c-4ac5-984b-29dcb4f306af",
+      "arabic": "عَبْدَيْنِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "two [slaves]",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9a1db4a7-587c-41ee-87bf-229ed598a103",
+      "arabic": "ٱدْخُلَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "Enter",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "b7733390-9bad-4d41-a346-5ed9c3ee16c4",
+      "arabic": "ٱلدَّٰخِلِينَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "those who enter",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "bcac92f6-fe53-4b61-a690-0729061bfcfa",
+      "arabic": "ٱمْرَأَتَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(the) wife",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "daec833a-75a0-47ee-82a1-970d2378221e",
+      "arabic": "وَٱمْرَأَتَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(and the) wife",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e28560d0-3a8e-460b-a983-07022823b537",
+      "arabic": "فَخَانَتَاهُمَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "but they both betrayed them",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "f47c984f-3dd4-4a9d-aefe-df613cd43126",
+      "arabic": "صَـٰلِحَيْنِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "righteous",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "04cbaa2d-b171-49cd-9eef-e0f4f6622778",
+      "arabic": "بَيْتًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "a house",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "bf606006-1765-4259-a657-eab9b5b1004e",
+      "arabic": "وَعَمَلِهِۦ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and his deeds",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "3f5c8f84-c81a-4844-859a-1cf840739e70",
+      "arabic": "ٱلْقَـٰنِتِينَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "the devoutly obedient",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "66b40163-775f-45a1-a287-6bfccbb409b7",
+      "arabic": "ٱبْنَتَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(the) daughter",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "778f5c50-dd03-4a32-91ce-71f7c655775f",
+      "arabic": "وَصَدَّقَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "And she believed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "cb4e9fc7-92fd-4d2e-b615-48084653001c",
+      "arabic": "وَمَرْيَمَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "And Maryam",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "ed8c31a4-ba78-4848-a409-b0c9743d0743",
+      "arabic": "بِكَلِمَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "(in the) Words",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "fb4c257b-0518-4fc2-b5d1-5b86d5eb170e",
+      "arabic": "وَكَانَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "66"
+      ],
+      "meaning": "and she was",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7523207f-1300-42b5-adc3-e03333b0aa4c",
+      "arabic": "بِيَدِهِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "in Whose Hand",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "72f9ff97-5c15-412b-bb5c-c8a3ad21e320",
+      "arabic": "وَٱلْحَيَوٰةَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "and life",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "bee76210-d519-4547-afeb-04baa6ae410d",
+      "arabic": "عَمَلًۭا ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "(in) deed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "283709bb-6e6b-4545-acb7-58cc76fb33ba",
+      "arabic": "فُطُورٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "flaw",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7dcc2435-872f-4059-ba19-3adea8ee9d96",
+      "arabic": "طِبَاقًۭا ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "one above another",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b60155b9-b565-4728-9621-a0920c1b688c",
+      "arabic": "ٱلْبَصَرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "the vision",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c3e631a5-d3ee-4a2f-8b24-e5e6c078cf7a",
+      "arabic": "فَٱرْجِعِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "So return",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "f6425d78-ab08-4ece-b1b9-b59f4813c296",
+      "arabic": "تَفَـٰوُتٍۢ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "fault",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "33624d8a-be18-455d-901d-7ec2a64cf386",
+      "arabic": "خَاسِئًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "humbled",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "9d59a949-006a-408b-9e09-86976020b7d4",
+      "arabic": "حَسِيرٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "(is) fatigued",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c4e5f66e-910c-461d-bbeb-876dcad31a0e",
+      "arabic": "ٱرْجِعِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "return",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d2a7fb09-546b-441e-96b9-6065e17bc940",
+      "arabic": "كَرَّتَيْنِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "twice (again)",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "5aa60d56-d6b5-4c3a-91df-8df97c441838",
+      "arabic": "لِّلشَّيَـٰطِينِ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "for the devils",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "eab14f8f-d742-440b-879d-f8258b3f19cd",
+      "arabic": "رُجُومًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "(as) missiles",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "81edbc54-ee27-41d5-9385-28f681acf97f",
+      "arabic": "وَلِلَّذِينَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "And for those who",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "50c068cd-78fb-481e-8425-37102661c119",
+      "arabic": "شَهِيقًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "an inhaling",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "d76309a5-0df1-4e5f-9fb7-15dc36a4bc70",
+      "arabic": "تَفُورُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "boils up",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "3b1405de-b999-4659-9fe7-a7d4a069b2d2",
+      "arabic": "سَأَلَهُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "(will) ask them",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "41a13571-16eb-4565-aa16-702ca2cc47b2",
+      "arabic": "تَمَيَّزُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "bursts",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "ef13154c-8f0a-4696-ac3c-160ea28e43ce",
+      "arabic": "ٱلْغَيْظِ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "rage",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "47c10357-6ce4-4d67-8e1d-b92d3e1dc311",
+      "arabic": "فَكَذَّبْنَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "but we denied",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "d04fdb6d-1fc7-4622-abe6-9153aaf66090",
+      "arabic": "كَبِيرٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "great",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "df254fcc-5522-4c5b-a5ae-1d9b0982a348",
+      "arabic": "نَعْقِلُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "reasoned",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "ba1629b9-6835-450b-8ac1-d6c85ae0ed5e",
+      "arabic": "فَسُحْقًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "so away with",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "f03b1117-361a-4fd0-a2c4-c18a6d8eec10",
+      "arabic": "فَٱعْتَرَفُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "Then they (will) confess",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "0a3dd141-7acb-4eaa-89e2-56dc68c171ad",
+      "arabic": "قَوْلَكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "your speech",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7f261758-75ab-4c29-a514-fd576e50136a",
+      "arabic": "وَأَسِرُّوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "And conceal",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9be9a82c-6292-4990-b92f-01738071b153",
+      "arabic": "بِهِۦٓ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "it",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b3027241-b2e0-4524-8ad5-c51749118bfc",
+      "arabic": "ٱجْهَرُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "proclaim",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "2cfee43e-077f-44d7-b186-a311e11dbba0",
+      "arabic": "مَنَاكِبِهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "(the) paths thereof",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "631ce40b-8fa5-44b7-b349-27dcdc072b65",
+      "arabic": "فَٱمْشُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "so walk",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c9b654af-2fbf-4c67-9d9a-db7830108659",
+      "arabic": "ذَلُولًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "subservient",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "cd0c3f71-aefd-4fa9-96c7-52e2aeeee39e",
+      "arabic": "رِّزْقِهِۦ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "His provision",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "ad84be29-f4e1-44d9-96a3-a9ea99e4d1ec",
+      "arabic": "ءَأَمِنتُم",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "Do you feel secure",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "4a3e28dd-7461-4434-8594-c09a7de2c163",
+      "arabic": "نَذِيرِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "(was) My warning",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "76c98ebc-b10a-4b9e-886f-bfedd3c59192",
+      "arabic": "حَاصِبًۭا ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "a storm of stones",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "962cbe20-a157-48f3-b8cb-54a52dcc439d",
+      "arabic": "أَمِنتُم",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "do you feel secure",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "4f426bc5-0de9-4cbf-8adf-fc68c4fadf1e",
+      "arabic": "صَـٰٓفَّـٰتٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "spreading (their wings)",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9856f1b9-104b-4b05-bdf4-89bfd00c1ffe",
+      "arabic": "وَيَقْبِضْنَ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "and folding",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c120e0a4-b755-42f3-a6a3-92f19f771330",
+      "arabic": "غُرُورٍ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "delusion",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "200831b7-791a-4bc7-bea8-00f2180bbfd5",
+      "arabic": "يَرْزُقُكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "to provide you",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "2fd9d34f-6967-4525-b14f-42b379ac84e6",
+      "arabic": "أَمْسَكَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "He withheld",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "712e23da-b8af-4234-b975-d184ce1a7cf4",
+      "arabic": "عُتُوٍّۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "pride",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9d73df8f-42c2-4d74-836d-2c6aa3032d12",
+      "arabic": "وَنُفُورٍ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "and aversion",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a0d526fe-42d8-4cf7-bb02-538c3b519a94",
+      "arabic": "لَّجُّوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "they persist",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "cf0cd156-a1fe-4fd8-a57c-0ec49b2e17c6",
+      "arabic": "رِزْقَهُۥ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "His provision",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "3024a59a-52e6-40e6-aa6d-314977ecf547",
+      "arabic": "مُكِبًّا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "fallen",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "563aa1ef-0b5b-467a-9dc8-bf0b510b0260",
+      "arabic": "أَهْدَىٰٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "better guided",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7c8dd444-07b8-42f2-9d6c-81fb51449498",
+      "arabic": "سَوِيًّا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "upright",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "bfe2be8d-42e0-4b7a-86fe-f6d558e8aea0",
+      "arabic": "وَجْهِهِۦٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "his face",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "734987f3-cf2b-4674-ba75-f473a3797818",
+      "arabic": "وَٱلْأَفْـِٔدَةَ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "and the feelings",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d89dc3e2-dc2e-4bfa-bdc6-465fb4106330",
+      "arabic": "أَنشَأَكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "produced you",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "118da94b-bf96-416d-ac2a-c59f27ff9328",
+      "arabic": "وُجُوهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "(the) faces",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "75e6eef0-99c2-432e-9ba6-a7642faacca8",
+      "arabic": "سِيٓـَٔتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "(will be) distressed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e2ad6637-049b-4fbf-8ae3-966d8f8e7bdc",
+      "arabic": "زُلْفَةًۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "approaching",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "2622f891-e6e0-4c43-9cf5-3094ef1fac3c",
+      "arabic": "رَحِمَنَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "has mercy upon us",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "aece7371-29e2-47b9-af76-d67ef8f7106d",
+      "arabic": "أَهْلَكَنِىَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "destroys me",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "4e4ee487-1aba-4871-99ff-cc5cd9d462a6",
+      "arabic": "تَوَكَّلْنَا ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "we put (our) trust",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "b22ca5a0-95f4-432a-bcf9-97945dd3650a",
+      "arabic": "أَصْبَحَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "becomes",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c46849f2-f5c6-4616-9f34-a9f3a571c05b",
+      "arabic": "مَآؤُكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "67"
+      ],
+      "meaning": "your water",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "818cea73-0b32-44c7-bb9f-694ccc7cc018",
+      "arabic": "أَنذِرْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "Warn",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "1c97bef6-0f90-4893-91d3-d257a9d6b28f",
+      "arabic": "وَيُؤَخِّرْكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and give you respite",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "67f72af4-6487-4591-ba94-e3fe026ff6bf",
+      "arabic": "يُؤَخَّرُ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "is delayed",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "07956f5c-4020-4c00-bab3-ccbcf5000780",
+      "arabic": "دَعَوْتُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "invited",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "50ed0255-460f-4a5d-a030-e3e248640d77",
+      "arabic": "وَنَهَارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and day",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "93ec09f3-73d1-4f47-b753-0bb7e4e2c443",
+      "arabic": "يَزِدْهُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "increased them",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "d4468236-2abf-4c0c-b9ce-83ee2198ff9d",
+      "arabic": "دُعَآءِىٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "my invitation",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "03addde6-adc7-408d-9f78-925e874eca89",
+      "arabic": "لِتَغْفِرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "that You may forgive",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "51cc0ebc-1d39-4efe-936a-a39df47ca7b9",
+      "arabic": "وَٱسْتَغْشَوْا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and covered themselves",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "5a738c61-f502-4507-910b-4b4fae66fe65",
+      "arabic": "جَعَلُوٓا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "they put",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "85ab07ed-9ce3-47ef-aefe-0ae58fc48c24",
+      "arabic": "دَعَوْتُهُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "I invited them",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "dc12f6e5-54a9-45da-816b-d26c785058c2",
+      "arabic": "وَأَصَرُّوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and persisted",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "f75963f4-c47f-4ade-aaea-3cdd3d4cbe9d",
+      "arabic": "جِهَارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "publicly",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "40a26ef5-08c5-4486-86d8-0c670bb04bb0",
+      "arabic": "وَأَسْرَرْتُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and I confided",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "55c1c781-44d5-4fd4-84f6-ca85946b0cec",
+      "arabic": "أَعْلَنتُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "announced",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c005a038-4768-493b-b025-0ec75e0b73ee",
+      "arabic": "إِسْرَارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "secretly",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "41b30d3c-cdb6-4042-bccf-0f447391bd46",
+      "arabic": "غَفَّارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "Oft-Forgiving",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "ad486e68-bf2e-41ec-9862-070b49ad66cb",
+      "arabic": "فَقُلْتُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "Then I said",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "5f825313-c7ef-4258-a646-0e8779bc7181",
+      "arabic": "وَيُمْدِدْكُم",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "And provide you",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "91badc64-e44c-4da5-bdcd-b15589ed5aeb",
+      "arabic": "تَرْجُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "you attribute",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c52ac29e-2b2d-48ae-9aee-e486562b4995",
+      "arabic": "وَقَارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "grandeur",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "17952d15-4261-4c40-8470-9100f279a3bb",
+      "arabic": "أَطْوَارًا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "(in) stages",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "6fd84ef1-2364-4263-99ae-124ecda65040",
+      "arabic": "طِبَاقًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "(in) layers",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "205e3867-733a-4d48-a4f5-572e312a5067",
+      "arabic": "نَبَاتًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "(as) a growth",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "ede1ea96-a2fe-4e6c-a840-70bf9b645bd7",
+      "arabic": "أَنۢبَتَكُم",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "has caused you to grow",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "3d0ae8f2-1e01-41f2-83b7-723aec010fdb",
+      "arabic": "يُعِيدُكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "He will return you",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "6e3e8997-8c58-4703-a12b-580c23497f6a",
+      "arabic": "إِخْرَاجًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "(a new) bringing forth",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "88239f61-4402-4a35-88af-773acde9fad5",
+      "arabic": "وَيُخْرِجُكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and bring you forth",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "1f32f9e8-6853-46a2-b71a-10c4cb64b348",
+      "arabic": "بِسَاطًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "an expanse",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "8a62f8e1-7a39-4788-9068-8a070be2f9a4",
+      "arabic": "لِّتَسْلُكُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "That you may go along",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "0b6221e7-f74d-448f-9fc9-9f87ecf593c8",
+      "arabic": "وَوَلَدُهُۥٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and his children",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "1d347a5c-d607-498a-a10c-bbf98f2e00a5",
+      "arabic": "عَصَوْنِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "disobeyed me",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "650d9903-a01f-4b16-af2d-3d169c313b0b",
+      "arabic": "يَزِدْهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "increase him",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "a358e5f9-db07-427e-92d4-30a797711ef9",
+      "arabic": "كُبَّارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "great",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "06455680-3b28-4130-b1a2-ab440707b6c0",
+      "arabic": "وَيَعُوقَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and Yauq",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "5b967445-6285-4086-bcbb-02bbba7d04a5",
+      "arabic": "وَدًّۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "Wadd",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "6940bc22-09b0-4320-ba03-eb16e314564c",
+      "arabic": "تَذَرُنَّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "leave",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "718da78e-1762-428d-b461-3f8c204aa6fb",
+      "arabic": "وَنَسْرًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "and Nasr",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "76f72f46-2c2a-4d2c-a7c9-811769e75ef3",
+      "arabic": "يَغُوثَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "Yaguth",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "a31014bc-24a4-4bbe-8175-9b3bd8e1aec1",
+      "arabic": "سُوَاعًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "Suwa",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "030bf80b-9cfd-4a7c-bcb7-72673747e83d",
+      "arabic": "تَزِدِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "increase",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "935a90fb-06a0-40da-bd92-a3ac51bf323b",
+      "arabic": "أَضَلُّوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "they have led astray",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "828da072-4d4a-4f8b-9179-cf2bde7ef523",
+      "arabic": "أَنصَارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "any helpers",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "d0a5c009-1342-475e-b1b0-3c5173880ac4",
+      "arabic": "خَطِيٓـَٔـٰتِهِمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "their sins",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e9c41f07-9b78-4a7b-b72e-dd6fcc180a8d",
+      "arabic": "فَأُدْخِلُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "then made to enter",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "f0dd29db-a74f-42c1-ba45-fba851b85d07",
+      "arabic": "أُغْرِقُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "they were drowned",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0ea473d7-b49b-46bd-95f8-32f790c3d7ad",
+      "arabic": "تَذَرْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "leave",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "fed32a97-3a14-4e2b-a36e-41439a5ca647",
+      "arabic": "دَيَّارًا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "(as) an inhabitant",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "15946da2-4aca-4c67-b89f-82c9a504f890",
+      "arabic": "كَفَّارًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "a disbeliever",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "305d83ca-1228-4f6c-85c0-2f1b84630799",
+      "arabic": "يَلِدُوٓا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "they will beget",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "341d16e5-f5e1-453a-a588-6f6cae7f4c6d",
+      "arabic": "فَاجِرًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "a wicked",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "4942c339-1ec9-4170-8221-e21ee28da6e7",
+      "arabic": "يُضِلُّوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "they will mislead",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "91a2cdb3-1e34-4511-b04a-ac83da934804",
+      "arabic": "تَذَرْهُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "You leave them",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "06b2962b-efa7-4f94-b9cc-a9eaf9a47d63",
+      "arabic": "تَبَارًۢا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "71"
+      ],
+      "meaning": "(in) destruction",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "046f6656-bdd0-4cce-84dd-fddb70d6b9ff",
+      "arabic": "ٱللَّوَّامَةِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "self-accusing",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a17227d9-8233-46aa-b3b7-f5bc02f77f19",
+      "arabic": "بِٱلنَّفْسِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "for the life",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0156cf7d-3b93-4827-9d5f-6de2921304ce",
+      "arabic": "نَّجْمَعَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "We will assemble",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "188635e4-e7d9-4374-8c1f-e31f8e036a52",
+      "arabic": "أَلَّن",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "that not",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "93a3bdf8-f8e8-4812-981a-76541eea5765",
+      "arabic": "عِظَامَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "his bones",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "38b437f6-bbda-4623-8f04-caa366876698",
+      "arabic": "بَنَانَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "his fingertips",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "ec698fc5-d587-4e22-8bb7-86ad5628e778",
+      "arabic": "نُّسَوِّىَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "We can restore",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "861fe8cc-ec73-473f-b627-f8e04ffdf00b",
+      "arabic": "أَمَامَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(to) what is before him",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "c618f213-e9f0-4b4b-b75f-a990a1f4463a",
+      "arabic": "لِيَفْجُرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "to give (the) lie",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "96103dc6-5f09-4220-b4d0-96c9547a4ad4",
+      "arabic": "بَرِقَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "is dazzled",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "34b4bff3-88d4-4395-99bb-928de956408b",
+      "arabic": "وَخَسَفَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "And becomes dark",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "221db336-1250-495e-955b-b29469910801",
+      "arabic": "وَجُمِعَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "And are joined",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4db6e3c3-8f23-481d-9938-df261e0d1bc7",
+      "arabic": "ٱلْمَفَرُّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(is) the escape",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4dd67b22-2364-4e2c-b30c-0508cb55dfe2",
+      "arabic": "وَزَرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "refuge",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0ed00797-f2a9-4beb-8cd1-758680e4b43c",
+      "arabic": "ٱلْمُسْتَقَرُّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(is) the place of rest",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "16a23485-9b09-4e29-94bd-39db38b35e69",
+      "arabic": "وَأَخَّرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "and kept back",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7c9ed41b-b510-42a6-94e2-af9f99d6204e",
+      "arabic": "قَدَّمَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "brought",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8db2cccd-35f7-4a14-899b-4d81e720baa9",
+      "arabic": "يُنَبَّؤُا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "Will be informed",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "0b501b23-32f3-480c-b627-143978e41693",
+      "arabic": "بَصِيرَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(will be) a witness",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "b65a830a-8628-4782-92ed-cacecd89d14c",
+      "arabic": "مَعَاذِيرَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "his excuses",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "eed58f14-9d74-4557-8b87-18a124dc384b",
+      "arabic": "أَلْقَىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "throws",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8455745c-f1b8-4497-86c2-726fa1489395",
+      "arabic": "تُحَرِّكْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "move",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a8aa50c5-2506-4106-ae53-3183cec7e46a",
+      "arabic": "لِسَانَكَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "your tongue",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "be75cee3-9465-4027-b7c0-abb25e31f722",
+      "arabic": "لِتَعْجَلَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "to hasten",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4c56a861-3c20-404f-a92d-d9e2e4627dd9",
+      "arabic": "جَمْعَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(is) its collection",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8be57737-2388-4168-840e-5e18e5dc4db3",
+      "arabic": "وَقُرْءَانَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "and its recitation",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "227ff9de-4a2b-437b-8661-f3e882f1d98f",
+      "arabic": "فَٱتَّبِعْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "then follow",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "330fd623-b869-4dc5-8765-aad30ce83275",
+      "arabic": "قُرْءَانَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "its recitation",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "52a52f54-3a4d-4e05-acff-34ab03c42ffe",
+      "arabic": "قَرَأْنَـٰهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "We have recited it",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "80992346-1084-4e17-87a3-b43e4380b927",
+      "arabic": "بَيَانَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(is) its explanation",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d79f0570-ec2f-4fe2-be3e-5d3c53a51719",
+      "arabic": "تُحِبُّونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "love",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "07eda649-9494-48e4-9939-c84f6bb9fe69",
+      "arabic": "وَتَذَرُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "And you leave",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "2de04dfe-c5b8-4552-8f2d-f52031d9a10d",
+      "arabic": "نَّاضِرَةٌ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(will be) radiant",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8143b28a-d328-44d2-b090-b0290b148f21",
+      "arabic": "نَاظِرَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "looking",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b901498b-e645-4ada-9f09-6191b95b6cd8",
+      "arabic": "بَاسِرَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(will be) distorted",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "12adfad8-9cd3-45cc-9f1c-610d946deb22",
+      "arabic": "فَاقِرَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "backbreaking",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "5e9f0119-edfc-4b44-a7a0-73890e287917",
+      "arabic": "تَظُنُّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "Thinking",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "cc2e9e67-3abc-4aeb-8cd7-76274c0086bf",
+      "arabic": "يُفْعَلَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "will be done",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "2e2b55ff-a69e-4ffe-be59-f1ed29746d15",
+      "arabic": "ٱلتَّرَاقِىَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "the collar bones",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "d44d93b1-900a-43ff-85a5-da936c70e78f",
+      "arabic": "مَنْ ۜ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "Who",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "eeb7d883-a657-47e6-9aa3-9659d49a6342",
+      "arabic": "رَاقٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(will) cure",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9db9ec52-d070-418e-a652-3668638ab7e8",
+      "arabic": "ٱلْفِرَاقُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(is) the parting",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d190bbee-c9bc-4761-a33d-4eea89219e48",
+      "arabic": "وَظَنَّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "and think",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "142f8a20-9d7b-4ebd-9211-5aef0b0a7bcd",
+      "arabic": "بِٱلسَّاقِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "about the leg",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "76f475fb-4049-4d45-b8cf-9b6d2996b970",
+      "arabic": "وَٱلْتَفَّتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "And is wound",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "91e1ca1e-750b-4d59-9635-074085b282c6",
+      "arabic": "ٱلسَّاقُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "the leg",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "eb25afb9-91a3-4cbf-bc0d-3cde8c9c319e",
+      "arabic": "ٱلْمَسَاقُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(will be) the driving",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "b0cd7abb-23e1-4e1f-acae-9e9a60308c63",
+      "arabic": "صَلَّىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "he prayed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "1816d13d-9865-43f2-a6a3-ef3764b660e6",
+      "arabic": "ذَهَبَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "took away",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "367d287e-2399-4928-838a-f32b45030ae0",
+      "arabic": "يَتَمَطَّىٰٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "swaggering",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "da8ab590-09cd-4b70-bb27-19abf6cb56e0",
+      "arabic": "فَأَوْلَىٰٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "and woe",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "6b10ff89-a2fa-4ed9-8959-f76027d3f5f7",
+      "arabic": "يُتْرَكَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "he will be left",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "c8f0d2af-957c-4852-8d0b-d21b0f038b79",
+      "arabic": "سُدًى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "neglected",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4f9d7887-1b80-447d-b1a1-1a0cc6a014c9",
+      "arabic": "نُطْفَةًۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(as) a semen-drop",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7280db56-2a71-42f9-b04e-6d0614bd4ef9",
+      "arabic": "مَّنِىٍّۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "semen",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "83ea9ed5-3738-4987-949f-07520e55f3ff",
+      "arabic": "يُمْنَىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "emitted",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "88323c83-bed0-432c-a0ef-5785d95f2740",
+      "arabic": "فَخَلَقَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "then He created",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a520bdbd-7e7f-4163-91be-e7e1db322bab",
+      "arabic": "عَلَقَةًۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "(into) a clinging substance",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "cb314460-8eca-4f55-816f-c5dad1710dcb",
+      "arabic": "فَجَعَلَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "75"
+      ],
+      "meaning": "and He made",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7333c3a2-95f7-4c49-8295-425efb949ce6",
+      "arabic": "وَٱلْمُرْسَلَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "By the ones sent forth",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "e7fa13ee-d63e-4680-b55e-aafce5ce53ce",
+      "arabic": "عُرْفًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "one after another",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "af01fe95-5294-4d7c-9680-bc78e87d5893",
+      "arabic": "فَٱلْعَـٰصِفَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "And the winds that blow",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "e36be04c-b5bf-473c-bee8-895f4fd7d77c",
+      "arabic": "عَصْفًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "violently",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "15c89244-270a-4014-9198-0b3d12c66d4b",
+      "arabic": "وَٱلنَّـٰشِرَٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "And the ones that scatter",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "f92703db-bcab-4c41-a1f6-db1ddd67a304",
+      "arabic": "نَشْرًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "far and wide",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "0572aa57-8ed5-46bc-a6ed-535aded72193",
+      "arabic": "فَٱلْفَـٰرِقَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "And those who separate",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "d7e5508c-1b2e-45ee-b94f-9f236d83c708",
+      "arabic": "فَرْقًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "(by the) Criterion",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "210b0da0-f5a7-452f-8457-94f5d017e914",
+      "arabic": "فَٱلْمُلْقِيَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "And those who bring down",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "9ede836b-c363-4dcf-97ec-468924845f21",
+      "arabic": "عُذْرًا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "(As) justification",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "b8658f9c-a931-4c67-b535-a37bd9b88242",
+      "arabic": "نُذْرًا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "warning",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "1dcf4fe1-5a0a-4ecc-b8fb-2663c575d268",
+      "arabic": "طُمِسَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "are obliterated",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "6d7541db-9669-424b-b9af-697dc8bfee34",
+      "arabic": "فُرِجَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "is cleft asunder",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "3449c0f3-5c40-4b96-b144-721ce7b3a6ee",
+      "arabic": "نُسِفَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "are blown away",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "50a3947b-19bd-466d-9985-a1a0082bc075",
+      "arabic": "أُقِّتَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "are gathered to their appointed time",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "bf65324f-0ce3-496c-9f64-5d39a4aba2cd",
+      "arabic": "لِأَىِّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "For what",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c1b101a3-9f0e-4179-a825-1f143bdbc480",
+      "arabic": "أُجِّلَتْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "are (these) postponed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "ffbcd3c3-7efb-4377-97b3-7523b517b7ae",
+      "arabic": "نُهْلِكِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "We destroy",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b9e20c40-45c5-4bde-8b48-ace3f658619d",
+      "arabic": "نُتْبِعُهُمُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "We follow them up",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "e2691d63-0ff3-44c0-9b65-0293275bb5f9",
+      "arabic": "نَخْلُقكُّم",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "We create you",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "7bda05c1-841c-46b6-8648-1992b119c75e",
+      "arabic": "مَّكِينٍ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "safe",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "05722c06-0e07-486f-b70f-2758dcfd7ef6",
+      "arabic": "ٱلْقَـٰدِرُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "(are We to) measure",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "a0afa593-a0c8-43bb-bebf-7a75148c65a0",
+      "arabic": "فَقَدَرْنَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "So We measured",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "030f1a63-3c5f-47d0-8806-12057321d75c",
+      "arabic": "كِفَاتًا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "a receptacle",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "74c37a4c-c769-448f-8d5d-fa467cda1096",
+      "arabic": "وَأَمْوَٰتًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "and (the) dead",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "b79a17cb-5c52-48cc-be8b-715c97e4d8e3",
+      "arabic": "أَحْيَآءًۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "(For the) living",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "24b61d7e-c394-4d19-90b1-0418d3e6fd53",
+      "arabic": "فُرَاتًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "sweet",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "3713551c-59bf-4550-906c-df89f4de55f4",
+      "arabic": "شَـٰمِخَـٰتٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "lofty",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "6efc676b-b3c4-41ad-958b-0bf28dc6ed4c",
+      "arabic": "وَأَسْقَيْنَـٰكُم",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "and We gave you to drink",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "3cce63cf-a971-4700-8f4b-f128fa2f0e36",
+      "arabic": "ٱنطَلِقُوٓا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "Proceed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "421a7b8a-f54c-416d-be79-baa764fad734",
+      "arabic": "ظِلٍّۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "a shadow",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c039f13c-cd58-492c-8b24-ec2e92c8b753",
+      "arabic": "ثَلَـٰثِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "three",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d9187228-abe4-424a-91a2-f9df0540cc21",
+      "arabic": "شُعَبٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "columns",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0fcfa319-6349-4c32-ad82-78f851a169e5",
+      "arabic": "ٱللَّهَبِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "the flame",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "2adc2ebc-287e-4ea4-9885-0326c7935446",
+      "arabic": "ظَلِيلٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "cool shade",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "073c2b8c-26ba-410b-93d4-17111df0ae73",
+      "arabic": "تَرْمِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "throws up",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "2a096abd-a25b-4158-89bc-0ff88a12293d",
+      "arabic": "بِشَرَرٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "sparks",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "40b0b227-ca4e-4385-8c45-9e4bfcb1f341",
+      "arabic": "كَٱلْقَصْرِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "as the fortress",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9d75b5b0-14cc-4d4f-b369-665e0d3551d9",
+      "arabic": "صُفْرٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "yellow",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "ce89a831-50bc-4b04-96a0-156d5dec077b",
+      "arabic": "جِمَـٰلَتٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "camels",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "22849826-2d0e-488c-bcf2-5d35176ca5b1",
+      "arabic": "فَيَعْتَذِرُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "to make excuses",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "196681f8-b345-4f1d-a5e8-bc5ac0cc77b7",
+      "arabic": "وَٱلْأَوَّلِينَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "and the former (people)",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "63daabd6-70a7-45d5-9684-7682c8c7b404",
+      "arabic": "ٱلْفَصْلِ ۖ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "(of) Judgment",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "881f161f-6158-401b-b04a-dd077897ebd7",
+      "arabic": "جَمَعْنَـٰكُمْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "We have gathered you",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "4e9079f8-a11c-4b5b-a088-aab3271d5daa",
+      "arabic": "كَيْدٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "a plan",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "60300600-3e51-416c-ac5f-48752646d0a1",
+      "arabic": "فَكِيدُونِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "then plan against Me",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "28da7a46-d789-4886-9318-0029c406cd18",
+      "arabic": "ظِلَـٰلٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "shades",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "26bcd968-9e45-4d83-b841-c8f10da634d9",
+      "arabic": "وَفَوَٰكِهَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "And fruits",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "76d4b2e2-a8d4-4e9a-adff-f94a6ada643e",
+      "arabic": "وَتَمَتَّعُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "and enjoy yourselves",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "5b4b64d0-7b6d-4385-a00a-e5f96b0f655e",
+      "arabic": "يَرْكَعُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "77"
+      ],
+      "meaning": "they bow",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "05c6339c-0795-4773-ab71-4afb646f9c03",
+      "arabic": "غَرْقًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "violently",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "fac47be8-cdd3-4f84-a402-31435b1e54cb",
+      "arabic": "وَٱلنَّـٰزِعَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "By those who extract",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "11f5dba8-8c28-4614-9db6-12191e5a3639",
+      "arabic": "نَشْطًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "gently",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "de4808a5-647f-463d-8a3d-025a3a4554c1",
+      "arabic": "وَٱلنَّـٰشِطَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "And those who draw out",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "69e76bf4-9ec9-46fe-be22-753d9defadef",
+      "arabic": "وَٱلسَّـٰبِحَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "And those who glide",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "8d130a54-27b9-43b6-a1f9-4d4eefda3c84",
+      "arabic": "فَٱلسَّـٰبِقَـٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "And those who race each other",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "fc4b8412-6346-46eb-97f3-02e3de8d3c83",
+      "arabic": "سَبْقًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(in) a race",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "fcd27e2b-7732-4f1c-b927-ea25da93a7f1",
+      "arabic": "فَٱلْمُدَبِّرَٰتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "And those who arrange",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "590eeb17-a0ed-43af-9e3b-198ea6bf1952",
+      "arabic": "ٱلرَّاجِفَةُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "the quaking one",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "601bf532-9e2b-4429-a5de-f5e871533d22",
+      "arabic": "تَتْبَعُهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "Follows it",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "f04b18fa-2c31-4742-a737-11f04993d93a",
+      "arabic": "ٱلرَّادِفَةُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "the subsequent",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "fa2390f8-0f27-45fc-9a3d-308ab63eb9b9",
+      "arabic": "وَاجِفَةٌ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "will palpitate",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "453f02e1-814f-4597-8525-fd2b90215d51",
+      "arabic": "أَبْصَـٰرُهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "Their eyes",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "f3376747-9b82-40eb-b384-f57cf4164267",
+      "arabic": "خَـٰشِعَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "humbled",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "3f1e05ec-09c1-41b6-b3a9-04bd8ae19e6b",
+      "arabic": "لَمَرْدُودُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "indeed be returned",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "67779f4e-f77e-43a1-aa18-e4931939fb32",
+      "arabic": "ٱلْحَافِرَةِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "the former state",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "5efb1474-741f-4f71-b799-daaf7ba9ce35",
+      "arabic": "نَّخِرَةًۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "decayed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "30287b28-f047-446a-af40-8f38307551f6",
+      "arabic": "خَاسِرَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "losing",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a0991aa8-6462-4167-8ca7-65b42a22e951",
+      "arabic": "كَرَّةٌ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(would be) a return",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "acf904e0-a301-4f42-a366-8c721b1123bf",
+      "arabic": "بِٱلسَّاهِرَةِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(will be) awakened",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b1de9264-ead0-4de6-98c5-1a32c3b018de",
+      "arabic": "نَادَىٰهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "called him",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "cb9a9870-2ca3-4bb0-8723-3c744cf74f83",
+      "arabic": "طُوًى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(of) Tuwa",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0dcc47de-6c71-44c4-a9fc-cfa618391d06",
+      "arabic": "فَتَخْشَىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "so you would fear",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "6f2b125a-85b5-4ae0-b809-fe7139583863",
+      "arabic": "وَأَهْدِيَكَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "And I will guide you",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "6034ea36-812b-4f53-8a36-79f0b0e686f8",
+      "arabic": "ٱلْـَٔايَةَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "the sign",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e64905c4-30fc-4da3-8f3d-8aed1155e18f",
+      "arabic": "فَأَرَىٰهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "Then he showed him",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "8f351993-3b22-4e72-bfec-8648326de774",
+      "arabic": "وَعَصَىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "and disobeyed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7a2957b9-6d56-48da-a8bf-48af17f8c95e",
+      "arabic": "فَحَشَرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "And he gathered",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c45b4aef-1275-4525-85cf-11dfb52705ee",
+      "arabic": "فَأَخَذَهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "So seized him",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c6649280-95a0-4d5d-92ca-e346511cc81e",
+      "arabic": "وَٱلْأُولَىٰٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "and the first",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "f3535bd3-9e75-4b63-914b-f4228431323b",
+      "arabic": "نَكَالَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(with) an exemplary punishment",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "22dafc40-a2f8-447d-9c9d-2abaf14f693f",
+      "arabic": "يَخْشَىٰٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "fears",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "88aee248-2d96-4a2b-88f8-2c83ecc3e587",
+      "arabic": "ٱلسَّمَآءُ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "the heaven",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "677c658a-de4b-47fc-89ae-ade52433cd5b",
+      "arabic": "سَمْكَهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "its ceiling",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "0f4d2af6-c6e5-4c65-a198-29c99e597ec4",
+      "arabic": "ضُحَىٰهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "its brightness",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "33617bd5-a98f-424f-b2ae-7b9ebe3897b0",
+      "arabic": "وَأَغْطَشَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "And He darkened",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7576756b-c343-4e13-8012-53e1e2bb0214",
+      "arabic": "وَأَخْرَجَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "and brought out",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "fc6447c3-1926-4b0c-9c67-3c016932705f",
+      "arabic": "لَيْلَهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "its night",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "f628db5c-52be-4d69-8765-8fafa04a8d97",
+      "arabic": "دَحَىٰهَآ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "He spread it",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4321c9ed-751a-40ad-b583-20e2b0d92c2c",
+      "arabic": "وَمَرْعَىٰهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "and its pasture",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "75fcfb6f-b9a6-4079-9635-35616e7cc6fd",
+      "arabic": "مَآءَهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "its water",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "50ae6cfc-179b-4bc4-b276-302a45ad0f2d",
+      "arabic": "أَرْسَىٰهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "He made them firm",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "287cf880-942c-4450-bc99-e4ce5019dcbf",
+      "arabic": "ٱلطَّآمَّةُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "the Overwhelming Calamity",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "84725357-750f-4561-bb66-99d8e5f86d45",
+      "arabic": "وَءَاثَرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "And preferred",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "2382bb6e-c8bb-4f82-b3af-8826886a63f8",
+      "arabic": "وَنَهَى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "and restrained",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "64129aa8-a251-4669-88e7-fed1d7954604",
+      "arabic": "مُرْسَىٰهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(is) its arrival",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "312874c3-57af-4ea9-a2e1-cdc678c7475e",
+      "arabic": "ذِكْرَىٰهَآ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(to) mention it",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "98122c49-2004-47ef-ab25-db2cce9373ed",
+      "arabic": "مُنتَهَىٰهَآ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(is) its finality",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "57ff4e9e-7712-4f0c-bc94-e46c809193ef",
+      "arabic": "مُنذِرُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "(are) a warner",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a6858585-59c3-445f-b90f-67f87ed905b3",
+      "arabic": "يَخْشَىٰهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "fears it",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "9d820e8b-6b38-4760-ae71-9ff53c49a8a0",
+      "arabic": "عَشِيَّةً",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "an evening",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a2cbb0e8-7b9a-4822-be64-e6e5879b24aa",
+      "arabic": "يَرَوْنَهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "79"
+      ],
+      "meaning": "they see it",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "dfb167c4-a2b2-4522-96d5-b5a0d65dd6ab",
+      "arabic": "يَزَّكَّىٰٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "purify himself",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "1d37ada2-2dcb-458f-88cb-4e07617bd090",
+      "arabic": "ٱلذِّكْرَىٰٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "the reminder",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b05a9f87-cecf-4aca-9213-fc9b7529d7e1",
+      "arabic": "فَتَنفَعَهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "so would benefit him",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "5967691b-bf7c-4b8c-a3f5-e0f5bcce2ded",
+      "arabic": "ٱسْتَغْنَىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "considers himself free from need",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "6e7496c0-ea7b-4b83-8cbe-e6c1c896f027",
+      "arabic": "فَأَنتَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "So you",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d49f546b-267c-4d72-9787-ed04aefb8a36",
+      "arabic": "تَصَدَّىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "give attention",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0ffc81c9-0165-4546-9f7c-4177fac8d529",
+      "arabic": "يَزَّكَّىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "he purifies himself",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "95cb8968-1e13-481c-87f9-04501339a48c",
+      "arabic": "تَلَهَّىٰ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(are) distracted",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4e9295ab-1d30-45c9-8e75-9efbccb9cf1a",
+      "arabic": "مُّكَرَّمَةٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "honored",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "90aafd9b-6f7c-499f-b5f0-2703f9b188a2",
+      "arabic": "صُحُفٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "sheets",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4f130714-db55-4a77-be25-28d85c0997c3",
+      "arabic": "مَّرْفُوعَةٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "Exalted",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c29034bd-0cf7-4d0b-831f-f9985247c41b",
+      "arabic": "مُّطَهَّرَةٍۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "purified",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0948ae01-85f8-4cdc-8137-e5d669ee223c",
+      "arabic": "سَفَرَةٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(of) scribes",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a6f9bb7c-c73c-4cc5-a145-761edc8dc4bd",
+      "arabic": "بِأَيْدِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "In (the) hands",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "28c32f66-c32f-4859-af04-c5b0f2b391f6",
+      "arabic": "كِرَامٍۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "Noble",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "687d4236-5716-45e0-9b2c-8e7949de26f5",
+      "arabic": "بَرَرَةٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "dutiful",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "91383bc1-4be2-433c-bbb3-6679f9524462",
+      "arabic": "أَكْفَرَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "ungrateful is he",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0d981495-21e5-41fc-b820-30a7f9baaf56",
+      "arabic": "يَسَّرَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "He made easy for him",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "4ae7c86b-785b-4856-85bf-d216be772ed3",
+      "arabic": "فَأَقْبَرَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "and provides a grave for him",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "ff57191f-f194-4128-86b9-bc022e5e173f",
+      "arabic": "أَمَاتَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "He causes him to die",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "d02b5495-293b-425b-a435-d767a4838cfc",
+      "arabic": "أَنشَرَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "He will resurrect him",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "01f9273e-2691-4a5d-a67a-f6bc28de3424",
+      "arabic": "يَقْضِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "he has accomplished",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "7fe4e1a1-748e-4654-81b7-9d34b44b746b",
+      "arabic": "أَمَرَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "He commanded him",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "dde777dc-68b4-457d-bebc-046f280cfc24",
+      "arabic": "طَعَامِهِۦٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "his food",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "6d169281-00e0-4a60-bdb2-6b59338d7f38",
+      "arabic": "اَنَّا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "That [We]",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "87a15c8e-1c03-4eda-9503-32854f076205",
+      "arabic": "صَبَبْنَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "[We] poured",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "b50ccf36-34d6-4ebf-a8e3-bd9a848d7468",
+      "arabic": "صَبًّۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(in) abundance",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "3b4ec739-9443-4a6f-9641-5eac893755e1",
+      "arabic": "شَقًّۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "splitting",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "bc5d456b-c9a5-4d8f-8cac-b930efc0044f",
+      "arabic": "شَقَقْنَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "We cleaved",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "510dc9bd-b516-4d8e-88bc-a70cb420e166",
+      "arabic": "وَعِنَبًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "And grapes",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "bfcabd0b-55bc-4f28-a78d-b1d202f02336",
+      "arabic": "وَقَضْبًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "and green fodder",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "38bb985e-5f09-4762-9f65-81505a00dcf9",
+      "arabic": "وَزَيْتُونًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "And olive",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "cb37f60e-9680-4ab1-959c-3ace5feaa463",
+      "arabic": "وَنَخْلًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "and date-palms",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "d6a57ec1-86cf-4c5c-9eaf-6a70a82ade2e",
+      "arabic": "غُلْبًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(of) thick foliage",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "f31d8e6f-7d3c-4ba9-8963-5e0745e6c1e2",
+      "arabic": "وَحَدَآئِقَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "And gardens",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "5f64a059-31f4-44d8-a6b8-aa8e79228ca5",
+      "arabic": "وَأَبًّۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "and grass",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "b8264ca6-b23c-43fd-bf84-a00b86efc23c",
+      "arabic": "وَفَـٰكِهَةًۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "And fruits",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "f50f3d8b-5709-4e54-8f93-f515c6ca60ae",
+      "arabic": "مَّتَـٰعًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(As) a provision",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "abb7a491-e0d8-4eef-b14d-1914b94bd2cc",
+      "arabic": "ٱلصَّآخَّةُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "the Deafening Blast",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d4eb4bb7-c51f-46af-9586-6ee7aa7925c7",
+      "arabic": "يَفِرُّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "will flee",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "078dbf24-8655-40f3-b361-a6cdac44b5ea",
+      "arabic": "وَأُمِّهِۦ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "And his mother",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0d10655a-2e71-44ea-ba57-09283489bbd9",
+      "arabic": "وَأَبِيهِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "and his father",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0592d4a3-de69-4868-9ca2-efd254569bdf",
+      "arabic": "وَبَنِيهِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "and his children",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "3bb53e6c-bd59-42f5-b95e-5d34c83fe0a8",
+      "arabic": "يُغْنِيهِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "occupying him",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "ad33af75-ab43-4355-8273-ca6fa05e6550",
+      "arabic": "شَأْنٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(will be) a matter",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "0aa70254-8574-48bb-bde4-fdf69dde266b",
+      "arabic": "مُّسْفِرَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(will be) bright",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7960f82b-50fe-4bcb-8736-53f149bd31ef",
+      "arabic": "ضَاحِكَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "Laughing",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "83a8c228-ac0c-4832-8060-30f6b527ebbc",
+      "arabic": "مُّسْتَبْشِرَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "rejoicing at good news",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "e9f4eece-93d3-41c9-aee9-5ad7113e2649",
+      "arabic": "غَبَرَةٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(will be) dust",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "88d4cef4-1165-49ec-8c96-60072c1f180e",
+      "arabic": "قَتَرَةٌ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "darkness",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8b193ecb-29bf-4e5e-a71e-f1a80963f68c",
+      "arabic": "تَرْهَقُهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "Will cover them",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "afafb8c6-2db7-460b-8b84-df7a63eee4f5",
+      "arabic": "ٱلْكَفَرَةُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "(are) the disbelievers",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "eb061e5a-77ac-4905-a91c-6d17e5130a38",
+      "arabic": "ٱلْفَجَرَةُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "80"
+      ],
+      "meaning": "the wicked ones",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "77ef3f85-1284-47b9-8289-07a4fdef6e2f",
+      "arabic": "وَٱلْفَجْرِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "By the dawn",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4877a152-c1dc-4cf3-a215-5d66663332d6",
+      "arabic": "عَشْرٍۢ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "ten",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "70478c51-3a94-4040-8694-ae17805232ab",
+      "arabic": "وَلَيَالٍ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "And the nights",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "c913a0bb-ee41-4d7c-afe0-2883cdc8dfb4",
+      "arabic": "وَٱلْوَتْرِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "and the odd",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "fa0553c6-5f6e-4a21-9b5a-adfbec7219d4",
+      "arabic": "وَٱلشَّفْعِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "And the even",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "44d50e1a-5890-4ae1-b71a-0d2af1d41373",
+      "arabic": "يَسْرِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "it passes",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "a7cde036-dc58-4116-bdb7-b4089b5ae70c",
+      "arabic": "حِجْرٍ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "who understand",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "afaf219d-4964-4a7d-a643-c54e2c1e13a2",
+      "arabic": "لِّذِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "for those",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e31a0fa9-8f56-4185-b771-6ba2afe780cd",
+      "arabic": "قَسَمٌۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "(not) an oath",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "6cd1fca6-c668-47b9-babd-6e9b310a2c37",
+      "arabic": "بِعَادٍ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "with Aad",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "57422fd3-f8c0-42fd-9ad3-7c1430bfb28d",
+      "arabic": "ٱلْعِمَادِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "lofty pillars",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "b2c63487-81db-4b81-9485-824649e7eb26",
+      "arabic": "إِرَمَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "Iram",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0c6715d9-0322-44ab-b747-20277860cd85",
+      "arabic": "يُخْلَقْ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "had been created",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "8addc6b2-c75c-4b91-aa90-51b9c01ece69",
+      "arabic": "مِثْلُهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "like them",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "74120b94-956a-4b55-8cec-61d17d3087f4",
+      "arabic": "ٱلصَّخْرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "the rocks",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "fc71bf22-0031-4e67-8ba1-1965790a86f3",
+      "arabic": "جَابُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "carved out",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "0702c59e-11bc-4aaa-a508-7d4cdfba5389",
+      "arabic": "طَغَوْا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "transgressed",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d29f2d96-7c1e-4288-b396-affd76e57ec8",
+      "arabic": "فَأَكْثَرُوا۟",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "And (made) much",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "2b248c92-8eef-4fd2-b6db-709daa0b9aa7",
+      "arabic": "فَصَبَّ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "So poured",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8a2fce0c-f9dc-4a50-8be8-9b2d75ff3928",
+      "arabic": "سَوْطَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "scourge",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "38b6797d-79b0-4bef-abc4-b0ec1a470ae6",
+      "arabic": "لَبِٱلْمِرْصَادِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "(is) surely Ever Watchful",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "008520ab-cf81-44a8-a35a-17dfe53a40d3",
+      "arabic": "فَأَكْرَمَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "and is generous to him",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "039da66a-db7e-46bf-88d1-19dae1fea888",
+      "arabic": "أَكْرَمَنِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "has honored me",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "d5cc4b19-f44f-4e99-8adf-f3d739032f42",
+      "arabic": "وَنَعَّمَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "and favors him",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "e29e50b5-5fee-4b73-8e75-9db183c89c38",
+      "arabic": "ٱبْتَلَىٰهُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "try him",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "428fe196-62c2-4e70-ad85-ddf0db321fac",
+      "arabic": "أَهَـٰنَنِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "(has) humiliated me",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8ba94a05-c1e0-4197-82a3-ffcccbf8129c",
+      "arabic": "فَقَدَرَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "and restricts",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "bb60184e-c06a-4887-9265-12e501549f6c",
+      "arabic": "رِزْقَهُۥ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "his provision",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "515f50ff-afa4-40b2-a9a1-0d7872f328f9",
+      "arabic": "تُكْرِمُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "you honor",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "759f4ee7-1492-43bf-8258-a810cdbbcff9",
+      "arabic": "تَحَـٰٓضُّونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "you feel the urge",
+      "review_reason": "CONTEXT_INSUFFICIENT"
+    },
+    {
+      "word_id": "14311aa0-e368-4f21-b7b6-9291501f9976",
+      "arabic": "ٱلتُّرَاثَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "the inheritance",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4853e0b4-16dd-4974-9cb1-6c3b6bc375de",
+      "arabic": "لَّمًّۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "altogether",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "65dba9eb-8474-4704-88c8-893ba4cac87e",
+      "arabic": "وَتَأْكُلُونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "And you consume",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8e031b58-22f0-41c7-bb73-482018e758b6",
+      "arabic": "أَكْلًۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "devouring",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "312780cc-f6bd-4512-8ffb-947d216e9c53",
+      "arabic": "جَمًّۭا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "immense",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "50433e6f-725b-470a-8dbb-f0a9e265acd2",
+      "arabic": "وَتُحِبُّونَ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "And you love",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "92d09d7f-446f-4b18-acff-3ce978e0aeb1",
+      "arabic": "دُكَّتِ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "is leveled",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "edd1605c-9fb8-49aa-a4ae-e34d09edbb6d",
+      "arabic": "بِجَهَنَّمَ ۚ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "Hell",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "a5daa2ee-d9ed-4086-88c2-51fb3262fbf5",
+      "arabic": "لِحَيَاتِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "for my life",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "4287468b-042f-4d1c-ad58-55a3a7c02729",
+      "arabic": "عَذَابَهُۥٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "(as) His punishment",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "31f6f35f-d6fc-4fc1-8e65-cc2eada17d60",
+      "arabic": "وَثَاقَهُۥٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "(as) His binding",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "9ddc70de-498b-4614-bafc-a30db67b58dc",
+      "arabic": "يُوثِقُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "will bind",
+      "review_reason": "POLYSEMY"
+    },
+    {
+      "word_id": "835030e2-e004-45f5-ba3f-1898374b9b3e",
+      "arabic": "يَـٰٓأَيَّتُهَا",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "O",
+      "review_reason": "MORPHOLOGICAL_UNCERTAINTY"
+    },
+    {
+      "word_id": "a50dff0a-72bd-496e-be0a-879f521d689b",
+      "arabic": "ٱلنَّفْسُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "soul",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "f4cccd28-66cc-4bb1-889e-44dee4a3ec48",
+      "arabic": "ٱلْمُطْمَئِنَّةُ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "who is satisfied",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "17625329-04d9-4eb5-b206-6c09a3078f4f",
+      "arabic": "رَاضِيَةًۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "well pleased",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "7a806aca-ed16-457e-a4d9-72d1c7e4cb26",
+      "arabic": "ٱرْجِعِىٓ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "Return",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "8b3633f2-236e-4c86-8c3b-48b464615ade",
+      "arabic": "مَّرْضِيَّةًۭ",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "and pleasing",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "1d166b49-5fe5-4c01-a06c-43dfd9d85d4b",
+      "arabic": "فَٱدْخُلِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "So enter",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "391f8320-45d5-4282-982e-f2cc8bd8ba22",
+      "arabic": "عِبَـٰدِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "My slaves",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "6429dd3c-344d-4f22-8cde-60d913d7ab7f",
+      "arabic": "وَٱدْخُلِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "And enter",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    },
+    {
+      "word_id": "cc33c99f-3be7-4688-89ad-77178c379e11",
+      "arabic": "جَنَّتِى",
+      "status": "EDITORIAL_REVIEW_REQUIRED",
+      "surahs": [
+        "89"
+      ],
+      "meaning": "My Paradise",
+      "review_reason": "LEXICAL_SENSE_UNCERTAIN"
+    }
+  ],
+  "8_confidenceDistribution": {
+    "HIGH": 72,
+    "MEDIUM": 0,
+    "REVIEW": 487
+  },
+  "9_reviewReasonDistribution": {
+    "LEXICAL_SENSE_UNCERTAIN": 307,
+    "CONTEXT_INSUFFICIENT": 56,
+    "MORPHOLOGICAL_UNCERTAINTY": 92,
+    "POLYSEMY": 32
+  },
+  "10_sharedWordIds": [
+    {
+      "word_id": "07e38ce0-3cff-4860-ac97-53bfeb005226",
+      "arabic": "نَفْسِهِۦ",
+      "gloss_fr": null,
+      "surahs": [
+        "64",
+        "75"
+      ]
+    }
+  ],
+  "11_identityChecks": {
+    "targetPairs": 560,
+    "uniqueWordIds": 559,
+    "examined": 559,
+    "missingWordIds": [],
+    "duplicateWordIds": 0,
+    "outOfScopeWordIds": [],
+    "allPresent": true,
+    "identitySafe": true
+  },
+  "12_qualityChecks": {
+    "emptyGlossConfident": 0,
+    "emptyRationale": 0,
+    "emptyLexicalBasis": 0,
+    "emptyContextualBasis": 0,
+    "placeholderGlosses": 0,
+    "nonFrenchGlosses": 0,
+    "reviewWithGloss": 0,
+    "qualityPass": true
+  },
+  "13_sourceIntegrity": {
+    "sourceFiles": [
+      "reports/phase-88f-be-editorial-evidence-review.json"
+    ],
+    "canonicalFormsFromEvidence": true,
+    "noDictionaryFallback": true,
+    "noMechanicalTranslation": true,
+    "noDbModification": true
+  },
+  "14_writeSafety": {
+    "writeOperations": 0,
+    "importStarted": false,
+    "apply1": "NOT_RUN",
+    "apply2": "NOT_RUN"
+  },
+  "15_reconciliation": {
+    "targetPairs": 560,
+    "uniqueWordIds": 559,
+    "confidentCount": 72,
+    "reviewCount": 487,
+    "sumCheck": true,
+    "sharedCrossSurahCount": 1
+  },
+  "16_finalVerdict": {
+    "verdict": "PHASE_88F_BE_EDITORIAL_AUTHORING_BLOCKED",
+    "confidentCount": 72,
+    "reviewCount": 487,
+    "readyForPreflight": false,
+    "qualityPass": true,
+    "identitySafe": true,
+    "writeOperations": 0
+  }
+}

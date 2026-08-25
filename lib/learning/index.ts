@@ -66,6 +66,7 @@ export {
 } from "./session";
 export {
   getActivityDate,
+  getLocalDateKey,
   getUserSettings,
   insertUserSettings,
   updateUserSettings,
@@ -73,6 +74,7 @@ export {
   getDailyGoalProgress,
   getUpcomingReviewCounts,
   getActivityHistory,
+  getDistinctLearningDays,
   DEFAULT_DAILY_GOAL_TYPE,
   DEFAULT_DAILY_GOAL_VALUE,
 } from "./activity";
@@ -98,3 +100,40 @@ export type {
   LessonPlan,
   LessonProgressStatus,
 } from "./types";
+export {
+  computeLearningDays,
+  computeCurrentStreak,
+  computeLongestStreak,
+  computeWeeklyConsistency,
+  computeRegularityMetrics,
+  computeMonthlyActivity,
+  computeMonthGrid,
+  WEEKDAYS,
+} from "./regularity";
+export type {
+  RegularityMetrics,
+  MonthlyActivity,
+  CalendarDay,
+  MonthGrid,
+} from "./regularity";
+export {
+  computeCoverageBySurah,
+  computeAyahCoverages,
+} from "./coverage";
+export type {
+  SurahCoverage,
+  AyahCoverage,
+  AyahCoverageOccurrence,
+} from "./coverage";
+export {
+  shouldShowReminder,
+  getReminderContent,
+  isPastReminderTime,
+  daysSinceLastActivity,
+} from "./reminders";
+export type {
+  ReminderDecision,
+  ReminderContent,
+  ReminderReason,
+  ShouldShowReminderInput,
+} from "./reminders";

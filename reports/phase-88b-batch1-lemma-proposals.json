@@ -1,0 +1,688 @@
+{
+  "phase": "88B",
+  "mode": "DIAGNOSTIC_READ_ONLY",
+  "timestamp": "2026-08-23T16:32:00.631Z",
+  "sourceId": "79e6412e-e349-4fe5-b29b-108237375a2d",
+  "counts": {
+    "quranWords": 1000,
+    "lemmasTotal": 32,
+    "lemmaDirect": 120,
+    "lemmaMapping": 188,
+    "formsWithoutLemma": 858,
+    "wordTranslationsFr": 1000,
+    "lemmaTranslationsFr": 28
+  },
+  "crossSurahValueFormula": "distinctSurahs × log2(1 + distinctForms) × log2(1 + occurrences) × (1 − fractionAlreadyCovered)",
+  "top50Lemmas": [
+    {
+      "rank": 1,
+      "lemmaId": "190c14de-25f5-4d83-b680-c8cd258d4d19",
+      "arabic": "لِلَّه",
+      "distinctSurahs": 1,
+      "distinctForms": 6,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 2,
+      "formsMissing": 4,
+      "crossSurahValue": 1.87,
+      "editorialClass": "REVIEW_REQUIRED",
+      "lemmaGlossValidated": false,
+      "lemmaGlossText": null,
+      "proposedGloss": null,
+      "supportingSources": [],
+      "surahNumbers": [
+        2
+      ]
+    },
+    {
+      "rank": 2,
+      "lemmaId": "62b46eb1-9234-4bd3-88b0-0298c25ebe6b",
+      "arabic": "الله",
+      "distinctSurahs": 5,
+      "distinctForms": 15,
+      "totalOccurrences": 31,
+      "formsAlreadyCovered": 15,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "Allah",
+      "proposedGloss": "Allah",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        2,
+        4,
+        60,
+        65,
+        72
+      ]
+    },
+    {
+      "rank": 3,
+      "lemmaId": "01021c14-2f6b-4ce7-b18b-0c21557c023b",
+      "arabic": "رَبّ",
+      "distinctSurahs": 2,
+      "distinctForms": 12,
+      "totalOccurrences": 7,
+      "formsAlreadyCovered": 12,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "Seigneur / maître",
+      "proposedGloss": "Seigneur / maître",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        2,
+        98
+      ]
+    },
+    {
+      "rank": 4,
+      "lemmaId": "b878702b-25de-4ab7-94ef-d8572d6eb380",
+      "arabic": "الْحَمْد",
+      "distinctSurahs": 0,
+      "distinctForms": 2,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 2,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "louange",
+      "proposedGloss": "louange",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": []
+    },
+    {
+      "rank": 5,
+      "lemmaId": "6115a3ca-9e39-4cf9-a348-e47b97df5653",
+      "arabic": "الرَّحْمَـٰن",
+      "distinctSurahs": 0,
+      "distinctForms": 7,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 7,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "le Tout-Miséricordieux",
+      "proposedGloss": "le Tout-Miséricordieux",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": []
+    },
+    {
+      "rank": 6,
+      "lemmaId": "aadb9c24-063c-4f8d-8c40-e527dd866a28",
+      "arabic": "يَوْم",
+      "distinctSurahs": 1,
+      "distinctForms": 9,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 9,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "jour",
+      "proposedGloss": "jour",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 7,
+      "lemmaId": "77747cb5-2306-43a9-ac13-67d67f3539b9",
+      "arabic": "عَبْد",
+      "distinctSurahs": 0,
+      "distinctForms": 3,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 3,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "serviteur (de Dieu)",
+      "proposedGloss": "serviteur (de Dieu)",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": []
+    },
+    {
+      "rank": 8,
+      "lemmaId": "6449da99-8a5b-4bcc-99ed-14b5169629a8",
+      "arabic": "رَسُول",
+      "distinctSurahs": 1,
+      "distinctForms": 11,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 11,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "messager / envoyé",
+      "proposedGloss": "messager / envoyé",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        4
+      ]
+    },
+    {
+      "rank": 9,
+      "lemmaId": "d8d52703-f5f8-47a9-b6f0-33cfcc8d55f8",
+      "arabic": "نَاس",
+      "distinctSurahs": 1,
+      "distinctForms": 7,
+      "totalOccurrences": 5,
+      "formsAlreadyCovered": 7,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "gens / hommes",
+      "proposedGloss": "gens / hommes",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        2
+      ]
+    },
+    {
+      "rank": 10,
+      "lemmaId": "f706fd3c-df4e-4ecb-ba60-f34e2c15b1dc",
+      "arabic": "قَوْم",
+      "distinctSurahs": 0,
+      "distinctForms": 8,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 8,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "peuple / gens",
+      "proposedGloss": "peuple / gens",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": []
+    },
+    {
+      "rank": 11,
+      "lemmaId": "04ef3735-1eb7-4506-a87e-febed2c1968e",
+      "arabic": "عَذَاب",
+      "distinctSurahs": 1,
+      "distinctForms": 5,
+      "totalOccurrences": 2,
+      "formsAlreadyCovered": 5,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "châtiment",
+      "proposedGloss": "châtiment",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        2
+      ]
+    },
+    {
+      "rank": 12,
+      "lemmaId": "bfa97e6e-6c3c-4947-9a52-892cb9beb0c6",
+      "arabic": "رَحْمَة",
+      "distinctSurahs": 0,
+      "distinctForms": 11,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 11,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "miséricorde",
+      "proposedGloss": "miséricorde",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": []
+    },
+    {
+      "rank": 13,
+      "lemmaId": "aa87a728-43f3-4f2b-bc4f-8fdd62f41258",
+      "arabic": "نَبِيّ",
+      "distinctSurahs": 0,
+      "distinctForms": 4,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 4,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "prophète",
+      "proposedGloss": "prophète",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": []
+    },
+    {
+      "rank": 14,
+      "lemmaId": "1c991295-1848-41ab-bf00-6d2f29137c79",
+      "arabic": "لَا",
+      "distinctSurahs": 5,
+      "distinctForms": 4,
+      "totalOccurrences": 21,
+      "formsAlreadyCovered": 4,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "non / ne…pas",
+      "proposedGloss": "non / ne…pas",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1,
+        2,
+        4,
+        55,
+        65
+      ]
+    },
+    {
+      "rank": 15,
+      "lemmaId": "2ccaa3d6-a1d6-44ec-8829-728d7be639c7",
+      "arabic": "أَرْض",
+      "distinctSurahs": 1,
+      "distinctForms": 10,
+      "totalOccurrences": 6,
+      "formsAlreadyCovered": 10,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "terre",
+      "proposedGloss": "terre",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        2
+      ]
+    },
+    {
+      "rank": 16,
+      "lemmaId": "7a4f0fe4-15dd-434c-aa01-7538484c5232",
+      "arabic": "كِتَاب",
+      "distinctSurahs": 0,
+      "distinctForms": 6,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 6,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "livre / Écriture",
+      "proposedGloss": "livre / Écriture",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": []
+    },
+    {
+      "rank": 17,
+      "lemmaId": "903ca0ff-d797-4b39-ad90-dfd49ef09437",
+      "arabic": "كَان",
+      "distinctSurahs": 3,
+      "distinctForms": 3,
+      "totalOccurrences": 8,
+      "formsAlreadyCovered": 3,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "être",
+      "proposedGloss": "être",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        2,
+        68,
+        84
+      ]
+    },
+    {
+      "rank": 18,
+      "lemmaId": "20ad9d00-8c8a-45ea-9dfb-e6859a221c59",
+      "arabic": "كَفَر",
+      "distinctSurahs": 0,
+      "distinctForms": 3,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 3,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "être incrédule / ne pas croire",
+      "proposedGloss": "être incrédule / ne pas croire",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": []
+    },
+    {
+      "rank": 19,
+      "lemmaId": "cdb8ebc2-6b8c-4ccf-96c7-7345e413274d",
+      "arabic": "الْعَـٰلَمِين",
+      "distinctSurahs": 0,
+      "distinctForms": 1,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": false,
+      "lemmaGlossText": null,
+      "proposedGloss": null,
+      "supportingSources": [],
+      "surahNumbers": []
+    },
+    {
+      "rank": 20,
+      "lemmaId": "ae7ebfcd-a426-4c6b-b242-ea97fd625d64",
+      "arabic": "مَالِك",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "souverain / maître",
+      "proposedGloss": "souverain / maître",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 21,
+      "lemmaId": "1894784f-3545-48a6-a2fd-14c7bf139231",
+      "arabic": "دِين",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "rétribution / religion",
+      "proposedGloss": "rétribution / religion",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 22,
+      "lemmaId": "ae5dd22f-35cd-4514-ac87-127b80fe6f30",
+      "arabic": "عَبَدَ",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "adorer",
+      "proposedGloss": "adorer",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 23,
+      "lemmaId": "a61817ef-3a7e-4243-8642-4235b5469b3b",
+      "arabic": "اِسْتَعَانَ",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "implorer le secours",
+      "proposedGloss": "implorer le secours",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 24,
+      "lemmaId": "182983fc-0886-4b82-b7d2-67ca4599236d",
+      "arabic": "هَدَى",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "guider",
+      "proposedGloss": "guider",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 25,
+      "lemmaId": "c0add68b-209c-4ffb-b0a4-07371a14a203",
+      "arabic": "صِرَاط",
+      "distinctSurahs": 1,
+      "distinctForms": 2,
+      "totalOccurrences": 2,
+      "formsAlreadyCovered": 2,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "chemin / voie",
+      "proposedGloss": "chemin / voie",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 26,
+      "lemmaId": "04122982-1867-4b61-84cc-9017c94bde48",
+      "arabic": "مُسْتَقِيم",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "droit",
+      "proposedGloss": "droit",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 27,
+      "lemmaId": "ee5eb9ec-26b4-4429-b5fc-67f94da5845c",
+      "arabic": "أَنْعَمَ",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "combler de bienfaits",
+      "proposedGloss": "combler de bienfaits",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 28,
+      "lemmaId": "7aef4e75-217e-4478-a6a0-e4fd49e33d1e",
+      "arabic": "مَغْضُوب",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "celui qui encourt la colère",
+      "proposedGloss": "celui qui encourt la colère",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 29,
+      "lemmaId": "216b7e58-5aaf-40b9-a60c-790fa1609c87",
+      "arabic": "ضَالّ",
+      "distinctSurahs": 1,
+      "distinctForms": 1,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "égaré",
+      "proposedGloss": "égaré",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        1
+      ]
+    },
+    {
+      "rank": 30,
+      "lemmaId": "e34c8427-5e9a-4505-bb7a-fe4fa2f92bc3",
+      "arabic": "فِي",
+      "distinctSurahs": 4,
+      "distinctForms": 1,
+      "totalOccurrences": 13,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": true,
+      "lemmaGlossText": "dans / en / sur",
+      "proposedGloss": "dans / en / sur",
+      "supportingSources": [
+        "lemma_translations (Hikma — lexique éditorial)"
+      ],
+      "surahNumbers": [
+        2,
+        3,
+        4,
+        55
+      ]
+    },
+    {
+      "rank": 31,
+      "lemmaId": "41983472-087b-473f-8966-cf5c29f3cc51",
+      "arabic": "الرَّحِيم",
+      "distinctSurahs": 1,
+      "distinctForms": 2,
+      "totalOccurrences": 1,
+      "formsAlreadyCovered": 2,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": false,
+      "lemmaGlossText": null,
+      "proposedGloss": null,
+      "supportingSources": [],
+      "surahNumbers": [
+        2
+      ]
+    },
+    {
+      "rank": 32,
+      "lemmaId": "a74c5b31-519d-42c6-b499-0b6c01ab0a3c",
+      "arabic": "بِسْم",
+      "distinctSurahs": 0,
+      "distinctForms": 1,
+      "totalOccurrences": 0,
+      "formsAlreadyCovered": 1,
+      "formsMissing": 0,
+      "crossSurahValue": 0,
+      "editorialClass": "SAFE",
+      "lemmaGlossValidated": false,
+      "lemmaGlossText": null,
+      "proposedGloss": null,
+      "supportingSources": [],
+      "surahNumbers": []
+    }
+  ],
+  "simulation": {
+    "readyBefore": 12,
+    "readyAfter": 12,
+    "newlyReady": 0,
+    "newlyReadySurahs": []
+  },
+  "editorialSummary": {
+    "safe": 31,
+    "reviewRequired": 1,
+    "highRisk": 0,
+    "doNotImport": 0
+  }
+}

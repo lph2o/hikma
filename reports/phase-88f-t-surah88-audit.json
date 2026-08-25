@@ -1,0 +1,1365 @@
+{
+  "phase": "88F-T",
+  "verdict": "PHASE_88F_T_COMPLETE",
+  "read_only": true,
+  "database_writes": 0,
+  "timestamp": "2026-08-24T11:05:05.140Z",
+  "durationSeconds": 26.32,
+  "targetSurah": {
+    "number": 88,
+    "name": "Al-Ghashiyah"
+  },
+  "baseline": {
+    "totalForms": 80,
+    "coveredForms": 48,
+    "missingForms": 32,
+    "coveragePct": 0.6,
+    "totalOccs": 6533,
+    "missingOccs": 32,
+    "readiness": "IN_PREPARATION",
+    "globalReady": 28,
+    "globalInPrep": 85,
+    "globalRef": 1
+  },
+  "classification": {
+    "A": 24,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 1,
+    "F": 7,
+    "G": 0,
+    "H": 0,
+    "I": 0
+  },
+  "missingForms": [
+    {
+      "word_id": "778100f1-a907-4def-a48c-e7e11a0fb4e6",
+      "arabic": "ٱلْغَـٰشِيَةِ",
+      "lemma_id": "e2d91701-92c4-4f1d-a6bc-798651fcd757",
+      "lemma_arabic": "غاشي",
+      "masaq_stems": [
+        "غاشي"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(of)-the-overwhelming",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_PROP",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "T’est-il parvenu le récit de l’enveloppante ? <sup foot_note=212576>1</sup>"
+      ],
+      "kazimirski_samples": [
+        "N’as-tu jamais entendu parler du jour qui enveloppera tout,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "e2d91701-92c4-4f1d-a6bc-798651fcd757",
+      "safe_gloss_text": "(à écrire pour « غاشي »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "2eacd70a-b708-4348-b755-97d333d482b9",
+      "arabic": "خَـٰشِعَةٌ",
+      "lemma_id": "6e15498c-6014-4c42-88bb-8bb925fd64ee",
+      "lemma_arabic": "خاشع",
+      "masaq_stems": [
+        "خاشع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(will-be)-humbled",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ce jour-là, il y aura des visages humiliés,"
+      ],
+      "kazimirski_samples": [
+        "Du jour où des visages seront baissés,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "6e15498c-6014-4c42-88bb-8bb925fd64ee",
+      "safe_gloss_text": "(à écrire pour « خاشع »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "2b9b64ac-32a6-4509-96ca-3c3d5194199a",
+      "arabic": "عَامِلَةٌۭ",
+      "lemma_id": "9f5a0c7f-6782-40e8-aa3e-e910f012c0e9",
+      "lemma_arabic": "عامل",
+      "masaq_stems": [
+        "عامل"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "laboring",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_ACC",
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "préoccupés, harassés."
+      ],
+      "kazimirski_samples": [
+        "Travaillant et accablés de fatigue,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "9f5a0c7f-6782-40e8-aa3e-e910f012c0e9",
+      "safe_gloss_text": "(à écrire pour « عامل »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "24ad4db5-3fb9-46fc-b71d-7ae1aa7d6b1c",
+      "arabic": "نَّاصِبَةٌۭ",
+      "lemma_id": "59e15573-38d0-4470-a67b-75934a34601a",
+      "lemma_arabic": "ناصب",
+      "masaq_stems": [
+        "ناصب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "exhausted",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "préoccupés, harassés."
+      ],
+      "kazimirski_samples": [
+        "Travaillant et accablés de fatigue,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "59e15573-38d0-4470-a67b-75934a34601a",
+      "safe_gloss_text": "(à écrire pour « ناصب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "ea30bfcf-fe0b-4d78-8222-c173be2418e0",
+      "arabic": "تَصْلَىٰ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "صلى"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "they-will-burn",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ils brûleront dans un Feu ardent,"
+      ],
+      "kazimirski_samples": [
+        "Brûlés au feu ardent,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « صلى » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "dd361939-5b94-4d17-ae78-ef6cc45ed0d6",
+      "arabic": "حَامِيَةًۭ",
+      "lemma_id": "3608f284-0900-4fcf-80b9-24296fb421d2",
+      "lemma_arabic": "حامي",
+      "masaq_stems": [
+        "حامي"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "intensely-hot",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ils brûleront dans un Feu ardent,"
+      ],
+      "kazimirski_samples": [
+        "Brûlés au feu ardent,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "3608f284-0900-4fcf-80b9-24296fb421d2",
+      "safe_gloss_text": "(à écrire pour « حامي »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "e3031a69-7f5c-4977-9a08-e27d5e881d73",
+      "arabic": "تُسْقَىٰ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "سقى"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "they-will-be-given-to-drink",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV_PASS"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et seront abreuvés d’une source bouillante."
+      ],
+      "kazimirski_samples": [
+        "Abreuvés à une source? "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « سقى » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "9c9be31a-daf9-475d-b50e-2e03789583b6",
+      "arabic": "ءَانِيَةٍۢ",
+      "lemma_id": "cb88f93c-dddb-426b-bd09-721d631b821a",
+      "lemma_arabic": "آني",
+      "masaq_stems": [
+        "آني"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "boiling",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et seront abreuvés d’une source bouillante."
+      ],
+      "kazimirski_samples": [
+        "Abreuvés à une source? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "cb88f93c-dddb-426b-bd09-721d631b821a",
+      "safe_gloss_text": "(à écrire pour « آني »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "cf911999-b9ed-474d-9889-a3ebcb6d05a2",
+      "arabic": "ضَرِيعٍۢ",
+      "lemma_id": "af70f2b6-5a37-4ede-b148-13bb62033595",
+      "lemma_arabic": "ضريع",
+      "masaq_stems": [
+        "ضريع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-bitter-thorny-plant",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Il n’y aura pour eux d’autre nourriture que des plantes épineuses [Dharî'],"
+      ],
+      "kazimirski_samples": [
+        "Ils n’auront pas d’autre nourriture que le fruit de Dari. "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "af70f2b6-5a37-4ede-b148-13bb62033595",
+      "safe_gloss_text": "(à écrire pour « ضريع »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "f394e5e5-3903-4ac9-a13b-66d7912c7dc2",
+      "arabic": "يُسْمِنُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "سمن"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "it-nourishes",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "qui n’engraisse, ni n’apaise la faim."
+      ],
+      "kazimirski_samples": [
+        "Qui ne leur donnera pas d’embonpoint, et n’apaisera pas leur faim."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « سمن » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "fc02d2a8-6510-4b57-a6a0-7f2b7fd31145",
+      "arabic": "نَّاعِمَةٌۭ",
+      "lemma_id": "6894bf5f-591e-4fe3-b46e-6740898c783a",
+      "lemma_arabic": "ناعم",
+      "masaq_stems": [
+        "ناعم"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(will-be)-joyful",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ce jour-là, il y aura des visages épanouis,"
+      ],
+      "kazimirski_samples": [
+        "Ce jour là d’autres visages seront joyeux; "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "6894bf5f-591e-4fe3-b46e-6740898c783a",
+      "safe_gloss_text": "(à écrire pour « ناعم »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "66b8467e-dde8-4eea-a0b9-af75098f0fb3",
+      "arabic": "لِّسَعْيِهَا",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "سعي"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "with-their-effort",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND",
+        "POSS_PRON",
+        "PREP"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "contents de leurs efforts,"
+      ],
+      "kazimirski_samples": [
+        "Satisfaits de leurs labeurs d’autrefois,"
+      ],
+      "occurrences": 1,
+      "classification": "E_SAFE_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": "effort / s'efforcer / agir",
+      "review_reason": null,
+      "confidence": 0.75
+    },
+    {
+      "word_id": "9a3cbebc-6c75-4fc6-b758-fb8cd4849805",
+      "arabic": "رَاضِيَةٌۭ",
+      "lemma_id": "1428d0c2-66ba-4975-a822-ccfbfdc95284",
+      "lemma_arabic": "راضي",
+      "masaq_stems": [
+        "راضي"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "satisfied",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "contents de leurs efforts,"
+      ],
+      "kazimirski_samples": [
+        "Satisfaits de leurs labeurs d’autrefois,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "1428d0c2-66ba-4975-a822-ccfbfdc95284",
+      "safe_gloss_text": "(à écrire pour « راضي »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "d274d010-0b16-4a66-aea0-7ccbb8f50e38",
+      "arabic": "لَـٰغِيَةًۭ",
+      "lemma_id": "353ad824-9c89-4480-bc35-f5f3d2a96eaf",
+      "lemma_arabic": "لاغي",
+      "masaq_stems": [
+        "لاغي"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "vain-talk",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_ACC",
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "où ils n’entendent aucune futilité."
+      ],
+      "kazimirski_samples": [
+        "Où l’on n’entendra aucun discours frivole,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "353ad824-9c89-4480-bc35-f5f3d2a96eaf",
+      "safe_gloss_text": "(à écrire pour « لاغي »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "cb8dea47-c8b4-429e-918a-5b4bdb13a1d5",
+      "arabic": "جَارِيَةٌۭ",
+      "lemma_id": "a6e08eda-2a3f-4c4a-805d-d3f14682cc29",
+      "lemma_arabic": "جاري",
+      "masaq_stems": [
+        "جاري"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "flowing",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_GEN",
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Là, il y aura une source coulante."
+      ],
+      "kazimirski_samples": [
+        "On y trouvera des sources d’eau courantes; "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "a6e08eda-2a3f-4c4a-805d-d3f14682cc29",
+      "safe_gloss_text": "(à écrire pour « جاري »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "eca3adc0-bc86-479a-a2ac-5ea284b44e3b",
+      "arabic": "سُرُرٌۭ",
+      "lemma_id": "a0492902-1965-40d2-90d9-3fe027cab9e2",
+      "lemma_arabic": "سرر",
+      "masaq_stems": [
+        "سرر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(will-be)-thrones",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Là, des divans élevés."
+      ],
+      "kazimirski_samples": [
+        "Des sièges élevés disposés par rangés,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "a0492902-1965-40d2-90d9-3fe027cab9e2",
+      "safe_gloss_text": "(à écrire pour « سرر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "c142bbac-1ee7-4d35-9fe0-6d4a674c3fc1",
+      "arabic": "مَّرْفُوعَةٌۭ",
+      "lemma_id": "25878926-ae4e-4153-a521-345b80bad820",
+      "lemma_arabic": "مرفوع",
+      "masaq_stems": [
+        "مرفوع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "raised-high",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_PASSIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Là, des divans élevés."
+      ],
+      "kazimirski_samples": [
+        "Des sièges élevés disposés par rangés,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "25878926-ae4e-4153-a521-345b80bad820",
+      "safe_gloss_text": "(à écrire pour « مرفوع »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "030d5e1d-bbb8-4537-9fd6-fa4bb105c3ba",
+      "arabic": "وَأَكْوَابٌۭ",
+      "lemma_id": "5f2415aa-6673-4ddd-9ee2-ba66c985d504",
+      "lemma_arabic": "أكواب",
+      "masaq_stems": [
+        "أكواب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-cups",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et des coupes posées."
+      ],
+      "kazimirski_samples": [
+        "Des coupes préparées"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "5f2415aa-6673-4ddd-9ee2-ba66c985d504",
+      "safe_gloss_text": "(à écrire pour « أكواب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "a4a5dd2b-63c1-4a27-995e-949298d807ad",
+      "arabic": "مَّوْضُوعَةٌۭ",
+      "lemma_id": "961c3a83-2191-4e3f-a0a3-48ac4e689342",
+      "lemma_arabic": "موضوع",
+      "masaq_stems": [
+        "موضوع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "put-in-place",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_ACC",
+        "NOUN_PASSIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et des coupes posées."
+      ],
+      "kazimirski_samples": [
+        "Des coupes préparées"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "961c3a83-2191-4e3f-a0a3-48ac4e689342",
+      "safe_gloss_text": "(à écrire pour « موضوع »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "9f9e8694-2b7e-42b1-bebc-9fa2f813ace6",
+      "arabic": "وَنَمَارِقُ",
+      "lemma_id": "bc9d5145-78c2-4aff-a28e-eafd07b079fd",
+      "lemma_arabic": "نمارق",
+      "masaq_stems": [
+        "نمارق"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-cushions",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et des coussins rangés."
+      ],
+      "kazimirski_samples": [
+        "Des coussins disposés par rangées,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "bc9d5145-78c2-4aff-a28e-eafd07b079fd",
+      "safe_gloss_text": "(à écrire pour « نمارق »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "54c8608b-fad8-4ce8-abac-a765bef4c46a",
+      "arabic": "مَصْفُوفَةٌۭ",
+      "lemma_id": "e4ca2325-1de6-405b-a785-409ea631b255",
+      "lemma_arabic": "مصفوف",
+      "masaq_stems": [
+        "مصفوف"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "lined-up",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_PASSIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et des coussins rangés."
+      ],
+      "kazimirski_samples": [
+        "Des coussins disposés par rangées,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "e4ca2325-1de6-405b-a785-409ea631b255",
+      "safe_gloss_text": "(à écrire pour « مصفوف »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "7abc2fb6-7d19-4641-a464-d7345aabe1fc",
+      "arabic": "وَزَرَابِىُّ",
+      "lemma_id": "4293f32f-0a29-4185-a1c7-af0feccc4b71",
+      "lemma_arabic": "زرابي",
+      "masaq_stems": [
+        "زرابي"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-carpets",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et des tapis étalés."
+      ],
+      "kazimirski_samples": [
+        "Des tapis étendus."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "4293f32f-0a29-4185-a1c7-af0feccc4b71",
+      "safe_gloss_text": "(à écrire pour « زرابي »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "60f9a081-1d80-415c-8939-0cd5afa531aa",
+      "arabic": "مَبْثُوثَةٌ",
+      "lemma_id": "ef13146e-d6b4-49da-beef-cbd023f99a8b",
+      "lemma_arabic": "مبثوث",
+      "masaq_stems": [
+        "مبثوث"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "spread-out",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_PASSIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et des tapis étalés."
+      ],
+      "kazimirski_samples": [
+        "Des tapis étendus."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "ef13146e-d6b4-49da-beef-cbd023f99a8b",
+      "safe_gloss_text": "(à écrire pour « مبثوث »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "f2be6bfe-cd12-43a2-9ff9-29ad2f8dc589",
+      "arabic": "رُفِعَتْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "رفع"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "it-is-raised",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV_PASS",
+        "SUFF_FEM_TA"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et le ciel comment il est élevé,"
+      ],
+      "kazimirski_samples": [
+        "Sur le ciel, comme il a été élevé."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « رفع » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "1b66c279-283e-4a5d-b510-be7462cefd6b",
+      "arabic": "نُصِبَتْ",
+      "lemma_id": "91fbfc50-9597-4233-931f-b0b80a86d3f1",
+      "lemma_arabic": "نصب",
+      "masaq_stems": [
+        "نصب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "they-are-fixed",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV_PASS",
+        "SUFF_FEM_TA"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et les montagnes comment elles sont dressées."
+      ],
+      "kazimirski_samples": [
+        "Et sur les montagnes, comme elles ont été plantées dans la terre; "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "91fbfc50-9597-4233-931f-b0b80a86d3f1",
+      "safe_gloss_text": "(à écrire pour « نصب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "a1aa469a-87be-4516-b7e8-f81fdbb654c5",
+      "arabic": "سُطِحَتْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "سطح"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "it-is-spread-out",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV_PASS",
+        "SUFF_FEM_TA"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et la terre comment elle est nivelée ?"
+      ],
+      "kazimirski_samples": [
+        "Et sur la terre, comme elle a été étendue? "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « سطح » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "70f52566-4aaa-4147-b262-d4f66fd80521",
+      "arabic": "مُذَكِّرٌۭ",
+      "lemma_id": "3dd953fc-8c23-41ba-b967-0195fcfc5727",
+      "lemma_arabic": "مذكر",
+      "masaq_stems": [
+        "مذكر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(are)-a-reminder",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Eh bien, rappelle ! Tu n’es qu’un rappeleur,"
+      ],
+      "kazimirski_samples": [
+        "Avertis les hommes, car tu n’est qu’un avertisseur; "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "3dd953fc-8c23-41ba-b967-0195fcfc5727",
+      "safe_gloss_text": "(à écrire pour « مذكر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "2bd214df-89c6-44c5-b5b4-455f06f3323b",
+      "arabic": "بِمُصَيْطِرٍ",
+      "lemma_id": "c971a923-a325-4ef5-ac2b-099dc28bf197",
+      "lemma_arabic": "مصيطر",
+      "masaq_stems": [
+        "مصيطر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-controller",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "PREP"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et tu n’es pas un dominateur sur eux."
+      ],
+      "kazimirski_samples": [
+        "Tu n’as pas le pouvoir absolu sur eux; "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "c971a923-a325-4ef5-ac2b-099dc28bf197",
+      "safe_gloss_text": "(à écrire pour « مصيطر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "829c475f-4b0b-448c-b441-124c05f437f6",
+      "arabic": "فَيُعَذِّبُهُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "عذب"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "then-will-punish-him",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "alors Allah le châtiera du plus grand châtiment."
+      ],
+      "kazimirski_samples": [
+        "Dieu lui fera subir le grand châtiment."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « عذب » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "9b7463a6-0937-4b0d-985a-218e0a24cb00",
+      "arabic": "ٱلْأَكْبَرَ",
+      "lemma_id": "4ab4ed37-539d-4d97-96f5-964a9eee49b9",
+      "lemma_arabic": "أكبر",
+      "masaq_stems": [
+        "أكبر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "greatest",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "ADJ_COMP",
+        "CASE_DEF_GEN",
+        "DET"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "alors Allah le châtiera du plus grand châtiment."
+      ],
+      "kazimirski_samples": [
+        "Dieu lui fera subir le grand châtiment."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "4ab4ed37-539d-4d97-96f5-964a9eee49b9",
+      "safe_gloss_text": "(à écrire pour « أكبر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "4ca239df-1856-4843-8af8-e710807c96fb",
+      "arabic": "إِيَابَهُمْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "إياب"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "(will-be)-their-return",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Vers Nous est leur retour."
+      ],
+      "kazimirski_samples": [
+        "C’est moi qu’ils redouteront"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « إياب » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "494aa748-dc2a-430c-8031-db796b46179c",
+      "arabic": "حِسَابَهُم",
+      "lemma_id": "9b522b1c-16b0-44b9-bee2-fce8ad11a35c",
+      "lemma_arabic": "حساب",
+      "masaq_stems": [
+        "حساب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(is)-their-account",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ensuite, c’est à Nous de leur demander compte."
+      ],
+      "kazimirski_samples": [
+        "Et puis, c’est moi qui me charge de leur compte."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "9b522b1c-16b0-44b9-bee2-fce8ad11a35c",
+      "safe_gloss_text": "(à écrire pour « حساب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    }
+  ],
+  "safeGlossCandidates": [
+    {
+      "lemma_id": "e2d91701-92c4-4f1d-a6bc-798651fcd757",
+      "lemma_arabic": "غاشي",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "6e15498c-6014-4c42-88bb-8bb925fd64ee",
+      "lemma_arabic": "خاشع",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "9f5a0c7f-6782-40e8-aa3e-e910f012c0e9",
+      "lemma_arabic": "عامل",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "59e15573-38d0-4470-a67b-75934a34601a",
+      "lemma_arabic": "ناصب",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "3608f284-0900-4fcf-80b9-24296fb421d2",
+      "lemma_arabic": "حامي",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "cb88f93c-dddb-426b-bd09-721d631b821a",
+      "lemma_arabic": "آني",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "af70f2b6-5a37-4ede-b148-13bb62033595",
+      "lemma_arabic": "ضريع",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "6894bf5f-591e-4fe3-b46e-6740898c783a",
+      "lemma_arabic": "ناعم",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "1428d0c2-66ba-4975-a822-ccfbfdc95284",
+      "lemma_arabic": "راضي",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "353ad824-9c89-4480-bc35-f5f3d2a96eaf",
+      "lemma_arabic": "لاغي",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "a6e08eda-2a3f-4c4a-805d-d3f14682cc29",
+      "lemma_arabic": "جاري",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "a0492902-1965-40d2-90d9-3fe027cab9e2",
+      "lemma_arabic": "سرر",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "25878926-ae4e-4153-a521-345b80bad820",
+      "lemma_arabic": "مرفوع",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "5f2415aa-6673-4ddd-9ee2-ba66c985d504",
+      "lemma_arabic": "أكواب",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "961c3a83-2191-4e3f-a0a3-48ac4e689342",
+      "lemma_arabic": "موضوع",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "bc9d5145-78c2-4aff-a28e-eafd07b079fd",
+      "lemma_arabic": "نمارق",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "e4ca2325-1de6-405b-a785-409ea631b255",
+      "lemma_arabic": "مصفوف",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "4293f32f-0a29-4185-a1c7-af0feccc4b71",
+      "lemma_arabic": "زرابي",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "ef13146e-d6b4-49da-beef-cbd023f99a8b",
+      "lemma_arabic": "مبثوث",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "91fbfc50-9597-4233-931f-b0b80a86d3f1",
+      "lemma_arabic": "نصب",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "3dd953fc-8c23-41ba-b967-0195fcfc5727",
+      "lemma_arabic": "مذكر",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "c971a923-a325-4ef5-ac2b-099dc28bf197",
+      "lemma_arabic": "مصيطر",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "4ab4ed37-539d-4d97-96f5-964a9eee49b9",
+      "lemma_arabic": "أكبر",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    },
+    {
+      "lemma_id": "9b522b1c-16b0-44b9-bee2-fce8ad11a35c",
+      "lemma_arabic": "حساب",
+      "gloss": "(à écrire)",
+      "forms_in_S88": 1
+    }
+  ],
+  "safeWordTrCandidates": [
+    {
+      "word_id": "66b8467e-dde8-4eea-a0b9-af75098f0fb3",
+      "arabic": "لِّسَعْيِهَا",
+      "gloss": "effort / s'efforcer / agir"
+    }
+  ],
+  "reviewWordTrCandidates": [
+    {
+      "word_id": "ea30bfcf-fe0b-4d78-8222-c173be2418e0",
+      "arabic": "تَصْلَىٰ",
+      "masaq_stems": [
+        "صلى"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « صلى » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "e3031a69-7f5c-4977-9a08-e27d5e881d73",
+      "arabic": "تُسْقَىٰ",
+      "masaq_stems": [
+        "سقى"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « سقى » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "f394e5e5-3903-4ac9-a13b-66d7912c7dc2",
+      "arabic": "يُسْمِنُ",
+      "masaq_stems": [
+        "سمن"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « سمن » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "f2be6bfe-cd12-43a2-9ff9-29ad2f8dc589",
+      "arabic": "رُفِعَتْ",
+      "masaq_stems": [
+        "رفع"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « رفع » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "a1aa469a-87be-4516-b7e8-f81fdbb654c5",
+      "arabic": "سُطِحَتْ",
+      "masaq_stems": [
+        "سطح"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « سطح » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "829c475f-4b0b-448c-b441-124c05f437f6",
+      "arabic": "فَيُعَذِّبُهُ",
+      "masaq_stems": [
+        "عذب"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « عذب » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "4ca239df-1856-4843-8af8-e710807c96fb",
+      "arabic": "إِيَابَهُمْ",
+      "masaq_stems": [
+        "إياب"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « إياب » UNMAPPED quality=0 — word_translation à écrire."
+    }
+  ],
+  "simulations": [
+    {
+      "name": "BASELINE",
+      "forms": 48,
+      "pct": 60,
+      "ready": false,
+      "remaining": 32
+    },
+    {
+      "name": "SAFE_GLOSSES",
+      "forms": 73,
+      "pct": 91.3,
+      "ready": false,
+      "remaining": 7
+    },
+    {
+      "name": "SAFE_PLUS_REVIEW",
+      "forms": 80,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    },
+    {
+      "name": "COMPLETE",
+      "forms": 80,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    }
+  ],
+  "exactActionsToReady": {
+    "totalLemmaGlosses": 24,
+    "safeLemmaGlosses": 24,
+    "safeWordTranslations": 1,
+    "reviewWordTranslations": 7,
+    "totalActions": 31,
+    "safeActions": 25,
+    "reviewActions": 6
+  },
+  "roi": {
+    "newFormsSafe": 25,
+    "newFormsComplete": 32,
+    "ratio": 1.03
+  },
+  "integrity": {
+    "orphan_quran": 0,
+    "orphan_wlm": 0,
+    "orphan_lo": 0,
+    "orphan_lt": 0,
+    "dup_wlm": 0,
+    "dup_lt": 0,
+    "dup_fr_wt": 0,
+    "dir_wlm_conflict": 0,
+    "S98": true,
+    "S92": true,
+    "S82": true,
+    "S85": true,
+    "S90": true
+  },
+  "invariants": {
+    "db_writes": 0,
+    "lexical_writes": 0,
+    "translation_writes": 0,
+    "curriculum_writes": 0,
+    "masaq_writes": 0,
+    "migrations": 0,
+    "seeds": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error",
+    "readOnlyStaticCheck": "PASS (only doc comment)"
+  },
+  "nextPhase": {
+    "phase": "88F-U",
+    "name": "S88 AL-GHASHIYAH RESOLUTION",
+    "actions": "24+7=31",
+    "expected": "80/80 → 100 % → READY"
+  }
+}

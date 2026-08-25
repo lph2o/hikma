@@ -1,0 +1,23 @@
+{
+  "phase": "88I",
+  "timestamp": "2026-08-25T17:48:53.031Z",
+  "verdict": "PHASE_88I_E2E_AUDIT_PASS_WITH_NONBLOCKING_NOTES",
+  "databaseWrites": 0,
+  "counts": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0,
+    "NOTE": 1
+  },
+  "issues": [
+    {
+      "id": "LSN-FULL-COUNT-NOTE",
+      "severity": "NOTE",
+      "check": "LESSON_PAGE_AUDIT",
+      "title": "Métrique 88H « 1824 formes » vs « 1439 formes distinctes globales »",
+      "detail": "88H comptait les formes DISTINCTES PAR SOURATE (somme des union par sourate, les formes partagées comme نَفْسِهِ sont comptées une fois par sourate) ; le présent audit compte les formes distinctes GLOBALES sur le curriculum complet (chaque word_id une seule fois). 1439 globales vs 1824 somme-par-sourate : écart purement méthodologique, pas une régression.",
+      "recommendation": "Aucune action — les deux métriques sont correctes dans leur cadrage."
+    }
+  ]
+}

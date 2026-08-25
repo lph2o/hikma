@@ -12,9 +12,12 @@ export const dynamic = "force-dynamic";
  * Coquille applicative : sidebar desktop + bottom navigation mobile.
  * Toutes les routes de l'expérience utilisateur vivent dans ce groupe.
  *
- * Phase 32D — tout utilisateur connecté dont la version d’onboarding est
- * antérieure à la version courante est redirigé vers /onboarding. La route vit
- * dans un groupe séparé pour éviter toute boucle.
+ * - Utilisateur connecté → coquille complète (sidebar, header) ;
+ *   si son onboarding est antérieur à la version courante → /onboarding
+ *   (Phase 32D, groupe séparé pour éviter toute boucle).
+ * - Visiteur anonyme (leçons publiques) → AUCUNE coquille : pas de sidebar ni
+ *   de header applicatif, pour ne pas confondre l'essai public avec le
+ *   dashboard. La page leçon fournit son propre header de focus.
  */
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const client = await createClient();
@@ -22,10 +25,12 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
     data: { user },
   } = await client.auth.getUser();
 
-  if (user) {
-    const settings = await getUserSettings(client, user.id);
-    if (!isOnboardingComplete(settings)) redirect("/onboarding");
+  if (!user) {
+    return <div className="min-h-dvh">{children}</div>;
   }
+
+  const settings = await getUserSettings(client, user.id);
+  if (!isOnboardingComplete(settings)) redirect("/onboarding");
 
   return (
     <div className="min-h-dvh">

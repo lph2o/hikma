@@ -1,0 +1,1561 @@
+{
+  "phase": "88F-V",
+  "verdict": "PHASE_88F_V_COMPLETE",
+  "read_only": true,
+  "database_writes": 0,
+  "timestamp": "2026-08-24T11:20:58.696Z",
+  "durationSeconds": 21.52,
+  "targetSurah": {
+    "number": 70,
+    "name": "Al-Ma'arij"
+  },
+  "baseline": {
+    "totalForms": 189,
+    "coveredForms": 151,
+    "missingForms": 38,
+    "coveragePct": 0.7989,
+    "totalOccs": 12804,
+    "missingOccs": 38,
+    "readiness": "IN_PREPARATION",
+    "globalReady": 28,
+    "globalInPrep": 85,
+    "globalRef": 1
+  },
+  "classification": {
+    "A": 25,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F": 13,
+    "G": 0,
+    "H": 0,
+    "I": 0
+  },
+  "missingForms": [
+    {
+      "word_id": "64d6cbd1-7de1-42a6-8be4-044ea8773449",
+      "arabic": "سَأَلَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "سأل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "asked",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Un demandeur a réclamé un châtiment inéluctable,"
+      ],
+      "kazimirski_samples": [
+        "Un tel demande un châtiment sans délai"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « سأل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "183e17e4-b781-407b-9203-b12bf28fcd01",
+      "arabic": "سَآئِلٌۢ",
+      "lemma_id": "c58a52e0-9883-4240-a854-f408670b8b2b",
+      "lemma_arabic": "سائل",
+      "masaq_stems": [
+        "سائل"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-questioner",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Un demandeur a réclamé un châtiment inéluctable,"
+      ],
+      "kazimirski_samples": [
+        "Un tel demande un châtiment sans délai"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "c58a52e0-9883-4240-a854-f408670b8b2b",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "fa2a2174-de0d-4890-8363-70ce3fbc7a3d",
+      "arabic": "وَاقِعٍۢ",
+      "lemma_id": "ca85fb80-a074-4a32-bb51-f67e4632ed49",
+      "lemma_arabic": "واقع",
+      "masaq_stems": [
+        "واقع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "bound-to-happen",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Un demandeur a réclamé un châtiment inéluctable,"
+      ],
+      "kazimirski_samples": [
+        "Un tel demande un châtiment sans délai"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "ca85fb80-a074-4a32-bb51-f67e4632ed49",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "6d4c7f3c-86cc-4e06-9cfe-c05b410be716",
+      "arabic": "دَافِعٌۭ",
+      "lemma_id": "29baa3ea-b1d5-4315-8fc4-851f0555dfe3",
+      "lemma_arabic": "دافع",
+      "masaq_stems": [
+        "دافع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "any-preventer",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "pour les mécréants, que nul ne pourrait repousser,"
+      ],
+      "kazimirski_samples": [
+        "Pour les infidèles. Nul n’est capable d’empêcher"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "29baa3ea-b1d5-4315-8fc4-851f0555dfe3",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "286ba55b-6283-495f-871f-50c54dafde4e",
+      "arabic": "ٱلْمَعَارِجِ",
+      "lemma_id": "3e11d1cf-fbda-4aea-9685-840f1802f402",
+      "lemma_arabic": "معارج",
+      "masaq_stems": [
+        "معارج"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(of)-the-ways-of-ascent",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et qui vient d’Allah, le Maître des voies d’ascension."
+      ],
+      "kazimirski_samples": [
+        "Dieu de l’accomplir, Dieu, maître des DEGRÉS,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "3e11d1cf-fbda-4aea-9685-840f1802f402",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "2fc5c6f8-f002-4097-83ae-ac0ed2dba1e6",
+      "arabic": "تَعْرُجُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "عرج"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "ascend",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Les Anges ainsi que l’Esprit montent vers Lui en un jour dont la durée est de cinquante mille ans."
+      ],
+      "kazimirski_samples": [
+        "Degrés par lesquels les anges et l’esprit montent vers lui dans l’espace d’un jour, dont l’espace est de cinquante mille ans. "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « عرج » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "eb3957b8-cf5f-41a2-a974-4fc7843a32a7",
+      "arabic": "مِقْدَارُهُۥ",
+      "lemma_id": "febd7b39-bfb8-4a14-9de8-11d882cfaebd",
+      "lemma_arabic": "مقدار",
+      "masaq_stems": [
+        "مقدار"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "its-measure",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Les Anges ainsi que l’Esprit montent vers Lui en un jour dont la durée est de cinquante mille ans."
+      ],
+      "kazimirski_samples": [
+        "Degrés par lesquels les anges et l’esprit montent vers lui dans l’espace d’un jour, dont l’espace est de cinquante mille ans. "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "febd7b39-bfb8-4a14-9de8-11d882cfaebd",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "8a129727-dc70-494b-b62e-b8744159ffb0",
+      "arabic": "جَمِيلًا",
+      "lemma_id": "7da07998-bd03-4a74-968b-36d8ee644440",
+      "lemma_arabic": "جميل",
+      "masaq_stems": [
+        "جميل"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "good",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Supporte donc, d’une belle patience."
+      ],
+      "kazimirski_samples": [
+        "Attends donc avec une belle patience"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "7da07998-bd03-4a74-968b-36d8ee644440",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "09e4e5be-fca1-4d42-a03a-439c729d26e9",
+      "arabic": "يَرَوْنَهُۥ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "ر"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "see-it",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ils le (le châtiment) voient bien loin,"
+      ],
+      "kazimirski_samples": [
+        "Eux ( les infidèles ) regardent le jour du jugement comme éloigné."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « ر » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "90c80563-52f6-4141-a6a1-f6984c989fee",
+      "arabic": "وَنَرَىٰهُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "را"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "but-we-see-it",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "alors que Nous le voyons bien proche,"
+      ],
+      "kazimirski_samples": [
+        "Et nous, nous le voyons proche."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « را » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "03bedaab-f3f3-41cd-8d5d-da4ac1e5f4e1",
+      "arabic": "حَمِيمٌ",
+      "lemma_id": "0fc6806a-bec0-440e-a9a9-d1a96c63d367",
+      "lemma_arabic": "حميم",
+      "masaq_stems": [
+        "حميم"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-friend",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "où nul ami dévoué ne s’enquerra d’un ami,"
+      ],
+      "kazimirski_samples": [
+        "Et où l’ami ne questionnera pas son ami,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "0fc6806a-bec0-440e-a9a9-d1a96c63d367",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "388965bc-ba73-4398-bd8c-67744872f1c0",
+      "arabic": "يَفْتَدِى",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "فتدي"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "he-(could-be)-ransomed",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "bien qu’ils se voient l’un l’autre. Le criminel aimerait pouvoir se racheter du châtiment de ce jour, en livrant ses enfants,"
+      ],
+      "kazimirski_samples": [
+        "Bien qu’on les fasse voir les uns aux autres; alors le coupable désirera se racheter du châtiment au prix de ses enfants,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « فتدي » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "c938cf50-38b0-41b4-94a7-487c1c1da384",
+      "arabic": "بِبَنِيهِ",
+      "lemma_id": "1ead6083-63b0-4fd6-9c1c-197231c90849",
+      "lemma_arabic": "بن",
+      "masaq_stems": [
+        "بن"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "by-his-children",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "bien qu’ils se voient l’un l’autre. Le criminel aimerait pouvoir se racheter du châtiment de ce jour, en livrant ses enfants,"
+      ],
+      "kazimirski_samples": [
+        "Bien qu’on les fasse voir les uns aux autres; alors le coupable désirera se racheter du châtiment au prix de ses enfants,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "1ead6083-63b0-4fd6-9c1c-197231c90849",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "fc2d18ce-f059-4522-936d-4b2500ab8adf",
+      "arabic": "وَفَصِيلَتِهِ",
+      "lemma_id": "0fdfc47b-af3c-416d-a898-a37a63c9b0d7",
+      "lemma_arabic": "فصيل",
+      "masaq_stems": [
+        "فصيل"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-his-nearest-kindred",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "même son clan qui lui donnait asile,"
+      ],
+      "kazimirski_samples": [
+        "Au prix des parents qui lui témoignaient de l’affection,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "0fdfc47b-af3c-416d-a898-a37a63c9b0d7",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "fa4807d6-c4ac-4016-a9da-3d8ffe1990f3",
+      "arabic": "تُـْٔوِيهِ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "ؤوي"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "sheltered-him",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "même son clan qui lui donnait asile,"
+      ],
+      "kazimirski_samples": [
+        "Au prix des parents qui lui témoignaient de l’affection,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « ؤوي » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "8d26b9de-d31a-4a0e-b583-ffe6e419ace3",
+      "arabic": "يُنجِيهِ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "نجي"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "it-(could)-save-him",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et tout ce qui est sur la terre, tout, qui pourrait le sauver."
+      ],
+      "kazimirski_samples": [
+        "Au prix de tous ceux qui sont sur la terre. Il désirera être sauvé."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « نجي » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "763ded31-92ef-4f33-802f-ad6fecb620a3",
+      "arabic": "لَظَىٰ",
+      "lemma_id": "29c441a4-b5d3-4f9e-890a-ad4fa3ef52f8",
+      "lemma_arabic": "لظى",
+      "masaq_stems": [
+        "لظى"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "surely-a-flame-of-hell",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Mais rien [ne le sauvera]. [L’Enfer] est un brasier."
+      ],
+      "kazimirski_samples": [
+        "Point du tout, — car le feu de l’enfer, "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "29c441a4-b5d3-4f9e-890a-ad4fa3ef52f8",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "12f14820-5ce3-4803-8f64-2da7033ea0e1",
+      "arabic": "نَزَّاعَةًۭ",
+      "lemma_id": "29f521d4-a563-472c-a776-9903cc78324a",
+      "lemma_arabic": "نزاع",
+      "masaq_stems": [
+        "نزاع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-remover",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "arrachant brutalement la peau du crâne."
+      ],
+      "kazimirski_samples": [
+        "Saisissant par les crânes,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "29f521d4-a563-472c-a776-9903cc78324a",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "fe0ba347-6230-49a6-99b4-505c1337dda7",
+      "arabic": "لِّلشَّوَىٰ",
+      "lemma_id": "bed6e0f3-b8be-4fb6-8d52-8ab3b577b658",
+      "lemma_arabic": "شوى",
+      "masaq_stems": [
+        "شوى"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "of-the-skin-of-the-head",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "arrachant brutalement la peau du crâne."
+      ],
+      "kazimirski_samples": [
+        "Saisissant par les crânes,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "bed6e0f3-b8be-4fb6-8d52-8ab3b577b658",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "bf27c381-0621-40ca-b59d-9755b86e710b",
+      "arabic": "وَجَمَعَ",
+      "lemma_id": "7971f5ef-28d1-4829-bad3-bc3db02938ca",
+      "lemma_arabic": "جمع",
+      "masaq_stems": [
+        "جمع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-collected",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "amassait et thésaurisait."
+      ],
+      "kazimirski_samples": [
+        "Qui thésaurisait et se montrait avare."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "7971f5ef-28d1-4829-bad3-bc3db02938ca",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "f6680c7c-c20d-4202-918f-22aaa8d5dbe1",
+      "arabic": "فَأَوْعَىٰٓ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "أوعى"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-hoarded",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "amassait et thésaurisait."
+      ],
+      "kazimirski_samples": [
+        "Qui thésaurisait et se montrait avare."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « أوعى » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "8ae93b34-def7-4e1d-84c4-c1d896906524",
+      "arabic": "هَلُوعًا",
+      "lemma_id": "3f2e65a2-8447-4b5d-83d2-159e1203f9e2",
+      "lemma_arabic": "هلوع",
+      "masaq_stems": [
+        "هلوع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "anxious",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Oui, l’homme a été créé instable [très inquiet] ;"
+      ],
+      "kazimirski_samples": [
+        "L’homme a été créé avide,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "3f2e65a2-8447-4b5d-83d2-159e1203f9e2",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "6082e09d-f96a-402b-9721-e927d328dcbb",
+      "arabic": "جَزُوعًۭا",
+      "lemma_id": "dd445a08-f78c-4e73-9de9-17174533c2f7",
+      "lemma_arabic": "جزوع",
+      "masaq_stems": [
+        "جزوع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "distressed",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "quand le malheur le touche, il est abattu ;"
+      ],
+      "kazimirski_samples": [
+        "Abattu quand le malheur l’atteint,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "dd445a08-f78c-4e73-9de9-17174533c2f7",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "281a9d80-78be-4fc1-91c5-b3a86b42b5ed",
+      "arabic": "مَنُوعًا",
+      "lemma_id": "361c91c8-a33b-4c67-b17d-d81a54afd743",
+      "lemma_arabic": "منوع",
+      "masaq_stems": [
+        "منوع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "withholding",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et quand le bonheur le touche, il est grand refuseur."
+      ],
+      "kazimirski_samples": [
+        "Insolent lorsque quelque bien lui arrive."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "361c91c8-a33b-4c67-b17d-d81a54afd743",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "12009481-efd7-4a4a-8d90-e06c9a36a3b9",
+      "arabic": "دَآئِمُونَ",
+      "lemma_id": "0213339b-f9f7-4825-b84d-7c82b851a39d",
+      "lemma_arabic": "دائم",
+      "masaq_stems": [
+        "دائم"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(are)-constant",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "qui sont assidu à leurs prières,"
+      ],
+      "kazimirski_samples": [
+        "Qui ne cessent jamais d’accomplir leurs prières; "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "0213339b-f9f7-4825-b84d-7c82b851a39d",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "620443d9-34e4-474f-bf33-eec7059fd8bb",
+      "arabic": "يُصَدِّقُونَ",
+      "lemma_id": "5f2c35e4-00d3-45fe-a340-63551704172c",
+      "lemma_arabic": "صدق",
+      "masaq_stems": [
+        "صدق"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "accept-(the)-truth",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et qui déclarent véridique le Jour de la Rétribution,"
+      ],
+      "kazimirski_samples": [
+        "Ceux qui regardent le jour de la rétribution comme une vérité,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "5f2c35e4-00d3-45fe-a340-63551704172c",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "2f2d566a-6db3-4c77-ad91-6822f2985215",
+      "arabic": "مَأْمُونٍۢ",
+      "lemma_id": "451e6245-26be-41fd-b78a-8ce1c4e72793",
+      "lemma_arabic": "مأمون",
+      "masaq_stems": [
+        "مأمون"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "to-be-felt-secure-(of)",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Car vraiment, il n’y a nulle assurance contre le châtiment de leur Seigneur ;"
+      ],
+      "kazimirski_samples": [
+        "(Car nul n’est a l’abri du châtiment de Dieu); "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "451e6245-26be-41fd-b78a-8ce1c4e72793",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "0c509f1e-f64f-4ff0-b9a1-5f14ca4ee695",
+      "arabic": "بِشَهَـٰدَٰتِهِمْ",
+      "lemma_id": "0f74e077-691b-406c-8c22-37622754dfed",
+      "lemma_arabic": "شهاد",
+      "masaq_stems": [
+        "شهاد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "in-their-testimonies",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et qui témoignent de la stricte vérité,"
+      ],
+      "kazimirski_samples": [
+        "Qui sont inébranlables dans leurs témoignages,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "0f74e077-691b-406c-8c22-37622754dfed",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "8e713edc-8786-41d7-8e2b-99158cccc080",
+      "arabic": "قَآئِمُونَ",
+      "lemma_id": "7becf1f6-75f7-4630-b2cb-819e115cb798",
+      "lemma_arabic": "قائم",
+      "masaq_stems": [
+        "قائم"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "stand-firm",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et qui témoignent de la stricte vérité,"
+      ],
+      "kazimirski_samples": [
+        "Qui sont inébranlables dans leurs témoignages,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "7becf1f6-75f7-4630-b2cb-819e115cb798",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "3af2f2ad-bca2-400a-9a97-cbddc8521568",
+      "arabic": "قِبَلَكَ",
+      "lemma_id": "c7343702-80d4-4a1c-855f-d810deda0d60",
+      "lemma_arabic": "قبل",
+      "masaq_stems": [
+        "قبل"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "before-you",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Qu’ont donc, ceux qui ont mécru, à courir vers toi, le cou tendu,"
+      ],
+      "kazimirski_samples": [
+        "Qu’ont-ils donc ces infidèles qui courent haletants devant toi, "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "c7343702-80d4-4a1c-855f-d810deda0d60",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "925cea98-2d9e-4d57-b3dd-ebbdf8011fe7",
+      "arabic": "عِزِينَ",
+      "lemma_id": "89b54827-00af-4e65-8d06-0a2f2a3c0565",
+      "lemma_arabic": "عز",
+      "masaq_stems": [
+        "عز"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(in)-separate-groups",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "de droite et de gauche, [venant] par bandes ?"
+      ],
+      "kazimirski_samples": [
+        "Partagés en troupes, à droite et à gauche? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "89b54827-00af-4e65-8d06-0a2f2a3c0565",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "e7697ef7-c053-4de8-8e7e-d5793902dc25",
+      "arabic": "أَيَطْمَعُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "طمع"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "does-long",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Chacun d’eux convoite-t-il qu’on le laisse entrer au Jardin des délices ?"
+      ],
+      "kazimirski_samples": [
+        "Ne serait-ce pas parce que chacun d’eux voudrait entrer dans le jardin de délices? "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « طمع » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "4159c124-28b0-4fa1-a3bb-88e90dea262a",
+      "arabic": "يُدْخَلَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "دخل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "he-enters",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Chacun d’eux convoite-t-il qu’on le laisse entrer au Jardin des délices ?"
+      ],
+      "kazimirski_samples": [
+        "Ne serait-ce pas parce que chacun d’eux voudrait entrer dans le jardin de délices? "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « دخل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "44af3e25-f568-443d-bbe3-f071ac8c1978",
+      "arabic": "وَٱلْمَغَـٰرِبِ",
+      "lemma_id": "90e42b9f-578b-440f-8bfc-ff5bd9e60f6e",
+      "lemma_arabic": "مغارب",
+      "masaq_stems": [
+        "مغارب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-the-settings",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Eh Non !... Je jure par le Seigneur des Levants  et des Couchants que Nous sommes capables <sup foot_note=212528>1</sup>"
+      ],
+      "kazimirski_samples": [
+        "Je ne jure point par le souverain de l’Orient et de l’Occident que nous pouvons les"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "90e42b9f-578b-440f-8bfc-ff5bd9e60f6e",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "58d4e089-bcf7-41b6-b201-baca27e98ed6",
+      "arabic": "سِرَاعًۭا",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "سراع"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "rapidly",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "le jour où ils sortiront des tombes, rapides comme s’ils couraient vers des pierres dressées ;"
+      ],
+      "kazimirski_samples": [
+        "Ce jour où ils s’élanceront de leurs tombeaux en toute hâte comme s’ils se ralliaient sous les étendards,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « سراع » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "ccc99b70-d685-4224-bb44-1f3f77d12428",
+      "arabic": "نُصُبٍۢ",
+      "lemma_id": "91fbfc50-9597-4233-931f-b0b80a86d3f1",
+      "lemma_arabic": "نصب",
+      "masaq_stems": [
+        "نصب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-goal",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "le jour où ils sortiront des tombes, rapides comme s’ils couraient vers des pierres dressées ;"
+      ],
+      "kazimirski_samples": [
+        "Ce jour où ils s’élanceront de leurs tombeaux en toute hâte comme s’ils se ralliaient sous les étendards,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "91fbfc50-9597-4233-931f-b0b80a86d3f1",
+      "review_reason": null,
+      "confidence": 0.85
+    },
+    {
+      "word_id": "27356ceb-bdfb-4423-a462-8dab8bf8cb8d",
+      "arabic": "يُوفِضُونَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "وفض"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "hastening",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "le jour où ils sortiront des tombes, rapides comme s’ils couraient vers des pierres dressées ;"
+      ],
+      "kazimirski_samples": [
+        "Ce jour où ils s’élanceront de leurs tombeaux en toute hâte comme s’ils se ralliaient sous les étendards,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « وفض » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "55a4e2ae-d296-49c0-96b6-d5bde85bbb09",
+      "arabic": "ذِلَّةٌۭ ۚ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "ذل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "humiliation",
+      "competing_stems": false,
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "leurs yeux seront abaissés, l’avilissement les couvrira. C’est cela le jour dont on les menaçait !"
+      ],
+      "kazimirski_samples": [
+        "Les yeux baissés, couverts d’ignominie. — Tel est le jour qu’on leur promet."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "review_reason": "stem « ذل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    }
+  ],
+  "safeLemmaCandidates": [
+    {
+      "lemma_id": "c7343702-80d4-4a1c-855f-d810deda0d60",
+      "lemma": "قبل",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 26,
+      "occurrences_global": 232,
+      "surahs_affected": 62
+    },
+    {
+      "lemma_id": "5f2c35e4-00d3-45fe-a340-63551704172c",
+      "lemma": "صدق",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 17,
+      "occurrences_global": 30,
+      "surahs_affected": 21
+    },
+    {
+      "lemma_id": "7971f5ef-28d1-4829-bad3-bc3db02938ca",
+      "lemma": "جمع",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 10,
+      "occurrences_global": 13,
+      "surahs_affected": 13
+    },
+    {
+      "lemma_id": "0fc6806a-bec0-440e-a9a9-d1a96c63d367",
+      "lemma": "حميم",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 8,
+      "occurrences_global": 20,
+      "surahs_affected": 15
+    },
+    {
+      "lemma_id": "1ead6083-63b0-4fd6-9c1c-197231c90849",
+      "lemma": "بن",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 8,
+      "occurrences_global": 49,
+      "surahs_affected": 27
+    },
+    {
+      "lemma_id": "7becf1f6-75f7-4630-b2cb-819e115cb798",
+      "lemma": "قائم",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 5,
+      "occurrences_global": 5,
+      "surahs_affected": 5
+    },
+    {
+      "lemma_id": "91fbfc50-9597-4233-931f-b0b80a86d3f1",
+      "lemma": "نصب",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 4,
+      "occurrences_global": 6,
+      "surahs_affected": 6
+    },
+    {
+      "lemma_id": "c58a52e0-9883-4240-a854-f408670b8b2b",
+      "lemma": "سائل",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 3,
+      "occurrences_global": 4,
+      "surahs_affected": 3
+    },
+    {
+      "lemma_id": "ca85fb80-a074-4a32-bb51-f67e4632ed49",
+      "lemma": "واقع",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 3,
+      "occurrences_global": 6,
+      "surahs_affected": 6
+    },
+    {
+      "lemma_id": "29baa3ea-b1d5-4315-8fc4-851f0555dfe3",
+      "lemma": "دافع",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 3,
+      "occurrences_global": 3,
+      "surahs_affected": 3
+    },
+    {
+      "lemma_id": "febd7b39-bfb8-4a14-9de8-11d882cfaebd",
+      "lemma": "مقدار",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 3,
+      "occurrences_global": 3,
+      "surahs_affected": 3
+    },
+    {
+      "lemma_id": "0f74e077-691b-406c-8c22-37622754dfed",
+      "lemma": "شهاد",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 3,
+      "occurrences_global": 10,
+      "surahs_affected": 9
+    },
+    {
+      "lemma_id": "7da07998-bd03-4a74-968b-36d8ee644440",
+      "lemma": "جميل",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 2,
+      "occurrences_global": 4,
+      "surahs_affected": 3
+    },
+    {
+      "lemma_id": "0213339b-f9f7-4825-b84d-7c82b851a39d",
+      "lemma": "دائم",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 2,
+      "occurrences_global": 2,
+      "surahs_affected": 2
+    },
+    {
+      "lemma_id": "89b54827-00af-4e65-8d06-0a2f2a3c0565",
+      "lemma": "عز",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 2,
+      "occurrences_global": 4,
+      "surahs_affected": 4
+    },
+    {
+      "lemma_id": "3e11d1cf-fbda-4aea-9685-840f1802f402",
+      "lemma": "معارج",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "0fdfc47b-af3c-416d-a898-a37a63c9b0d7",
+      "lemma": "فصيل",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "29c441a4-b5d3-4f9e-890a-ad4fa3ef52f8",
+      "lemma": "لظى",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "29f521d4-a563-472c-a776-9903cc78324a",
+      "lemma": "نزاع",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "bed6e0f3-b8be-4fb6-8d52-8ab3b577b658",
+      "lemma": "شوى",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "3f2e65a2-8447-4b5d-83d2-159e1203f9e2",
+      "lemma": "هلوع",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "dd445a08-f78c-4e73-9de9-17174533c2f7",
+      "lemma": "جزوع",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "361c91c8-a33b-4c67-b17d-d81a54afd743",
+      "lemma": "منوع",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "451e6245-26be-41fd-b78a-8ce1c4e72793",
+      "lemma": "مأمون",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    },
+    {
+      "lemma_id": "90e42b9f-578b-440f-8bfc-ff5bd9e60f6e",
+      "lemma": "مغارب",
+      "quality": 1,
+      "hasSource": true,
+      "forms_in_S70": 1,
+      "forms_global": 1,
+      "occurrences_global": 1,
+      "surahs_affected": 1
+    }
+  ],
+  "wordTranslationCandidates": [
+    {
+      "word_id": "64d6cbd1-7de1-42a6-8be4-044ea8773449",
+      "arabic": "سَأَلَ",
+      "masaq_stems": [
+        "سأل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « سأل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "2fc5c6f8-f002-4097-83ae-ac0ed2dba1e6",
+      "arabic": "تَعْرُجُ",
+      "masaq_stems": [
+        "عرج"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « عرج » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "09e4e5be-fca1-4d42-a03a-439c729d26e9",
+      "arabic": "يَرَوْنَهُۥ",
+      "masaq_stems": [
+        "ر"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « ر » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "90c80563-52f6-4141-a6a1-f6984c989fee",
+      "arabic": "وَنَرَىٰهُ",
+      "masaq_stems": [
+        "را"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « را » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "388965bc-ba73-4398-bd8c-67744872f1c0",
+      "arabic": "يَفْتَدِى",
+      "masaq_stems": [
+        "فتدي"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « فتدي » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "fa4807d6-c4ac-4016-a9da-3d8ffe1990f3",
+      "arabic": "تُـْٔوِيهِ",
+      "masaq_stems": [
+        "ؤوي"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « ؤوي » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "8d26b9de-d31a-4a0e-b583-ffe6e419ace3",
+      "arabic": "يُنجِيهِ",
+      "masaq_stems": [
+        "نجي"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « نجي » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "f6680c7c-c20d-4202-918f-22aaa8d5dbe1",
+      "arabic": "فَأَوْعَىٰٓ",
+      "masaq_stems": [
+        "أوعى"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « أوعى » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "e7697ef7-c053-4de8-8e7e-d5793902dc25",
+      "arabic": "أَيَطْمَعُ",
+      "masaq_stems": [
+        "طمع"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « طمع » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "4159c124-28b0-4fa1-a3bb-88e90dea262a",
+      "arabic": "يُدْخَلَ",
+      "masaq_stems": [
+        "دخل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « دخل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "58d4e089-bcf7-41b6-b201-baca27e98ed6",
+      "arabic": "سِرَاعًۭا",
+      "masaq_stems": [
+        "سراع"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « سراع » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "27356ceb-bdfb-4423-a462-8dab8bf8cb8d",
+      "arabic": "يُوفِضُونَ",
+      "masaq_stems": [
+        "وفض"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « وفض » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "55a4e2ae-d296-49c0-96b6-d5bde85bbb09",
+      "arabic": "ذِلَّةٌۭ ۚ",
+      "masaq_stems": [
+        "ذل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « ذل » UNMAPPED quality=0 — word_translation à écrire."
+    }
+  ],
+  "propagation": {
+    "totalSafeFormsS70": 25,
+    "totalGlobalFormsUnlocked": 109,
+    "totalGlobalOccurrencesUnlocked": 401,
+    "totalSurahsAffected": 79,
+    "u88_estimate": {
+      "safeLemmas": 25,
+      "globalForms": 109,
+      "occurrences": 401,
+      "surahs": 79
+    },
+    "divergence": {
+      "safeLemmas": 0,
+      "globalForms": 0,
+      "occurrences": 0,
+      "surahs": 0
+    }
+  },
+  "simulations": [
+    {
+      "name": "BASELINE",
+      "forms": 151,
+      "pct": 79.9,
+      "ready": false,
+      "remaining": 38
+    },
+    {
+      "name": "SCENARIO_A_SAFE_GLOSSES",
+      "forms": 176,
+      "pct": 93.1,
+      "ready": false,
+      "remaining": 13
+    },
+    {
+      "name": "SCENARIO_B_SAFE_WORD_TR",
+      "forms": 189,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    },
+    {
+      "name": "SCENARIO_C_COMPLETE",
+      "forms": 189,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    }
+  ],
+  "globalImpact": {
+    "frUnionBefore": 5418,
+    "frUnionAfter": 5493,
+    "deltaForms": 75,
+    "frOccBefore": 56224,
+    "frOccAfter": 56300,
+    "deltaOccs": 76,
+    "thresholdBefore": {
+      "1": 28,
+      "0.5": 105,
+      "0.6": 85,
+      "0.7": 63,
+      "0.8": 41,
+      "0.9": 28,
+      "0.95": 28
+    },
+    "thresholdAfter": {
+      "1": 29,
+      "0.5": 105,
+      "0.6": 85,
+      "0.7": 63,
+      "0.8": 43,
+      "0.9": 29,
+      "0.95": 29
+    },
+    "topGainSurahs": [
+      {
+        "number": 70,
+        "name": "Al-Ma'arij",
+        "gain": 38
+      },
+      {
+        "number": 13,
+        "name": "Ar-Ra'd",
+        "gain": 5
+      },
+      {
+        "number": 9,
+        "name": "At-Tawbah",
+        "gain": 3
+      },
+      {
+        "number": 22,
+        "name": "Al-Hajj",
+        "gain": 3
+      },
+      {
+        "number": 28,
+        "name": "Al-Qasas",
+        "gain": 3
+      },
+      {
+        "number": 39,
+        "name": "Az-Zumar",
+        "gain": 3
+      },
+      {
+        "number": 52,
+        "name": "At-Tur",
+        "gain": 2
+      },
+      {
+        "number": 56,
+        "name": "Al-Waqi'ah",
+        "gain": 2
+      },
+      {
+        "number": 62,
+        "name": "Al-Jumu'ah",
+        "gain": 2
+      },
+      {
+        "number": 29,
+        "name": "Al-'Ankabut",
+        "gain": 1
+      }
+    ]
+  },
+  "s70VsS88": {
+    "s70": {
+      "number": 70,
+      "name": "Al-Ma'arij",
+      "coveragePct": 0.7989,
+      "missingForms": 38,
+      "safeLemmas": 25,
+      "wordTr": 13,
+      "totalActions": 38,
+      "globalFormsUnlocked": 109,
+      "globalOccsUnlocked": 401,
+      "globalSurahsAffected": 79,
+      "formsPerAction": 3.87,
+      "occsPerAction": 10.55,
+      "readyPotential": true
+    },
+    "s88": {
+      "number": 88,
+      "name": "Al-Ghashiyah",
+      "coveragePct": 0.6,
+      "missingForms": 32,
+      "safeLemmas": 24,
+      "wordTr": 8,
+      "totalActions": 32,
+      "globalFormsUnlocked": 56,
+      "globalOccsUnlocked": 102,
+      "globalSurahsAffected": 37,
+      "formsPerAction": 2.75,
+      "occsPerAction": 3.19,
+      "readyPotential": true
+    },
+    "verdict": "S88 comparable ou meilleure"
+  },
+  "integrity": {
+    "orphan_quran": 0,
+    "orphan_wlm": 0,
+    "orphan_lo": 0,
+    "orphan_lt": 0,
+    "dup_wlm": 0,
+    "dup_lt": 0,
+    "dup_fr_wt": 0,
+    "dir_wlm_conflict": 0,
+    "S98": true,
+    "S92": true,
+    "S82": true,
+    "S85": true,
+    "S90": true,
+    "S70": false,
+    "S88": false,
+    "classifySurahReadiness_unchanged": true
+  },
+  "invariants": {
+    "database_writes": 0,
+    "lexical_writes": 0,
+    "translation_writes": 0,
+    "curriculum_writes": 0,
+    "masaq_writes": 0,
+    "migrations": 0,
+    "seeds": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error · 0 warning",
+    "readOnlyStaticCheck": "PASS (only doc comment)"
+  },
+  "recommendation": {
+    "nextPhase": "88F-W",
+    "name": "S70 AL-MA'ARIJ RESOLUTION",
+    "safeLemmaCount": 25,
+    "wordTranslationCount": 13,
+    "totalActions": 38,
+    "globalFormsUnlocked": 109,
+    "globalOccurrencesUnlocked": 401,
+    "globalSurahsAffected": 79,
+    "s70Readable": false
+  }
+}

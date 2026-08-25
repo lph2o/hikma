@@ -49,18 +49,31 @@ export const ACTIVITY_WORD_CONFLICT = "user_id,activity_date,word_id";
 /**
  * Date d'activité (YYYY-MM-DD) pour un instant donné.
  *
- * Phase 6 : UTC uniquement (jour déterministe, cohérent entre rendu serveur
- * et Server Actions). Le paramètre `timeZone` est prévu pour une évolution
- * future (jour local utilisateur) mais n'active AUCUN comportement différent
- * aujourd'hui : il doit rester `undefined` dans toute l'application.
+ * Sans timeZone : UTC (comportement historique, déterministe).
+ * Avec timeZone : jour local utilisateur (Phase 77).
  */
 export function getActivityDate(date: Date = new Date(), timeZone?: string): string {
   if (timeZone) {
-    // en-CA produit YYYY-MM-DD — forme stable, utilisée uniquement si une
-    // timezone utilisateur est un jour introduite.
+    // en-CA produit YYYY-MM-DD — forme stable, indépendante du fuseau système.
     return new Intl.DateTimeFormat("en-CA", { timeZone }).format(date);
   }
   return date.toISOString().slice(0, 10);
+}
+
+/**
+ * Convertit un timestamp (ISO 8601 ou Date) en date locale YYYY-MM-DD
+ * selon le timezone IANA de l'utilisateur. Sans timezone → UTC.
+ *
+ * Phase 77 — fondation heure locale.
+ * Pure, sans I/O, testable isolément.
+ */
+export function getLocalDateKey(
+  timestamp: string | Date,
+  timezone?: string | null,
+): string {
+  const date = typeof timestamp === "string" ? new Date(timestamp) : timestamp;
+  if (!timezone) return getActivityDate(date);
+  return getActivityDate(date, timezone);
 }
 
 // ---------------------------------------------------------------------------
@@ -101,6 +114,9 @@ export async function insertUserSettings(
     dailyDuration?: 5 | 10 | 15 | 20 | 30 | null;
     learningPace?: LearningPace | null;
     preferredSurahNumber?: number | null;
+    timezone?: string | null;
+    reminderEnabled?: boolean;
+    reminderTime?: string;
   },
 ): Promise<void> {
   const { error } = await client.from("user_settings").insert({
@@ -116,6 +132,9 @@ export async function insertUserSettings(
     daily_duration: settings.dailyDuration ?? null,
     learning_pace: settings.learningPace ?? null,
     preferred_surah_number: settings.preferredSurahNumber ?? null,
+    timezone: settings.timezone ?? null,
+    reminder_enabled: settings.reminderEnabled ?? false,
+    reminder_time: settings.reminderTime ?? "19:00",
   });
   if (error) throw new Error(`user_settings insert : ${error.message}`);
 }
@@ -136,6 +155,9 @@ export async function updateUserSettings(
     dailyDuration?: 5 | 10 | 15 | 20 | 30 | null;
     learningPace?: LearningPace | null;
     preferredSurahNumber?: number | null;
+    timezone?: string | null;
+    reminderEnabled?: boolean;
+    reminderTime?: string;
   },
 ): Promise<void> {
   const data: Record<string, unknown> = { updated_at: new Date().toISOString() };
@@ -155,6 +177,9 @@ export async function updateUserSettings(
   if (patch.dailyDuration !== undefined) data.daily_duration = patch.dailyDuration;
   if (patch.learningPace !== undefined) data.learning_pace = patch.learningPace;
   if (patch.preferredSurahNumber !== undefined) data.preferred_surah_number = patch.preferredSurahNumber;
+  if (patch.timezone !== undefined) data.timezone = patch.timezone;
+  if (patch.reminderEnabled !== undefined) data.reminder_enabled = patch.reminderEnabled;
+  if (patch.reminderTime !== undefined) data.reminder_time = patch.reminderTime;
 
   const { error } = await client
     .from("user_settings")
@@ -235,12 +260,14 @@ export async function getDailyGoalProgress(
 /**
  * Nombre de mots dus par jour pour les `days` prochains jours (aujourd'hui
  * inclus). Les jours sans révision apparaissent à 0. Aucune écriture.
+ * Phase 77 : utilise le jour local si `timezone` est fourni.
  */
 export async function getUpcomingReviewCounts(
   client: SupabaseClient,
   userId: string,
   days: number,
   now: Date = new Date(),
+  timezone?: string | null,
 ): Promise<{ date: string; dueCount: number }[]> {
   const rows = await getUpcomingReviewRows(client, userId, days, now);
 
@@ -249,11 +276,11 @@ export async function getUpcomingReviewCounts(
   for (let i = 0; i < days; i += 1) {
     const d = new Date(now);
     d.setUTCDate(d.getUTCDate() + i);
-    out.push({ date: getActivityDate(d), dueCount: 0 });
+    out.push({ date: getLocalDateKey(d, timezone), dueCount: 0 });
   }
   const byDate = new Map(out.map((r) => [r.date, r]));
   for (const row of rows) {
-    const date = getActivityDate(new Date(row.next_review_at));
+    const date = getLocalDateKey(new Date(row.next_review_at), timezone);
     const entry = byDate.get(date);
     if (entry) entry.dueCount += 1;
   }
@@ -287,46 +314,62 @@ async function getUpcomingReviewRows(
 // Historique (F4) — 30 derniers jours, jours vides à 0
 // ---------------------------------------------------------------------------
 
-/** Activité des `days` derniers jours (les jours sans activité valent 0). */
+/** Activité des `days` derniers jours (les jours sans activité valent 0).
+ * Phase 77 : si `timezone` fourni, les dates sont dérivées des timestamps
+ * `created_at` convertis en jour local. Sans timezone, comportement UTC
+ * historique via `activity_date`. */
 export async function getActivityHistory(
   client: SupabaseClient,
   userId: string,
   days: number,
   now: Date = new Date(),
+  timezone?: string | null,
 ): Promise<DailyActivity & { days: Array<{ date: string; lessonsCompleted: number; wordsStudied: number }> }> {
   const startDate = new Date(now);
   startDate.setUTCDate(startDate.getUTCDate() - (days - 1));
-  const start = getActivityDate(startDate);
+  const start = getLocalDateKey(startDate, timezone);
 
   const [lessonRows, wordRows] = await Promise.all([
     client
       .from("user_activity_lessons")
-      .select("activity_date")
+      .select(timezone ? "created_at" : "activity_date")
       .eq("user_id", userId)
-      .gte("activity_date", start),
+      .gte(timezone ? "created_at" : "activity_date", timezone ? startDate.toISOString() : start),
     client
       .from("user_activity_words")
-      .select("activity_date")
+      .select(timezone ? "created_at" : "activity_date")
       .eq("user_id", userId)
-      .gte("activity_date", start),
+      .gte(timezone ? "created_at" : "activity_date", timezone ? startDate.toISOString() : start),
   ]);
   if (lessonRows.error) throw new Error(`user_activity_lessons : ${lessonRows.error.message}`);
   if (wordRows.error) throw new Error(`user_activity_words : ${wordRows.error.message}`);
 
   const lessonCount = new Map<string, number>();
   const wordCount = new Map<string, number>();
-  for (const r of (lessonRows.data ?? []) as Array<{ activity_date: string }>) {
-    lessonCount.set(r.activity_date, (lessonCount.get(r.activity_date) ?? 0) + 1);
-  }
-  for (const r of (wordRows.data ?? []) as Array<{ activity_date: string }>) {
-    wordCount.set(r.activity_date, (wordCount.get(r.activity_date) ?? 0) + 1);
+
+  if (timezone) {
+    for (const r of (lessonRows.data ?? []) as Array<{ created_at: string }>) {
+      const date = getLocalDateKey(r.created_at, timezone);
+      lessonCount.set(date, (lessonCount.get(date) ?? 0) + 1);
+    }
+    for (const r of (wordRows.data ?? []) as Array<{ created_at: string }>) {
+      const date = getLocalDateKey(r.created_at, timezone);
+      wordCount.set(date, (wordCount.get(date) ?? 0) + 1);
+    }
+  } else {
+    for (const r of (lessonRows.data ?? []) as Array<{ activity_date: string }>) {
+      lessonCount.set(r.activity_date, (lessonCount.get(r.activity_date) ?? 0) + 1);
+    }
+    for (const r of (wordRows.data ?? []) as Array<{ activity_date: string }>) {
+      wordCount.set(r.activity_date, (wordCount.get(r.activity_date) ?? 0) + 1);
+    }
   }
 
   const daysOut: Array<{ date: string; lessonsCompleted: number; wordsStudied: number }> = [];
   for (let i = 0; i < days; i += 1) {
     const d = new Date(startDate);
     d.setUTCDate(startDate.getUTCDate() + i);
-    const date = getActivityDate(d);
+    const date = getLocalDateKey(d, timezone);
     daysOut.push({
       date,
       lessonsCompleted: lessonCount.get(date) ?? 0,
@@ -339,4 +382,61 @@ export async function getActivityHistory(
     wordsStudied: [...wordCount.values()].reduce((a, b) => a + b, 0),
     days: daysOut,
   };
+}
+
+// ---------------------------------------------------------------------------
+// Régularité (Phase 73) — jours d'apprentissage distincts
+// ---------------------------------------------------------------------------
+
+/**
+ * Récupère TOUS les jours distincts avec activité pédagogique pour un
+ * utilisateur. Combine les dates des deux journaux (user_activity_lessons +
+ * user_activity_words), déduplique et trie (ordre chronologique).
+ *
+ * Phase 77 : si `timezone` est fourni, dérive les dates locales à partir des
+ * timestamps `created_at` (UTC → local via IANA). Sans timezone, utilise les
+ * dates `activity_date` stockées (comportement UTC historique).
+ *
+ * Aucune nouvelle table : les journaux existants sont la source de vérité.
+ * Utilisé par le module pur `lib/learning/regularity.ts` pour calculer
+ * le streak, le record et la régularité hebdomadaire.
+ */
+export async function getDistinctLearningDays(
+  client: SupabaseClient,
+  userId: string,
+  timezone?: string | null,
+): Promise<string[]> {
+  const [lessonRows, wordRows] = await Promise.all([
+    client
+      .from("user_activity_lessons")
+      .select(timezone ? "created_at" : "activity_date")
+      .eq("user_id", userId),
+    client
+      .from("user_activity_words")
+      .select(timezone ? "created_at" : "activity_date")
+      .eq("user_id", userId),
+  ]);
+  if (lessonRows.error)
+    throw new Error(`user_activity_lessons : ${lessonRows.error.message}`);
+  if (wordRows.error)
+    throw new Error(`user_activity_words : ${wordRows.error.message}`);
+
+  const dates = new Set<string>();
+  if (timezone) {
+    for (const row of (lessonRows.data ?? []) as Array<{ created_at: string }>) {
+      dates.add(getLocalDateKey(row.created_at, timezone));
+    }
+    for (const row of (wordRows.data ?? []) as Array<{ created_at: string }>) {
+      dates.add(getLocalDateKey(row.created_at, timezone));
+    }
+  } else {
+    for (const row of (lessonRows.data ?? []) as Array<{ activity_date: string }>) {
+      dates.add(row.activity_date);
+    }
+    for (const row of (wordRows.data ?? []) as Array<{ activity_date: string }>) {
+      dates.add(row.activity_date);
+    }
+  }
+
+  return [...dates].sort();
 }

@@ -1,0 +1,301 @@
+{
+  "phase": "88F-L",
+  "verdict": "PHASE_88F_L_COMPLETE — S92 READY",
+  "timestamp": "2026-08-24T09:15:52.319Z",
+  "strategy": "SURAH-FIRST — S92 Al-Layl only",
+  "baseline": {
+    "s92": {
+      "totalForms": 62,
+      "coveredForms": 47,
+      "missingForms": 15,
+      "coveragePct": 0.7581,
+      "readiness": "IN_PREPARATION"
+    },
+    "s98": {
+      "readiness": "READY"
+    },
+    "global": {
+      "quranWords": 21296,
+      "frUnion": 5290,
+      "frOccurrences": 56092,
+      "frPercentage": 0.2484,
+      "lemmaTranslations": 135,
+      "lemmaTrFr": 131,
+      "wordTrFr": 4492,
+      "readiness": {
+        "READY": 24,
+        "IN_PREPARATION": 89,
+        "REFERENCE": 1
+      }
+    }
+  },
+  "preflight": {
+    "batchA": {
+      "glosses": [
+        {
+          "lemma": "أتقى",
+          "gloss": "le plus pieux / craignant Dieu"
+        },
+        {
+          "lemma": "حسني",
+          "gloss": "la plus belle (récompense) / le meilleur"
+        },
+        {
+          "lemma": "عسرى",
+          "gloss": "difficulté / la plus dure (voie)"
+        },
+        {
+          "lemma": "جنب",
+          "gloss": "écarter / éviter / être éloigné"
+        },
+        {
+          "lemma": "أحد",
+          "gloss": "un / personne / quelqu'un"
+        },
+        {
+          "lemma": "شتى",
+          "gloss": "dispersés / divers / séparés"
+        },
+        {
+          "lemma": "جزي",
+          "gloss": "rétribuer / récompenser"
+        }
+      ],
+      "readyCount": 7,
+      "existingSame": 0,
+      "conflicts": []
+    },
+    "batchB": {
+      "forms": [
+        {
+          "stem": "سعي",
+          "wordId": "a05da7b5-8a41-4d60-9444-5cd2fd0f2071",
+          "text": "effort / s'efforcer / agir"
+        },
+        {
+          "stem": "يسر",
+          "wordId": "ed0ee449-5926-4798-882c-65ae0c55c443",
+          "text": "faciliter / rendre aisé"
+        },
+        {
+          "stem": "بخل",
+          "wordId": "2a7d6fcc-7faa-409d-8436-28e9df4b4e06",
+          "text": "être avare / refuser (par avarice)"
+        },
+        {
+          "stem": "استغنى",
+          "wordId": "054cc854-8daa-4c2b-a92a-0abbd269a0c0",
+          "text": "se passer de / se suffire à soi-même"
+        },
+        {
+          "stem": "تردى",
+          "wordId": "1ad289c0-d33c-4614-bce7-7e037de96a83",
+          "text": "tomber / se précipiter (vers la perte)"
+        },
+        {
+          "stem": "أنذر",
+          "wordId": "93eca711-986a-4bcd-9809-972c23b16689",
+          "text": "avertir / mettre en garde"
+        },
+        {
+          "stem": "تلظى",
+          "wordId": "9ca6c518-793d-4d38-b85f-871ca0f8ffff",
+          "text": "flamber / s'embraser"
+        },
+        {
+          "stem": "صلا",
+          "wordId": "4d12ce47-2345-444d-b107-402ef04382c6",
+          "text": "brûler / endurer (le feu)"
+        }
+      ],
+      "readyCount": 8,
+      "existingSame": 0,
+      "conflicts": []
+    }
+  },
+  "writes": {
+    "batchA": {
+      "table": "lemma_translations",
+      "count": 7,
+      "ids": [
+        {
+          "id": "7c3da0dc-a08f-4d2c-9829-24e6cbab5620",
+          "lemma_id": "71f19c20-a9d6-4722-b536-bb05cf84ffa2"
+        },
+        {
+          "id": "b35ea072-d941-43f6-a654-f6863d4e9ce0",
+          "lemma_id": "d53c17f6-57e6-47c7-81d7-af93033fa12a"
+        },
+        {
+          "id": "e66cb230-7202-4cb0-a58f-3a3746e03259",
+          "lemma_id": "afe85368-f5f5-4bcf-aa97-8b2d8513af5f"
+        },
+        {
+          "id": "3422afdc-4dae-4ca3-b007-c88171e6ef76",
+          "lemma_id": "32a1dec4-4450-4bd9-b28b-ba80e57a46a2"
+        },
+        {
+          "id": "5f1982bc-de0d-4af5-b52a-42141567f33a",
+          "lemma_id": "f8983c27-924a-464c-b366-286973a36194"
+        },
+        {
+          "id": "94b92aaa-aff0-4015-aa7b-0dcad40e2e5b",
+          "lemma_id": "b134c0e2-c02c-4bfa-910f-f41dc6e6dde4"
+        },
+        {
+          "id": "6352c563-fffa-4b85-9f47-5f945f45023c",
+          "lemma_id": "1743a3d0-263e-469b-9872-941401e2b207"
+        }
+      ]
+    },
+    "batchB": {
+      "table": "word_translations",
+      "count": 8,
+      "ids": [
+        {
+          "id": "18ee5fa2-13f0-4faa-aaec-7fe8bb438e09",
+          "word_id": "a05da7b5-8a41-4d60-9444-5cd2fd0f2071"
+        },
+        {
+          "id": "b26cae11-a4da-4633-9ab1-2b3e3f55b919",
+          "word_id": "ed0ee449-5926-4798-882c-65ae0c55c443"
+        },
+        {
+          "id": "d5ef6c6b-33d0-4bc3-a3a0-83c6ef1e535e",
+          "word_id": "2a7d6fcc-7faa-409d-8436-28e9df4b4e06"
+        },
+        {
+          "id": "0d18ac4f-24e9-4a18-8a52-111ebf14786c",
+          "word_id": "054cc854-8daa-4c2b-a92a-0abbd269a0c0"
+        },
+        {
+          "id": "2a92f488-a13c-4218-9c11-9a814e50afd2",
+          "word_id": "1ad289c0-d33c-4614-bce7-7e037de96a83"
+        },
+        {
+          "id": "12bf039e-4c9e-4ae8-9afb-d0fc166bb5b9",
+          "word_id": "93eca711-986a-4bcd-9809-972c23b16689"
+        },
+        {
+          "id": "9a8598bd-ba0e-4025-a87b-a2230019fcc9",
+          "word_id": "9ca6c518-793d-4d38-b85f-871ca0f8ffff"
+        },
+        {
+          "id": "3f1b842f-5dde-4a22-9ee3-b0b1a05858f2",
+          "word_id": "4d12ce47-2345-444d-b107-402ef04382c6"
+        }
+      ]
+    },
+    "totalWrites": 15,
+    "tablesWritten": [
+      "lemma_translations",
+      "word_translations"
+    ]
+  },
+  "postImport": {
+    "s92": {
+      "totalForms": 62,
+      "coveredForms": 62,
+      "coveragePct": 1,
+      "readiness": "READY",
+      "isReady": true
+    },
+    "s98": {
+      "readiness": "READY",
+      "stillReady": true
+    },
+    "global": {
+      "quranWords": 21296,
+      "frUnion": 5315,
+      "frOccurrences": 56119,
+      "frPercentage": 0.2496,
+      "lemmaTranslations": 142,
+      "lemmaTrFr": 138,
+      "wordTrFr": 4500,
+      "readiness": {
+        "READY": 25,
+        "IN_PREPARATION": 88,
+        "REFERENCE": 1
+      }
+    },
+    "deltas": {
+      "lemmaTranslations": 7,
+      "wordTranslationsFr": 8,
+      "frUnion": 25,
+      "frOccurrences": 27
+    }
+  },
+  "validation": {
+    "batchA": {
+      "present": "7/7",
+      "badLang": 0,
+      "badVal": 0,
+      "badText": 0,
+      "ok": true
+    },
+    "batchB": {
+      "present": "8/8",
+      "badLang": 0,
+      "badVal": 0,
+      "badText": 0,
+      "ok": true
+    }
+  },
+  "invariants": {
+    "protectedTables": {
+      "quran_words": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "word_lemma_mapping": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "linguistic_occurrences": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "lemmas": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "learning_paths": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "units": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "lessons": {
+        "count": 0,
+        "hashUnchanged": true
+      }
+    },
+    "protectedOk": true,
+    "CURRICULUM_WRITES": 0,
+    "MIGRATIONS": 0,
+    "SEEDS": 0,
+    "classifySurahReadinessUnchanged": true
+  },
+  "tests": {
+    "run": true,
+    "vitest": { "passed": 954, "total": 954 },
+    "scriptTypeScript": "PASS (0 errors)",
+    "scriptEslint": "PASS (0 errors, 0 warnings)"
+  },
+  "idempotence": {
+    "secondPass": true,
+    "batchA_EXISTING_SAME": 7,
+    "batchB_EXISTING_SAME": 8,
+    "batchA_NEW": 0,
+    "batchB_NEW": 0,
+    "DATABASE_WRITES": 0,
+    "lemmaTranslationsDelta": 0,
+    "wordTranslationsDelta": 0,
+    "frUnionDelta": 0,
+    "s92StillReady": true,
+    "s98StillReady": true,
+    "verdict": "PHASE_88F_L_IDEMPOTENT"
+  }
+}

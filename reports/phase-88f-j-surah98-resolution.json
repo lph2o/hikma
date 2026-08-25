@@ -1,0 +1,319 @@
+{
+  "phase": "88F-J",
+  "verdict": "PHASE_88F_J_COMPLETE — S98 READY",
+  "timestamp": "2026-08-24T08:52:14.000Z",
+  "strategy": "SURAH-FIRST — S98 Al-Bayyinah only",
+  "baseline": {
+    "s98": {
+      "totalForms": 79,
+      "coveredForms": 68,
+      "missingForms": 11,
+      "coveragePct": 0.8608,
+      "readiness": "IN_PREPARATION"
+    },
+    "global": {
+      "quranWords": 21296,
+      "frUnion": 5263,
+      "frOccurrences": 56063,
+      "frPercentage": 0.2471,
+      "lemmaTranslations": 128,
+      "lemmaTrFr": 124,
+      "wordTrFr": 4490,
+      "readiness": {
+        "READY": 23,
+        "IN_PREPARATION": 90,
+        "REFERENCE": 1
+      }
+    }
+  },
+  "missingForms": [
+    {
+      "arabic": "ٱلْبَرِيَّةِ",
+      "lemma": "بر",
+      "batch": "A"
+    },
+    {
+      "arabic": "ٱلْبَيِّنَةُ",
+      "lemma": "بين",
+      "batch": "A"
+    },
+    {
+      "arabic": "ٱلْقَيِّمَةِ",
+      "lemma": "قيم",
+      "batch": "A"
+    },
+    {
+      "arabic": "قَيِّمَةٌۭ",
+      "lemma": "قيم",
+      "batch": "A"
+    },
+    {
+      "arabic": "وَيُقِيمُوا۟",
+      "lemma": "قيم",
+      "batch": "A"
+    },
+    {
+      "arabic": "شَرُّ",
+      "lemma": "شر",
+      "batch": "A"
+    },
+    {
+      "arabic": "كُتُبٌۭ",
+      "lemma": "كتب",
+      "batch": "A"
+    },
+    {
+      "arabic": "مُّطَهَّرَةًۭ",
+      "lemma": "مطهر",
+      "batch": "A"
+    },
+    {
+      "arabic": "مُنفَكِّينَ",
+      "lemma": "منفك",
+      "batch": "A"
+    },
+    {
+      "arabic": "تَفَرَّقَ",
+      "lemma": null,
+      "batch": "B"
+    },
+    {
+      "arabic": "وَيُؤْتُوا۟",
+      "lemma": null,
+      "batch": "B"
+    }
+  ],
+  "batchA": {
+    "type": "LEMMA_TRANSLATIONS",
+    "count": 7,
+    "covers": 9,
+    "entries": [
+      {
+        "lemma": "بر",
+        "lemmaId": "71d35060-c548-416b-ae25-d682e1c5575d",
+        "text": "bonté / bienfaisance"
+      },
+      {
+        "lemma": "منفك",
+        "lemmaId": "f986b797-62f3-4b70-b733-419f0170f5b8",
+        "text": "cesser / se désengager / se séparer"
+      },
+      {
+        "lemma": "بين",
+        "lemmaId": "1818b16c-a6f7-4c5a-b449-cf7df139839e",
+        "text": "entre / preuve claire"
+      },
+      {
+        "lemma": "مطهر",
+        "lemmaId": "911bcc5c-6fc9-4668-a357-bc9b130af1f0",
+        "text": "purifié / pur"
+      },
+      {
+        "lemma": "كتب",
+        "lemmaId": "8afcda77-f864-4c33-8a28-ed3613a1f153",
+        "text": "livre / écrire / prescrire"
+      },
+      {
+        "lemma": "قيم",
+        "lemmaId": "e35fe1cb-bcec-430c-b20c-29c011e2f733",
+        "text": "droit / correct / de valeur / établir (droit)"
+      },
+      {
+        "lemma": "شر",
+        "lemmaId": "223d7988-3efa-4bbf-897a-65c68523a0c6",
+        "text": "mal / pire / mauvais"
+      }
+    ],
+    "insertedIds": [
+      {
+        "id": "a02b03bb-3f64-4cb0-a9e3-41dc00b91806",
+        "lemma_id": "71d35060-c548-416b-ae25-d682e1c5575d"
+      },
+      {
+        "id": "6156fa65-2562-4155-86c5-ff6a0bdda872",
+        "lemma_id": "f986b797-62f3-4b70-b733-419f0170f5b8"
+      },
+      {
+        "id": "7157f8a1-75ed-49d7-88a8-7661c38195f7",
+        "lemma_id": "1818b16c-a6f7-4c5a-b449-cf7df139839e"
+      },
+      {
+        "id": "464ed048-6db5-4a45-a0d8-696b480c5adf",
+        "lemma_id": "911bcc5c-6fc9-4668-a357-bc9b130af1f0"
+      },
+      {
+        "id": "2ad75f22-34fd-4473-9565-f805396d69a6",
+        "lemma_id": "8afcda77-f864-4c33-8a28-ed3613a1f153"
+      },
+      {
+        "id": "a88d6624-8610-4dcc-990c-e0a28a80bb58",
+        "lemma_id": "e35fe1cb-bcec-430c-b20c-29c011e2f733"
+      },
+      {
+        "id": "eea1daf1-6773-4df3-b307-f60190066d1f",
+        "lemma_id": "223d7988-3efa-4bbf-897a-65c68523a0c6"
+      }
+    ]
+  },
+  "batchB": {
+    "type": "WORD_TRANSLATIONS",
+    "count": 2,
+    "covers": 2,
+    "decision": "WORD_TRANSLATION — mapping lemma trop incertain sans revue humaine. Les stems MASAQ تفرق (UNMAPPED) et ؤت (UNMAPPED) n'ont pas de lemma canonique fiable dans le corpus actuel.",
+    "entries": [
+      {
+        "stem": "تفرق",
+        "wordId": "74e57f70-00f1-4cfd-987c-d87f0d7e66c8",
+        "text": "se diviser / se séparer"
+      },
+      {
+        "stem": "ؤت",
+        "wordId": "01547cbe-310e-4182-957b-a10e6c9d221b",
+        "text": "donner / accorder"
+      }
+    ],
+    "insertedIds": [
+      {
+        "id": "8557a394-d77d-45f0-bfa5-26518b28bf22",
+        "word_id": "01547cbe-310e-4182-957b-a10e6c9d221b"
+      },
+      {
+        "id": "a5d6157d-7f4a-4f16-aa5e-bfc8b08384bf",
+        "word_id": "74e57f70-00f1-4cfd-987c-d87f0d7e66c8"
+      }
+    ]
+  },
+  "preflight": {
+    "batchA": {
+      "readyCount": 7,
+      "existingSame": 0,
+      "conflicts": []
+    },
+    "batchB": {
+      "readyCount": 2,
+      "existingSame": 0,
+      "conflicts": []
+    },
+    "predictedGain": {
+      "newForms": 27,
+      "newOccurrences": 29,
+      "expectedS98After": 79,
+      "formsCoveredByBatchA": 9,
+      "formsCoveredByBatchB": 2
+    }
+  },
+  "writes": {
+    "batchA": {
+      "table": "lemma_translations",
+      "count": 7
+    },
+    "batchB": {
+      "table": "word_translations",
+      "count": 2
+    },
+    "totalWrites": 9,
+    "tablesWritten": [
+      "lemma_translations",
+      "word_translations"
+    ],
+    "atomicity": "deux INSERT bulk distincts ; batch A puis batch B."
+  },
+  "postImport": {
+    "s98": {
+      "totalForms": 79,
+      "coveredForms": 79,
+      "coveragePct": 1,
+      "readiness": "READY",
+      "isReady": true
+    },
+    "global": {
+      "quranWords": 21296,
+      "frUnion": 5290,
+      "frOccurrences": 56092,
+      "frPercentage": 0.2484,
+      "lemmaTranslations": 135,
+      "lemmaTrFr": 131,
+      "wordTrFr": 4492,
+      "readiness": {
+        "READY": 24,
+        "IN_PREPARATION": 89,
+        "REFERENCE": 1
+      }
+    },
+    "deltas": {
+      "lemmaTranslations": 7,
+      "wordTranslationsFr": 2,
+      "frUnion": 27,
+      "frOccurrences": 29
+    }
+  },
+  "beforeAfter": {
+    "S98": "68/79 (86.1%) → 79/79 (100%)",
+    "S98_readiness": "IN_PREPARATION → READY",
+    "lemma_translations": "128 → 135",
+    "word_translations_FR": "4490 → 4492",
+    "FR_union": "5263 → 5290",
+    "FR_occurrences": "56063 → 56092",
+    "READY": "23 → 24",
+    "IN_PREPARATION": "90 → 89",
+    "REFERENCE": "1 → 1"
+  },
+  "invariants": {
+    "protectedTables": {
+      "quran_words": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "word_lemma_mapping": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "linguistic_occurrences": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "lemmas": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "learning_paths": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "units": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "lessons": {
+        "count": 0,
+        "hashUnchanged": true
+      }
+    },
+    "protectedOk": true,
+    "CURRICULUM_WRITES": 0,
+    "MIGRATIONS": 0,
+    "SEEDS": 0,
+    "classifySurahReadinessUnchanged": true,
+    "onlyAllowedTables": [
+      "lemma_translations",
+      "word_translations"
+    ]
+  },
+  "idempotence": {
+    "secondPass": true,
+    "batchA_EXISTING_SAME": 7,
+    "batchB_EXISTING_SAME": 2,
+    "batchA_NEW": 0,
+    "batchB_NEW": 0,
+    "DATABASE_WRITES": 0,
+    "lemmaTranslationsDelta": 0,
+    "wordTranslationsDelta": 0,
+    "frUnionDelta": 0,
+    "s98StillReady": true,
+    "verdict": "PHASE_88F_J_IDEMPOTENT"
+  },
+  "tests": {
+    "run": false,
+    "note": "Exécutés après la génération du rapport (vitest · tsc · eslint)."
+  }
+}

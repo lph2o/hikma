@@ -123,8 +123,9 @@
   --shadow-elevated: 0 2px 4px rgba(46, 42, 28, 0.06), 0 16px 40px -16px rgba(46, 42, 28, 0.16);
   --shadow-focus: 0 0 0 3px color-mix(in srgb, var(--focus) 24%, transparent);
 
-  /* ---- Landing atmosphere (derived only from approved Hikma tokens) ---- */
-  --landing-atmosphere: radial-gradient(circle at 75% 20%, color-mix(in srgb, var(--hikma-teal-800) 4.5%, transparent), transparent 38%), radial-gradient(circle at 15% 75%, color-mix(in srgb, var(--hikma-gold) 5.5%, transparent), transparent 35%), var(--hikma-ivory);
+  /* ---- Landing atmosphere (derived only from approved Hikma tokens) ----
+   * Retunée sur la chaleur de l'onboarding : halo doré en haut + halo teal subtil. */
+  --landing-atmosphere: radial-gradient(circle at 16% 4%, color-mix(in srgb, var(--hikma-gold) 7%, transparent), transparent 34%), radial-gradient(circle at 84% 30%, color-mix(in srgb, var(--hikma-teal-800) 4%, transparent), transparent 38%), var(--hikma-ivory);
   --landing-preview-shadow: 0 2px 4px color-mix(in srgb, var(--hikma-charcoal) 6%, transparent), 0 18px 42px -20px color-mix(in srgb, var(--hikma-charcoal) 22%, transparent);
 
   /* ---- Motion (Hikma : transform/opacity uniquement) ---- */
@@ -420,6 +421,16 @@
   }
   html {
     @apply font-sans;
+  }
+  /* Hover underline animé pour les liens texte (pas les boutons) */
+  a:not([data-no-hover-underline]):not(.inline-flex):hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: var(--primary-fur);
+  }
+  a:not([data-no-hover-underline]):not(.inline-flex) {
+    text-decoration: none;
+    transition: text-decoration-color 0.2s ease;
   }
 }
 

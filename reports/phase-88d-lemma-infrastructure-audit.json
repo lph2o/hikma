@@ -1,0 +1,357 @@
+{
+  "phase": "88D",
+  "mode": "AUDIT_READ_ONLY",
+  "timestamp": "2026-08-23T16:50:02.557Z",
+  "wordTranslations": {
+    "total": 4490,
+    "bySource": [
+      {
+        "sourceId": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "sourceName": "Hikma — lexique éditorial",
+        "languages": [
+          {
+            "language": "fr",
+            "validated": 4490,
+            "unvalidated": 0
+          }
+        ]
+      }
+    ],
+    "hikmaFrValidated": 4490,
+    "hikmaFrValidatedDistinct": 4490,
+    "nonHikmaTotal": 0,
+    "nonHikmaFr": 0,
+    "nonHikmaFrValidated": 0,
+    "duplicates": 0,
+    "interSourceDivergences": 0
+  },
+  "lemmaInfrastructure": {
+    "lemmasTotal": 32,
+    "wlmMappingsTotal": 188,
+    "wlmByConfidence": [
+      {
+        "confidence": "safe",
+        "count": 188
+      }
+    ],
+    "wlmDistinctWordIds": 188,
+    "wlmDistinctLemmaIds": 19,
+    "directLemmaIdCount": 135,
+    "effectiveMappingsTotal": 323,
+    "frViaDirectLemma": 46,
+    "frViaWlm": 167,
+    "frViaLemmaTotal": 213
+  },
+  "morphologyEstimate": {
+    "bareFormClusters": 16225,
+    "multiFormClusters": 3153,
+    "formsInMultiClusters": 8224,
+    "potentialEconomy": 5071,
+    "estimatedLemmas": 4636
+  },
+  "formsWithoutFr": {
+    "total": 16593,
+    "top50": [
+      {
+        "word_id": "52011330-4dcf-4c0e-a49d-56141733d6e2",
+        "arabic": "وَإِن",
+        "surahs": 50,
+        "occurrences": 146
+      },
+      {
+        "word_id": "b6d6520c-089d-48ca-95f2-43383af4983b",
+        "arabic": "كُنَّا",
+        "surahs": 30,
+        "occurrences": 62
+      },
+      {
+        "word_id": "0803c6da-f641-43d1-ae7c-a73f28252d2e",
+        "arabic": "أَعْلَمُ",
+        "surahs": 26,
+        "occurrences": 55
+      },
+      {
+        "word_id": "b985231d-3e20-4f64-81d1-42687a552679",
+        "arabic": "وَلِلَّهِ",
+        "surahs": 15,
+        "occurrences": 27
+      },
+      {
+        "word_id": "a2667997-f829-4cfc-aabf-f6605fbf9e83",
+        "arabic": "وَأَنَا۠",
+        "surahs": 11,
+        "occurrences": 16
+      },
+      {
+        "word_id": "9783b0fd-8f07-41ee-abc1-b22d0c608ec0",
+        "arabic": "فَمَنْ",
+        "surahs": 9,
+        "occurrences": 14
+      },
+      {
+        "word_id": "4a2541c7-4902-4e9e-868f-68cfdde8c5a5",
+        "arabic": "فَرِيقٌۭ",
+        "surahs": 9,
+        "occurrences": 12
+      },
+      {
+        "word_id": "7d15facf-d757-4127-80d1-6800cc7b93bc",
+        "arabic": "ٱدْخُلُوا۟",
+        "surahs": 8,
+        "occurrences": 11
+      },
+      {
+        "word_id": "fea4a379-9f46-4153-9481-fc248f4ab3b4",
+        "arabic": "عَنَّا",
+        "surahs": 8,
+        "occurrences": 11
+      },
+      {
+        "word_id": "289c81c5-5919-4d95-9a2a-a61c38976b79",
+        "arabic": "هُنَالِكَ",
+        "surahs": 8,
+        "occurrences": 9
+      },
+      {
+        "word_id": "3fe2c3eb-1fda-4db6-889b-5d33f2d3dc46",
+        "arabic": "إِبْلِيسَ",
+        "surahs": 8,
+        "occurrences": 8
+      },
+      {
+        "word_id": "a9acfdee-e50b-4f4e-9e54-5e9cae9dca3a",
+        "arabic": "أُمَّةٍ",
+        "surahs": 8,
+        "occurrences": 8
+      },
+      {
+        "word_id": "851e2a19-5097-4015-9992-e774408d18fe",
+        "arabic": "يُبْعَثُونَ",
+        "surahs": 8,
+        "occurrences": 8
+      },
+      {
+        "word_id": "5db6f0e2-b554-4519-9426-603a2cf6ebfe",
+        "arabic": "قُلْنَا",
+        "surahs": 7,
+        "occurrences": 13
+      },
+      {
+        "word_id": "d40f4114-7fe4-4c85-9f3a-42bb034d14ac",
+        "arabic": "وَقُل",
+        "surahs": 7,
+        "occurrences": 12
+      },
+      {
+        "word_id": "3c729e1d-ee1a-45e0-8284-6b545deb5510",
+        "arabic": "هَـٰرُونَ",
+        "surahs": 7,
+        "occurrences": 9
+      },
+      {
+        "word_id": "d6e62013-3591-4eb9-b70e-ac7cb0e30590",
+        "arabic": "أَخَذَ",
+        "surahs": 7,
+        "occurrences": 9
+      },
+      {
+        "word_id": "fe111d34-f7a3-44c4-b5c5-afe02c3ccd8c",
+        "arabic": "عَنْهُمُ",
+        "surahs": 7,
+        "occurrences": 8
+      },
+      {
+        "word_id": "f1dacaaa-ff28-4474-8b6a-9935d5907bc5",
+        "arabic": "وَكُلًّۭا",
+        "surahs": 7,
+        "occurrences": 8
+      },
+      {
+        "word_id": "6f9cee98-d96a-4b32-a699-d1cde87bcbbd",
+        "arabic": "بَشَرًۭا",
+        "surahs": 7,
+        "occurrences": 8
+      },
+      {
+        "word_id": "a189c56f-2ff8-4d0f-bdf2-41b6a901fba6",
+        "arabic": "يَعْمَهُونَ",
+        "surahs": 7,
+        "occurrences": 7
+      },
+      {
+        "word_id": "b0255462-1eb1-45c0-8d83-3f1dc8335238",
+        "arabic": "وَلَهُۥ",
+        "surahs": 7,
+        "occurrences": 7
+      },
+      {
+        "word_id": "8bf9b88e-ce6f-49f0-9f06-29ca67230ffd",
+        "arabic": "ٱلْمُسْرِفِينَ",
+        "surahs": 7,
+        "occurrences": 7
+      },
+      {
+        "word_id": "93e26747-a73f-4f44-815a-94e6916f7d9a",
+        "arabic": "سَبَقَتْ",
+        "surahs": 7,
+        "occurrences": 7
+      },
+      {
+        "word_id": "16cf26bb-501a-4791-8964-f9df412e8f0a",
+        "arabic": "وَكَفَىٰ",
+        "surahs": 6,
+        "occurrences": 20
+      },
+      {
+        "word_id": "40f6af08-177b-4850-ab74-a4e65b343e22",
+        "arabic": "غَفُورًۭا",
+        "surahs": 6,
+        "occurrences": 19
+      },
+      {
+        "word_id": "3b97d79c-47e2-4bc4-93e7-6cea79c19db2",
+        "arabic": "كَبِيرًۭا",
+        "surahs": 6,
+        "occurrences": 15
+      },
+      {
+        "word_id": "dee19b1e-517e-4678-bd1c-ed94332747f8",
+        "arabic": "وَلِيًّۭا",
+        "surahs": 6,
+        "occurrences": 13
+      },
+      {
+        "word_id": "d0a8b027-d2f5-47a9-befa-908649cf624c",
+        "arabic": "تَجِدَ",
+        "surahs": 6,
+        "occurrences": 11
+      },
+      {
+        "word_id": "26a5103b-8aea-4053-9dea-874950e3c625",
+        "arabic": "أَسْـَٔلُكُمْ",
+        "surahs": 6,
+        "occurrences": 11
+      },
+      {
+        "word_id": "2ecb5d81-4772-4eed-9e6a-4c30d33af1a5",
+        "arabic": "ٱنظُرْ",
+        "surahs": 6,
+        "occurrences": 10
+      },
+      {
+        "word_id": "e81937b6-f1ee-4a87-8f13-54f8e3476d74",
+        "arabic": "لَّنَا",
+        "surahs": 6,
+        "occurrences": 9
+      },
+      {
+        "word_id": "c3b50241-8c4d-4b6f-b295-339b6a6a6234",
+        "arabic": "جَآءَكُم",
+        "surahs": 6,
+        "occurrences": 9
+      },
+      {
+        "word_id": "624cb7c8-6642-4836-97df-1700c1643502",
+        "arabic": "ٱلنَّبِيِّـۧنَ",
+        "surahs": 6,
+        "occurrences": 8
+      },
+      {
+        "word_id": "7dc997ad-f3d3-490c-bdca-7631fc7dbde8",
+        "arabic": "كُونُوا۟",
+        "surahs": 6,
+        "occurrences": 8
+      },
+      {
+        "word_id": "cf58209a-e7fc-40b3-bf4e-3e3404a278af",
+        "arabic": "يَكْفُرْ",
+        "surahs": 6,
+        "occurrences": 8
+      },
+      {
+        "word_id": "99e8d7f9-f640-447e-b0a3-09d97ba7ebe5",
+        "arabic": "وَلَئِنْ",
+        "surahs": 6,
+        "occurrences": 8
+      },
+      {
+        "word_id": "172b1f71-9055-4c4b-b1d0-d2d884d47aee",
+        "arabic": "نِعْمَتَ",
+        "surahs": 6,
+        "occurrences": 8
+      },
+      {
+        "word_id": "a1787e7e-542c-4cfd-a553-78d6a3e162b8",
+        "arabic": "ٱلشَّيْطَـٰنَ",
+        "surahs": 6,
+        "occurrences": 8
+      },
+      {
+        "word_id": "96dda366-4fc1-45c0-8f86-4545cf03cfa7",
+        "arabic": "ءَاخَرِينَ",
+        "surahs": 6,
+        "occurrences": 8
+      },
+      {
+        "word_id": "0c7dfe51-05b4-44eb-b27b-371cfa10c158",
+        "arabic": "يَشَأْ",
+        "surahs": 6,
+        "occurrences": 8
+      },
+      {
+        "word_id": "c1e87ca2-3b02-4c9d-9bec-4111b5c384df",
+        "arabic": "مُّسْلِمُونَ",
+        "surahs": 6,
+        "occurrences": 7
+      },
+      {
+        "word_id": "fddc3c2c-07f2-4fa3-b90c-f53835c35da1",
+        "arabic": "ظَلَمُوٓا۟",
+        "surahs": 6,
+        "occurrences": 7
+      },
+      {
+        "word_id": "2ba067f6-6f0a-4954-ab6e-cc703799670c",
+        "arabic": "نِعْمَةَ",
+        "surahs": 6,
+        "occurrences": 7
+      },
+      {
+        "word_id": "7f7d38bc-e613-4ce6-8ec9-207b69f82722",
+        "arabic": "لَدَيْهِمْ",
+        "surahs": 6,
+        "occurrences": 7
+      },
+      {
+        "word_id": "63daf27e-e811-42f2-b4d4-6f168f9e6bea",
+        "arabic": "ٱلسَّمَـٰوَٰتُ",
+        "surahs": 6,
+        "occurrences": 7
+      },
+      {
+        "word_id": "c56a6010-f07c-449c-8c3b-caf0408ae7a3",
+        "arabic": "أَيْدِيَهُمْ",
+        "surahs": 6,
+        "occurrences": 7
+      },
+      {
+        "word_id": "6edae93f-dbc9-445e-8a21-eda54b3fb403",
+        "arabic": "مُؤْمِنٌۭ",
+        "surahs": 6,
+        "occurrences": 7
+      },
+      {
+        "word_id": "97b84e94-766b-451d-ab96-92edf5c1f66c",
+        "arabic": "وَهَـٰرُونَ",
+        "surahs": 6,
+        "occurrences": 7
+      },
+      {
+        "word_id": "e1548fb7-1eab-4eb4-a9ff-79dfc5b06285",
+        "arabic": "بِمُؤْمِنِينَ",
+        "surahs": 6,
+        "occurrences": 6
+      }
+    ]
+  }
+}

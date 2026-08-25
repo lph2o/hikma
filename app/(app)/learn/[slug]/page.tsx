@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LessonPlayer } from "@/components/learn/lesson-player";
 import { attachExerciseIdentities } from "@/components/learn/exercises/exercise-identity";
@@ -33,7 +34,8 @@ import type { LessonAyahContext } from "@/lib/learning/queries";
 import type { WordContextData } from "@/lib/learning/types";
 import { resolveSenseExplanation } from "@/lib/learning/sense-explanation";
 import { Card, CardContent } from "@/components/ui/card";
-import { H2, BodyMedium, Caption } from "@/components/ui/typography";
+import { Button } from "@/components/ui/button";
+import { H2, BodyMedium, BodySmall, Caption } from "@/components/ui/typography";
 import { Mascot } from "@/components/ui/mascot";
 import { BookOpenIcon } from "lucide-react";
 
@@ -219,6 +221,7 @@ export default async function LessonPage({
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-col gap-8 px-5 py-6 sm:px-8 sm:py-8">
+      {!user ? <TrialBanner /> : null}
       {showWelcome ? (
         <PreLesson
           surahName={surahName}
@@ -255,6 +258,27 @@ export default async function LessonPage({
         audioUnavailable={audio.registered === 0}
       />
     </main>
+  );
+}
+
+/**
+ * Bandeau « page d’essai » pour les visiteurs anonymes : la leçon est
+ * consultable sans compte, mais la progression n’est pas enregistrée.
+ */
+function TrialBanner() {
+  return (
+    <div className="flex flex-col items-center gap-3 rounded-2xl border border-hikma-gold/40 bg-hikma-gold/8 px-5 py-4 text-center sm:flex-row sm:justify-between sm:text-left">
+      <div className="flex flex-col gap-1">
+        <BodySmall className="font-semibold text-text-primary">Page d’essai</BodySmall>
+        <BodySmall className="text-text-secondary">
+          Tu découvres cette leçon sans compte : ta progression ne sera pas enregistrée. Connecte-toi pour la
+          sauvegarder et reprendre où tu t’es arrêté.
+        </BodySmall>
+      </div>
+      <Button render={<Link href="/login" />} variant="outline" size="sm" className="shrink-0 rounded-full">
+        Se connecter
+      </Button>
+    </div>
   );
 }
 

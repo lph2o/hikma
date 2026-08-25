@@ -1,0 +1,661 @@
+{
+  "phase": "88F-AH",
+  "verdict": "PHASE_88F_AH_ABORTED_EDITORIAL_INTEGRITY",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "mode": "PREFLIGHT_ABORT",
+  "timestamp": "2026-08-24T13:43:27.409Z",
+  "durationSeconds": 25.82,
+  "preflight": {
+    "structuralBaseline": {
+      "expected": {
+        "totalForms": 529,
+        "covered": 406,
+        "unresolved": 123
+      },
+      "actual": {
+        "totalForms": 529,
+        "covered": 406,
+        "unresolved": 123
+      },
+      "match": true,
+      "paths": {
+        "pathA_wordTr": 399,
+        "pathB_lemma": 1,
+        "pathC_wlm": 6
+      }
+    },
+    "structuralIntegrity": {
+      "validS36WordIds": 123,
+      "notInDb": 0,
+      "notInS36": 0,
+      "duplicateIds": 0,
+      "conflicts": 0
+    }
+  },
+  "editorialIntegrity": {
+    "passed": false,
+    "totalGlosses": 123,
+    "englishGlosses": 34,
+    "genericFrenchMismatches": 41,
+    "emptyGlosses": 0,
+    "totalIssues": 75,
+    "appearCorrect": 48,
+    "sampleIssues": [
+      {
+        "index": 1,
+        "word_id": "c4e96d86-2845-4f80-b324-d21ef3a89f07",
+        "arabic": "تَكْذِبُونَ",
+        "gloss": "dans / en",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"lying\" | S36:36:15"
+      },
+      {
+        "index": 2,
+        "word_id": "b94dae08-eb34-474c-88be-064d2c79ac63",
+        "arabic": "أَطْعَمَهُۥٓ",
+        "gloss": "He would have fed him",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"He would have fed him\" | S36:36:47"
+      },
+      {
+        "index": 4,
+        "word_id": "b6d6520c-089d-48ca-95f2-43383af4983b",
+        "arabic": "كُنَّا",
+        "gloss": "We were",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"We were\" | S36:36:28"
+      },
+      {
+        "index": 7,
+        "word_id": "4ea0e661-5099-49ac-b3ae-e0aa2a92cdb6",
+        "arabic": "يَسْـَٔلُكُمْ",
+        "gloss": "ask of you",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"ask (of) you\" | S36:36:21"
+      },
+      {
+        "index": 11,
+        "word_id": "ffcd06af-18b1-41a5-86d9-2e55b75554ba",
+        "arabic": "قَدَّرْنَـٰهُ",
+        "gloss": "dans / en",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"We have ordained for it\" | S36:36:39"
+      },
+      {
+        "index": 12,
+        "word_id": "4ebc974d-ef06-42bb-9f4f-f30a2951f0ae",
+        "arabic": "فَـٰكِهُونَ",
+        "gloss": "dans / en",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"(in) amusement\" | S36:36:55"
+      },
+      {
+        "index": 13,
+        "word_id": "94041733-09df-4ad9-9692-85b8be34bc25",
+        "arabic": "ءَأَتَّخِذُ",
+        "gloss": "prendre / saisir",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"Should I take\" | S36:36:23"
+      },
+      {
+        "index": 14,
+        "word_id": "f0e5ccef-2ced-42b6-9a3a-79a1de6181b1",
+        "arabic": "ذُكِّرْتُم ۚ",
+        "gloss": "sur",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"you are admonished\" | S36:36:19"
+      },
+      {
+        "index": 16,
+        "word_id": "93d51464-a29f-4eb0-81eb-a747c9b10013",
+        "arabic": "فَٱسْتَبَقُوا۟",
+        "gloss": "ensuite / puis",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"then they (would) race\" | S36:36:66"
+      },
+      {
+        "index": 21,
+        "word_id": "c1cf81b9-deb7-406a-b171-c9afdd2f09c9",
+        "arabic": "وَذَلَّلْنَـٰهَا",
+        "gloss": "And We have tamed them",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"And We have tamed them\" | S36:36:72"
+      },
+      {
+        "index": 22,
+        "word_id": "5492563f-4df4-4dda-977e-1de2935a44d0",
+        "arabic": "صَرِيخَ",
+        "gloss": "vers / à",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"(would be) a responder to a cry\" | S36:36:43"
+      },
+      {
+        "index": 24,
+        "word_id": "3a400095-a4f3-4e98-afbd-cafa4b24cca1",
+        "arabic": "يَـٰحَسْرَةً",
+        "gloss": "Alas",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"Alas\" | S36:36:30"
+      },
+      {
+        "index": 25,
+        "word_id": "57b9029a-44d1-4f38-98a4-86a9bd9890d6",
+        "arabic": "مُتَّكِـُٔونَ",
+        "gloss": "dans / en",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"reclining\" | S36:36:56"
+      },
+      {
+        "index": 27,
+        "word_id": "24ba0bb4-447d-4ea8-94db-a410a87667cb",
+        "arabic": "أَنُطْعِمُ",
+        "gloss": "Should we feed",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"Should we feed\" | S36:36:47"
+      },
+      {
+        "index": 28,
+        "word_id": "c1164575-ee9d-4184-9132-e38e8f42e4e4",
+        "arabic": "ٱدْخُلِ",
+        "gloss": "Enter",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"Enter\" | S36:36:26"
+      },
+      {
+        "index": 29,
+        "word_id": "ebdd2c06-dae3-4e56-969c-f452949641c7",
+        "arabic": "لَنَرْجُمَنَّكُمْ",
+        "gloss": "certain / assuré",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"surely, we will stone you\" | S36:36:18"
+      },
+      {
+        "index": 32,
+        "word_id": "52011330-4dcf-4c0e-a49d-56141733d6e2",
+        "arabic": "وَإِن",
+        "gloss": "si",
+        "issue": "GENERIC_FRENCH_MISMATCH",
+        "rationale": "EN hint: \"And if\" | S36:36:32"
+      },
+      {
+        "index": 34,
+        "word_id": "77b97d86-ddfd-4740-bf79-de80445abedc",
+        "arabic": "مَـٰلِكُونَ",
+        "gloss": "are the owners",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"(are the) owners\" | S36:36:71"
+      },
+      {
+        "index": 35,
+        "word_id": "8e70d979-f04f-4b6e-82cb-545c7871a266",
+        "arabic": "ٱلْأَخْضَرِ",
+        "gloss": "the] green",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"[the] green \" | S36:36:80"
+      },
+      {
+        "index": 37,
+        "word_id": "4f8c0437-b603-42f2-b5ef-8adb25825604",
+        "arabic": "سَابِقُ",
+        "gloss": "can outstrip",
+        "issue": "ENGLISH_GLOSS",
+        "rationale": "EN hint: \"(can) outstrip\" | S36:36:40"
+      }
+    ],
+    "allIssues": [
+      {
+        "index": 1,
+        "word_id": "c4e96d86-2845-4f80-b324-d21ef3a89f07",
+        "arabic": "تَكْذِبُونَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 2,
+        "word_id": "b94dae08-eb34-474c-88be-064d2c79ac63",
+        "arabic": "أَطْعَمَهُۥٓ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 4,
+        "word_id": "b6d6520c-089d-48ca-95f2-43383af4983b",
+        "arabic": "كُنَّا",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 7,
+        "word_id": "4ea0e661-5099-49ac-b3ae-e0aa2a92cdb6",
+        "arabic": "يَسْـَٔلُكُمْ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 11,
+        "word_id": "ffcd06af-18b1-41a5-86d9-2e55b75554ba",
+        "arabic": "قَدَّرْنَـٰهُ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 12,
+        "word_id": "4ebc974d-ef06-42bb-9f4f-f30a2951f0ae",
+        "arabic": "فَـٰكِهُونَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 13,
+        "word_id": "94041733-09df-4ad9-9692-85b8be34bc25",
+        "arabic": "ءَأَتَّخِذُ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 14,
+        "word_id": "f0e5ccef-2ced-42b6-9a3a-79a1de6181b1",
+        "arabic": "ذُكِّرْتُم ۚ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 16,
+        "word_id": "93d51464-a29f-4eb0-81eb-a747c9b10013",
+        "arabic": "فَٱسْتَبَقُوا۟",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 21,
+        "word_id": "c1cf81b9-deb7-406a-b171-c9afdd2f09c9",
+        "arabic": "وَذَلَّلْنَـٰهَا",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 22,
+        "word_id": "5492563f-4df4-4dda-977e-1de2935a44d0",
+        "arabic": "صَرِيخَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 24,
+        "word_id": "3a400095-a4f3-4e98-afbd-cafa4b24cca1",
+        "arabic": "يَـٰحَسْرَةً",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 25,
+        "word_id": "57b9029a-44d1-4f38-98a4-86a9bd9890d6",
+        "arabic": "مُتَّكِـُٔونَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 27,
+        "word_id": "24ba0bb4-447d-4ea8-94db-a410a87667cb",
+        "arabic": "أَنُطْعِمُ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 28,
+        "word_id": "c1164575-ee9d-4184-9132-e38e8f42e4e4",
+        "arabic": "ٱدْخُلِ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 29,
+        "word_id": "ebdd2c06-dae3-4e56-969c-f452949641c7",
+        "arabic": "لَنَرْجُمَنَّكُمْ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 32,
+        "word_id": "52011330-4dcf-4c0e-a49d-56141733d6e2",
+        "arabic": "وَإِن",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 34,
+        "word_id": "77b97d86-ddfd-4740-bf79-de80445abedc",
+        "arabic": "مَـٰلِكُونَ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 35,
+        "word_id": "8e70d979-f04f-4b6e-82cb-545c7871a266",
+        "arabic": "ٱلْأَخْضَرِ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 37,
+        "word_id": "4f8c0437-b603-42f2-b5ef-8adb25825604",
+        "arabic": "سَابِقُ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 39,
+        "word_id": "bbb9b100-0ca5-4d7e-b15d-aabcd2b6588c",
+        "arabic": "طَـٰٓئِرُكُم",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 43,
+        "word_id": "d3c90986-670f-442a-8b30-860a4773c13b",
+        "arabic": "نُغْرِقْهُمْ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 44,
+        "word_id": "217fa183-8b7e-4cd4-ab92-6bccb3c305c7",
+        "arabic": "خَلْفَكُمْ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 45,
+        "word_id": "e8899361-80c0-4d63-8ebc-76ff07098bcc",
+        "arabic": "يُرِدْنِ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 46,
+        "word_id": "06eefd47-335b-44c2-8501-281f19a55e76",
+        "arabic": "جِبِلًّۭا",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 47,
+        "word_id": "9da74e76-79e0-4714-b616-e1bf65f13b5b",
+        "arabic": "بِمَغْفِرَةٍۢ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 48,
+        "word_id": "c1f142e2-9d20-4af2-8b23-f03323a2bcb6",
+        "arabic": "لَّدَيْنَا",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 50,
+        "word_id": "c4fbcad6-3696-43ee-be2c-72ee11476c31",
+        "arabic": "أَكْثَرِهِمْ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 51,
+        "word_id": "d63c8f7e-1229-45f5-832a-498b2dc28252",
+        "arabic": "فَعَزَّزْنَا",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 54,
+        "word_id": "9681138e-42d8-4489-be04-77ab935dcd8d",
+        "arabic": "ٱلْعِبَادِ ۚ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 55,
+        "word_id": "10fc7adc-e042-4e72-9419-33e3d75f8340",
+        "arabic": "أَنشَأَهَآ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 57,
+        "word_id": "d3698aec-387a-47c6-9c64-6eeb543b50df",
+        "arabic": "وَسَوَآءٌ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 59,
+        "word_id": "1e522107-cd96-4ca6-9968-9220e4a59a7d",
+        "arabic": "تُوقِدُونَ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 60,
+        "word_id": "09755ab3-57d3-435c-840d-6bbdb00d750b",
+        "arabic": "نَسْلَخُ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 61,
+        "word_id": "32d6a88e-1089-4907-9d90-3a267ea5a0a4",
+        "arabic": "عَمِلَتْهُ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 63,
+        "word_id": "d4ad9b49-27d8-42bc-9ba5-7168d005b42e",
+        "arabic": "كَٱلْعُرْجُونِ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 65,
+        "word_id": "d409fb25-458f-4fa0-a9f0-6cacfed0b0da",
+        "arabic": "فَمِنْهُ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 66,
+        "word_id": "0afc9ddc-5ae5-4d9b-96c4-4e582a63009a",
+        "arabic": "لَمَسَخْنَـٰهُمْ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 67,
+        "word_id": "8cd2a852-5957-4716-a38f-c3f3eeae3876",
+        "arabic": "أَغْلَـٰلًۭا",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 68,
+        "word_id": "406a5b34-5b13-4061-8016-6c0a3200bb1c",
+        "arabic": "وَلَيَمَسَّنَّكُم",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 69,
+        "word_id": "69c24ee3-c356-41fb-b4a8-d0f28a1b507a",
+        "arabic": "قَدَّمُوا۟",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 71,
+        "word_id": "92ba44f0-1ff9-4eeb-86bd-a17c8aafbc82",
+        "arabic": "مِثْلَهُم ۚ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 72,
+        "word_id": "c6ef82b4-eceb-492b-b3f7-852d08d7f1f1",
+        "arabic": "بَعَثَنَا",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 73,
+        "word_id": "19548ca9-c507-4eca-8aa9-8033972e8f9b",
+        "arabic": "ٱلشِّعْرَ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 74,
+        "word_id": "3578b3bf-8af2-4624-a813-1cd6cb5d3a37",
+        "arabic": "تُدْرِكَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 75,
+        "word_id": "1cdcb136-3241-49cd-8f45-3ce3142ce88b",
+        "arabic": "لَهَآ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 77,
+        "word_id": "ffae2409-2db2-4735-b43c-158e3b97917f",
+        "arabic": "لَّهَا ۚ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 78,
+        "word_id": "a0747a29-e5d7-4d8d-a52a-7478fdc1d5a4",
+        "arabic": "شُغُلٍۢ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 79,
+        "word_id": "fe8c7f8e-479a-4e8f-8d38-63d04b766245",
+        "arabic": "مُّقْمَحُونَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 80,
+        "word_id": "cdeb74ae-c302-43f5-a961-289d8cc5a26b",
+        "arabic": "وَنَكْتُبُ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 81,
+        "word_id": "1bef75d1-7ba9-49c0-bc7e-a466f9c8a011",
+        "arabic": "بِثَالِثٍۢ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 82,
+        "word_id": "db9fec69-74a5-4d22-8072-468043abc343",
+        "arabic": "يَرْكَبُونَ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 83,
+        "word_id": "9cb821c9-b960-42dd-89be-d048e87aadef",
+        "arabic": "مَّعَكُمْ ۚ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 84,
+        "word_id": "82ea97aa-b96a-4329-9b83-28f8792e5e80",
+        "arabic": "يَخِصِّمُونَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 85,
+        "word_id": "6f13852b-b2a9-4f4c-a51c-d12eb7747572",
+        "arabic": "مَكَانَتِهِمْ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 86,
+        "word_id": "cfe25a89-23d5-42ef-a4bf-fd84ca3a7fe3",
+        "arabic": "رَمِيمٌۭ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 87,
+        "word_id": "1b42f0f0-64a5-4e15-8c4a-c721a4918bf3",
+        "arabic": "لَطَمَسْنَا",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 88,
+        "word_id": "1ae7898d-ff0f-4253-a91a-b45fb7069680",
+        "arabic": "تَنزِيلَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 89,
+        "word_id": "62562ff3-5fdd-4b32-9627-22562141275e",
+        "arabic": "يَدَّعُونَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 90,
+        "word_id": "8dd5d603-36ca-4c69-9d8a-55e404e02e32",
+        "arabic": "وَٱمْتَـٰزُوا۟",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 91,
+        "word_id": "fd9d4a20-0401-4ad4-b7d6-e07af12b91ec",
+        "arabic": "ٱلْعُيُونِ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 92,
+        "word_id": "84c5b299-bd33-497f-b253-366783d9935a",
+        "arabic": "إِمَامٍۢ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 94,
+        "word_id": "c9b44b4f-7227-48ae-945b-b734647fad2a",
+        "arabic": "تَأْخُذُهُمْ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 95,
+        "word_id": "e4323b4d-98ca-4ae5-9f66-2a8c1b1bb000",
+        "arabic": "أَئِن",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 96,
+        "word_id": "5695df74-d414-4638-96ce-3796956e7d9a",
+        "arabic": "لِمُسْتَقَرٍّۢ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 97,
+        "word_id": "3b58e854-d83b-4821-8996-047403ff7476",
+        "arabic": "مُّحْضَرُونَ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 98,
+        "word_id": "aebb05ed-e1f6-4288-8a55-d9ae74013329",
+        "arabic": "غَفَرَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 101,
+        "word_id": "f64c77f6-32c6-4334-93af-ca56c4bd2c3e",
+        "arabic": "ٱلْأَذْقَانِ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 106,
+        "word_id": "493d79fd-0171-49cd-943f-df3785ce10bd",
+        "arabic": "نُنَكِّسْهُ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 107,
+        "word_id": "60484406-3f1e-499f-a41f-0c086d9a1641",
+        "arabic": "رَكُوبُهُمْ",
+        "category": "ENGLISH_GLOSS"
+      },
+      {
+        "index": 108,
+        "word_id": "ace75449-be4d-4810-85f8-f91a9908e697",
+        "arabic": "خَـٰمِدُونَ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 110,
+        "word_id": "772a7f4c-4a88-4a5e-915f-332f19fff858",
+        "arabic": "تَوْصِيَةًۭ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 115,
+        "word_id": "d09f1b65-59ec-4653-a9a7-8dbf32e54c01",
+        "arabic": "وَأَخْرَجْنَا",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 121,
+        "word_id": "f2dd3e61-5d7f-4a21-80a0-fba54d7b9b1b",
+        "arabic": "أَعْهَدْ",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      },
+      {
+        "index": 122,
+        "word_id": "2583f050-f686-4b7d-8e46-900782316e7c",
+        "arabic": "مُضِيًّۭا",
+        "category": "GENERIC_FRENCH_MISMATCH"
+      }
+    ]
+  },
+  "recommendation": "Re-run PHASE 88F-AG with corrected gloss mapping. The editorial gloss data contains ~69 entries with English text or generic French prepositions that do not match the Arabic forms — indicating a systematic off-by-one or hash-collision bug in the gloss-to-word_id assignment. Once corrected, re-attempt 88F-AH import.",
+  "nextPhaseAfterFix": "88F-AH (re-attempt with corrected glosses)"
+}

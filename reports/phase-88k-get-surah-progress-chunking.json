@@ -1,0 +1,84 @@
+{
+  "phase": "88K",
+  "stage": "GET_SURAH_PROGRESS_BY_USER_CHUNKING_FIX",
+  "verdict": "PHASE_88K_GET_SURAH_PROGRESS_CHUNKING_FIX_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "timestamp": "2026-08-25T17:47:01.459Z",
+  "elapsedMs": 7371,
+  "root_cause": "getSurahProgressByUser utilisait lesson_words .in(\"lesson_id\", lessonIds) et lesson_sessions .in(\"lesson_id\", lessonIds) en une seule requête — même régression que 88J (547 leçons publiées > seuil ≈ 396 ids) → « TypeError: fetch failed » sur /dashboard, /surahs, /surahs/[number], /profile et /learn.",
+  "correction": "lib/learning/queries.ts : les deux requêtes lesson_id de getSurahProgressByUser sont chunkées via selectInChunks + LESSON_ID_CHUNK_SIZE = 200 (3 requêtes pour 547 ids, parallèles via Promise.all, fusion déterministe, erreurs propagées).",
+  "files_changed": [
+    "lib/learning/queries.ts — getSurahProgressByUser : lesson_words (is_new) et lesson_sessions chunkés par lesson_id (Phase 88K)",
+    "tests/in-chunking.test.ts — tests de bornes 0/1/199/200/201/399/400/401/547/1001 pour les DEUX requêtes + propagation d'erreur",
+    "scripts/phase-88k-surah-progress-chunking.ts — audit runtime READ-ONLY (ce script)",
+    "reports/phase-88k-get-surah-progress-chunking.json — ce rapport",
+    "reports/phase-88k-post-88i-revalidation.json — revalidation post-publication (CAT-000 = RESOLVED)"
+  ],
+  "chunk_size": 200,
+  "chunk_size_constant": "LESSON_ID_CHUNK_SIZE (partagée avec getSurahCatalog / Phase 88J)",
+  "query_counts": {
+    "before": "1 requête .in(\"lesson_id\", 547 ids) par table → fetch failed",
+    "after": "ceil(547/200) = 3 requêtes par table (lesson_words + lesson_sessions), maximum 200 ids par requête",
+    "complexity": "O(nombre de lots), jamais O(nombre de leçons) — aucun N+1"
+  },
+  "runtime": {
+    "ok": true,
+    "error": null,
+    "elapsedMs": 1659,
+    "surahs": 34,
+    "totalLessons": 547,
+    "allNotStarted": true,
+    "note": "utilisateur neutre : aucune progression écrite (lecture seule)"
+  },
+  "consumers": {
+    "pages": [
+      "/surahs",
+      "/surahs/[number]",
+      "/profile",
+      "/dashboard",
+      "/learn"
+    ],
+    "productionFunctions": {
+      "getSurahCatalog": {
+        "ok": true,
+        "detail": "34 parcours, 547 leçons en 1744 ms"
+      },
+      "getSurahProgressByUser": {
+        "ok": true,
+        "detail": "34 sourates, 547 leçons en 1659 ms"
+      },
+      "getLearningContext": {
+        "ok": true,
+        "detail": "quran-vocabulary / 8 leçons en 458 ms"
+      }
+    },
+    "note": "vérifiés via les fonctions de production réelles (aucun navigateur E2E disponible dans cet environnement — limite documentée, comme 88I)"
+  },
+  "reference_comparison": {
+    "method": "somme de comptages lesson_words par sourate cible avec un .in() UNIQUE par sourate (≤ 60 ids < 200, sous le seuil)",
+    "referenceLessonWords": 3196,
+    "expected": 3196,
+    "match": true
+  },
+  "db_counts": {
+    "learning_paths": 34,
+    "units": 34,
+    "lessons": 547,
+    "lesson_words": 4503,
+    "lesson_sessions": 4
+  },
+  "non_regression": {
+    "lessonsInDb": 547,
+    "lessonWordsInDb": 4503,
+    "note": "comptages identiques à l'état post-88H/88J (aucune écriture)"
+  },
+  "database_writes": {
+    "count": 0,
+    "static_scan_violations": []
+  },
+  "remaining_issues": [
+    "getLessonWordMap (lib/learning/queries.ts) garde .in(\"lesson_id\", lessonIds) mais reste borné par un parcours unique (getLearningContext) : non concerné aujourd'hui, à chunker par précaution si le curriculum devient multi-parcours."
+  ],
+  "next_phase": "Revalidation 88I : scripts/phase-88i-post-publication-e2e-ux-audit.ts réexécuté → CAT-000 doit être RESOLVED (voir reports/phase-88k-post-88i-revalidation.json)."
+}

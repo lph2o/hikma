@@ -1,0 +1,1187 @@
+{
+  "phase": "88F-I",
+  "verdict": "PHASE_88F_I_COMPLETE — audit completed; human review required for some forms",
+  "readOnly": true,
+  "timestamp": "2026-08-24T08:39:05.232Z",
+  "durationSeconds": 33.28,
+  "design": {
+    "strategy": "SURAH-FIRST / READY-FIRST",
+    "resolutionModel": "A (word_translations FR validated) ∪ B (quran_words.lemma_id → lemma_translations FR) ∪ C (word_lemma_mapping → lemma_translations FR) ∪ D (linguistic_occurrences hikma_lemma_id → lemma_translations FR) — UNION deduplicated by word_id",
+    "runtimeModel": "resolveWordMeanings → word_translations FR OR lemma_translations FR via (quran_words.lemma_id DIRECT OR word_lemma_mapping confidence='safe') — paths A/B/C only, D excluded",
+    "coverageDefinition": "Occurrence-distinct word_ids per surah (baseline). Learning path form coverage (runtime) noted where curriculum exists.",
+    "classifySurahReadinessRule": "READY iff effectiveFrPct === 100 (i.e., all forms resolve in FR). Surah 1 = REFERENCE."
+  },
+  "baseline": {
+    "quranWords": 21296,
+    "wordOccurrences": 77430,
+    "lemmas": 1593,
+    "activeLemmas": 1588,
+    "wordLemmaMapping": 220,
+    "wordTranslationsFrValidated": 4490,
+    "lemmaTranslations": 128,
+    "lemmaTranslationsFrValidated": 124,
+    "linguisticOccurrences": 22485,
+    "frUnionDistinctWordIds": 5263,
+    "frOccurrences": 56063,
+    "frPercentage": 0.2471,
+    "readiness": {
+      "READY": 23,
+      "IN_PREPARATION": 90,
+      "REFERENCE": 1
+    },
+    "masaqSurahsCovered": "74/114",
+    "learningPathsWithCurriculum": 24
+  },
+  "targetSurah": {
+    "number": 98,
+    "name": "Al-Bayyinah",
+    "totalForms": 79,
+    "coveredForms": 68,
+    "missingForms": 11,
+    "coveragePct": 0.8608,
+    "readiness": "IN_PREPARATION",
+    "hasLearningPath": false,
+    "learningPathForms": null,
+    "learningPathCovered": null,
+    "learningPathCoveragePct": null,
+    "runtimeModelCoveredForms": null,
+    "runtimeModelCoveragePct": null,
+    "note": "S98 n'a pas encore de parcours pédagogique curé. La couverture est calculée sur les formes distinctes (occurrence-distinct word_ids)."
+  },
+  "missingForms": [
+    {
+      "arabic": "ٱلْبَرِيَّةِ",
+      "wordId": "53e0787b-2db3-4a3a-8643-7973f7a50682",
+      "vocalization": "ٱلْبَرِيَّةِ",
+      "occurrenceCount": 2,
+      "occurrenceCountInS98": 2,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "71d35060-c548-416b-ae25-d682e1c5575d",
+      "currentLemma": "بر",
+      "resolutionPath": "WLM",
+      "directLemmaId": null,
+      "wlmLemmaId": "71d35060-c548-416b-ae25-d682e1c5575d",
+      "masaqLemmaIds": [
+        "71d35060-c548-416b-ae25-d682e1c5575d"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "بر"
+      ],
+      "masaqTopGlossEn": "(of)-the-creatures",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "(of)-the-creatures",
+          "count": 2
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 2
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "DET",
+        "NOUN_RELATIVE",
+        "NSUFF_FEM_SG",
+        "RELATIVE_YA"
+      ],
+      "masaqSegmentMorphs": [
+        "Prefix",
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [
+        "wlm:71d35060-c548-416b-ae25-d682e1c5575d",
+        "masaq:71d35060-c548-416b-ae25-d682e1c5575d"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "Quant à ceux qui croient et accomplissent les bonnes œuvres, ce sont les meilleurs de toute la création.",
+        "Les infidèles parmi les gens du Livre, ainsi que les Associateurs iront au feu de l’Enfer, pour y demeurer éternellement. De toute la création, ce sont eux les pires."
+      ],
+      "kazimirskiS98": [
+        "Ceux qui croient et pratiquent le bien sont les meilleurs de tous les êtres créés.",
+        "Les infidèles, parmi ceux qui ont reçu les Écritures, et les idolâtres, resteront éternellement dans le feu de la géhenne. Ils sont les plus méchants de tous les êtres créés."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 7,
+          "globalAyahNum": 6137
+        },
+        {
+          "ayahNum": 6,
+          "globalAyahNum": 6136
+        }
+      ],
+      "missingReason": "LEMMA_بر_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "bonté / bienfaisance / continent",
+        "confidence": 0.85,
+        "rationale": "Lemme « بر » existant ; glose Hikma connue: \"bonté / bienfaisance / continent\". Hamidullah: Quant à ceux qui croient et accomplissent les bonnes œuvres, ce sont les meilleurs de toute la création. | Les infidèles parmi les gens du Livre, ainsi que les Associateurs iront au feu de l’Enfer, pour y demeurer éternellement. De toute la création, ce sont eux les pires.. Kazimirski: Ceux qui croient et pratiquent le bien sont les meilleurs de tous les êtres créés. | Les infidèles, parmi ceux qui ont reçu les Écritures, et les idolâtres, resteront éternellement dans le feu de la géhenne. Ils sont les plus méchants de tous les êtres créés.. MASAQ top: \"(of)-the-creatures\".",
+        "status": "SAFE"
+      }
+    },
+    {
+      "arabic": "مُنفَكِّينَ",
+      "wordId": "18cdc63e-a218-40ed-a1d7-392f91bd31c2",
+      "vocalization": "مُنفَكِّينَ",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "f986b797-62f3-4b70-b733-419f0170f5b8",
+      "currentLemma": "منفك",
+      "resolutionPath": "MASAQ",
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [
+        "f986b797-62f3-4b70-b733-419f0170f5b8"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "منفك"
+      ],
+      "masaqTopGlossEn": "to-be-abandoned",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "to-be-abandoned",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "NOUN_PASSIVE_PART",
+        "NSUFF_MASC_PL_ACC"
+      ],
+      "masaqSegmentMorphs": [
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [
+        "masaq:f986b797-62f3-4b70-b733-419f0170f5b8"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "Les infidèles parmi les gens du Livre, ainsi que les Associateurs, ne cesseront pas de mécroire jusqu’à ce que leur vienne la Preuve évidente :"
+      ],
+      "kazimirskiS98": [
+        "Les infidèles, parmi ceux qui ont reçu les Écritures, ainsi que les idolâtres, n’ont fait scission que lorsqu’eut apparu le SIGNE ÉVIDENT de la bonté de Dieu, "
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 1,
+          "globalAyahNum": 6131
+        }
+      ],
+      "missingReason": "LEMMA_منفك_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "cesser / se désengager / se séparer",
+        "confidence": 0.85,
+        "rationale": "Lemme « منفك » existant ; glose Hikma connue: \"cesser / se désengager / se séparer\". Hamidullah: Les infidèles parmi les gens du Livre, ainsi que les Associateurs, ne cesseront pas de mécroire jusqu’à ce que leur vienne la Preuve évidente :. Kazimirski: Les infidèles, parmi ceux qui ont reçu les Écritures, ainsi que les idolâtres, n’ont fait scission que lorsqu’eut apparu le SIGNE ÉVIDENT de la bonté de Dieu, . MASAQ top: \"to-be-abandoned\".",
+        "status": "SAFE"
+      }
+    },
+    {
+      "arabic": "ٱلْبَيِّنَةُ",
+      "wordId": "edcb56b6-bf17-4911-bfce-93e812c7b1c9",
+      "vocalization": "ٱلْبَيِّنَةُ",
+      "occurrenceCount": 2,
+      "occurrenceCountInS98": 2,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "1818b16c-a6f7-4c5a-b449-cf7df139839e",
+      "currentLemma": "بين",
+      "resolutionPath": "MASAQ",
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [
+        "1818b16c-a6f7-4c5a-b449-cf7df139839e"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "بين"
+      ],
+      "masaqTopGlossEn": "(of)-the-clear-evidence",
+      "masaqTopGlossShare": 0.5,
+      "masaqGlossesEn": [
+        {
+          "value": "(of)-the-clear-evidence",
+          "count": 1
+        },
+        {
+          "value": "the-clear-evidence",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 2
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "DET",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG"
+      ],
+      "masaqSegmentMorphs": [
+        "Prefix",
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [
+        "masaq:1818b16c-a6f7-4c5a-b449-cf7df139839e"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "Les infidèles parmi les gens du Livre, ainsi que les Associateurs, ne cesseront pas de mécroire jusqu’à ce que leur vienne la Preuve évidente :",
+        "Et ceux à qui le Livre a été donné ne se sont divisés qu’après que la preuve leur fut venue."
+      ],
+      "kazimirskiS98": [
+        "Les infidèles, parmi ceux qui ont reçu les Écritures, ainsi que les idolâtres, n’ont fait scission que lorsqu’eut apparu le SIGNE ÉVIDENT de la bonté de Dieu, ",
+        "Ceux qui ont reçu les Écritures ne se sont divisés en sectes que lorsque le signe évident leur fut offert."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 1,
+          "globalAyahNum": 6131
+        },
+        {
+          "ayahNum": 4,
+          "globalAyahNum": 6134
+        }
+      ],
+      "missingReason": "LEMMA_بين_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "entre / rendre clair / manifester / preuve claire",
+        "confidence": 0.85,
+        "rationale": "Lemme « بين » existant ; glose Hikma connue: \"entre / rendre clair / manifester / preuve claire\". Hamidullah: Les infidèles parmi les gens du Livre, ainsi que les Associateurs, ne cesseront pas de mécroire jusqu’à ce que leur vienne la Preuve évidente : | Et ceux à qui le Livre a été donné ne se sont divisés qu’après que la preuve leur fut venue.. Kazimirski: Les infidèles, parmi ceux qui ont reçu les Écritures, ainsi que les idolâtres, n’ont fait scission que lorsqu’eut apparu le SIGNE ÉVIDENT de la bonté de Dieu,  | Ceux qui ont reçu les Écritures ne se sont divisés en sectes que lorsque le signe évident leur fut offert.. MASAQ top: \"(of)-the-clear-evidence\".",
+        "status": "SAFE"
+      }
+    },
+    {
+      "arabic": "مُّطَهَّرَةًۭ",
+      "wordId": "443f3d53-7dd9-4243-b351-40765a50cd97",
+      "vocalization": "مُّطَهَّرَةًۭ",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "911bcc5c-6fc9-4668-a357-bc9b130af1f0",
+      "currentLemma": "مطهر",
+      "resolutionPath": "MASAQ",
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [
+        "911bcc5c-6fc9-4668-a357-bc9b130af1f0"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "مطهر"
+      ],
+      "masaqTopGlossEn": "purified",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "purified",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "NOUN_PASSIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "masaqSegmentMorphs": [
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [
+        "masaq:911bcc5c-6fc9-4668-a357-bc9b130af1f0"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "un Messager, de la part d’Allah, qui leur récite des feuilles purifiées,"
+      ],
+      "kazimirskiS98": [
+        "Un envoyé, venant de la part de Dieu, et qui leur lit des pages renfermant les Écritures vraies."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 2,
+          "globalAyahNum": 6132
+        }
+      ],
+      "missingReason": "LEMMA_مطهر_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "purifié / pur",
+        "confidence": 0.85,
+        "rationale": "Lemme « مطهر » existant ; glose Hikma connue: \"purifié / pur\". Hamidullah: un Messager, de la part d’Allah, qui leur récite des feuilles purifiées,. Kazimirski: Un envoyé, venant de la part de Dieu, et qui leur lit des pages renfermant les Écritures vraies.. MASAQ top: \"purified\".",
+        "status": "SAFE"
+      }
+    },
+    {
+      "arabic": "كُتُبٌۭ",
+      "wordId": "8a078145-eeff-4b52-9eab-7dba734e92c0",
+      "vocalization": "كُتُبٌۭ",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "8afcda77-f864-4c33-8a28-ed3613a1f153",
+      "currentLemma": "كتب",
+      "resolutionPath": "MASAQ",
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [
+        "8afcda77-f864-4c33-8a28-ed3613a1f153"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "كتب"
+      ],
+      "masaqTopGlossEn": "(are)-writings",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "(are)-writings",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CASE_DEF_GEN",
+        "NOUN_CONCRETE"
+      ],
+      "masaqSegmentMorphs": [
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [
+        "masaq:8afcda77-f864-4c33-8a28-ed3613a1f153"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "dans lesquelles se trouvent des prescriptions d’une rectitude parfaite."
+      ],
+      "kazimirskiS98": [
+        "Ceux qui ont reçu les Écritures ne se sont divisés en sectes que lorsque le signe évident leur fut offert."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 3,
+          "globalAyahNum": 6133
+        }
+      ],
+      "missingReason": "LEMMA_كتب_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "livre / écrit / écrire / prescrire",
+        "confidence": 0.85,
+        "rationale": "Lemme « كتب » existant ; glose Hikma connue: \"livre / écrit / écrire / prescrire\". Hamidullah: dans lesquelles se trouvent des prescriptions d’une rectitude parfaite.. Kazimirski: Ceux qui ont reçu les Écritures ne se sont divisés en sectes que lorsque le signe évident leur fut offert.. MASAQ top: \"(are)-writings\".",
+        "status": "SAFE"
+      }
+    },
+    {
+      "arabic": "قَيِّمَةٌۭ",
+      "wordId": "b5f3563e-0237-4ce8-a0ce-74994219ed5a",
+      "vocalization": "قَيِّمَةٌۭ",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "e35fe1cb-bcec-430c-b20c-29c011e2f733",
+      "currentLemma": "قيم",
+      "resolutionPath": "MASAQ",
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [
+        "e35fe1cb-bcec-430c-b20c-29c011e2f733"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "قيم"
+      ],
+      "masaqTopGlossEn": "correct",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "correct",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "ADJ_QUALIT",
+        "CASE_INDEF_GEN",
+        "NSUFF_FEM_SG"
+      ],
+      "masaqSegmentMorphs": [
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [
+        "masaq:e35fe1cb-bcec-430c-b20c-29c011e2f733"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "dans lesquelles se trouvent des prescriptions d’une rectitude parfaite."
+      ],
+      "kazimirskiS98": [
+        "Ceux qui ont reçu les Écritures ne se sont divisés en sectes que lorsque le signe évident leur fut offert."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 3,
+          "globalAyahNum": 6133
+        }
+      ],
+      "missingReason": "LEMMA_قيم_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "droit / correct / de valeur / établir (droit)",
+        "confidence": 0.85,
+        "rationale": "Lemme « قيم » existant ; glose Hikma connue: \"droit / correct / de valeur / établir (droit)\". Hamidullah: dans lesquelles se trouvent des prescriptions d’une rectitude parfaite.. Kazimirski: Ceux qui ont reçu les Écritures ne se sont divisés en sectes que lorsque le signe évident leur fut offert.. MASAQ top: \"correct\".",
+        "status": "SAFE"
+      }
+    },
+    {
+      "arabic": "تَفَرَّقَ",
+      "wordId": "74e57f70-00f1-4cfd-987c-d87f0d7e66c8",
+      "vocalization": "تَفَرَّقَ",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqStems": [
+        "تفرق"
+      ],
+      "masaqTopGlossEn": "became-divided",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "became-divided",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "PV"
+      ],
+      "masaqSegmentMorphs": [
+        "Stem"
+      ],
+      "lemmaPaths": [],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "Et ceux à qui le Livre a été donné ne se sont divisés qu’après que la preuve leur fut venue."
+      ],
+      "kazimirskiS98": [
+        "Ceux qui ont reçu les Écritures ne se sont divisés en sectes que lorsque le signe évident leur fut offert."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 4,
+          "globalAyahNum": 6134
+        }
+      ],
+      "missingReason": "NO_LEMMA_NO_MASAQ — requires word-level translation",
+      "classification": "D",
+      "editorialRecommendation": {
+        "gloss": null,
+        "confidence": 0.3,
+        "rationale": "Pas de lemme existant. Stem MASAQ \"became-divided\".  Revue humaine requise pour déterminer le lemme canonique.",
+        "status": "REVIEW_REQUIRED"
+      }
+    },
+    {
+      "arabic": "وَيُقِيمُوا۟",
+      "wordId": "1adbe506-6285-4363-bd3d-b93157453041",
+      "vocalization": "وَيُقِيمُوا۟",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "e35fe1cb-bcec-430c-b20c-29c011e2f733",
+      "currentLemma": "قيم",
+      "resolutionPath": "MASAQ",
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [
+        "e35fe1cb-bcec-430c-b20c-29c011e2f733"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "قيم"
+      ],
+      "masaqTopGlossEn": "and-to-establish",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "and-to-establish",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CONJ",
+        "IMPERF_PREF",
+        "IV",
+        "SUBJ_PRON"
+      ],
+      "masaqSegmentMorphs": [
+        "Prefix",
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [
+        "masaq:e35fe1cb-bcec-430c-b20c-29c011e2f733"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "Il ne leur a été commandé, cependant, que d’adorer Allah, Lui vouant un culte exclusif, d’accomplir la prière (As-Salât) et d’acquitter l'aumône (Az-Zakât). Et voilà la religion de droiture."
+      ],
+      "kazimirskiS98": [
+        "Que leur commande-t-on, si ce n’est d’adorer Dieu d’un culte sincère, d’être dévoués à Dieu, d’observer la prière, de faire l’aumône? C’est la religion vraie."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 5,
+          "globalAyahNum": 6135
+        }
+      ],
+      "missingReason": "LEMMA_قيم_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "droit / correct / de valeur / établir (droit)",
+        "confidence": 0.85,
+        "rationale": "Lemme « قيم » existant ; glose Hikma connue: \"droit / correct / de valeur / établir (droit)\". Hamidullah: Il ne leur a été commandé, cependant, que d’adorer Allah, Lui vouant un culte exclusif, d’accomplir la prière (As-Salât) et d’acquitter l'aumône (Az-Zakât). Et voilà la religion de droiture.. Kazimirski: Que leur commande-t-on, si ce n’est d’adorer Dieu d’un culte sincère, d’être dévoués à Dieu, d’observer la prière, de faire l’aumône? C’est la religion vraie.. MASAQ top: \"and-to-establish\".",
+        "status": "SAFE"
+      }
+    },
+    {
+      "arabic": "وَيُؤْتُوا۟",
+      "wordId": "01547cbe-310e-4182-957b-a10e6c9d221b",
+      "vocalization": "وَيُؤْتُوا۟",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqStems": [
+        "ؤت"
+      ],
+      "masaqTopGlossEn": "and-to-give",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "and-to-give",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CONJ",
+        "IMPERF_PREF",
+        "IV",
+        "SUBJ_PRON"
+      ],
+      "masaqSegmentMorphs": [
+        "Prefix",
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "Il ne leur a été commandé, cependant, que d’adorer Allah, Lui vouant un culte exclusif, d’accomplir la prière (As-Salât) et d’acquitter l'aumône (Az-Zakât). Et voilà la religion de droiture."
+      ],
+      "kazimirskiS98": [
+        "Que leur commande-t-on, si ce n’est d’adorer Dieu d’un culte sincère, d’être dévoués à Dieu, d’observer la prière, de faire l’aumône? C’est la religion vraie."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 5,
+          "globalAyahNum": 6135
+        }
+      ],
+      "missingReason": "NO_LEMMA_NO_MASAQ — requires word-level translation",
+      "classification": "D",
+      "editorialRecommendation": {
+        "gloss": null,
+        "confidence": 0.3,
+        "rationale": "Pas de lemme existant. Stem MASAQ \"and-to-give\".  Revue humaine requise pour déterminer le lemme canonique.",
+        "status": "REVIEW_REQUIRED"
+      }
+    },
+    {
+      "arabic": "ٱلْقَيِّمَةِ",
+      "wordId": "d77c85d0-ae01-47db-8059-78bdb1b95738",
+      "vocalization": "ٱلْقَيِّمَةِ",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "e35fe1cb-bcec-430c-b20c-29c011e2f733",
+      "currentLemma": "قيم",
+      "resolutionPath": "MASAQ",
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [
+        "e35fe1cb-bcec-430c-b20c-29c011e2f733"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "قيم"
+      ],
+      "masaqTopGlossEn": "the-correct",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "the-correct",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "ADJ_QUALIT",
+        "DET",
+        "NSUFF_FEM_SG"
+      ],
+      "masaqSegmentMorphs": [
+        "Prefix",
+        "Stem",
+        "Suffix"
+      ],
+      "lemmaPaths": [
+        "masaq:e35fe1cb-bcec-430c-b20c-29c011e2f733"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "Il ne leur a été commandé, cependant, que d’adorer Allah, Lui vouant un culte exclusif, d’accomplir la prière (As-Salât) et d’acquitter l'aumône (Az-Zakât). Et voilà la religion de droiture."
+      ],
+      "kazimirskiS98": [
+        "Que leur commande-t-on, si ce n’est d’adorer Dieu d’un culte sincère, d’être dévoués à Dieu, d’observer la prière, de faire l’aumône? C’est la religion vraie."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 5,
+          "globalAyahNum": 6135
+        }
+      ],
+      "missingReason": "LEMMA_قيم_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "droit / correct / de valeur / établir (droit)",
+        "confidence": 0.85,
+        "rationale": "Lemme « قيم » existant ; glose Hikma connue: \"droit / correct / de valeur / établir (droit)\". Hamidullah: Il ne leur a été commandé, cependant, que d’adorer Allah, Lui vouant un culte exclusif, d’accomplir la prière (As-Salât) et d’acquitter l'aumône (Az-Zakât). Et voilà la religion de droiture.. Kazimirski: Que leur commande-t-on, si ce n’est d’adorer Dieu d’un culte sincère, d’être dévoués à Dieu, d’observer la prière, de faire l’aumône? C’est la religion vraie.. MASAQ top: \"the-correct\".",
+        "status": "SAFE"
+      }
+    },
+    {
+      "arabic": "شَرُّ",
+      "wordId": "f26c7367-4587-4261-8da8-18d333bdaf40",
+      "vocalization": "شَرُّ",
+      "occurrenceCount": 1,
+      "occurrenceCountInS98": 1,
+      "surahs": [
+        98
+      ],
+      "currentLemmaId": "223d7988-3efa-4bbf-897a-65c68523a0c6",
+      "currentLemma": "شر",
+      "resolutionPath": "MASAQ",
+      "directLemmaId": null,
+      "wlmLemmaId": null,
+      "masaqLemmaIds": [
+        "223d7988-3efa-4bbf-897a-65c68523a0c6"
+      ],
+      "masaqQuality": 1,
+      "masaqStems": [
+        "شر"
+      ],
+      "masaqTopGlossEn": "(are-the)-worst",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "(are-the)-worst",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "NOUN_ABSTRACT"
+      ],
+      "masaqSegmentMorphs": [
+        "Stem"
+      ],
+      "lemmaPaths": [
+        "masaq:223d7988-3efa-4bbf-897a-65c68523a0c6"
+      ],
+      "wordTranslationHikmaFr": null,
+      "lemmaTranslationHikmaFr": null,
+      "hamidullahS98": [
+        "Les infidèles parmi les gens du Livre, ainsi que les Associateurs iront au feu de l’Enfer, pour y demeurer éternellement. De toute la création, ce sont eux les pires."
+      ],
+      "kazimirskiS98": [
+        "Les infidèles, parmi ceux qui ont reçu les Écritures, et les idolâtres, resteront éternellement dans le feu de la géhenne. Ils sont les plus méchants de tous les êtres créés."
+      ],
+      "contextInS98": [
+        {
+          "ayahNum": 6,
+          "globalAyahNum": 6136
+        }
+      ],
+      "missingReason": "LEMMA_شر_EXISTS_NO_FR_GLOSS",
+      "classification": "A",
+      "editorialRecommendation": {
+        "gloss": "mal / pire / mauvais",
+        "confidence": 0.85,
+        "rationale": "Lemme « شر » existant ; glose Hikma connue: \"mal / pire / mauvais\". Hamidullah: Les infidèles parmi les gens du Livre, ainsi que les Associateurs iront au feu de l’Enfer, pour y demeurer éternellement. De toute la création, ce sont eux les pires.. Kazimirski: Les infidèles, parmi ceux qui ont reçu les Écritures, et les idolâtres, resteront éternellement dans le feu de la géhenne. Ils sont les plus méchants de tous les êtres créés.. MASAQ top: \"(are-the)-worst\".",
+        "status": "SAFE"
+      }
+    }
+  ],
+  "classification": {
+    "A_EXISTING_LEMMA_GLOSS_NEEDED": 9,
+    "B_EXISTING_LEMMA_MAPPING_NEEDED": 0,
+    "C_WORD_TRANSLATION_NEEDED": 0,
+    "D_REVIEW_REQUIRED": 2,
+    "E_DO_NOT_IMPORT": 0,
+    "distinctLemmasWithoutFrGloss": 7,
+    "distinctLemmasRequiringGloss": 7
+  },
+  "safeGlosses": [
+    {
+      "lemma": "بر",
+      "lemmaId": "71d35060-c548-416b-ae25-d682e1c5575d",
+      "proposedGloss": "bonté / bienfaisance / continent",
+      "confidence": 0.85
+    },
+    {
+      "lemma": "منفك",
+      "lemmaId": "f986b797-62f3-4b70-b733-419f0170f5b8",
+      "proposedGloss": "cesser / se désengager / se séparer",
+      "confidence": 0.85
+    },
+    {
+      "lemma": "بين",
+      "lemmaId": "1818b16c-a6f7-4c5a-b449-cf7df139839e",
+      "proposedGloss": "entre / rendre clair / manifester / preuve claire",
+      "confidence": 0.85
+    },
+    {
+      "lemma": "مطهر",
+      "lemmaId": "911bcc5c-6fc9-4668-a357-bc9b130af1f0",
+      "proposedGloss": "purifié / pur",
+      "confidence": 0.85
+    },
+    {
+      "lemma": "كتب",
+      "lemmaId": "8afcda77-f864-4c33-8a28-ed3613a1f153",
+      "proposedGloss": "livre / écrit / écrire / prescrire",
+      "confidence": 0.85
+    },
+    {
+      "lemma": "قيم",
+      "lemmaId": "e35fe1cb-bcec-430c-b20c-29c011e2f733",
+      "proposedGloss": "droit / correct / de valeur / établir (droit)",
+      "confidence": 0.85
+    },
+    {
+      "lemma": "شر",
+      "lemmaId": "223d7988-3efa-4bbf-897a-65c68523a0c6",
+      "proposedGloss": "mal / pire / mauvais",
+      "confidence": 0.85
+    }
+  ],
+  "safeMappings": [],
+  "safeWordTranslations": [],
+  "reviewRequired": [
+    {
+      "wordId": "74e57f70-00f1-4cfd-987c-d87f0d7e66c8",
+      "arabic": "تَفَرَّقَ",
+      "issue": "NO_LEMMA_NO_MASAQ — requires word-level translation"
+    },
+    {
+      "wordId": "01547cbe-310e-4182-957b-a10e6c9d221b",
+      "arabic": "وَيُؤْتُوا۟",
+      "issue": "NO_LEMMA_NO_MASAQ — requires word-level translation"
+    }
+  ],
+  "simulations": {
+    "glossOnly": {
+      "description": "SAFE lemma GLOSSES only",
+      "appliedGlosses": [
+        {
+          "lemma": "بر",
+          "gloss": "bonté / bienfaisance / continent"
+        },
+        {
+          "lemma": "منفك",
+          "gloss": "cesser / se désengager / se séparer"
+        },
+        {
+          "lemma": "بين",
+          "gloss": "entre / rendre clair / manifester / preuve claire"
+        },
+        {
+          "lemma": "مطهر",
+          "gloss": "purifié / pur"
+        },
+        {
+          "lemma": "كتب",
+          "gloss": "livre / écrit / écrire / prescrire"
+        },
+        {
+          "lemma": "قيم",
+          "gloss": "droit / correct / de valeur / établir (droit)"
+        },
+        {
+          "lemma": "شر",
+          "gloss": "mal / pire / mauvais"
+        }
+      ],
+      "appliedMappings": 0,
+      "appliedWordTranslations": 0,
+      "newCoveredForms": 77,
+      "remainingForms": 2,
+      "coveragePct": 0.9747,
+      "isReady": false,
+      "remainingFormIds": [
+        "74e57f70-00f1-4cfd-987c-d87f0d7e66c8",
+        "01547cbe-310e-4182-957b-a10e6c9d221b"
+      ]
+    },
+    "glossAndMappings": {
+      "description": "SAFE glosses + SAFE mappings",
+      "appliedGlosses": [
+        {
+          "lemma": "بر",
+          "gloss": "bonté / bienfaisance / continent"
+        },
+        {
+          "lemma": "منفك",
+          "gloss": "cesser / se désengager / se séparer"
+        },
+        {
+          "lemma": "بين",
+          "gloss": "entre / rendre clair / manifester / preuve claire"
+        },
+        {
+          "lemma": "مطهر",
+          "gloss": "purifié / pur"
+        },
+        {
+          "lemma": "كتب",
+          "gloss": "livre / écrit / écrire / prescrire"
+        },
+        {
+          "lemma": "قيم",
+          "gloss": "droit / correct / de valeur / établir (droit)"
+        },
+        {
+          "lemma": "شر",
+          "gloss": "mal / pire / mauvais"
+        }
+      ],
+      "appliedMappings": [],
+      "appliedWordTranslations": 0,
+      "newCoveredForms": 77,
+      "remainingForms": 2,
+      "coveragePct": 0.9747,
+      "isReady": false,
+      "remainingFormIds": [
+        "74e57f70-00f1-4cfd-987c-d87f0d7e66c8",
+        "01547cbe-310e-4182-957b-a10e6c9d221b"
+      ]
+    },
+    "completeSafeScenario": {
+      "description": "SAFE glosses + SAFE mappings + SAFE word_translations",
+      "appliedGlosses": [
+        {
+          "lemma": "بر",
+          "gloss": "bonté / bienfaisance / continent"
+        },
+        {
+          "lemma": "منفك",
+          "gloss": "cesser / se désengager / se séparer"
+        },
+        {
+          "lemma": "بين",
+          "gloss": "entre / rendre clair / manifester / preuve claire"
+        },
+        {
+          "lemma": "مطهر",
+          "gloss": "purifié / pur"
+        },
+        {
+          "lemma": "كتب",
+          "gloss": "livre / écrit / écrire / prescrire"
+        },
+        {
+          "lemma": "قيم",
+          "gloss": "droit / correct / de valeur / établir (droit)"
+        },
+        {
+          "lemma": "شر",
+          "gloss": "mal / pire / mauvais"
+        }
+      ],
+      "appliedMappings": [],
+      "appliedWordTranslations": [],
+      "newCoveredForms": 77,
+      "remainingForms": 2,
+      "coveragePct": 0.9747,
+      "isReady": false,
+      "remainingFormIds": [
+        "74e57f70-00f1-4cfd-987c-d87f0d7e66c8",
+        "01547cbe-310e-4182-957b-a10e6c9d221b"
+      ]
+    }
+  },
+  "minimumActionsToReady": {
+    "lemmaGlossesNeeded": 7,
+    "safeMappingsNeeded": 0,
+    "wordTranslationsNeeded": 0,
+    "humanReviewNeeded": 4,
+    "totalActions": 7,
+    "note": "Pour S98: 7 lemmes distincts sans glose FR, 0 mappings potentiels, 0 word_translations, 2 review, 0 do-not-import."
+  },
+  "nextSurahRanking": [
+    {
+      "surah": 92,
+      "name": "Al-Layl",
+      "totalForms": 62,
+      "coveredForms": 47,
+      "missingForms": 15,
+      "coveragePct": 0.7581,
+      "distinctGlossLemmasNeeded": 7,
+      "formsWithExistingLemma": 7,
+      "mappingsPotential": 0,
+      "wordTranslationsNeeded": 0,
+      "reviewRequired": 8,
+      "totalActionsEstimate": 15,
+      "reachableBySafeActions": false,
+      "missingFormSample": [
+        "سَعْيَكُمْ",
+        "لَشَتَّىٰ",
+        "بِٱلْحُسْنَىٰ",
+        "فَسَنُيَسِّرُهُۥ",
+        "بَخِلَ"
+      ]
+    },
+    {
+      "surah": 82,
+      "name": "Al-Infitar",
+      "totalForms": 66,
+      "coveredForms": 49,
+      "missingForms": 17,
+      "coveragePct": 0.7424,
+      "distinctGlossLemmasNeeded": 10,
+      "formsWithExistingLemma": 10,
+      "mappingsPotential": 0,
+      "wordTranslationsNeeded": 0,
+      "reviewRequired": 7,
+      "totalActionsEstimate": 17,
+      "reachableBySafeActions": false,
+      "missingFormSample": [
+        "ٱنفَطَرَتْ",
+        "ٱلْكَوَاكِبُ",
+        "ٱنتَثَرَتْ",
+        "فُجِّرَتْ",
+        "ٱلْقُبُورُ"
+      ]
+    },
+    {
+      "surah": 85,
+      "name": "Al-Buruj",
+      "totalForms": 98,
+      "coveredForms": 80,
+      "missingForms": 18,
+      "coveragePct": 0.8163,
+      "distinctGlossLemmasNeeded": 13,
+      "formsWithExistingLemma": 13,
+      "mappingsPotential": 0,
+      "wordTranslationsNeeded": 0,
+      "reviewRequired": 5,
+      "totalActionsEstimate": 18,
+      "reachableBySafeActions": false,
+      "missingFormSample": [
+        "ٱلْبُرُوجِ",
+        "ٱلْمَوْعُودِ",
+        "وَشَاهِدٍۢ",
+        "وَمَشْهُودٍۢ",
+        "ٱلْأُخْدُودِ"
+      ]
+    },
+    {
+      "surah": 90,
+      "name": "Al-Balad",
+      "totalForms": 73,
+      "coveredForms": 51,
+      "missingForms": 22,
+      "coveragePct": 0.6986,
+      "distinctGlossLemmasNeeded": 14,
+      "formsWithExistingLemma": 15,
+      "mappingsPotential": 0,
+      "wordTranslationsNeeded": 0,
+      "reviewRequired": 7,
+      "totalActionsEstimate": 21,
+      "reachableBySafeActions": false,
+      "missingFormSample": [
+        "حِلٌّۢ",
+        "وَوَالِدٍۢ",
+        "كَبَدٍ",
+        "يَقْدِرَ",
+        "أَهْلَكْتُ"
+      ]
+    },
+    {
+      "surah": 62,
+      "name": "Al-Jumu'ah",
+      "totalForms": 143,
+      "coveredForms": 121,
+      "missingForms": 22,
+      "coveragePct": 0.8462,
+      "distinctGlossLemmasNeeded": 7,
+      "formsWithExistingLemma": 7,
+      "mappingsPotential": 0,
+      "wordTranslationsNeeded": 0,
+      "reviewRequired": 15,
+      "totalActionsEstimate": 22,
+      "reachableBySafeActions": false,
+      "missingFormSample": [
+        "ٱلْقُدُّوسِ",
+        "وَإِن",
+        "حُمِّلُوا۟",
+        "يَحْمِلُوهَا",
+        "ٱلْحِمَارِ"
+      ]
+    }
+  ],
+  "integrity": {
+    "orphanQuranWordsLemma": 0,
+    "orphanWordLemmaMapping": 0,
+    "orphanLinguisticOccurrences": 0,
+    "orphanLemmaTranslations": 0,
+    "duplicateWordLemmaMapping": 0,
+    "duplicateLemmaTranslations": 0,
+    "contradictoryDirectVsWlm": 0,
+    "invalidLemmaTranslations": 4,
+    "existingTranslationsUnchanged": true,
+    "classifySurahReadinessUnchanged": true,
+    "note": "Read-only audit. ZERO writes. All anomalies are observation-only and require a separate infrastructure phase to fix."
+  },
+  "invariants": {
+    "databaseWrites": 0,
+    "lexicalWrites": 0,
+    "translationWrites": 0,
+    "curriculumWrites": 0,
+    "masaqWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "readOnly": true
+  },
+  "tests": {
+    "run": false,
+    "note": "Tests exécutés après la génération du rapport (vitest · tsc · eslint)."
+  }
+}

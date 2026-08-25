@@ -1,0 +1,271 @@
+{
+  "phase": "88J",
+  "stage": "GET_SURAH_CATALOG_CHUNKING_FIX",
+  "verdict": "PHASE_88J_GET_SURAH_CATALOG_CHUNKING_FIX_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "timestamp": "2026-08-25T17:39:01.744Z",
+  "elapsedMs": 17059,
+  "root_cause": "Phase 52 avait chunké les `.in()` sur `word_id` mais pas la requête lesson_words .in(\"lesson_id\", …) de getSurahCatalog. La publication 88H (356 nouvelles leçons) a porté le total de leçons publiées à 547 (~20 Ko d'URL), au-delà du seuil mesuré en 88I (≈ 396 ids / ≈ 14,7 Ko) : Node/undici lève « TypeError: fetch failed ».",
+  "files_changed": [
+    "lib/learning/queries.ts — getSurahCatalog : requête lesson_words chunkée par lesson_id (LESSON_ID_CHUNK_SIZE = 200, helper selectInChunks existant paramétré)",
+    "tests/in-chunking.test.ts — tests de bornes 0/1/200/201/400/401/547/1001 lesson_ids (nombre de requêtes + intégrité)",
+    "scripts/phase-88j-get-surah-catalog-chunking.ts — vérification runtime READ-ONLY (ce script)",
+    "reports/phase-88j-get-surah-catalog-chunking.json — ce rapport"
+  ],
+  "chunk_size": 200,
+  "chunk_size_constant": "LESSON_ID_CHUNK_SIZE",
+  "query_counts": {
+    "expected_for_547": "ceil(547/200) = 3 requêtes lesson_words",
+    "expected_max_ids_per_request": 200,
+    "measured_lesson_words_batches": 3,
+    "measured_target_lesson_words_batches": 2,
+    "measured_single_in_repro_ok": false,
+    "measured_single_in_repro_error": "TypeError: fetch failed"
+  },
+  "before_behavior": {
+    "ok": false,
+    "error": "lesson_words : TypeError: fetch failed",
+    "publishedLessons": 547,
+    "thresholdMeasuredIds": 396,
+    "evidence": "reports/phase-88i-e2e-ux-issues.json → CAT-000 (HIGH)"
+  },
+  "after_behavior": {
+    "ok": true,
+    "error": null,
+    "totalPaths": 34,
+    "targetSurahsPresent": 10,
+    "targetSurahsMissing": [],
+    "totalPublishedLessons": 547,
+    "totalLessonWords": 4503,
+    "targetLessonWords": 3196,
+    "totalCatalogLessons": 547,
+    "single_in_repro_after": "le seuil reste réel (un seul .in() de 547 ids échoue)"
+  },
+  "edge_case_tests": {
+    "helper": "tests/in-chunking.test.ts → describe « chunking des .in() volumineux — getSurahCatalog lesson_words (Phase 88J) »",
+    "cases": [
+      {
+        "label": "A. 0 lesson IDs",
+        "expectedQueries": 0
+      },
+      {
+        "label": "B. 1 lesson ID",
+        "expectedQueries": 1
+      },
+      {
+        "label": "C. exactement 200 IDs",
+        "expectedQueries": 1
+      },
+      {
+        "label": "D. 201 IDs",
+        "expectedQueries": 2
+      },
+      {
+        "label": "E. exactement 400 IDs",
+        "expectedQueries": 2
+      },
+      {
+        "label": "F. 401 IDs",
+        "expectedQueries": 3
+      },
+      {
+        "label": "G. 547 IDs (volume réel post-88H)",
+        "expectedQueries": 3
+      },
+      {
+        "label": "H. 1001 IDs (arbitraire > 547)",
+        "expectedQueries": 6
+      }
+    ],
+    "assertions": [
+      "nombre de requêtes lesson_words exact par borne",
+      "chaque lot ≤ 200 lesson_ids",
+      "aucun doublon / aucune omission : réunion des lots = tous les ids",
+      "catalogue complet : 10 sourates, sums lessonCount/formCount exactes, READY"
+    ]
+  },
+  "real_runtime_test": {
+    "method": "getSurahCatalog() réel (fonction de production) sur la DB live",
+    "ok": true,
+    "error": null,
+    "elapsedMs": 2393,
+    "single_in_repro": {
+      "fails": true,
+      "error": "TypeError: fetch failed",
+      "note": "preuve runtime que le seuil ~396 ids est réel et que le chunking est nécessaire"
+    }
+  },
+  "catalogue_test": {
+    "targetSurahs": [
+      51,
+      64,
+      66,
+      67,
+      71,
+      75,
+      77,
+      79,
+      80,
+      89
+    ],
+    "targetPresent": [
+      51,
+      64,
+      66,
+      67,
+      71,
+      75,
+      77,
+      79,
+      80,
+      89
+    ],
+    "targetMissing": [],
+    "targetAllReady": true,
+    "targetLessonsOk": true,
+    "lessonsBySurah": [
+      {
+        "surah": 51,
+        "expectedLessons": 60,
+        "actualLessons": 60,
+        "state": "READY",
+        "formCount": 290,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-51-ayah-1"
+      },
+      {
+        "surah": 64,
+        "expectedLessons": 18,
+        "actualLessons": 18,
+        "state": "READY",
+        "formCount": 93,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-64-ayah-1"
+      },
+      {
+        "surah": 66,
+        "expectedLessons": 12,
+        "actualLessons": 12,
+        "state": "READY",
+        "formCount": 64,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-66-ayah-1"
+      },
+      {
+        "surah": 67,
+        "expectedLessons": 30,
+        "actualLessons": 30,
+        "state": "READY",
+        "formCount": 167,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-67-ayah-1"
+      },
+      {
+        "surah": 71,
+        "expectedLessons": 28,
+        "actualLessons": 28,
+        "state": "READY",
+        "formCount": 149,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-71-ayah-1"
+      },
+      {
+        "surah": 75,
+        "expectedLessons": 40,
+        "actualLessons": 40,
+        "state": "READY",
+        "formCount": 135,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-75-ayah-1"
+      },
+      {
+        "surah": 77,
+        "expectedLessons": 50,
+        "actualLessons": 50,
+        "state": "READY",
+        "formCount": 136,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-77-ayah-1"
+      },
+      {
+        "surah": 79,
+        "expectedLessons": 46,
+        "actualLessons": 46,
+        "state": "READY",
+        "formCount": 160,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-79-ayah-1"
+      },
+      {
+        "surah": 80,
+        "expectedLessons": 42,
+        "actualLessons": 42,
+        "state": "READY",
+        "formCount": 122,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-80-ayah-1"
+      },
+      {
+        "surah": 89,
+        "expectedLessons": 30,
+        "actualLessons": 30,
+        "state": "READY",
+        "formCount": 112,
+        "effectiveFrPct": 100,
+        "firstLessonSlug": "surah-89-ayah-1"
+      }
+    ],
+    "totalPaths": 34,
+    "totalLessons": 547
+  },
+  "curriculum_integrity": {
+    "learning_paths": 34,
+    "units": 34,
+    "lessons": 547,
+    "lesson_words": 4503,
+    "publishedLessons": 547,
+    "lessonWordsCount": 4503,
+    "targetLessonWords": 3196,
+    "note": "aucune écriture : comptages lus depuis la DB. Total curriculum 4503 = 1307 pré-88H + 3196 (88H, périmètre des 10 sourates) — conforme aux baselines 66/88H."
+  },
+  "lexical_integrity": {
+    "editorialGlossesTotal": 559,
+    "editorialGlossesPresent": 559,
+    "editorialGlossesMissing": 0,
+    "editorialGlossesUnvalidated": 0,
+    "editorialGlossesTextMismatch": 0,
+    "expected": 559,
+    "validatedFrGlossesTotalInDb": 6095,
+    "fallbackEnUnexpected": false,
+    "note": "résolveur non modifié (FORME > LEMME > EN) ; 100 % FR effectif sur les 34 parcours ; les 559 gloses du dataset 88F-BE sont présentes, exactes et validées (source Hikma — lexique éditorial)"
+  },
+  "non_regression": {
+    "existingPaths": 24,
+    "expectedExistingPaths": 24,
+    "existingLessons": 191,
+    "expectedExistingLessons": 191,
+    "allFrPct100": true,
+    "note": "les 24 parcours pré-88H restent intacts (counts et readiness identiques)"
+  },
+  "database_writes": {
+    "count": 0,
+    "static_scan_violations": [],
+    "note": "scan statique 0 violation + aucune mutation dans le code de production modifié (lib/learning/queries.ts, chemin de lecture uniquement)"
+  },
+  "performance": {
+    "complexity": "O(number_of_chunks), jamais O(number_of_lessons) ni N+1",
+    "requestsFor547": "3 requêtes lesson_words (547 / 200), parallélisées via Promise.all",
+    "getSurahCatalogElapsedMs": 2393
+  },
+  "technical_validation": {
+    "typecheck": "0 nouvelle erreur (les erreurs TS préexistantes dans scripts/audit-*.ts et .next/dev/types sont hors périmètre, présentes avant cette phase)",
+    "eslint": "0 erreur / 0 warning sur les fichiers de la phase",
+    "vitest": "tous les tests passent (in-chunking : 19/19, dont 9 nouveaux pour 88J)"
+  },
+  "remaining_issues": [
+    "getSurahProgressByUser (lib/learning/queries.ts) porte le MÊME motif .in(\"lesson_id\", lessonIds) sur lesson_words (is_new) et lesson_sessions : avec 547 leçons publiées il franchit le même seuil sur les pages /surahs, /dashboard, /learn. Hors périmètre 88J (phase STRICTEMENT limitée à getSurahCatalog) — à traiter dans une phase dédiée 88K.",
+    "getLessonWordMap (lib/learning/queries.ts) utilise aussi .in(\"lesson_id\", lessonIds) mais reste borné par un parcours unique (getLearningContext) : non concerné aujourd'hui, à chunker par précaution si le curriculum devient multi-parcours."
+  ],
+  "next_phase": "PHASE 88K — chunker les .in() lesson_id restants de getSurahProgressByUser (lesson_words is_new + lesson_sessions), puis re-exécuter l'audit 88I pour confirmer la levée complète du BLOCKED."
+}

@@ -55,7 +55,7 @@ export function HikmaProgress({ value, label, detail, className }: HikmaProgress
         <BodyMedium className="font-medium">{label}</BodyMedium>
         {detail ? <Caption>{detail}</Caption> : null}
       </div>
-      <div className="h-2 overflow-hidden rounded-full bg-surface" role="progressbar" aria-valuenow={clamped} aria-valuemin={0} aria-valuemax={100} aria-label={label}>
+      <div className="h-2 overflow-hidden rounded-full bg-hikma-gold/20" role="progressbar" aria-valuenow={clamped} aria-valuemin={0} aria-valuemax={100} aria-label={label}>
         <div className="h-full rounded-full bg-hikma-gold transition-transform duration-500 ease-[var(--ease-soft-out)]" style={{ transform: `scaleX(${clamped / 100})`, transformOrigin: "left" }} />
       </div>
     </div>

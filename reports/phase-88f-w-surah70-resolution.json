@@ -1,0 +1,131 @@
+{
+  "phase": "88F-W",
+  "verdict": "PHASE_88F_W_COMPLETE",
+  "mode": "APPLY",
+  "target": {
+    "number": 70,
+    "name": "Al-Ma'arij"
+  },
+  "timestamp": "2026-08-24T11:37:58.935Z",
+  "baseline": {
+    "number": 70,
+    "name": "Al-Ma'arij",
+    "totalForms": 189,
+    "coveredForms": 151,
+    "coveragePct": 0.7989,
+    "readiness": "IN_PREPARATION"
+  },
+  "preflight": {
+    "batchA": {
+      "ready": 25,
+      "existingSame": 0,
+      "conflicts": 0
+    },
+    "batchB": {
+      "ready": 13,
+      "existingSame": 0,
+      "conflicts": 0
+    }
+  },
+  "writes": {
+    "batchA": 25,
+    "batchB": 13,
+    "total": 38
+  },
+  "validation": {
+    "batchA": {
+      "present": "25/25",
+      "ok": true
+    },
+    "batchB": {
+      "present": "13/13",
+      "ok": true
+    }
+  },
+  "after": {
+    "s70": {
+      "number": 70,
+      "name": "Al-Ma'arij",
+      "totalForms": 189,
+      "coveredForms": 189,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s98": {
+      "number": 98,
+      "name": "Al-Bayyinah",
+      "totalForms": 79,
+      "coveredForms": 79,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s92": {
+      "number": 92,
+      "name": "Al-Layl",
+      "totalForms": 62,
+      "coveredForms": 62,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s82": {
+      "number": 82,
+      "name": "Al-Infitar",
+      "totalForms": 66,
+      "coveredForms": 66,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s85": {
+      "number": 85,
+      "name": "Al-Buruj",
+      "totalForms": 98,
+      "coveredForms": 98,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s90": {
+      "number": 90,
+      "name": "Al-Balad",
+      "totalForms": 73,
+      "coveredForms": 73,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "global": {
+      "frUnionBefore": 5418,
+      "frUnionAfter": 5493,
+      "newGlobalForms": 75,
+      "readyBefore": 28,
+      "readyAfter": 29
+    }
+  },
+  "invariants": {
+    "protectedDelta": "aucun",
+    "masaqWrites": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0
+  },
+  "idempotence": {
+    "mode": "APPLY=2",
+    "batchA": {
+      "existingSame": 25,
+      "ready": 0,
+      "conflicts": 0
+    },
+    "batchB": {
+      "existingSame": 13,
+      "ready": 0,
+      "conflicts": 0
+    },
+    "new": 0,
+    "dataWrites": 0,
+    "protectedDelta": "aucun",
+    "delta": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error · 0 warning"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "phase": "88F-AW",
+  "verdict": "PHASE_88F_AW_COMPLETE",
+  "s84Ready": true,
+  "mode": "IDEMPOTENCE",
+  "timestamp": "2026-08-24T16:39:12.676Z",
+  "durationSeconds": 28.54,
+  "surah": {
+    "number": 84,
+    "name": "Al-Inshiqaq"
+  },
+  "baseline": {
+    "totalForms": 92,
+    "coveredForms": 92,
+    "unresolvedForms": 0,
+    "coveragePct": 100,
+    "runtimePaths": {
+      "pathA_wordTr": 88,
+      "pathB_lemma": 0,
+      "pathC_wlm": 4
+    },
+    "classALemmaReachable": 1
+  },
+  "preflight": {
+    "expectedGlosses": 24,
+    "actualGlosses": 24,
+    "uniqueWordIds": 24,
+    "glossValidation": {
+      "NEW": 0,
+      "EXISTING_SAME": 24,
+      "CONFLICT": 0,
+      "MISSING": 0,
+      "OUT_OF_SCOPE": 0,
+      "INVALID": 0
+    },
+    "emptyGlosses": 0,
+    "identitySafe": true
+  },
+  "import": {
+    "mode": "IDEMPOTENCE",
+    "wouldInsert": 0
+  },
+  "postRuntime": {
+    "totalForms": 92,
+    "coveredForms": 92,
+    "coveragePct": 100,
+    "runtimePaths": {
+      "pathA_wordTr": 88,
+      "pathB_lemma": 0,
+      "pathC_wlm": 4
+    },
+    "readiness": "READY",
+    "ready": true
+  },
+  "globalReconciliation": {
+    "readyCount": 35,
+    "notReadyCount": 78,
+    "referenceCount": 1,
+    "total": 114,
+    "consistencyCheck": true,
+    "s84Ready": true,
+    "s13Ready": true,
+    "s29Ready": true,
+    "s36Ready": true,
+    "s46Ready": true,
+    "s62Ready": true,
+    "s70Ready": true,
+    "s82Ready": true,
+    "s85Ready": true,
+    "s90Ready": true,
+    "s92Ready": true,
+    "s98Ready": true,
+    "readySurahs": [
+      13,
+      29,
+      36,
+      46,
+      62,
+      70,
+      82,
+      84,
+      85,
+      87,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114
+    ]
+  },
+  "protectedTables": {
+    "quran_words": 0,
+    "word_lemma_mapping": 0,
+    "linguistic_occurrences": 0,
+    "lemma_translations": 0,
+    "translations": 0,
+    "curriculum": 0,
+    "learning_paths": 0,
+    "allDeltaZero": true
+  },
+  "frUnion": {
+    "before": 5382,
+    "after": 5382,
+    "delta": 0,
+    "wordTranslationsBefore": 5161,
+    "wordTranslationsAfter": 5161
+  },
+  "idempotence": {
+    "NEW": 0,
+    "EXISTING_SAME": 24,
+    "CONFLICT": 0,
+    "dbDelta": 0,
+    "pass": true
+  },
+  "importedWordIds": [
+    "55938615-a98b-43af-bdda-8e5a873d6b3f",
+    "1746937c-2e82-4e0e-966c-33aa2b460c84",
+    "a1c6aa15-e397-450a-8ce7-2a5a0d7024c5",
+    "f36e2e65-6ef3-48b1-8004-12de5a0be604",
+    "e2c00518-a6bf-465f-89f1-38929ec0adb6",
+    "8ff722e1-d97c-409b-addc-bb28ec46fb01",
+    "95fbb96d-55c6-4dc4-bf36-537a427d979b",
+    "99321fd6-7b32-4fd3-aba4-5e581531769e",
+    "41a46ba3-5361-47e0-bd7a-4fa9d6cc09e1",
+    "5d705456-80eb-4bd6-b97d-c3620a4f8b24",
+    "55a1924f-e4e0-4776-8241-6f8a6098dc19",
+    "1c257f6a-b77b-4f2c-92ba-0512d7667558",
+    "5287bdfa-e536-49ae-ad79-a0625d60c5b9",
+    "b2ae793b-03d3-4922-bb39-d881f15c0deb",
+    "c324538c-9c77-4e57-8de5-7a4aef8d68b6",
+    "4683d62d-d5c1-4a89-9641-b11c26c3e93b",
+    "87418e72-dc7d-42d7-a378-f35a57a750b8",
+    "8b14342b-cae6-4ef0-b075-d4e459b7592d",
+    "522e7bb2-023d-4215-a87a-a47e1d1aa861",
+    "00e71547-62c4-4441-9f35-599b62d6024e",
+    "c7fbf801-b194-4ca2-84ea-2565d523cf06",
+    "6893e041-fcf8-4ae9-813c-de79052b7e27",
+    "58328d5b-91da-4863-8cd8-f30b3b4efad6",
+    "3718b2ea-8949-4ea2-a478-c4f7cf189426"
+  ],
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "wlmCreated": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "classifySurahReadinessUnchanged": true
+  }
+}

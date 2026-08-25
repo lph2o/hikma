@@ -43,3 +43,7 @@ next-env.d.ts
 
 # supabase CLI local state (project link, migration plan, etc.)
 supabase/.temp/
+
+# scratch & tool metadata
+/tmp/
+.freebuff/

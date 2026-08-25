@@ -83,6 +83,7 @@ describe("lesson premium polish", () => {
           ayahNumber: 4,
           arabic: "مَـٰلِكِ يَوْمِ الدِّينِ",
           french: "Maître du Jour de la rétribution.",
+          globalAyahNumber: null,
         }],
         meaningFallback: false,
         audioUnavailable: false,

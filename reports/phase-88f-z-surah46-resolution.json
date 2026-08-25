@@ -1,0 +1,833 @@
+{
+  "phase": "88F-Z",
+  "verdict": "PHASE_88F_Z_ABORTED_PREFLIGHT_INCONSISTENCY",
+  "aborted": true,
+  "databaseWrites": 0,
+  "timestamp": "2026-08-24T12:15:09.187Z",
+  "editorialGap": {
+    "totalWritesExpected": 75,
+    "writesReady": 1,
+    "writesBlocked": 74,
+    "placeholderLemmaGlosses": 32,
+    "missingReviewWordTrGlosses": 42,
+    "readySafeWordTr": 1,
+    "missingEditorial": [
+      {
+        "id": "125b4961-e1a0-49ec-aefe-7d3fc294ab4f",
+        "arabic": "أثار",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "0917ff07-a4a6-4f52-a292-c9fe1cc9c502",
+        "arabic": "شيئ",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "94afd10c-cfd9-41c7-b3d0-51a48a6cc841",
+        "arabic": "أعلم",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "08457bef-4e66-4eff-9346-d8fc46b3b60e",
+        "arabic": "بدع",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "272b8d2a-538c-4980-b007-f5ece61f0f99",
+        "arabic": "قديم",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "95112493-24b8-4ec1-a762-78b3a59d5fae",
+        "arabic": "شهر",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "57869ede-57cc-4693-9364-0bee13824634",
+        "arabic": "سن",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "53b60e93-b323-4903-aab7-7585c6d37233",
+        "arabic": "ذر",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "76720cd4-2d0d-478c-b97d-4ba5853334e3",
+        "arabic": "عد",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "c295ea60-a947-4125-97ae-5846b068429c",
+        "arabic": "قرون",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "8f4bd92f-e1e0-4dcf-93e7-9b448ead94cc",
+        "arabic": "عرض",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "888a6fbf-63e5-48f1-a501-3849deea7ce8",
+        "arabic": "طيب",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "cfee91db-2bcb-4c63-b9fd-c795565b547a",
+        "arabic": "ذكر",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "89a88190-0770-494c-8ec7-4076b4c55e50",
+        "arabic": "أخا",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "9fc6512b-4efe-4757-b3a4-b14e57ec28b5",
+        "arabic": "أحقاف",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "64f9e40f-05a0-4487-951e-0dd6c66f5c46",
+        "arabic": "خلف",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "096ff8f6-ce64-4da3-beb8-973b1c450327",
+        "arabic": "عارض",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "8c2ccf22-65d1-42b2-b87a-8dd39a8613c5",
+        "arabic": "مستقبل",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "2c2a3d0c-499e-4753-b33e-9cb278d3ebbd",
+        "arabic": "أودي",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "15c9c3b3-1593-4853-a474-6bc55ac16993",
+        "arabic": "ممطر",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "f452b43f-3c48-488e-9403-be8bfaa74829",
+        "arabic": "ريح",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "678f4fe9-0457-47c0-9f60-ab3421127b97",
+        "arabic": "مساكن",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "ab31770a-ccc7-414c-8d17-ef07d027e27b",
+        "arabic": "أفئد",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "339a4344-6879-4351-8a35-c319e8cb19c9",
+        "arabic": "قربان",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "0655cc86-b3ac-4ce0-ac83-ea6144944666",
+        "arabic": "آله",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "a65d5fa0-bf1b-41e0-8e93-a510537390c1",
+        "arabic": "طريق",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "1ae7bf3f-2a00-47e5-9470-8ac7e2c35648",
+        "arabic": "داعي",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "7e605db0-b799-4b6b-9575-9e3f8174957f",
+        "arabic": "معجز",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "0b9d50dd-ef9a-4003-8d60-be09c76716e2",
+        "arabic": "أولياء",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "11b1ec78-e8c8-4198-9349-2380bd32c73c",
+        "arabic": "موتى",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "15428f1d-7f09-4350-a7d3-e00f653cfd37",
+        "arabic": "بلاغ",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "9bd54996-df0a-4c9a-a3d1-7ac2f5474893",
+        "arabic": "ويل",
+        "needsGloss": true,
+        "path": "lemma_translation"
+      },
+      {
+        "id": "3ce2da86-780d-409c-938e-24c094a672f9",
+        "arabic": "دُعَآئِهِمْ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "c4909978-804e-46d5-ac51-6a731eec2994",
+        "arabic": "حُشِرَ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "189e5067-5493-4c49-9e73-dee4186b5829",
+        "arabic": "يُفْعَلُ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "3883319c-cf25-4c52-9b0e-beaf1cbf66c2",
+        "arabic": "وَٱسْتَكْبَرْتُمْ ۖ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "1e7aeea5-872e-4d84-8ab8-004581fa40ed",
+        "arabic": "سَبَقُونَآ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "64e1af59-1542-457b-881a-0378851cf327",
+        "arabic": "يَهْتَدُوا۟",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "0a6621f4-f2c5-44b8-940d-80aa1418d86c",
+        "arabic": "إِحْسَـٰنًا ۖ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "0a97ceab-9649-43fc-9cf7-5d9901bfaca6",
+        "arabic": "كُرْهًۭا",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "0e7de874-9cbd-4574-8d3f-2b40b934bb63",
+        "arabic": "وَوَضَعَتْهُ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "7290ff1f-b150-4b96-84c2-310d134122b0",
+        "arabic": "كُرْهًۭا ۖ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "54f6f8b7-0431-4c08-b007-01dc8933ae6a",
+        "arabic": "وَحَمْلُهُۥ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "81c109b8-1d72-4d02-b5fc-0cfa4dc05460",
+        "arabic": "وَبَلَغَ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "d6a5d8fd-777f-46b1-911d-f15e11085ec6",
+        "arabic": "نَتَقَبَّلُ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "20b18ba2-07a8-4b20-81de-5794702ff182",
+        "arabic": "وَنَتَجَاوَزُ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "8554cd49-007d-4aba-97d8-cea3b4683371",
+        "arabic": "أُخْرَجَ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "c901797e-8505-4664-8537-8ef133cbbaf0",
+        "arabic": "خَلَتِ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "cdf9af2e-f331-4d3d-a5a6-604bcdc4a675",
+        "arabic": "وَهُمَا",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "7e6d8196-6110-4265-8e07-6fcb114c8053",
+        "arabic": "عَمِلُوا۟ ۖ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "07f14d18-b725-45fa-8cec-e4235fdb4974",
+        "arabic": "وَلِيُوَفِّيَهُمْ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "bef0419e-ac67-4ec5-bbf4-a49c4df55896",
+        "arabic": "أَذْهَبْتُمْ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "24886639-8021-4f3b-8c99-f8f10be163d5",
+        "arabic": "حَيَاتِكُمُ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "630e7763-d864-4c09-b6c6-650a4b8f4f51",
+        "arabic": "وَٱسْتَمْتَعْتُم",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "61a4765a-abb8-49a3-9551-3669d8634ed3",
+        "arabic": "تَفْسُقُونَ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "b8c99dd0-e343-4e41-ba41-4307e76c8e59",
+        "arabic": "لِتَأْفِكَنَا",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "be8c01d6-bbb8-4cd2-8e26-311604e78725",
+        "arabic": "وَأُبَلِّغُكُم",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "d42cbe97-306f-43b6-90f5-6a65c333593a",
+        "arabic": "ٱسْتَعْجَلْتُم",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "4e9952b4-2a80-49be-9d45-f89d225b33e2",
+        "arabic": "تُدَمِّرُ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "76e71a81-44b8-4167-9c2c-5ed2815b4565",
+        "arabic": "يُرَىٰٓ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "e9b7c1bc-2dfb-4bc8-a564-1327076ec44d",
+        "arabic": "مَكَّنَّـٰهُمْ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "df92c435-3799-41a7-a236-38395ba096c4",
+        "arabic": "مَّكَّنَّـٰكُمْ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "3b8a5f0e-9c23-4ec2-9f54-736996112948",
+        "arabic": "سَمْعًۭا",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "ed9a10fb-9e14-48f3-b2d1-ad5173cc0c01",
+        "arabic": "إِفْكُهُمْ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "e2cd95a9-960a-4c64-986b-944e78b41515",
+        "arabic": "صَرَفْنَآ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "d63c2d10-c45b-4789-bc6c-9d17c1811134",
+        "arabic": "حَضَرُوهُ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "1e7312a5-644a-4a84-ae2e-897f6b14026d",
+        "arabic": "أَنصِتُوا۟ ۖ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "c33ebd1c-9e35-405e-a1de-8c72089b5c99",
+        "arabic": "أَجِيبُوا۟",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "290ff2a7-9efe-4edf-a041-05a6f13f0526",
+        "arabic": "وَيُجِرْكُم",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "6be4cdee-5feb-4864-8cdf-e198c233151b",
+        "arabic": "يُجِبْ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "4aa44a07-ed6b-48d2-85fe-aef16344d165",
+        "arabic": "يَعْىَ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "ec59eef2-8c4a-43c5-b730-dba5ac3bdd5e",
+        "arabic": "ٱلْعَزْمِ",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "c7007821-97d6-4e73-bba0-ab959c572894",
+        "arabic": "تَسْتَعْجِل",
+        "needsGloss": true,
+        "path": "word_translation"
+      },
+      {
+        "id": "5061dee1-7f79-42e3-a1d3-88d030e8ee91",
+        "arabic": "يَسْتَغِيثَانِ",
+        "needsGloss": true,
+        "path": "word_translation"
+      }
+    ]
+  },
+  "baseline": {
+    "surah46": {
+      "totalForms": 482,
+      "coveredForms": 386,
+      "missingForms": 96,
+      "coveragePct": 0.8008,
+      "totalOccurrences": 643,
+      "readiness": "IN_PREPARATION"
+    },
+    "global": {
+      "frUnionWordIds": 4703,
+      "totalQuranWords": 21296,
+      "frCoveragePct": 0.2208
+    }
+  },
+  "idValidation": {
+    "total": 75,
+    "missingFromDb": 0,
+    "existingFrenchTranslations": 0,
+    "missingItems": [],
+    "existingFrItems": []
+  },
+  "durationSeconds": 39.39,
+  "needsEditorial": {
+    "lemmaGlossesNeeded": [
+      {
+        "lemma_id": "125b4961-e1a0-49ec-aefe-7d3fc294ab4f",
+        "lemma_arabic": "أثار",
+        "placeholder": "(à écrire pour « أثار »)"
+      },
+      {
+        "lemma_id": "0917ff07-a4a6-4f52-a292-c9fe1cc9c502",
+        "lemma_arabic": "شيئ",
+        "placeholder": "(à écrire pour « شيئ »)"
+      },
+      {
+        "lemma_id": "94afd10c-cfd9-41c7-b3d0-51a48a6cc841",
+        "lemma_arabic": "أعلم",
+        "placeholder": "(à écrire pour « أعلم »)"
+      },
+      {
+        "lemma_id": "08457bef-4e66-4eff-9346-d8fc46b3b60e",
+        "lemma_arabic": "بدع",
+        "placeholder": "(à écrire pour « بدع »)"
+      },
+      {
+        "lemma_id": "272b8d2a-538c-4980-b007-f5ece61f0f99",
+        "lemma_arabic": "قديم",
+        "placeholder": "(à écrire pour « قديم »)"
+      },
+      {
+        "lemma_id": "95112493-24b8-4ec1-a762-78b3a59d5fae",
+        "lemma_arabic": "شهر",
+        "placeholder": "(à écrire pour « شهر »)"
+      },
+      {
+        "lemma_id": "57869ede-57cc-4693-9364-0bee13824634",
+        "lemma_arabic": "سن",
+        "placeholder": "(à écrire pour « سن »)"
+      },
+      {
+        "lemma_id": "53b60e93-b323-4903-aab7-7585c6d37233",
+        "lemma_arabic": "ذر",
+        "placeholder": "(à écrire pour « ذر »)"
+      },
+      {
+        "lemma_id": "76720cd4-2d0d-478c-b97d-4ba5853334e3",
+        "lemma_arabic": "عد",
+        "placeholder": "(à écrire pour « عد »)"
+      },
+      {
+        "lemma_id": "c295ea60-a947-4125-97ae-5846b068429c",
+        "lemma_arabic": "قرون",
+        "placeholder": "(à écrire pour « قرون »)"
+      },
+      {
+        "lemma_id": "8f4bd92f-e1e0-4dcf-93e7-9b448ead94cc",
+        "lemma_arabic": "عرض",
+        "placeholder": "(à écrire pour « عرض »)"
+      },
+      {
+        "lemma_id": "888a6fbf-63e5-48f1-a501-3849deea7ce8",
+        "lemma_arabic": "طيب",
+        "placeholder": "(à écrire pour « طيب »)"
+      },
+      {
+        "lemma_id": "cfee91db-2bcb-4c63-b9fd-c795565b547a",
+        "lemma_arabic": "ذكر",
+        "placeholder": "(à écrire pour « ذكر »)"
+      },
+      {
+        "lemma_id": "89a88190-0770-494c-8ec7-4076b4c55e50",
+        "lemma_arabic": "أخا",
+        "placeholder": "(à écrire pour « أخا »)"
+      },
+      {
+        "lemma_id": "9fc6512b-4efe-4757-b3a4-b14e57ec28b5",
+        "lemma_arabic": "أحقاف",
+        "placeholder": "(à écrire pour « أحقاف »)"
+      },
+      {
+        "lemma_id": "64f9e40f-05a0-4487-951e-0dd6c66f5c46",
+        "lemma_arabic": "خلف",
+        "placeholder": "(à écrire pour « خلف »)"
+      },
+      {
+        "lemma_id": "096ff8f6-ce64-4da3-beb8-973b1c450327",
+        "lemma_arabic": "عارض",
+        "placeholder": "(à écrire pour « عارض »)"
+      },
+      {
+        "lemma_id": "8c2ccf22-65d1-42b2-b87a-8dd39a8613c5",
+        "lemma_arabic": "مستقبل",
+        "placeholder": "(à écrire pour « مستقبل »)"
+      },
+      {
+        "lemma_id": "2c2a3d0c-499e-4753-b33e-9cb278d3ebbd",
+        "lemma_arabic": "أودي",
+        "placeholder": "(à écrire pour « أودي »)"
+      },
+      {
+        "lemma_id": "15c9c3b3-1593-4853-a474-6bc55ac16993",
+        "lemma_arabic": "ممطر",
+        "placeholder": "(à écrire pour « ممطر »)"
+      },
+      {
+        "lemma_id": "f452b43f-3c48-488e-9403-be8bfaa74829",
+        "lemma_arabic": "ريح",
+        "placeholder": "(à écrire pour « ريح »)"
+      },
+      {
+        "lemma_id": "678f4fe9-0457-47c0-9f60-ab3421127b97",
+        "lemma_arabic": "مساكن",
+        "placeholder": "(à écrire pour « مساكن »)"
+      },
+      {
+        "lemma_id": "ab31770a-ccc7-414c-8d17-ef07d027e27b",
+        "lemma_arabic": "أفئد",
+        "placeholder": "(à écrire pour « أفئد »)"
+      },
+      {
+        "lemma_id": "339a4344-6879-4351-8a35-c319e8cb19c9",
+        "lemma_arabic": "قربان",
+        "placeholder": "(à écrire pour « قربان »)"
+      },
+      {
+        "lemma_id": "0655cc86-b3ac-4ce0-ac83-ea6144944666",
+        "lemma_arabic": "آله",
+        "placeholder": "(à écrire pour « آله »)"
+      },
+      {
+        "lemma_id": "a65d5fa0-bf1b-41e0-8e93-a510537390c1",
+        "lemma_arabic": "طريق",
+        "placeholder": "(à écrire pour « طريق »)"
+      },
+      {
+        "lemma_id": "1ae7bf3f-2a00-47e5-9470-8ac7e2c35648",
+        "lemma_arabic": "داعي",
+        "placeholder": "(à écrire pour « داعي »)"
+      },
+      {
+        "lemma_id": "7e605db0-b799-4b6b-9575-9e3f8174957f",
+        "lemma_arabic": "معجز",
+        "placeholder": "(à écrire pour « معجز »)"
+      },
+      {
+        "lemma_id": "0b9d50dd-ef9a-4003-8d60-be09c76716e2",
+        "lemma_arabic": "أولياء",
+        "placeholder": "(à écrire pour « أولياء »)"
+      },
+      {
+        "lemma_id": "11b1ec78-e8c8-4198-9349-2380bd32c73c",
+        "lemma_arabic": "موتى",
+        "placeholder": "(à écrire pour « موتى »)"
+      },
+      {
+        "lemma_id": "15428f1d-7f09-4350-a7d3-e00f653cfd37",
+        "lemma_arabic": "بلاغ",
+        "placeholder": "(à écrire pour « بلاغ »)"
+      },
+      {
+        "lemma_id": "9bd54996-df0a-4c9a-a3d1-7ac2f5474893",
+        "lemma_arabic": "ويل",
+        "placeholder": "(à écrire pour « ويل »)"
+      }
+    ],
+    "wordTranslationsNeeded": [
+      {
+        "word_id": "3ce2da86-780d-409c-938e-24c094a672f9",
+        "arabic": "دُعَآئِهِمْ"
+      },
+      {
+        "word_id": "c4909978-804e-46d5-ac51-6a731eec2994",
+        "arabic": "حُشِرَ"
+      },
+      {
+        "word_id": "189e5067-5493-4c49-9e73-dee4186b5829",
+        "arabic": "يُفْعَلُ"
+      },
+      {
+        "word_id": "3883319c-cf25-4c52-9b0e-beaf1cbf66c2",
+        "arabic": "وَٱسْتَكْبَرْتُمْ ۖ"
+      },
+      {
+        "word_id": "1e7aeea5-872e-4d84-8ab8-004581fa40ed",
+        "arabic": "سَبَقُونَآ"
+      },
+      {
+        "word_id": "64e1af59-1542-457b-881a-0378851cf327",
+        "arabic": "يَهْتَدُوا۟"
+      },
+      {
+        "word_id": "0a6621f4-f2c5-44b8-940d-80aa1418d86c",
+        "arabic": "إِحْسَـٰنًا ۖ"
+      },
+      {
+        "word_id": "0a97ceab-9649-43fc-9cf7-5d9901bfaca6",
+        "arabic": "كُرْهًۭا"
+      },
+      {
+        "word_id": "0e7de874-9cbd-4574-8d3f-2b40b934bb63",
+        "arabic": "وَوَضَعَتْهُ"
+      },
+      {
+        "word_id": "7290ff1f-b150-4b96-84c2-310d134122b0",
+        "arabic": "كُرْهًۭا ۖ"
+      },
+      {
+        "word_id": "54f6f8b7-0431-4c08-b007-01dc8933ae6a",
+        "arabic": "وَحَمْلُهُۥ"
+      },
+      {
+        "word_id": "81c109b8-1d72-4d02-b5fc-0cfa4dc05460",
+        "arabic": "وَبَلَغَ"
+      },
+      {
+        "word_id": "d6a5d8fd-777f-46b1-911d-f15e11085ec6",
+        "arabic": "نَتَقَبَّلُ"
+      },
+      {
+        "word_id": "20b18ba2-07a8-4b20-81de-5794702ff182",
+        "arabic": "وَنَتَجَاوَزُ"
+      },
+      {
+        "word_id": "8554cd49-007d-4aba-97d8-cea3b4683371",
+        "arabic": "أُخْرَجَ"
+      },
+      {
+        "word_id": "c901797e-8505-4664-8537-8ef133cbbaf0",
+        "arabic": "خَلَتِ"
+      },
+      {
+        "word_id": "cdf9af2e-f331-4d3d-a5a6-604bcdc4a675",
+        "arabic": "وَهُمَا"
+      },
+      {
+        "word_id": "7e6d8196-6110-4265-8e07-6fcb114c8053",
+        "arabic": "عَمِلُوا۟ ۖ"
+      },
+      {
+        "word_id": "07f14d18-b725-45fa-8cec-e4235fdb4974",
+        "arabic": "وَلِيُوَفِّيَهُمْ"
+      },
+      {
+        "word_id": "bef0419e-ac67-4ec5-bbf4-a49c4df55896",
+        "arabic": "أَذْهَبْتُمْ"
+      },
+      {
+        "word_id": "24886639-8021-4f3b-8c99-f8f10be163d5",
+        "arabic": "حَيَاتِكُمُ"
+      },
+      {
+        "word_id": "630e7763-d864-4c09-b6c6-650a4b8f4f51",
+        "arabic": "وَٱسْتَمْتَعْتُم"
+      },
+      {
+        "word_id": "61a4765a-abb8-49a3-9551-3669d8634ed3",
+        "arabic": "تَفْسُقُونَ"
+      },
+      {
+        "word_id": "b8c99dd0-e343-4e41-ba41-4307e76c8e59",
+        "arabic": "لِتَأْفِكَنَا"
+      },
+      {
+        "word_id": "be8c01d6-bbb8-4cd2-8e26-311604e78725",
+        "arabic": "وَأُبَلِّغُكُم"
+      },
+      {
+        "word_id": "d42cbe97-306f-43b6-90f5-6a65c333593a",
+        "arabic": "ٱسْتَعْجَلْتُم"
+      },
+      {
+        "word_id": "4e9952b4-2a80-49be-9d45-f89d225b33e2",
+        "arabic": "تُدَمِّرُ"
+      },
+      {
+        "word_id": "76e71a81-44b8-4167-9c2c-5ed2815b4565",
+        "arabic": "يُرَىٰٓ"
+      },
+      {
+        "word_id": "e9b7c1bc-2dfb-4bc8-a564-1327076ec44d",
+        "arabic": "مَكَّنَّـٰهُمْ"
+      },
+      {
+        "word_id": "df92c435-3799-41a7-a236-38395ba096c4",
+        "arabic": "مَّكَّنَّـٰكُمْ"
+      },
+      {
+        "word_id": "3b8a5f0e-9c23-4ec2-9f54-736996112948",
+        "arabic": "سَمْعًۭا"
+      },
+      {
+        "word_id": "ed9a10fb-9e14-48f3-b2d1-ad5173cc0c01",
+        "arabic": "إِفْكُهُمْ"
+      },
+      {
+        "word_id": "e2cd95a9-960a-4c64-986b-944e78b41515",
+        "arabic": "صَرَفْنَآ"
+      },
+      {
+        "word_id": "d63c2d10-c45b-4789-bc6c-9d17c1811134",
+        "arabic": "حَضَرُوهُ"
+      },
+      {
+        "word_id": "1e7312a5-644a-4a84-ae2e-897f6b14026d",
+        "arabic": "أَنصِتُوا۟ ۖ"
+      },
+      {
+        "word_id": "c33ebd1c-9e35-405e-a1de-8c72089b5c99",
+        "arabic": "أَجِيبُوا۟"
+      },
+      {
+        "word_id": "290ff2a7-9efe-4edf-a041-05a6f13f0526",
+        "arabic": "وَيُجِرْكُم"
+      },
+      {
+        "word_id": "6be4cdee-5feb-4864-8cdf-e198c233151b",
+        "arabic": "يُجِبْ"
+      },
+      {
+        "word_id": "4aa44a07-ed6b-48d2-85fe-aef16344d165",
+        "arabic": "يَعْىَ"
+      },
+      {
+        "word_id": "ec59eef2-8c4a-43c5-b730-dba5ac3bdd5e",
+        "arabic": "ٱلْعَزْمِ"
+      },
+      {
+        "word_id": "c7007821-97d6-4e73-bba0-ab959c572894",
+        "arabic": "تَسْتَعْجِل"
+      },
+      {
+        "word_id": "5061dee1-7f79-42e3-a1d3-88d030e8ee91",
+        "arabic": "يَسْتَغِيثَانِ"
+      }
+    ]
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 errors",
+    "eslint": "0 errors, 0 warnings",
+    "readOnlyStaticCheck": "PASS (0 DB write calls)"
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "protectedTablesModified": 0,
+    "masaqMappingsCreated": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "classifySurahReadinessModified": false
+  }
+}

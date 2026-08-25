@@ -5,7 +5,7 @@
 import type { LucideIcon } from "lucide-react";
 import { BookOpenIcon, HomeIcon, LibraryIcon, RefreshCcwIcon, UserIcon } from "lucide-react";
 
-/** Accueil applicatif : les utilisateurs connectés y sont redirigés depuis `/`. */
+/** Accueil applicatif : CTA « Continuer mon parcours » de la landing pour les connectés. */
 export const APP_HOME_HREF = "/dashboard";
 
 /** Routes de la navigation principale, dans l'ordre d'affichage. */

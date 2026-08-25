@@ -13,11 +13,13 @@ import {
   getGlobalWordStats,
   getReviewDueCount,
   getQuranCoverage,
+  getCoverageBySurah,
 } from "@/lib/learning/queries";
 import {
-  getActivityDate,
   getActivityHistory,
   getDailyGoalProgress,
+  getDistinctLearningDays,
+  getLocalDateKey,
   getUpcomingReviewCounts,
   getUserSettings,
 } from "@/lib/learning/activity";
@@ -43,6 +45,16 @@ import {
   formatWeeklySummary,
   type WeeklySummary,
 } from "@/lib/learning/weekly-summary";
+import {
+  computeRegularityMetrics,
+  type RegularityMetrics,
+} from "@/lib/learning/regularity";
+import { StreakCard } from "@/components/dashboard/streak-card";
+import { ReminderBanner } from "@/components/dashboard/reminder-banner";
+import { CoverageCard } from "@/components/dashboard/coverage-card";
+import type { SurahCoverage } from "@/lib/learning/coverage";
+import { TimezoneInit } from "@/components/dashboard/timezone-init";
+import { shouldShowReminder, type ReminderDecision } from "@/lib/learning/reminders";
 
 export const dynamic = "force-dynamic";
 
@@ -55,17 +67,22 @@ export default async function DashboardPage() {
 
   const settings = await getUserSettings(client, user.id);
   const catalog = await getSurahCatalog(client);
-  const today = getActivityDate();
-  const [goal, upcoming, history, progress, activeSession, globalWords, reviewDueCount, coverage] =
+  const timezone = settings?.timezone ?? null;
+  const now = new Date();
+  // today = jour local utilisateur (Phase 77). Cohérent avec les écritures
+  // d'activité (Phase 78) qui utilisent désormais getLocalDateKey().
+  const today = getLocalDateKey(now, timezone);
+  const [goal, upcoming, history, progress, activeSession, globalWords, reviewDueCount, coverage, learningDays] =
     await Promise.all([
       getDailyGoalProgress(client, user.id, settings, today),
-      getUpcomingReviewCounts(client, user.id, 7),
-      getActivityHistory(client, user.id, 30),
+      getUpcomingReviewCounts(client, user.id, 7, now, timezone),
+      getActivityHistory(client, user.id, 30, now, timezone),
       getSurahProgressByUser(client, user.id),
       getActiveLessonSessionResolved(client, user.id),
       getGlobalWordStats(client, user.id),
       getReviewDueCount(client, user.id),
       getQuranCoverage(client, user.id),
+      getDistinctLearningDays(client, user.id, timezone),
     ]);
 
   // Préférences déclaratives uniquement — jamais un diagnostic de niveau.
@@ -105,6 +122,23 @@ export default async function DashboardPage() {
   const coachLine = getCoachLine({ plan, profile, firstVisit });
   // Résumé hebdomadaire : dérivé des journaux déjà chargés (aucune requête).
   const weekly = composeWeeklySummary(history.days);
+  const regularity = computeRegularityMetrics(learningDays, today);
+
+  // Rappel in-app V1 (Phase 80) — eligibility check pure, sans I/O.
+  const reminder = shouldShowReminder({
+    remindersEnabled: settings?.reminder_enabled ?? false,
+    reminderTime: settings?.reminder_time ?? "19:00",
+    todayLocal: today,
+    timezone,
+    goalProgress: goal,
+    regularity,
+    activityDays: history.days,
+    now,
+    activeLessonSlug: selection.lessonSlug ?? null,
+  });
+
+  // Couverture par sourate (Phase 83B) — 1 query batch.
+  const surahCoverage = await getCoverageBySurah(client, coverage?.comprehendedWordIds ?? []);
 
   const personalized = getPersonalizedLearningCopy(profile, { firstVisit, allDone });
   // La justification doit toujours correspondre à la sourate EFFECTIVEMENT
@@ -116,21 +150,28 @@ export default async function DashboardPage() {
       : null;
 
   return (
-    <DashboardMain
-      selection={selection}
-      summary={summary}
-      upcoming={upcoming}
-      history={history}
-      wordsSeen={globalWords.wordsSeen}
-      wordsMastered={globalWords.wordsMastered}
-      avgMastery={globalWords.avgMastery}
-      personalized={personalized}
-      recommendationReason={recommendationReason}
-      allDone={allDone}
-      plan={plan}
-      coachLine={coachLine}
-      weekly={weekly}
-    />
+    <>
+      <TimezoneInit currentTimezone={timezone} />
+      <DashboardMain
+        selection={selection}
+        summary={summary}
+        upcoming={upcoming}
+        history={history}
+        wordsSeen={globalWords.wordsSeen}
+        wordsMastered={globalWords.wordsMastered}
+        avgMastery={globalWords.avgMastery}
+        personalized={personalized}
+        recommendationReason={recommendationReason}
+        allDone={allDone}
+        plan={plan}
+        coachLine={coachLine}
+        weekly={weekly}
+        regularity={regularity}
+        reminder={reminder}
+        coverage={coverage}
+        surahCoverage={surahCoverage}
+      />
+    </>
   );
 }
 
@@ -170,6 +211,10 @@ function DashboardMain({
   plan,
   coachLine,
   weekly,
+  regularity,
+  reminder,
+  coverage,
+  surahCoverage,
 }: {
   selection: ActivePathSelection;
   summary: SurahSummary;
@@ -184,6 +229,10 @@ function DashboardMain({
   plan: DailyPlan;
   coachLine: string;
   weekly: WeeklySummary;
+  regularity: RegularityMetrics;
+  reminder: ReminderDecision;
+  coverage: Awaited<ReturnType<typeof getQuranCoverage>>;
+  surahCoverage: SurahCoverage[];
 }) {
   return (
     <main className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-5 py-8 sm:px-8 sm:py-10 lg:gap-10">
@@ -195,24 +244,15 @@ function DashboardMain({
 
       <TodayCard plan={plan} coachLine={coachLine} context={recommendationReason} />
 
-      <WeeklyCard weekly={weekly} />
+      {/* Rappel in-app V1 (Phase 80) — après TodayCard, avant Régularité */}
+      <ReminderBanner decision={reminder} />
 
-      <section aria-label="Découvrir les sourates">
-        <Card className="border-border-subtle bg-surface-elevated">
-          <CardContent className="flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-            <div className="flex min-w-0 flex-col gap-1">
-              <H2 className="text-lg">Découvrir les sourates</H2>
-              <BodyMedium className="text-text-secondary">
-                Explore les parcours disponibles et choisis ta prochaine sourate.
-              </BodyMedium>
-            </div>
-            <Button render={<Link href="/surahs" />} variant="outline" className="shrink-0">
-              Explorer
-              <ArrowRightIcon aria-hidden="true" />
-            </Button>
-          </CardContent>
-        </Card>
-      </section>
+      {/* Couverture du Coran (Phase 83B) */}
+      <CoverageCard
+        coverage={coverage}
+        surahCoverage={surahCoverage}
+        selection={selection}
+      />
 
       <section className="flex flex-col gap-5" aria-labelledby="path-title">
         <div className="flex items-end justify-between gap-4">
@@ -236,29 +276,63 @@ function DashboardMain({
               </BodyMedium>
               <Caption>{allDone ? "Tu peux revoir tes parcours terminés." : "Le parcours actif est choisi par ta progression réelle."}</Caption>
             </div>
-            <Button render={<Link href="/surahs" />} variant="outline" className="w-full sm:w-fit">Voir mes sourates<ArrowRightIcon aria-hidden="true" /></Button>
+            <div className="flex flex-wrap items-center gap-3">
+              <Button render={<Link href="/surahs" />} variant="outline" className="w-full sm:w-fit">Voir mes sourates<ArrowRightIcon aria-hidden="true" /></Button>
+              <Link
+                href="/surahs"
+                className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-primary-strong"
+              >
+                Découvrir d&rsquo;autres sourates
+                <ArrowRightIcon className="size-3.5" aria-hidden="true" />
+              </Link>
+            </div>
           </CardContent>
         </Card>
       </section>
 
-      <section className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]" aria-label="Résumé personnel">
+      {/* Activité & régularité */}
+      <section className="flex flex-col gap-5" aria-labelledby="activity-title">
+        <div className="flex flex-col gap-1">
+          <Caption className="text-primary-strong">Ton activité</Caption>
+          <H2 id="activity-title">Régularité & statistiques</H2>
+        </div>
         <Card className="border-border-subtle bg-surface-elevated">
-          <CardContent className="gap-5 p-6 sm:p-7">
-            <H2>En quelques mots</H2>
-            <div className="grid grid-cols-3 gap-4">
-              <SummaryValue label="Mots étudiés" value={String(wordsSeen)} />
-              <SummaryValue label="Mots maîtrisés" value={String(wordsMastered)} />
-              <SummaryValue label="Maîtrise moyenne" value={avgMastery != null ? `${avgMastery}%` : "—"} />
+          <CardContent className="flex flex-col gap-5 p-6 sm:p-7">
+            {/* Streak compact */}
+            <div className="flex flex-col gap-3">
+              <Caption className="text-primary-strong">Régularité</Caption>
+              <StreakCard
+                regularity={regularity}
+                streakBroken={
+                  regularity.totalActiveDays > 0 && regularity.currentStreak === 0
+                }
+                variant="compact"
+              />
+              <Caption className="text-muted-foreground">
+                {formatWeeklySummary(weekly)}
+              </Caption>
             </div>
-          </CardContent>
-        </Card>
-        <Card className="border-border-subtle bg-surface-elevated">
-          <CardContent className="gap-5 p-6 sm:p-7">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex flex-col gap-1"><H2>Activité récente</H2><Caption>Les 30 derniers jours</Caption></div>
-              <BodySmall className="text-text-secondary">{history.wordsStudied} mot{history.wordsStudied > 1 ? "s" : ""}</BodySmall>
+
+            <hr className="border-border-subtle" />
+
+            {/* Statistiques */}
+            <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+              <div className="flex flex-col gap-4">
+                <Caption className="text-primary-strong">En quelques mots</Caption>
+                <div className="grid grid-cols-3 gap-3">
+                  <SummaryValue label="Mots étudiés" value={String(wordsSeen)} />
+                  <SummaryValue label="Mots maîtrisés" value={String(wordsMastered)} />
+                  <SummaryValue label="Maîtrise moyenne" value={avgMastery != null ? `${avgMastery}%` : "—"} />
+                </div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center justify-between gap-4">
+                  <Caption className="text-primary-strong">Activité récente</Caption>
+                  <BodySmall className="text-text-secondary">{history.wordsStudied} mot{history.wordsStudied > 1 ? "s" : ""}</BodySmall>
+                </div>
+                <ActivityHistory days={history.days} />
+              </div>
             </div>
-            <ActivityHistory days={history.days} />
           </CardContent>
         </Card>
       </section>
@@ -321,7 +395,7 @@ function TodayCard({
             {plan.coverage.percent != null ? (
               <BodyMedium className="text-text-secondary">
                 <span className="font-semibold text-foreground tabular-nums">≈ {plan.coverage.percent} %</span>{" "}
-                du Coran compris
+                de couverture lexicale
               </BodyMedium>
             ) : null}
           </div>
@@ -342,33 +416,6 @@ function TodayCard({
           <Button render={<Link href="/profile" />} variant="ghost" size="sm" className="w-fit">
             Ajuster mon rythme
           </Button>
-        </CardContent>
-      </Card>
-    </section>
-  );
-}
-
-/**
- * Carte « Cette semaine » (Phase 39B) — résumé descriptif dérivé des journaux
- * d'activité existants (mots · leçons · jours actifs). Aucune donnée inventée,
- * aucun score, aucune cible.
- */
-function WeeklyCard({ weekly }: { weekly: WeeklySummary }) {
-  return (
-    <section aria-labelledby="week-title">
-      <Card className="border-border-subtle bg-surface-elevated">
-        <CardContent className="flex flex-col gap-2 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
-          <div className="flex flex-col gap-1">
-            <Caption className="text-primary-strong">Cette semaine</Caption>
-            <BodyLarge id="week-title" className="font-semibold tabular-nums">
-              {formatWeeklySummary(weekly)}
-            </BodyLarge>
-          </div>
-          <Caption className="text-text-secondary">
-            {weekly.activeDays === 0
-              ? "Tes premiers chiffres apparaîtront avec ta première leçon."
-              : "7 derniers jours"}
-          </Caption>
         </CardContent>
       </Card>
     </section>

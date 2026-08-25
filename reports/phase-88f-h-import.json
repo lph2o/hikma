@@ -1,0 +1,606 @@
+{
+  "phase": "88F-H",
+  "mode": "APPLY",
+  "timestamp": "2026-08-23T22:00:30.175Z",
+  "source": "reports/phase-88f-g-targeted-editorial-audit.json",
+  "source_name": "Hikma — lexique éditorial",
+  "verdict": "PHASE_88F_H_COMPLETE",
+  "baseline": {
+    "quran_words": 21296,
+    "word_occurrences": 77430,
+    "lemmas": 1593,
+    "active_lemmas": 1588,
+    "word_lemma_mapping": 220,
+    "word_translations_FR_validated": 4490,
+    "lemma_translations": 119,
+    "lemma_translations_FR_validated": 115,
+    "linguistic_occurrences": 22485,
+    "MASAQ_coverage": "114/114 surahs",
+    "MASAQ_snapshot_coverage": "74/114 surahs",
+    "FR_union_distinct_word_ids": 5232,
+    "FR_occurrences": 56032,
+    "FR_percentage": 0.2457,
+    "READY": 23,
+    "IN_PREPARATION": 90,
+    "REFERENCE": 1,
+    "expected": {
+      "quran_words": 21296,
+      "word_occurrences": 77430,
+      "lemmas": 1593,
+      "active_lemmas": 1588,
+      "word_lemma_mapping": 220,
+      "word_translations_FR_validated": 4490,
+      "lemma_translations": 119,
+      "lemma_translations_FR_validated": 115,
+      "linguistic_occurrences": 22485,
+      "MASAQ_coverage": "114/114 surahs",
+      "FR_union_distinct_word_ids": 5232,
+      "FR_occurrences": 56032,
+      "FR_percentage": 0.2457,
+      "READY": 23,
+      "IN_PREPARATION": 90,
+      "REFERENCE": 1
+    },
+    "matchesExpected": true,
+    "mismatches": []
+  },
+  "preflight": {
+    "safeCandidates": 9,
+    "lemmaIdsPresent": true,
+    "entries": [
+      {
+        "lemma": "وجوه",
+        "lemma_id": "c53e4312-c5eb-4a6d-ab95-7165d4e19a62",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "visage / face",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      },
+      {
+        "lemma": "قسم",
+        "lemma_id": "c8ff01b4-f8aa-4eb9-9726-a4146642ad0a",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "jurer / serment",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      },
+      {
+        "lemma": "منكر",
+        "lemma_id": "fde22dbe-415b-4221-a3d1-a36cd843b206",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "répréhensible / blâmable",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      },
+      {
+        "lemma": "مال",
+        "lemma_id": "409e47ba-d798-4555-9692-01b4d919379f",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "biens / richesse",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      },
+      {
+        "lemma": "تراب",
+        "lemma_id": "6fd5041f-b02e-4831-9fad-a9daccfc6f98",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "terre / poussière",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      },
+      {
+        "lemma": "رجل",
+        "lemma_id": "9410865b-e279-4dd1-9232-ad8485a11998",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "homme",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      },
+      {
+        "lemma": "مكذب",
+        "lemma_id": "a99b0496-c4ba-41bc-a5e0-6bf9757540c5",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "négateur / démenti",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      },
+      {
+        "lemma": "نخل",
+        "lemma_id": "62a82766-0a3c-4be8-b2b9-602f61fcf8e3",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "palmiers / palmier dattier",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      },
+      {
+        "lemma": "عرب",
+        "lemma_id": "af67688c-8019-4716-b744-babbbfb408e0",
+        "language": "fr",
+        "source_id": "79e6412e-e349-4fe5-b29b-108237375a2d",
+        "text": "arabe / Arabes",
+        "editorial_class": "SAFE",
+        "classification": "READY_FOR_IMPORT"
+      }
+    ],
+    "READY_FOR_IMPORT": 9,
+    "EXISTING_SAME": 0,
+    "CONFLICT_REVIEW": 0,
+    "conflicts": []
+  },
+  "insertion": {
+    "inserted": 9,
+    "ids": [
+      {
+        "id": "05220afb-96a0-4733-809c-9150c4b20a84",
+        "lemma_id": "c53e4312-c5eb-4a6d-ab95-7165d4e19a62"
+      },
+      {
+        "id": "7332d3d5-f998-4405-8120-82b0d88d7d63",
+        "lemma_id": "c8ff01b4-f8aa-4eb9-9726-a4146642ad0a"
+      },
+      {
+        "id": "c7b7c77d-8c73-41d7-bab5-f41a08b95fef",
+        "lemma_id": "fde22dbe-415b-4221-a3d1-a36cd843b206"
+      },
+      {
+        "id": "283cf997-210b-433d-a314-b571a100a16e",
+        "lemma_id": "409e47ba-d798-4555-9692-01b4d919379f"
+      },
+      {
+        "id": "6c8865d0-db86-478a-8449-18f720d11f75",
+        "lemma_id": "6fd5041f-b02e-4831-9fad-a9daccfc6f98"
+      },
+      {
+        "id": "b868c7e3-9c8d-45c5-bb79-96a2faa6f15a",
+        "lemma_id": "9410865b-e279-4dd1-9232-ad8485a11998"
+      },
+      {
+        "id": "7428dbb2-c21e-4ee1-af8a-eaa18ac4fb42",
+        "lemma_id": "a99b0496-c4ba-41bc-a5e0-6bf9757540c5"
+      },
+      {
+        "id": "d69af6d3-88c5-4a4c-a156-4e720b78a744",
+        "lemma_id": "62a82766-0a3c-4be8-b2b9-602f61fcf8e3"
+      },
+      {
+        "id": "c384d4ff-1357-4a80-a366-001ea01488dc",
+        "lemma_id": "af67688c-8019-4716-b744-babbbfb408e0"
+      }
+    ],
+    "timestamp": "2026-08-23T22:00:30.175Z",
+    "table": "lemma_translations",
+    "databaseWrites": 9,
+    "atomicity": "un seul INSERT bulk ; une contrainte ou erreur annule toute la statement"
+  },
+  "post_import": {
+    "snapshot": {
+      "quran_words": 21296,
+      "word_occurrences": 77430,
+      "lemmas": 1593,
+      "active_lemmas": 1588,
+      "word_lemma_mapping": 220,
+      "word_translations_FR_validated": 4490,
+      "lemma_translations": 128,
+      "lemma_translations_FR_validated": 124,
+      "linguistic_occurrences": 22485,
+      "MASAQ_coverage": "114/114 surahs",
+      "MASAQ_snapshot_coverage": "74/114 surahs",
+      "FR_union_distinct_word_ids": 5263,
+      "FR_occurrences": 56063,
+      "FR_percentage": 0.2471,
+      "READY": 23,
+      "IN_PREPARATION": 90,
+      "REFERENCE": 1
+    },
+    "expected": {
+      "lemma_translations": 128,
+      "lemma_translations_FR_validated": 124,
+      "FR_union_distinct_word_ids": 5263,
+      "FR_occurrences": 56063,
+      "FR_percentage": 0.2471,
+      "READY": 23,
+      "IN_PREPARATION": 90,
+      "REFERENCE": 1
+    },
+    "matchesExpected": true,
+    "mismatches": [],
+    "gain": {
+      "lemmaTranslations": 9,
+      "frForms": 31,
+      "frOccurrences": 31
+    },
+    "readiness": {
+      "before": {
+        "READY": 23,
+        "IN_PREPARATION": 90,
+        "REFERENCE": 1
+      },
+      "after": {
+        "READY": 23,
+        "IN_PREPARATION": 90,
+        "REFERENCE": 1
+      }
+    }
+  },
+  "validation": {
+    "present": "9/9",
+    "presentCount": 9,
+    "missing": [],
+    "fr": "9/9",
+    "validated": "9/9",
+    "exactTexts": "9/9",
+    "badLanguage": 0,
+    "badValidation": 0,
+    "badText": 0,
+    "duplicates": 0,
+    "conflicts": 0,
+    "orphans": 0,
+    "ok": true,
+    "expected": {
+      "present": "9/9",
+      "fr": "9/9",
+      "validated": "9/9",
+      "exactTexts": "9/9",
+      "duplicates": 0,
+      "conflicts": 0,
+      "orphans": 0
+    }
+  },
+  "idempotence": {
+    "secondPass": true,
+    "EXISTING_SAME": 9,
+    "NEW": 0,
+    "CONFLICT": 0,
+    "DATABASE_WRITES": 0,
+    "lemmaTranslationsDelta": 0,
+    "verdict": "COMPLETE"
+  },
+  "invariants": {
+    "protectedTables": {
+      "quran_words": {
+        "count": 0,
+        "hashUnchanged": true,
+        "before": {
+          "count": 21296,
+          "sha256": "f0ce407c24a8cef6dd31158470819bdbecd4a37f34d9b786e51c3d81bc6cec9f"
+        },
+        "after": {
+          "count": 21296,
+          "sha256": "f0ce407c24a8cef6dd31158470819bdbecd4a37f34d9b786e51c3d81bc6cec9f"
+        }
+      },
+      "word_translations": {
+        "count": 0,
+        "hashUnchanged": true,
+        "before": {
+          "count": 4490,
+          "sha256": "a2770b26a4229dc29f7287a40685c68d0ebb0b79e338c074ba9a3c0a5dd16b30"
+        },
+        "after": {
+          "count": 4490,
+          "sha256": "a2770b26a4229dc29f7287a40685c68d0ebb0b79e338c074ba9a3c0a5dd16b30"
+        }
+      },
+      "word_lemma_mapping": {
+        "count": 0,
+        "hashUnchanged": true,
+        "before": {
+          "count": 220,
+          "sha256": "b37f1da8cc2ce8d55edf85845b53d151b45296874176625212c12824411141bb"
+        },
+        "after": {
+          "count": 220,
+          "sha256": "b37f1da8cc2ce8d55edf85845b53d151b45296874176625212c12824411141bb"
+        }
+      },
+      "linguistic_occurrences": {
+        "count": 0,
+        "hashUnchanged": true,
+        "before": {
+          "count": 22485,
+          "sha256": "7ba12f0fc570d819c54c39af1c7882fb41d36affd94a80edc5009112c8d02619"
+        },
+        "after": {
+          "count": 22485,
+          "sha256": "7ba12f0fc570d819c54c39af1c7882fb41d36affd94a80edc5009112c8d02619"
+        }
+      },
+      "lemmas": {
+        "count": 0,
+        "hashUnchanged": true,
+        "before": {
+          "count": 1593,
+          "sha256": "2d7ce511911145003660968b5663fbd7f318126269aa475829ea7a0a7dc3d6c2"
+        },
+        "after": {
+          "count": 1593,
+          "sha256": "2d7ce511911145003660968b5663fbd7f318126269aa475829ea7a0a7dc3d6c2"
+        }
+      },
+      "learning_paths": {
+        "count": 0,
+        "hashUnchanged": true,
+        "before": {
+          "count": 24,
+          "sha256": "f90d378cf7a0f267f07b79ac7ec8af945b3168559b6e9e12fa6fe08ea5e87fab"
+        },
+        "after": {
+          "count": 24,
+          "sha256": "f90d378cf7a0f267f07b79ac7ec8af945b3168559b6e9e12fa6fe08ea5e87fab"
+        }
+      },
+      "units": {
+        "count": 0,
+        "hashUnchanged": true,
+        "before": {
+          "count": 24,
+          "sha256": "a996447953be5abe1a2c8e957db212bfe89f6cc2885f2268517c33a156091da6"
+        },
+        "after": {
+          "count": 24,
+          "sha256": "a996447953be5abe1a2c8e957db212bfe89f6cc2885f2268517c33a156091da6"
+        }
+      },
+      "lessons": {
+        "count": 0,
+        "hashUnchanged": true,
+        "before": {
+          "count": 191,
+          "sha256": "c3d8960616c25109a357601a3ff321f2e5a84d90c1246c62a7a3b38a2e4d9976"
+        },
+        "after": {
+          "count": 191,
+          "sha256": "c3d8960616c25109a357601a3ff321f2e5a84d90c1246c62a7a3b38a2e4d9976"
+        }
+      }
+    },
+    "onlyAllowedTable": "lemma_translations",
+    "lemmaTranslationsDelta": 9,
+    "allProtectedTablesUnchanged": true,
+    "DATABASE_WRITES": 9,
+    "LEXICAL_WRITES": 9,
+    "TRANSLATION_WRITES": 9,
+    "CURRICULUM_WRITES": 0,
+    "MASAQ_WRITES": 0,
+    "MIGRATIONS": 0,
+    "SEEDS": 0
+  },
+  "tests": {
+    "run": true,
+    "vitest": {
+      "passed": 954,
+      "total": 954
+    },
+    "scriptTypeScript": "PASS",
+    "scriptEslint": "PASS",
+    "fullProjectTypeScript": "PREEXISTING_ERRORS_OUTSIDE_88F_H",
+    "note": "Le typecheck isolé du script et ESLint passent. Le typecheck global conserve uniquement les erreurs préexistantes des scripts historiques 88A/88D/88E."
+  },
+  "next_phase": "PHASE 88F-I — TARGETED MASAQ → LEMMA MAPPING AUDIT",
+  "idempotence_snapshot": {
+    "baseline": {
+      "quran_words": 21296,
+      "word_occurrences": 77430,
+      "lemmas": 1593,
+      "active_lemmas": 1588,
+      "word_lemma_mapping": 220,
+      "word_translations_FR_validated": 4490,
+      "lemma_translations": 128,
+      "lemma_translations_FR_validated": 124,
+      "linguistic_occurrences": 22485,
+      "MASAQ_coverage": "114/114 surahs",
+      "MASAQ_snapshot_coverage": "74/114 surahs",
+      "FR_union_distinct_word_ids": 5263,
+      "FR_occurrences": 56063,
+      "FR_percentage": 0.2471,
+      "READY": 23,
+      "IN_PREPARATION": 90,
+      "REFERENCE": 1,
+      "expected": {
+        "lemma_translations": 128,
+        "lemma_translations_FR_validated": 124,
+        "FR_union_distinct_word_ids": 5263,
+        "FR_occurrences": 56063,
+        "FR_percentage": 0.2471,
+        "READY": 23,
+        "IN_PREPARATION": 90,
+        "REFERENCE": 1
+      },
+      "matchesExpected": true,
+      "mismatches": []
+    },
+    "post_import": {
+      "snapshot": {
+        "quran_words": 21296,
+        "word_occurrences": 77430,
+        "lemmas": 1593,
+        "active_lemmas": 1588,
+        "word_lemma_mapping": 220,
+        "word_translations_FR_validated": 4490,
+        "lemma_translations": 128,
+        "lemma_translations_FR_validated": 124,
+        "linguistic_occurrences": 22485,
+        "MASAQ_coverage": "114/114 surahs",
+        "MASAQ_snapshot_coverage": "74/114 surahs",
+        "FR_union_distinct_word_ids": 5263,
+        "FR_occurrences": 56063,
+        "FR_percentage": 0.2471,
+        "READY": 23,
+        "IN_PREPARATION": 90,
+        "REFERENCE": 1
+      },
+      "expected": {
+        "lemma_translations": 128,
+        "lemma_translations_FR_validated": 124,
+        "FR_union_distinct_word_ids": 5263,
+        "FR_occurrences": 56063,
+        "FR_percentage": 0.2471,
+        "READY": 23,
+        "IN_PREPARATION": 90,
+        "REFERENCE": 1
+      },
+      "matchesExpected": null,
+      "mismatches": [],
+      "gain": {
+        "lemmaTranslations": 0,
+        "frForms": 0,
+        "frOccurrences": 0
+      },
+      "readiness": {
+        "before": {
+          "READY": 23,
+          "IN_PREPARATION": 90,
+          "REFERENCE": 1
+        },
+        "after": {
+          "READY": 23,
+          "IN_PREPARATION": 90,
+          "REFERENCE": 1
+        }
+      }
+    },
+    "validation": {
+      "present": "9/9",
+      "presentCount": 9,
+      "missing": [],
+      "fr": "9/9",
+      "validated": "9/9",
+      "exactTexts": "9/9",
+      "badLanguage": 0,
+      "badValidation": 0,
+      "badText": 0,
+      "duplicates": 0,
+      "conflicts": 0,
+      "orphans": 0,
+      "ok": true,
+      "expected": {
+        "present": "9/9",
+        "fr": "9/9",
+        "validated": "9/9",
+        "exactTexts": "9/9",
+        "duplicates": 0,
+        "conflicts": 0,
+        "orphans": 0
+      }
+    },
+    "invariants": {
+      "protectedTables": {
+        "quran_words": {
+          "count": 0,
+          "hashUnchanged": true,
+          "before": {
+            "count": 21296,
+            "sha256": "f0ce407c24a8cef6dd31158470819bdbecd4a37f34d9b786e51c3d81bc6cec9f"
+          },
+          "after": {
+            "count": 21296,
+            "sha256": "f0ce407c24a8cef6dd31158470819bdbecd4a37f34d9b786e51c3d81bc6cec9f"
+          }
+        },
+        "word_translations": {
+          "count": 0,
+          "hashUnchanged": true,
+          "before": {
+            "count": 4490,
+            "sha256": "a2770b26a4229dc29f7287a40685c68d0ebb0b79e338c074ba9a3c0a5dd16b30"
+          },
+          "after": {
+            "count": 4490,
+            "sha256": "a2770b26a4229dc29f7287a40685c68d0ebb0b79e338c074ba9a3c0a5dd16b30"
+          }
+        },
+        "word_lemma_mapping": {
+          "count": 0,
+          "hashUnchanged": true,
+          "before": {
+            "count": 220,
+            "sha256": "b37f1da8cc2ce8d55edf85845b53d151b45296874176625212c12824411141bb"
+          },
+          "after": {
+            "count": 220,
+            "sha256": "b37f1da8cc2ce8d55edf85845b53d151b45296874176625212c12824411141bb"
+          }
+        },
+        "linguistic_occurrences": {
+          "count": 0,
+          "hashUnchanged": true,
+          "before": {
+            "count": 22485,
+            "sha256": "7ba12f0fc570d819c54c39af1c7882fb41d36affd94a80edc5009112c8d02619"
+          },
+          "after": {
+            "count": 22485,
+            "sha256": "7ba12f0fc570d819c54c39af1c7882fb41d36affd94a80edc5009112c8d02619"
+          }
+        },
+        "lemmas": {
+          "count": 0,
+          "hashUnchanged": true,
+          "before": {
+            "count": 1593,
+            "sha256": "2d7ce511911145003660968b5663fbd7f318126269aa475829ea7a0a7dc3d6c2"
+          },
+          "after": {
+            "count": 1593,
+            "sha256": "2d7ce511911145003660968b5663fbd7f318126269aa475829ea7a0a7dc3d6c2"
+          }
+        },
+        "learning_paths": {
+          "count": 0,
+          "hashUnchanged": true,
+          "before": {
+            "count": 24,
+            "sha256": "f90d378cf7a0f267f07b79ac7ec8af945b3168559b6e9e12fa6fe08ea5e87fab"
+          },
+          "after": {
+            "count": 24,
+            "sha256": "f90d378cf7a0f267f07b79ac7ec8af945b3168559b6e9e12fa6fe08ea5e87fab"
+          }
+        },
+        "units": {
+          "count": 0,
+          "hashUnchanged": true,
+          "before": {
+            "count": 24,
+            "sha256": "a996447953be5abe1a2c8e957db212bfe89f6cc2885f2268517c33a156091da6"
+          },
+          "after": {
+            "count": 24,
+            "sha256": "a996447953be5abe1a2c8e957db212bfe89f6cc2885f2268517c33a156091da6"
+          }
+        },
+        "lessons": {
+          "count": 0,
+          "hashUnchanged": true,
+          "before": {
+            "count": 191,
+            "sha256": "c3d8960616c25109a357601a3ff321f2e5a84d90c1246c62a7a3b38a2e4d9976"
+          },
+          "after": {
+            "count": 191,
+            "sha256": "c3d8960616c25109a357601a3ff321f2e5a84d90c1246c62a7a3b38a2e4d9976"
+          }
+        }
+      },
+      "onlyAllowedTable": null,
+      "lemmaTranslationsDelta": 0,
+      "allProtectedTablesUnchanged": true,
+      "DATABASE_WRITES": 0,
+      "LEXICAL_WRITES": 0,
+      "TRANSLATION_WRITES": 0,
+      "CURRICULUM_WRITES": 0,
+      "MASAQ_WRITES": 0,
+      "MIGRATIONS": 0,
+      "SEEDS": 0
+    },
+    "verdict": "PHASE_88F_H_COMPLETE"
+  }
+}

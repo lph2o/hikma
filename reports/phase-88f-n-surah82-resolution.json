@@ -1,0 +1,306 @@
+{
+  "phase": "88F-N",
+  "verdict": "PHASE_88F_N_COMPLETE — S82 READY",
+  "timestamp": "2026-08-24T09:45:08.538Z",
+  "strategy": "SURAH-FIRST — S82 Al-Infitar only",
+  "baseline": {
+    "s82": {
+      "totalForms": 66,
+      "coveredForms": 49,
+      "missingForms": 17,
+      "coveragePct": 0.7424,
+      "readiness": "IN_PREPARATION"
+    },
+    "global": {
+      "quranWords": 21296,
+      "frUnion": 5315,
+      "frOccurrences": 56119,
+      "frPercentage": 0.2496,
+      "lemmaTranslations": 142,
+      "lemmaTrFr": 138,
+      "wordTrFr": 4500,
+      "readiness": {
+        "READY": 25,
+        "IN_PREPARATION": 88,
+        "REFERENCE": 1
+      }
+    }
+  },
+  "preflight": {
+    "batchA": {
+      "glosses": [
+        {
+          "lemma": "كواكب",
+          "gloss": "étoiles / astres"
+        },
+        {
+          "lemma": "فجر",
+          "gloss": "faire jaillir / fendre (la terre)"
+        },
+        {
+          "lemma": "قبور",
+          "gloss": "tombes / sépultures"
+        },
+        {
+          "lemma": "صور",
+          "gloss": "forme / image / façonner"
+        },
+        {
+          "lemma": "ركب",
+          "gloss": "assembler / composer"
+        },
+        {
+          "lemma": "حافظ",
+          "gloss": "gardien / qui préserve / protecteur"
+        },
+        {
+          "lemma": "كاتب",
+          "gloss": "scribe / écrivain / qui écrit"
+        },
+        {
+          "lemma": "فجار",
+          "gloss": "débauchés / pervers / pécheurs"
+        },
+        {
+          "lemma": "غائب",
+          "gloss": "absent / caché"
+        },
+        {
+          "lemma": "ملك",
+          "gloss": "roi / posséder / maîtriser"
+        }
+      ],
+      "readyCount": 10,
+      "existingSame": 0,
+      "conflicts": []
+    },
+    "batchB": {
+      "forms": [
+        {
+          "stem": "انفطر",
+          "wordId": "8046669c-8bad-4da8-9f5a-892b77a11fc9",
+          "text": "se fendre / s'entrouvrir"
+        },
+        {
+          "stem": "انتثر",
+          "wordId": "3d396a28-9e9a-44ce-b312-917fb6b6b767",
+          "text": "se disperser / se répandre"
+        },
+        {
+          "stem": "بعثر",
+          "wordId": "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39",
+          "text": "être dispersé / renversé"
+        },
+        {
+          "stem": "أخر",
+          "wordId": "0e1c439c-a45a-4d2d-a234-e85336634e03",
+          "text": "retarder / différer"
+        },
+        {
+          "stem": "غر",
+          "wordId": "af86614b-6ae0-42bf-aabe-f3c53ca449f2",
+          "text": "tromper / séduire"
+        },
+        {
+          "stem": "سوا",
+          "wordId": "31905a0b-c8ff-468f-884f-be9a067f2c55",
+          "text": "façonner / égaliser / proportionner"
+        },
+        {
+          "stem": "عدل",
+          "wordId": "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d",
+          "text": "ajuster / proportionner / équilibrer"
+        }
+      ],
+      "readyCount": 7,
+      "existingSame": 0,
+      "conflicts": []
+    }
+  },
+  "writes": {
+    "batchA": {
+      "table": "lemma_translations",
+      "count": 10,
+      "ids": [
+        {
+          "id": "62654098-6e25-4507-9eed-6b35ed1d6af0",
+          "lemma_id": "711c82ec-4173-4e75-9159-607b73f709dd"
+        },
+        {
+          "id": "1803b412-5e3d-4b60-bea7-65eb4da163f9",
+          "lemma_id": "704ad14b-5445-4bd2-a847-010516ae2ce2"
+        },
+        {
+          "id": "e6512034-abf3-4764-a212-b93f0d14495e",
+          "lemma_id": "fb7664d8-b6bd-4b8b-9bab-17e55b4a45a0"
+        },
+        {
+          "id": "8685d8ca-14a6-4f43-ab84-8571885b0a0d",
+          "lemma_id": "37c176d5-bf77-48d7-bf42-af4124bccf19"
+        },
+        {
+          "id": "f2d7f5be-e2cb-4860-8fde-e9f6d469d41d",
+          "lemma_id": "c5dc6478-6cd6-4fb4-8479-1ce1a0c416c5"
+        },
+        {
+          "id": "7e2f2413-db9f-41d9-99be-1f304252517e",
+          "lemma_id": "83716d95-7091-462b-a60e-44e6b98d30c0"
+        },
+        {
+          "id": "08803de7-49d9-4252-b045-16decb622d13",
+          "lemma_id": "36b5c36e-05fe-45b5-84ac-d3a6842810c2"
+        },
+        {
+          "id": "bc05858d-af3f-449d-9d39-b7f3dde24330",
+          "lemma_id": "6e401987-150e-4943-9313-c6955c9db476"
+        },
+        {
+          "id": "3d511f2e-6954-416d-bdd9-b57ae9f0ef39",
+          "lemma_id": "cd6f9e4f-d908-4ed8-bd8a-8dc1a571e9ac"
+        },
+        {
+          "id": "741bbc8c-4a10-419a-b00b-995ece0a8099",
+          "lemma_id": "e7dfc440-ab32-4cdf-8d60-4b89d400f78f"
+        }
+      ]
+    },
+    "batchB": {
+      "table": "word_translations",
+      "count": 7,
+      "ids": [
+        {
+          "id": "75f87b03-d2f3-4dbd-ad86-fdf406a3391a",
+          "word_id": "8046669c-8bad-4da8-9f5a-892b77a11fc9"
+        },
+        {
+          "id": "e92b2e00-0e59-44c2-91ff-4c4b525384b6",
+          "word_id": "3d396a28-9e9a-44ce-b312-917fb6b6b767"
+        },
+        {
+          "id": "534875a4-3068-4ed0-bd7c-028317369c50",
+          "word_id": "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39"
+        },
+        {
+          "id": "9b95edc4-92bf-488a-9d28-a73707af0bc6",
+          "word_id": "0e1c439c-a45a-4d2d-a234-e85336634e03"
+        },
+        {
+          "id": "069471d0-bbc1-48a6-8537-55c2582d64c4",
+          "word_id": "af86614b-6ae0-42bf-aabe-f3c53ca449f2"
+        },
+        {
+          "id": "4dc05e28-0562-4ddd-92c1-76e1597f9c5b",
+          "word_id": "31905a0b-c8ff-468f-884f-be9a067f2c55"
+        },
+        {
+          "id": "9f3353c4-035a-4a27-a211-4924e1c1315c",
+          "word_id": "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d"
+        }
+      ]
+    },
+    "totalWrites": 17,
+    "tablesWritten": [
+      "lemma_translations",
+      "word_translations"
+    ]
+  },
+  "postImport": {
+    "s82": {
+      "totalForms": 66,
+      "coveredForms": 66,
+      "coveragePct": 1,
+      "readiness": "READY",
+      "isReady": true
+    },
+    "global": {
+      "quranWords": 21296,
+      "frUnion": 5346,
+      "frOccurrences": 56150,
+      "frPercentage": 0.251,
+      "lemmaTranslations": 152,
+      "lemmaTrFr": 148,
+      "wordTrFr": 4507,
+      "readiness": {
+        "READY": 26,
+        "IN_PREPARATION": 87,
+        "REFERENCE": 1
+      }
+    },
+    "deltas": {
+      "lemmaTranslations": 10,
+      "wordTranslationsFr": 7,
+      "frUnion": 31,
+      "frOccurrences": 31
+    }
+  },
+  "validation": {
+    "batchA": {
+      "present": "10/10",
+      "badLang": 0,
+      "badVal": 0,
+      "badText": 0,
+      "ok": true
+    },
+    "batchB": {
+      "present": "7/7",
+      "badLang": 0,
+      "badVal": 0,
+      "badText": 0,
+      "ok": true
+    }
+  },
+  "invariants": {
+    "protectedTables": {
+      "quran_words": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "word_lemma_mapping": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "linguistic_occurrences": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "lemmas": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "learning_paths": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "units": {
+        "count": 0,
+        "hashUnchanged": true
+      },
+      "lessons": {
+        "count": 0,
+        "hashUnchanged": true
+      }
+    },
+    "protectedOk": true,
+    "CURRICULUM_WRITES": 0,
+    "MIGRATIONS": 0,
+    "SEEDS": 0
+  },
+  "tests": {
+    "run": true,
+    "vitest": { "passed": 954, "total": 954 },
+    "scriptTypeScript": "PASS (0 errors)",
+    "scriptEslint": "PASS (0 errors, 0 warnings)"
+  },
+  "idempotence": {
+    "secondPass": true,
+    "batchA_EXISTING_SAME": 10,
+    "batchB_EXISTING_SAME": 7,
+    "batchA_NEW": 0,
+    "batchB_NEW": 0,
+    "DATABASE_WRITES": 0,
+    "lemmaTranslationsDelta": 0,
+    "wordTranslationsDelta": 0,
+    "s82StillReady": true,
+    "verdict": "PHASE_88F_N_IDEMPOTENT"
+  }
+}

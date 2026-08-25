@@ -1,0 +1,204 @@
+{
+  "phase": "88F-S",
+  "verdict": "PHASE_88F_S_COMPLETE",
+  "mode": "APPLY",
+  "target": {
+    "number": 90,
+    "name": "Al-Balad"
+  },
+  "timestamp": "2026-08-24T10:56:21.343Z",
+  "baseline": {
+    "number": 90,
+    "name": "Al-Balad",
+    "totalForms": 73,
+    "coveredForms": 51,
+    "coveragePct": 0.6986,
+    "readiness": "IN_PREPARATION"
+  },
+  "preflight": {
+    "batchA": {
+      "ready": 14,
+      "existingSame": 0,
+      "conflicts": 0
+    },
+    "batchB": {
+      "ready": 7,
+      "existingSame": 0,
+      "conflicts": 0
+    }
+  },
+  "writes": {
+    "batchA": [
+      {
+        "lemma_id": "de8a9306-d6a4-42b3-92d5-edcd4754d41e"
+      },
+      {
+        "lemma_id": "1c375332-d4ff-4c93-bb88-7c3f4057743c"
+      },
+      {
+        "lemma_id": "f3c289bc-56dc-45bc-b061-3e995c5ec86d"
+      },
+      {
+        "lemma_id": "2ff27895-60dd-4d20-9a43-dd3a1a65b17a"
+      },
+      {
+        "lemma_id": "d367a8d9-184a-453c-a2ca-123601e0cbb7"
+      },
+      {
+        "lemma_id": "3ca40c25-a3e0-45ae-a616-857121881509"
+      },
+      {
+        "lemma_id": "822c6680-d0c4-4142-9df7-6b425045ec61"
+      },
+      {
+        "lemma_id": "50ac5462-0bc9-44ea-834e-20c10b8e9016"
+      },
+      {
+        "lemma_id": "81adab26-de6e-46f8-8ac1-8c80abb9a821"
+      },
+      {
+        "lemma_id": "9f789b55-42ce-4d39-b74f-31b771ac5e2f"
+      },
+      {
+        "lemma_id": "cf2aab6c-b0a1-49ce-a8bd-cfc54dd0f77c"
+      },
+      {
+        "lemma_id": "ce925d88-5775-4dca-8c1a-0c72a4aae8ee"
+      },
+      {
+        "lemma_id": "c64087ef-456c-423c-a530-3572e07c0de1"
+      },
+      {
+        "lemma_id": "d24716dc-1aa0-4087-91f2-da8a00d47aaa"
+      }
+    ],
+    "batchB": [
+      {
+        "word_id": "7507cc02-e717-4651-a249-007e6d51265c"
+      },
+      {
+        "word_id": "8d389027-3ac7-44a7-8adf-9f82ec155a4a"
+      },
+      {
+        "word_id": "837c2e97-c934-4d9c-98db-6eb6d0c7c95e"
+      },
+      {
+        "word_id": "0d3b84e2-fa53-43a7-800d-5266503ff5f1"
+      },
+      {
+        "word_id": "407f8c0e-168d-49d2-b185-c0dd92c084d5"
+      },
+      {
+        "word_id": "a59fa103-5e58-42a9-9620-bf30de4b7f74"
+      },
+      {
+        "word_id": "89bcf596-aaab-430a-b2c5-e170584fdfd0"
+      }
+    ],
+    "total": 21
+  },
+  "validation": {
+    "batchA": {
+      "present": "14/14",
+      "badLang": 0,
+      "badVal": 0,
+      "badText": 0,
+      "ok": true
+    },
+    "batchB": {
+      "present": "7/7",
+      "badLang": 0,
+      "badVal": 0,
+      "badText": 0,
+      "ok": true
+    }
+  },
+  "after": {
+    "s90": {
+      "number": 90,
+      "name": "Al-Balad",
+      "totalForms": 73,
+      "coveredForms": 73,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s98": {
+      "number": 98,
+      "name": "Al-Bayyinah",
+      "totalForms": 79,
+      "coveredForms": 79,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s92": {
+      "number": 92,
+      "name": "Al-Layl",
+      "totalForms": 62,
+      "coveredForms": 62,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s82": {
+      "number": 82,
+      "name": "Al-Infitar",
+      "totalForms": 66,
+      "coveredForms": 66,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "s85": {
+      "number": 85,
+      "name": "Al-Buruj",
+      "totalForms": 98,
+      "coveredForms": 98,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "global": {
+      "frUnion": 5418,
+      "lemmaTr": 179,
+      "lemmaTrFr": 175,
+      "wordTrFr": 4519,
+      "READY": 28,
+      "IN_PREPARATION": 85,
+      "REFERENCE": 1
+    },
+    "delta": {
+      "frUnion": 47,
+      "lemmaTrFr": 14,
+      "wordTrFr": 7,
+      "READY": 1,
+      "IN_PREPARATION": -1
+    }
+  },
+  "invariants": {
+    "protectedTablesDelta": "aucun",
+    "masaqWrites": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "classifySurahReadinessUnchanged": true
+  },
+  "idempotence": {
+    "mode": "APPLY=2",
+    "batchA": {
+      "existingSame": 14,
+      "ready": 0,
+      "conflicts": 0
+    },
+    "batchB": {
+      "existingSame": 7,
+      "ready": 0,
+      "conflicts": 0
+    },
+    "new": 0,
+    "dataWrites": 0,
+    "protectedDelta": "aucun",
+    "delta": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error"
+  }
+}

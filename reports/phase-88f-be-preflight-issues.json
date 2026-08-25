@@ -1,0 +1,2389 @@
+[
+  {
+    "index": 1,
+    "word_id": "50a3947b-19bd-466d-9985-a1a0082bc075",
+    "arabic": "أُقِّتَتْ",
+    "gloss": "être assigné à un terme / avoir son temps fixé",
+    "severity": "MEDIUM",
+    "check": "LEXICAL_QUALITY",
+    "problem": "gloss de 10 tokens — risque de paraphrase/description",
+    "recommendation": "Raccourcir vers un noyau lexical"
+  },
+  {
+    "index": 2,
+    "word_id": "59c96b2b-7bdd-4088-972e-036a4f063328",
+    "arabic": "فَمِنكُمْ",
+    "gloss": "parmi vous",
+    "severity": "MEDIUM",
+    "check": "EN_TO_FR_SUSPECT",
+    "problem": "justification sans racine arabe ni référence contextuelle — vérifier que la glose n'est pas un simple calque du meaning anglais",
+    "recommendation": "Renforcer lexical_basis/rationale si la glose est conservée",
+    "source": "HEURISTIC_FALSE_POSITIVE",
+    "note": "Entrée CONFIDENT préexistante ; faux positif heuristique : glose française correcte."
+  },
+  {
+    "index": 3,
+    "word_id": "4471eddf-15c1-402b-a400-388297af0483",
+    "arabic": "لِّأَنفُسِكُمْ ۗ",
+    "gloss": "pour vous-mêmes",
+    "severity": "MEDIUM",
+    "check": "EN_TO_FR_SUSPECT",
+    "problem": "justification sans racine arabe ni référence contextuelle — vérifier que la glose n'est pas un simple calque du meaning anglais",
+    "recommendation": "Renforcer lexical_basis/rationale si la glose est conservée",
+    "source": "HEURISTIC_FALSE_POSITIVE",
+    "note": "Entrée CONFIDENT préexistante ; faux positif heuristique : glose française correcte."
+  },
+  {
+    "index": 4,
+    "word_id": "6355eb46-ed36-4881-bc39-d77d79122bfb",
+    "arabic": "ٱلْمَتِينُ",
+    "gloss": "le Fort / l'Inébranlable",
+    "severity": "MEDIUM",
+    "check": "AYAH_COPY_SUSPECT",
+    "problem": "la glose (≥4 tokens) apparaît verbatim dans une traduction — risque de copie de fragment",
+    "recommendation": "Vérifier qu'il s'agit bien d'un noyau lexical et non d'un fragment de phrase",
+    "source": "HEURISTIC_FALSE_POSITIVE",
+    "note": "Entrée CONFIDENT préexistante ; faux positif heuristique : glose française correcte."
+  },
+  {
+    "index": 5,
+    "word_id": "76d4dab1-59ba-4ec0-b5c5-2a5bc6bb81fb",
+    "arabic": "ذَرْوًۭا",
+    "gloss": "éparpillement / dispersion",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 6,
+    "word_id": "e95824a9-4469-404e-866c-84b1a04fa90d",
+    "arabic": "فَٱلْحَـٰمِلَـٰتِ",
+    "gloss": "celles qui portent un fardeau",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 7,
+    "word_id": "8e688183-210a-44c0-9d26-deb0767b6b5d",
+    "arabic": "فِتْنَتَكُمْ",
+    "gloss": "votre épreuve / votre tentation",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (12 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 8,
+    "word_id": "e5d348db-776f-4dad-8821-ba096498b037",
+    "arabic": "يَهْجَعُونَ",
+    "gloss": "dormir / sommeiller",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 9,
+    "word_id": "1c2afbab-d46e-4aac-9e2a-5383588fb7dd",
+    "arabic": "رِزْقُكُمْ",
+    "gloss": "votre subsistance / votre provision",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 10,
+    "word_id": "22dee676-60fa-42c7-a207-74d2a9716957",
+    "arabic": "سَمِينٍۢ",
+    "gloss": "gras / engraissé",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 11,
+    "word_id": "cf3e7a09-215e-4b9d-ae1a-fbdb2aa40d76",
+    "arabic": "بِعِجْلٍۢ",
+    "gloss": "avec un veau",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 12,
+    "word_id": "2c41fb34-6106-4edd-9bf1-ff7c6c6c30e9",
+    "arabic": "ٱمْرَأَتُهُۥ",
+    "gloss": "son épouse",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (53 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 13,
+    "word_id": "6a8e50db-d6ce-4ce5-85b4-7c6cc595fe55",
+    "arabic": "عَقِيمٌۭ",
+    "gloss": "stérile",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 14,
+    "word_id": "7a50ade2-042b-4bba-ac76-7c16c2aa82b3",
+    "arabic": "وَجْهَهَا",
+    "gloss": "son visage / sa face",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 15,
+    "word_id": "97fee1d0-f1d8-4d01-9a9c-24949ce5dccb",
+    "arabic": "صَرَّةٍۢ",
+    "gloss": "cri / clameur",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (58 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 16,
+    "word_id": "b2132e9d-8621-4e64-8fbe-a0e5e0dbbd31",
+    "arabic": "فَصَكَّتْ",
+    "gloss": "frapper / se frapper",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (65 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 17,
+    "word_id": "67385353-c8ae-48fa-b0d7-e71791de079c",
+    "arabic": "أَرْسَلْنَـٰهُ",
+    "gloss": "envoyer / dépêcher",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 18,
+    "word_id": "860e1f08-35db-4c1b-b01b-22632fc982e0",
+    "arabic": "سَـٰحِرٌ",
+    "gloss": "magicien / sorcier",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (49 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 19,
+    "word_id": "a5695d11-ea98-4cc3-92e6-4c4eefba13cf",
+    "arabic": "أَتَتْ",
+    "gloss": "venir / arriver",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 20,
+    "word_id": "40968541-e443-44a3-aacc-a065f1babaae",
+    "arabic": "فَعَتَوْا۟",
+    "gloss": "être rebelles / défier",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 21,
+    "word_id": "a5b9c971-8a9a-4db1-89d4-b7adaa92ee64",
+    "arabic": "لَمُوسِعُونَ",
+    "gloss": "ceux qui étendent / élargissent",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 22,
+    "word_id": "12e9aa20-13de-43e2-98c5-7b7e48a98ae2",
+    "arabic": "فَرَشْنَـٰهَا",
+    "gloss": "étendre / aplanir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (49 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 23,
+    "word_id": "b998f056-2507-4400-a723-b1fd4841c749",
+    "arabic": "ٱلْمَـٰهِدُونَ",
+    "gloss": "ceux qui étendent / aplanissent",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 24,
+    "word_id": "e01006e8-c69a-4182-9959-882e4a029899",
+    "arabic": "فَفِرُّوٓا۟",
+    "gloss": "fuyez / cherchez refuge",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (56 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 25,
+    "word_id": "3e08d7a0-0ef5-4053-a686-c7d3d42ea8d2",
+    "arabic": "ءَاخَرَ ۖ",
+    "gloss": "autre / autre divinité",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (12 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 26,
+    "word_id": "6355eb46-ed36-4881-bc39-d77d79122bfb",
+    "arabic": "ٱلْمَتِينُ",
+    "gloss": "le Fort / l'Inébranlable",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (48 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 27,
+    "word_id": "bd7649b8-a304-479c-bb34-27ee3edb95c8",
+    "arabic": "ٱلرَّزَّاقُ",
+    "gloss": "le Grand Pourvoyeur",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (42 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 28,
+    "word_id": "2371d4c0-fdac-4ed8-9fb6-f4841e64c425",
+    "arabic": "ذَنُوبًۭا",
+    "gloss": "une part / une portion",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (41 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 29,
+    "word_id": "877b70e7-7e0a-48b3-a66f-d44fe9e4030a",
+    "arabic": "يَوْمِهِمُ",
+    "gloss": "leur jour",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 30,
+    "word_id": "8138c377-2550-46c0-bd69-d79b211b3460",
+    "arabic": "مُّؤْمِنٌۭ ۚ",
+    "gloss": "croyant",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 31,
+    "word_id": "53206772-64ec-4cf1-ac5f-6010bf14fa04",
+    "arabic": "وَصَوَّرَكُمْ",
+    "gloss": "former / façonner",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 32,
+    "word_id": "6678739b-8892-4978-b0b8-dff5da9c7d92",
+    "arabic": "صُوَرَكُمْ ۖ",
+    "gloss": "vos formes",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (12 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 33,
+    "word_id": "b8b1fb60-d0eb-48f5-9070-814a0619f73a",
+    "arabic": "فَأَحْسَنَ",
+    "gloss": "parfaire / embellir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 34,
+    "word_id": "da556455-7c73-4fbe-b01e-576d731b4b4b",
+    "arabic": "تُعْلِنُونَ ۚ",
+    "gloss": "divulguer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (63 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 35,
+    "word_id": "f11cfe86-eca1-48bd-8728-e6b68978cb52",
+    "arabic": "تُسِرُّونَ",
+    "gloss": "cacher / tenir secret",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (12 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 36,
+    "word_id": "43eada56-c2e5-4dbe-a431-366738ef3609",
+    "arabic": "فَذَاقُوا۟",
+    "gloss": "goûter / subir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 37,
+    "word_id": "48246ef4-2199-4ffe-a5b7-56e69cc8189d",
+    "arabic": "نَبَؤُا۟",
+    "gloss": "nouvelle / récit",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (51 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 38,
+    "word_id": "1ecee066-8afd-4db0-a9de-613750655f57",
+    "arabic": "تَّأْتِيهِمْ",
+    "gloss": "leur venir / arriver à eux",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 39,
+    "word_id": "2fa7e7d6-b574-4014-975e-4de05c2ca5a0",
+    "arabic": "وَتَوَلَّوا۟ ۚ",
+    "gloss": "se détourner",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 40,
+    "word_id": "444cfb95-85a0-4525-b76b-ffab4d58c5d7",
+    "arabic": "بِأَنَّهُۥ",
+    "gloss": "parce que / du fait que",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 41,
+    "word_id": "7936d666-fb0f-430b-85cf-3a606060075c",
+    "arabic": "يَهْدُونَنَا",
+    "gloss": "nous guider",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (49 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 42,
+    "word_id": "88304548-d17f-483a-8631-065feb09d1fd",
+    "arabic": "وَّٱسْتَغْنَى",
+    "gloss": "se passer de / se suffire",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 43,
+    "word_id": "97199e67-e485-4665-b92e-78434512afd9",
+    "arabic": "فَكَفَرُوا۟",
+    "gloss": "mécroire / être infidèle",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 44,
+    "word_id": "d275e85d-5c8d-4bb7-a75a-68a933032120",
+    "arabic": "كَانَت",
+    "gloss": "être / avoir été",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (43 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 45,
+    "word_id": "032fd38f-9330-4cfe-ab56-a7c7b4ce5d0b",
+    "arabic": "زَعَمَ",
+    "gloss": "prétendre / affirmer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 46,
+    "word_id": "901e912e-6762-4696-99b8-e3ff85905cf2",
+    "arabic": "عَمِلْتُمْ ۚ",
+    "gloss": "faire / accomplir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 47,
+    "word_id": "b26f48ed-34b9-4e1e-ab1d-782a96fc91c3",
+    "arabic": "لَتُنَبَّؤُنَّ",
+    "gloss": "être certainement informé",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 48,
+    "word_id": "36f71330-bba1-4751-9924-7d8d0082e690",
+    "arabic": "فَـَٔامِنُوا۟",
+    "gloss": "croyez donc",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 49,
+    "word_id": "78c4ba92-ab53-42d0-874d-19ac2c82fdea",
+    "arabic": "أَنزَلْنَا ۚ",
+    "gloss": "faire descendre / révéler",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 50,
+    "word_id": "e31d028a-bdfa-4944-a042-41ba70592e43",
+    "arabic": "وَٱلنُّورِ",
+    "gloss": "la lumière",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 51,
+    "word_id": "9b10ece5-a505-4d5f-9451-3c5847d5ebad",
+    "arabic": "وَيُدْخِلْهُ",
+    "gloss": "le faire entrer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 52,
+    "word_id": "9cb164b4-5eab-4dc5-ac06-63841072384b",
+    "arabic": "مُّصِيبَةٍ",
+    "gloss": "malheur / calamité",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 53,
+    "word_id": "e013c121-f059-4ebc-8b00-f9866388d2bb",
+    "arabic": "قَلْبَهُۥ ۚ",
+    "gloss": "son cœur",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 54,
+    "word_id": "9c2eb354-3534-439b-950c-2efa3e64b3db",
+    "arabic": "رَسُولِنَا",
+    "gloss": "Notre Messager",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (52 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 55,
+    "word_id": "9dde9b55-6935-41e5-8361-b6ce6a55c0d8",
+    "arabic": "ٱلرَّسُولَ ۚ",
+    "gloss": "le messager / l'envoyé",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (51 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 56,
+    "word_id": "1b431287-ba44-4617-ac7c-060839592d53",
+    "arabic": "وَتَصْفَحُوا۟",
+    "gloss": "passer outre / pardonner",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (53 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 57,
+    "word_id": "257bfa3a-dace-4c04-ac48-610bed245467",
+    "arabic": "وَأَوْلَـٰدِكُمْ",
+    "gloss": "vos enfants",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (58 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 58,
+    "word_id": "b87367f5-cbb7-46d3-8aea-acebd8b6fd7f",
+    "arabic": "وَتَغْفِرُوا۟",
+    "gloss": "pardonner",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (51 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 59,
+    "word_id": "c51b2500-f332-4a95-94b8-e68379d36689",
+    "arabic": "تَعْفُوا۟",
+    "gloss": "effacer / pardonner",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 60,
+    "word_id": "28678111-c9c4-4c81-86b0-d99de1451685",
+    "arabic": "يُوقَ",
+    "gloss": "être protégé / préservé",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 61,
+    "word_id": "4471eddf-15c1-402b-a400-388297af0483",
+    "arabic": "لِّأَنفُسِكُمْ ۗ",
+    "gloss": "pour vous-mêmes",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 62,
+    "word_id": "d9a21d17-0cb9-4d90-bc0a-06284ac6578e",
+    "arabic": "وَٱسْمَعُوا۟",
+    "gloss": "écouter / obéir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (48 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 63,
+    "word_id": "756e9df9-f020-4f4f-951a-2738c7b2e062",
+    "arabic": "تُقْرِضُوا۟",
+    "gloss": "prêter / faire un prêt",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (50 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 64,
+    "word_id": "ee83441f-ddd7-4277-9f3a-25446d7a978c",
+    "arabic": "يُضَـٰعِفْهُ",
+    "gloss": "multiplier / doubler",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 65,
+    "word_id": "f94a442b-5c16-4f24-aabc-daaf15fbf964",
+    "arabic": "مُّؤْمِنَـٰتٍۢ",
+    "gloss": "croyantes",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 66,
+    "word_id": "ed6e5290-faa9-49c9-87c2-9361d239c034",
+    "arabic": "مَلَـٰٓئِكَةٌ",
+    "gloss": "anges",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 67,
+    "word_id": "f47c984f-3dd4-4a9d-aefe-df613cd43126",
+    "arabic": "صَـٰلِحَيْنِ",
+    "gloss": "deux vertueux",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 68,
+    "word_id": "66b40163-775f-45a1-a287-6bfccbb409b7",
+    "arabic": "ٱبْنَتَ",
+    "gloss": "la fille",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 69,
+    "word_id": "cb4e9fc7-92fd-4d2e-b615-48084653001c",
+    "arabic": "وَمَرْيَمَ",
+    "gloss": "Marie",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 70,
+    "word_id": "ed8c31a4-ba78-4848-a409-b0c9743d0743",
+    "arabic": "بِكَلِمَـٰتِ",
+    "gloss": "aux paroles",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (44 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 71,
+    "word_id": "fb4c257b-0518-4fc2-b5d1-5b86d5eb170e",
+    "arabic": "وَكَانَتْ",
+    "gloss": "elle était / elle fut",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (54 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 72,
+    "word_id": "bee76210-d519-4547-afeb-04baa6ae410d",
+    "arabic": "عَمَلًۭا ۚ",
+    "gloss": "œuvre / action",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 73,
+    "word_id": "ef13154c-8f0a-4696-ac3c-160ea28e43ce",
+    "arabic": "ٱلْغَيْظِ ۖ",
+    "gloss": "la rage / la fureur",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (53 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 74,
+    "word_id": "d04fdb6d-1fc7-4622-abe6-9153aaf66090",
+    "arabic": "كَبِيرٍۢ",
+    "gloss": "grand / énorme",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 75,
+    "word_id": "631ce40b-8fa5-44b7-b349-27dcdc072b65",
+    "arabic": "فَٱمْشُوا۟",
+    "gloss": "marchez / parcourez",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 76,
+    "word_id": "cd0c3f71-aefd-4fa9-96c7-52e2aeeee39e",
+    "arabic": "رِّزْقِهِۦ ۖ",
+    "gloss": "Sa subsistance",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (50 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 77,
+    "word_id": "9d73df8f-42c2-4d74-836d-2c6aa3032d12",
+    "arabic": "وَنُفُورٍ",
+    "gloss": "aversion / fuite",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (45 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 78,
+    "word_id": "a0d526fe-42d8-4cf7-bb02-538c3b519a94",
+    "arabic": "لَّجُّوا۟",
+    "gloss": "s'entêter / persister",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (45 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 79,
+    "word_id": "118da94b-bf96-416d-ac2a-c59f27ff9328",
+    "arabic": "وُجُوهُ",
+    "gloss": "les visages",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (48 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 80,
+    "word_id": "e2ad6637-049b-4fbf-8ae3-966d8f8e7bdc",
+    "arabic": "زُلْفَةًۭ",
+    "gloss": "proximité / de près",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 81,
+    "word_id": "c46849f2-f5c6-4616-9f34-a9f3a571c05b",
+    "arabic": "مَآؤُكُمْ",
+    "gloss": "votre eau",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (26 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 82,
+    "word_id": "818cea73-0b32-44c7-bb9f-694ccc7cc018",
+    "arabic": "أَنذِرْ",
+    "gloss": "avertis",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 83,
+    "word_id": "07956f5c-4020-4c00-bab3-ccbcf5000780",
+    "arabic": "دَعَوْتُ",
+    "gloss": "j'ai appelé",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 84,
+    "word_id": "50ed0255-460f-4a5d-a030-e3e248640d77",
+    "arabic": "وَنَهَارًۭا",
+    "gloss": "jour",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 85,
+    "word_id": "d4468236-2abf-4c0c-b9ce-83ee2198ff9d",
+    "arabic": "دُعَآءِىٓ",
+    "gloss": "mon appel / mon invocation",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (58 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 86,
+    "word_id": "5a738c61-f502-4507-910b-4b4fae66fe65",
+    "arabic": "جَعَلُوٓا۟",
+    "gloss": "ils mirent / ils firent",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (39 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 87,
+    "word_id": "85ab07ed-9ce3-47ef-aefe-0ae58fc48c24",
+    "arabic": "دَعَوْتُهُمْ",
+    "gloss": "je les ai appelés",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (51 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 88,
+    "word_id": "dc12f6e5-54a9-45da-816b-d26c785058c2",
+    "arabic": "وَأَصَرُّوا۟",
+    "gloss": "s'entêter / persister",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (56 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 89,
+    "word_id": "55c1c781-44d5-4fd4-84f6-ca85946b0cec",
+    "arabic": "أَعْلَنتُ",
+    "gloss": "j'ai proclamé",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 90,
+    "word_id": "ad486e68-bf2e-41ec-9862-070b49ad66cb",
+    "arabic": "فَقُلْتُ",
+    "gloss": "j'ai dit / je disais",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (58 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 91,
+    "word_id": "0b6221e7-f74d-448f-9fc9-9f87ecf593c8",
+    "arabic": "وَوَلَدُهُۥٓ",
+    "gloss": "ses enfants",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (31 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 92,
+    "word_id": "1d347a5c-d607-498a-a10c-bbf98f2e00a5",
+    "arabic": "عَصَوْنِى",
+    "gloss": "ils m'ont désobéi",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (54 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 93,
+    "word_id": "6940bc22-09b0-4320-ba03-eb16e314564c",
+    "arabic": "تَذَرُنَّ",
+    "gloss": "abandonner / laisser",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 94,
+    "word_id": "a31014bc-24a4-4bbe-8175-9b3bd8e1aec1",
+    "arabic": "سُوَاعًۭا",
+    "gloss": "Suwâ' (idole)",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 95,
+    "word_id": "030bf80b-9cfd-4a7c-bcb7-72673747e83d",
+    "arabic": "تَزِدِ",
+    "gloss": "augmenter / accroître",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (54 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 96,
+    "word_id": "828da072-4d4a-4f8b-9179-cf2bde7ef523",
+    "arabic": "أَنصَارًۭا",
+    "gloss": "secoureurs / alliés",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 97,
+    "word_id": "d0a5c009-1342-475e-b1b0-3c5173880ac4",
+    "arabic": "خَطِيٓـَٔـٰتِهِمْ",
+    "gloss": "leurs péchés",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (38 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 98,
+    "word_id": "0ea473d7-b49b-46bd-95f8-32f790c3d7ad",
+    "arabic": "تَذَرْ",
+    "gloss": "laisser / abandonner",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (54 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 99,
+    "word_id": "91a2cdb3-1e34-4511-b04a-ac83da934804",
+    "arabic": "تَذَرْهُمْ",
+    "gloss": "les laisser",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (52 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 100,
+    "word_id": "06b2962b-efa7-4f94-b9cc-a9eaf9a47d63",
+    "arabic": "تَبَارًۢا",
+    "gloss": "perdition / ruine",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 101,
+    "word_id": "a17227d9-8233-46aa-b3b7-f5bc02f77f19",
+    "arabic": "بِٱلنَّفْسِ",
+    "gloss": "l'âme",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (43 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 102,
+    "word_id": "0156cf7d-3b93-4827-9d5f-6de2921304ce",
+    "arabic": "نَّجْمَعَ",
+    "gloss": "réunir / rassembler",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 103,
+    "word_id": "93a3bdf8-f8e8-4812-981a-76541eea5765",
+    "arabic": "عِظَامَهُۥ",
+    "gloss": "ses os",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (27 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 104,
+    "word_id": "38b437f6-bbda-4623-8f04-caa366876698",
+    "arabic": "بَنَانَهُۥ",
+    "gloss": "ses doigts / extrémités des doigts",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 105,
+    "word_id": "96103dc6-5f09-4220-b4d0-96c9547a4ad4",
+    "arabic": "بَرِقَ",
+    "gloss": "être ébloui",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (53 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 106,
+    "word_id": "221db336-1250-495e-955b-b29469910801",
+    "arabic": "وَجُمِعَ",
+    "gloss": "être réunis",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (51 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 107,
+    "word_id": "4db6e3c3-8f23-481d-9938-df261e0d1bc7",
+    "arabic": "ٱلْمَفَرُّ",
+    "gloss": "la fuite / le refuge",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 108,
+    "word_id": "b65a830a-8628-4782-92ed-cacecd89d14c",
+    "arabic": "مَعَاذِيرَهُۥ",
+    "gloss": "ses excuses",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (58 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 109,
+    "word_id": "8455745c-f1b8-4497-86c2-726fa1489395",
+    "arabic": "تُحَرِّكْ",
+    "gloss": "remuer / agiter",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 110,
+    "word_id": "a8aa50c5-2506-4106-ae53-3183cec7e46a",
+    "arabic": "لِسَانَكَ",
+    "gloss": "ta langue",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (31 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 111,
+    "word_id": "be75cee3-9465-4027-b7c0-abb25e31f722",
+    "arabic": "لِتَعْجَلَ",
+    "gloss": "se hâter / se presser",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 112,
+    "word_id": "4c56a861-3c20-404f-a92d-d9e2e4627dd9",
+    "arabic": "جَمْعَهُۥ",
+    "gloss": "son rassemblement",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 113,
+    "word_id": "8be57737-2388-4168-840e-5e18e5dc4db3",
+    "arabic": "وَقُرْءَانَهُۥ",
+    "gloss": "sa récitation",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (35 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 114,
+    "word_id": "227ff9de-4a2b-437b-8661-f3e882f1d98f",
+    "arabic": "فَٱتَّبِعْ",
+    "gloss": "suis",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 115,
+    "word_id": "330fd623-b869-4dc5-8765-aad30ce83275",
+    "arabic": "قُرْءَانَهُۥ",
+    "gloss": "sa récitation",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 116,
+    "word_id": "80992346-1084-4e17-87a3-b43e4380b927",
+    "arabic": "بَيَانَهُۥ",
+    "gloss": "son explication",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (50 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 117,
+    "word_id": "d79f0570-ec2f-4fe2-be3e-5d3c53a51719",
+    "arabic": "تُحِبُّونَ",
+    "gloss": "aimer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 118,
+    "word_id": "07eda649-9494-48e4-9939-c84f6bb9fe69",
+    "arabic": "وَتَذَرُونَ",
+    "gloss": "délaisser / abandonner",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 119,
+    "word_id": "b901498b-e645-4ada-9f09-6191b95b6cd8",
+    "arabic": "بَاسِرَةٌۭ",
+    "gloss": "assombri / morne",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 120,
+    "word_id": "12adfad8-9cd3-45cc-9f1c-610d946deb22",
+    "arabic": "فَاقِرَةٌۭ",
+    "gloss": "catastrophe / calamité",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 121,
+    "word_id": "5e9f0119-edfc-4b44-a7a0-73890e287917",
+    "arabic": "تَظُنُّ",
+    "gloss": "penser / s'attendre",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 122,
+    "word_id": "d44d93b1-900a-43ff-85a5-da936c70e78f",
+    "arabic": "مَنْ ۜ",
+    "gloss": "qui",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (58 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 123,
+    "word_id": "9db9ec52-d070-418e-a652-3668638ab7e8",
+    "arabic": "ٱلْفِرَاقُ",
+    "gloss": "la séparation",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 124,
+    "word_id": "d190bbee-c9bc-4761-a33d-4eea89219e48",
+    "arabic": "وَظَنَّ",
+    "gloss": "penser / être convaincu",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (47 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 125,
+    "word_id": "142f8a20-9d7b-4ebd-9211-5aef0b0a7bcd",
+    "arabic": "بِٱلسَّاقِ",
+    "gloss": "la jambe",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (47 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 126,
+    "word_id": "91e1ca1e-750b-4d59-9635-074085b282c6",
+    "arabic": "ٱلسَّاقُ",
+    "gloss": "la jambe",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (43 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 127,
+    "word_id": "b0cd7abb-23e1-4e1f-acae-9e9a60308c63",
+    "arabic": "صَلَّىٰ",
+    "gloss": "faire la prière / prier",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (54 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 128,
+    "word_id": "1816d13d-9865-43f2-a6a3-ef3764b660e6",
+    "arabic": "ذَهَبَ",
+    "gloss": "aller / s'en aller",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (42 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 129,
+    "word_id": "7280db56-2a71-42f9-b04e-6d0614bd4ef9",
+    "arabic": "مَّنِىٍّۢ",
+    "gloss": "sperme",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (31 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 130,
+    "word_id": "88323c83-bed0-432c-a0ef-5785d95f2740",
+    "arabic": "فَخَلَقَ",
+    "gloss": "créer / former",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (30 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 131,
+    "word_id": "e36be04c-b5bf-473c-bee8-895f4fd7d77c",
+    "arabic": "عَصْفًۭا",
+    "gloss": "violence / en tempête",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 132,
+    "word_id": "d7e5508c-1b2e-45ee-b94f-9f236d83c708",
+    "arabic": "فَرْقًۭا",
+    "gloss": "séparation / distinction",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 133,
+    "word_id": "9ede836b-c363-4dcf-97ec-468924845f21",
+    "arabic": "عُذْرًا",
+    "gloss": "excuse / justification",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 134,
+    "word_id": "b8658f9c-a931-4c67-b535-a37bd9b88242",
+    "arabic": "نُذْرًا",
+    "gloss": "avertissement",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 135,
+    "word_id": "6d7541db-9669-424b-b9af-697dc8bfee34",
+    "arabic": "فُرِجَتْ",
+    "gloss": "être fendu",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 136,
+    "word_id": "bf65324f-0ce3-496c-9f64-5d39a4aba2cd",
+    "arabic": "لِأَىِّ",
+    "gloss": "à quel",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (53 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 137,
+    "word_id": "ffbcd3c3-7efb-4377-97b3-7523b517b7ae",
+    "arabic": "نُهْلِكِ",
+    "gloss": "faire périr / détruire",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 138,
+    "word_id": "e2691d63-0ff3-44c0-9b65-0293275bb5f9",
+    "arabic": "نَخْلُقكُّم",
+    "gloss": "créer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 139,
+    "word_id": "b79a17cb-5c52-48cc-be8b-715c97e4d8e3",
+    "arabic": "أَحْيَآءًۭ",
+    "gloss": "les vivants",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 140,
+    "word_id": "24b61d7e-c394-4d19-90b1-0418d3e6fd53",
+    "arabic": "فُرَاتًۭا",
+    "gloss": "douce / fraîche (eau)",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 141,
+    "word_id": "421a7b8a-f54c-416d-be79-baa764fad734",
+    "arabic": "ظِلٍّۢ",
+    "gloss": "ombre",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 142,
+    "word_id": "c039f13c-cd58-492c-8b24-ec2e92c8b753",
+    "arabic": "ثَلَـٰثِ",
+    "gloss": "trois",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (38 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 143,
+    "word_id": "0fcfa319-6349-4c32-ad82-78f851a169e5",
+    "arabic": "ٱللَّهَبِ",
+    "gloss": "la flamme",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (30 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 144,
+    "word_id": "073c2b8c-26ba-410b-93d4-17111df0ae73",
+    "arabic": "تَرْمِى",
+    "gloss": "jeter / lancer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (65 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 145,
+    "word_id": "2a096abd-a25b-4158-89bc-0ff88a12293d",
+    "arabic": "بِشَرَرٍۢ",
+    "gloss": "étincelles",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (34 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 146,
+    "word_id": "ce89a831-50bc-4b04-96a0-156d5dec077b",
+    "arabic": "جِمَـٰلَتٌۭ",
+    "gloss": "chameaux",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (35 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 147,
+    "word_id": "22849826-2d0e-488c-bcf2-5d35176ca5b1",
+    "arabic": "فَيَعْتَذِرُونَ",
+    "gloss": "présenter des excuses",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 148,
+    "word_id": "63daabd6-70a7-45d5-9684-7682c8c7b404",
+    "arabic": "ٱلْفَصْلِ ۖ",
+    "gloss": "la décision / le jugement",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (63 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 149,
+    "word_id": "4e9079f8-a11c-4b5b-a088-aab3271d5daa",
+    "arabic": "كَيْدٌۭ",
+    "gloss": "ruse / artifice",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (37 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 150,
+    "word_id": "28da7a46-d789-4886-9318-0029c406cd18",
+    "arabic": "ظِلَـٰلٍۢ",
+    "gloss": "ombrages",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 151,
+    "word_id": "26bcd968-9e45-4d83-b841-c8f10da634d9",
+    "arabic": "وَفَوَٰكِهَ",
+    "gloss": "fruits",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (33 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 152,
+    "word_id": "601bf532-9e2b-4429-a5de-f5e871533d22",
+    "arabic": "تَتْبَعُهَا",
+    "gloss": "suivre",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (53 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 153,
+    "word_id": "f04b18fa-2c31-4742-a737-11f04993d93a",
+    "arabic": "ٱلرَّادِفَةُ",
+    "gloss": "le second / ce qui suit",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 154,
+    "word_id": "453f02e1-814f-4597-8525-fd2b90215d51",
+    "arabic": "أَبْصَـٰرُهَا",
+    "gloss": "regards / yeux",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 155,
+    "word_id": "f3376747-9b82-40eb-b384-f57cf4164267",
+    "arabic": "خَـٰشِعَةٌۭ",
+    "gloss": "humble / baissé",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (63 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 156,
+    "word_id": "5efb1474-741f-4f71-b799-daaf7ba9ce35",
+    "arabic": "نَّخِرَةًۭ",
+    "gloss": "pourri / vermoulu",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 157,
+    "word_id": "30287b28-f047-446a-af40-8f38307551f6",
+    "arabic": "خَاسِرَةٌۭ",
+    "gloss": "ruineux / perdant",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 158,
+    "word_id": "6034ea36-812b-4f53-8a36-79f0b0e686f8",
+    "arabic": "ٱلْـَٔايَةَ",
+    "gloss": "le signe / le miracle",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 159,
+    "word_id": "8f351993-3b22-4e72-bfec-8648326de774",
+    "arabic": "وَعَصَىٰ",
+    "gloss": "désobéir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (50 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 160,
+    "word_id": "7a2957b9-6d56-48da-a8bf-48af17f8c95e",
+    "arabic": "فَحَشَرَ",
+    "gloss": "rassembler / réunir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (63 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 161,
+    "word_id": "c45b4aef-1275-4525-85cf-11dfb52705ee",
+    "arabic": "فَأَخَذَهُ",
+    "gloss": "le saisir / le prendre",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (52 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 162,
+    "word_id": "c6649280-95a0-4d5d-92ca-e346511cc81e",
+    "arabic": "وَٱلْأُولَىٰٓ",
+    "gloss": "la première (vie)",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 163,
+    "word_id": "88aee248-2d96-4a2b-88f8-2c83ecc3e587",
+    "arabic": "ٱلسَّمَآءُ ۚ",
+    "gloss": "le ciel",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (29 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 164,
+    "word_id": "0f4d2af6-c6e5-4c65-a198-29c99e597ec4",
+    "arabic": "ضُحَىٰهَا",
+    "gloss": "clarté / jour",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (67 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 165,
+    "word_id": "fc6447c3-1926-4b0c-9c67-3c016932705f",
+    "arabic": "لَيْلَهَا",
+    "gloss": "nuit",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (47 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 166,
+    "word_id": "f628db5c-52be-4d69-8765-8fafa04a8d97",
+    "arabic": "دَحَىٰهَآ",
+    "gloss": "l'étendre / l'aplanir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (63 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 167,
+    "word_id": "4321c9ed-751a-40ad-b583-20e2b0d92c2c",
+    "arabic": "وَمَرْعَىٰهَا",
+    "gloss": "pâturage",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (52 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 168,
+    "word_id": "75fcfb6f-b9a6-4079-9635-35616e7cc6fd",
+    "arabic": "مَآءَهَا",
+    "gloss": "eau",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (45 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 169,
+    "word_id": "287cf880-942c-4450-bc99-e4ce5019dcbf",
+    "arabic": "ٱلطَّآمَّةُ",
+    "gloss": "le grand cataclysme / la calamité suprême",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (54 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 170,
+    "word_id": "84725357-750f-4561-bb66-99d8e5f86d45",
+    "arabic": "وَءَاثَرَ",
+    "gloss": "préférer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 171,
+    "word_id": "57ff4e9e-7712-4f0c-bc94-e46c809193ef",
+    "arabic": "مُنذِرُ",
+    "gloss": "avertisseur",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 172,
+    "word_id": "a6858585-59c3-445f-b90f-67f87ed905b3",
+    "arabic": "يَخْشَىٰهَا",
+    "gloss": "craindre / redouter",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 173,
+    "word_id": "9d820e8b-6b38-4760-ae71-9ff53c49a8a0",
+    "arabic": "عَشِيَّةً",
+    "gloss": "un soir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (31 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 174,
+    "word_id": "a2cbb0e8-7b9a-4822-be64-e6e5879b24aa",
+    "arabic": "يَرَوْنَهَا",
+    "gloss": "voir",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (48 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 175,
+    "word_id": "1d37ada2-2dcb-458f-88cb-4e07617bd090",
+    "arabic": "ٱلذِّكْرَىٰٓ",
+    "gloss": "le rappel",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (45 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 176,
+    "word_id": "90aafd9b-6f7c-499f-b5f0-2703f9b188a2",
+    "arabic": "صُحُفٍۢ",
+    "gloss": "feuilles / pages",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 177,
+    "word_id": "4f130714-db55-4a77-be25-28d85c0997c3",
+    "arabic": "مَّرْفُوعَةٍۢ",
+    "gloss": "élevée / exaltée",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 178,
+    "word_id": "c29034bd-0cf7-4d0b-831f-f9985247c41b",
+    "arabic": "مُّطَهَّرَةٍۭ",
+    "gloss": "purifiée",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 179,
+    "word_id": "a6f9bb7c-c73c-4cc5-a145-761edc8dc4bd",
+    "arabic": "بِأَيْدِى",
+    "gloss": "aux mains",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (48 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 180,
+    "word_id": "28c32f66-c32f-4859-af04-c5b0f2b391f6",
+    "arabic": "كِرَامٍۭ",
+    "gloss": "nobles / honorés",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 181,
+    "word_id": "687d4236-5716-45e0-9b2c-8e7949de26f5",
+    "arabic": "بَرَرَةٍۢ",
+    "gloss": "obéissants / pieux",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 182,
+    "word_id": "91383bc1-4be2-433c-bbb3-6679f9524462",
+    "arabic": "أَكْفَرَهُۥ",
+    "gloss": "qu'il est ingrat",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 183,
+    "word_id": "7fe4e1a1-748e-4654-81b7-9d34b44b746b",
+    "arabic": "أَمَرَهُۥ",
+    "gloss": "lui commander",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (50 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 184,
+    "word_id": "dde777dc-68b4-457d-bebc-046f280cfc24",
+    "arabic": "طَعَامِهِۦٓ",
+    "gloss": "sa nourriture",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (35 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 185,
+    "word_id": "3b4ec739-9443-4a6f-9641-5eac893755e1",
+    "arabic": "شَقًّۭا",
+    "gloss": "fente / fissure",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (65 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 186,
+    "word_id": "bc5d456b-c9a5-4d8f-8cac-b930efc0044f",
+    "arabic": "شَقَقْنَا",
+    "gloss": "fendre / fissurer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (63 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 187,
+    "word_id": "510dc9bd-b516-4d8e-88bc-a70cb420e166",
+    "arabic": "وَعِنَبًۭا",
+    "gloss": "raisin / vigne",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (63 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 188,
+    "word_id": "bfcabd0b-55bc-4f28-a78d-b1d202f02336",
+    "arabic": "وَقَضْبًۭا",
+    "gloss": "fourrage vert / herbe",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 189,
+    "word_id": "38bb985e-5f09-4762-9f65-81505a00dcf9",
+    "arabic": "وَزَيْتُونًۭا",
+    "gloss": "olivier",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (50 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 190,
+    "word_id": "cb37f60e-9680-4ab1-959c-3ace5feaa463",
+    "arabic": "وَنَخْلًۭا",
+    "gloss": "palmiers-dattiers",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (69 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 191,
+    "word_id": "d6a57ec1-86cf-4c5c-9eaf-6a70a82ade2e",
+    "arabic": "غُلْبًۭا",
+    "gloss": "touffus / denses",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (66 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 192,
+    "word_id": "f31d8e6f-7d3c-4ba9-8963-5e0745e6c1e2",
+    "arabic": "وَحَدَآئِقَ",
+    "gloss": "jardins",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (34 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 193,
+    "word_id": "5f64a059-31f4-44d8-a6b8-aa8e79228ca5",
+    "arabic": "وَأَبًّۭا",
+    "gloss": "herbe / fourrage",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 194,
+    "word_id": "b8264ca6-b23c-43fd-bf84-a00b86efc23c",
+    "arabic": "وَفَـٰكِهَةًۭ",
+    "gloss": "fruits",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (33 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 195,
+    "word_id": "abb7a491-e0d8-4eef-b14d-1914b94bd2cc",
+    "arabic": "ٱلصَّآخَّةُ",
+    "gloss": "le fracas assourdissant",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (49 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 196,
+    "word_id": "078dbf24-8655-40f3-b361-a6cdac44b5ea",
+    "arabic": "وَأُمِّهِۦ",
+    "gloss": "sa mère",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (27 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 197,
+    "word_id": "0d10655a-2e71-44ea-ba57-09283489bbd9",
+    "arabic": "وَأَبِيهِ",
+    "gloss": "son père",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (26 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 198,
+    "word_id": "0592d4a3-de69-4868-9ca2-efd254569bdf",
+    "arabic": "وَبَنِيهِ",
+    "gloss": "ses enfants",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (32 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 199,
+    "word_id": "0aa70254-8574-48bb-bde4-fdf69dde266b",
+    "arabic": "مُّسْفِرَةٌۭ",
+    "gloss": "rayonnant / éclatant",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 200,
+    "word_id": "7960f82b-50fe-4bcb-8736-53f149bd31ef",
+    "arabic": "ضَاحِكَةٌۭ",
+    "gloss": "riant",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 201,
+    "word_id": "e9f4eece-93d3-41c9-aee9-5ad7113e2649",
+    "arabic": "غَبَرَةٌۭ",
+    "gloss": "poussière",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 202,
+    "word_id": "88d4cef4-1165-49ec-8c96-60072c1f180e",
+    "arabic": "قَتَرَةٌ",
+    "gloss": "ténèbres / obscurité",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 203,
+    "word_id": "afafb8c6-2db7-460b-8b84-df7a63eee4f5",
+    "arabic": "ٱلْكَفَرَةُ",
+    "gloss": "les infidèles",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (49 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 204,
+    "word_id": "eb061e5a-77ac-4905-a91c-6d17e5130a38",
+    "arabic": "ٱلْفَجَرَةُ",
+    "gloss": "les libertins / les impies",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (49 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 205,
+    "word_id": "77ef3f85-1284-47b9-8289-07a4fdef6e2f",
+    "arabic": "وَٱلْفَجْرِ",
+    "gloss": "l'aube / le point du jour",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (49 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 206,
+    "word_id": "4877a152-c1dc-4cf3-a215-5d66663332d6",
+    "arabic": "عَشْرٍۢ",
+    "gloss": "dix",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (27 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 207,
+    "word_id": "70478c51-3a94-4040-8694-ae17805232ab",
+    "arabic": "وَلَيَالٍ",
+    "gloss": "les nuits",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (31 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 208,
+    "word_id": "c913a0bb-ee41-4d7c-afe0-2883cdc8dfb4",
+    "arabic": "وَٱلْوَتْرِ",
+    "gloss": "l'impair",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 209,
+    "word_id": "fa0553c6-5f6e-4a21-9b5a-adfbec7219d4",
+    "arabic": "وَٱلشَّفْعِ",
+    "gloss": "le pair / le double",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (41 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 210,
+    "word_id": "a7cde036-dc58-4116-bdb7-b4089b5ae70c",
+    "arabic": "حِجْرٍ",
+    "gloss": "intelligence / entendement",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (48 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 211,
+    "word_id": "e31a0fa9-8f56-4185-b771-6ba2afe780cd",
+    "arabic": "قَسَمٌۭ",
+    "gloss": "serment",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (31 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 212,
+    "word_id": "57422fd3-f8c0-42fd-9ad3-7c1430bfb28d",
+    "arabic": "ٱلْعِمَادِ",
+    "gloss": "colonnes / piliers",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (57 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 213,
+    "word_id": "8addc6b2-c75c-4b91-aa90-51b9c01ece69",
+    "arabic": "مِثْلُهَا",
+    "gloss": "semblable / pareil",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 214,
+    "word_id": "74120b94-956a-4b55-8cec-61d17d3087f4",
+    "arabic": "ٱلصَّخْرَ",
+    "gloss": "le roc / la roche",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (34 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 215,
+    "word_id": "fc71bf22-0031-4e67-8ba1-1965790a86f3",
+    "arabic": "جَابُوا۟",
+    "gloss": "tailler / creuser",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (62 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 216,
+    "word_id": "0702c59e-11bc-4aaa-a508-7d4cdfba5389",
+    "arabic": "طَغَوْا۟",
+    "gloss": "transgresser / se révolter",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 217,
+    "word_id": "2b248c92-8eef-4fd2-b6db-709daa0b9aa7",
+    "arabic": "فَصَبَّ",
+    "gloss": "déverser / infliger",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (61 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 218,
+    "word_id": "8a2fce0c-f9dc-4a50-8be8-9b2d75ff3928",
+    "arabic": "سَوْطَ",
+    "gloss": "fouet / châtiment",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 219,
+    "word_id": "d5cc4b19-f44f-4e99-8adf-f3d739032f42",
+    "arabic": "وَنَعَّمَهُۥ",
+    "gloss": "combler de bienfaits",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (55 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 220,
+    "word_id": "e29e50b5-5fee-4b73-8e75-9db183c89c38",
+    "arabic": "ٱبْتَلَىٰهُ",
+    "gloss": "l'éprouver / le mettre à l'épreuve",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (58 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 221,
+    "word_id": "8ba94a05-c1e0-4197-82a3-ffcccbf8129c",
+    "arabic": "فَقَدَرَ",
+    "gloss": "restreindre / mesurer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (68 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 222,
+    "word_id": "bb60184e-c06a-4887-9265-12e501549f6c",
+    "arabic": "رِزْقَهُۥ",
+    "gloss": "sa subsistance",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (35 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 223,
+    "word_id": "14311aa0-e368-4f21-b7b6-9291501f9976",
+    "arabic": "ٱلتُّرَاثَ",
+    "gloss": "l'héritage",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (33 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 224,
+    "word_id": "65dba9eb-8474-4704-88c8-893ba4cac87e",
+    "arabic": "وَتَأْكُلُونَ",
+    "gloss": "dévorer / manger",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (59 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 225,
+    "word_id": "50433e6f-725b-470a-8dbb-f0a9e265acd2",
+    "arabic": "وَتُحِبُّونَ",
+    "gloss": "aimer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (54 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 226,
+    "word_id": "edd1605c-9fb8-49aa-a4ae-e34d09edbb6d",
+    "arabic": "بِجَهَنَّمَ ۚ",
+    "gloss": "la Géhenne / l'Enfer",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 227,
+    "word_id": "a5daa2ee-d9ed-4086-88c2-51fb3262fbf5",
+    "arabic": "لِحَيَاتِى",
+    "gloss": "pour ma vie",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (64 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 228,
+    "word_id": "4287468b-042f-4d1c-ad58-55a3a7c02729",
+    "arabic": "عَذَابَهُۥٓ",
+    "gloss": "son châtiment",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (34 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 229,
+    "word_id": "31f6f35f-d6fc-4fc1-8e65-cc2eada17d60",
+    "arabic": "وَثَاقَهُۥٓ",
+    "gloss": "ses liens / son garrot",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (38 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 230,
+    "word_id": "a50dff0a-72bd-496e-be0a-879f521d689b",
+    "arabic": "ٱلنَّفْسُ",
+    "gloss": "l'âme",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (27 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 231,
+    "word_id": "17625329-04d9-4eb5-b206-6c09a3078f4f",
+    "arabic": "رَاضِيَةًۭ",
+    "gloss": "satisfaite",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (56 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 232,
+    "word_id": "7a806aca-ed16-457e-a4d9-72d1c7e4cb26",
+    "arabic": "ٱرْجِعِىٓ",
+    "gloss": "retourne",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (63 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 233,
+    "word_id": "8b3633f2-236e-4c86-8c3b-48b464615ade",
+    "arabic": "مَّرْضِيَّةًۭ",
+    "gloss": "agréée / qui plaît",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (65 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 234,
+    "word_id": "1d166b49-5fe5-4c01-a06c-43dfd9d85d4b",
+    "arabic": "فَٱدْخُلِى",
+    "gloss": "entre",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (60 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 235,
+    "word_id": "391f8320-45d5-4282-982e-f2cc8bd8ba22",
+    "arabic": "عِبَـٰدِى",
+    "gloss": "Mes serviteurs",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (45 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 236,
+    "word_id": "6429dd3c-344d-4f22-8cde-60d913d7ab7f",
+    "arabic": "وَٱدْخُلِى",
+    "gloss": "entre",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (43 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 237,
+    "word_id": "cc33c99f-3be7-4688-89ad-77178c379e11",
+    "arabic": "جَنَّتِى",
+    "gloss": "Mon Paradis",
+    "severity": "LOW",
+    "check": "RATIONALE_AUDIT",
+    "problem": "rationale très courte (39 chars)",
+    "recommendation": "Étoffer la justification éditoriale"
+  },
+  {
+    "index": 238,
+    "word_id": "9a5a38e3-485b-4444-92b3-9665d14d6e66",
+    "arabic": "يُؤْمَرُونَ",
+    "gloss": "être commandé / recevoir l'ordre",
+    "severity": "LOW",
+    "check": "MORPHOLOGY_AUDIT_MANUAL",
+    "source": "MANUAL_AUDIT",
+    "problem": "lexical_basis indiquait « Forme II passive » ; يُؤْمَرُونَ est le passif de la Forme I (أَمَرَ → يُؤْمَرُ). CORRIGÉ avant import : « Passif de la Forme I : أَمَرَ → يُؤْمَرُ ». La glose est restée inchangée.",
+    "recommendation": "Correction appliquée et vérifiée (preflight recalculé : PASS)."
+  }
+]

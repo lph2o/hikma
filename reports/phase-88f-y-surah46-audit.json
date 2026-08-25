@@ -1,0 +1,3227 @@
+{
+  "phase": "88F-Y",
+  "verdict": "PHASE_88F_R_COMPLETE",
+  "read_only": true,
+  "database_writes": 0,
+  "timestamp": "2026-08-24T12:05:44.650Z",
+  "durationSeconds": 23.54,
+  "targetSurah": {
+    "number": 46,
+    "name": "Al-Ahqaf"
+  },
+  "baseline": {
+    "totalForms": 482,
+    "coveredForms": 405,
+    "missingForms": 77,
+    "coveragePct": 0.8402,
+    "totalOccurrences": 25900,
+    "missingOccurrences": 134,
+    "readiness": "IN_PREPARATION",
+    "globalReady": 29,
+    "globalInPrep": 84,
+    "globalRef": 1
+  },
+  "classification": {
+    "A": 34,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 1,
+    "F": 42,
+    "G": 0,
+    "H": 0,
+    "I": 0
+  },
+  "missingForms": [
+    {
+      "word_id": "cae85d9a-cbb3-470a-8446-d5ab4058fa83",
+      "arabic": "أَثَـٰرَةٍۢ",
+      "lemma_id": "125b4961-e1a0-49ec-aefe-7d3fc294ab4f",
+      "lemma_arabic": "أثار",
+      "masaq_stems": [
+        "أثار"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "traces",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Dis : \"Que pensez-vous de ceux que vous invoquez en dehors d’Allah? Montrez-moi donc ce qu’ils ont créé de la terre ! Ou ont-ils dans les cieux une participation avec Dieu ? Apportez-moi un Livre antérieur à celui-ci (le Coran) ou même un vestige d’une science, si vous êtes véridiques.\""
+      ],
+      "kazimirski_samples": [
+        "Dis-leur: Que vous en semble? Montrez-moi donc ce que les dieux invoqués par vous ont créé sur la terre. Ont-ils leur part au ciel? Apportez-moi, si vous êtes véridiques, un livre révélé avant celui-ci ( le Koran ), ou seulement quelques traces de la science ( révélation divine ) qui le prouvent."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "125b4961-e1a0-49ec-aefe-7d3fc294ab4f",
+      "safe_gloss_text": "(à écrire pour « أثار »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "3ce2da86-780d-409c-938e-24c094a672f9",
+      "arabic": "دُعَآئِهِمْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "دعائ"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "their-calls",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et qui est plus égaré que celui qui invoque en dehors d’Allah, celui qui ne saura lui répondre jusqu’au Jour de la Résurrection ? Et elles [leurs divinités] sont indifférentes à leur invocation."
+      ],
+      "kazimirski_samples": [
+        "Y a-t-il un être plus égaré que celui qui invoque; à côté de Dieu, une divinité qui ne lui répondra rien jusqu’au jour de la résurrection? C’est que ces dieux ne font pas attention à leur appel."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « دعائ » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "c4909978-804e-46d5-ac51-6a731eec2994",
+      "arabic": "حُشِرَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "حشر"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "are-gathered",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV_PASS"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et quand les gens seront rassemblés [pour le Jugement] elles seront leurs ennemies et nieront leur adoration [pour elles]."
+      ],
+      "kazimirski_samples": [
+        "Quand les hommes seront rassemblés pour être jugé, ces dieux seront leurs ennemis et se montreront ingrats."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « حشر » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "8f9b9899-5815-47ab-844a-521f6be0ab7b",
+      "arabic": "شَيْـًٔا ۖ",
+      "lemma_id": "0917ff07-a4a6-4f52-a292-c9fe1cc9c502",
+      "lemma_arabic": "شيئ",
+      "masaq_stems": [
+        "شيئ"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "anything",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_ACC",
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ou bien ils disent : \"Il l’a inventé !\" Dis : \"Si je l’ai inventé, alors vous ne pourrez rien pour moi contre [la punition] d’Allah. Il sait parfaitement ce que vous propagez (en calomnies contre le Coran) : Allah est suffisant comme témoin entre moi et vous. Et c’est Lui le Pardonneur, le Très Miséricordieux.\""
+      ],
+      "kazimirski_samples": [
+        "Diront-ils: C’est lui ( Mohammed ) qui l’a inventé ( le Koran ); dis-leur: Si c’est moi qui l’ai inventé, faites que je n’obtienne rien de Dieu. Mais Dieu sait le mieux ce que vous en dites. Il me suffit de l’avoir pour témoin entre vous et moi. Il est l’Indulgent, le Miséricordieux."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "0917ff07-a4a6-4f52-a292-c9fe1cc9c502",
+      "safe_gloss_text": "(à écrire pour « شيئ »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "0803c6da-f641-43d1-ae7c-a73f28252d2e",
+      "arabic": "أَعْلَمُ",
+      "lemma_id": "94afd10c-cfd9-41c7-b3d0-51a48a6cc841",
+      "lemma_arabic": "أعلم",
+      "masaq_stems": [
+        "أعلم"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(is)-most-knowing",
+      "top_gloss_share": 0.4,
+      "competing_stems": false,
+      "pos": [
+        "ADJ_COMP"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Lorsque Ton Seigneur confia aux Anges: “Je vais établir sur la terre un vicaire (Khalîfah). Ils dirent: “Vas-Tu y désigner un qui y mettra le désordre et répandra le sang, quand nous sommes là à Te sanctifier et à Te glorifier?” - Il dit: “En vérité, Je sais ce que vous ne savez pas!”. <sup foot_note=211629>1</sup>",
+        "Il dit: \"Ô Adam! Informe-les de ces noms;.\" Puis quand celui-ci les eut informés de ces noms, Allah dit: \"Ne vous ai-Je pas dit que Je connais les mystères des cieux et de la terre, et que Je sais ce que vous divulguez et ce que vous cachez?” <sup foot_note=211631>1</sup>"
+      ],
+      "kazimirski_samples": [
+        "Lorsque Dieu dit aux anges: Je vais établir un vicaire sur la terre, les anges répondirent: Vas-tu placer sur terre un être qui y commettra des désordres et répande le sang, pendant que nous célébrons tes louanges et te glorifions et proclamons sans cesse ta sainteté? —Je sais, répondit le Seigneur, ce que vous ne savez pas.",
+        "Dieu dit à Adam: Apprends-leur les noms de tous les êtres et lorsqu’il (Adam) l’eut fait, le Seigneur dit: Ne vous ai-je pas dit que je connais le secret des cieux et de la terre, ce que vous produisez au grand jour et ce que vous cachez? "
+      ],
+      "occurrences": 55,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "94afd10c-cfd9-41c7-b3d0-51a48a6cc841",
+      "safe_gloss_text": "(à écrire pour « أعلم »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "3a90774c-0f7d-4640-905f-4e5f6e8395ec",
+      "arabic": "بِدْعًۭا",
+      "lemma_id": "08457bef-4e66-4eff-9346-d8fc46b3b60e",
+      "lemma_arabic": "بدع",
+      "masaq_stems": [
+        "بدع"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-new-(one)",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Dis : \"Je ne suis pas une innovation parmi les messagers ; et je ne sais pas ce que l’on fera de moi, ni de vous. Je ne fais que suivre ce qui m’est révélé ; et je ne suis qu’un avertisseur clair.\""
+      ],
+      "kazimirski_samples": [
+        "Dis: Je ne suis pas le seul apôtre qui ait jamais existé, et Je ne sais pas ce que Dieu fera de moi ni ce qu’il fera de vous; je ne fais que suivre ce qui m’a été révélé, je ne suis qu’un apôtre chargé d’avertir ouvertement."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "08457bef-4e66-4eff-9346-d8fc46b3b60e",
+      "safe_gloss_text": "(à écrire pour « بدع »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "189e5067-5493-4c49-9e73-dee4186b5829",
+      "arabic": "يُفْعَلُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "فعل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "will-be-done",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Dis : \"Je ne suis pas une innovation parmi les messagers ; et je ne sais pas ce que l’on fera de moi, ni de vous. Je ne fais que suivre ce qui m’est révélé ; et je ne suis qu’un avertisseur clair.\""
+      ],
+      "kazimirski_samples": [
+        "Dis: Je ne suis pas le seul apôtre qui ait jamais existé, et Je ne sais pas ce que Dieu fera de moi ni ce qu’il fera de vous; je ne fais que suivre ce qui m’a été révélé, je ne suis qu’un apôtre chargé d’avertir ouvertement."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « فعل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "3883319c-cf25-4c52-9b0e-beaf1cbf66c2",
+      "arabic": "وَٱسْتَكْبَرْتُمْ ۖ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "استكبر"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "while-you-are-arrogant",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Dis : \"Que direz-vous si [cette révélation s’avère] venir d’Allah et vous n’y croyez pas, qu’un témoin parmi les fils d’Israël en atteste la conformité [au Pentateuque] et y croit pendant que vous, vous le repoussez avec orgueil... En vérité Allah ne guide pas les gens injustes !\""
+      ],
+      "kazimirski_samples": [
+        "Dis-leur: Que vous en semble? Si ce livre vient de Dieu et que vous n’y croyiez pas, qu’un témoin, un homme choisi parmi les enfants d’Israël atteste sa conformité au livre de Moïse et y croie pendant que vous le rejetez avec orgueil; dites: Quel sort méritez-vous? Mais Dieu ne dirige pas les méchants."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « استكبر » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "1e7aeea5-872e-4d84-8ab8-004581fa40ed",
+      "arabic": "سَبَقُونَآ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "سبق"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "they-(would)-have-preceded-us",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "OBJ_PRON",
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et ceux qui ont mécru dirent à ceux qui ont cru : \"Si ceci était un bien, ils (les pauvres) ne nous y auraient pas devancés.\" Et comme ils ne seront pas laissés guider par lui ils diront : \"Ce n’est qu’un vieux mensonge !\""
+      ],
+      "kazimirski_samples": [
+        "Les infidèles disent des croyants: Si le Koran était quelque chose de bon, ce n’est pas eux qui nous auraient devancés pour l’embrasser. Et comme ils ne le prennent point pour leur guide, ils disent que c’est une imposture de vieille date."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « سبق » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "64e1af59-1542-457b-881a-0378851cf327",
+      "arabic": "يَهْتَدُوا۟",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "هتد"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "they-(are)-guided",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IV",
+        "IV3MP",
+        "IVSUFF_SUBJ:MP_MOOD:SJ"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et ceux qui ont mécru dirent à ceux qui ont cru : \"Si ceci était un bien, ils (les pauvres) ne nous y auraient pas devancés.\" Et comme ils ne seront pas laissés guider par lui ils diront : \"Ce n’est qu’un vieux mensonge !\""
+      ],
+      "kazimirski_samples": [
+        "Les infidèles disent des croyants: Si le Koran était quelque chose de bon, ce n’est pas eux qui nous auraient devancés pour l’embrasser. Et comme ils ne le prennent point pour leur guide, ils disent que c’est une imposture de vieille date."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « هتد » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "52a3c49f-592b-4061-9225-0fb623b3e86c",
+      "arabic": "قَدِيمٌۭ",
+      "lemma_id": "272b8d2a-538c-4980-b007-f5ece61f0f99",
+      "lemma_arabic": "قديم",
+      "masaq_stems": [
+        "قديم"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "ancient",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "ADJ_QUALIT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et ceux qui ont mécru dirent à ceux qui ont cru : \"Si ceci était un bien, ils (les pauvres) ne nous y auraient pas devancés.\" Et comme ils ne seront pas laissés guider par lui ils diront : \"Ce n’est qu’un vieux mensonge !\""
+      ],
+      "kazimirski_samples": [
+        "Les infidèles disent des croyants: Si le Koran était quelque chose de bon, ce n’est pas eux qui nous auraient devancés pour l’embrasser. Et comme ils ne le prennent point pour leur guide, ils disent que c’est une imposture de vieille date."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "272b8d2a-538c-4980-b007-f5ece61f0f99",
+      "safe_gloss_text": "(à écrire pour « قديم »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "0a6621f4-f2c5-44b8-940d-80aa1418d86c",
+      "arabic": "إِحْسَـٰنًا ۖ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "إحسان"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "kindness",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « إحسان » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "0a97ceab-9649-43fc-9cf7-5d9901bfaca6",
+      "arabic": "كُرْهًۭا",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "كره"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "(with)-hardship",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « كره » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "0e7de874-9cbd-4574-8d3f-2b40b934bb63",
+      "arabic": "وَوَضَعَتْهُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "وضع"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-gave-birth-to",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "OBJ_PRON",
+        "PV",
+        "SUFF_FEM_TA"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « وضع » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "7290ff1f-b150-4b96-84c2-310d134122b0",
+      "arabic": "كُرْهًۭا ۖ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "كره"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "(with)-hardship",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « كره » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "54f6f8b7-0431-4c08-b007-01dc8933ae6a",
+      "arabic": "وَحَمْلُهُۥ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "حمل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-(the)-bearing-of-him",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "GERUND",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « حمل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "fcc493dd-867b-456b-9beb-8d3eb73be130",
+      "arabic": "شَهْرًا ۚ",
+      "lemma_id": "95112493-24b8-4ec1-a762-78b3a59d5fae",
+      "lemma_arabic": "شهر",
+      "masaq_stems": [
+        "شهر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "month(s)",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "95112493-24b8-4ec1-a762-78b3a59d5fae",
+      "safe_gloss_text": "(à écrire pour « شهر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "81c109b8-1d72-4d02-b5fc-0cfa4dc05460",
+      "arabic": "وَبَلَغَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "بلغ"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-reaches",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "PV",
+        "PVSUFF_SUBJ:3MS"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « بلغ » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "1937099f-d003-45b5-87b5-3a4ad55c3cf1",
+      "arabic": "سَنَةًۭ",
+      "lemma_id": "57869ede-57cc-4693-9364-0bee13824634",
+      "lemma_arabic": "سن",
+      "masaq_stems": [
+        "سن"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "year(s)",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_ACC",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "57869ede-57cc-4693-9364-0bee13824634",
+      "safe_gloss_text": "(à écrire pour « سن »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "85bfe0e9-267f-44ba-8f50-901c9bb81775",
+      "arabic": "ذُرِّيَّتِىٓ ۖ",
+      "lemma_id": "53b60e93-b323-4903-aab7-7585c6d37233",
+      "lemma_arabic": "ذر",
+      "masaq_stems": [
+        "ذر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "my-offspring",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND_PROFESSION",
+        "NSUFF_FEM_SG",
+        "POSS_PRON",
+        "RELATIVE_YA"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et Nous avons enjoint à l’homme de la bonté envers ses père et mère: sa mère l’a péniblement porté et en a péniblement accouché ; et sa gestation et sevrage durant trente mois ; puis quand il atteint ses pleines forces et atteint quarante ans, il dit : \"Ô Seigneur ! Inspire-moi pour que je rende grâce au bienfait dont Tu m’as comblé ainsi qu’à mes père et mère, et pour que je fasse une bonne œuvre que Tu agrées. Et fais, pour moi, que ma postérité soit de moralité saine, Je me repens à Toi et je suis du nombre des Soumis.\""
+      ],
+      "kazimirski_samples": [
+        "Nous avons recommandé à l’homme de bien agir envers ses père et mère; sa mère l’a porté avec peine et l’a mis au monde avec peine, et la grossesse et l’allaitement jusqu’au sevrage durent trente mois. Il parvient enfin à la maturité, il parvient à quarante ans, et alors il adresse à Dieu cette prière: Seigneur, inspire-moi de la reconnaissance pour les bienfaits dont tu m’as comblé; fais que je pratique le bien qui te plaît; rends-moi heureux dans mes enfants. Je reviens à toi, et je suis du nombre de ceux qui se résignent à ta volonté. "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "53b60e93-b323-4903-aab7-7585c6d37233",
+      "safe_gloss_text": "(à écrire pour « ذر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "d6a5d8fd-777f-46b1-911d-f15e11085ec6",
+      "arabic": "نَتَقَبَّلُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "تقبل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "we-will-accept",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ce sont ceux-là dont Nous acceptons le meilleur de ce qu’ils œuvrent et passons sur leurs méfaits, (ils seront) parmi les gens du Paradis, selon la promesse véridique qui leur était faite."
+      ],
+      "kazimirski_samples": [
+        "Ce sont les hommes dont nous accueillerons les plus belles œuvres, en passant outre sur les mauvaises; ils compteront parmi les habitants du paradis. Les promesses qui leur ont été faites sont des promesses infaillibles."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « تقبل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "20b18ba2-07a8-4b20-81de-5794702ff182",
+      "arabic": "وَنَتَجَاوَزُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "تجاوز"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-we-will-overlook",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ce sont ceux-là dont Nous acceptons le meilleur de ce qu’ils œuvrent et passons sur leurs méfaits, (ils seront) parmi les gens du Paradis, selon la promesse véridique qui leur était faite."
+      ],
+      "kazimirski_samples": [
+        "Ce sont les hommes dont nous accueillerons les plus belles œuvres, en passant outre sur les mauvaises; ils compteront parmi les habitants du paradis. Les promesses qui leur ont été faites sont des promesses infaillibles."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « تجاوز » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "decddc29-b8bc-480f-b4cc-1efb6ccc2b31",
+      "arabic": "أَتَعِدَانِنِىٓ",
+      "lemma_id": "76720cd4-2d0d-478c-b97d-4ba5853334e3",
+      "lemma_arabic": "عد",
+      "masaq_stems": [
+        "عد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "do-you-promise-me",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "INTERROG",
+        "IV",
+        "OBJ_PRON",
+        "PROTECT_NUN",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Quant à celui qui dit à ses père et mère : \"Fi de vous deux ! Me promettez-vous qu’on me fera sortir de terre alors que des générations avant moi ont passé ?\" Et les deux, implorant le secours d’Allah, [lui dirent] : \"Malheur à toi ! Crois. Car la promesse d’Allah est véridique.\" Mais il (répond) : \"Ce ne sont que des contes d’Anciens.\""
+      ],
+      "kazimirski_samples": [
+        "Celui qui dit à ses parents: Nargue de vous! allez-vous me promettre que je renaîtrai de mon tombeau? pendant que tant de générations ont passé et disparu avant moi… Ses parents imploreront Dieu en sa faveur. Malheur à toi! lui diront-ils; crois, car les promesses de Dieu sont véritables. Mais il dira: Ce sont des fables des anciens."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "76720cd4-2d0d-478c-b97d-4ba5853334e3",
+      "safe_gloss_text": "(à écrire pour « عد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "8554cd49-007d-4aba-97d8-cea3b4683371",
+      "arabic": "أُخْرَجَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "أخرج"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "i-will-be-brought-forth",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "PVSUFF_SUBJ:3MS"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Quant à celui qui dit à ses père et mère : \"Fi de vous deux ! Me promettez-vous qu’on me fera sortir de terre alors que des générations avant moi ont passé ?\" Et les deux, implorant le secours d’Allah, [lui dirent] : \"Malheur à toi ! Crois. Car la promesse d’Allah est véridique.\" Mais il (répond) : \"Ce ne sont que des contes d’Anciens.\""
+      ],
+      "kazimirski_samples": [
+        "Celui qui dit à ses parents: Nargue de vous! allez-vous me promettre que je renaîtrai de mon tombeau? pendant que tant de générations ont passé et disparu avant moi… Ses parents imploreront Dieu en sa faveur. Malheur à toi! lui diront-ils; crois, car les promesses de Dieu sont véritables. Mais il dira: Ce sont des fables des anciens."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « أخرج » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "c901797e-8505-4664-8537-8ef133cbbaf0",
+      "arabic": "خَلَتِ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "خل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-had-already-passed-away",
+      "top_gloss_share": 0.5,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "SUFF_FEM_TA"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Quant à celui qui dit à ses père et mère : \"Fi de vous deux ! Me promettez-vous qu’on me fera sortir de terre alors que des générations avant moi ont passé ?\" Et les deux, implorant le secours d’Allah, [lui dirent] : \"Malheur à toi ! Crois. Car la promesse d’Allah est véridique.\" Mais il (répond) : \"Ce ne sont que des contes d’Anciens.\"",
+        "Et rappelle-toi le frère des 'Âd (Hūd) quand il avertit son peuple à Al-Ahqâf - alors qu’avant et après lui, des avertisseurs sont passés - [en disant] : \"N’adorez qu’Allah ! Je crains pour vous le châtiment d’un jour terrible.\""
+      ],
+      "kazimirski_samples": [
+        "Celui qui dit à ses parents: Nargue de vous! allez-vous me promettre que je renaîtrai de mon tombeau? pendant que tant de générations ont passé et disparu avant moi… Ses parents imploreront Dieu en sa faveur. Malheur à toi! lui diront-ils; crois, car les promesses de Dieu sont véritables. Mais il dira: Ce sont des fables des anciens.",
+        "Rappelle ( dans le Koran ) le frère d’Ad, qui prêcha son peuple dans l’ALAHKAF, où il y eut avant lui et après lui d’autres apôtres; il leur disait: N’adorez pas d’autres dieux que Dieu; car je crains pour vous le châtiment du grand jour."
+      ],
+      "occurrences": 2,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « خل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "a0862545-7c90-4e9d-b7e1-24fb0c6817c8",
+      "arabic": "ٱلْقُرُونُ",
+      "lemma_id": "c295ea60-a947-4125-97ae-5846b068429c",
+      "lemma_arabic": "قرون",
+      "masaq_stems": [
+        "قرون"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "the-generations",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Quant à celui qui dit à ses père et mère : \"Fi de vous deux ! Me promettez-vous qu’on me fera sortir de terre alors que des générations avant moi ont passé ?\" Et les deux, implorant le secours d’Allah, [lui dirent] : \"Malheur à toi ! Crois. Car la promesse d’Allah est véridique.\" Mais il (répond) : \"Ce ne sont que des contes d’Anciens.\""
+      ],
+      "kazimirski_samples": [
+        "Celui qui dit à ses parents: Nargue de vous! allez-vous me promettre que je renaîtrai de mon tombeau? pendant que tant de générations ont passé et disparu avant moi… Ses parents imploreront Dieu en sa faveur. Malheur à toi! lui diront-ils; crois, car les promesses de Dieu sont véritables. Mais il dira: Ce sont des fables des anciens."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "c295ea60-a947-4125-97ae-5846b068429c",
+      "safe_gloss_text": "(à écrire pour « قرون »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "cdf9af2e-f331-4d3d-a5a6-604bcdc4a675",
+      "arabic": "وَهُمَا",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "هما"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-they-both",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Quant à celui qui dit à ses père et mère : \"Fi de vous deux ! Me promettez-vous qu’on me fera sortir de terre alors que des générations avant moi ont passé ?\" Et les deux, implorant le secours d’Allah, [lui dirent] : \"Malheur à toi ! Crois. Car la promesse d’Allah est véridique.\" Mais il (répond) : \"Ce ne sont que des contes d’Anciens.\""
+      ],
+      "kazimirski_samples": [
+        "Celui qui dit à ses parents: Nargue de vous! allez-vous me promettre que je renaîtrai de mon tombeau? pendant que tant de générations ont passé et disparu avant moi… Ses parents imploreront Dieu en sa faveur. Malheur à toi! lui diront-ils; crois, car les promesses de Dieu sont véritables. Mais il dira: Ce sont des fables des anciens."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « هما » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "7e6d8196-6110-4265-8e07-6fcb114c8053",
+      "arabic": "عَمِلُوا۟ ۖ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "عمل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "they-did",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et il y a des rangs [de mérite] pour chacun, selon ce qu’ils ont fait, afin qu’Allah leur attribue la pleine récompense de leurs œuvres; et ils ne seront point lésés."
+      ],
+      "kazimirski_samples": [
+        "Il y a des degrés pour tous, degrés de leurs œuvres, afin que Dieu paye exactement les actions de tous, et qu’ils ne soient point lésés."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « عمل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "07f14d18-b725-45fa-8cec-e4235fdb4974",
+      "arabic": "وَلِيُوَفِّيَهُمْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "وفي"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-that-he-may-fully-compensate-them",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON",
+        "PREP"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et il y a des rangs [de mérite] pour chacun, selon ce qu’ils ont fait, afin qu’Allah leur attribue la pleine récompense de leurs œuvres; et ils ne seront point lésés."
+      ],
+      "kazimirski_samples": [
+        "Il y a des degrés pour tous, degrés de leurs œuvres, afin que Dieu paye exactement les actions de tous, et qu’ils ne soient point lésés."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « وفي » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "9eacc5d8-46a4-4b71-bd6a-7b3029ea373f",
+      "arabic": "يُعْرَضُ",
+      "lemma_id": "8f4bd92f-e1e0-4dcf-93e7-9b448ead94cc",
+      "lemma_arabic": "عرض",
+      "masaq_stems": [
+        "عرض"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "are-exposed",
+      "top_gloss_share": 0.5,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV_PASS"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et le jour où ceux qui mécru seront présentés au Feu (il leur sera dit) : \"vous avez dissipé vos [biens] excellents et vous en avez joui pleinement durant votre vie sur terre: on vous rétribue donc aujourd’hui du châtiment avilissant, pour l’orgueil dont vous vous enfliez injustement sur terre, et pour votre perversité.",
+        "Et le jour où seront présenté au Feu ceux qui ont mécru (on leur dira) : \"Ceci n’est-il pas la vérité ?\" Ils diront : \"Mais si, par notre Seigneur.\" Il dira : \"Eh bien, goûtez le châtiment pour votre mécréance.\""
+      ],
+      "kazimirski_samples": [
+        "Le jour où on livrera les infidèles au feu, on leur dira: Vous avez dissipé dans la vie terrestre les dons précieux qui vous furent donnés; vous avez voulu en jouir au plus pressé; aujourd’hui vous serez soldés avec le châtiment d’ignominie, car vous vous êtes injustement montrés orgueilleux sur la terre, et vous vous êtes livrés aux excès.",
+        "Le jour où les infidèles seront amenés devant le feu de l’enfer, on leur demandera: Est-ce vrai? — Oui, diront-ils, par notre Seigneur, c’est vrai. — Subissez donc; leur ira-t-on, le supplice pour prix de votre incrédulité."
+      ],
+      "occurrences": 2,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "8f4bd92f-e1e0-4dcf-93e7-9b448ead94cc",
+      "safe_gloss_text": "(à écrire pour « عرض »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "bef0419e-ac67-4ec5-bbf4-a49c4df55896",
+      "arabic": "أَذْهَبْتُمْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "أذهب"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "you-exhausted",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et le jour où ceux qui mécru seront présentés au Feu (il leur sera dit) : \"vous avez dissipé vos [biens] excellents et vous en avez joui pleinement durant votre vie sur terre: on vous rétribue donc aujourd’hui du châtiment avilissant, pour l’orgueil dont vous vous enfliez injustement sur terre, et pour votre perversité."
+      ],
+      "kazimirski_samples": [
+        "Le jour où on livrera les infidèles au feu, on leur dira: Vous avez dissipé dans la vie terrestre les dons précieux qui vous furent donnés; vous avez voulu en jouir au plus pressé; aujourd’hui vous serez soldés avec le châtiment d’ignominie, car vous vous êtes injustement montrés orgueilleux sur la terre, et vous vous êtes livrés aux excès."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « أذهب » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "6838279f-4652-4612-b01b-f24e38b9d2f4",
+      "arabic": "طَيِّبَـٰتِكُمْ",
+      "lemma_id": "888a6fbf-63e5-48f1-a501-3849deea7ce8",
+      "lemma_arabic": "طيب",
+      "masaq_stems": [
+        "طيب"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "your-good-things",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_PL",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et le jour où ceux qui mécru seront présentés au Feu (il leur sera dit) : \"vous avez dissipé vos [biens] excellents et vous en avez joui pleinement durant votre vie sur terre: on vous rétribue donc aujourd’hui du châtiment avilissant, pour l’orgueil dont vous vous enfliez injustement sur terre, et pour votre perversité."
+      ],
+      "kazimirski_samples": [
+        "Le jour où on livrera les infidèles au feu, on leur dira: Vous avez dissipé dans la vie terrestre les dons précieux qui vous furent donnés; vous avez voulu en jouir au plus pressé; aujourd’hui vous serez soldés avec le châtiment d’ignominie, car vous vous êtes injustement montrés orgueilleux sur la terre, et vous vous êtes livrés aux excès."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "888a6fbf-63e5-48f1-a501-3849deea7ce8",
+      "safe_gloss_text": "(à écrire pour « طيب »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "24886639-8021-4f3b-8c99-f8f10be163d5",
+      "arabic": "حَيَاتِكُمُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "حيا"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "your-life",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND",
+        "NSUFF_FEM_SG",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et le jour où ceux qui mécru seront présentés au Feu (il leur sera dit) : \"vous avez dissipé vos [biens] excellents et vous en avez joui pleinement durant votre vie sur terre: on vous rétribue donc aujourd’hui du châtiment avilissant, pour l’orgueil dont vous vous enfliez injustement sur terre, et pour votre perversité."
+      ],
+      "kazimirski_samples": [
+        "Le jour où on livrera les infidèles au feu, on leur dira: Vous avez dissipé dans la vie terrestre les dons précieux qui vous furent donnés; vous avez voulu en jouir au plus pressé; aujourd’hui vous serez soldés avec le châtiment d’ignominie, car vous vous êtes injustement montrés orgueilleux sur la terre, et vous vous êtes livrés aux excès."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « حيا » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "630e7763-d864-4c09-b6c6-650a4b8f4f51",
+      "arabic": "وَٱسْتَمْتَعْتُم",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "استمتع"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-you-took-your-pleasures",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et le jour où ceux qui mécru seront présentés au Feu (il leur sera dit) : \"vous avez dissipé vos [biens] excellents et vous en avez joui pleinement durant votre vie sur terre: on vous rétribue donc aujourd’hui du châtiment avilissant, pour l’orgueil dont vous vous enfliez injustement sur terre, et pour votre perversité."
+      ],
+      "kazimirski_samples": [
+        "Le jour où on livrera les infidèles au feu, on leur dira: Vous avez dissipé dans la vie terrestre les dons précieux qui vous furent donnés; vous avez voulu en jouir au plus pressé; aujourd’hui vous serez soldés avec le châtiment d’ignominie, car vous vous êtes injustement montrés orgueilleux sur la terre, et vous vous êtes livrés aux excès."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « استمتع » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "61a4765a-abb8-49a3-9551-3669d8634ed3",
+      "arabic": "تَفْسُقُونَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "فسق"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "defiantly-disobedient",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et le jour où ceux qui mécru seront présentés au Feu (il leur sera dit) : \"vous avez dissipé vos [biens] excellents et vous en avez joui pleinement durant votre vie sur terre: on vous rétribue donc aujourd’hui du châtiment avilissant, pour l’orgueil dont vous vous enfliez injustement sur terre, et pour votre perversité."
+      ],
+      "kazimirski_samples": [
+        "Le jour où on livrera les infidèles au feu, on leur dira: Vous avez dissipé dans la vie terrestre les dons précieux qui vous furent donnés; vous avez voulu en jouir au plus pressé; aujourd’hui vous serez soldés avec le châtiment d’ignominie, car vous vous êtes injustement montrés orgueilleux sur la terre, et vous vous êtes livrés aux excès."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « فسق » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "631fe4d2-3ea5-4e1d-8ae8-3dc253584915",
+      "arabic": "۞ وَٱذْكُرْ",
+      "lemma_id": "cfee91db-2bcb-4c63-b9fd-c795565b547a",
+      "lemma_arabic": "ذكر",
+      "masaq_stems": [
+        "ذكر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-mention",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "CV",
+        "CV_PREF"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et rappelle-toi le frère des 'Âd (Hūd) quand il avertit son peuple à Al-Ahqâf - alors qu’avant et après lui, des avertisseurs sont passés - [en disant] : \"N’adorez qu’Allah ! Je crains pour vous le châtiment d’un jour terrible.\""
+      ],
+      "kazimirski_samples": [
+        "Rappelle ( dans le Koran ) le frère d’Ad, qui prêcha son peuple dans l’ALAHKAF, où il y eut avant lui et après lui d’autres apôtres; il leur disait: N’adorez pas d’autres dieux que Dieu; car je crains pour vous le châtiment du grand jour."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "cfee91db-2bcb-4c63-b9fd-c795565b547a",
+      "safe_gloss_text": "(à écrire pour « ذكر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "8ee3c8d5-c81f-4219-a392-eaef7267598d",
+      "arabic": "أَخَا",
+      "lemma_id": "89a88190-0770-494c-8ec7-4076b4c55e50",
+      "lemma_arabic": "أخا",
+      "masaq_stems": [
+        "أخا"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(the)-brother",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_FIVE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et rappelle-toi le frère des 'Âd (Hūd) quand il avertit son peuple à Al-Ahqâf - alors qu’avant et après lui, des avertisseurs sont passés - [en disant] : \"N’adorez qu’Allah ! Je crains pour vous le châtiment d’un jour terrible.\""
+      ],
+      "kazimirski_samples": [
+        "Rappelle ( dans le Koran ) le frère d’Ad, qui prêcha son peuple dans l’ALAHKAF, où il y eut avant lui et après lui d’autres apôtres; il leur disait: N’adorez pas d’autres dieux que Dieu; car je crains pour vous le châtiment du grand jour."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "89a88190-0770-494c-8ec7-4076b4c55e50",
+      "safe_gloss_text": "(à écrire pour « أخا »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "deb96fb8-9384-4052-a0d1-204828266ac1",
+      "arabic": "أَنذَرَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "أنذر"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "he-warned",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et rappelle-toi le frère des 'Âd (Hūd) quand il avertit son peuple à Al-Ahqâf - alors qu’avant et après lui, des avertisseurs sont passés - [en disant] : \"N’adorez qu’Allah ! Je crains pour vous le châtiment d’un jour terrible.\""
+      ],
+      "kazimirski_samples": [
+        "Rappelle ( dans le Koran ) le frère d’Ad, qui prêcha son peuple dans l’ALAHKAF, où il y eut avant lui et après lui d’autres apôtres; il leur disait: N’adorez pas d’autres dieux que Dieu; car je crains pour vous le châtiment du grand jour."
+      ],
+      "occurrences": 1,
+      "classification": "E_SAFE_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": "avertir / mettre en garde",
+      "review_reason": null,
+      "confidence": 0.75
+    },
+    {
+      "word_id": "b8bebd2c-22ca-427a-be32-05ea45fb3ef0",
+      "arabic": "بِٱلْأَحْقَافِ",
+      "lemma_id": "9fc6512b-4efe-4757-b3a4-b14e57ec28b5",
+      "lemma_arabic": "أحقاف",
+      "masaq_stems": [
+        "أحقاف"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "in-the",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_CONCRETE",
+        "PREP"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et rappelle-toi le frère des 'Âd (Hūd) quand il avertit son peuple à Al-Ahqâf - alors qu’avant et après lui, des avertisseurs sont passés - [en disant] : \"N’adorez qu’Allah ! Je crains pour vous le châtiment d’un jour terrible.\""
+      ],
+      "kazimirski_samples": [
+        "Rappelle ( dans le Koran ) le frère d’Ad, qui prêcha son peuple dans l’ALAHKAF, où il y eut avant lui et après lui d’autres apôtres; il leur disait: N’adorez pas d’autres dieux que Dieu; car je crains pour vous le châtiment du grand jour."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "9fc6512b-4efe-4757-b3a4-b14e57ec28b5",
+      "safe_gloss_text": "(à écrire pour « أحقاف »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "41ed28dc-4ccc-4182-93cb-d6abb90a9710",
+      "arabic": "خَلْفِهِۦٓ",
+      "lemma_id": "64f9e40f-05a0-4487-951e-0dd6c66f5c46",
+      "lemma_arabic": "خلف",
+      "masaq_stems": [
+        "خلف"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-after-him",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_DEF_GEN",
+        "NOUN_ABSTRACT",
+        "POSS_PRON_3MS"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et rappelle-toi le frère des 'Âd (Hūd) quand il avertit son peuple à Al-Ahqâf - alors qu’avant et après lui, des avertisseurs sont passés - [en disant] : \"N’adorez qu’Allah ! Je crains pour vous le châtiment d’un jour terrible.\""
+      ],
+      "kazimirski_samples": [
+        "Rappelle ( dans le Koran ) le frère d’Ad, qui prêcha son peuple dans l’ALAHKAF, où il y eut avant lui et après lui d’autres apôtres; il leur disait: N’adorez pas d’autres dieux que Dieu; car je crains pour vous le châtiment du grand jour."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "64f9e40f-05a0-4487-951e-0dd6c66f5c46",
+      "safe_gloss_text": "(à écrire pour « خلف »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "b8c99dd0-e343-4e41-ba41-4307e76c8e59",
+      "arabic": "لِتَأْفِكَنَا",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "أفك"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "to-turn-us-away",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON",
+        "PREP"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ils dirent : \"Es-tu venu à nous détourner de nos divinités ? Eh bien, apporte-nous ce que tu nous promets si tu es du nombre des véridiques.\""
+      ],
+      "kazimirski_samples": [
+        "Viens-tu, lui dirent-ils, pour nous éloigner de nos divinités? Si tu es véridique, fais venir ces malheurs dont tu nous menaces."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « أفك » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "be8c01d6-bbb8-4cd2-8e26-311604e78725",
+      "arabic": "وَأُبَلِّغُكُم",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "بلغ"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-i-convey-to-you",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Il dit : \"La science n’est qu’auprès d’Allah. Je vous transmets cependant le message avec lequel j’ai été envoyé. Mais je vois que vous êtes des gens ignorants.\""
+      ],
+      "kazimirski_samples": [
+        "Dieu seul en a la connaissance, répondit-il; je ne fais que vous exposer ma mission; mais je vois que vous êtes un peuple plongé dans l’ignorance."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « بلغ » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "6fa28f8e-29e8-48eb-8ce1-4d224768635b",
+      "arabic": "عَارِضًۭا",
+      "lemma_id": "096ff8f6-ce64-4da3-beb8-973b1c450327",
+      "lemma_arabic": "عارض",
+      "masaq_stems": [
+        "عارض"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(as)-a-cloud",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_ACC",
+        "NOUN_ACTIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Puis, voyant un nuage se dirigeant vers leurs vallées, ils dirent : \"Voici un nuage qui nous apporte de la pluie.\" Au contraire ! c’est cela même que vous cherchiez à hâter : C’est un vent qui contient un châtiment douloureux,"
+      ],
+      "kazimirski_samples": [
+        "Et quand ils virent un nuage qui s’avançait vers leurs, vallées, ils se disaient: Ce nuage nous donnera de la pluie. — Non, c’est, ce que vous vouliez hâter: c’est le vent porteur d’un châtiment cruel."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "096ff8f6-ce64-4da3-beb8-973b1c450327",
+      "safe_gloss_text": "(à écrire pour « عارض »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "258a8cf6-4f17-47d6-89c0-388b2511e934",
+      "arabic": "مُّسْتَقْبِلَ",
+      "lemma_id": "8c2ccf22-65d1-42b2-b87a-8dd39a8613c5",
+      "lemma_arabic": "مستقبل",
+      "masaq_stems": [
+        "مستقبل"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "approaching",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Puis, voyant un nuage se dirigeant vers leurs vallées, ils dirent : \"Voici un nuage qui nous apporte de la pluie.\" Au contraire ! c’est cela même que vous cherchiez à hâter : C’est un vent qui contient un châtiment douloureux,"
+      ],
+      "kazimirski_samples": [
+        "Et quand ils virent un nuage qui s’avançait vers leurs, vallées, ils se disaient: Ce nuage nous donnera de la pluie. — Non, c’est, ce que vous vouliez hâter: c’est le vent porteur d’un châtiment cruel."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "8c2ccf22-65d1-42b2-b87a-8dd39a8613c5",
+      "safe_gloss_text": "(à écrire pour « مستقبل »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "d356c859-932e-4155-897a-4783423ac251",
+      "arabic": "أَوْدِيَتِهِمْ",
+      "lemma_id": "2c2a3d0c-499e-4753-b33e-9cb278d3ebbd",
+      "lemma_arabic": "أودي",
+      "masaq_stems": [
+        "أودي"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "their-valleys",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE",
+        "NSUFF_FEM_SG",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Puis, voyant un nuage se dirigeant vers leurs vallées, ils dirent : \"Voici un nuage qui nous apporte de la pluie.\" Au contraire ! c’est cela même que vous cherchiez à hâter : C’est un vent qui contient un châtiment douloureux,"
+      ],
+      "kazimirski_samples": [
+        "Et quand ils virent un nuage qui s’avançait vers leurs, vallées, ils se disaient: Ce nuage nous donnera de la pluie. — Non, c’est, ce que vous vouliez hâter: c’est le vent porteur d’un châtiment cruel."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "2c2a3d0c-499e-4753-b33e-9cb278d3ebbd",
+      "safe_gloss_text": "(à écrire pour « أودي »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "0902f90f-b7da-4ed0-b335-386449a9279c",
+      "arabic": "عَارِضٌۭ",
+      "lemma_id": "096ff8f6-ce64-4da3-beb8-973b1c450327",
+      "lemma_arabic": "عارض",
+      "masaq_stems": [
+        "عارض"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(is)-a-cloud",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Puis, voyant un nuage se dirigeant vers leurs vallées, ils dirent : \"Voici un nuage qui nous apporte de la pluie.\" Au contraire ! c’est cela même que vous cherchiez à hâter : C’est un vent qui contient un châtiment douloureux,"
+      ],
+      "kazimirski_samples": [
+        "Et quand ils virent un nuage qui s’avançait vers leurs, vallées, ils se disaient: Ce nuage nous donnera de la pluie. — Non, c’est, ce que vous vouliez hâter: c’est le vent porteur d’un châtiment cruel."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "096ff8f6-ce64-4da3-beb8-973b1c450327",
+      "safe_gloss_text": "(à écrire pour « عارض »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "3fc6ef03-4ee9-406c-ae20-897e578bae80",
+      "arabic": "مُّمْطِرُنَا ۚ",
+      "lemma_id": "15c9c3b3-1593-4853-a474-6bc55ac16993",
+      "lemma_arabic": "ممطر",
+      "masaq_stems": [
+        "ممطر"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "bringing-us-rain",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Puis, voyant un nuage se dirigeant vers leurs vallées, ils dirent : \"Voici un nuage qui nous apporte de la pluie.\" Au contraire ! c’est cela même que vous cherchiez à hâter : C’est un vent qui contient un châtiment douloureux,"
+      ],
+      "kazimirski_samples": [
+        "Et quand ils virent un nuage qui s’avançait vers leurs, vallées, ils se disaient: Ce nuage nous donnera de la pluie. — Non, c’est, ce que vous vouliez hâter: c’est le vent porteur d’un châtiment cruel."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "15c9c3b3-1593-4853-a474-6bc55ac16993",
+      "safe_gloss_text": "(à écrire pour « ممطر »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "d42cbe97-306f-43b6-90f5-6a65c333593a",
+      "arabic": "ٱسْتَعْجَلْتُم",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "استعجل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "you-were-asking-it-to-be-hastened",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Puis, voyant un nuage se dirigeant vers leurs vallées, ils dirent : \"Voici un nuage qui nous apporte de la pluie.\" Au contraire ! c’est cela même que vous cherchiez à hâter : C’est un vent qui contient un châtiment douloureux,"
+      ],
+      "kazimirski_samples": [
+        "Et quand ils virent un nuage qui s’avançait vers leurs, vallées, ils se disaient: Ce nuage nous donnera de la pluie. — Non, c’est, ce que vous vouliez hâter: c’est le vent porteur d’un châtiment cruel."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « استعجل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "9407d269-f2ec-4338-856e-58f8a2641927",
+      "arabic": "رِيحٌۭ",
+      "lemma_id": "f452b43f-3c48-488e-9403-be8bfaa74829",
+      "lemma_arabic": "ريح",
+      "masaq_stems": [
+        "ريح"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-wind",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Puis, voyant un nuage se dirigeant vers leurs vallées, ils dirent : \"Voici un nuage qui nous apporte de la pluie.\" Au contraire ! c’est cela même que vous cherchiez à hâter : C’est un vent qui contient un châtiment douloureux,"
+      ],
+      "kazimirski_samples": [
+        "Et quand ils virent un nuage qui s’avançait vers leurs, vallées, ils se disaient: Ce nuage nous donnera de la pluie. — Non, c’est, ce que vous vouliez hâter: c’est le vent porteur d’un châtiment cruel."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "f452b43f-3c48-488e-9403-be8bfaa74829",
+      "safe_gloss_text": "(à écrire pour « ريح »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "4e9952b4-2a80-49be-9d45-f89d225b33e2",
+      "arabic": "تُدَمِّرُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "دمر"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "destroying",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "détruisant tout, par le commandement de son Seigneur.\" Puis, le lendemain on ne voyait plus que leurs demeures. Ainsi rétribuons-Nous les gens criminels."
+      ],
+      "kazimirski_samples": [
+        "Il va vous exterminer par l’ordre du Seigneur. Le lendemain, on ne voyait plus que leurs habitations. C’est ainsi que nous rétribuons les coupables."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « دمر » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "76e71a81-44b8-4167-9c2c-5ed2815b4565",
+      "arabic": "يُرَىٰٓ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "ري"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "is-seen",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "détruisant tout, par le commandement de son Seigneur.\" Puis, le lendemain on ne voyait plus que leurs demeures. Ainsi rétribuons-Nous les gens criminels."
+      ],
+      "kazimirski_samples": [
+        "Il va vous exterminer par l’ordre du Seigneur. Le lendemain, on ne voyait plus que leurs habitations. C’est ainsi que nous rétribuons les coupables."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « ري » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "16f2aa46-7b5d-441a-80fb-db27fc53b8ea",
+      "arabic": "مَسَـٰكِنُهُمْ ۚ",
+      "lemma_id": "678f4fe9-0457-47c0-9f60-ab3421127b97",
+      "lemma_arabic": "مساكن",
+      "masaq_stems": [
+        "مساكن"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "their-dwellings",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_TIME_PLACE",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "détruisant tout, par le commandement de son Seigneur.\" Puis, le lendemain on ne voyait plus que leurs demeures. Ainsi rétribuons-Nous les gens criminels."
+      ],
+      "kazimirski_samples": [
+        "Il va vous exterminer par l’ordre du Seigneur. Le lendemain, on ne voyait plus que leurs habitations. C’est ainsi que nous rétribuons les coupables."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "678f4fe9-0457-47c0-9f60-ab3421127b97",
+      "safe_gloss_text": "(à écrire pour « مساكن »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "e9b7c1bc-2dfb-4bc8-a564-1327076ec44d",
+      "arabic": "مَكَّنَّـٰهُمْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "مكن"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "we-had-established-them",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "OBJ_PRON",
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "En effet, Nous les avions consolidés dans des positions que Nous ne vous avons pas données. Et Nous leur avions assigné une ouïe, des yeux et des cœurs, mais ni leur ouïe, ni leurs yeux, ni leurs cœurs ne leur ont profité en quoi que ce soit, parce qu’ils niaient les signes d’Allah. Et ce dont ils se moquaient les cerna."
+      ],
+      "kazimirski_samples": [
+        "Nous les avions placés dans une condition pareille à la vôtre, ô Mecquois! nous leur avions donné l’ouïe, la vue, et des cœurs faits pour sentir; mais ni l’ouïe, ni la vue, ni leurs cœurs, ne leur servirent de rien, car ils niaient les signes de Dieu; le châtiment dont ils se riaient les enveloppa à la fin."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « مكن » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "df92c435-3799-41a7-a236-38395ba096c4",
+      "arabic": "مَّكَّنَّـٰكُمْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "مكن"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "we-have-established-you",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "OBJ_PRON",
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "En effet, Nous les avions consolidés dans des positions que Nous ne vous avons pas données. Et Nous leur avions assigné une ouïe, des yeux et des cœurs, mais ni leur ouïe, ni leurs yeux, ni leurs cœurs ne leur ont profité en quoi que ce soit, parce qu’ils niaient les signes d’Allah. Et ce dont ils se moquaient les cerna."
+      ],
+      "kazimirski_samples": [
+        "Nous les avions placés dans une condition pareille à la vôtre, ô Mecquois! nous leur avions donné l’ouïe, la vue, et des cœurs faits pour sentir; mais ni l’ouïe, ni la vue, ni leurs cœurs, ne leur servirent de rien, car ils niaient les signes de Dieu; le châtiment dont ils se riaient les enveloppa à la fin."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « مكن » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "3b8a5f0e-9c23-4ec2-9f54-736996112948",
+      "arabic": "سَمْعًۭا",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "سمع"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "hearing",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "En effet, Nous les avions consolidés dans des positions que Nous ne vous avons pas données. Et Nous leur avions assigné une ouïe, des yeux et des cœurs, mais ni leur ouïe, ni leurs yeux, ni leurs cœurs ne leur ont profité en quoi que ce soit, parce qu’ils niaient les signes d’Allah. Et ce dont ils se moquaient les cerna."
+      ],
+      "kazimirski_samples": [
+        "Nous les avions placés dans une condition pareille à la vôtre, ô Mecquois! nous leur avions donné l’ouïe, la vue, et des cœurs faits pour sentir; mais ni l’ouïe, ni la vue, ni leurs cœurs, ne leur servirent de rien, car ils niaient les signes de Dieu; le châtiment dont ils se riaient les enveloppa à la fin."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « سمع » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "80c24d9c-1521-41dc-8919-c2d465ea44e0",
+      "arabic": "وَأَفْـِٔدَةًۭ",
+      "lemma_id": "ab31770a-ccc7-414c-8d17-ef07d027e27b",
+      "lemma_arabic": "أفئد",
+      "masaq_stems": [
+        "أفئد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-hearts",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "NOUN_CONCRETE",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "En effet, Nous les avions consolidés dans des positions que Nous ne vous avons pas données. Et Nous leur avions assigné une ouïe, des yeux et des cœurs, mais ni leur ouïe, ni leurs yeux, ni leurs cœurs ne leur ont profité en quoi que ce soit, parce qu’ils niaient les signes d’Allah. Et ce dont ils se moquaient les cerna."
+      ],
+      "kazimirski_samples": [
+        "Nous les avions placés dans une condition pareille à la vôtre, ô Mecquois! nous leur avions donné l’ouïe, la vue, et des cœurs faits pour sentir; mais ni l’ouïe, ni la vue, ni leurs cœurs, ne leur servirent de rien, car ils niaient les signes de Dieu; le châtiment dont ils se riaient les enveloppa à la fin."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "ab31770a-ccc7-414c-8d17-ef07d027e27b",
+      "safe_gloss_text": "(à écrire pour « أفئد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "4ec7d35a-bd95-42a2-9048-e54cf6e006be",
+      "arabic": "أَفْـِٔدَتُهُم",
+      "lemma_id": "ab31770a-ccc7-414c-8d17-ef07d027e27b",
+      "lemma_arabic": "أفئد",
+      "masaq_stems": [
+        "أفئد"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "their-hearts",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE",
+        "NSUFF_FEM_SG",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "En effet, Nous les avions consolidés dans des positions que Nous ne vous avons pas données. Et Nous leur avions assigné une ouïe, des yeux et des cœurs, mais ni leur ouïe, ni leurs yeux, ni leurs cœurs ne leur ont profité en quoi que ce soit, parce qu’ils niaient les signes d’Allah. Et ce dont ils se moquaient les cerna."
+      ],
+      "kazimirski_samples": [
+        "Nous les avions placés dans une condition pareille à la vôtre, ô Mecquois! nous leur avions donné l’ouïe, la vue, et des cœurs faits pour sentir; mais ni l’ouïe, ni la vue, ni leurs cœurs, ne leur servirent de rien, car ils niaient les signes de Dieu; le châtiment dont ils se riaient les enveloppa à la fin."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "ab31770a-ccc7-414c-8d17-ef07d027e27b",
+      "safe_gloss_text": "(à écrire pour « أفئد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "b232fa0e-3fd2-4975-933c-c5e4af240c31",
+      "arabic": "قُرْبَانًا",
+      "lemma_id": "339a4344-6879-4351-8a35-c319e8cb19c9",
+      "lemma_arabic": "قربان",
+      "masaq_stems": [
+        "قربان"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "gods-as-a-way-of-approach",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_INDEF_(ACC_GEN)",
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Pourquoi donc ne les secourent pas, ceux qu’ils avaient pris, en dehors d’Allah, comme divinités pour [soi-disant] les rapprocher de Lui ? Ceux-ci, au contraire, les abandonnèrent; telle est leur imposture et voilà ce qu’ils inventaient comme mensonges."
+      ],
+      "kazimirski_samples": [
+        "Et pourquoi ceux qu’ils s’étaient choisis à côté de Dieu pour être leurs divinités et l’objet de leur culte, ne les ont-ils pas secourus? Loin de là, ils ont disparu de leurs yeux. Voilà leurs impostures, voilà ce qu’ils ( les infidèles ) inventent."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "339a4344-6879-4351-8a35-c319e8cb19c9",
+      "safe_gloss_text": "(à écrire pour « قربان »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "653e8980-f115-4b22-9563-46caccd81352",
+      "arabic": "ءَالِهَةًۢ ۖ",
+      "lemma_id": "0655cc86-b3ac-4ce0-ac83-ea6144944666",
+      "lemma_arabic": "آله",
+      "masaq_stems": [
+        "آله"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "gods-as-a-way-of-approach",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE",
+        "NSUFF_FEM_SG"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Pourquoi donc ne les secourent pas, ceux qu’ils avaient pris, en dehors d’Allah, comme divinités pour [soi-disant] les rapprocher de Lui ? Ceux-ci, au contraire, les abandonnèrent; telle est leur imposture et voilà ce qu’ils inventaient comme mensonges."
+      ],
+      "kazimirski_samples": [
+        "Et pourquoi ceux qu’ils s’étaient choisis à côté de Dieu pour être leurs divinités et l’objet de leur culte, ne les ont-ils pas secourus? Loin de là, ils ont disparu de leurs yeux. Voilà leurs impostures, voilà ce qu’ils ( les infidèles ) inventent."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "0655cc86-b3ac-4ce0-ac83-ea6144944666",
+      "safe_gloss_text": "(à écrire pour « آله »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "ed9a10fb-9e14-48f3-b2d1-ad5173cc0c01",
+      "arabic": "إِفْكُهُمْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "إفك"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "(was)-their-falsehood",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Pourquoi donc ne les secourent pas, ceux qu’ils avaient pris, en dehors d’Allah, comme divinités pour [soi-disant] les rapprocher de Lui ? Ceux-ci, au contraire, les abandonnèrent; telle est leur imposture et voilà ce qu’ils inventaient comme mensonges."
+      ],
+      "kazimirski_samples": [
+        "Et pourquoi ceux qu’ils s’étaient choisis à côté de Dieu pour être leurs divinités et l’objet de leur culte, ne les ont-ils pas secourus? Loin de là, ils ont disparu de leurs yeux. Voilà leurs impostures, voilà ce qu’ils ( les infidèles ) inventent."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « إفك » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "e2cd95a9-960a-4c64-986b-944e78b41515",
+      "arabic": "صَرَفْنَآ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "صرف"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "we-directed",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "(Rappelle-toi) lorsque Nous dirigeâmes vers toi une troupe de djinns pour qu’ils écoutent le Coran. Quand ils assistèrent [à sa lecture] ils dirent : \"Ecoutez attentivement\"... Puis, quand ce fut terminé, ils retournèrent à leur peuple en avertisseurs . <sup foot_note=212434>1</sup>"
+      ],
+      "kazimirski_samples": [
+        "Un jour nous avons amené une troupe de génies pour leur faire écouter le Koran; ils se présentèrent, et se dirent les uns aux autres: Écoutez; et quand la lecture fut terminée, ils retournèrent apôtres au milieu de leur peuple."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « صرف » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "d63c2d10-c45b-4789-bc6c-9d17c1811134",
+      "arabic": "حَضَرُوهُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "حضر"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "they-attended-it",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "OBJ_PRON",
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "(Rappelle-toi) lorsque Nous dirigeâmes vers toi une troupe de djinns pour qu’ils écoutent le Coran. Quand ils assistèrent [à sa lecture] ils dirent : \"Ecoutez attentivement\"... Puis, quand ce fut terminé, ils retournèrent à leur peuple en avertisseurs . <sup foot_note=212434>1</sup>"
+      ],
+      "kazimirski_samples": [
+        "Un jour nous avons amené une troupe de génies pour leur faire écouter le Koran; ils se présentèrent, et se dirent les uns aux autres: Écoutez; et quand la lecture fut terminée, ils retournèrent apôtres au milieu de leur peuple."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « حضر » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "1e7312a5-644a-4a84-ae2e-897f6b14026d",
+      "arabic": "أَنصِتُوا۟ ۖ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "أنصت"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "listen-quietly",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "(Rappelle-toi) lorsque Nous dirigeâmes vers toi une troupe de djinns pour qu’ils écoutent le Coran. Quand ils assistèrent [à sa lecture] ils dirent : \"Ecoutez attentivement\"... Puis, quand ce fut terminé, ils retournèrent à leur peuple en avertisseurs . <sup foot_note=212434>1</sup>"
+      ],
+      "kazimirski_samples": [
+        "Un jour nous avons amené une troupe de génies pour leur faire écouter le Koran; ils se présentèrent, et se dirent les uns aux autres: Écoutez; et quand la lecture fut terminée, ils retournèrent apôtres au milieu de leur peuple."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « أنصت » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "a98f968c-4a98-4f5b-a21b-3b6058ab3acb",
+      "arabic": "طَرِيقٍۢ",
+      "lemma_id": "a65d5fa0-bf1b-41e0-8e93-a510537390c1",
+      "lemma_arabic": "طريق",
+      "masaq_stems": [
+        "طريق"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-path",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_DEF_GEN",
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ils dirent : \"Ô notre peuple ! Nous venons d’entendre un Livre qui a été descendu après Moïse, confirmant ce qui l’a précédé. Il guide vers la vérité et vers un chemin droit."
+      ],
+      "kazimirski_samples": [
+        "O notre peuple! dirent-ils, nous avons entendu un livre descendu du ciel depuis Moïse, et qui confirme les livres antérieurs; il conduit à la vérité et dans le sentier droit."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "a65d5fa0-bf1b-41e0-8e93-a510537390c1",
+      "safe_gloss_text": "(à écrire pour « طريق »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "c33ebd1c-9e35-405e-a1de-8c72089b5c99",
+      "arabic": "أَجِيبُوا۟",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "أجيب"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "respond",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ô notre peuple ! Répondez au prédicateur d’Allah et croyez en lui. Il [Allah] vous pardonnera une partie de vos péchés et vous protégera contre un châtiment douloureux."
+      ],
+      "kazimirski_samples": [
+        "O notre peuple! écoutez le prédicateur de Dieu, et croyez en lui; il effacera vos péchés et vous sauvera d’un supplice cruel."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « أجيب » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "cb3e209e-ffc8-49fd-afde-26870c29b468",
+      "arabic": "دَاعِىَ",
+      "lemma_id": "1ae7bf3f-2a00-47e5-9470-8ac7e2c35648",
+      "lemma_arabic": "داعي",
+      "masaq_stems": [
+        "داعي"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(to-the)-caller",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ABSTRACT"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ô notre peuple ! Répondez au prédicateur d’Allah et croyez en lui. Il [Allah] vous pardonnera une partie de vos péchés et vous protégera contre un châtiment douloureux.",
+        "Et quiconque ne répond pas au prédicateur d’Allah ne saura échapper au pouvoir [d’Allah] sur terre. Et il n’aura pas de protecteurs en dehors de Lui. Ceux- là sont dans un égarement évident."
+      ],
+      "kazimirski_samples": [
+        "O notre peuple! écoutez le prédicateur de Dieu, et croyez en lui; il effacera vos péchés et vous sauvera d’un supplice cruel.",
+        "Celui qui ne répondra pas à l’appel du prédicateur de Dieu, le prédicateur de Dieu ne prévaudra pas sur la terre, et ne trouvera pas d’autre protecteur que Dieu. De tels hommes sont dans un égarement évident."
+      ],
+      "occurrences": 2,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "1ae7bf3f-2a00-47e5-9470-8ac7e2c35648",
+      "safe_gloss_text": "(à écrire pour « داعي »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "290ff2a7-9efe-4edf-a041-05a6f13f0526",
+      "arabic": "وَيُجِرْكُم",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "جر"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-will-protect-you",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ô notre peuple ! Répondez au prédicateur d’Allah et croyez en lui. Il [Allah] vous pardonnera une partie de vos péchés et vous protégera contre un châtiment douloureux."
+      ],
+      "kazimirski_samples": [
+        "O notre peuple! écoutez le prédicateur de Dieu, et croyez en lui; il effacera vos péchés et vous sauvera d’un supplice cruel."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « جر » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "6be4cdee-5feb-4864-8cdf-e198c233151b",
+      "arabic": "يُجِبْ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "جب"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "respond",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et quiconque ne répond pas au prédicateur d’Allah ne saura échapper au pouvoir [d’Allah] sur terre. Et il n’aura pas de protecteurs en dehors de Lui. Ceux- là sont dans un égarement évident."
+      ],
+      "kazimirski_samples": [
+        "Celui qui ne répondra pas à l’appel du prédicateur de Dieu, le prédicateur de Dieu ne prévaudra pas sur la terre, et ne trouvera pas d’autre protecteur que Dieu. De tels hommes sont dans un égarement évident."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « جب » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "70a51013-21a8-4c1a-81da-ef7d4d647923",
+      "arabic": "بِمُعْجِزٍۢ",
+      "lemma_id": "7e605db0-b799-4b6b-9575-9e3f8174957f",
+      "lemma_arabic": "معجز",
+      "masaq_stems": [
+        "معجز"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "he-can-escape",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART",
+        "PREP"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et quiconque ne répond pas au prédicateur d’Allah ne saura échapper au pouvoir [d’Allah] sur terre. Et il n’aura pas de protecteurs en dehors de Lui. Ceux- là sont dans un égarement évident."
+      ],
+      "kazimirski_samples": [
+        "Celui qui ne répondra pas à l’appel du prédicateur de Dieu, le prédicateur de Dieu ne prévaudra pas sur la terre, et ne trouvera pas d’autre protecteur que Dieu. De tels hommes sont dans un égarement évident."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "7e605db0-b799-4b6b-9575-9e3f8174957f",
+      "safe_gloss_text": "(à écrire pour « معجز »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "bb735f00-69ac-4df4-a0bb-1cfaf197b6ec",
+      "arabic": "أَوْلِيَآءُ ۚ",
+      "lemma_id": "0b9d50dd-ef9a-4003-8d60-be09c76716e2",
+      "lemma_arabic": "أولياء",
+      "masaq_stems": [
+        "أولياء"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "protectors",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et quiconque ne répond pas au prédicateur d’Allah ne saura échapper au pouvoir [d’Allah] sur terre. Et il n’aura pas de protecteurs en dehors de Lui. Ceux- là sont dans un égarement évident."
+      ],
+      "kazimirski_samples": [
+        "Celui qui ne répondra pas à l’appel du prédicateur de Dieu, le prédicateur de Dieu ne prévaudra pas sur la terre, et ne trouvera pas d’autre protecteur que Dieu. De tels hommes sont dans un égarement évident."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "0b9d50dd-ef9a-4003-8d60-be09c76716e2",
+      "safe_gloss_text": "(à écrire pour « أولياء »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "4aa44a07-ed6b-48d2-85fe-aef16344d165",
+      "arabic": "يَعْىَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "عي"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "tired",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IV",
+        "IV3MS"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ne voient-ils pas qu’Allah qui a créé les cieux et la terre, et qui n’a pas été fatigué par leur création, est capable en vérité de redonner la vie aux morts? Mais si. Il est certes Omnipotent."
+      ],
+      "kazimirski_samples": [
+        "Ne voient-ils pas que c’est Dieu qui a créé les cieux et la terre? Il n’a point été fatigué de leur création, et il peut ressusciter les morts; oui, il peut tout."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « عي » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "670933f7-ef24-48b5-87fb-156d6f086d99",
+      "arabic": "ٱلْمَوْتَىٰ ۚ",
+      "lemma_id": "11b1ec78-e8c8-4198-9349-2380bd32c73c",
+      "lemma_arabic": "موتى",
+      "masaq_stems": [
+        "موتى"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(to)-the-dead",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "ADJ_QUALIT",
+        "DET"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ne voient-ils pas qu’Allah qui a créé les cieux et la terre, et qui n’a pas été fatigué par leur création, est capable en vérité de redonner la vie aux morts? Mais si. Il est certes Omnipotent."
+      ],
+      "kazimirski_samples": [
+        "Ne voient-ils pas que c’est Dieu qui a créé les cieux et la terre? Il n’a point été fatigué de leur création, et il peut ressusciter les morts; oui, il peut tout."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "11b1ec78-e8c8-4198-9349-2380bd32c73c",
+      "safe_gloss_text": "(à écrire pour « موتى »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "ec59eef2-8c4a-43c5-b730-dba5ac3bdd5e",
+      "arabic": "ٱلْعَزْمِ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "عزم"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "those-of-determination",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Endure (Mohammed) donc, comme ont enduré les messagers doués de fermeté ; et ne te montre pas trop pressé de les voir subir [leur châtiment]. Le jour où ils verront ce qui leurs est promis, il leur semblera qu’ils n’étaient restés [sur terre] qu’une heure d’un jour. Voilà une communication. Qui sera donc anéanti sinon les gens pervers ?"
+      ],
+      "kazimirski_samples": [
+        "Et toi, Mohammed, prends patience, comme prenaient patience les hommes de résolution parmi les envoyés de Dieu; ne cherche point à hâter leur châtiment. Un jour, lorsqu’ils apercevront l’accomplissement des menaces, Au moment où ils seront appelés à voir ce qui leur a été promis; il leur semblera qu’ils n’ont demeuré qu’une heure de la journée dans les tombeaux. Telle est l’exhortation. Et qui donc sera anéanti si ce n’est les méchants? "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « عزم » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "c7007821-97d6-4e73-bba0-ab959c572894",
+      "arabic": "تَسْتَعْجِل",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "ستعجل"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "seek-to-hasten",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Endure (Mohammed) donc, comme ont enduré les messagers doués de fermeté ; et ne te montre pas trop pressé de les voir subir [leur châtiment]. Le jour où ils verront ce qui leurs est promis, il leur semblera qu’ils n’étaient restés [sur terre] qu’une heure d’un jour. Voilà une communication. Qui sera donc anéanti sinon les gens pervers ?"
+      ],
+      "kazimirski_samples": [
+        "Et toi, Mohammed, prends patience, comme prenaient patience les hommes de résolution parmi les envoyés de Dieu; ne cherche point à hâter leur châtiment. Un jour, lorsqu’ils apercevront l’accomplissement des menaces, Au moment où ils seront appelés à voir ce qui leur a été promis; il leur semblera qu’ils n’ont demeuré qu’une heure de la journée dans les tombeaux. Telle est l’exhortation. Et qui donc sera anéanti si ce n’est les méchants? "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « ستعجل » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "a4345d2a-5754-4948-9c08-f83999789fa9",
+      "arabic": "بَلَـٰغٌۭ ۚ",
+      "lemma_id": "15428f1d-7f09-4350-a7d3-e00f653cfd37",
+      "lemma_arabic": "بلاغ",
+      "masaq_stems": [
+        "بلاغ"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-notification",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Endure (Mohammed) donc, comme ont enduré les messagers doués de fermeté ; et ne te montre pas trop pressé de les voir subir [leur châtiment]. Le jour où ils verront ce qui leurs est promis, il leur semblera qu’ils n’étaient restés [sur terre] qu’une heure d’un jour. Voilà une communication. Qui sera donc anéanti sinon les gens pervers ?"
+      ],
+      "kazimirski_samples": [
+        "Et toi, Mohammed, prends patience, comme prenaient patience les hommes de résolution parmi les envoyés de Dieu; ne cherche point à hâter leur châtiment. Un jour, lorsqu’ils apercevront l’accomplissement des menaces, Au moment où ils seront appelés à voir ce qui leur a été promis; il leur semblera qu’ils n’ont demeuré qu’une heure de la journée dans les tombeaux. Telle est l’exhortation. Et qui donc sera anéanti si ce n’est les méchants? "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "15428f1d-7f09-4350-a7d3-e00f653cfd37",
+      "safe_gloss_text": "(à écrire pour « بلاغ »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "5061dee1-7f79-42e3-a1d3-88d030e8ee91",
+      "arabic": "يَسْتَغِيثَانِ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "ستغيث"
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "seek-help",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "IMPERF_PREF",
+        "IV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Quant à celui qui dit à ses père et mère : \"Fi de vous deux ! Me promettez-vous qu’on me fera sortir de terre alors que des générations avant moi ont passé ?\" Et les deux, implorant le secours d’Allah, [lui dirent] : \"Malheur à toi ! Crois. Car la promesse d’Allah est véridique.\" Mais il (répond) : \"Ce ne sont que des contes d’Anciens.\""
+      ],
+      "kazimirski_samples": [
+        "Celui qui dit à ses parents: Nargue de vous! allez-vous me promettre que je renaîtrai de mon tombeau? pendant que tant de générations ont passé et disparu avant moi… Ses parents imploreront Dieu en sa faveur. Malheur à toi! lui diront-ils; crois, car les promesses de Dieu sont véritables. Mais il dira: Ce sont des fables des anciens."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « ستغيث » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "54dc34aa-0714-439e-9bc6-cfddee2835db",
+      "arabic": "وَيْلَكَ",
+      "lemma_id": "9bd54996-df0a-4c9a-a3d1-7ac2f5474893",
+      "lemma_arabic": "ويل",
+      "masaq_stems": [
+        "ويل"
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "woe-to-you",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ABSTRACT",
+        "POSS_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Quant à celui qui dit à ses père et mère : \"Fi de vous deux ! Me promettez-vous qu’on me fera sortir de terre alors que des générations avant moi ont passé ?\" Et les deux, implorant le secours d’Allah, [lui dirent] : \"Malheur à toi ! Crois. Car la promesse d’Allah est véridique.\" Mais il (répond) : \"Ce ne sont que des contes d’Anciens.\""
+      ],
+      "kazimirski_samples": [
+        "Celui qui dit à ses parents: Nargue de vous! allez-vous me promettre que je renaîtrai de mon tombeau? pendant que tant de générations ont passé et disparu avant moi… Ses parents imploreront Dieu en sa faveur. Malheur à toi! lui diront-ils; crois, car les promesses de Dieu sont véritables. Mais il dira: Ce sont des fables des anciens."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "9bd54996-df0a-4c9a-a3d1-7ac2f5474893",
+      "safe_gloss_text": "(à écrire pour « ويل »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    }
+  ],
+  "safeGlossCandidates": [
+    {
+      "lemma_id": "125b4961-e1a0-49ec-aefe-7d3fc294ab4f",
+      "lemma_arabic": "أثار",
+      "gloss": "(à écrire pour « أثار »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "0917ff07-a4a6-4f52-a292-c9fe1cc9c502",
+      "lemma_arabic": "شيئ",
+      "gloss": "(à écrire pour « شيئ »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "94afd10c-cfd9-41c7-b3d0-51a48a6cc841",
+      "lemma_arabic": "أعلم",
+      "gloss": "(à écrire pour « أعلم »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "08457bef-4e66-4eff-9346-d8fc46b3b60e",
+      "lemma_arabic": "بدع",
+      "gloss": "(à écrire pour « بدع »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "272b8d2a-538c-4980-b007-f5ece61f0f99",
+      "lemma_arabic": "قديم",
+      "gloss": "(à écrire pour « قديم »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "95112493-24b8-4ec1-a762-78b3a59d5fae",
+      "lemma_arabic": "شهر",
+      "gloss": "(à écrire pour « شهر »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "57869ede-57cc-4693-9364-0bee13824634",
+      "lemma_arabic": "سن",
+      "gloss": "(à écrire pour « سن »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "53b60e93-b323-4903-aab7-7585c6d37233",
+      "lemma_arabic": "ذر",
+      "gloss": "(à écrire pour « ذر »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "76720cd4-2d0d-478c-b97d-4ba5853334e3",
+      "lemma_arabic": "عد",
+      "gloss": "(à écrire pour « عد »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "c295ea60-a947-4125-97ae-5846b068429c",
+      "lemma_arabic": "قرون",
+      "gloss": "(à écrire pour « قرون »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "8f4bd92f-e1e0-4dcf-93e7-9b448ead94cc",
+      "lemma_arabic": "عرض",
+      "gloss": "(à écrire pour « عرض »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "888a6fbf-63e5-48f1-a501-3849deea7ce8",
+      "lemma_arabic": "طيب",
+      "gloss": "(à écrire pour « طيب »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "cfee91db-2bcb-4c63-b9fd-c795565b547a",
+      "lemma_arabic": "ذكر",
+      "gloss": "(à écrire pour « ذكر »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "89a88190-0770-494c-8ec7-4076b4c55e50",
+      "lemma_arabic": "أخا",
+      "gloss": "(à écrire pour « أخا »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "9fc6512b-4efe-4757-b3a4-b14e57ec28b5",
+      "lemma_arabic": "أحقاف",
+      "gloss": "(à écrire pour « أحقاف »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "64f9e40f-05a0-4487-951e-0dd6c66f5c46",
+      "lemma_arabic": "خلف",
+      "gloss": "(à écrire pour « خلف »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "096ff8f6-ce64-4da3-beb8-973b1c450327",
+      "lemma_arabic": "عارض",
+      "gloss": "(à écrire pour « عارض »)",
+      "forms_in_S90": 2,
+      "forms_safe": 2
+    },
+    {
+      "lemma_id": "8c2ccf22-65d1-42b2-b87a-8dd39a8613c5",
+      "lemma_arabic": "مستقبل",
+      "gloss": "(à écrire pour « مستقبل »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "2c2a3d0c-499e-4753-b33e-9cb278d3ebbd",
+      "lemma_arabic": "أودي",
+      "gloss": "(à écrire pour « أودي »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "15c9c3b3-1593-4853-a474-6bc55ac16993",
+      "lemma_arabic": "ممطر",
+      "gloss": "(à écrire pour « ممطر »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "f452b43f-3c48-488e-9403-be8bfaa74829",
+      "lemma_arabic": "ريح",
+      "gloss": "(à écrire pour « ريح »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "678f4fe9-0457-47c0-9f60-ab3421127b97",
+      "lemma_arabic": "مساكن",
+      "gloss": "(à écrire pour « مساكن »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "ab31770a-ccc7-414c-8d17-ef07d027e27b",
+      "lemma_arabic": "أفئد",
+      "gloss": "(à écrire pour « أفئد »)",
+      "forms_in_S90": 2,
+      "forms_safe": 2
+    },
+    {
+      "lemma_id": "339a4344-6879-4351-8a35-c319e8cb19c9",
+      "lemma_arabic": "قربان",
+      "gloss": "(à écrire pour « قربان »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "0655cc86-b3ac-4ce0-ac83-ea6144944666",
+      "lemma_arabic": "آله",
+      "gloss": "(à écrire pour « آله »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "a65d5fa0-bf1b-41e0-8e93-a510537390c1",
+      "lemma_arabic": "طريق",
+      "gloss": "(à écrire pour « طريق »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "1ae7bf3f-2a00-47e5-9470-8ac7e2c35648",
+      "lemma_arabic": "داعي",
+      "gloss": "(à écrire pour « داعي »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "7e605db0-b799-4b6b-9575-9e3f8174957f",
+      "lemma_arabic": "معجز",
+      "gloss": "(à écrire pour « معجز »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "0b9d50dd-ef9a-4003-8d60-be09c76716e2",
+      "lemma_arabic": "أولياء",
+      "gloss": "(à écrire pour « أولياء »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "11b1ec78-e8c8-4198-9349-2380bd32c73c",
+      "lemma_arabic": "موتى",
+      "gloss": "(à écrire pour « موتى »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "15428f1d-7f09-4350-a7d3-e00f653cfd37",
+      "lemma_arabic": "بلاغ",
+      "gloss": "(à écrire pour « بلاغ »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "9bd54996-df0a-4c9a-a3d1-7ac2f5474893",
+      "lemma_arabic": "ويل",
+      "gloss": "(à écrire pour « ويل »)",
+      "forms_in_S90": 1,
+      "forms_safe": 1
+    }
+  ],
+  "safeWordTrCandidates": [
+    {
+      "word_id": "deb96fb8-9384-4052-a0d1-204828266ac1",
+      "arabic": "أَنذَرَ",
+      "gloss": "avertir / mettre en garde"
+    }
+  ],
+  "reviewWordTrCandidates": [
+    {
+      "word_id": "3ce2da86-780d-409c-938e-24c094a672f9",
+      "arabic": "دُعَآئِهِمْ",
+      "masaq_stems": [
+        "دعائ"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « دعائ » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "c4909978-804e-46d5-ac51-6a731eec2994",
+      "arabic": "حُشِرَ",
+      "masaq_stems": [
+        "حشر"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « حشر » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "189e5067-5493-4c49-9e73-dee4186b5829",
+      "arabic": "يُفْعَلُ",
+      "masaq_stems": [
+        "فعل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « فعل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "3883319c-cf25-4c52-9b0e-beaf1cbf66c2",
+      "arabic": "وَٱسْتَكْبَرْتُمْ ۖ",
+      "masaq_stems": [
+        "استكبر"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « استكبر » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "1e7aeea5-872e-4d84-8ab8-004581fa40ed",
+      "arabic": "سَبَقُونَآ",
+      "masaq_stems": [
+        "سبق"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « سبق » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "64e1af59-1542-457b-881a-0378851cf327",
+      "arabic": "يَهْتَدُوا۟",
+      "masaq_stems": [
+        "هتد"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « هتد » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "0a6621f4-f2c5-44b8-940d-80aa1418d86c",
+      "arabic": "إِحْسَـٰنًا ۖ",
+      "masaq_stems": [
+        "إحسان"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « إحسان » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "0a97ceab-9649-43fc-9cf7-5d9901bfaca6",
+      "arabic": "كُرْهًۭا",
+      "masaq_stems": [
+        "كره"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « كره » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "0e7de874-9cbd-4574-8d3f-2b40b934bb63",
+      "arabic": "وَوَضَعَتْهُ",
+      "masaq_stems": [
+        "وضع"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « وضع » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "7290ff1f-b150-4b96-84c2-310d134122b0",
+      "arabic": "كُرْهًۭا ۖ",
+      "masaq_stems": [
+        "كره"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « كره » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "54f6f8b7-0431-4c08-b007-01dc8933ae6a",
+      "arabic": "وَحَمْلُهُۥ",
+      "masaq_stems": [
+        "حمل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « حمل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "81c109b8-1d72-4d02-b5fc-0cfa4dc05460",
+      "arabic": "وَبَلَغَ",
+      "masaq_stems": [
+        "بلغ"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « بلغ » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "d6a5d8fd-777f-46b1-911d-f15e11085ec6",
+      "arabic": "نَتَقَبَّلُ",
+      "masaq_stems": [
+        "تقبل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « تقبل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "20b18ba2-07a8-4b20-81de-5794702ff182",
+      "arabic": "وَنَتَجَاوَزُ",
+      "masaq_stems": [
+        "تجاوز"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « تجاوز » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "8554cd49-007d-4aba-97d8-cea3b4683371",
+      "arabic": "أُخْرَجَ",
+      "masaq_stems": [
+        "أخرج"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « أخرج » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "c901797e-8505-4664-8537-8ef133cbbaf0",
+      "arabic": "خَلَتِ",
+      "masaq_stems": [
+        "خل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « خل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "cdf9af2e-f331-4d3d-a5a6-604bcdc4a675",
+      "arabic": "وَهُمَا",
+      "masaq_stems": [
+        "هما"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « هما » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "7e6d8196-6110-4265-8e07-6fcb114c8053",
+      "arabic": "عَمِلُوا۟ ۖ",
+      "masaq_stems": [
+        "عمل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « عمل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "07f14d18-b725-45fa-8cec-e4235fdb4974",
+      "arabic": "وَلِيُوَفِّيَهُمْ",
+      "masaq_stems": [
+        "وفي"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « وفي » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "bef0419e-ac67-4ec5-bbf4-a49c4df55896",
+      "arabic": "أَذْهَبْتُمْ",
+      "masaq_stems": [
+        "أذهب"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « أذهب » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "24886639-8021-4f3b-8c99-f8f10be163d5",
+      "arabic": "حَيَاتِكُمُ",
+      "masaq_stems": [
+        "حيا"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « حيا » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "630e7763-d864-4c09-b6c6-650a4b8f4f51",
+      "arabic": "وَٱسْتَمْتَعْتُم",
+      "masaq_stems": [
+        "استمتع"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « استمتع » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "61a4765a-abb8-49a3-9551-3669d8634ed3",
+      "arabic": "تَفْسُقُونَ",
+      "masaq_stems": [
+        "فسق"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « فسق » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "b8c99dd0-e343-4e41-ba41-4307e76c8e59",
+      "arabic": "لِتَأْفِكَنَا",
+      "masaq_stems": [
+        "أفك"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « أفك » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "be8c01d6-bbb8-4cd2-8e26-311604e78725",
+      "arabic": "وَأُبَلِّغُكُم",
+      "masaq_stems": [
+        "بلغ"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « بلغ » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "d42cbe97-306f-43b6-90f5-6a65c333593a",
+      "arabic": "ٱسْتَعْجَلْتُم",
+      "masaq_stems": [
+        "استعجل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « استعجل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "4e9952b4-2a80-49be-9d45-f89d225b33e2",
+      "arabic": "تُدَمِّرُ",
+      "masaq_stems": [
+        "دمر"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « دمر » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "76e71a81-44b8-4167-9c2c-5ed2815b4565",
+      "arabic": "يُرَىٰٓ",
+      "masaq_stems": [
+        "ري"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « ري » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "e9b7c1bc-2dfb-4bc8-a564-1327076ec44d",
+      "arabic": "مَكَّنَّـٰهُمْ",
+      "masaq_stems": [
+        "مكن"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « مكن » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "df92c435-3799-41a7-a236-38395ba096c4",
+      "arabic": "مَّكَّنَّـٰكُمْ",
+      "masaq_stems": [
+        "مكن"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « مكن » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "3b8a5f0e-9c23-4ec2-9f54-736996112948",
+      "arabic": "سَمْعًۭا",
+      "masaq_stems": [
+        "سمع"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « سمع » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "ed9a10fb-9e14-48f3-b2d1-ad5173cc0c01",
+      "arabic": "إِفْكُهُمْ",
+      "masaq_stems": [
+        "إفك"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « إفك » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "e2cd95a9-960a-4c64-986b-944e78b41515",
+      "arabic": "صَرَفْنَآ",
+      "masaq_stems": [
+        "صرف"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « صرف » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "d63c2d10-c45b-4789-bc6c-9d17c1811134",
+      "arabic": "حَضَرُوهُ",
+      "masaq_stems": [
+        "حضر"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « حضر » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "1e7312a5-644a-4a84-ae2e-897f6b14026d",
+      "arabic": "أَنصِتُوا۟ ۖ",
+      "masaq_stems": [
+        "أنصت"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « أنصت » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "c33ebd1c-9e35-405e-a1de-8c72089b5c99",
+      "arabic": "أَجِيبُوا۟",
+      "masaq_stems": [
+        "أجيب"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « أجيب » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "290ff2a7-9efe-4edf-a041-05a6f13f0526",
+      "arabic": "وَيُجِرْكُم",
+      "masaq_stems": [
+        "جر"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « جر » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "6be4cdee-5feb-4864-8cdf-e198c233151b",
+      "arabic": "يُجِبْ",
+      "masaq_stems": [
+        "جب"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « جب » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "4aa44a07-ed6b-48d2-85fe-aef16344d165",
+      "arabic": "يَعْىَ",
+      "masaq_stems": [
+        "عي"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « عي » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "ec59eef2-8c4a-43c5-b730-dba5ac3bdd5e",
+      "arabic": "ٱلْعَزْمِ",
+      "masaq_stems": [
+        "عزم"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « عزم » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "c7007821-97d6-4e73-bba0-ab959c572894",
+      "arabic": "تَسْتَعْجِل",
+      "masaq_stems": [
+        "ستعجل"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « ستعجل » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "5061dee1-7f79-42e3-a1d3-88d030e8ee91",
+      "arabic": "يَسْتَغِيثَانِ",
+      "masaq_stems": [
+        "ستغيث"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « ستغيث » UNMAPPED quality=0 — word_translation à écrire."
+    }
+  ],
+  "simulations": [
+    {
+      "name": "BASELINE",
+      "forms": 405,
+      "pct": 84,
+      "ready": false,
+      "remaining": 77
+    },
+    {
+      "name": "SAFE_GLOSSES",
+      "forms": 440,
+      "pct": 91.3,
+      "ready": false,
+      "remaining": 42
+    },
+    {
+      "name": "SAFE_PLUS_REVIEW",
+      "forms": 482,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    },
+    {
+      "name": "COMPLETE",
+      "forms": 482,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    }
+  ],
+  "exactActionsToReady": {
+    "totalLemmaGlosses": 32,
+    "safeLemmaGlosses": 32,
+    "safeWordTranslations": 1,
+    "reviewWordTranslations": 42,
+    "totalActions": 74,
+    "safeActions": 33,
+    "reviewActions": 41,
+    "estimatedNewFormsSafeOnly": 35,
+    "estimatedNewFormsComplete": 77
+  },
+  "integrity": {
+    "orphan_quran_words_lemma": 0,
+    "orphan_word_lemma_mapping": 0,
+    "orphan_linguistic_occurrences": 0,
+    "orphan_lemma_translations": 0,
+    "duplicate_word_lemma_mapping": 0,
+    "duplicate_lemma_translations": 0,
+    "duplicate_FR_glosses": 0,
+    "contradictory_direct_vs_wlm": 0,
+    "S98_still_READY": true,
+    "S92_still_READY": true,
+    "S82_still_READY": true,
+    "S85_still_READY": true,
+    "classifySurahReadiness_unchanged": true,
+    "curriculum_unchanged": true
+  },
+  "invariants": {
+    "database_writes": 0,
+    "lexical_writes": 0,
+    "translation_writes": 0,
+    "curriculum_writes": 0,
+    "masaq_writes": 0,
+    "migrations": 0,
+    "seeds": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error",
+    "readOnlyStaticCheck": "PASS"
+  },
+  "nextPhase": {
+    "phase": "88F-S",
+    "name": "S90 AL-BALAD RESOLUTION",
+    "actions": "32 lemma_translations + 42 word_translations = 74 writes",
+    "expected": "482/482 → 100 % → READY"
+  }
+}

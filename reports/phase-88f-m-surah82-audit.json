@@ -1,0 +1,1628 @@
+{
+  "phase": "88F-M",
+  "verdict": "PHASE_88F_M_COMPLETE",
+  "readOnly": true,
+  "timestamp": "2026-08-24T09:23:25.590Z",
+  "durationSeconds": 24.46,
+  "targetSurah": {
+    "number": 82,
+    "name": "Al-Infitar"
+  },
+  "baseline": {
+    "global": {
+      "quranWords": 21296,
+      "wordOccurrences": 77430,
+      "lemmas": 1593,
+      "activeLemmas": 1588,
+      "wordLemmaMapping": 220,
+      "wordTranslationsFrValidated": 4500,
+      "lemmaTranslations": 142,
+      "lemmaTranslationsFrValidated": 138,
+      "linguisticOccurrences": 22485,
+      "frUnionDistinctWordIds": 5315,
+      "frOccurrences": 56119,
+      "frPercentage": 0.2496,
+      "readiness": {
+        "READY": 25,
+        "IN_PREPARATION": 88,
+        "REFERENCE": 1
+      },
+      "masaqCoverage": "74/114"
+    },
+    "s82": {
+      "totalForms": 66,
+      "coveredForms": 49,
+      "missingForms": 17,
+      "coveragePct": 0.7424,
+      "readiness": "IN_PREPARATION",
+      "totalOccurrences": 4881,
+      "coveredOccurrences": 4864
+    }
+  },
+  "historicalNote": "88F-G estimait S82 à ≈74,2 % avec 17 formes manquantes (10 A_GLOSE + 7 E_REVIEW). Recalcul effectué depuis la DB actuelle (post-88F-L).",
+  "missingForms": [
+    {
+      "arabic": "ٱنفَطَرَتْ",
+      "wordId": "8046669c-8bad-4da8-9f5a-892b77a11fc9",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "انفطر"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "(is)-cleft-asunder",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "(is)-cleft-asunder",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "PV",
+        "SUFF_FEM_TA"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 1,
+          "globalAyahNum": 5830
+        }
+      ],
+      "hamidullahS82": [
+        "Quand le ciel se rompra,"
+      ],
+      "kazimirskiS82": [
+        "Lorsque le ciel se fendra,"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « انفطر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "se fendre / s'entrouvrir"
+    },
+    {
+      "arabic": "ٱلْكَوَاكِبُ",
+      "wordId": "c0147142-1923-4dd5-8e81-a28f7194d7f9",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "711c82ec-4173-4e75-9159-607b73f709dd",
+      "currentLemma": "كواكب",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "كواكب"
+      ],
+      "masaqHikmaLemmaIds": [
+        "711c82ec-4173-4e75-9159-607b73f709dd"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "the-stars",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "the-stars",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "DET",
+        "NOUN_CONCRETE"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 2,
+          "globalAyahNum": 5831
+        }
+      ],
+      "hamidullahS82": [
+        "et que les étoiles se disperseront,"
+      ],
+      "kazimirskiS82": [
+        "Que les étoiles seront dispersées,"
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "étoiles / astres",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "ٱنتَثَرَتْ",
+      "wordId": "3d396a28-9e9a-44ce-b312-917fb6b6b767",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "انتثر"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "scatter",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "scatter",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "PV",
+        "SUFF_FEM_TA"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 2,
+          "globalAyahNum": 5831
+        }
+      ],
+      "hamidullahS82": [
+        "et que les étoiles se disperseront,"
+      ],
+      "kazimirskiS82": [
+        "Que les étoiles seront dispersées,"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « انتثر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "se disperser / se répandre"
+    },
+    {
+      "arabic": "فُجِّرَتْ",
+      "wordId": "d99f3ecc-0fc9-4f04-abd4-a7980b353c73",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "704ad14b-5445-4bd2-a847-010516ae2ce2",
+      "currentLemma": "فجر",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "فجر"
+      ],
+      "masaqHikmaLemmaIds": [
+        "704ad14b-5445-4bd2-a847-010516ae2ce2"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "are-made-to-gush",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "are-made-to-gush",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "PV_PASS",
+        "SUFF_FEM_TA"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 3,
+          "globalAyahNum": 5832
+        }
+      ],
+      "hamidullahS82": [
+        "et que les mers confondront leurs eaux,"
+      ],
+      "kazimirskiS82": [
+        "Que les mers confondront leurs eaux, "
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "faire jaillir / fendre (la terre)",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "ٱلْقُبُورُ",
+      "wordId": "c0212ac1-d4e5-4415-a537-4e3da95191fd",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "fb7664d8-b6bd-4b8b-9bab-17e55b4a45a0",
+      "currentLemma": "قبور",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "قبور"
+      ],
+      "masaqHikmaLemmaIds": [
+        "fb7664d8-b6bd-4b8b-9bab-17e55b4a45a0"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "the-graves",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "the-graves",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "DET",
+        "NOUN_CONCRETE"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 4,
+          "globalAyahNum": 5833
+        }
+      ],
+      "hamidullahS82": [
+        "et que les tombeaux seront bouleversés,"
+      ],
+      "kazimirskiS82": [
+        "Que les tombeaux seront sens dessus dessous,"
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "tombes / sépultures",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "بُعْثِرَتْ",
+      "wordId": "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "بعثر"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "are-overturned",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "are-overturned",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "PV_PASS",
+        "SUFF_FEM_TA"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 4,
+          "globalAyahNum": 5833
+        }
+      ],
+      "hamidullahS82": [
+        "et que les tombeaux seront bouleversés,"
+      ],
+      "kazimirskiS82": [
+        "Que les tombeaux seront sens dessus dessous,"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « بعثر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "être dispersé / renversé"
+    },
+    {
+      "arabic": "وَأَخَّرَتْ",
+      "wordId": "0e1c439c-a45a-4d2d-a234-e85336634e03",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "أخر"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "and-left-behind",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "and-left-behind",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CONJ",
+        "PV",
+        "SUFF_FEM_TA"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 5,
+          "globalAyahNum": 5834
+        }
+      ],
+      "hamidullahS82": [
+        "toute âme saura alors ce qu’elle a accompli et ce qu’elle a remis de faire à plus tard."
+      ],
+      "kazimirskiS82": [
+        "L’âme verra ses actions anciennes et récentes."
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « أخر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "retarder / différer"
+    },
+    {
+      "arabic": "غَرَّكَ",
+      "wordId": "af86614b-6ae0-42bf-aabe-f3c53ca449f2",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "غر"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "has-deceived-you",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "has-deceived-you",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "OBJ_PRON",
+        "PV"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 6,
+          "globalAyahNum": 5835
+        }
+      ],
+      "hamidullahS82": [
+        "Ô homme ! Qu’est-ce qui t’a trompé au sujet de ton Seigneur, le Noble,"
+      ],
+      "kazimirskiS82": [
+        "Ô homme! qu’est-ce qui t’a aveuglé pour ne pas voir ton maître généreux,"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « غر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "tromper / séduire"
+    },
+    {
+      "arabic": "فَسَوَّىٰكَ",
+      "wordId": "31905a0b-c8ff-468f-884f-be9a067f2c55",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "سوا"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "then-fashioned-you",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "then-fashioned-you",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CONJ",
+        "OBJ_PRON",
+        "PV"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 7,
+          "globalAyahNum": 5836
+        }
+      ],
+      "hamidullahS82": [
+        "qui t’a créé, puis modelé et constitué harmonieusement ?"
+      ],
+      "kazimirskiS82": [
+        "Ton maître qui t’a créé, qui t’a donné la perfection et la justesse dans tes formes,"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « سوا » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "façonner / égaliser / proportionner"
+    },
+    {
+      "arabic": "فَعَدَلَكَ",
+      "wordId": "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "عدل"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "then-balanced-you",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "then-balanced-you",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CONJ",
+        "OBJ_PRON",
+        "PV"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 7,
+          "globalAyahNum": 5836
+        }
+      ],
+      "hamidullahS82": [
+        "qui t’a créé, puis modelé et constitué harmonieusement ?"
+      ],
+      "kazimirskiS82": [
+        "Ton maître qui t’a créé, qui t’a donné la perfection et la justesse dans tes formes,"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « عدل » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "ajuster / proportionner / équilibrer"
+    },
+    {
+      "arabic": "صُورَةٍۢ",
+      "wordId": "65266f25-a253-41d2-abea-cfe6129f4566",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "37c176d5-bf77-48d7-bf42-af4124bccf19",
+      "currentLemma": "صور",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "صور"
+      ],
+      "masaqHikmaLemmaIds": [
+        "37c176d5-bf77-48d7-bf42-af4124bccf19"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "form",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "form",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CASE_INDEF_ACC",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 8,
+          "globalAyahNum": 5837
+        }
+      ],
+      "hamidullahS82": [
+        "Il t’a façonné dans la forme qu’Il a voulue."
+      ],
+      "kazimirskiS82": [
+        "Qui t’a façonné d’après la forme qu’il a voulu? "
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "forme / image / façonner",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "رَكَّبَكَ",
+      "wordId": "74413f06-b187-4e86-ba07-1472c82b0753",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "c5dc6478-6cd6-4fb4-8479-1ce1a0c416c5",
+      "currentLemma": "ركب",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "ركب"
+      ],
+      "masaqHikmaLemmaIds": [
+        "c5dc6478-6cd6-4fb4-8479-1ce1a0c416c5"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "he-assembled-you",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "he-assembled-you",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "OBJ_PRON",
+        "PV"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 8,
+          "globalAyahNum": 5837
+        }
+      ],
+      "hamidullahS82": [
+        "Il t’a façonné dans la forme qu’Il a voulue."
+      ],
+      "kazimirskiS82": [
+        "Qui t’a façonné d’après la forme qu’il a voulu? "
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "assembler / composer",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "لَحَـٰفِظِينَ",
+      "wordId": "89104acb-4f1d-4519-8cdf-ce064148beaf",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "83716d95-7091-462b-a60e-44e6b98d30c0",
+      "currentLemma": "حافظ",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "حافظ"
+      ],
+      "masaqHikmaLemmaIds": [
+        "83716d95-7091-462b-a60e-44e6b98d30c0"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "(are)-surely-guardians",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "(are)-surely-guardians",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_MASC_PL_ACC",
+        "OTHER"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 10,
+          "globalAyahNum": 5839
+        }
+      ],
+      "hamidullahS82": [
+        "alors que veillent sur vous des gardiens <sup foot_note=212569>1</sup>,"
+      ],
+      "kazimirskiS82": [
+        "Certes, il a des gardiens qui vous surveillent"
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "gardien / qui préserve / protecteur",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "كَـٰتِبِينَ",
+      "wordId": "427c9b25-923a-408a-b760-2f85e4629dde",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "36b5c36e-05fe-45b5-84ac-d3a6842810c2",
+      "currentLemma": "كاتب",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "كاتب"
+      ],
+      "masaqHikmaLemmaIds": [
+        "36b5c36e-05fe-45b5-84ac-d3a6842810c2"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "recording",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "recording",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_MASC_PL_ACC"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 11,
+          "globalAyahNum": 5840
+        }
+      ],
+      "hamidullahS82": [
+        "de nobles scribes,"
+      ],
+      "kazimirskiS82": [
+        "des gardiens illustres qui écrivent vos actions."
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "scribe / écrivain / qui écrit",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "ٱلْفُجَّارَ",
+      "wordId": "552f9e5a-d05b-42b8-bdbd-e5051eda422a",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "6e401987-150e-4943-9313-c6955c9db476",
+      "currentLemma": "فجار",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "فجار"
+      ],
+      "masaqHikmaLemmaIds": [
+        "6e401987-150e-4943-9313-c6955c9db476"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "the-wicked",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "the-wicked",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "DET",
+        "NOUN_ACTIVE_PART"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 14,
+          "globalAyahNum": 5843
+        }
+      ],
+      "hamidullahS82": [
+        "et les libertins seront, certes, dans une fournaise,"
+      ],
+      "kazimirskiS82": [
+        "Et certes, les libertins seront dans l’enfer."
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "débauchés / pervers / pécheurs",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "بِغَآئِبِينَ",
+      "wordId": "78c76a91-3dcd-497e-a380-e9bd3b7bc720",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "cd6f9e4f-d908-4ed8-bd8a-8dc1a571e9ac",
+      "currentLemma": "غائب",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "غائب"
+      ],
+      "masaqHikmaLemmaIds": [
+        "cd6f9e4f-d908-4ed8-bd8a-8dc1a571e9ac"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "(will-be)-absent",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "(will-be)-absent",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "NOUN_ACTIVE_PART",
+        "NSUFF_MASC_PL_GEN",
+        "PREP"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 16,
+          "globalAyahNum": 5845
+        }
+      ],
+      "hamidullahS82": [
+        "incapables de s’en échapper."
+      ],
+      "kazimirskiS82": [
+        "Ils ne pourront s’y soustraire."
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "absent / caché",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "تَمْلِكُ",
+      "wordId": "c581e00f-2458-4599-a850-eb639904dee6",
+      "occurrenceCount": 1,
+      "occurrenceCountInS82": 1,
+      "surahs": [
+        82
+      ],
+      "currentLemmaId": "e7dfc440-ab32-4cdf-8d60-4b89d400f78f",
+      "currentLemma": "ملك",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "ملك"
+      ],
+      "masaqHikmaLemmaIds": [
+        "e7dfc440-ab32-4cdf-8d60-4b89d400f78f"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "will-have-power",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "will-have-power",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "contextInS82": [
+        {
+          "ayahNum": 19,
+          "globalAyahNum": 5848
+        }
+      ],
+      "hamidullahS82": [
+        "Le jour où aucune âme ne pourra rien en faveur d’une autre âme. Et ce jour-là, le commandement sera à Allah."
+      ],
+      "kazimirskiS82": [
+        "C’est le jour ou une âme ne pourra rien pour une âme. Ce jour-là tout sera dévolu à Dieu."
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "roi / posséder / maîtriser",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    }
+  ],
+  "classification": {
+    "A_SAFE_GLOSS": 10,
+    "B_LEMMA_REVIEW": 0,
+    "C_SAFE_MAPPING": 0,
+    "D_REVIEW_MAPPING": 7,
+    "E_WORD_TRANSLATION": 0,
+    "F_ALREADY_RESOLVABLE": 0,
+    "G_DO_NOT_IMPORT": 0
+  },
+  "editorialEvidence": [
+    {
+      "arabic": "ٱنفَطَرَتْ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "انفطر",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "se fendre / s'entrouvrir",
+      "confidence": 0.55,
+      "hamidullah": [
+        "Quand le ciel se rompra,"
+      ],
+      "kazimirski": [
+        "Lorsque le ciel se fendra,"
+      ],
+      "masaqGlossEn": "(is)-cleft-asunder",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « انفطر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "ٱلْكَوَاكِبُ",
+      "lemma": "كواكب",
+      "lemmaId": "711c82ec-4173-4e75-9159-607b73f709dd",
+      "masaqStem": "كواكب",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "étoiles / astres",
+      "confidence": 0.85,
+      "hamidullah": [
+        "et que les étoiles se disperseront,"
+      ],
+      "kazimirski": [
+        "Que les étoiles seront dispersées,"
+      ],
+      "masaqGlossEn": "the-stars",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "ٱنتَثَرَتْ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "انتثر",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "se disperser / se répandre",
+      "confidence": 0.55,
+      "hamidullah": [
+        "et que les étoiles se disperseront,"
+      ],
+      "kazimirski": [
+        "Que les étoiles seront dispersées,"
+      ],
+      "masaqGlossEn": "scatter",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « انتثر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "فُجِّرَتْ",
+      "lemma": "فجر",
+      "lemmaId": "704ad14b-5445-4bd2-a847-010516ae2ce2",
+      "masaqStem": "فجر",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "faire jaillir / fendre (la terre)",
+      "confidence": 0.85,
+      "hamidullah": [
+        "et que les mers confondront leurs eaux,"
+      ],
+      "kazimirski": [
+        "Que les mers confondront leurs eaux, "
+      ],
+      "masaqGlossEn": "are-made-to-gush",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "ٱلْقُبُورُ",
+      "lemma": "قبور",
+      "lemmaId": "fb7664d8-b6bd-4b8b-9bab-17e55b4a45a0",
+      "masaqStem": "قبور",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "tombes / sépultures",
+      "confidence": 0.85,
+      "hamidullah": [
+        "et que les tombeaux seront bouleversés,"
+      ],
+      "kazimirski": [
+        "Que les tombeaux seront sens dessus dessous,"
+      ],
+      "masaqGlossEn": "the-graves",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "بُعْثِرَتْ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "بعثر",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "être dispersé / renversé",
+      "confidence": 0.55,
+      "hamidullah": [
+        "et que les tombeaux seront bouleversés,"
+      ],
+      "kazimirski": [
+        "Que les tombeaux seront sens dessus dessous,"
+      ],
+      "masaqGlossEn": "are-overturned",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « بعثر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "وَأَخَّرَتْ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "أخر",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "retarder / différer",
+      "confidence": 0.55,
+      "hamidullah": [
+        "toute âme saura alors ce qu’elle a accompli et ce qu’elle a remis de faire à plus tard."
+      ],
+      "kazimirski": [
+        "L’âme verra ses actions anciennes et récentes."
+      ],
+      "masaqGlossEn": "and-left-behind",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « أخر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "غَرَّكَ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "غر",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "tromper / séduire",
+      "confidence": 0.55,
+      "hamidullah": [
+        "Ô homme ! Qu’est-ce qui t’a trompé au sujet de ton Seigneur, le Noble,"
+      ],
+      "kazimirski": [
+        "Ô homme! qu’est-ce qui t’a aveuglé pour ne pas voir ton maître généreux,"
+      ],
+      "masaqGlossEn": "has-deceived-you",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « غر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "فَسَوَّىٰكَ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "سوا",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "façonner / égaliser / proportionner",
+      "confidence": 0.55,
+      "hamidullah": [
+        "qui t’a créé, puis modelé et constitué harmonieusement ?"
+      ],
+      "kazimirski": [
+        "Ton maître qui t’a créé, qui t’a donné la perfection et la justesse dans tes formes,"
+      ],
+      "masaqGlossEn": "then-fashioned-you",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « سوا » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "فَعَدَلَكَ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "عدل",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "ajuster / proportionner / équilibrer",
+      "confidence": 0.55,
+      "hamidullah": [
+        "qui t’a créé, puis modelé et constitué harmonieusement ?"
+      ],
+      "kazimirski": [
+        "Ton maître qui t’a créé, qui t’a donné la perfection et la justesse dans tes formes,"
+      ],
+      "masaqGlossEn": "then-balanced-you",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « عدل » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "صُورَةٍۢ",
+      "lemma": "صور",
+      "lemmaId": "37c176d5-bf77-48d7-bf42-af4124bccf19",
+      "masaqStem": "صور",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "forme / image / façonner",
+      "confidence": 0.85,
+      "hamidullah": [
+        "Il t’a façonné dans la forme qu’Il a voulue."
+      ],
+      "kazimirski": [
+        "Qui t’a façonné d’après la forme qu’il a voulu? "
+      ],
+      "masaqGlossEn": "form",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "رَكَّبَكَ",
+      "lemma": "ركب",
+      "lemmaId": "c5dc6478-6cd6-4fb4-8479-1ce1a0c416c5",
+      "masaqStem": "ركب",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "assembler / composer",
+      "confidence": 0.85,
+      "hamidullah": [
+        "Il t’a façonné dans la forme qu’Il a voulue."
+      ],
+      "kazimirski": [
+        "Qui t’a façonné d’après la forme qu’il a voulu? "
+      ],
+      "masaqGlossEn": "he-assembled-you",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "لَحَـٰفِظِينَ",
+      "lemma": "حافظ",
+      "lemmaId": "83716d95-7091-462b-a60e-44e6b98d30c0",
+      "masaqStem": "حافظ",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "gardien / qui préserve / protecteur",
+      "confidence": 0.85,
+      "hamidullah": [
+        "alors que veillent sur vous des gardiens <sup foot_note=212569>1</sup>,"
+      ],
+      "kazimirski": [
+        "Certes, il a des gardiens qui vous surveillent"
+      ],
+      "masaqGlossEn": "(are)-surely-guardians",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "كَـٰتِبِينَ",
+      "lemma": "كاتب",
+      "lemmaId": "36b5c36e-05fe-45b5-84ac-d3a6842810c2",
+      "masaqStem": "كاتب",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "scribe / écrivain / qui écrit",
+      "confidence": 0.85,
+      "hamidullah": [
+        "de nobles scribes,"
+      ],
+      "kazimirski": [
+        "des gardiens illustres qui écrivent vos actions."
+      ],
+      "masaqGlossEn": "recording",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "ٱلْفُجَّارَ",
+      "lemma": "فجار",
+      "lemmaId": "6e401987-150e-4943-9313-c6955c9db476",
+      "masaqStem": "فجار",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "débauchés / pervers / pécheurs",
+      "confidence": 0.85,
+      "hamidullah": [
+        "et les libertins seront, certes, dans une fournaise,"
+      ],
+      "kazimirski": [
+        "Et certes, les libertins seront dans l’enfer."
+      ],
+      "masaqGlossEn": "the-wicked",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "بِغَآئِبِينَ",
+      "lemma": "غائب",
+      "lemmaId": "cd6f9e4f-d908-4ed8-bd8a-8dc1a571e9ac",
+      "masaqStem": "غائب",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "absent / caché",
+      "confidence": 0.85,
+      "hamidullah": [
+        "incapables de s’en échapper."
+      ],
+      "kazimirski": [
+        "Ils ne pourront s’y soustraire."
+      ],
+      "masaqGlossEn": "(will-be)-absent",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "تَمْلِكُ",
+      "lemma": "ملك",
+      "lemmaId": "e7dfc440-ab32-4cdf-8d60-4b89d400f78f",
+      "masaqStem": "ملك",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "roi / posséder / maîtriser",
+      "confidence": 0.85,
+      "hamidullah": [
+        "Le jour où aucune âme ne pourra rien en faveur d’une autre âme. Et ce jour-là, le commandement sera à Allah."
+      ],
+      "kazimirski": [
+        "C’est le jour ou une âme ne pourra rien pour une âme. Ce jour-là tout sera dévolu à Dieu."
+      ],
+      "masaqGlossEn": "will-have-power",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    }
+  ],
+  "batchSafe": {
+    "lemmaGlosses": [
+      {
+        "lemma": "كواكب",
+        "lemmaId": "711c82ec-4173-4e75-9159-607b73f709dd",
+        "gloss": "étoiles / astres",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "فجر",
+        "lemmaId": "704ad14b-5445-4bd2-a847-010516ae2ce2",
+        "gloss": "faire jaillir / fendre (la terre)",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "قبور",
+        "lemmaId": "fb7664d8-b6bd-4b8b-9bab-17e55b4a45a0",
+        "gloss": "tombes / sépultures",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "صور",
+        "lemmaId": "37c176d5-bf77-48d7-bf42-af4124bccf19",
+        "gloss": "forme / image / façonner",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "ركب",
+        "lemmaId": "c5dc6478-6cd6-4fb4-8479-1ce1a0c416c5",
+        "gloss": "assembler / composer",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "حافظ",
+        "lemmaId": "83716d95-7091-462b-a60e-44e6b98d30c0",
+        "gloss": "gardien / qui préserve / protecteur",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "كاتب",
+        "lemmaId": "36b5c36e-05fe-45b5-84ac-d3a6842810c2",
+        "gloss": "scribe / écrivain / qui écrit",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "فجار",
+        "lemmaId": "6e401987-150e-4943-9313-c6955c9db476",
+        "gloss": "débauchés / pervers / pécheurs",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "غائب",
+        "lemmaId": "cd6f9e4f-d908-4ed8-bd8a-8dc1a571e9ac",
+        "gloss": "absent / caché",
+        "formsCovered": 1
+      },
+      {
+        "lemma": "ملك",
+        "lemmaId": "e7dfc440-ab32-4cdf-8d60-4b89d400f78f",
+        "gloss": "roi / posséder / maîtriser",
+        "formsCovered": 1
+      }
+    ],
+    "mappings": [],
+    "wordTranslations": []
+  },
+  "batchReview": [
+    {
+      "wordId": "8046669c-8bad-4da8-9f5a-892b77a11fc9",
+      "arabic": "ٱنفَطَرَتْ",
+      "issue": "stem MASAQ « انفطر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "wordTrProposal": "se fendre / s'entrouvrir"
+    },
+    {
+      "wordId": "3d396a28-9e9a-44ce-b312-917fb6b6b767",
+      "arabic": "ٱنتَثَرَتْ",
+      "issue": "stem MASAQ « انتثر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "wordTrProposal": "se disperser / se répandre"
+    },
+    {
+      "wordId": "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39",
+      "arabic": "بُعْثِرَتْ",
+      "issue": "stem MASAQ « بعثر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "wordTrProposal": "être dispersé / renversé"
+    },
+    {
+      "wordId": "0e1c439c-a45a-4d2d-a234-e85336634e03",
+      "arabic": "وَأَخَّرَتْ",
+      "issue": "stem MASAQ « أخر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "wordTrProposal": "retarder / différer"
+    },
+    {
+      "wordId": "af86614b-6ae0-42bf-aabe-f3c53ca449f2",
+      "arabic": "غَرَّكَ",
+      "issue": "stem MASAQ « غر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "wordTrProposal": "tromper / séduire"
+    },
+    {
+      "wordId": "31905a0b-c8ff-468f-884f-be9a067f2c55",
+      "arabic": "فَسَوَّىٰكَ",
+      "issue": "stem MASAQ « سوا » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "wordTrProposal": "façonner / égaliser / proportionner"
+    },
+    {
+      "wordId": "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d",
+      "arabic": "فَعَدَلَكَ",
+      "issue": "stem MASAQ « عدل » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "wordTrProposal": "ajuster / proportionner / équilibrer"
+    }
+  ],
+  "batchDoNotImport": [],
+  "simulations": {
+    "baseline": {
+      "newCoveredForms": 49,
+      "remainingForms": 17,
+      "coveragePct": 0.7424,
+      "isReady": false,
+      "remainingFormIds": [
+        "8046669c-8bad-4da8-9f5a-892b77a11fc9",
+        "c0147142-1923-4dd5-8e81-a28f7194d7f9",
+        "3d396a28-9e9a-44ce-b312-917fb6b6b767",
+        "d99f3ecc-0fc9-4f04-abd4-a7980b353c73",
+        "c0212ac1-d4e5-4415-a537-4e3da95191fd",
+        "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39",
+        "0e1c439c-a45a-4d2d-a234-e85336634e03",
+        "af86614b-6ae0-42bf-aabe-f3c53ca449f2",
+        "31905a0b-c8ff-468f-884f-be9a067f2c55",
+        "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d",
+        "65266f25-a253-41d2-abea-cfe6129f4566",
+        "74413f06-b187-4e86-ba07-1472c82b0753",
+        "89104acb-4f1d-4519-8cdf-ce064148beaf",
+        "427c9b25-923a-408a-b760-2f85e4629dde",
+        "552f9e5a-d05b-42b8-bdbd-e5051eda422a",
+        "78c76a91-3dcd-497e-a380-e9bd3b7bc720",
+        "c581e00f-2458-4599-a850-eb639904dee6"
+      ]
+    },
+    "glossOnly": {
+      "newCoveredForms": 59,
+      "remainingForms": 7,
+      "coveragePct": 0.8939,
+      "isReady": false,
+      "remainingFormIds": [
+        "8046669c-8bad-4da8-9f5a-892b77a11fc9",
+        "3d396a28-9e9a-44ce-b312-917fb6b6b767",
+        "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39",
+        "0e1c439c-a45a-4d2d-a234-e85336634e03",
+        "af86614b-6ae0-42bf-aabe-f3c53ca449f2",
+        "31905a0b-c8ff-468f-884f-be9a067f2c55",
+        "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d"
+      ]
+    },
+    "mappingOnly": {
+      "newCoveredForms": 49,
+      "remainingForms": 17,
+      "coveragePct": 0.7424,
+      "isReady": false,
+      "remainingFormIds": [
+        "8046669c-8bad-4da8-9f5a-892b77a11fc9",
+        "c0147142-1923-4dd5-8e81-a28f7194d7f9",
+        "3d396a28-9e9a-44ce-b312-917fb6b6b767",
+        "d99f3ecc-0fc9-4f04-abd4-a7980b353c73",
+        "c0212ac1-d4e5-4415-a537-4e3da95191fd",
+        "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39",
+        "0e1c439c-a45a-4d2d-a234-e85336634e03",
+        "af86614b-6ae0-42bf-aabe-f3c53ca449f2",
+        "31905a0b-c8ff-468f-884f-be9a067f2c55",
+        "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d",
+        "65266f25-a253-41d2-abea-cfe6129f4566",
+        "74413f06-b187-4e86-ba07-1472c82b0753",
+        "89104acb-4f1d-4519-8cdf-ce064148beaf",
+        "427c9b25-923a-408a-b760-2f85e4629dde",
+        "552f9e5a-d05b-42b8-bdbd-e5051eda422a",
+        "78c76a91-3dcd-497e-a380-e9bd3b7bc720",
+        "c581e00f-2458-4599-a850-eb639904dee6"
+      ]
+    },
+    "wordTrOnly": {
+      "newCoveredForms": 49,
+      "remainingForms": 17,
+      "coveragePct": 0.7424,
+      "isReady": false,
+      "remainingFormIds": [
+        "8046669c-8bad-4da8-9f5a-892b77a11fc9",
+        "c0147142-1923-4dd5-8e81-a28f7194d7f9",
+        "3d396a28-9e9a-44ce-b312-917fb6b6b767",
+        "d99f3ecc-0fc9-4f04-abd4-a7980b353c73",
+        "c0212ac1-d4e5-4415-a537-4e3da95191fd",
+        "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39",
+        "0e1c439c-a45a-4d2d-a234-e85336634e03",
+        "af86614b-6ae0-42bf-aabe-f3c53ca449f2",
+        "31905a0b-c8ff-468f-884f-be9a067f2c55",
+        "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d",
+        "65266f25-a253-41d2-abea-cfe6129f4566",
+        "74413f06-b187-4e86-ba07-1472c82b0753",
+        "89104acb-4f1d-4519-8cdf-ce064148beaf",
+        "427c9b25-923a-408a-b760-2f85e4629dde",
+        "552f9e5a-d05b-42b8-bdbd-e5051eda422a",
+        "78c76a91-3dcd-497e-a380-e9bd3b7bc720",
+        "c581e00f-2458-4599-a850-eb639904dee6"
+      ]
+    },
+    "safeCombination": {
+      "newCoveredForms": 59,
+      "remainingForms": 7,
+      "coveragePct": 0.8939,
+      "isReady": false,
+      "remainingFormIds": [
+        "8046669c-8bad-4da8-9f5a-892b77a11fc9",
+        "3d396a28-9e9a-44ce-b312-917fb6b6b767",
+        "8b8b7f45-772a-4fcf-81e2-ded3ce2b1e39",
+        "0e1c439c-a45a-4d2d-a234-e85336634e03",
+        "af86614b-6ae0-42bf-aabe-f3c53ca449f2",
+        "31905a0b-c8ff-468f-884f-be9a067f2c55",
+        "f0ed8f8b-3644-4447-bdd1-30dbe4d0e72d"
+      ]
+    },
+    "completeAfterReview": {
+      "newCoveredForms": 66,
+      "remainingForms": 0,
+      "coveragePct": 1,
+      "isReady": true,
+      "remainingFormIds": []
+    }
+  },
+  "minimalPathToReady": {
+    "safeLemmaGlosses": 10,
+    "safeMappings": 0,
+    "safeWordTranslations": 0,
+    "reviewRequired": 7,
+    "doNotImport": 0,
+    "distinctReviewForms": [
+      "ٱنفَطَرَتْ",
+      "ٱنتَثَرَتْ",
+      "بُعْثِرَتْ",
+      "وَأَخَّرَتْ",
+      "غَرَّكَ",
+      "فَسَوَّىٰكَ",
+      "فَعَدَلَكَ"
+    ],
+    "canReach100WithSafeOnly": false,
+    "canReach100WithReview": true,
+    "totalActionsForSafeOnly": 10,
+    "totalActionsForReady": 17
+  },
+  "integrity": {
+    "orphanQuranWordsLemma": 0,
+    "orphanWordLemmaMapping": 0,
+    "orphanLinguisticOccurrences": 0,
+    "orphanLemmaTranslations": 0,
+    "duplicateWordLemmaMapping": 0,
+    "duplicateLemmaTranslations": 0,
+    "duplicateFrGlosses": 0,
+    "contradictoryDirectVsWlm": 0,
+    "existingTranslationsIntact": true,
+    "s98StillReady": true,
+    "s92StillReady": true,
+    "classifySurahReadinessUnchanged": true,
+    "curriculumUnchanged": true
+  },
+  "invariants": {
+    "databaseWrites": 0,
+    "lexicalWrites": 0,
+    "translationWrites": 0,
+    "curriculumWrites": 0,
+    "masaqWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "readOnly": true
+  },
+  "tests": {
+    "run": true,
+    "vitest": { "passed": 954, "total": 954 },
+    "scriptTypeScript": "PASS (0 errors)",
+    "scriptEslint": "PASS (0 errors, 0 warnings)",
+    "readOnlyStaticCheck": "PASS (0 DB write calls)"
+  },
+  "nextPhase": "PHASE 88F-N — import des éléments SAFE validés (lemma glosses), puis traitement séparé des REVIEW (word_translations recommandées).",
+  "answersToKeyQuestions": {
+    "missingForms": 17,
+    "resolvableByLemmaGloss": 10,
+    "requireMapping": 0,
+    "requireWordTranslation": 7,
+    "requireHumanDecision": 7,
+    "exactActionsTo100": 17,
+    "canReachReadyWithoutArtificialMapping": true,
+    "safestNextAction": "Importer d'abord les lemma glosses SAFE (A), puis traiter les D_REVIEW_MAPPING avec des word_translations (aucun mapping artificiel)."
+  }
+}

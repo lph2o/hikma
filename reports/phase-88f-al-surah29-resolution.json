@@ -1,0 +1,48 @@
+{
+  "phase": "88F-AL",
+  "verdict": "PHASE_88F_AL_COMPLETE",
+  "s29Ready": true,
+  "mode": "IDEMPOTENCE",
+  "timestamp": "2026-08-24T14:37:11.978Z",
+  "durationSeconds": 35.14,
+  "preflight": {
+    "baseline": {
+      "totalForms": 663,
+      "covered": 663,
+      "unresolved": 0
+    },
+    "glossValidation": {
+      "NEW": 0,
+      "EXISTING_SAME": 137,
+      "CONFLICT": 0,
+      "MISSING": 0
+    }
+  },
+  "writes": {
+    "mode": "IDEMPOTENCE",
+    "newIfApplied": 0
+  },
+  "postAudit": {
+    "surah46": {
+      "totalForms": 663,
+      "covered": 663,
+      "coveragePct": 1,
+      "readiness": "READY"
+    },
+    "global": {
+      "frUnionBefore": 5108,
+      "frUnionAfter": 5108,
+      "frUnionDelta": 0,
+      "wordTranslationsBefore": 4887,
+      "wordTranslationsAfter": 4887
+    }
+  },
+  "integrity": {
+    "protectedTablesDelta": "aucun",
+    "masaqWrites": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "classifySurahReadinessUnchanged": true
+  }
+}

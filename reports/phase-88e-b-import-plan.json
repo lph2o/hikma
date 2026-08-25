@@ -1,0 +1,320 @@
+{
+  "phase": "88E-B",
+  "mode": "DRY_RUN",
+  "timestamp": "2026-08-23T17:23:19.938Z",
+  "classification": {
+    "newLemmaSafe": 1561,
+    "existingMapping": 22,
+    "partialReview": 1323,
+    "duplicates": 10,
+    "unresolved": 8,
+    "conflicts": 0
+  },
+  "expectedWrites": {
+    "lemmas": 1561,
+    "wordLemmaMappings": 29,
+    "linguisticOccurrenceUpdates": 7585
+  },
+  "topNewLemmas": [
+    {
+      "arabic": "علي",
+      "surahCount": 45,
+      "formCount": 15,
+      "occurrenceCount": 157
+    },
+    {
+      "arabic": "غير",
+      "surahCount": 19,
+      "formCount": 11,
+      "occurrenceCount": 41
+    },
+    {
+      "arabic": "شانئ",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "كوثر",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "أبتر",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "صمد",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "أحد",
+      "surahCount": 9,
+      "formCount": 6,
+      "occurrenceCount": 15
+    },
+    {
+      "arabic": "ولد",
+      "surahCount": 7,
+      "formCount": 6,
+      "occurrenceCount": 7
+    },
+    {
+      "arabic": "كفو",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "عقد",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "ملك",
+      "surahCount": 19,
+      "formCount": 12,
+      "occurrenceCount": 22
+    },
+    {
+      "arabic": "شر",
+      "surahCount": 8,
+      "formCount": 7,
+      "occurrenceCount": 13
+    },
+    {
+      "arabic": "خناس",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "عقب",
+      "surahCount": 3,
+      "formCount": 4,
+      "occurrenceCount": 4
+    },
+    {
+      "arabic": "قلب",
+      "surahCount": 6,
+      "formCount": 6,
+      "occurrenceCount": 7
+    },
+    {
+      "arabic": "آل",
+      "surahCount": 4,
+      "formCount": 3,
+      "occurrenceCount": 7
+    },
+    {
+      "arabic": "عظيم",
+      "surahCount": 16,
+      "formCount": 4,
+      "occurrenceCount": 29
+    },
+    {
+      "arabic": "خير",
+      "surahCount": 25,
+      "formCount": 12,
+      "occurrenceCount": 50
+    },
+    {
+      "arabic": "ذنوب",
+      "surahCount": 8,
+      "formCount": 7,
+      "occurrenceCount": 10
+    },
+    {
+      "arabic": "عليم",
+      "surahCount": 15,
+      "formCount": 6,
+      "occurrenceCount": 42
+    },
+    {
+      "arabic": "عد",
+      "surahCount": 8,
+      "formCount": 12,
+      "occurrenceCount": 14
+    },
+    {
+      "arabic": "نفاث",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "غاسق",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "إله",
+      "surahCount": 13,
+      "formCount": 9,
+      "occurrenceCount": 23
+    },
+    {
+      "arabic": "جن",
+      "surahCount": 36,
+      "formCount": 26,
+      "occurrenceCount": 72
+    },
+    {
+      "arabic": "وسواس",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "صدور",
+      "surahCount": 10,
+      "formCount": 4,
+      "occurrenceCount": 11
+    },
+    {
+      "arabic": "بعض",
+      "surahCount": 13,
+      "formCount": 13,
+      "occurrenceCount": 46
+    },
+    {
+      "arabic": "رزق",
+      "surahCount": 17,
+      "formCount": 21,
+      "occurrenceCount": 42
+    },
+    {
+      "arabic": "غلب",
+      "surahCount": 3,
+      "formCount": 4,
+      "occurrenceCount": 7
+    },
+    {
+      "arabic": "جار",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "قصوى",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "فلق",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "عزيز",
+      "surahCount": 17,
+      "formCount": 5,
+      "occurrenceCount": 31
+    },
+    {
+      "arabic": "ديار",
+      "surahCount": 3,
+      "formCount": 2,
+      "occurrenceCount": 3
+    },
+    {
+      "arabic": "شوك",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "عهد",
+      "surahCount": 5,
+      "formCount": 8,
+      "occurrenceCount": 9
+    },
+    {
+      "arabic": "حاسد",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "خلق",
+      "surahCount": 41,
+      "formCount": 39,
+      "occurrenceCount": 91
+    },
+    {
+      "arabic": "آخر",
+      "surahCount": 24,
+      "formCount": 17,
+      "occurrenceCount": 53
+    },
+    {
+      "arabic": "ليل",
+      "surahCount": 23,
+      "formCount": 10,
+      "occurrenceCount": 37
+    },
+    {
+      "arabic": "ضحى",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "نعم",
+      "surahCount": 17,
+      "formCount": 14,
+      "occurrenceCount": 25
+    },
+    {
+      "arabic": "سائل",
+      "surahCount": 3,
+      "formCount": 3,
+      "occurrenceCount": 4
+    },
+    {
+      "arabic": "يتيم",
+      "surahCount": 5,
+      "formCount": 3,
+      "occurrenceCount": 6
+    },
+    {
+      "arabic": "عائل",
+      "surahCount": 1,
+      "formCount": 1,
+      "occurrenceCount": 1
+    },
+    {
+      "arabic": "نهر",
+      "surahCount": 2,
+      "formCount": 2,
+      "occurrenceCount": 2
+    },
+    {
+      "arabic": "نزل",
+      "surahCount": 15,
+      "formCount": 14,
+      "occurrenceCount": 18
+    },
+    {
+      "arabic": "روح",
+      "surahCount": 7,
+      "formCount": 6,
+      "occurrenceCount": 7
+    },
+    {
+      "arabic": "قدر",
+      "surahCount": 19,
+      "formCount": 21,
+      "occurrenceCount": 33
+    }
+  ]
+}

@@ -1,0 +1,811 @@
+{
+  "phase": "88F-E",
+  "mode": "APPLY",
+  "timestamp": "2026-08-23T21:04:18.079Z",
+  "verdict": "PHASE_88F_E_COMPLETE",
+  "source": "reports/phase-88f-d-editorial-audit.json",
+  "baseline": {
+    "lemmaTranslations": 119,
+    "frFormsUnion": 5232,
+    "frOccurrences": 56032,
+    "readySurahs": 23,
+    "inPreparationSurahs": 90
+  },
+  "preflight": {
+    "safeCandidates": 57,
+    "lemmaIdsFound": 57,
+    "toInsert": [],
+    "existingSame": [
+      "f5b6aec2-6019-4377-9003-7f39611e8bcf",
+      "ae654475-bee9-40c2-9437-0a8c2d832631",
+      "e5b1b342-f470-4154-bc7a-8449532d2f7e",
+      "c5e0944b-a822-4e20-8413-e19589fad5f1",
+      "1355e71c-2e35-4b34-9ee8-4ce8df1d35c4",
+      "22f55cee-81bd-4756-beaf-9c9a48b09d48",
+      "024ae2a4-774f-4da0-8e54-c0f9f40e1138",
+      "b23c3ad4-df1a-4c71-965f-5e181b9421a2",
+      "624c89e8-d1d4-40a8-8e8a-2bcdf12b8b42",
+      "2660c7a2-d9cd-4a70-bfc1-b59db0ccd663",
+      "54a5ff7d-11b1-4edb-9585-0d6e9f51a665",
+      "e66dc22c-7f67-466c-9db7-da4477115a47",
+      "3dada8f7-9062-429e-b895-93f97509bf94",
+      "fb036773-0b2c-44d1-b750-25c30bd977da",
+      "063cce35-d165-45ec-8e6c-1796ed3d2d27",
+      "189510db-ed76-4482-9e37-d627dc253093",
+      "6d757fc2-dbb6-4be3-bdab-84399402e505",
+      "b9614bcc-efa8-4a21-b4a7-7cca66d48e03",
+      "7905b8bf-9eec-428c-865f-7c3f9acb82fa",
+      "24216847-e6f8-4717-b94b-234d551f44ed",
+      "46c9a9d4-4d7e-481c-bacb-5c0282ffc5ec",
+      "63a7e3bf-3f27-4eae-9f44-80f9ab6020f5",
+      "9021a1ad-37d5-40f2-972b-953d9539de7d",
+      "13e55c78-dda2-4ce7-8368-9a99172251ac",
+      "7393c5aa-a7b7-472c-bfc6-7a4dea0f2977",
+      "61684fb3-2a69-4011-a7db-ac281d888557",
+      "fdadfb93-a16a-4759-9d80-0fbfcd51faba",
+      "87a46d91-82e9-4bcc-8b84-d3bc55b4e921",
+      "832e0689-4212-4707-845a-c9f53913cd50",
+      "a24070e1-8a11-4caa-b043-016a89c05474",
+      "dc0848ca-d4fc-4764-9c36-e79888a4b239",
+      "91ef48cd-b123-4d6c-8d42-2074382aaf22",
+      "85e5148d-6aaa-49bd-b76f-89320c51eea1",
+      "e6af437d-b88a-4b50-ba92-fcd42773bfdd",
+      "a4596c98-0744-41c4-8930-44ad3a63dbd8",
+      "8242d145-b0ce-4237-9e56-770e45b87298",
+      "30d1733b-bf5b-47d3-9dfe-f3ef7d589920",
+      "9112219e-0b5c-477c-ac12-f8063314ceb3",
+      "42fbe382-4bfa-4d98-b475-629d18d0899e",
+      "4b3b0a09-5975-4939-b05b-634224a5c817",
+      "e19d1689-7f10-4d17-88ff-ab550dbd530a",
+      "81fe2c08-93f6-4bfd-8b4b-1b5726c25de0",
+      "0597f48c-7f3f-4b78-b186-62f8c60d13de",
+      "06a21769-a8b2-41bf-aaf1-0bdef487b326",
+      "9f22b45e-eb32-4e97-819d-b2473ca46b0f",
+      "a3f3b9d1-ee07-435e-afff-61937424de7d",
+      "54e971e8-4e52-4c36-bf0b-95750f8701d9",
+      "2bc5af40-7faf-4206-a943-459472479c8c",
+      "2c444e9c-d40d-4fb7-a77a-4291fb328645",
+      "ba7d2131-96f2-4c41-8348-6c42336b13a6",
+      "7191a03c-c840-4584-9774-759d61a55d6d",
+      "5a3fa86b-99f4-4f81-af87-b344310e6266",
+      "95ac8e10-554e-4261-8c28-663c3db864b8",
+      "fb9bc537-4be9-43b0-85b2-70dfce92d90a",
+      "e1083b2a-0355-441c-8438-0aa8101da70e",
+      "5cc5327b-b69d-48a1-b475-3a64f57ad8e6",
+      "4d80c0c2-4612-44a9-8261-9383715a48b7"
+    ],
+    "conflicts": [],
+    "conflictCount": 0,
+    "glossExactMatch": true,
+    "language": "fr",
+    "source": "Hikma — lexique éditorial",
+    "validated": true
+  },
+  "trueNew": {
+    "expected": {
+      "forms": 246,
+      "occurrences": 255
+    },
+    "computed": {
+      "forms": 0,
+      "occurrences": 0
+    },
+    "matches": false,
+    "alreadyInPlace": true
+  },
+  "import": {
+    "inserted": 0,
+    "existingSame": 57,
+    "conflicts": 0,
+    "errors": 0,
+    "atomicity": "INSERT bulk unique (une seule statement Postgres) — atomique",
+    "trace": {
+      "expectedInserted": 57,
+      "expectedGainForms": 246,
+      "expectedGainOccs": 255
+    }
+  },
+  "snapshotDb": {
+    "before": {
+      "lemma_translations": 119,
+      "word_translations": 4490,
+      "quran_words": 21296,
+      "word_lemma_mapping": 220,
+      "linguistic_occurrences": 22485,
+      "lemmas": 1593,
+      "learning_paths": 24,
+      "units": 24,
+      "lessons": 191
+    },
+    "after": {
+      "lemma_translations": 119,
+      "word_translations": 4490,
+      "quran_words": 21296,
+      "word_lemma_mapping": 220,
+      "linguistic_occurrences": 22485,
+      "lemmas": 1593,
+      "learning_paths": 24,
+      "units": 24,
+      "lessons": 191
+    },
+    "lemmaTranslationsDelta": 0,
+    "invariantDelta": {
+      "word_translations": 0,
+      "quran_words": 0,
+      "word_lemma_mapping": 0,
+      "linguistic_occurrences": 0,
+      "lemmas": 0,
+      "learning_paths": 0,
+      "units": 0,
+      "lessons": 0
+    }
+  },
+  "coverage": {
+    "before": {
+      "quranWordsTotal": 21296,
+      "wordTranslationsFrValidated": 4490,
+      "lemmaTranslationsFrValidated": 115,
+      "formsCoveredByWord": 4490,
+      "formsCoveredByLemma": 1734,
+      "unionFr": 5232,
+      "formsWithoutFr": 16064,
+      "occurrencesCovered": 56032,
+      "occurrencesTotal": 77430,
+      "readySurahs": 23,
+      "inPreparationSurahs": 90,
+      "referenceSurahs": 1
+    },
+    "after": {
+      "quranWordsTotal": 21296,
+      "wordTranslationsFrValidated": 4490,
+      "lemmaTranslationsFrValidated": 115,
+      "formsCoveredByWord": 4490,
+      "formsCoveredByLemma": 1734,
+      "unionFr": 5232,
+      "formsWithoutFr": 16064,
+      "occurrencesCovered": 56032,
+      "occurrencesTotal": 77430,
+      "readySurahs": 23,
+      "inPreparationSurahs": 90,
+      "referenceSurahs": 1
+    },
+    "gain": {
+      "newForms": 0,
+      "newOccurrences": 0,
+      "newFormIds": [],
+      "matchesExpected": false
+    },
+    "surahReady": {
+      "before": 23,
+      "after": 23
+    },
+    "surahInPreparation": {
+      "before": 90,
+      "after": 90
+    },
+    "expected": {
+      "formsAfter": 5232,
+      "occurrencesAfter": 56032,
+      "readyAfter": 23
+    }
+  },
+  "gainPerLemma": [
+    {
+      "rank": 8,
+      "lemmaId": "f5b6aec2-6019-4377-9003-7f39611e8bcf",
+      "arabic": "نصر",
+      "d88Forms": 13,
+      "d88Occs": 14,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 11,
+      "lemmaId": "ae654475-bee9-40c2-9437-0a8c2d832631",
+      "arabic": "صالح",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 12,
+      "lemmaId": "e5b1b342-f470-4154-bc7a-8449532d2f7e",
+      "arabic": "أكل",
+      "d88Forms": 9,
+      "d88Occs": 9,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 13,
+      "lemmaId": "c5e0944b-a822-4e20-8413-e19589fad5f1",
+      "arabic": "نعم",
+      "d88Forms": 8,
+      "d88Occs": 9,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 14,
+      "lemmaId": "1355e71c-2e35-4b34-9ee8-4ce8df1d35c4",
+      "arabic": "بصر",
+      "d88Forms": 8,
+      "d88Occs": 9,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 15,
+      "lemmaId": "22f55cee-81bd-4756-beaf-9c9a48b09d48",
+      "arabic": "قلوب",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 16,
+      "lemmaId": "024ae2a4-774f-4da0-8e54-c0f9f40e1138",
+      "arabic": "قرآن",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 17,
+      "lemmaId": "b23c3ad4-df1a-4c71-965f-5e181b9421a2",
+      "arabic": "نزل",
+      "d88Forms": 6,
+      "d88Occs": 6,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 19,
+      "lemmaId": "624c89e8-d1d4-40a8-8e8a-2bcdf12b8b42",
+      "arabic": "عباد",
+      "d88Forms": 7,
+      "d88Occs": 7,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 21,
+      "lemmaId": "2660c7a2-d9cd-4a70-bfc1-b59db0ccd663",
+      "arabic": "رسل",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 22,
+      "lemmaId": "54a5ff7d-11b1-4edb-9585-0d6e9f51a665",
+      "arabic": "حب",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 23,
+      "lemmaId": "e66dc22c-7f67-466c-9db7-da4477115a47",
+      "arabic": "تبع",
+      "d88Forms": 7,
+      "d88Occs": 7,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 24,
+      "lemmaId": "3dada8f7-9062-429e-b895-93f97509bf94",
+      "arabic": "أكثر",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 26,
+      "lemmaId": "fb036773-0b2c-44d1-b750-25c30bd977da",
+      "arabic": "عدو",
+      "d88Forms": 7,
+      "d88Occs": 8,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 28,
+      "lemmaId": "063cce35-d165-45ec-8e6c-1796ed3d2d27",
+      "arabic": "نهار",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 32,
+      "lemmaId": "189510db-ed76-4482-9e37-d627dc253093",
+      "arabic": "يد",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 33,
+      "lemmaId": "6d757fc2-dbb6-4be3-bdab-84399402e505",
+      "arabic": "سماو",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 34,
+      "lemmaId": "b9614bcc-efa8-4a21-b4a7-7cca66d48e03",
+      "arabic": "أنهار",
+      "d88Forms": 3,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 36,
+      "lemmaId": "7905b8bf-9eec-428c-865f-7c3f9acb82fa",
+      "arabic": "شرك",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 38,
+      "lemmaId": "24216847-e6f8-4717-b94b-234d551f44ed",
+      "arabic": "أصحاب",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 39,
+      "lemmaId": "46c9a9d4-4d7e-481c-bacb-5c0282ffc5ec",
+      "arabic": "نفق",
+      "d88Forms": 7,
+      "d88Occs": 7,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 41,
+      "lemmaId": "63a7e3bf-3f27-4eae-9f44-80f9ab6020f5",
+      "arabic": "أيدي",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 43,
+      "lemmaId": "9021a1ad-37d5-40f2-972b-953d9539de7d",
+      "arabic": "ظالم",
+      "d88Forms": 2,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 45,
+      "lemmaId": "13e55c78-dda2-4ce7-8368-9a99172251ac",
+      "arabic": "أزواج",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 48,
+      "lemmaId": "7393c5aa-a7b7-472c-bfc6-7a4dea0f2977",
+      "arabic": "واحد",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 49,
+      "lemmaId": "61684fb3-2a69-4011-a7db-ac281d888557",
+      "arabic": "ليل",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 51,
+      "lemmaId": "fdadfb93-a16a-4759-9d80-0fbfcd51faba",
+      "arabic": "كثير",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 52,
+      "lemmaId": "87a46d91-82e9-4bcc-8b84-d3bc55b4e921",
+      "arabic": "نور",
+      "d88Forms": 6,
+      "d88Occs": 6,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 54,
+      "lemmaId": "832e0689-4212-4707-845a-c9f53913cd50",
+      "arabic": "شديد",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 55,
+      "lemmaId": "a24070e1-8a11-4caa-b043-016a89c05474",
+      "arabic": "إله",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 58,
+      "lemmaId": "dc0848ca-d4fc-4764-9c36-e79888a4b239",
+      "arabic": "ساع",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 59,
+      "lemmaId": "91ef48cd-b123-4d6c-8d42-2074382aaf22",
+      "arabic": "متاع",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 60,
+      "lemmaId": "85e5148d-6aaa-49bd-b76f-89320c51eea1",
+      "arabic": "جهنم",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 61,
+      "lemmaId": "e6af437d-b88a-4b50-ba92-fcd42773bfdd",
+      "arabic": "وجه",
+      "d88Forms": 6,
+      "d88Occs": 6,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 62,
+      "lemmaId": "a4596c98-0744-41c4-8930-44ad3a63dbd8",
+      "arabic": "أبصار",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 64,
+      "lemmaId": "8242d145-b0ce-4237-9e56-770e45b87298",
+      "arabic": "بيت",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 67,
+      "lemmaId": "30d1733b-bf5b-47d3-9dfe-f3ef7d589920",
+      "arabic": "نعيم",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 70,
+      "lemmaId": "9112219e-0b5c-477c-ac12-f8063314ceb3",
+      "arabic": "قطع",
+      "d88Forms": 8,
+      "d88Occs": 8,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 71,
+      "lemmaId": "42fbe382-4bfa-4d98-b475-629d18d0899e",
+      "arabic": "مجرم",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 75,
+      "lemmaId": "4b3b0a09-5975-4939-b05b-634224a5c817",
+      "arabic": "قيام",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 76,
+      "lemmaId": "e19d1689-7f10-4d17-88ff-ab550dbd530a",
+      "arabic": "ملائك",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 77,
+      "lemmaId": "81fe2c08-93f6-4bfd-8b4b-1b5726c25de0",
+      "arabic": "قليل",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 78,
+      "lemmaId": "0597f48c-7f3f-4b78-b186-62f8c60d13de",
+      "arabic": "تذكر",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 79,
+      "lemmaId": "06a21769-a8b2-41bf-aaf1-0bdef487b326",
+      "arabic": "جحيم",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 80,
+      "lemmaId": "9f22b45e-eb32-4e97-819d-b2473ca46b0f",
+      "arabic": "سجد",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 82,
+      "lemmaId": "a3f3b9d1-ee07-435e-afff-61937424de7d",
+      "arabic": "محسن",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 85,
+      "lemmaId": "54e971e8-4e52-4c36-bf0b-95750f8701d9",
+      "arabic": "أموال",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 88,
+      "lemmaId": "2bc5af40-7faf-4206-a943-459472479c8c",
+      "arabic": "ذنوب",
+      "d88Forms": 4,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 90,
+      "lemmaId": "2c444e9c-d40d-4fb7-a77a-4291fb328645",
+      "arabic": "سواء",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 91,
+      "lemmaId": "ba7d2131-96f2-4c41-8348-6c42336b13a6",
+      "arabic": "كبير",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 92,
+      "lemmaId": "7191a03c-c840-4584-9774-759d61a55d6d",
+      "arabic": "كفار",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 93,
+      "lemmaId": "5a3fa86b-99f4-4f81-af87-b344310e6266",
+      "arabic": "ثلاث",
+      "d88Forms": 7,
+      "d88Occs": 7,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 94,
+      "lemmaId": "95ac8e10-554e-4261-8c28-663c3db864b8",
+      "arabic": "سيئ",
+      "d88Forms": 2,
+      "d88Occs": 2,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 95,
+      "lemmaId": "fb9bc537-4be9-43b0-85b2-70dfce92d90a",
+      "arabic": "مشرك",
+      "d88Forms": 2,
+      "d88Occs": 4,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 97,
+      "lemmaId": "e1083b2a-0355-441c-8438-0aa8101da70e",
+      "arabic": "معروف",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 98,
+      "lemmaId": "5cc5327b-b69d-48a1-b475-3a64f57ad8e6",
+      "arabic": "صاحب",
+      "d88Forms": 5,
+      "d88Occs": 5,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    },
+    {
+      "rank": 99,
+      "lemmaId": "4d80c0c2-4612-44a9-8261-9383715a48b7",
+      "arabic": "ابن",
+      "d88Forms": 3,
+      "d88Occs": 3,
+      "actualForms": 0,
+      "actualOccs": 0,
+      "diff": true
+    }
+  ],
+  "validation": {
+    "A": {
+      "ok": true,
+      "detail": "57/57 lemma_id présents"
+    },
+    "B": {
+      "ok": true,
+      "detail": "langue/source/validation OK pour 57/57"
+    },
+    "C": {
+      "ok": true,
+      "detail": "57/57 textes identiques à 88F-D"
+    },
+    "D": {
+      "ok": true,
+      "detail": "clés dupliquées = 0"
+    },
+    "E": {
+      "ok": true,
+      "detail": "0 conflits"
+    },
+    "F": {
+      "ok": true,
+      "detail": "orphelines = 0"
+    }
+  },
+  "integrityChecks": {
+    "duplicateWordLemmaMapping": 0,
+    "contradictoryDirectWlm": 0
+  },
+  "invariants": {
+    "ok": true,
+    "delta": {
+      "word_translations": 0,
+      "quran_words": 0,
+      "word_lemma_mapping": 0,
+      "linguistic_occurrences": 0,
+      "lemmas": 0,
+      "learning_paths": 0,
+      "units": 0,
+      "lessons": 0
+    }
+  },
+  "tests": {
+    "run": false,
+    "note": "exécutés après import (vitest · tsc · eslint)"
+  }
+}

@@ -1,0 +1,1358 @@
+{
+  "phase": "88E-A",
+  "mode": "READ_ONLY_SIMULATION",
+  "timestamp": "2026-08-23T17:01:27.068Z",
+  "snapshot": {
+    "quranWords": 21296,
+    "occurrences": 77430,
+    "lemmasExisting": 32,
+    "wlmExisting": 188,
+    "masaqRows": 22485,
+    "masaqSurahs": 74,
+    "masaqMissingSurahs": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      27,
+      30,
+      33,
+      35,
+      37,
+      38,
+      40,
+      41,
+      42,
+      43,
+      44,
+      48,
+      57,
+      59,
+      60,
+      64,
+      72,
+      75,
+      81
+    ]
+  },
+  "classification": {
+    "safe": 1573,
+    "normalizationReview": 0,
+    "partialReview": 1323,
+    "lexicalReview": 0,
+    "conflict": 8,
+    "duplicate": 12,
+    "unresolved": 8,
+    "newLemmaSkeletonsRequired": 1555
+  },
+  "simulation": {
+    "formsWithMappingBefore": 323,
+    "formsWithMappingAfter": 354,
+    "newMappingsCount": 31,
+    "affectedSurahs": 107,
+    "distinctMappingCandidates": 31
+  },
+  "topSafeCandidates": [
+    {
+      "masaqStem": "في",
+      "stemSkeleton": "في",
+      "distinctSurahs": 58,
+      "occurrenceCount": 496,
+      "distinctForms": 13,
+      "existingHikmaLemmaId": "e34c8427-5e9a-4505-bb7a-fe4fa2f92bc3",
+      "existingHikmaLemmaArabic": "فِي",
+      "posObserved": [
+        "PREP",
+        "POSS_PRON",
+        "PRON_3MP",
+        "OTHER",
+        "SUFF",
+        "CONJ",
+        "PRON_3MS",
+        "PRON_1P"
+      ],
+      "glossEnSamples": [
+        "in",
+        "therein",
+        "(will-be)-in",
+        "(are)-among-them",
+        "(is)-surely-in"
+      ],
+      "formArabicSamples": [
+        "فِي",
+        "فِيهَا",
+        "فِيهِمْ",
+        "لَفِي",
+        "فِيمَا",
+        "فِيكُمْ",
+        "وَفِي",
+        "وَفِيكُمْ"
+      ]
+    },
+    {
+      "masaqStem": "رب",
+      "stemSkeleton": "رب",
+      "distinctSurahs": 56,
+      "occurrenceCount": 272,
+      "distinctForms": 45,
+      "existingHikmaLemmaId": "01021c14-2f6b-4ce7-b18b-0c21557c023b",
+      "existingHikmaLemmaArabic": "رَبّ",
+      "posObserved": [
+        "NOUN_CONCRETE",
+        "PREP",
+        "POSS_PRON",
+        "CONJ",
+        "PV",
+        "SUFF_FEM_TA",
+        "CASE_DEF_GEN",
+        "POSS_PRON_1P",
+        "OTHER"
+      ],
+      "glossEnSamples": [
+        "the-lord",
+        "to-your-lord",
+        "in-(the)-lord",
+        "your-lord",
+        "(of)-your-lord"
+      ],
+      "formArabicSamples": [
+        "رَبِّ",
+        "لِرَبِّكَ",
+        "بِرَبِّ",
+        "رَبُّكَ",
+        "رَبِّكَ",
+        "رَبِّهِمْ",
+        "رَبَّ",
+        "وَرَبُّكَ"
+      ]
+    },
+    {
+      "masaqStem": "لا",
+      "stemSkeleton": "لا",
+      "distinctSurahs": 51,
+      "occurrenceCount": 451,
+      "distinctForms": 5,
+      "existingHikmaLemmaId": "1c991295-1848-41ab-bf00-6d2f29137c79",
+      "existingHikmaLemmaArabic": "لَا",
+      "posObserved": [
+        "CONJ",
+        "NEG_PART",
+        "JUSSIVE_PART",
+        "INTERROG",
+        "OTHER"
+      ],
+      "glossEnSamples": [
+        "and-not",
+        "then-(do)-not",
+        "not",
+        "(can)-not",
+        "(do)-not"
+      ],
+      "formArabicSamples": [
+        "وَلَا",
+        "فَلَا",
+        "لَا",
+        "أَوَلَا",
+        "أَفَلَا"
+      ]
+    },
+    {
+      "masaqStem": "يوم",
+      "stemSkeleton": "يوم",
+      "distinctSurahs": 44,
+      "occurrenceCount": 180,
+      "distinctForms": 22,
+      "existingHikmaLemmaId": "aadb9c24-063c-4f8d-8c40-e527dd866a28",
+      "existingHikmaLemmaArabic": "يَوْم",
+      "posObserved": [
+        "NOUN_ABSTRACT",
+        "CASE_DEF_ACC",
+        "ADV",
+        "POSS_PRON",
+        "DET",
+        "CONJ",
+        "PREP",
+        "CASE_INDEF_ACC",
+        "CASE_DEF_GEN",
+        "OTHER",
+        "CASE_INDEF_GEN"
+      ],
+      "glossEnSamples": [
+        "(of-the)-day",
+        "(the)-day",
+        "that-day",
+        "(on-the)-day",
+        "his-back-that-day"
+      ],
+      "formArabicSamples": [
+        "يَوْمِ",
+        "يَوْمَ",
+        "يَوْمَئِذٍ",
+        "الْيَوْمَ",
+        "وَالْيَوْمِ",
+        "يَوْمٍ",
+        "بِالْيَوْمِ",
+        "وَيَوْمَ"
+      ]
+    },
+    {
+      "masaqStem": "أرض",
+      "stemSkeleton": "أرض",
+      "distinctSurahs": 43,
+      "occurrenceCount": 144,
+      "distinctForms": 10,
+      "existingHikmaLemmaId": "2ccaa3d6-a1d6-44ec-8829-728d7be639c7",
+      "existingHikmaLemmaArabic": "أَرْض",
+      "posObserved": [
+        "DET",
+        "NOUN_CONCRETE",
+        "CASE_DEF_GEN",
+        "CONJ",
+        "CASE_DEF_ACC",
+        "POSS_PRON",
+        "CASE_INDEF_GEN"
+      ],
+      "glossEnSamples": [
+        "the-earth",
+        "the-land",
+        "and-the-earth",
+        "and-the-earth;",
+        "(to)-the-land"
+      ],
+      "formArabicSamples": [
+        "الْأَرْضِ",
+        "وَالْأَرْضِ",
+        "وَالْأَرْضَ",
+        "الْأَرْضُ",
+        "الْأَرْضَ",
+        "أَرْضِنَا",
+        "أَرْضِي",
+        "أَرْضٍ"
+      ]
+    },
+    {
+      "masaqStem": "كان",
+      "stemSkeleton": "كان",
+      "distinctSurahs": 42,
+      "occurrenceCount": 178,
+      "distinctForms": 13,
+      "existingHikmaLemmaId": "903ca0ff-d797-4b39-ad90-dfd49ef09437",
+      "existingHikmaLemmaArabic": "كَان",
+      "posObserved": [
+        "PV",
+        "SUBJ_PRON",
+        "CONJ",
+        "SUFF_FEM_TA",
+        "PREP",
+        "UNINFLECTED_VERB",
+        "PVSUFF_SUBJ:3FS"
+      ],
+      "glossEnSamples": [
+        "was",
+        "this-is-[t]",
+        "is",
+        "he-is",
+        "they-are"
+      ],
+      "formArabicSamples": [
+        "كَانَ",
+        "كَانُوا",
+        "وَكَانُوا",
+        "كَانَتْ",
+        "لَكَانَ",
+        "فَكَانَ",
+        "فَكَانُوا",
+        "فَكَانَتْ"
+      ]
+    },
+    {
+      "masaqStem": "خلق",
+      "stemSkeleton": "خلق",
+      "distinctSurahs": 41,
+      "occurrenceCount": 91,
+      "distinctForms": 39,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "PV_PASS",
+        "CASE_DEF_GEN",
+        "PV",
+        "DET",
+        "GERUND",
+        "CASE_DEF_ACC",
+        "PREP",
+        "POSS_PRON",
+        "SUBJ_PRON",
+        "IV3MS",
+        "IV",
+        "OBJ_PRON",
+        "CONJ",
+        "IMPERF_PREF",
+        "NOON_V5",
+        "CASE_INDEF_(ACC_GEN)",
+        "NOUN_ABSTRACT",
+        "SUFF_FEM_TA"
+      ],
+      "glossEnSamples": [
+        "he-created",
+        "created",
+        "allah-created",
+        "the-creation",
+        "like-his-creation"
+      ],
+      "formArabicSamples": [
+        "خَلَقَ",
+        "الْخَلْقُ",
+        "كَخَلْقِهِ",
+        "خَلْقٍ",
+        "خَلَقُوا",
+        "يَخْلُقُوا",
+        "خَلَقْنَاكُمْ",
+        "يَخْلُقُ"
+      ]
+    },
+    {
+      "masaqStem": "كل",
+      "stemSkeleton": "كل",
+      "distinctSurahs": 39,
+      "occurrenceCount": 127,
+      "distinctForms": 22,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "NOUN_ABSTRACT",
+        "PREP",
+        "CONJ",
+        "CV",
+        "SUBJ_PRON",
+        "POSS_PRON",
+        "CASE_INDEF_(ACC_GEN)"
+      ],
+      "glossEnSamples": [
+        "every",
+        "to-every",
+        "and-(they)-all",
+        "so-eat",
+        "all-of-it"
+      ],
+      "formArabicSamples": [
+        "كُلِّ",
+        "لِكُلِّ",
+        "وَكُلٌّ",
+        "فَكُلُوا",
+        "كُلُّهُ",
+        "كُلَّ",
+        "بِكُلِّ",
+        "كُلِّهِ"
+      ]
+    },
+    {
+      "masaqStem": "جن",
+      "stemSkeleton": "جن",
+      "distinctSurahs": 36,
+      "occurrenceCount": 72,
+      "distinctForms": 26,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "DET",
+        "NOUN_CONCRETE",
+        "NSUFF_FEM_SG",
+        "NSUFF_FEM_PL",
+        "CASE_INDEF_GEN",
+        "CONJ",
+        "CASE_DEF_GEN",
+        "NSUFF_FEM_DU_NOM",
+        "CASE_DEF_NOM",
+        "PREP",
+        "NSUFF_FEM_DU_GEN",
+        "POSS_PRON",
+        "NSUFF_FEM_DU_ACC",
+        "NSUFF_MASC_DU_GEN"
+      ],
+      "glossEnSamples": [
+        "the-jinn",
+        "gardens",
+        "(is)-paradise",
+        "and-gardens",
+        "of-paradise"
+      ],
+      "formArabicSamples": [
+        "الْجِنَّةِ",
+        "جَنَّاتِ",
+        "جَنَّاتٍ",
+        "الْجَنَّةَ",
+        "وَجَنَّاتٍ",
+        "الْجَنَّةِ",
+        "جَنَّاتُ",
+        "وَجَنَّاتٌ"
+      ]
+    },
+    {
+      "masaqStem": "كفر",
+      "stemSkeleton": "كفر",
+      "distinctSurahs": 33,
+      "occurrenceCount": 115,
+      "distinctForms": 29,
+      "existingHikmaLemmaId": "20ad9d00-8c8a-45ea-9dfb-e6859a221c59",
+      "existingHikmaLemmaArabic": "كَفَر",
+      "posObserved": [
+        "PV",
+        "SUBJ_PRON",
+        "IMPERF_PREF",
+        "IV",
+        "CONJ",
+        "PREP",
+        "DET",
+        "GERUND",
+        "CASE_INDEF_(ACC_GEN)",
+        "OTHER",
+        "EMPHATIC_NUN",
+        "POSS_PRON",
+        "IV1P",
+        "OBJ_PRON",
+        "SUFF_FEM_TA",
+        "NOUN_ACTIVE_PART",
+        "NSUFF_FEM_SG"
+      ],
+      "glossEnSamples": [
+        "disbelieve",
+        "disbelieved",
+        "and-will-remove",
+        "they-disbelieved",
+        "so-that-they-may-deny"
+      ],
+      "formArabicSamples": [
+        "كَفَرُوا",
+        "تَكْفُرُونَ",
+        "وَيُكَفِّرْ",
+        "لِيَكْفُرُوا",
+        "الْكُفْرِ",
+        "وَكَفَرُوا",
+        "وَكُفْرَاً",
+        "الْكُفْرَ"
+      ]
+    },
+    {
+      "masaqStem": "آمن",
+      "stemSkeleton": "امن",
+      "distinctSurahs": 32,
+      "occurrenceCount": 117,
+      "distinctForms": 17,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "PV",
+        "PVSUFF_SUBJ:3MP",
+        "CONJ",
+        "OBJ_PRON",
+        "SUBJ_PRON",
+        "CV",
+        "NOUN_ACTIVE_PART",
+        "CASE_INDEF_(ACC_GEN)",
+        "DET",
+        "NSUFF_MASC_PL_GEN",
+        "NSUFF_MASC_PL_NOM",
+        "NSUFF_MASC_PL_ACC",
+        "SUFF_FEM_TA"
+      ],
+      "glossEnSamples": [
+        "believed",
+        "believe",
+        "o-you-who-believe",
+        "and-gives-them",
+        "believes"
+      ],
+      "formArabicSamples": [
+        "آمَنُوا",
+        "وَآمَنَهُمْ",
+        "آمَنْتُمْ",
+        "آمَنَ",
+        "آمِنُوا",
+        "وَآمَنَ",
+        "آمِنَاً",
+        "الْآمِنِينَ"
+      ]
+    },
+    {
+      "masaqStem": "عذاب",
+      "stemSkeleton": "عذاب",
+      "distinctSurahs": 31,
+      "occurrenceCount": 112,
+      "distinctForms": 17,
+      "existingHikmaLemmaId": "04ef3735-1eb7-4506-a87e-febed2c1968e",
+      "existingHikmaLemmaArabic": "عَذَاب",
+      "posObserved": [
+        "PREP",
+        "NOUN_ABSTRACT",
+        "DET",
+        "GERUND",
+        "CASE_INDEF_(ACC_GEN)",
+        "CONJ",
+        "OTHER",
+        "POSS_PRON"
+      ],
+      "glossEnSamples": [
+        "a-punishment",
+        "(the)-punishment",
+        "the-punishment",
+        "(is-the)-punishment",
+        "of-a-punishment"
+      ],
+      "formArabicSamples": [
+        "بِعَذَابٍ",
+        "عَذَابٌ",
+        "عَذَابَ",
+        "الْعَذَابَ",
+        "عَذَابٍ",
+        "عَذَابَاً",
+        "وَلَعَذَابُ",
+        "بِالْعَذَابِ"
+      ]
+    },
+    {
+      "masaqStem": "نار",
+      "stemSkeleton": "نار",
+      "distinctSurahs": 31,
+      "occurrenceCount": 51,
+      "distinctForms": 10,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "NOUN_CONCRETE",
+        "CASE_INDEF_(ACC_GEN)",
+        "DET",
+        "CONJ"
+      ],
+      "glossEnSamples": [
+        "a-fire",
+        "(in)-a-fire",
+        "(in)-the-fire",
+        "(of)-the-fire",
+        "the-fire"
+      ],
+      "formArabicSamples": [
+        "نَارٌ",
+        "نَارُ",
+        "نَارَاً",
+        "النَّارَ",
+        "النَّارِ",
+        "نَارِ",
+        "نَارَ",
+        "النَّارُ"
+      ]
+    },
+    {
+      "masaqStem": "ذكر",
+      "stemSkeleton": "ذكر",
+      "distinctSurahs": 30,
+      "occurrenceCount": 56,
+      "distinctForms": 34,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "GERUND",
+        "POSS_PRON",
+        "IMPERF_PREF",
+        "IV",
+        "SUBJ_PRON",
+        "NOON_V5",
+        "PV_PASS",
+        "CONJ",
+        "PV",
+        "FUTURE_PART",
+        "CV",
+        "CV_PREF",
+        "OTHER",
+        "PREP",
+        "IV_PASS",
+        "PVSUFF_SUBJ:3MS",
+        "DET",
+        "NOUN_CONCRETE",
+        "CASE_DEF_GEN",
+        "NOUN_ABSTRACT",
+        "CASE_INDEF_(ACC_GEN)",
+        "OBJ_PRON"
+      ],
+      "glossEnSamples": [
+        "your-reputation",
+        "take-heed",
+        "allah-is-mentioned",
+        "and-remembers",
+        "he-will-pay-heed"
+      ],
+      "formArabicSamples": [
+        "ذِكْرَكَ",
+        "يَذَّكَّرُونَ",
+        "ذُكِرَ",
+        "وَذَكَرَ",
+        "سَيَذَّكَّرُ",
+        "فَذَكِّرْ",
+        "وَاذْكُرُوا",
+        "وَلَذِكْرُ"
+      ]
+    },
+    {
+      "masaqStem": "قوم",
+      "stemSkeleton": "قوم",
+      "distinctSurahs": 29,
+      "occurrenceCount": 103,
+      "distinctForms": 26,
+      "existingHikmaLemmaId": "f706fd3c-df4e-4ecb-ba60-f34e2c15b1dc",
+      "existingHikmaLemmaArabic": "قَوْم",
+      "posObserved": [
+        "NOUN_CONCRETE",
+        "CASE_DEF_GEN",
+        "PREP",
+        "DET",
+        "POSS_PRON",
+        "CASE_INDEF_(ACC_GEN)",
+        "CONJ",
+        "IMPERF_PREF",
+        "IV",
+        "SUBJ_PRON",
+        "GERUND"
+      ],
+      "glossEnSamples": [
+        "a-people",
+        "(are)-a-people",
+        "for-a-people",
+        "the-people",
+        "(of)-a-people"
+      ],
+      "formArabicSamples": [
+        "قَوْمٍ",
+        "قَوْمٌ",
+        "لِقَوْمٍ",
+        "الْقَوْمَ",
+        "قَوْمَهُمْ",
+        "قَوْمَاً",
+        "وَقَوْمِ",
+        "تَقُومَ"
+      ]
+    },
+    {
+      "masaqStem": "يا",
+      "stemSkeleton": "يا",
+      "distinctSurahs": 29,
+      "occurrenceCount": 87,
+      "distinctForms": 20,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "VOC_PART",
+        "REL_PRON",
+        "OTHER",
+        "NOUN_CONCRETE",
+        "CASE_DEF_GEN",
+        "ANNUL_PART",
+        "POSS_PRON",
+        "NOUN_PROP_FOREIGN",
+        "NSUFF_MASC_PL_GEN",
+        "NOUN_ABSTRACT",
+        "GERUND",
+        "NSUFF_FEM_SG",
+        "NSUFF_MASC_PL_ACC",
+        "PRON_1S",
+        "SUFF_FEM_TA"
+      ],
+      "glossEnSamples": [
+        "o",
+        "o-prophet",
+        "o-you-who-believe",
+        "o-my-people",
+        "o-you"
+      ],
+      "formArabicSamples": [
+        "يَاأَيُّهَا",
+        "يَاقَوْمِ",
+        "يَالَيْتَ",
+        "يَاأَبَتِ",
+        "يَامُوسَى",
+        "يَا هَامَانُ",
+        "يَاعِبَادِيَ",
+        "يَابُنَيَّ"
+      ]
+    },
+    {
+      "masaqStem": "سماء",
+      "stemSkeleton": "سماء",
+      "distinctSurahs": 29,
+      "occurrenceCount": 47,
+      "distinctForms": 5,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "CONJ",
+        "DET",
+        "NOUN_CONCRETE"
+      ],
+      "glossEnSamples": [
+        "and-the-heaven",
+        "the-sky",
+        "(the)-sky",
+        "the-heaven",
+        "(of)-the-heaven"
+      ],
+      "formArabicSamples": [
+        "وَالسَّمَاءِ",
+        "السَّمَاءِ",
+        "السَّمَاءَ",
+        "وَالسَّمَاءَ",
+        "السَّمَاءُ"
+      ]
+    },
+    {
+      "masaqStem": "قبل",
+      "stemSkeleton": "قبل",
+      "distinctSurahs": 26,
+      "occurrenceCount": 72,
+      "distinctForms": 18,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "ADV",
+        "POSS_PRON",
+        "NOUN_ABSTRACT",
+        "IV3MS",
+        "IV",
+        "IMPERF_PREF",
+        "IV_PASS",
+        "CV_PREF",
+        "CV",
+        "CONJ",
+        "CASE_DEF_ACC"
+      ],
+      "glossEnSamples": [
+        "(were)-before-them",
+        "before",
+        "before-you",
+        "(who)-accepts",
+        "is-accepted"
+      ],
+      "formArabicSamples": [
+        "قَبْلِهِمْ",
+        "قَبْلُ",
+        "قَبْلِكُمْ",
+        "يَقْبَلُ",
+        "تُقْبَلَ",
+        "قَبْلَ",
+        "قَبْلِهَا",
+        "قَبْلِكَ"
+      ]
+    },
+    {
+      "masaqStem": "أمر",
+      "stemSkeleton": "أمر",
+      "distinctSurahs": 26,
+      "occurrenceCount": 60,
+      "distinctForms": 31,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "GERUND",
+        "CASE_INDEF_NOM",
+        "PV",
+        "PVSUFF_SUBJ:3MS",
+        "CASE_INDEF_ACC",
+        "DET",
+        "NOUN_ABSTRACT",
+        "PREP",
+        "POSS_PRON",
+        "IMPERF_PREF",
+        "SUBJ_PRON",
+        "PV_PASS",
+        "CONJ",
+        "CV",
+        "IV",
+        "OBJ_PRON",
+        "ADJ_COMP",
+        "CASE_DEF_NOM"
+      ],
+      "glossEnSamples": [
+        "affair",
+        "he-enjoins",
+        "a-matter",
+        "the-matter",
+        "his-command"
+      ],
+      "formArabicSamples": [
+        "أَمْرٍ",
+        "أَمَرَ",
+        "أَمْرَاً",
+        "الْأَمْرِ",
+        "بِأَمْرِهِ",
+        "يَأْمُرُونَ",
+        "أَمْرُ",
+        "أَمْرَنَا"
+      ]
+    },
+    {
+      "masaqStem": "آي",
+      "stemSkeleton": "اي",
+      "distinctSurahs": 25,
+      "occurrenceCount": 93,
+      "distinctForms": 24,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_PL",
+        "POSS_PRON",
+        "PREP",
+        "NSUFF_FEM_SG",
+        "CASE_INDEF_GEN",
+        "CONJ",
+        "DET",
+        "OTHER"
+      ],
+      "glossEnSamples": [
+        "his-verses",
+        "our-verses",
+        "in-(the)-signs",
+        "(the)-signs",
+        "a-sign"
+      ],
+      "formArabicSamples": [
+        "آيَاتُهُ",
+        "آيَاتُنَا",
+        "بِآيَاتِ",
+        "آيَةً",
+        "لَآيَةً",
+        "آيَاتٌ",
+        "وَآيَاتِهِ",
+        "الْآيَاتِ"
+      ]
+    },
+    {
+      "masaqStem": "بين",
+      "stemSkeleton": "بين",
+      "distinctSurahs": 25,
+      "occurrenceCount": 85,
+      "distinctForms": 24,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "ADV",
+        "POSS_PRON",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG",
+        "CONJ",
+        "IV3MS",
+        "IV",
+        "PREP",
+        "DET",
+        "NSUFF_FEM_PL",
+        "IMPERF_PREF",
+        "CASE_DEF_ACC",
+        "POSS_PRON_3D"
+      ],
+      "glossEnSamples": [
+        "between",
+        "between-you",
+        "(in)-between",
+        "a-clear-evidence",
+        "(which-is)-between-you"
+      ],
+      "formArabicSamples": [
+        "بَيْنَ",
+        "بَيْنَكُمْ",
+        "بَيِّنَةٍ",
+        "بَيْنِكُمْ",
+        "بَيْنَهُمْ",
+        "وَبَيْنَهُمْ",
+        "يُبَيِّنَ",
+        "بِالْبَيِّنَاتِ"
+      ]
+    },
+    {
+      "masaqStem": "خير",
+      "stemSkeleton": "خير",
+      "distinctSurahs": 25,
+      "occurrenceCount": 50,
+      "distinctForms": 12,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "GERUND",
+        "CASE_INDEF_(ACC_GEN)",
+        "ADJ_COMP",
+        "CASE_DEF_NOM",
+        "DET",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_PL",
+        "CASE_INDEF_GEN",
+        "CASE_DEF_GEN",
+        "NSUFF_FEM_SG",
+        "PREP"
+      ],
+      "glossEnSamples": [
+        "any-good",
+        "(is)-better",
+        "better",
+        "good",
+        "is-(the)-best"
+      ],
+      "formArabicSamples": [
+        "خَيْرَاً",
+        "خَيْرٌ",
+        "خَيْرُ",
+        "الْخَيْرَاتُ",
+        "خَيْرٍ",
+        "الْخَيْرَ",
+        "خَيْرَ",
+        "الْخِيَرَةُ"
+      ]
+    },
+    {
+      "masaqStem": "كافر",
+      "stemSkeleton": "كافر",
+      "distinctSurahs": 25,
+      "occurrenceCount": 45,
+      "distinctForms": 9,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "DET",
+        "NOUN_ACTIVE_PART",
+        "NSUFF_MASC_PL_NOM",
+        "PREP",
+        "NSUFF_MASC_PL_GEN",
+        "NSUFF_MASC_PL_ACC",
+        "CONJ"
+      ],
+      "glossEnSamples": [
+        "disbelievers",
+        "for-the-disbelievers",
+        "(of)-the-disbelievers",
+        "the-disbelievers-dislike-(it)",
+        "(are)-disbelievers"
+      ],
+      "formArabicSamples": [
+        "الْكَافِرُونَ",
+        "لِلْكَافِرِينَ",
+        "الْكَافِرِينَ",
+        "كَافِرُونَ",
+        "بِالْكَافِرِينَ",
+        "كَافِرِينَ",
+        "وَلِلْكَافِرِينَ",
+        "وَالْكَافِرُونَ"
+      ]
+    },
+    {
+      "masaqStem": "حق",
+      "stemSkeleton": "حق",
+      "distinctSurahs": 24,
+      "occurrenceCount": 82,
+      "distinctForms": 18,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "DET",
+        "GERUND",
+        "PREP",
+        "CASE_DEF_GEN",
+        "IMPERF_PREF",
+        "IV",
+        "CASE_INDEF_ACC",
+        "IV3MS",
+        "NOUN_ABSTRACT",
+        "CONJ",
+        "PV",
+        "SUFF_FEM_TA",
+        "PV_PASS"
+      ],
+      "glossEnSamples": [
+        "the-truth",
+        "to-the-truth",
+        "that-he-might-justify",
+        "(in)-truth",
+        "in-truth"
+      ],
+      "formArabicSamples": [
+        "الْحَقِّ",
+        "بِالْحَقِّ",
+        "لِيُحِقَّ",
+        "حَقَّاً",
+        "الْحَقَّ",
+        "يُحِقَّ",
+        "الْحَقُّ",
+        "حَقَّ"
+      ]
+    },
+    {
+      "masaqStem": "أم",
+      "stemSkeleton": "أم",
+      "distinctSurahs": 24,
+      "occurrenceCount": 65,
+      "distinctForms": 12,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "CONJ",
+        "NOUN_CONCRETE",
+        "POSS_PRON",
+        "NSUFF_FEM_SG",
+        "NOUN_ABSTRACT",
+        "DET",
+        "NOUN_RELATIVE",
+        "RELATIVE_YA",
+        "NSUFF_MASC_PL_GEN"
+      ],
+      "glossEnSamples": [
+        "his-abode",
+        "or",
+        "a-nation",
+        "(is)-the-mother-(of)-the-book",
+        "nation"
+      ],
+      "formArabicSamples": [
+        "فَأُمُّهُ",
+        "أَمْ",
+        "أُمَّةٍ",
+        "أُمُّ",
+        "أُمِّ",
+        "أُمَّةً",
+        "أُمِّهِ",
+        "أُمِّهَا"
+      ]
+    },
+    {
+      "masaqStem": "آخر",
+      "stemSkeleton": "اخر",
+      "distinctSurahs": 24,
+      "occurrenceCount": 53,
+      "distinctForms": 17,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "CONJ",
+        "PREP",
+        "DET",
+        "NOUN_ABSTRACT",
+        "NSUFF_FEM_SG",
+        "ADJ_COMP",
+        "NSUFF_MASC_PL_ACC",
+        "NOUN_ACTIVE_PART",
+        "CASE_DEF_GEN",
+        "NSUFF_MASC_PL_NOM",
+        "NSUFF_MASC_PL_GEN",
+        "OTHER"
+      ],
+      "glossEnSamples": [
+        "and-surely-the-hereafter",
+        "and-others",
+        "while-the-hereafter",
+        "(for-you)-the-hereafter",
+        "and-(in)-the-hereafter"
+      ],
+      "formArabicSamples": [
+        "وَلَلْآخِرَةُ",
+        "وَآخَرِينَ",
+        "وَالْآخِرَةُ",
+        "الْآخِرَةَ",
+        "وَالْآخِرَةِ",
+        "وَآخَرُونَ",
+        "الْآخِرَةِ",
+        "الْآخِرِ"
+      ]
+    },
+    {
+      "masaqStem": "إنسان",
+      "stemSkeleton": "إنسان",
+      "distinctSurahs": 24,
+      "occurrenceCount": 32,
+      "distinctForms": 4,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "DET",
+        "NOUN_CONCRETE",
+        "CASE_DEF_GEN",
+        "PREP"
+      ],
+      "glossEnSamples": [
+        "mankind",
+        "man",
+        "(on)-man",
+        "(upon)-man",
+        "(of)-man"
+      ],
+      "formArabicSamples": [
+        "الْإِنْسَانَ",
+        "الْإِنْسَانِ",
+        "الْإِنْسَانُ",
+        "لِلْإِنْسَانِ"
+      ]
+    },
+    {
+      "masaqStem": "كتاب",
+      "stemSkeleton": "كتاب",
+      "distinctSurahs": 23,
+      "occurrenceCount": 63,
+      "distinctForms": 16,
+      "existingHikmaLemmaId": "7a4f0fe4-15dd-434c-aa01-7538484c5232",
+      "existingHikmaLemmaArabic": "كِتَاب",
+      "posObserved": [
+        "NOUN_CONCRETE",
+        "CASE_INDEF_GEN",
+        "DET",
+        "PREP",
+        "CONJ",
+        "CASE_DEF_GEN",
+        "CASE_INDEF_(ACC_GEN)",
+        "NOUN_ACTIVE_PART",
+        "POSS_PRON",
+        "POSS_PRON_3FS",
+        "GERUND",
+        "CASE_DEF_ACC",
+        "POSS_PRON_3MS"
+      ],
+      "glossEnSamples": [
+        "an-ordainment",
+        "(the)-book",
+        "(the)-ordinance",
+        "the-scripture",
+        "(of)-the-book"
+      ],
+      "formArabicSamples": [
+        "كِتَابٌ",
+        "كِتَابِ",
+        "الْكِتَابَ",
+        "الْكِتَابِ",
+        "كِتَابٍ",
+        "الْكِتَابُ",
+        "بِكِتَابٍ",
+        "وَالْكِتَابَ"
+      ]
+    },
+    {
+      "masaqStem": "شيء",
+      "stemSkeleton": "شيء",
+      "distinctSurahs": 23,
+      "occurrenceCount": 55,
+      "distinctForms": 4,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "NOUN_ABSTRACT",
+        "PREP",
+        "CONJ"
+      ],
+      "glossEnSamples": [
+        "thing",
+        "(in)-anything",
+        "anything",
+        "(any)-thing",
+        "things"
+      ],
+      "formArabicSamples": [
+        "شَيْءٍ",
+        "بِشَيْءٍ",
+        "شَيْءٌ",
+        "وَشَيْءٍ"
+      ]
+    },
+    {
+      "masaqStem": "بعد",
+      "stemSkeleton": "بعد",
+      "distinctSurahs": 23,
+      "occurrenceCount": 41,
+      "distinctForms": 9,
+      "existingHikmaLemmaId": null,
+      "existingHikmaLemmaArabic": null,
+      "posObserved": [
+        "NOUN_ABSTRACT",
+        "ADV",
+        "REL_PRON",
+        "PV",
+        "SUFF_FEM_TA",
+        "POSS_PRON"
+      ],
+      "glossEnSamples": [
+        "afterwards",
+        "after-what",
+        "after",
+        "was-long",
+        "after-[what]"
+      ],
+      "formArabicSamples": [
+        "بَعْدُ",
+        "بَعْدَمَا",
+        "بَعْدَ",
+        "بَعْدِ",
+        "بَعُدَتْ",
+        "بَعْدِهِمْ",
+        "بَعْدِهِ",
+        "بَعْدِي"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "masaqStem": "اسم",
+      "hikmaLemmaIds": [
+        "already mapped to Hikma lemma via NORMALIZATION_DIFFERENCE, UNMAPPED",
+        "MASAQ status: NORMALIZATION_DIFFERENCE, UNMAPPED",
+        "EN gloss samples: in-(the)-name / (the)-name / (the)-name-of-allah"
+      ]
+    },
+    {
+      "masaqStem": "حمد",
+      "hikmaLemmaIds": [
+        "already mapped to Hikma lemma via PARTIAL, UNMAPPED",
+        "MASAQ status: PARTIAL, UNMAPPED",
+        "EN gloss samples: all-praises-and-thanks / with-(the)-praises / [with]"
+      ]
+    },
+    {
+      "masaqStem": "رحمن",
+      "hikmaLemmaIds": [
+        "already mapped to Hikma lemma via LEXICAL_LEVEL_DIFFERENCE, UNMAPPED",
+        "MASAQ status: LEXICAL_LEVEL_DIFFERENCE, UNMAPPED",
+        "EN gloss samples: the-most-gracious / in-the-most-gracious / (of)-the-most-gracious"
+      ]
+    },
+    {
+      "masaqStem": "رحيم",
+      "hikmaLemmaIds": [
+        "already mapped to Hikma lemma via PARTIAL, UNMAPPED",
+        "MASAQ status: PARTIAL, UNMAPPED",
+        "EN gloss samples: the-most-merciful / most-merciful / (and)-merciful"
+      ]
+    },
+    {
+      "masaqStem": "له",
+      "hikmaLemmaIds": [
+        "already mapped to Hikma lemma via NORMALIZATION_DIFFERENCE, UNMAPPED",
+        "MASAQ status: NORMALIZATION_DIFFERENCE, UNMAPPED",
+        "EN gloss samples: (be)-to-allah / (of)-allah / allah"
+      ]
+    },
+    {
+      "masaqStem": "عالم",
+      "hikmaLemmaIds": [
+        "already mapped to Hikma lemma via PARTIAL, UNMAPPED",
+        "MASAQ status: PARTIAL, UNMAPPED",
+        "EN gloss samples: of-the-universe / the-worlds / (the)-knower"
+      ]
+    },
+    {
+      "masaqStem": "على",
+      "hikmaLemmaIds": [
+        "already mapped to Hikma lemma via UNMAPPED, NORMALIZATION_DIFFERENCE",
+        "MASAQ status: UNMAPPED, NORMALIZATION_DIFFERENCE",
+        "EN gloss samples: [on] / to / upon"
+      ]
+    },
+    {
+      "masaqStem": "رحم",
+      "hikmaLemmaIds": [
+        "already mapped to Hikma lemma via UNMAPPED, PARTIAL",
+        "MASAQ status: UNMAPPED, PARTIAL",
+        "EN gloss samples: his-mercy / allah-will-have-mercy-on-them / of-mercy"
+      ]
+    }
+  ],
+  "unresolvedSample": [
+    {
+      "masaqStem": "ل",
+      "posObserved": [
+        "PREP",
+        "POSS_PRON",
+        "PRON_2MP",
+        "CONJ",
+        "IMPERF_PREF",
+        "IV",
+        "SUBJ_PRON",
+        "OBJ_PRON",
+        "PRON_1S",
+        "PRON_3MS",
+        "INTERROG"
+      ],
+      "occurrenceCount": 228
+    },
+    {
+      "masaqStem": "ثم",
+      "posObserved": [
+        "CONJ"
+      ],
+      "occurrenceCount": 110
+    },
+    {
+      "masaqStem": "حتى",
+      "posObserved": [
+        "PREP"
+      ],
+      "occurrenceCount": 36
+    },
+    {
+      "masaqStem": "لو",
+      "posObserved": [
+        "CONJ",
+        "CONDITION_PART",
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "occurrenceCount": 60
+    },
+    {
+      "masaqStem": "ول",
+      "posObserved": [
+        "IMPERF_PREF",
+        "IV",
+        "SUBJ_PRON",
+        "OBJ_PRON",
+        "OTHER",
+        "PV",
+        "CONJ"
+      ],
+      "occurrenceCount": 6
+    },
+    {
+      "masaqStem": "بل",
+      "posObserved": [
+        "CONJ"
+      ],
+      "occurrenceCount": 41
+    },
+    {
+      "masaqStem": "ب",
+      "posObserved": [
+        "PREP",
+        "POSS_PRON",
+        "PRON_3MS"
+      ],
+      "occurrenceCount": 104
+    },
+    {
+      "masaqStem": "وف",
+      "posObserved": [
+        "IMPERF_PREF",
+        "IV_PASS",
+        "IV",
+        "SUBJ_PRON",
+        "CONJ",
+        "OTHER"
+      ],
+      "occurrenceCount": 4
+    }
+  ]
+}

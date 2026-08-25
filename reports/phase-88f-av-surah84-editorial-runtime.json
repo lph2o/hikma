@@ -1,0 +1,267 @@
+{
+  "phase": "88F-AV",
+  "verdict": "PHASE_88F_AV_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "editorialReadyForImport": true,
+  "timestamp": "2026-08-24T16:30:03.865Z",
+  "durationSeconds": 25.98,
+  "surah": {
+    "number": 84,
+    "name": "Al-Inshiqaq"
+  },
+  "baseline": {
+    "totalForms": 92,
+    "coveredForms": 68,
+    "unresolvedForms": 24,
+    "coveragePct": 73.913,
+    "paths": {
+      "pathA_wordTr": 64,
+      "pathB_lemma": 0,
+      "pathC_wlm": 4
+    },
+    "classALemmaReachable": 1
+  },
+  "editorialGlosses": [
+    {
+      "word_id": "55938615-a98b-43af-bdda-8e5a873d6b3f",
+      "arabic": "يَحُورَ",
+      "ayah": "84:14",
+      "gloss": "il reviendrait / il retournerait",
+      "rationale": "Src: Hamidullah \"et il pensait que jamais il ne ressusciterait.\" | EN hint: \"he would return\" | 84:14",
+      "hamidullahSnippet": "et il pensait que jamais il ne ressusciterait.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "1746937c-2e82-4e0e-966c-33aa2b460c84",
+      "arabic": "وَأَذِنَتْ",
+      "ayah": "84:2",
+      "gloss": "et a écouté / elle a obéi",
+      "rationale": "Src: Hamidullah \"et obéira à son Seigneur - et fera ce qu’il doit faire -\" | EN hint: \"And has listened\" | 84:2",
+      "hamidullahSnippet": "et obéira à son Seigneur - et fera ce qu’il doit faire -",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "a1c6aa15-e397-450a-8ce7-2a5a0d7024c5",
+      "arabic": "مَسْرُورًۭا",
+      "ayah": "84:9",
+      "gloss": "réjoui / joyeux / heureux",
+      "rationale": "Src: Hamidullah \"et retournera réjoui auprès de sa famille.\" | EN hint: \"happily\" | 84:9",
+      "hamidullahSnippet": "et retournera réjoui auprès de sa famille.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "f36e2e65-6ef3-48b1-8004-12de5a0be604",
+      "arabic": "ٱتَّسَقَ",
+      "ayah": "84:18",
+      "gloss": "elle devient pleine / se complète",
+      "rationale": "Src: Hamidullah \"et par la lune quand elle devient pleine-lune !\" | EN hint: \"it becomes full\" | 84:18",
+      "hamidullahSnippet": "et par la lune quand elle devient pleine-lune !",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "e2c00518-a6bf-465f-89f1-38929ec0adb6",
+      "arabic": "بِٱلشَّفَقِ",
+      "ayah": "84:16",
+      "gloss": "le crépuscule / la lueur rougeoyante",
+      "rationale": "Src: Hamidullah \"Non !... Je jure par le crépuscule,\" | EN hint: \"by the twilight glow\" | 84:16",
+      "hamidullahSnippet": "Non !... Je jure par le crépuscule,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "8ff722e1-d97c-409b-addc-bb28ec46fb01",
+      "arabic": "يُحَاسَبُ",
+      "ayah": "84:8",
+      "gloss": "son compte sera tenu / il sera jugé",
+      "rationale": "Src: Hamidullah \"sera soumis à un jugement facile,\" | EN hint: \"his account will be taken\" | 84:8",
+      "hamidullahSnippet": "sera soumis à un jugement facile,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "95fbb96d-55c6-4dc4-bf36-537a427d979b",
+      "arabic": "يُوعُونَ",
+      "ayah": "84:23",
+      "gloss": "ils recèlent / ils dissimulent en eux-mêmes",
+      "rationale": "Src: Hamidullah \"Or, Allah sait bien ce qu’ils dissimulent.\" | EN hint: \"they keep within themselves\" | 84:23",
+      "hamidullahSnippet": "Or, Allah sait bien ce qu’ils dissimulent.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "99321fd6-7b32-4fd3-aba4-5e581531769e",
+      "arabic": "مُدَّتْ",
+      "ayah": "84:3",
+      "gloss": "étendue / nivelée / aplanie",
+      "rationale": "Src: Hamidullah \"et que la terre sera nivelée,\" | EN hint: \"is spread\" | 84:3",
+      "hamidullahSnippet": "et que la terre sera nivelée,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "41a46ba3-5361-47e0-bd7a-4fa9d6cc09e1",
+      "arabic": "طَبَقًا",
+      "ayah": "84:19",
+      "gloss": "une étape / un niveau / une couche",
+      "rationale": "Src: Hamidullah \"Vous passerez, certes, par des états successifs !\" | EN hint: \"(to) stage\" | 84:19",
+      "hamidullahSnippet": "Vous passerez, certes, par des états successifs !",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "5d705456-80eb-4bd6-b97d-c3620a4f8b24",
+      "arabic": "فَمُلَـٰقِيهِ",
+      "ayah": "84:6",
+      "gloss": "puis tu Le rencontreras",
+      "rationale": "Src: Hamidullah \"Ô homme ! Toi qui t’efforces vers ton Seigneur sans relâche, tu Le rencontreras alors.\" | EN hint: \"and you (will) meet Him\" | 84:6",
+      "hamidullahSnippet": "Ô homme ! Toi qui t’efforces vers ton Seigneur sans relâche, tu Le rencontreras alors.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "55a1924f-e4e0-4776-8241-6f8a6098dc19",
+      "arabic": "وَسَقَ",
+      "ayah": "84:17",
+      "gloss": "elle enveloppe / elle rassemble",
+      "rationale": "Src: Hamidullah \"et par la nuit et ce qu’elle enveloppe,\" | EN hint: \"it envelops\" | 84:17",
+      "hamidullahSnippet": "et par la nuit et ce qu’elle enveloppe,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "1c257f6a-b77b-4f2c-92ba-0512d7667558",
+      "arabic": "لَتَرْكَبُنَّ",
+      "ayah": "84:19",
+      "gloss": "vous monterez assurément / vous chevaucherez certainement",
+      "rationale": "Src: Hamidullah \"Vous passerez, certes, par des états successifs !\" | EN hint: \"You will surely embark\" | 84:19",
+      "hamidullahSnippet": "Vous passerez, certes, par des états successifs !",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "5287bdfa-e536-49ae-ad79-a0625d60c5b9",
+      "arabic": "طَبَقٍۢ",
+      "ayah": "84:19",
+      "gloss": "étape / couche / état",
+      "rationale": "Src: Hamidullah \"Vous passerez, certes, par des états successifs !\" | EN hint: \"stage\" | 84:19",
+      "hamidullahSnippet": "Vous passerez, certes, par des états successifs !",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "b2ae793b-03d3-4922-bb39-d881f15c0deb",
+      "arabic": "وَيَصْلَىٰ",
+      "ayah": "84:12",
+      "gloss": "il brûlera / il entrera",
+      "rationale": "Src: Hamidullah \"et il brûlera dans un feu ardent.\" | EN hint: \"And he will burn\" | 84:12",
+      "hamidullahSnippet": "et il brûlera dans un feu ardent.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "c324538c-9c77-4e57-8de5-7a4aef8d68b6",
+      "arabic": "مَمْنُونٍۭ",
+      "ayah": "84:25",
+      "gloss": "ininterrompue / inépuisable / sans fin",
+      "rationale": "Src: Hamidullah \"Sauf ceux qui croient et accomplissent les bonnes œuvres: à eux une récompense jamais interrompue.\" | EN hint: \"ending\" | 84:25",
+      "hamidullahSnippet": "Sauf ceux qui croient et accomplissent les bonnes œuvres: à eux une récompense jamais interrompue.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "4683d62d-d5c1-4a89-9641-b11c26c3e93b",
+      "arabic": "ظَهْرِهِۦ",
+      "ayah": "84:10",
+      "gloss": "son dos / par-derrière",
+      "rationale": "Src: Hamidullah \"Quant à celui qui recevra son livre derrière son dos,\" | EN hint: \"his back\" | 84:10",
+      "hamidullahSnippet": "Quant à celui qui recevra son livre derrière son dos,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "87418e72-dc7d-42d7-a378-f35a57a750b8",
+      "arabic": "ٱنشَقَّتْ",
+      "ayah": "84:1",
+      "gloss": "s'est fendue / s'est ouverte",
+      "rationale": "Src: Hamidullah \"Quand le ciel se déchirera.\" | EN hint: \"is split asunder\" | 84:1",
+      "hamidullahSnippet": "Quand le ciel se déchirera.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "8b14342b-cae6-4ef0-b075-d4e459b7592d",
+      "arabic": "وَأَلْقَتْ",
+      "ayah": "84:4",
+      "gloss": "et a rejeté / et a vomi",
+      "rationale": "Src: Hamidullah \"et qu’elle rejettera ce qui est en son sein (les morts) et se videra,\" | EN hint: \"And has cast out\" | 84:4",
+      "hamidullahSnippet": "et qu’elle rejettera ce qui est en son sein (les morts) et se videra,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "522e7bb2-023d-4215-a87a-a47e1d1aa861",
+      "arabic": "كَادِحٌ",
+      "ayah": "84:6",
+      "gloss": "peinant / travaillant avec labeur",
+      "rationale": "Src: Hamidullah \"Ô homme ! Toi qui t’efforces vers ton Seigneur sans relâche, tu Le rencontreras alors.\" | EN hint: \"(are) laboring\" | 84:6",
+      "hamidullahSnippet": "Ô homme ! Toi qui t’efforces vers ton Seigneur sans relâche, tu Le rencontreras alors.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "00e71547-62c4-4441-9f35-599b62d6024e",
+      "arabic": "مَسْرُورًا",
+      "ayah": "84:13",
+      "gloss": "réjoui / joyeux / heureux",
+      "rationale": "Src: Hamidullah \"Car il était tout joyeux parmi les siens,\" | EN hint: \"happy\" | 84:13",
+      "hamidullahSnippet": "Car il était tout joyeux parmi les siens,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "c7fbf801-b194-4ca2-84ea-2565d523cf06",
+      "arabic": "وَتَخَلَّتْ",
+      "ayah": "84:4",
+      "gloss": "et se vide",
+      "rationale": "Src: Hamidullah \"et qu’elle rejettera ce qui est en son sein (les morts) et se videra,\" | EN hint: \"and becomes empty\" | 84:4",
+      "hamidullahSnippet": "et qu’elle rejettera ce qui est en son sein (les morts) et se videra,",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "6893e041-fcf8-4ae9-813c-de79052b7e27",
+      "arabic": "وَيَنقَلِبُ",
+      "ayah": "84:9",
+      "gloss": "il retournera / il rentrera",
+      "rationale": "Src: Hamidullah \"et retournera réjoui auprès de sa famille.\" | EN hint: \"And he will return\" | 84:9",
+      "hamidullahSnippet": "et retournera réjoui auprès de sa famille.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "58328d5b-91da-4863-8cd8-f30b3b4efad6",
+      "arabic": "وَحُقَّتْ",
+      "ayah": "84:2",
+      "gloss": "et il lui incomba / et cela lui fut prescrit",
+      "rationale": "Src: Hamidullah \"et obéira à son Seigneur - et fera ce qu’il doit faire -\" | EN hint: \"and was obligated\" | 84:2",
+      "hamidullahSnippet": "et obéira à son Seigneur - et fera ce qu’il doit faire -",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "3718b2ea-8949-4ea2-a478-c4f7cf189426",
+      "arabic": "كَدْحًۭا",
+      "ayah": "84:6",
+      "gloss": "à force d'effort / avec labeur / peinant",
+      "rationale": "Src: Hamidullah \"Ô homme ! Toi qui t’efforces vers ton Seigneur sans relâche, tu Le rencontreras alors.\" | EN hint: \"(with) exertion\" | 84:6",
+      "hamidullahSnippet": "Ô homme ! Toi qui t’efforces vers ton Seigneur sans relâche, tu Le rencontreras alors.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    }
+  ],
+  "validation": {
+    "totalGlosses": 24,
+    "expectedGlosses": 24,
+    "uniqueWordIds": 24,
+    "emptyGlosses": 0,
+    "validationIssues": 0,
+    "identitySafe": true
+  },
+  "simulation": {
+    "baselineCovered": 68,
+    "baselineTotal": 92,
+    "newWordTranslations": 24,
+    "afterImport": 92,
+    "afterImportPct": 100,
+    "ready": true
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "wlmCreated": 0,
+    "curriculumWrites": 0,
+    "noHikmaLemmaIdUsed": true,
+    "runtimeModelPure": true
+  }
+}

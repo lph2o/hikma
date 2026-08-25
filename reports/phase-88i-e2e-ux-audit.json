@@ -1,0 +1,795 @@
+{
+  "phase": "88I",
+  "stage": "POST_PUBLICATION_E2E_UX_AUDIT",
+  "verdict": "PHASE_88I_E2E_AUDIT_PASS_WITH_NONBLOCKING_NOTES",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "timestamp": "2026-08-25T17:48:53.031Z",
+  "elapsedMs": 96156,
+  "target_surahs": [
+    51,
+    64,
+    66,
+    67,
+    71,
+    75,
+    77,
+    79,
+    80,
+    89
+  ],
+  "curriculum_metrics": {
+    "learningPaths": 10,
+    "units": 10,
+    "lessons": 356,
+    "lessonWords": 3196,
+    "note": "lesson_words mesurés depuis le curriculum réel (voir lesson_page_audit.fullCurriculumResolution)"
+  },
+  "catalogue_audit": {
+    "productionFunction": {
+      "ok": true
+    },
+    "thresholdMeasuredIds": 396,
+    "publishedLessons": 547,
+    "totalPaths": 34,
+    "targetPresent": 10,
+    "targetMissing": [],
+    "states": {
+      "51": "READY",
+      "64": "READY",
+      "66": "READY",
+      "67": "READY",
+      "71": "READY",
+      "75": "READY",
+      "77": "READY",
+      "79": "READY",
+      "80": "READY",
+      "89": "READY"
+    },
+    "frPct": {
+      "51": 100,
+      "64": 100,
+      "66": 100,
+      "67": 100,
+      "71": 100,
+      "75": 100,
+      "77": 100,
+      "79": 100,
+      "80": 100,
+      "89": 100
+    },
+    "lessonsBySurah": {
+      "51": 60,
+      "64": 18,
+      "66": 12,
+      "67": 30,
+      "71": 28,
+      "75": 40,
+      "77": 50,
+      "79": 46,
+      "80": 42,
+      "89": 30
+    },
+    "firstLessons": {
+      "51": "surah-51-ayah-1",
+      "64": "surah-64-ayah-1",
+      "66": "surah-66-ayah-1",
+      "67": "surah-67-ayah-1",
+      "71": "surah-71-ayah-1",
+      "75": "surah-75-ayah-1",
+      "77": "surah-77-ayah-1",
+      "79": "surah-79-ayah-1",
+      "80": "surah-80-ayah-1",
+      "89": "surah-89-ayah-1"
+    },
+    "note": "getSurahCatalog() est la fonction de production des pages catalogue ; son échec est le finding CAT-000 (HIGH). Les valeurs cibles sont vérifiées via le chemin de production de la page sourate (getLearningPathBySurah) et les comptages réels."
+  },
+  "surah_page_audit": {
+    "method": "getLearningPathBySurah (chemin réel page sourate) pour chaque sourate",
+    "surahsChecked": 10,
+    "pathsPresent": 10,
+    "totalUnits": 10,
+    "totalLessons": 356,
+    "totalPublished": 356
+  },
+  "lesson_page_audit": {
+    "method": "getLessonWithWords + getValidatedFrenchMeanings + getValidatedFrenchLemmaMeaningsByWord + buildWordBank + generateLessonExercises (chaîne réelle de la page /learn/[slug])",
+    "lessonsChecked": 20,
+    "samples": 20,
+    "transientSkips": 0,
+    "distinctForms": 162,
+    "fullCurriculumResolution": {
+      "fullForms": 1439,
+      "forme": 1439,
+      "lemme": 0,
+      "en": 0,
+      "un": 0,
+      "lessonWords": 3196,
+      "lessons": 356
+    },
+    "exercisesGenerated": 1587,
+    "exercisesChecked": 1587,
+    "exerciseIssues": []
+  },
+  "lexical_consumption": {
+    "method": "resolveWordMeanings (FORME > LEMME > EN) sur les formes réellement enseignées",
+    "distinctForms": 162,
+    "forme": 162,
+    "lemme": 0,
+    "enFallback": 0,
+    "unresolved": 0,
+    "fullCurriculum": {
+      "fullForms": 1439,
+      "forme": 1439,
+      "lemme": 0,
+      "en": 0,
+      "un": 0,
+      "lessonWords": 3196,
+      "lessons": 356
+    }
+  },
+  "exercise_audit": {
+    "generators": [
+      "WORD_TO_TRANSLATION",
+      "TRANSLATION_TO_WORD",
+      "REVERSE_TRANSLATION",
+      "MULTIPLE_CHOICE",
+      "COMPLETE_WORD",
+      "FORM_TO_MEANING",
+      "MEANING_TO_FORM",
+      "AUDIO_TO_WORD",
+      "CONTEXT_RECOGNITION",
+      "LEMMA_RELATION",
+      "WORD_RECOGNITION"
+    ],
+    "checked": 1587,
+    "generated": 1587,
+    "issues": 0
+  },
+  "free_text_audit": {
+    "method": "answerLanguageForMeaning + formToMeaning (gate) + gradeFreeResponse (correcteur réel)",
+    "total": 559,
+    "frVerified": 559,
+    "enFallback": 0,
+    "notVerified": 0,
+    "formToMeaningGenerated": 559,
+    "correctorTests": 40,
+    "correctorFailures": 0,
+    "correctorSamples": [
+      {
+        "gloss": "éparpillement / dispersion",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "celles qui éparpillent / les vents",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "fardeau / charge",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "celles qui portent un fardeau",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "celles qui glissent / courent",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "celles qui distribuent / répartissent",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "véridique / certainement vrai",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "voies / traces du ciel",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "divergent / contradictoire",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "parole / dire",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "être détourné / être écarté",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "menteurs / conjectureurs",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "votre épreuve / votre tentation",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "prenant / recevant",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "dormir / sommeiller",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "aux heures avant l'aube",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "pour ceux qui ont la certitude",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "votre subsistance / votre provision",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "par le Seigneur de",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "gras / engraissé",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "venir / arriver",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "approcher / présenter",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "lui annoncer une bonne nouvelle",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "crainte / peur",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "son visage / sa face",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "s'avancer / venir",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "cri / clameur",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "frapper / se frapper",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "vieille femme",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "pour envoyer / lancer",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "envoyer / dépêcher",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "magicien / sorcier",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "avec ses partisans / son pouvoir",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "stérile / dévastateur",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "en faire / le réduire à",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "venir / arriver",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "comme la poussière / le chaume",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "être rebelles / défier",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "se tenir debout / se lever",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      },
+      {
+        "gloss": "ceux qui sont secourus / victorieux",
+        "exact": "CORRECT",
+        "synonym": "CORRECT",
+        "noAccents": "CORRECT",
+        "reversed": "CORRECT",
+        "wrong": "INCORRECT"
+      }
+    ]
+  },
+  "review_audit": {
+    "note": "Aucune progression utilisateur créée (lecture seule). getDueReviewItems avec un user neutre : 0 dû.",
+    "dueItems": 0,
+    "reviewItemsInDb": 24,
+    "chain": "review → getDueReviewItems → getValidatedFrenchMeanings + getValidatedFrenchLemmaMeaningsByWord → resolveWordMeanings (identique aux autres consommateurs)",
+    "verdict": "PASS — chemin de review opérationnel, aucune donnée utilisateur requise pour l'audit"
+  },
+  "word_detail_audit": {
+    "checked": 9,
+    "failures": 0,
+    "shared": {
+      "WORD_ID": "07e38ce0-3cff-4860-ac97-53bfeb005226",
+      "ARABIC": "نَفْسِهِۦ",
+      "SURAHS": "64,75",
+      "GLOSS_FR": "soi-même / son âme",
+      "STATUS": "CONFIDENT",
+      "CONFIDENCE": "HIGH",
+      "MEANING": "himself",
+      "HAMIDULLAH": "Craignez Allah, donc autant que vous pouvez, écoutez, obéissez et faites largesses. Ce sera un bien pour vous. Et quiconque a été protégé contre sa propre avidité... ceux-là sont ceux qui réussissent.",
+      "KAZIMIRSKI": "Craignez Dieu de toutes vos forces; écoutez, obéissez, et faites l’aumône dans votre propre intérêt. Celui qui se tient en garde contre son avarice sera heureux.",
+      "SAHIH": "So fear Allāh as much as you are able and listen and obey and spend [in the way of Allāh]; it is better for your selves. And whoever is protected from the stinginess of his soul - it is those who will be the successful.",
+      "PICCARDO": "Temete Allah per quello che potete, ascoltate, obbedite e siate generosi: ciò è un bene per voi stessi. Coloro che si saranno preservati dalla loro stessa avidità saranno quelli che prospereranno.",
+      "LEMMA_FR": "",
+      "LEXICAL_BASIS": "Racine ن-ف-س 'âme, soi'. نَفْس + suffixe -هِ : son âme, lui-même.",
+      "CONTEXTUAL_BASIS": "Hamidullah : « quiconque a été protégé contre sa propre avidité ». Kazimirski : « Celui qui se tient en garde contre son avarice ». En S75 : « L'homme sera informé de ce qu'il aura avancé ».",
+      "RATIONALE": "Glose commune déjà établie pour S64/S75 : « soi-même / son âme ». La base نَفْس est stable ; le suffixe possessif fixe la personne. Cohérence partagée conservée.",
+      "REVIEW_REASON": ""
+    },
+    "details": [
+      {
+        "wordId": "07e38ce0-3cff-4860-ac97-53bfeb005226",
+        "label": "SHARED",
+        "arabic": "نَفْسِهِۦ",
+        "gloss": "soi-même / son âme",
+        "expected": "soi-même / son âme",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 6,
+        "lessons": 4,
+        "translationSource": "Hikma — lexique éditorial"
+      },
+      {
+        "wordId": "76d4dab1-59ba-4ec0-b5c5-2a5bc6bb81fb",
+        "label": "SAMPLE",
+        "arabic": "ذَرْوًۭا",
+        "gloss": "éparpillement / dispersion",
+        "expected": "éparpillement / dispersion",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 1,
+        "lessons": 3,
+        "translationSource": "Hikma — lexique éditorial"
+      },
+      {
+        "wordId": "7f4b0bd8-811e-4e88-bedc-ce2c5baf3acc",
+        "label": "SAMPLE",
+        "arabic": "وَٱلذَّٰرِيَـٰتِ",
+        "gloss": "celles qui éparpillent / les vents",
+        "expected": "celles qui éparpillent / les vents",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 1,
+        "lessons": 3,
+        "translationSource": "Hikma — lexique éditorial"
+      },
+      {
+        "wordId": "a7b9ea5b-987d-4c74-a630-433ef48b1a5c",
+        "label": "SAMPLE",
+        "arabic": "وِقْرًۭا",
+        "gloss": "fardeau / charge",
+        "expected": "fardeau / charge",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 1,
+        "lessons": 3,
+        "translationSource": "Hikma — lexique éditorial"
+      },
+      {
+        "wordId": "e95824a9-4469-404e-866c-84b1a04fa90d",
+        "label": "SAMPLE",
+        "arabic": "فَٱلْحَـٰمِلَـٰتِ",
+        "gloss": "celles qui portent un fardeau",
+        "expected": "celles qui portent un fardeau",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 1,
+        "lessons": 3,
+        "translationSource": "Hikma — lexique éditorial"
+      },
+      {
+        "wordId": "1271b47e-54b7-46bb-b3ea-6cef9a54e9b0",
+        "label": "SAMPLE",
+        "arabic": "فَٱلْجَـٰرِيَـٰتِ",
+        "gloss": "celles qui glissent / courent",
+        "expected": "celles qui glissent / courent",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 1,
+        "lessons": 3,
+        "translationSource": "Hikma — lexique éditorial"
+      },
+      {
+        "wordId": "b349f5fd-092a-4309-9bd4-2d8080d229ee",
+        "label": "SAMPLE",
+        "arabic": "فَٱلْمُقَسِّمَـٰتِ",
+        "gloss": "celles qui distribuent / répartissent",
+        "expected": "celles qui distribuent / répartissent",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 1,
+        "lessons": 2,
+        "translationSource": "Hikma — lexique éditorial"
+      },
+      {
+        "wordId": "e37753ae-90fc-4a00-9b66-9057fc0be450",
+        "label": "SAMPLE",
+        "arabic": "لَصَادِقٌۭ",
+        "gloss": "véridique / certainement vrai",
+        "expected": "véridique / certainement vrai",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 1,
+        "lessons": 3,
+        "translationSource": "Hikma — lexique éditorial"
+      },
+      {
+        "wordId": "719ff1b6-667d-42a3-9efa-4b0a102882ca",
+        "label": "SAMPLE",
+        "arabic": "ٱلْحُبُكِ",
+        "gloss": "voies / traces du ciel",
+        "expected": "voies / traces du ciel",
+        "match": true,
+        "language": "fr",
+        "fallback": false,
+        "answerLanguage": "FR_VERIFIED",
+        "totalOccurrences": 1,
+        "lessons": 2,
+        "translationSource": "Hikma — lexique éditorial"
+      }
+    ]
+  },
+  "rtl_audit": {
+    "componentAudit": {
+      "dirRtl": true,
+      "langAr": true,
+      "amiri": true,
+      "letterSpacing0": true,
+      "noTextTransform": true,
+      "leading1_9": true
+    },
+    "unicodeSamples": 25,
+    "unicodeMismatches": 0,
+    "note": "ArabicText pose dir=rtl, lang=ar, police Amiri, interligne 1.9, zéro letter-spacing et zéro text-transform — préservation des diacritiques."
+  },
+  "audio_audit": {
+    "sampledWordIds": 5,
+    "registered": 5,
+    "signed": 5,
+    "verdict": "PASS",
+    "note": "5/5 URLs signées valides"
+  },
+  "responsive_ux_audit": {
+    "method": "AUDIT_STATIQUE_DES_COMPOSANTS_PAGES_REELS (aucun rendu navigateur exécuté dans cet environnement)",
+    "pagesAuditées": 4,
+    "observations": [
+      "app/(app)/learn/[slug]/page.tsx : maxWidth=true responsive(true) overflowX=false",
+      "app/(app)/surahs/page.tsx : maxWidth=true responsive(true) overflowX=false",
+      "app/(app)/surahs/[number]/page.tsx : maxWidth=true responsive(true) overflowX=false",
+      "app/(app)/review/page.tsx : maxWidth=true responsive(true) overflowX=false"
+    ]
+  },
+  "non_regression": {
+    "protectedTableCounts": {
+      "word_translations": 6095,
+      "lemma_translations": 204,
+      "translations": 24944,
+      "sources": 6,
+      "quran_words": 21296,
+      "word_occurrences": 77430,
+      "ayahs": 6236,
+      "lemmas": 1593,
+      "word_lemma_mapping": 220,
+      "user_word_progress": 24,
+      "user_settings": 2,
+      "user_activity_lessons": 10,
+      "review_items": 24
+    },
+    "totalLessonsInDb": 547,
+    "newLessons88H": 356,
+    "oldLessonsExpected": 191,
+    "oldLessonsActual": 191,
+    "oldLessonsIntact": true,
+    "glossesPresent": 559,
+    "glossesMissing": 0,
+    "glossesDuplicates": 0,
+    "glossesUnvalidated": 0,
+    "glossesTextMismatch": 0
+  },
+  "shared_cross_surah": {
+    "sharedWords": [
+      {
+        "wordId": "07e38ce0-3cff-4860-ac97-53bfeb005226",
+        "arabic": "نَفْسِهِۦ",
+        "glossAttendu": "soi-même / son âme",
+        "glossResolue": "soi-même / son âme",
+        "occurrencesSurahs": [
+          3,
+          12,
+          20,
+          59,
+          64,
+          75
+        ],
+        "uneSeuleGlose": true,
+        "note": "un seul word_id partagé, une seule ligne word_translations (verrou UNIQUE word_id,language,source_id). Le périmètre éditorial 88F-BE couvrait 64,75 ; les occurrences réelles incluent aussi d'autres sourates — la glose « soi-même / son âme » reste cohérente sur toutes (base lexicale stable)."
+      }
+    ]
+  },
+  "559_glosses_audit": {
+    "total": 559,
+    "present": 559,
+    "exactGloss": 559,
+    "validated": 559,
+    "sourceHikma": 559,
+    "missing": 0,
+    "reachableInCurriculum": "formes des 10 sourates publiées (88H) — voir LESSON_PAGE_AUDIT"
+  },
+  "checks": {
+    "IDENTITY_SAFE": {
+      "status": "PASS",
+      "detail": "559/559 word_ids issus de l'évidence, aucun doublon de glose"
+    },
+    "CURRICULUM_INTEGRITY": {
+      "status": "PASS",
+      "detail": "10/10 parcours, 356/356 leçons"
+    },
+    "LEXICAL_RESOLUTION": {
+      "status": "PASS",
+      "detail": "forme=162 lemme=0 en=0"
+    },
+    "FR_LANGUAGE_INTEGRITY": {
+      "status": "PASS",
+      "detail": "559/559 FR_VERIFIED"
+    },
+    "NO_EN_FALLBACK": {
+      "status": "PASS",
+      "detail": "leçons=0 559-set=0"
+    },
+    "EXERCISE_LANGUAGE_INTEGRITY": {
+      "status": "PASS",
+      "detail": "1587 exercices contrôlés, 0 anomalies"
+    },
+    "FREE_TEXT_GATE": {
+      "status": "PASS",
+      "detail": "gate=0 correcteur=0/40"
+    },
+    "RTL_INTEGRITY": {
+      "status": "PASS",
+      "detail": "composant dir=rtl/lang=ar/Amiri OK, 25 échantillons, 0 mismatch"
+    },
+    "AUDIO_INTEGRITY": {
+      "status": "PASS",
+      "detail": "5/5 URLs signées valides"
+    },
+    "NON_REGRESSION": {
+      "status": "PASS",
+      "detail": "191 leçons préexistantes intactes, 559/559 gloses présentes"
+    },
+    "DATABASE_WRITE_SAFETY": {
+      "status": "PASS",
+      "detail": "scan statique : 0 violation(s)"
+    },
+    "SHARED_WORD_INTEGRITY": {
+      "status": "PASS",
+      "detail": "[{\"arabic\":\"نَفْسِهِۦ\",\"surahs\":[3,12,20,59,64,75]}]"
+    }
+  },
+  "issues": [
+    {
+      "id": "LSN-FULL-COUNT-NOTE",
+      "severity": "NOTE",
+      "check": "LESSON_PAGE_AUDIT",
+      "title": "Métrique 88H « 1824 formes » vs « 1439 formes distinctes globales »",
+      "detail": "88H comptait les formes DISTINCTES PAR SOURATE (somme des union par sourate, les formes partagées comme نَفْسِهِ sont comptées une fois par sourate) ; le présent audit compte les formes distinctes GLOBALES sur le curriculum complet (chaque word_id une seule fois). 1439 globales vs 1824 somme-par-sourate : écart purement méthodologique, pas une régression.",
+      "recommendation": "Aucune action — les deux métriques sont correctes dans leur cadrage."
+    }
+  ],
+  "technical_validation": {
+    "vitest": "954/954 passés (63 fichiers) — aucune régression",
+    "typescript": "0 erreur sur les fichiers de la phase (3 erreurs préexistantes dans .next/dev/types, artefacts générés hors source)",
+    "eslint": "0 erreur / 0 warning sur les scripts de la phase (88g, 88h, 88i, import)",
+    "note": "Pré-existant : les erreurs TS restantes se trouvent dans .next/dev/types (fichiers générés par le dev server), aucun fichier source de la phase n'en contient."
+  },
+  "final_recommendations": [
+    "Les 10 sourates sont publiées, atteignables et consommées par la chaîne de production réelle.",
+    "Aucune anomalie bloquante détectée par l'audit (voir issues pour le détail).",
+    "Prochaine phase recommandée : PREFLIGHT_TECHNIQUE_IMPORT_CURRICULUM ou supervision UI navigateur si souhaité."
+  ]
+}

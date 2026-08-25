@@ -346,7 +346,7 @@ export default function DesignSystemPage() {
             <AudioPlayer src="/audio/design-system-demo.mp3" label="Écouter le modèle" />
             <Button variant="outline" className="min-h-12">Voir le sens</Button>
           </div>
-          <HikmaContextDisclosure contexts={[{ surahNumber: 1, surahName: "L'ouverture", ayahNumber: 5, arabic: "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ", french: "C’est toi que nous adorons, c’est toi dont nous implorons le secours." }]} />
+          <HikmaContextDisclosure contexts={[{ surahNumber: 1, surahName: "L'ouverture", ayahNumber: 5, arabic: "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ", french: "C’est toi que nous adorons, c’est toi dont nous implorons le secours.", globalAyahNumber: null }]} />
         </CardContent></Card>
       </section>
 

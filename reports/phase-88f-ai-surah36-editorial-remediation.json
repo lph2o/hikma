@@ -1,0 +1,1232 @@
+{
+  "phase": "88F-AI",
+  "verdict": "PHASE_88F_AI_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "editorialReadyForImport": true,
+  "timestamp": "2026-08-24T13:59:58.320Z",
+  "durationSeconds": 23.39,
+  "rootCause": {
+    "bug_1": "Variable `gloss` never declared with `let` — persisted as implicit module-level global across all 123 iterations.",
+    "bug_2": "Naive substring matching on English `quran_words.meaning`: short function words (in, with, to, on) matched before content words, causing semantic mismatches.",
+    "bug_3": "Fallback copied raw English meaning for ~34 forms that didn't match any keyword.",
+    "totalAffected": 75,
+    "englishGlosses": 34,
+    "genericFrenchMismatches": 41
+  },
+  "baseline": {
+    "totalForms": 529,
+    "coveredForms": 406,
+    "unresolvedForms": 123,
+    "coveragePct": 76.7486,
+    "paths": {
+      "pathA_wordTr": 399,
+      "pathB_lemma": 1,
+      "pathC_wlm": 6
+    }
+  },
+  "fix": {
+    "identitySafe": "word_id is the key throughout — never array index or position",
+    "glossDeclaredPerIteration": "let gloss = \"\"; at start of each loop",
+    "sourceData": "French Hamidullah (rid=31) ayah translations, not English quran_words.meaning",
+    "keywordMatching": "Prioritized content words over function words, with word-specific rules"
+  },
+  "editorialGlosses": [
+    {
+      "word_id": "30ce6023-5c98-4fb4-a104-ee8460791108",
+      "arabic": "تَطَيَّرْنَا",
+      "ayah": "36:18",
+      "gloss": "mauvais présage / augure / superstition",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils dirent : \"Nous voyons en vous un mauvais présage. Si vous ne cessez pas, nous vous lapideront et…\" | EN hint: \"[we] see an evil omen\" | S36:36:18",
+      "hamidullahSnippet": "Ils dirent : \"Nous voyons en vous un mauvais présage. Si vous ne cessez pas, nous vous lapideront et un douloureux châtiment de notre part vous touche…",
+      "kazimirskiSnippet": "— Nous avons consulté le vol des oiseaux sur vous, et, si vous ne cessez pas de nous prêcher, nous vous lapiderons. Nous vous réservons une peine terr…"
+    },
+    {
+      "word_id": "c4e96d86-2845-4f80-b324-d21ef3a89f07",
+      "arabic": "تَكْذِبُونَ",
+      "ayah": "36:15",
+      "gloss": "mentir / traiter de mensonge",
+      "rationale": "Src: Hamidullah(rid=31) \"Mais ils [les gens] dirent : \"Vous n’êtes que des hommes comme nous. Le Tout Miséricordieux n’a rien…\" | EN hint: \"lying\" | S36:36:15",
+      "hamidullahSnippet": "Mais ils [les gens] dirent : \"Vous n’êtes que des hommes comme nous. Le Tout Miséricordieux n’a rien fait descendre et vous ne faites que mentir.\"",
+      "kazimirskiSnippet": "— Vous n’êtes que des hommes comme nous. Le Miséricordieux ne vous a rien révélé; vous n’êtes que des imposteurs."
+    },
+    {
+      "word_id": "b94dae08-eb34-474c-88be-064d2c79ac63",
+      "arabic": "أَطْعَمَهُۥٓ",
+      "ayah": "36:47",
+      "gloss": "Il l'aurait nourri",
+      "rationale": "Src: Hamidullah(rid=31) \"Et quand on leur dit : \"Dépensez de ce qu’Allah vous a attribué\", ceux qui ont mécru disent à ceux q…\" | EN hint: \"He would have fed him\" | S36:36:47",
+      "hamidullahSnippet": "Et quand on leur dit : \"Dépensez de ce qu’Allah vous a attribué\", ceux qui ont mécru disent à ceux qui ont cru : \"Nourrirons- nous quelqu’un qu’Allah …",
+      "kazimirskiSnippet": "Si l’on dit: Faite l’aumône des biens que Dieu vous accorde, les infidèles disent aux croyants: Nourrirons-nous ceux que Dieu nourrirait lui-même s’il…"
+    },
+    {
+      "word_id": "565e0cc4-583a-4ea2-968b-37263e1ec28b",
+      "arabic": "يُحْيِيهَا",
+      "ayah": "36:79",
+      "gloss": "Il leur donnera la vie",
+      "rationale": "Src: Hamidullah(rid=31) \"Dis : \"Celui qui les a créés une première fois, leur redonnera la vie. Il connaît parfaitement toute…\" | EN hint: \"He will give them life\" | S36:36:79",
+      "hamidullahSnippet": "Dis : \"Celui qui les a créés une première fois, leur redonnera la vie. Il connaît parfaitement toute la création ;",
+      "kazimirskiSnippet": "Réponds-leur: Celui-là les fera revivre qui les a produits la première fois, celui qui sait créer tout; "
+    },
+    {
+      "word_id": "b6d6520c-089d-48ca-95f2-43383af4983b",
+      "arabic": "كُنَّا",
+      "ayah": "36:28",
+      "gloss": "nous étions / nous avons été",
+      "rationale": "Src: Hamidullah(rid=31) \"Et après lui Nous ne fîmes descendre du ciel aucune armée. Nous ne voulions rien faire descendre sur…\" | EN hint: \"We were\" | S36:36:28",
+      "hamidullahSnippet": "Et après lui Nous ne fîmes descendre du ciel aucune armée. Nous ne voulions rien faire descendre sur son peuple.",
+      "kazimirskiSnippet": "Nous n’envoyâmes point contre cette cité ni armée du ciel ni d’autres fléaux que nous envoyons contre les autres."
+    },
+    {
+      "word_id": "6f382687-9af8-4801-8b78-6779f1c76a80",
+      "arabic": "وَأَجْرٍۢ",
+      "ayah": "36:11",
+      "gloss": "récompense / rétribution / salaire",
+      "rationale": "Src: Hamidullah(rid=31) \"Tu avertis seulement celui qui suit le Rappel (le Coran), et craint le Tout Miséricordieux, malgré q…\" | EN hint: \"and a reward\" | S36:36:11",
+      "hamidullahSnippet": "Tu avertis seulement celui qui suit le Rappel (le Coran), et craint le Tout Miséricordieux, malgré qu’il ne Le voit pas. Annonce-lui un pardon et une …",
+      "kazimirskiSnippet": "Prêche plutôt ceux qui suivent le Koran et redoutent Dieu dans le secret de leurs cœurs; annonce-leur le pardon et une récompense magnifique."
+    },
+    {
+      "word_id": "f767b530-d2b5-4fbd-a17f-63466889af1b",
+      "arabic": "ٱعْبُدُونِى ۚ",
+      "ayah": "36:61",
+      "gloss": "you worship Me (ٱعْبُدُونِى ۚ)",
+      "rationale": "Src: Hamidullah(rid=31) \"et [ne vous ai-Je pas engagés] à M’adorer ? Voilà un chemin bien droit.\" | EN hint: \"you worship Me\" | S36:36:61",
+      "hamidullahSnippet": "et [ne vous ai-Je pas engagés] à M’adorer ? Voilà un chemin bien droit.",
+      "kazimirskiSnippet": "Adorez-moi, c’est le sentier droit."
+    },
+    {
+      "word_id": "4ea0e661-5099-49ac-b3ae-e0aa2a92cdb6",
+      "arabic": "يَسْـَٔلُكُمْ",
+      "ayah": "36:21",
+      "gloss": "demander / interroger",
+      "rationale": "Src: Hamidullah(rid=31) \"suivez ceux qui ne vous demandent aucun salaire et qui sont sur la bonne voie.\" | EN hint: \"ask (of) you\" | S36:36:21",
+      "hamidullahSnippet": "suivez ceux qui ne vous demandent aucun salaire et qui sont sur la bonne voie.",
+      "kazimirskiSnippet": "Suivez ceux qui ne vous en demandent aucune récompense, et vous serez dans la droite voie."
+    },
+    {
+      "word_id": "4b8d9aba-a881-4a56-86c0-0695adb008a2",
+      "arabic": "أَرْجُلُهُم",
+      "ayah": "36:65",
+      "gloss": "pied / trace / empreinte",
+      "rationale": "Src: Hamidullah(rid=31) \"Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes…\" | EN hint: \"their feet\" | S36:36:65",
+      "hamidullahSnippet": "Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes témoigneront de ce qu’ils avaient accompli.",
+      "kazimirskiSnippet": "Aujourd’hui nous apposerons un sceau sur leurs lèvres; leurs mains nous parleront seules, et leurs pieds témoigneront de leurs actions."
+    },
+    {
+      "word_id": "2ca3e4a5-01f9-44bd-a29e-6387e26bae39",
+      "arabic": "يسٓ",
+      "ayah": "36:1",
+      "gloss": "Ya Seen (يسٓ)",
+      "rationale": "Src: Hamidullah(rid=31) \"Yâ-Sîn.\" | EN hint: \"Ya Seen\" | S36:36:1",
+      "hamidullahSnippet": "Yâ-Sîn.",
+      "kazimirskiSnippet": "Ya. Sin. Je jure par le Koran sage"
+    },
+    {
+      "word_id": "8cf5f2dc-ed78-498e-9215-d7cc0f11e0bf",
+      "arabic": "نُحْىِ",
+      "ayah": "36:12",
+      "gloss": "donner la vie / faire vivre",
+      "rationale": "Src: Hamidullah(rid=31) \"C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leur…\" | EN hint: \"[We] give life\" | S36:36:12",
+      "hamidullahSnippet": "C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leurs traces . Et Nous avons dénombré toute chose dans…",
+      "kazimirskiSnippet": "Nous ressuscitons les morts, et nous inscrivons leurs œuvres et leurs traces. Nous avons compté tout dans le prototype évident. "
+    },
+    {
+      "word_id": "ffcd06af-18b1-41a5-86d9-2e55b75554ba",
+      "arabic": "قَدَّرْنَـٰهُ",
+      "ayah": "36:39",
+      "gloss": "décréter / fixer / déterminer",
+      "rationale": "Src: Hamidullah(rid=31) \"Et la lune, Nous lui avons déterminé des phases jusqu’à ce qu’elle devienne comme la palme vieillie …\" | EN hint: \"We have ordained for it\" | S36:36:39",
+      "hamidullahSnippet": "Et la lune, Nous lui avons déterminé des phases jusqu’à ce qu’elle devienne comme la palme vieillie . <sup foot_note=212341>1</sup>",
+      "kazimirskiSnippet": "Et la lune, nous avons établi pour elle des stations au point qu’elle devient comme une vieille branche de palmier recourbée."
+    },
+    {
+      "word_id": "4ebc974d-ef06-42bb-9f4f-f30a2951f0ae",
+      "arabic": "فَـٰكِهُونَ",
+      "ayah": "36:55",
+      "gloss": "in amusement (فَـٰكِهُونَ)",
+      "rationale": "Src: Hamidullah(rid=31) \"Les gens du Paradis seront, ce jour-là, dans une occupation qui les remplira de bonheur ;\" | EN hint: \"(in) amusement\" | S36:36:55",
+      "hamidullahSnippet": "Les gens du Paradis seront, ce jour-là, dans une occupation qui les remplira de bonheur ;",
+      "kazimirskiSnippet": "Dans ce jour, les habitants du jardin ( du paradis ) se livreront à des transports de joie."
+    },
+    {
+      "word_id": "94041733-09df-4ad9-9692-85b8be34bc25",
+      "arabic": "ءَأَتَّخِذُ",
+      "ayah": "36:23",
+      "gloss": "prendrais-je / devrais-je prendre",
+      "rationale": "Src: Hamidullah(rid=31) \"Prendrais-je en dehors de Lui des divinités ? Si le Tout Miséricordieux me veut du mal, leur interce…\" | EN hint: \"Should I take\" | S36:36:23",
+      "hamidullahSnippet": "Prendrais-je en dehors de Lui des divinités ? Si le Tout Miséricordieux me veut du mal, leur intercession ne me servira à rien et ils ne me sauveront …",
+      "kazimirskiSnippet": "Prendrais-je d’autres dieux que lui? Si le Miséricordieux veut me faire du mal, leur intercession ne me sera d’aucune utilité; ils ne sauraient me sau…"
+    },
+    {
+      "word_id": "f0e5ccef-2ced-42b6-9a3a-79a1de6181b1",
+      "arabic": "ذُكِّرْتُم ۚ",
+      "ayah": "36:19",
+      "gloss": "avertir / mettre en garde",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils dirent : \"Votre mauvais présage est avec vous-mêmes. Est-ce ainsi [que vous agissez] quand le ra…\" | EN hint: \"you are admonished\" | S36:36:19",
+      "hamidullahSnippet": "Ils dirent : \"Votre mauvais présage est avec vous-mêmes. Est-ce ainsi [que vous agissez] quand le rappel vous est fait ? Vous êtes assurément des gens…",
+      "kazimirskiSnippet": "Les envoyés répondirent: Votre mauvais sort vous accompagne, quand même on vous avertirait. En vérité, vous êtes un peuple livré aux excès."
+    },
+    {
+      "word_id": "fb0e6cf6-bad0-4188-bc6e-74b443c2b2a6",
+      "arabic": "وَءَاثَـٰرَهُمْ ۚ",
+      "ayah": "36:12",
+      "gloss": "pied / trace / empreinte",
+      "rationale": "Src: Hamidullah(rid=31) \"C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leur…\" | EN hint: \"and their footprints\" | S36:36:12",
+      "hamidullahSnippet": "C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leurs traces . Et Nous avons dénombré toute chose dans…",
+      "kazimirskiSnippet": "Nous ressuscitons les morts, et nous inscrivons leurs œuvres et leurs traces. Nous avons compté tout dans le prototype évident. "
+    },
+    {
+      "word_id": "93d51464-a29f-4eb0-81eb-a747c9b10013",
+      "arabic": "فَٱسْتَبَقُوا۟",
+      "ayah": "36:66",
+      "gloss": "se précipiter / s'empresser",
+      "rationale": "Src: Hamidullah(rid=31) \"Et si Nous voulions, Nous effacerions leurs yeux et ils courront vers le chemin. Mais comment alors …\" | EN hint: \"then they (would) race\" | S36:36:66",
+      "hamidullahSnippet": "Et si Nous voulions, Nous effacerions leurs yeux et ils courront vers le chemin. Mais comment alors pourront-ils voir ?",
+      "kazimirskiSnippet": "Si nous voulions, nous leur ôterions la vue; ils s’élanceraient alors précipitamment sur le chemin; .mais comment le verront-ils? "
+    },
+    {
+      "word_id": "b9d5d56a-cddd-4231-b104-c1f126f3592c",
+      "arabic": "كَثِيرًا ۖ",
+      "ayah": "36:62",
+      "gloss": "manger / consommer",
+      "rationale": "Src: Hamidullah(rid=31) \"Et il a très certainement égaré un grand nombre d’entre vous. Ne raisonniez-vous donc pas ?\" | EN hint: \"great\" | S36:36:62",
+      "hamidullahSnippet": "Et il a très certainement égaré un grand nombre d’entre vous. Ne raisonniez-vous donc pas ?",
+      "kazimirskiSnippet": "Il a séduit une grande partie d’entre vous. Ne l’avez-vous pas compris? "
+    },
+    {
+      "word_id": "7e06c8c5-25d2-4e64-afda-0f9e30ed434b",
+      "arabic": "خَلْقَهُۥ ۖ",
+      "ayah": "36:78",
+      "gloss": "manger / consommer",
+      "rationale": "Src: Hamidullah(rid=31) \"Il cite pour Nous un exemple, tandis qu’il oublie sa propre création; il dit : \"Qui va redonner la v…\" | EN hint: \"his (own) creation\" | S36:36:78",
+      "hamidullahSnippet": "Il cite pour Nous un exemple, tandis qu’il oublie sa propre création; il dit : \"Qui va redonner la vie à des ossements une fois réduits en poussière ?…",
+      "kazimirskiSnippet": "Il nous propose des paraboles, lui qui oublie sa propre création ( sa propre origine ). Il nous dit: Qui peut faire revivre les os une fois cariés? "
+    },
+    {
+      "word_id": "93b06b9d-5656-491b-9e3e-5c998fdfab70",
+      "arabic": "وَتَشْهَدُ",
+      "ayah": "36:65",
+      "gloss": "témoigner / attester",
+      "rationale": "Src: Hamidullah(rid=31) \"Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes…\" | EN hint: \"and will bear witness\" | S36:36:65",
+      "hamidullahSnippet": "Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes témoigneront de ce qu’ils avaient accompli.",
+      "kazimirskiSnippet": "Aujourd’hui nous apposerons un sceau sur leurs lèvres; leurs mains nous parleront seules, et leurs pieds témoigneront de leurs actions."
+    },
+    {
+      "word_id": "b4f3f283-8a02-4df2-9815-2d8ad1000547",
+      "arabic": "أَمْرُهُۥٓ",
+      "ayah": "36:82",
+      "gloss": "commandement / ordre / affaire",
+      "rationale": "Src: Hamidullah(rid=31) \"Quand Il veut une chose, Son commandement consiste à dire : \"Sois\", et c’est.\" | EN hint: \"His Command\" | S36:36:82",
+      "hamidullahSnippet": "Quand Il veut une chose, Son commandement consiste à dire : \"Sois\", et c’est.",
+      "kazimirskiSnippet": "Quel est son arrêt? Lorsqu’il veut qu’une chose soit faite, il dit: Sois, et elle est."
+    },
+    {
+      "word_id": "c1cf81b9-deb7-406a-b171-c9afdd2f09c9",
+      "arabic": "وَذَلَّلْنَـٰهَا",
+      "ayah": "36:72",
+      "gloss": "soumettre / asservir / dompter",
+      "rationale": "Src: Hamidullah(rid=31) \"et Nous les leurs avons soumis ; certains leur servent de monture et d’autre de nourriture ;\" | EN hint: \"And We have tamed them\" | S36:36:72",
+      "hamidullahSnippet": "et Nous les leurs avons soumis ; certains leur servent de monture et d’autre de nourriture ;",
+      "kazimirskiSnippet": "Nous les leur avons soumis; ils en font des montures de quelques-uns, et se nourrissent d’autres."
+    },
+    {
+      "word_id": "5492563f-4df4-4dda-977e-1de2935a44d0",
+      "arabic": "صَرِيخَ",
+      "ayah": "36:43",
+      "gloss": "secours / aide / cri au secours",
+      "rationale": "Src: Hamidullah(rid=31) \"Et si Nous le voulons, Nous les noyons; pour eux alors, pas de secoureur et ils ne seront pas sauvés…\" | EN hint: \"(would be) a responder to a cry\" | S36:36:43",
+      "hamidullahSnippet": "Et si Nous le voulons, Nous les noyons; pour eux alors, pas de secoureur et ils ne seront pas sauvés,",
+      "kazimirskiSnippet": "Si nous le voulons, nous les noyons dans les mers; ils ne sont sauvés, ils ne sont délivrés"
+    },
+    {
+      "word_id": "b163f5a7-cca1-4142-99a4-1b4895f07852",
+      "arabic": "أَحْيَيْنَـٰهَا",
+      "ayah": "36:33",
+      "gloss": "lui donner la vie / la faire vivre",
+      "rationale": "Src: Hamidullah(rid=31) \"Une preuve pour eux est la terre morte, à laquelle Nous redonnons la vie, et d’où Nous faisons sorti…\" | EN hint: \"We give it life\" | S36:36:33",
+      "hamidullahSnippet": "Une preuve pour eux est la terre morte, à laquelle Nous redonnons la vie, et d’où Nous faisons sortir des grains dont ils mangent.",
+      "kazimirskiSnippet": "Que la terre, morte de sécheresse, leur serve de signe de notre puissance, Nous lui rendons la vie, et nous en faisons sortir des grains dont ils se n…"
+    },
+    {
+      "word_id": "3a400095-a4f3-4e98-afbd-cafa4b24cca1",
+      "arabic": "يَـٰحَسْرَةً",
+      "ayah": "36:30",
+      "gloss": "hélas / quel malheur / regret",
+      "rationale": "Src: Hamidullah(rid=31) \"Hélas pour les esclaves [les humains]! Jamais il ne leur vient de messager sans qu’ils ne s’en raill…\" | EN hint: \"Alas\" | S36:36:30",
+      "hamidullahSnippet": "Hélas pour les esclaves [les humains]! Jamais il ne leur vient de messager sans qu’ils ne s’en raillent.",
+      "kazimirskiSnippet": "Que mes serviteurs sont malheureux! Aucun apôtre n’est venu vers eux qu’ils ne l’eussent pris pour l’objet de leurs railleries."
+    },
+    {
+      "word_id": "57b9029a-44d1-4f38-98a4-86a9bd9890d6",
+      "arabic": "مُتَّكِـُٔونَ",
+      "ayah": "36:56",
+      "gloss": "reclining (مُتَّكِـُٔونَ)",
+      "rationale": "Src: Hamidullah(rid=31) \"eux et leurs épouses seront sous des ombrages, accoudés sur les divans.\" | EN hint: \"reclining\" | S36:36:56",
+      "hamidullahSnippet": "eux et leurs épouses seront sous des ombrages, accoudés sur les divans.",
+      "kazimirskiSnippet": "En compagnie de leurs épouses, ils se reposeront à l’ombre, assis commodément dans des fauteuils. "
+    },
+    {
+      "word_id": "152d842e-feb3-4cce-b615-47b2917eb71f",
+      "arabic": "نَخْتِمُ",
+      "ayah": "36:65",
+      "gloss": "sceller / clore",
+      "rationale": "Src: Hamidullah(rid=31) \"Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes…\" | EN hint: \"We will seal\" | S36:36:65",
+      "hamidullahSnippet": "Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes témoigneront de ce qu’ils avaient accompli.",
+      "kazimirskiSnippet": "Aujourd’hui nous apposerons un sceau sur leurs lèvres; leurs mains nous parleront seules, et leurs pieds témoigneront de leurs actions."
+    },
+    {
+      "word_id": "24ba0bb4-447d-4ea8-94db-a410a87667cb",
+      "arabic": "أَنُطْعِمُ",
+      "ayah": "36:47",
+      "gloss": "nourrir / donner à manger",
+      "rationale": "Src: Hamidullah(rid=31) \"Et quand on leur dit : \"Dépensez de ce qu’Allah vous a attribué\", ceux qui ont mécru disent à ceux q…\" | EN hint: \"Should we feed\" | S36:36:47",
+      "hamidullahSnippet": "Et quand on leur dit : \"Dépensez de ce qu’Allah vous a attribué\", ceux qui ont mécru disent à ceux qui ont cru : \"Nourrirons- nous quelqu’un qu’Allah …",
+      "kazimirskiSnippet": "Si l’on dit: Faite l’aumône des biens que Dieu vous accorde, les infidèles disent aux croyants: Nourrirons-nous ceux que Dieu nourrirait lui-même s’il…"
+    },
+    {
+      "word_id": "c1164575-ee9d-4184-9132-e38e8f42e4e4",
+      "arabic": "ٱدْخُلِ",
+      "ayah": "36:26",
+      "gloss": "entrer / pénétrer",
+      "rationale": "Src: Hamidullah(rid=31) \"Alors il [lui] fut dit : \"Entre au Paradis.\" Il dit : \"Ah si seulement mon peuple savait !\" | EN hint: \"Enter\" | S36:36:26",
+      "hamidullahSnippet": "Alors il [lui] fut dit : \"Entre au Paradis.\" Il dit : \"Ah si seulement mon peuple savait !",
+      "kazimirskiSnippet": "Il fut lapidé; après sa mort, on lui dit: Entre dans la paradis. Ah! si mes concitoyens savaient"
+    },
+    {
+      "word_id": "ebdd2c06-dae3-4e56-969c-f452949641c7",
+      "arabic": "لَنَرْجُمَنَّكُمْ",
+      "ayah": "36:18",
+      "gloss": "nous vous lapiderons assurément",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils dirent : \"Nous voyons en vous un mauvais présage. Si vous ne cessez pas, nous vous lapideront et…\" | EN hint: \"surely, we will stone you\" | S36:36:18",
+      "hamidullahSnippet": "Ils dirent : \"Nous voyons en vous un mauvais présage. Si vous ne cessez pas, nous vous lapideront et un douloureux châtiment de notre part vous touche…",
+      "kazimirskiSnippet": "— Nous avons consulté le vol des oiseaux sur vous, et, si vous ne cessez pas de nous prêcher, nous vous lapiderons. Nous vous réservons une peine terr…"
+    },
+    {
+      "word_id": "b69a3ed4-5fa4-4bdf-874b-d534d80fdf9d",
+      "arabic": "فَمِنْهَا",
+      "ayah": "36:72",
+      "gloss": "certains / quelques / une partie",
+      "rationale": "Src: Hamidullah(rid=31) \"et Nous les leurs avons soumis ; certains leur servent de monture et d’autre de nourriture ;\" | EN hint: \"so some of them \" | S36:36:72",
+      "hamidullahSnippet": "et Nous les leurs avons soumis ; certains leur servent de monture et d’autre de nourriture ;",
+      "kazimirskiSnippet": "Nous les leur avons soumis; ils en font des montures de quelques-uns, et se nourrissent d’autres."
+    },
+    {
+      "word_id": "678cfcae-5bd5-4b4e-8c50-92e08b30cc6a",
+      "arabic": "نَصْرَهُمْ",
+      "ayah": "36:75",
+      "gloss": "secours / aide / cri au secours",
+      "rationale": "Src: Hamidullah(rid=31) \"Celles-ci ne pourront pas les secourir, elles formeront au contraire une armée dressée contre eux.\" | EN hint: \"to help them\" | S36:36:75",
+      "hamidullahSnippet": "Celles-ci ne pourront pas les secourir, elles formeront au contraire une armée dressée contre eux.",
+      "kazimirskiSnippet": "Mais elles ne sauraient les secourir: ce sont plutôt eux qui servent d’armée à leurs divinités."
+    },
+    {
+      "word_id": "52011330-4dcf-4c0e-a49d-56141733d6e2",
+      "arabic": "وَإِن",
+      "ayah": "36:32",
+      "gloss": "et si / et même si",
+      "rationale": "Src: Hamidullah(rid=31) \"Et tous sans exception comparaîtront devant Nous.\" | EN hint: \"And if\" | S36:36:32",
+      "hamidullahSnippet": "Et tous sans exception comparaîtront devant Nous.",
+      "kazimirskiSnippet": "Tous, réunis, seront amenés devant nous."
+    },
+    {
+      "word_id": "30744850-3125-4b50-bd58-88145667a300",
+      "arabic": "وَتُكَلِّمُنَآ",
+      "ayah": "36:65",
+      "gloss": "dire / parler",
+      "rationale": "Src: Hamidullah(rid=31) \"Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes…\" | EN hint: \"and will speak to Us\" | S36:36:65",
+      "hamidullahSnippet": "Ce jour-là, Nous scellerons leurs bouches, tandis que leurs mains Nous parleront et que leurs jambes témoigneront de ce qu’ils avaient accompli.",
+      "kazimirskiSnippet": "Aujourd’hui nous apposerons un sceau sur leurs lèvres; leurs mains nous parleront seules, et leurs pieds témoigneront de leurs actions."
+    },
+    {
+      "word_id": "77b97d86-ddfd-4740-bf79-de80445abedc",
+      "arabic": "مَـٰلِكُونَ",
+      "ayah": "36:71",
+      "gloss": "sont les possesseurs / maîtres",
+      "rationale": "Src: Hamidullah(rid=31) \"Ne voient-ils donc pas que, parmi ce que Nos mains ont fait, Nous leur avons créé des bestiaux dont …\" | EN hint: \"(are the) owners\" | S36:36:71",
+      "hamidullahSnippet": "Ne voient-ils donc pas que, parmi ce que Nos mains ont fait, Nous leur avons créé des bestiaux dont ils sont propriétaires ;",
+      "kazimirskiSnippet": "Ne voient-ils pas que, parmi les choses formées par nos mains, nous avons créé les animaux pour eux, et qu’ils en disposent en maîtres? "
+    },
+    {
+      "word_id": "8e70d979-f04f-4b6e-82cb-545c7871a266",
+      "arabic": "ٱلْأَخْضَرِ",
+      "ayah": "36:80",
+      "gloss": "le vert / la verdure",
+      "rationale": "Src: Hamidullah(rid=31) \"c’est Lui qui, de l’arbre vert, a fait pour vous du feu, et voilà que de cela vous allumez.\" | EN hint: \"[the] green \" | S36:36:80",
+      "hamidullahSnippet": "c’est Lui qui, de l’arbre vert, a fait pour vous du feu, et voilà que de cela vous allumez.",
+      "kazimirskiSnippet": "Celui qui fait jaillir le feu d’un bois vert dont vous allumez vos feux; "
+    },
+    {
+      "word_id": "408ce1c6-8dbb-4f21-a428-252e4b4e3cd9",
+      "arabic": "ٱلْخَلْقِ ۖ",
+      "ayah": "36:68",
+      "gloss": "manger / consommer",
+      "rationale": "Src: Hamidullah(rid=31) \"A quiconque Nous accordons une longue vie, Nous faisons baisser sa forme. Ne comprennent-ils donc pa…\" | EN hint: \"the creation\" | S36:36:68",
+      "hamidullahSnippet": "A quiconque Nous accordons une longue vie, Nous faisons baisser sa forme. Ne comprennent-ils donc pas ?",
+      "kazimirskiSnippet": "Nous courbons le dos de celui dont nous prolongeons les jours. Ne le comprennent-ils pas? "
+    },
+    {
+      "word_id": "4f8c0437-b603-42f2-b5ef-8adb25825604",
+      "arabic": "سَابِقُ",
+      "ayah": "36:40",
+      "gloss": "retirer / ôter / dépouiller",
+      "rationale": "Src: Hamidullah(rid=31) \"Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.\" | EN hint: \"(can) outstrip\" | S36:36:40",
+      "hamidullahSnippet": "Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.",
+      "kazimirskiSnippet": "Il n’est point donné au soleil d’atteindre la lune, ni à la nuit de devancer le jour; chacun de ces astres se meut dans une sphère à part."
+    },
+    {
+      "word_id": "ca756e8f-d9a8-48b2-b3da-106b1382a645",
+      "arabic": "أُنذِرَ",
+      "ayah": "36:6",
+      "gloss": "avertir / mettre en garde",
+      "rationale": "Src: Hamidullah(rid=31) \"Pour que tu avertisses un peuple dont les ancêtres n’ont pas été avertis: ils sont donc insouciants.\" | EN hint: \"were warned\" | S36:36:6",
+      "hamidullahSnippet": "Pour que tu avertisses un peuple dont les ancêtres n’ont pas été avertis: ils sont donc insouciants.",
+      "kazimirskiSnippet": "Ann que tu avertisses ceux dont les pères n’ont pas été avertis, et qui vivent dans l’insouciance."
+    },
+    {
+      "word_id": "bbb9b100-0ca5-4d7e-b15d-aabcd2b6588c",
+      "arabic": "طَـٰٓئِرُكُم",
+      "ayah": "36:19",
+      "gloss": "mauvais présage / augure / superstition",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils dirent : \"Votre mauvais présage est avec vous-mêmes. Est-ce ainsi [que vous agissez] quand le ra…\" | EN hint: \"Your evil omen\" | S36:36:19",
+      "hamidullahSnippet": "Ils dirent : \"Votre mauvais présage est avec vous-mêmes. Est-ce ainsi [que vous agissez] quand le rappel vous est fait ? Vous êtes assurément des gens…",
+      "kazimirskiSnippet": "Les envoyés répondirent: Votre mauvais sort vous accompagne, quand même on vous avertirait. En vérité, vous êtes un peuple livré aux excès."
+    },
+    {
+      "word_id": "86fdf5c9-8bfc-4411-9706-48434e9a2079",
+      "arabic": "وَمَشَارِبُ ۖ",
+      "ayah": "36:73",
+      "gloss": "boisson / breuvage",
+      "rationale": "Src: Hamidullah(rid=31) \"et ils en retirent d’autres utilités et des boissons. Ne seront-ils donc pas reconnaissants ?\" | EN hint: \"and drinks\" | S36:36:73",
+      "hamidullahSnippet": "et ils en retirent d’autres utilités et des boissons. Ne seront-ils donc pas reconnaissants ?",
+      "kazimirskiSnippet": "Dans ces animaux ils trouvent de nombreux avantages, ils y trouvent de la boisson ( leur lait ). Ne seront-ils pas reconnaissants envers nous? "
+    },
+    {
+      "word_id": "ad86eebd-3eeb-4cdd-92ca-2912df61be5e",
+      "arabic": "وَأَزْوَٰجُهُمْ",
+      "ayah": "36:56",
+      "gloss": "et leurs épouses / compagnes",
+      "rationale": "Src: Hamidullah(rid=31) \"eux et leurs épouses seront sous des ombrages, accoudés sur les divans.\" | EN hint: \"and their spouses\" | S36:36:56",
+      "hamidullahSnippet": "eux et leurs épouses seront sous des ombrages, accoudés sur les divans.",
+      "kazimirskiSnippet": "En compagnie de leurs épouses, ils se reposeront à l’ombre, assis commodément dans des fauteuils. "
+    },
+    {
+      "word_id": "67642703-1d46-44f3-99e3-23441a428266",
+      "arabic": "وَيَحِقَّ",
+      "ayah": "36:70",
+      "gloss": "vérité / certitude",
+      "rationale": "Src: Hamidullah(rid=31) \"pour qu’ils avertisse celui qui est vivant et que la Parole se réalise contre les mécréants.\" | EN hint: \"and may be proved true\" | S36:36:70",
+      "hamidullahSnippet": "pour qu’ils avertisse celui qui est vivant et que la Parole se réalise contre les mécréants.",
+      "kazimirskiSnippet": "Pour avertir les vivants, et pour que la sentence portée contre les infidèles soit exécutée."
+    },
+    {
+      "word_id": "d3c90986-670f-442a-8b30-860a4773c13b",
+      "arabic": "نُغْرِقْهُمْ",
+      "ayah": "36:43",
+      "gloss": "noyer / submerger",
+      "rationale": "Src: Hamidullah(rid=31) \"Et si Nous le voulons, Nous les noyons; pour eux alors, pas de secoureur et ils ne seront pas sauvés…\" | EN hint: \"We could drown them\" | S36:36:43",
+      "hamidullahSnippet": "Et si Nous le voulons, Nous les noyons; pour eux alors, pas de secoureur et ils ne seront pas sauvés,",
+      "kazimirskiSnippet": "Si nous le voulons, nous les noyons dans les mers; ils ne sont sauvés, ils ne sont délivrés"
+    },
+    {
+      "word_id": "217fa183-8b7e-4cd4-ab92-6bccb3c305c7",
+      "arabic": "خَلْفَكُمْ",
+      "ayah": "36:45",
+      "gloss": "derrière / à l'arrière",
+      "rationale": "Src: Hamidullah(rid=31) \"Et quand on leur dit : \"Craignez ce qu’il y a devant vous et ce qu’il y a derrière vous afin que vou…\" | EN hint: \"(is) behind you\" | S36:36:45",
+      "hamidullahSnippet": "Et quand on leur dit : \"Craignez ce qu’il y a devant vous et ce qu’il y a derrière vous afin que vous ayez la miséricorde  !\" <sup foot_note=212343>1<…",
+      "kazimirskiSnippet": "Lorsqu’on leur dit: Craignez ce qui est devant vous et derrière vous, afin d’obtenir la miséricorde divine, ils n’en tiennent aucun compte. "
+    },
+    {
+      "word_id": "e8899361-80c0-4d63-8ebc-76ff07098bcc",
+      "arabic": "يُرِدْنِ",
+      "ayah": "36:23",
+      "gloss": "vouloir / désirer",
+      "rationale": "Src: Hamidullah(rid=31) \"Prendrais-je en dehors de Lui des divinités ? Si le Tout Miséricordieux me veut du mal, leur interce…\" | EN hint: \"intends for me\" | S36:36:23",
+      "hamidullahSnippet": "Prendrais-je en dehors de Lui des divinités ? Si le Tout Miséricordieux me veut du mal, leur intercession ne me servira à rien et ils ne me sauveront …",
+      "kazimirskiSnippet": "Prendrais-je d’autres dieux que lui? Si le Miséricordieux veut me faire du mal, leur intercession ne me sera d’aucune utilité; ils ne sauraient me sau…"
+    },
+    {
+      "word_id": "06eefd47-335b-44c2-8501-281f19a55e76",
+      "arabic": "جِبِلًّۭا",
+      "ayah": "36:62",
+      "gloss": "multitude / foule nombreuse",
+      "rationale": "Src: Hamidullah(rid=31) \"Et il a très certainement égaré un grand nombre d’entre vous. Ne raisonniez-vous donc pas ?\" | EN hint: \"a multitude\" | S36:36:62",
+      "hamidullahSnippet": "Et il a très certainement égaré un grand nombre d’entre vous. Ne raisonniez-vous donc pas ?",
+      "kazimirskiSnippet": "Il a séduit une grande partie d’entre vous. Ne l’avez-vous pas compris? "
+    },
+    {
+      "word_id": "9da74e76-79e0-4714-b616-e1bf65f13b5b",
+      "arabic": "بِمَغْفِرَةٍۢ",
+      "ayah": "36:11",
+      "gloss": "pardon / absolution",
+      "rationale": "Src: Hamidullah(rid=31) \"Tu avertis seulement celui qui suit le Rappel (le Coran), et craint le Tout Miséricordieux, malgré q…\" | EN hint: \"of forgiveness\" | S36:36:11",
+      "hamidullahSnippet": "Tu avertis seulement celui qui suit le Rappel (le Coran), et craint le Tout Miséricordieux, malgré qu’il ne Le voit pas. Annonce-lui un pardon et une …",
+      "kazimirskiSnippet": "Prêche plutôt ceux qui suivent le Koran et redoutent Dieu dans le secret de leurs cœurs; annonce-leur le pardon et une récompense magnifique."
+    },
+    {
+      "word_id": "c1f142e2-9d20-4af2-8b23-f03323a2bcb6",
+      "arabic": "لَّدَيْنَا",
+      "ayah": "36:32",
+      "gloss": "devant / auprès de / avant",
+      "rationale": "Src: Hamidullah(rid=31) \"Et tous sans exception comparaîtront devant Nous.\" | EN hint: \"before Us\" | S36:36:32",
+      "hamidullahSnippet": "Et tous sans exception comparaîtront devant Nous.",
+      "kazimirskiSnippet": "Tous, réunis, seront amenés devant nous."
+    },
+    {
+      "word_id": "36ea2ab7-ef20-4512-86ba-522d412c59bc",
+      "arabic": "ثَمَرِهِۦ",
+      "ayah": "36:35",
+      "gloss": "fruit / récolte / production",
+      "rationale": "Src: Hamidullah(rid=31) \"afin qu’ils mangent de Ses fruits et de ce que leurs mains ont produit . Ne seront-ils pas reconnais…\" | EN hint: \"its fruit\" | S36:36:35",
+      "hamidullahSnippet": "afin qu’ils mangent de Ses fruits et de ce que leurs mains ont produit . Ne seront-ils pas reconnaissants? <sup foot_note=212340>1</sup>",
+      "kazimirskiSnippet": "Afin qu’ils mangent de leurs fruits et jouissent des travaux de leurs mains. Ne seront-ils pas reconnaissants envers nous? "
+    },
+    {
+      "word_id": "c4fbcad6-3696-43ee-be2c-72ee11476c31",
+      "arabic": "أَكْثَرِهِمْ",
+      "ayah": "36:7",
+      "gloss": "la plupart / la majorité",
+      "rationale": "Src: Hamidullah(rid=31) \"En effet, la Parole  contre la plupart d’entre eux s’est réalisée: ils ne croiront donc pas. <sup fo…\" | EN hint: \"most of them\" | S36:36:7",
+      "hamidullahSnippet": "En effet, la Parole  contre la plupart d’entre eux s’est réalisée: ils ne croiront donc pas. <sup foot_note=212337>1</sup>",
+      "kazimirskiSnippet": "Notre parole s’est vérifiée à l’égard de la plupart d’ entre eux, et ils ne croiront pas. "
+    },
+    {
+      "word_id": "d63c8f7e-1229-45f5-832a-498b2dc28252",
+      "arabic": "فَعَزَّزْنَا",
+      "ayah": "36:14",
+      "gloss": "renforcer / fortifier / affermir",
+      "rationale": "Src: Hamidullah(rid=31) \"Quand Nous leur envoyâmes deux [envoyés] et qu’ils les traitèrent de menteurs. Nous [les] renforçâme…\" | EN hint: \"so We strengthened them\" | S36:36:14",
+      "hamidullahSnippet": "Quand Nous leur envoyâmes deux [envoyés] et qu’ils les traitèrent de menteurs. Nous [les] renforçâmes alors par un troisième et ils dirent : \"Vraiment…",
+      "kazimirskiSnippet": "Nous en envoyâmes d’abord deux, et ils furent traités d’imposteurs; nous les appuyâmes par un troisième, et tous trois dirent aux habitants de cette c…"
+    },
+    {
+      "word_id": "672fbddf-e868-48cc-858e-63f4265aa604",
+      "arabic": "مُنزِلِينَ",
+      "ayah": "36:28",
+      "gloss": "révéler / faire descendre",
+      "rationale": "Src: Hamidullah(rid=31) \"Et après lui Nous ne fîmes descendre du ciel aucune armée. Nous ne voulions rien faire descendre sur…\" | EN hint: \"(to) send down\" | S36:36:28",
+      "hamidullahSnippet": "Et après lui Nous ne fîmes descendre du ciel aucune armée. Nous ne voulions rien faire descendre sur son peuple.",
+      "kazimirskiSnippet": "Nous n’envoyâmes point contre cette cité ni armée du ciel ni d’autres fléaux que nous envoyons contre les autres."
+    },
+    {
+      "word_id": "ea3be307-66c2-445d-96a8-c3ca01421796",
+      "arabic": "مُّرْسَلُونَ",
+      "ayah": "36:14",
+      "gloss": "messager / envoyé",
+      "rationale": "Src: Hamidullah(rid=31) \"Quand Nous leur envoyâmes deux [envoyés] et qu’ils les traitèrent de menteurs. Nous [les] renforçâme…\" | EN hint: \"(are) Messengers\" | S36:36:14",
+      "hamidullahSnippet": "Quand Nous leur envoyâmes deux [envoyés] et qu’ils les traitèrent de menteurs. Nous [les] renforçâmes alors par un troisième et ils dirent : \"Vraiment…",
+      "kazimirskiSnippet": "Nous en envoyâmes d’abord deux, et ils furent traités d’imposteurs; nous les appuyâmes par un troisième, et tous trois dirent aux habitants de cette c…"
+    },
+    {
+      "word_id": "9681138e-42d8-4489-be04-77ab935dcd8d",
+      "arabic": "ٱلْعِبَادِ ۚ",
+      "ayah": "36:30",
+      "gloss": "serviteur / adorateur",
+      "rationale": "Src: Hamidullah(rid=31) \"Hélas pour les esclaves [les humains]! Jamais il ne leur vient de messager sans qu’ils ne s’en raill…\" | EN hint: \"the servants\" | S36:36:30",
+      "hamidullahSnippet": "Hélas pour les esclaves [les humains]! Jamais il ne leur vient de messager sans qu’ils ne s’en raillent.",
+      "kazimirskiSnippet": "Que mes serviteurs sont malheureux! Aucun apôtre n’est venu vers eux qu’ils ne l’eussent pris pour l’objet de leurs railleries."
+    },
+    {
+      "word_id": "10fc7adc-e042-4e72-9419-33e3d75f8340",
+      "arabic": "أَنشَأَهَآ",
+      "ayah": "36:79",
+      "gloss": "produire / faire sortir",
+      "rationale": "Src: Hamidullah(rid=31) \"Dis : \"Celui qui les a créés une première fois, leur redonnera la vie. Il connaît parfaitement toute…\" | EN hint: \"produced them\" | S36:36:79",
+      "hamidullahSnippet": "Dis : \"Celui qui les a créés une première fois, leur redonnera la vie. Il connaît parfaitement toute la création ;",
+      "kazimirskiSnippet": "Réponds-leur: Celui-là les fera revivre qui les a produits la première fois, celui qui sait créer tout; "
+    },
+    {
+      "word_id": "3717e931-8ea2-4c45-99c5-d586c3e65c47",
+      "arabic": "يُنقَذُونَ",
+      "ayah": "36:43",
+      "gloss": "seraient sauvés / secourus",
+      "rationale": "Src: Hamidullah(rid=31) \"Et si Nous le voulons, Nous les noyons; pour eux alors, pas de secoureur et ils ne seront pas sauvés…\" | EN hint: \"would be saved\" | S36:36:43",
+      "hamidullahSnippet": "Et si Nous le voulons, Nous les noyons; pour eux alors, pas de secoureur et ils ne seront pas sauvés,",
+      "kazimirskiSnippet": "Si nous le voulons, nous les noyons dans les mers; ils ne sont sauvés, ils ne sont délivrés"
+    },
+    {
+      "word_id": "d3698aec-387a-47c6-9c64-6eeb543b50df",
+      "arabic": "وَسَوَآءٌ",
+      "ayah": "36:10",
+      "gloss": "égal / pareil / même",
+      "rationale": "Src: Hamidullah(rid=31) \"Cela leur est égal que tu les avertisses ou que tu ne les avertisses pas : ils ne croiront jamais.\" | EN hint: \"And it (is) same\" | S36:36:10",
+      "hamidullahSnippet": "Cela leur est égal que tu les avertisses ou que tu ne les avertisses pas : ils ne croiront jamais.",
+      "kazimirskiSnippet": "C’est tout un pour eux; que tu les avertisses ou non, ils ne croiront pas."
+    },
+    {
+      "word_id": "e3fe6ebc-1bac-4b63-a39f-96a68afbd777",
+      "arabic": "مَرَّةٍۢ ۖ",
+      "ayah": "36:79",
+      "gloss": "fois / temps",
+      "rationale": "Src: Hamidullah(rid=31) \"Dis : \"Celui qui les a créés une première fois, leur redonnera la vie. Il connaît parfaitement toute…\" | EN hint: \"time\" | S36:36:79",
+      "hamidullahSnippet": "Dis : \"Celui qui les a créés une première fois, leur redonnera la vie. Il connaît parfaitement toute la création ;",
+      "kazimirskiSnippet": "Réponds-leur: Celui-là les fera revivre qui les a produits la première fois, celui qui sait créer tout; "
+    },
+    {
+      "word_id": "1e522107-cd96-4ca6-9968-9220e4a59a7d",
+      "arabic": "تُوقِدُونَ",
+      "ayah": "36:80",
+      "gloss": "allumer / faire du feu",
+      "rationale": "Src: Hamidullah(rid=31) \"c’est Lui qui, de l’arbre vert, a fait pour vous du feu, et voilà que de cela vous allumez.\" | EN hint: \"ignite\" | S36:36:80",
+      "hamidullahSnippet": "c’est Lui qui, de l’arbre vert, a fait pour vous du feu, et voilà que de cela vous allumez.",
+      "kazimirskiSnippet": "Celui qui fait jaillir le feu d’un bois vert dont vous allumez vos feux; "
+    },
+    {
+      "word_id": "09755ab3-57d3-435c-840d-6bbdb00d750b",
+      "arabic": "نَسْلَخُ",
+      "ayah": "36:37",
+      "gloss": "retirer / ôter / dépouiller",
+      "rationale": "Src: Hamidullah(rid=31) \"Et une preuve pour eux est la nuit, dont Nous dépouillons le jour, et les voilà alors dans les ténèb…\" | EN hint: \"We withdraw\" | S36:36:37",
+      "hamidullahSnippet": "Et une preuve pour eux est la nuit, dont Nous dépouillons le jour, et les voilà alors dans les ténèbres.",
+      "kazimirskiSnippet": "C’est un signe que la nuit, lorsque nous en retirons le jour et que les hommes sont enveloppés dans les ténèbres."
+    },
+    {
+      "word_id": "32d6a88e-1089-4907-9d90-3a267ea5a0a4",
+      "arabic": "عَمِلَتْهُ",
+      "ayah": "36:35",
+      "gloss": "l'a produit / l'a fait",
+      "rationale": "Src: Hamidullah(rid=31) \"afin qu’ils mangent de Ses fruits et de ce que leurs mains ont produit . Ne seront-ils pas reconnais…\" | EN hint: \"made it\" | S36:36:35",
+      "hamidullahSnippet": "afin qu’ils mangent de Ses fruits et de ce que leurs mains ont produit . Ne seront-ils pas reconnaissants? <sup foot_note=212340>1</sup>",
+      "kazimirskiSnippet": "Afin qu’ils mangent de leurs fruits et jouissent des travaux de leurs mains. Ne seront-ils pas reconnaissants envers nous? "
+    },
+    {
+      "word_id": "9c86335a-ca73-4747-b5b0-d931ad3d63a1",
+      "arabic": "فَأَغْشَيْنَـٰهُمْ",
+      "ayah": "36:9",
+      "gloss": "couvrir / envelopper / recouvrir",
+      "rationale": "Src: Hamidullah(rid=31) \"et Nous mettrons une barrière devant eux et une barrière derrière eux; Nous les recouvrirons d’un vo…\" | EN hint: \"and We covered them\" | S36:36:9",
+      "hamidullahSnippet": "et Nous mettrons une barrière devant eux et une barrière derrière eux; Nous les recouvrirons d’un voile : et voilà qu’ils ne pourront rien voir.",
+      "kazimirskiSnippet": "Nous leur avons attaché une barre par devant et une barre par derrière. Nous avons couvert leurs yeux d’un voile, et ils ne voient rien."
+    },
+    {
+      "word_id": "d4ad9b49-27d8-42bc-9ba5-7168d005b42e",
+      "arabic": "كَٱلْعُرْجُونِ",
+      "ayah": "36:39",
+      "gloss": "régime de dattes / tige du palmier",
+      "rationale": "Src: Hamidullah(rid=31) \"Et la lune, Nous lui avons déterminé des phases jusqu’à ce qu’elle devienne comme la palme vieillie …\" | EN hint: \"like the date stalk\" | S36:36:39",
+      "hamidullahSnippet": "Et la lune, Nous lui avons déterminé des phases jusqu’à ce qu’elle devienne comme la palme vieillie . <sup foot_note=212341>1</sup>",
+      "kazimirskiSnippet": "Et la lune, nous avons établi pour elle des stations au point qu’elle devient comme une vieille branche de palmier recourbée."
+    },
+    {
+      "word_id": "3fa1980b-6711-49f3-b86b-15b21fcc3123",
+      "arabic": "وَءَايَةٌۭ",
+      "ayah": "36:41",
+      "gloss": "signe / preuve / miracle",
+      "rationale": "Src: Hamidullah(rid=31) \"Et un (autre) signe pour eux est que Nous avons transporté leur descendance sur le bateau chargé  ; …\" | EN hint: \"And a Sign\" | S36:36:41",
+      "hamidullahSnippet": "Et un (autre) signe pour eux est que Nous avons transporté leur descendance sur le bateau chargé  ; <sup foot_note=212342>1</sup>",
+      "kazimirskiSnippet": "Que ce soit aussi un signe pour eux, que nous portâmes la postérité des hommes dans un vaisseau rempli de tout. "
+    },
+    {
+      "word_id": "d409fb25-458f-4fa0-a9f0-6cacfed0b0da",
+      "arabic": "فَمِنْهُ",
+      "ayah": "36:33",
+      "gloss": "de / depuis / provenant de",
+      "rationale": "Src: Hamidullah(rid=31) \"Une preuve pour eux est la terre morte, à laquelle Nous redonnons la vie, et d’où Nous faisons sorti…\" | EN hint: \"and from it\" | S36:36:33",
+      "hamidullahSnippet": "Une preuve pour eux est la terre morte, à laquelle Nous redonnons la vie, et d’où Nous faisons sortir des grains dont ils mangent.",
+      "kazimirskiSnippet": "Que la terre, morte de sécheresse, leur serve de signe de notre puissance, Nous lui rendons la vie, et nous en faisons sortir des grains dont ils se n…"
+    },
+    {
+      "word_id": "0afc9ddc-5ae5-4d9b-96c4-4e582a63009a",
+      "arabic": "لَمَسَخْنَـٰهُمْ",
+      "ayah": "36:67",
+      "gloss": "transformer / métamorphoser",
+      "rationale": "Src: Hamidullah(rid=31) \"Et si Nous voulions, Nous les métamorphoserions sur place; alors ils ne sauront ni avancer ni reveni…\" | EN hint: \"surely, We (would have) transformed them\" | S36:36:67",
+      "hamidullahSnippet": "Et si Nous voulions, Nous les métamorphoserions sur place; alors ils ne sauront ni avancer ni revenir.",
+      "kazimirskiSnippet": "Si nous voulions, nous leur ferions changer de forme; ils ne sauraient ni marcher en avant ni revenir sur leurs pas."
+    },
+    {
+      "word_id": "8cd2a852-5957-4716-a38f-c3f3eeae3876",
+      "arabic": "أَغْلَـٰلًۭا",
+      "ayah": "36:8",
+      "gloss": "carcan / chaîne / collier de fer",
+      "rationale": "Src: Hamidullah(rid=31) \"Nous mettrons des carcans à leurs cous, et il y en aura jusqu’aux mentons: et voilà qu’ils iront têt…\" | EN hint: \"iron collars\" | S36:36:8",
+      "hamidullahSnippet": "Nous mettrons des carcans à leurs cous, et il y en aura jusqu’aux mentons: et voilà qu’ils iront têtes dressées.",
+      "kazimirskiSnippet": "Nous avons chargé leurs cous de chaines qui leur serrent le menton; ils ne peuvent plus redresser leurs têtes."
+    },
+    {
+      "word_id": "406a5b34-5b13-4061-8016-6c0a3200bb1c",
+      "arabic": "وَلَيَمَسَّنَّكُم",
+      "ayah": "36:18",
+      "gloss": "toucher / atteindre",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils dirent : \"Nous voyons en vous un mauvais présage. Si vous ne cessez pas, nous vous lapideront et…\" | EN hint: \"and surely will touch you\" | S36:36:18",
+      "hamidullahSnippet": "Ils dirent : \"Nous voyons en vous un mauvais présage. Si vous ne cessez pas, nous vous lapideront et un douloureux châtiment de notre part vous touche…",
+      "kazimirskiSnippet": "— Nous avons consulté le vol des oiseaux sur vous, et, si vous ne cessez pas de nous prêcher, nous vous lapiderons. Nous vous réservons une peine terr…"
+    },
+    {
+      "word_id": "69c24ee3-c356-41fb-b4a8-d0f28a1b507a",
+      "arabic": "قَدَّمُوا۟",
+      "ayah": "36:12",
+      "gloss": "devant / auprès de / avant",
+      "rationale": "Src: Hamidullah(rid=31) \"C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leur…\" | EN hint: \"they have sent before\" | S36:36:12",
+      "hamidullahSnippet": "C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leurs traces . Et Nous avons dénombré toute chose dans…",
+      "kazimirskiSnippet": "Nous ressuscitons les morts, et nous inscrivons leurs œuvres et leurs traces. Nous avons compté tout dans le prototype évident. "
+    },
+    {
+      "word_id": "f315ef00-2b20-4a0d-8f73-23d2fc5a9733",
+      "arabic": "وَخَشِىَ",
+      "ayah": "36:11",
+      "gloss": "craindre / redouter",
+      "rationale": "Src: Hamidullah(rid=31) \"Tu avertis seulement celui qui suit le Rappel (le Coran), et craint le Tout Miséricordieux, malgré q…\" | EN hint: \"and fears\" | S36:36:11",
+      "hamidullahSnippet": "Tu avertis seulement celui qui suit le Rappel (le Coran), et craint le Tout Miséricordieux, malgré qu’il ne Le voit pas. Annonce-lui un pardon et une …",
+      "kazimirskiSnippet": "Prêche plutôt ceux qui suivent le Koran et redoutent Dieu dans le secret de leurs cœurs; annonce-leur le pardon et une récompense magnifique."
+    },
+    {
+      "word_id": "92ba44f0-1ff9-4eeb-86bd-a17c8aafbc82",
+      "arabic": "مِثْلَهُم ۚ",
+      "ayah": "36:81",
+      "gloss": "semblable / pareil / comme",
+      "rationale": "Src: Hamidullah(rid=31) \"Celui qui a créé les cieux et la Terre ne serait-Il pas capable de créer leur pareil ? Oh que si ! e…\" | EN hint: \"(the) like of them\" | S36:36:81",
+      "hamidullahSnippet": "Celui qui a créé les cieux et la Terre ne serait-Il pas capable de créer leur pareil ? Oh que si ! et Il est le grand Créateur, l'Omniscient.",
+      "kazimirskiSnippet": "Celui qui a créé les cieux et la terre n’est-il pas capable de créer des êtres pareils à vous? Oui, sans doute; il est le créateur savant."
+    },
+    {
+      "word_id": "c6ef82b4-eceb-492b-b3f7-852d08d7f1f1",
+      "arabic": "بَعَثَنَا",
+      "ayah": "36:52",
+      "gloss": "nous a ressuscités / nous a fait sortir",
+      "rationale": "Src: Hamidullah(rid=31) \"en disant : \"Malheur à nous ! Qui nous a ressuscités de là où nous dormions ?\" C’est ce que le Tout …\" | EN hint: \"has raised us\" | S36:36:52",
+      "hamidullahSnippet": "en disant : \"Malheur à nous ! Qui nous a ressuscités de là où nous dormions ?\" C’est ce que le Tout Miséricordieux avait promis; et les Messagers avai…",
+      "kazimirskiSnippet": "Malheur à nous! s’écrieront-ils; qui nous a extraits de ces lieux de repos? Voici venir les promesses de Dieu. Ses envoyés nous disaient bien la vérit…"
+    },
+    {
+      "word_id": "19548ca9-c507-4eca-8aa9-8033972e8f9b",
+      "arabic": "ٱلشِّعْرَ",
+      "ayah": "36:69",
+      "gloss": "poésie / poème",
+      "rationale": "Src: Hamidullah(rid=31) \"Nous ne lui (à Mohammed) avons pas enseigné la poésie ; cela ne lui convient pas non plus. Ceci n’es…\" | EN hint: \"[the] poetry\" | S36:36:69",
+      "hamidullahSnippet": "Nous ne lui (à Mohammed) avons pas enseigné la poésie ; cela ne lui convient pas non plus. Ceci n’est qu’un rappel et une Lecture [Coran] claire,",
+      "kazimirskiSnippet": "Nous ne lui ( à Mohammed ) avons pas enseigné la poésie, et elle ne lui sied pas, et ce livre, le Koran, n’est qu’un avertissement et une lecture clai…"
+    },
+    {
+      "word_id": "3578b3bf-8af2-4624-a813-1cd6cb5d3a37",
+      "arabic": "تُدْرِكَ",
+      "ayah": "36:40",
+      "gloss": "atteindre / rejoindre",
+      "rationale": "Src: Hamidullah(rid=31) \"Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.\" | EN hint: \"it overtakes\" | S36:36:40",
+      "hamidullahSnippet": "Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.",
+      "kazimirskiSnippet": "Il n’est point donné au soleil d’atteindre la lune, ni à la nuit de devancer le jour; chacun de ces astres se meut dans une sphère à part."
+    },
+    {
+      "word_id": "1cdcb136-3241-49cd-8f45-3ce3142ce88b",
+      "arabic": "لَهَآ",
+      "ayah": "36:40",
+      "gloss": "pour elle / pour lui",
+      "rationale": "Src: Hamidullah(rid=31) \"Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.\" | EN hint: \"for it \" | S36:36:40",
+      "hamidullahSnippet": "Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.",
+      "kazimirskiSnippet": "Il n’est point donné au soleil d’atteindre la lune, ni à la nuit de devancer le jour; chacun de ces astres se meut dans une sphère à part."
+    },
+    {
+      "word_id": "39be8c74-6071-448c-8382-9033cb6bede5",
+      "arabic": "تَعْبُدُوا۟",
+      "ayah": "36:60",
+      "gloss": "worship (تَعْبُدُوا۟)",
+      "rationale": "Src: Hamidullah(rid=31) \"Ne vous ai-Je pas engagés, enfants d’Adam, à ne pas adorer le Diable ? Car il est vraiment pour vous…\" | EN hint: \"worship\" | S36:36:60",
+      "hamidullahSnippet": "Ne vous ai-Je pas engagés, enfants d’Adam, à ne pas adorer le Diable ? Car il est vraiment pour vous un ennemi déclaré,",
+      "kazimirskiSnippet": "N’ai-je point stipulé avec vous, ô enfants d’Adam! de ne point servir Satan? (Il est votre ennemi déclaré.)"
+    },
+    {
+      "word_id": "ffae2409-2db2-4735-b43c-158e3b97917f",
+      "arabic": "لَّهَا ۚ",
+      "ayah": "36:38",
+      "gloss": "pour elle / pour lui",
+      "rationale": "Src: Hamidullah(rid=31) \"et le soleil court vers un gîte qui lui est assigné; telle est la détermination du Tout-Puissant, de…\" | EN hint: \"for it\" | S36:36:38",
+      "hamidullahSnippet": "et le soleil court vers un gîte qui lui est assigné; telle est la détermination du Tout-Puissant, de l’Omniscient.",
+      "kazimirskiSnippet": "C’est un signe aussi que le soleil qui court jusqu’à sa retraite. Tel a été l’arrêt du Puissant, du Sage."
+    },
+    {
+      "word_id": "a0747a29-e5d7-4d8d-a52a-7478fdc1d5a4",
+      "arabic": "شُغُلٍۢ",
+      "ayah": "36:55",
+      "gloss": "sera / sera amené",
+      "rationale": "Src: Hamidullah(rid=31) \"Les gens du Paradis seront, ce jour-là, dans une occupation qui les remplira de bonheur ;\" | EN hint: \"will be occupied\" | S36:36:55",
+      "hamidullahSnippet": "Les gens du Paradis seront, ce jour-là, dans une occupation qui les remplira de bonheur ;",
+      "kazimirskiSnippet": "Dans ce jour, les habitants du jardin ( du paradis ) se livreront à des transports de joie."
+    },
+    {
+      "word_id": "fe8c7f8e-479a-4e8f-8d38-63d04b766245",
+      "arabic": "مُّقْمَحُونَ",
+      "ayah": "36:8",
+      "gloss": "avec / accompagné de",
+      "rationale": "Src: Hamidullah(rid=31) \"Nous mettrons des carcans à leurs cous, et il y en aura jusqu’aux mentons: et voilà qu’ils iront têt…\" | EN hint: \"(are with) heads raised up\" | S36:36:8",
+      "hamidullahSnippet": "Nous mettrons des carcans à leurs cous, et il y en aura jusqu’aux mentons: et voilà qu’ils iront têtes dressées.",
+      "kazimirskiSnippet": "Nous avons chargé leurs cous de chaines qui leur serrent le menton; ils ne peuvent plus redresser leurs têtes."
+    },
+    {
+      "word_id": "cdeb74ae-c302-43f5-a961-289d8cc5a26b",
+      "arabic": "وَنَكْتُبُ",
+      "ayah": "36:12",
+      "gloss": "consigner / inscrire / enregistrer",
+      "rationale": "Src: Hamidullah(rid=31) \"C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leur…\" | EN hint: \"and We record\" | S36:36:12",
+      "hamidullahSnippet": "C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leurs traces . Et Nous avons dénombré toute chose dans…",
+      "kazimirskiSnippet": "Nous ressuscitons les morts, et nous inscrivons leurs œuvres et leurs traces. Nous avons compté tout dans le prototype évident. "
+    },
+    {
+      "word_id": "1bef75d1-7ba9-49c0-bc7e-a466f9c8a011",
+      "arabic": "بِثَالِثٍۢ",
+      "ayah": "36:14",
+      "gloss": "avec / accompagné de",
+      "rationale": "Src: Hamidullah(rid=31) \"Quand Nous leur envoyâmes deux [envoyés] et qu’ils les traitèrent de menteurs. Nous [les] renforçâme…\" | EN hint: \"with a third\" | S36:36:14",
+      "hamidullahSnippet": "Quand Nous leur envoyâmes deux [envoyés] et qu’ils les traitèrent de menteurs. Nous [les] renforçâmes alors par un troisième et ils dirent : \"Vraiment…",
+      "kazimirskiSnippet": "Nous en envoyâmes d’abord deux, et ils furent traités d’imposteurs; nous les appuyâmes par un troisième, et tous trois dirent aux habitants de cette c…"
+    },
+    {
+      "word_id": "db9fec69-74a5-4d22-8072-468043abc343",
+      "arabic": "يَرْكَبُونَ",
+      "ayah": "36:42",
+      "gloss": "monter / chevaucher",
+      "rationale": "Src: Hamidullah(rid=31) \"et Nous leur créâmes des semblables sur lesquels ils montent.\" | EN hint: \"they ride\" | S36:36:42",
+      "hamidullahSnippet": "et Nous leur créâmes des semblables sur lesquels ils montent.",
+      "kazimirskiSnippet": "Et que nous créâmes d’autres pareils à ce vaisseau qu’ils montent."
+    },
+    {
+      "word_id": "9cb821c9-b960-42dd-89be-d048e87aadef",
+      "arabic": "مَّعَكُمْ ۚ",
+      "ayah": "36:19",
+      "gloss": "avec / accompagné de",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils dirent : \"Votre mauvais présage est avec vous-mêmes. Est-ce ainsi [que vous agissez] quand le ra…\" | EN hint: \"(be) with you\" | S36:36:19",
+      "hamidullahSnippet": "Ils dirent : \"Votre mauvais présage est avec vous-mêmes. Est-ce ainsi [que vous agissez] quand le rappel vous est fait ? Vous êtes assurément des gens…",
+      "kazimirskiSnippet": "Les envoyés répondirent: Votre mauvais sort vous accompagne, quand même on vous avertirait. En vérité, vous êtes un peuple livré aux excès."
+    },
+    {
+      "word_id": "82ea97aa-b96a-4329-9b83-28f8792e5e80",
+      "arabic": "يَخِصِّمُونَ",
+      "ayah": "36:49",
+      "gloss": "are disputing (يَخِصِّمُونَ)",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils n’attendent qu’un seul Cri qui les saisira alors qu’ils seront en train de disputer.\" | EN hint: \"are disputing\" | S36:36:49",
+      "hamidullahSnippet": "Ils n’attendent qu’un seul Cri qui les saisira alors qu’ils seront en train de disputer.",
+      "kazimirskiSnippet": "Qu’attendent-ils donc? Est-ce un seul cri parti du ciel pendant qu’ils seront à disputer? "
+    },
+    {
+      "word_id": "6f13852b-b2a9-4f4c-a51c-d12eb7747572",
+      "arabic": "مَكَانَتِهِمْ",
+      "ayah": "36:67",
+      "gloss": "demeure / lieu / place",
+      "rationale": "Src: Hamidullah(rid=31) \"Et si Nous voulions, Nous les métamorphoserions sur place; alors ils ne sauront ni avancer ni reveni…\" | EN hint: \"their places\" | S36:36:67",
+      "hamidullahSnippet": "Et si Nous voulions, Nous les métamorphoserions sur place; alors ils ne sauront ni avancer ni revenir.",
+      "kazimirskiSnippet": "Si nous voulions, nous leur ferions changer de forme; ils ne sauraient ni marcher en avant ni revenir sur leurs pas."
+    },
+    {
+      "word_id": "cfe25a89-23d5-42ef-a4bf-fd84ca3a7fe3",
+      "arabic": "رَمِيمٌۭ",
+      "ayah": "36:78",
+      "gloss": "décomposé / réduit en poussière",
+      "rationale": "Src: Hamidullah(rid=31) \"Il cite pour Nous un exemple, tandis qu’il oublie sa propre création; il dit : \"Qui va redonner la v…\" | EN hint: \"(are) decomposed\" | S36:36:78",
+      "hamidullahSnippet": "Il cite pour Nous un exemple, tandis qu’il oublie sa propre création; il dit : \"Qui va redonner la vie à des ossements une fois réduits en poussière ?…",
+      "kazimirskiSnippet": "Il nous propose des paraboles, lui qui oublie sa propre création ( sa propre origine ). Il nous dit: Qui peut faire revivre les os une fois cariés? "
+    },
+    {
+      "word_id": "1b42f0f0-64a5-4e15-8c4a-c721a4918bf3",
+      "arabic": "لَطَمَسْنَا",
+      "ayah": "36:66",
+      "gloss": "effacer / oblitérer",
+      "rationale": "Src: Hamidullah(rid=31) \"Et si Nous voulions, Nous effacerions leurs yeux et ils courront vers le chemin. Mais comment alors …\" | EN hint: \"We (would have) surely obliterated\" | S36:36:66",
+      "hamidullahSnippet": "Et si Nous voulions, Nous effacerions leurs yeux et ils courront vers le chemin. Mais comment alors pourront-ils voir ?",
+      "kazimirskiSnippet": "Si nous voulions, nous leur ôterions la vue; ils s’élanceraient alors précipitamment sur le chemin; .mais comment le verront-ils? "
+    },
+    {
+      "word_id": "1ae7898d-ff0f-4253-a91a-b45fb7069680",
+      "arabic": "تَنزِيلَ",
+      "ayah": "36:5",
+      "gloss": "révélation / ce qui est descendu",
+      "rationale": "Src: Hamidullah(rid=31) \"C’est une révélation de la part du Tout-Puissant, du Très Miséricordieux.\" | EN hint: \"A revelation\" | S36:36:5",
+      "hamidullahSnippet": "C’est une révélation de la part du Tout-Puissant, du Très Miséricordieux.",
+      "kazimirskiSnippet": "Par la révélation du Puissant, du Miséricordieux,"
+    },
+    {
+      "word_id": "62562ff3-5fdd-4b32-9627-22562141275e",
+      "arabic": "يَدَّعُونَ",
+      "ayah": "36:57",
+      "gloss": "appeler / invoquer / réclamer",
+      "rationale": "Src: Hamidullah(rid=31) \"Là ils auront des fruits et ils auront ce qu’ils réclameront,\" | EN hint: \"they call for\" | S36:36:57",
+      "hamidullahSnippet": "Là ils auront des fruits et ils auront ce qu’ils réclameront,",
+      "kazimirskiSnippet": "Ils y auront des fruits, ils y auront tout ce qu’ils demanderont."
+    },
+    {
+      "word_id": "8dd5d603-36ca-4c69-9d8a-55e404e02e32",
+      "arabic": "وَٱمْتَـٰزُوا۟",
+      "ayah": "36:59",
+      "gloss": "se séparer / s'écarter",
+      "rationale": "Src: Hamidullah(rid=31) \"\"Ô injustes ! Tenez-vous à l’écart ce jour- là !\" | EN hint: \"But stand apart\" | S36:36:59",
+      "hamidullahSnippet": "\"Ô injustes ! Tenez-vous à l’écart ce jour- là !",
+      "kazimirskiSnippet": "Ce jour-là, vous serez séparés, ô infidèles! "
+    },
+    {
+      "word_id": "fd9d4a20-0401-4ad4-b7d6-e07af12b91ec",
+      "arabic": "ٱلْعُيُونِ",
+      "ayah": "36:34",
+      "gloss": "source / fontaine",
+      "rationale": "Src: Hamidullah(rid=31) \"Nous y avons mis des jardins de palmiers et de vignes et y avons fait jaillir des sources,\" | EN hint: \"the springs\" | S36:36:34",
+      "hamidullahSnippet": "Nous y avons mis des jardins de palmiers et de vignes et y avons fait jaillir des sources,",
+      "kazimirskiSnippet": "Nous y avons planté des jardins de dattiers et de vignes; nous y avons fait jaillir des sources,"
+    },
+    {
+      "word_id": "84c5b299-bd33-497f-b253-366783d9935a",
+      "arabic": "إِمَامٍۢ",
+      "ayah": "36:12",
+      "gloss": "registre / livre / écrit",
+      "rationale": "Src: Hamidullah(rid=31) \"C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leur…\" | EN hint: \"a Register\" | S36:36:12",
+      "hamidullahSnippet": "C’est Nous qui ressuscitons les morts et écrivons ce qu’ils ont fait [pour l’au-delà] ainsi que leurs traces . Et Nous avons dénombré toute chose dans…",
+      "kazimirskiSnippet": "Nous ressuscitons les morts, et nous inscrivons leurs œuvres et leurs traces. Nous avons compté tout dans le prototype évident. "
+    },
+    {
+      "word_id": "9a489708-768d-4ee3-92ff-26c61b559331",
+      "arabic": "أَيْدِينَآ",
+      "ayah": "36:71",
+      "gloss": "main",
+      "rationale": "Src: Hamidullah(rid=31) \"Ne voient-ils donc pas que, parmi ce que Nos mains ont fait, Nous leur avons créé des bestiaux dont …\" | EN hint: \"Our hands\" | S36:36:71",
+      "hamidullahSnippet": "Ne voient-ils donc pas que, parmi ce que Nos mains ont fait, Nous leur avons créé des bestiaux dont ils sont propriétaires ;",
+      "kazimirskiSnippet": "Ne voient-ils pas que, parmi les choses formées par nos mains, nous avons créé les animaux pour eux, et qu’ils en disposent en maîtres? "
+    },
+    {
+      "word_id": "c9b44b4f-7227-48ae-945b-b734647fad2a",
+      "arabic": "تَأْخُذُهُمْ",
+      "ayah": "36:49",
+      "gloss": "saisir / prendre",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils n’attendent qu’un seul Cri qui les saisira alors qu’ils seront en train de disputer.\" | EN hint: \"it will seize them\" | S36:36:49",
+      "hamidullahSnippet": "Ils n’attendent qu’un seul Cri qui les saisira alors qu’ils seront en train de disputer.",
+      "kazimirskiSnippet": "Qu’attendent-ils donc? Est-ce un seul cri parti du ciel pendant qu’ils seront à disputer? "
+    },
+    {
+      "word_id": "e4323b4d-98ca-4ae5-9f66-2a8c1b1bb000",
+      "arabic": "أَئِن",
+      "ayah": "36:19",
+      "gloss": "est-ce parce que / est-ce que",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils dirent : \"Votre mauvais présage est avec vous-mêmes. Est-ce ainsi [que vous agissez] quand le ra…\" | EN hint: \"Is it because\" | S36:36:19",
+      "hamidullahSnippet": "Ils dirent : \"Votre mauvais présage est avec vous-mêmes. Est-ce ainsi [que vous agissez] quand le rappel vous est fait ? Vous êtes assurément des gens…",
+      "kazimirskiSnippet": "Les envoyés répondirent: Votre mauvais sort vous accompagne, quand même on vous avertirait. En vérité, vous êtes un peuple livré aux excès."
+    },
+    {
+      "word_id": "5695df74-d414-4638-96ce-3796956e7d9a",
+      "arabic": "لِمُسْتَقَرٍّۢ",
+      "ayah": "36:38",
+      "gloss": "décréter / fixer / déterminer",
+      "rationale": "Src: Hamidullah(rid=31) \"et le soleil court vers un gîte qui lui est assigné; telle est la détermination du Tout-Puissant, de…\" | EN hint: \"to a term appointed\" | S36:36:38",
+      "hamidullahSnippet": "et le soleil court vers un gîte qui lui est assigné; telle est la détermination du Tout-Puissant, de l’Omniscient.",
+      "kazimirskiSnippet": "C’est un signe aussi que le soleil qui court jusqu’à sa retraite. Tel a été l’arrêt du Puissant, du Sage."
+    },
+    {
+      "word_id": "3b58e854-d83b-4821-8996-047403ff7476",
+      "arabic": "مُّحْضَرُونَ",
+      "ayah": "36:75",
+      "gloss": "sera / sera amené",
+      "rationale": "Src: Hamidullah(rid=31) \"Celles-ci ne pourront pas les secourir, elles formeront au contraire une armée dressée contre eux.\" | EN hint: \"(who will) be brought\" | S36:36:75",
+      "hamidullahSnippet": "Celles-ci ne pourront pas les secourir, elles formeront au contraire une armée dressée contre eux.",
+      "kazimirskiSnippet": "Mais elles ne sauraient les secourir: ce sont plutôt eux qui servent d’armée à leurs divinités."
+    },
+    {
+      "word_id": "aebb05ed-e1f6-4288-8a55-d9ae74013329",
+      "arabic": "غَفَرَ",
+      "ayah": "36:27",
+      "gloss": "has forgiven (غَفَرَ)",
+      "rationale": "Src: Hamidullah(rid=31) \"... en raison de quoi mon Seigneur m’a pardonné et mis au nombre des honorés.\"\" | EN hint: \"has forgiven\" | S36:36:27",
+      "hamidullahSnippet": "... en raison de quoi mon Seigneur m’a pardonné et mis au nombre des honorés.\"",
+      "kazimirskiSnippet": "Ce que Dieu m’a accordé, et comme il m’a honoré! "
+    },
+    {
+      "word_id": "8d4a89a8-642a-452b-859d-2f14b1ccf77d",
+      "arabic": "جُندٍۢ",
+      "ayah": "36:28",
+      "gloss": "armée / troupes",
+      "rationale": "Src: Hamidullah(rid=31) \"Et après lui Nous ne fîmes descendre du ciel aucune armée. Nous ne voulions rien faire descendre sur…\" | EN hint: \"host\" | S36:36:28",
+      "hamidullahSnippet": "Et après lui Nous ne fîmes descendre du ciel aucune armée. Nous ne voulions rien faire descendre sur son peuple.",
+      "kazimirskiSnippet": "Nous n’envoyâmes point contre cette cité ni armée du ciel ni d’autres fléaux que nous envoyons contre les autres."
+    },
+    {
+      "word_id": "33716c0f-b802-47a1-a1b7-4cc3373a9dda",
+      "arabic": "مَّثَلًا",
+      "ayah": "36:13",
+      "gloss": "exemple / parabole",
+      "rationale": "Src: Hamidullah(rid=31) \"Donne-leur comme exemple les habitants de la cité, quand leur vinrent les Envoyés . <sup foot_note=2…\" | EN hint: \"an example\" | S36:36:13",
+      "hamidullahSnippet": "Donne-leur comme exemple les habitants de la cité, quand leur vinrent les Envoyés . <sup foot_note=212339>1</sup>",
+      "kazimirskiSnippet": "Cite-leur comme exemple les habitants d’une ville que visitèrent des envoyés de Dieu. "
+    },
+    {
+      "word_id": "f64c77f6-32c6-4334-93af-ca56c4bd2c3e",
+      "arabic": "ٱلْأَذْقَانِ",
+      "ayah": "36:8",
+      "gloss": "menton",
+      "rationale": "Src: Hamidullah(rid=31) \"Nous mettrons des carcans à leurs cous, et il y en aura jusqu’aux mentons: et voilà qu’ils iront têt…\" | EN hint: \"the chins\" | S36:36:8",
+      "hamidullahSnippet": "Nous mettrons des carcans à leurs cous, et il y en aura jusqu’aux mentons: et voilà qu’ils iront têtes dressées.",
+      "kazimirskiSnippet": "Nous avons chargé leurs cous de chaines qui leur serrent le menton; ils ne peuvent plus redresser leurs têtes."
+    },
+    {
+      "word_id": "3be8aac5-3402-4130-9265-e3d8d4cae67b",
+      "arabic": "مُّظْلِمُونَ",
+      "ayah": "36:37",
+      "gloss": "ténèbres / obscurité",
+      "rationale": "Src: Hamidullah(rid=31) \"Et une preuve pour eux est la nuit, dont Nous dépouillons le jour, et les voilà alors dans les ténèb…\" | EN hint: \"(are) those in darkness\" | S36:36:37",
+      "hamidullahSnippet": "Et une preuve pour eux est la nuit, dont Nous dépouillons le jour, et les voilà alors dans les ténèbres.",
+      "kazimirskiSnippet": "C’est un signe que la nuit, lorsque nous en retirons le jour et que les hommes sont enveloppés dans les ténèbres."
+    },
+    {
+      "word_id": "7d55cbd6-1b21-44ec-8308-ac0369cd3225",
+      "arabic": "وَخَلَقْنَا",
+      "ayah": "36:42",
+      "gloss": "manger / consommer",
+      "rationale": "Src: Hamidullah(rid=31) \"et Nous leur créâmes des semblables sur lesquels ils montent.\" | EN hint: \"And We created\" | S36:36:42",
+      "hamidullahSnippet": "et Nous leur créâmes des semblables sur lesquels ils montent.",
+      "kazimirskiSnippet": "Et que nous créâmes d’autres pareils à ce vaisseau qu’ils montent."
+    },
+    {
+      "word_id": "4f482399-ecf8-4889-9bf3-0acc9f0183d8",
+      "arabic": "ٱلنَّهَارِ ۚ",
+      "ayah": "36:40",
+      "gloss": "the day (ٱلنَّهَارِ ۚ)",
+      "rationale": "Src: Hamidullah(rid=31) \"Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.\" | EN hint: \"the day\" | S36:36:40",
+      "hamidullahSnippet": "Le soleil ne peut rattraper la lune, ni la nuit devancer le jour ; et chacun vogue dans une orbite.",
+      "kazimirskiSnippet": "Il n’est point donné au soleil d’atteindre la lune, ni à la nuit de devancer le jour; chacun de ces astres se meut dans une sphère à part."
+    },
+    {
+      "word_id": "2437a9bf-7a42-4886-9420-19ea4c7fc49b",
+      "arabic": "نُّعَمِّرْهُ",
+      "ayah": "36:68",
+      "gloss": "prolonger la vie / faire vivre longtemps",
+      "rationale": "Src: Hamidullah(rid=31) \"A quiconque Nous accordons une longue vie, Nous faisons baisser sa forme. Ne comprennent-ils donc pa…\" | EN hint: \"We grant him long life\" | S36:36:68",
+      "hamidullahSnippet": "A quiconque Nous accordons une longue vie, Nous faisons baisser sa forme. Ne comprennent-ils donc pas ?",
+      "kazimirskiSnippet": "Nous courbons le dos de celui dont nous prolongeons les jours. Ne le comprennent-ils pas? "
+    },
+    {
+      "word_id": "493d79fd-0171-49cd-943f-df3785ce10bd",
+      "arabic": "نُنَكِّسْهُ",
+      "ayah": "36:68",
+      "gloss": "renverser / inverser",
+      "rationale": "Src: Hamidullah(rid=31) \"A quiconque Nous accordons une longue vie, Nous faisons baisser sa forme. Ne comprennent-ils donc pa…\" | EN hint: \"We reverse him\" | S36:36:68",
+      "hamidullahSnippet": "A quiconque Nous accordons une longue vie, Nous faisons baisser sa forme. Ne comprennent-ils donc pas ?",
+      "kazimirskiSnippet": "Nous courbons le dos de celui dont nous prolongeons les jours. Ne le comprennent-ils pas? "
+    },
+    {
+      "word_id": "60484406-3f1e-499f-a41f-0c086d9a1641",
+      "arabic": "رَكُوبُهُمْ",
+      "ayah": "36:72",
+      "gloss": "monter / chevaucher",
+      "rationale": "Src: Hamidullah(rid=31) \"et Nous les leurs avons soumis ; certains leur servent de monture et d’autre de nourriture ;\" | EN hint: \"they ride them\" | S36:36:72",
+      "hamidullahSnippet": "et Nous les leurs avons soumis ; certains leur servent de monture et d’autre de nourriture ;",
+      "kazimirskiSnippet": "Nous les leur avons soumis; ils en font des montures de quelques-uns, et se nourrissent d’autres."
+    },
+    {
+      "word_id": "ace75449-be4d-4810-85f8-f91a9908e697",
+      "arabic": "خَـٰمِدُونَ",
+      "ayah": "36:29",
+      "gloss": "éteint / anéanti",
+      "rationale": "Src: Hamidullah(rid=31) \"Ce ne fut qu’un seul Cri et les voilà éteints.\" | EN hint: \"(were) extinguished\" | S36:36:29",
+      "hamidullahSnippet": "Ce ne fut qu’un seul Cri et les voilà éteints.",
+      "kazimirskiSnippet": "Un seul cri se fit entendre, et ils furent anéantis."
+    },
+    {
+      "word_id": "c6fe0393-38ac-4ca9-bea5-7772d5388ddc",
+      "arabic": "لَمُرْسَلُونَ",
+      "ayah": "36:16",
+      "gloss": "messager / envoyé",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils [les Messagers] dirent : \"Notre Seigneur sait qu’en vérité nous sommes envoyés à vous.\" | EN hint: \"(are) surely Messengers\" | S36:36:16",
+      "hamidullahSnippet": "Ils [les Messagers] dirent : \"Notre Seigneur sait qu’en vérité nous sommes envoyés à vous.",
+      "kazimirskiSnippet": "— Notre Seigneur, répondirent-ils, sait bien que nous sommes envoyés vers vous."
+    },
+    {
+      "word_id": "772a7f4c-4a88-4a5e-915f-332f19fff858",
+      "arabic": "تَوْصِيَةًۭ",
+      "ayah": "36:50",
+      "gloss": "recommander / enjoindre",
+      "rationale": "Src: Hamidullah(rid=31) \"Ils ne pourront donc ni faire de testament, ni retourner chez leurs familles.\" | EN hint: \"(to) make a will\" | S36:36:50",
+      "hamidullahSnippet": "Ils ne pourront donc ni faire de testament, ni retourner chez leurs familles.",
+      "kazimirskiSnippet": "Ils ne pourront ni disposer par leurs testaments, ni retourner auprès de leurs familles."
+    },
+    {
+      "word_id": "266aa594-4329-4368-97cc-c830774c7271",
+      "arabic": "خَلْقٍ",
+      "ayah": "36:79",
+      "gloss": "manger / consommer",
+      "rationale": "Src: Hamidullah(rid=31) \"Dis : \"Celui qui les a créés une première fois, leur redonnera la vie. Il connaît parfaitement toute…\" | EN hint: \"creation\" | S36:36:79",
+      "hamidullahSnippet": "Dis : \"Celui qui les a créés une première fois, leur redonnera la vie. Il connaît parfaitement toute la création ;",
+      "kazimirskiSnippet": "Réponds-leur: Celui-là les fera revivre qui les a produits la première fois, celui qui sait créer tout; "
+    },
+    {
+      "word_id": "eefdd4b8-9f15-4bb4-9d30-455c719019e1",
+      "arabic": "وَقُرْءَانٌۭ",
+      "ayah": "36:69",
+      "gloss": "Coran / récitation",
+      "rationale": "Src: Hamidullah(rid=31) \"Nous ne lui (à Mohammed) avons pas enseigné la poésie ; cela ne lui convient pas non plus. Ceci n’es…\" | EN hint: \"and a Quran\" | S36:36:69",
+      "hamidullahSnippet": "Nous ne lui (à Mohammed) avons pas enseigné la poésie ; cela ne lui convient pas non plus. Ceci n’est qu’un rappel et une Lecture [Coran] claire,",
+      "kazimirskiSnippet": "Nous ne lui ( à Mohammed ) avons pas enseigné la poésie, et elle ne lui sied pas, et ce livre, le Koran, n’est qu’un avertissement et une lecture clai…"
+    },
+    {
+      "word_id": "7ce7b1df-18ca-4e40-9392-07823d6984e9",
+      "arabic": "مَّرْقَدِنَا ۜ ۗ",
+      "ayah": "36:52",
+      "gloss": "sommeil / dormir",
+      "rationale": "Src: Hamidullah(rid=31) \"en disant : \"Malheur à nous ! Qui nous a ressuscités de là où nous dormions ?\" C’est ce que le Tout …\" | EN hint: \"our sleeping place\" | S36:36:52",
+      "hamidullahSnippet": "en disant : \"Malheur à nous ! Qui nous a ressuscités de là où nous dormions ?\" C’est ce que le Tout Miséricordieux avait promis; et les Messagers avai…",
+      "kazimirskiSnippet": "Malheur à nous! s’écrieront-ils; qui nous a extraits de ces lieux de repos? Voici venir les promesses de Dieu. Ses envoyés nous disaient bien la vérit…"
+    },
+    {
+      "word_id": "01a4a344-21dc-4430-9add-f5e5572f398c",
+      "arabic": "فَٱسْمَعُونِ",
+      "ayah": "36:25",
+      "gloss": "entendre / écouter",
+      "rationale": "Src: Hamidullah(rid=31) \"[Mais] je crois en votre Seigneur, Ecoutez-moi donc.\"\" | EN hint: \"so listen to me\" | S36:36:25",
+      "hamidullahSnippet": "[Mais] je crois en votre Seigneur, Ecoutez-moi donc.\"",
+      "kazimirskiSnippet": "— J’ai cru à votre Seigneur; écoutez-moi."
+    },
+    {
+      "word_id": "d09f1b65-59ec-4653-a9a7-8dbf32e54c01",
+      "arabic": "وَأَخْرَجْنَا",
+      "ayah": "36:33",
+      "gloss": "produire / faire sortir",
+      "rationale": "Src: Hamidullah(rid=31) \"Une preuve pour eux est la terre morte, à laquelle Nous redonnons la vie, et d’où Nous faisons sorti…\" | EN hint: \"and We bring forth\" | S36:36:33",
+      "hamidullahSnippet": "Une preuve pour eux est la terre morte, à laquelle Nous redonnons la vie, et d’où Nous faisons sortir des grains dont ils mangent.",
+      "kazimirskiSnippet": "Que la terre, morte de sécheresse, leur serve de signe de notre puissance, Nous lui rendons la vie, et nous en faisons sortir des grains dont ils se n…"
+    },
+    {
+      "word_id": "b806e187-60a0-48f1-b53c-7e4259ef239d",
+      "arabic": "ٱلْجَنَّةَ ۖ",
+      "ayah": "36:26",
+      "gloss": "Paradise (ٱلْجَنَّةَ ۖ)",
+      "rationale": "Src: Hamidullah(rid=31) \"Alors il [lui] fut dit : \"Entre au Paradis.\" Il dit : \"Ah si seulement mon peuple savait !\" | EN hint: \"Paradise\" | S36:36:26",
+      "hamidullahSnippet": "Alors il [lui] fut dit : \"Entre au Paradis.\" Il dit : \"Ah si seulement mon peuple savait !",
+      "kazimirskiSnippet": "Il fut lapidé; après sa mort, on lui dit: Entre dans la paradis. Ah! si mes concitoyens savaient"
+    },
+    {
+      "word_id": "73b5127b-1037-43e5-b958-d870c2a1fae2",
+      "arabic": "ظِلَـٰلٍ",
+      "ayah": "36:56",
+      "gloss": "ombre / ombrage",
+      "rationale": "Src: Hamidullah(rid=31) \"eux et leurs épouses seront sous des ombrages, accoudés sur les divans.\" | EN hint: \"shades\" | S36:36:56",
+      "hamidullahSnippet": "eux et leurs épouses seront sous des ombrages, accoudés sur les divans.",
+      "kazimirskiSnippet": "En compagnie de leurs épouses, ils se reposeront à l’ombre, assis commodément dans des fauteuils. "
+    },
+    {
+      "word_id": "ca8e9c68-42c5-4d01-9c35-5de9f512cfac",
+      "arabic": "أَيْدِيهِمْ ۖ",
+      "ayah": "36:35",
+      "gloss": "main",
+      "rationale": "Src: Hamidullah(rid=31) \"afin qu’ils mangent de Ses fruits et de ce que leurs mains ont produit . Ne seront-ils pas reconnais…\" | EN hint: \"their hands\" | S36:36:35",
+      "hamidullahSnippet": "afin qu’ils mangent de Ses fruits et de ce que leurs mains ont produit . Ne seront-ils pas reconnaissants? <sup foot_note=212340>1</sup>",
+      "kazimirskiSnippet": "Afin qu’ils mangent de leurs fruits et jouissent des travaux de leurs mains. Ne seront-ils pas reconnaissants envers nous? "
+    },
+    {
+      "word_id": "eef3abab-a0eb-4e48-ab8a-3f1636801247",
+      "arabic": "لِيَأْكُلُوا۟",
+      "ayah": "36:35",
+      "gloss": "manger / consommer",
+      "rationale": "Src: Hamidullah(rid=31) \"afin qu’ils mangent de Ses fruits et de ce que leurs mains ont produit . Ne seront-ils pas reconnais…\" | EN hint: \"That they may eat\" | S36:36:35",
+      "hamidullahSnippet": "afin qu’ils mangent de Ses fruits et de ce que leurs mains ont produit . Ne seront-ils pas reconnaissants? <sup foot_note=212340>1</sup>",
+      "kazimirskiSnippet": "Afin qu’ils mangent de leurs fruits et jouissent des travaux de leurs mains. Ne seront-ils pas reconnaissants envers nous? "
+    },
+    {
+      "word_id": "d1b1a170-35c0-409b-a654-9edb5739a7e8",
+      "arabic": "يُنقِذُونِ",
+      "ayah": "36:23",
+      "gloss": "pouvoir / être capable",
+      "rationale": "Src: Hamidullah(rid=31) \"Prendrais-je en dehors de Lui des divinités ? Si le Tout Miséricordieux me veut du mal, leur interce…\" | EN hint: \"they (can) save me\" | S36:36:23",
+      "hamidullahSnippet": "Prendrais-je en dehors de Lui des divinités ? Si le Tout Miséricordieux me veut du mal, leur intercession ne me servira à rien et ils ne me sauveront …",
+      "kazimirskiSnippet": "Prendrais-je d’autres dieux que lui? Si le Miséricordieux veut me faire du mal, leur intercession ne me sera d’aucune utilité; ils ne sauraient me sau…"
+    },
+    {
+      "word_id": "f2dd3e61-5d7f-4a21-80a0-fba54d7b9b1b",
+      "arabic": "أَعْهَدْ",
+      "ayah": "36:60",
+      "gloss": "recommander / enjoindre",
+      "rationale": "Src: Hamidullah(rid=31) \"Ne vous ai-Je pas engagés, enfants d’Adam, à ne pas adorer le Diable ? Car il est vraiment pour vous…\" | EN hint: \"I enjoin\" | S36:36:60",
+      "hamidullahSnippet": "Ne vous ai-Je pas engagés, enfants d’Adam, à ne pas adorer le Diable ? Car il est vraiment pour vous un ennemi déclaré,",
+      "kazimirskiSnippet": "N’ai-je point stipulé avec vous, ô enfants d’Adam! de ne point servir Satan? (Il est votre ennemi déclaré.)"
+    },
+    {
+      "word_id": "2583f050-f686-4b7d-8e46-900782316e7c",
+      "arabic": "مُضِيًّۭا",
+      "ayah": "36:67",
+      "gloss": "s'avancer / se diriger",
+      "rationale": "Src: Hamidullah(rid=31) \"Et si Nous voulions, Nous les métamorphoserions sur place; alors ils ne sauront ni avancer ni reveni…\" | EN hint: \"to proceed\" | S36:36:67",
+      "hamidullahSnippet": "Et si Nous voulions, Nous les métamorphoserions sur place; alors ils ne sauront ni avancer ni revenir.",
+      "kazimirskiSnippet": "Si nous voulions, nous leur ferions changer de forme; ils ne sauraient ni marcher en avant ni revenir sur leurs pas."
+    }
+  ],
+  "validation": {
+    "totalGlosses": 123,
+    "uniqueWordIds": 123,
+    "expectedWordIds": 123,
+    "emptyGlosses": 0,
+    "validationIssues": 0,
+    "identitySafe": true
+  },
+  "simulation": {
+    "baselineCovered": 406,
+    "baselineTotal": 529,
+    "newWordTranslations": 123,
+    "afterImport": 529,
+    "afterImportPct": 100,
+    "ready": true
+  },
+  "regressionTests": {
+    "allPassed": true,
+    "passed": 10,
+    "failed": 0,
+    "details": [
+      {
+        "arabic": "تَكْذِبُونَ",
+        "mustContain": "mentir",
+        "mustNotContain": "dans",
+        "passed": true
+      },
+      {
+        "arabic": "أَمْرُهُۥٓ",
+        "mustContain": "commandement",
+        "mustNotContain": "homme",
+        "passed": true
+      },
+      {
+        "arabic": "نَخْتِمُ",
+        "mustContain": "sceller",
+        "mustNotContain": "mer",
+        "passed": true
+      },
+      {
+        "arabic": "وَخَشِىَ",
+        "mustContain": "craindre",
+        "mustNotContain": "oreille",
+        "passed": true
+      },
+      {
+        "arabic": "كُنَّا",
+        "mustContain": "étions",
+        "mustNotContain": "were",
+        "passed": true
+      },
+      {
+        "arabic": "نَسْلَخُ",
+        "mustContain": "retirer",
+        "mustNotContain": "avec",
+        "passed": true
+      },
+      {
+        "arabic": "وَٱمْتَـٰزُوا۟",
+        "mustContain": "séparer",
+        "mustNotContain": "seulement",
+        "passed": true
+      },
+      {
+        "arabic": "يَـٰحَسْرَةً",
+        "mustContain": "hélas",
+        "mustNotContain": "Alas",
+        "passed": true
+      },
+      {
+        "arabic": "تَوْصِيَةًۭ",
+        "mustContain": "recommander",
+        "mustNotContain": "faire",
+        "passed": true
+      },
+      {
+        "arabic": "صَرِيخَ",
+        "mustContain": "secours",
+        "mustNotContain": "vers",
+        "passed": true
+      }
+    ]
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "wlmCreated": 0,
+    "curriculumWrites": 0
+  }
+}

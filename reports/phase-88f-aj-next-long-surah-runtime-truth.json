@@ -1,0 +1,335 @@
+{
+  "phase": "88F-AJ",
+  "verdict": "PHASE_88F_AJ_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "timestamp": "2026-08-24T14:17:55.199Z",
+  "durationSeconds": 26.1,
+  "baseline": {
+    "frUnionWordId": 4971,
+    "totalQuranWords": 21296,
+    "frUnionPct": 23.3,
+    "wordTranslationsFr": 4750,
+    "lemmaTranslationsFr": 200,
+    "wlmSafeCount": 220,
+    "ready": 26,
+    "inPreparation": 88,
+    "reference": 0
+  },
+  "structuralCheck": {
+    "globalClassALemmaReachable": 11,
+    "conclusion": "11 forms could be resolved via lemma translations."
+  },
+  "longSurahThreshold": 482,
+  "longCandidates": 38,
+  "rankings": {
+    "nextLongEasy": [
+      {
+        "number": 13,
+        "name": "Ar-Ra'd",
+        "forms": 601,
+        "coverage": 77.5,
+        "unresolved": 135,
+        "actions": 135
+      },
+      {
+        "number": 29,
+        "name": "Al-'Ankabut",
+        "forms": 663,
+        "coverage": 79.3,
+        "unresolved": 137,
+        "actions": 137
+      },
+      {
+        "number": 34,
+        "name": "Saba",
+        "forms": 598,
+        "coverage": 75.4,
+        "unresolved": 147,
+        "actions": 147
+      },
+      {
+        "number": 39,
+        "name": "Az-Zumar",
+        "forms": 761,
+        "coverage": 78.7,
+        "unresolved": 162,
+        "actions": 162
+      },
+      {
+        "number": 30,
+        "name": "Ar-Rum",
+        "forms": 544,
+        "coverage": 65.3,
+        "unresolved": 189,
+        "actions": 189
+      },
+      {
+        "number": 42,
+        "name": "Ash-Shuraa",
+        "forms": 555,
+        "coverage": 64.9,
+        "unresolved": 195,
+        "actions": 195
+      },
+      {
+        "number": 41,
+        "name": "Fussilat",
+        "forms": 594,
+        "coverage": 64.5,
+        "unresolved": 211,
+        "actions": 211
+      },
+      {
+        "number": 8,
+        "name": "Al-Anfal",
+        "forms": 762,
+        "coverage": 71.8,
+        "unresolved": 215,
+        "actions": 215
+      },
+      {
+        "number": 35,
+        "name": "Fatir",
+        "forms": 551,
+        "coverage": 59.9,
+        "unresolved": 221,
+        "actions": 221
+      },
+      {
+        "number": 22,
+        "name": "Al-Hajj",
+        "forms": 808,
+        "coverage": 72.4,
+        "unresolved": 223,
+        "actions": 223
+      }
+    ],
+    "nextLongBalanced": [
+      {
+        "number": 29,
+        "name": "Al-'Ankabut",
+        "forms": 663,
+        "coverage": 79.3,
+        "unresolved": 137,
+        "actions": 137,
+        "score": 0.6345
+      },
+      {
+        "number": 39,
+        "name": "Az-Zumar",
+        "forms": 761,
+        "coverage": 78.7,
+        "unresolved": 162,
+        "actions": 162,
+        "score": 0.6318
+      },
+      {
+        "number": 13,
+        "name": "Ar-Ra'd",
+        "forms": 601,
+        "coverage": 77.5,
+        "unresolved": 135,
+        "actions": 135,
+        "score": 0.6192
+      },
+      {
+        "number": 34,
+        "name": "Saba",
+        "forms": 598,
+        "coverage": 75.4,
+        "unresolved": 147,
+        "actions": 147,
+        "score": 0.6031
+      },
+      {
+        "number": 28,
+        "name": "Al-Qasas",
+        "forms": 935,
+        "coverage": 73.5,
+        "unresolved": 248,
+        "actions": 248,
+        "score": 0.5855
+      },
+      {
+        "number": 22,
+        "name": "Al-Hajj",
+        "forms": 808,
+        "coverage": 72.4,
+        "unresolved": 223,
+        "actions": 223,
+        "score": 0.577
+      },
+      {
+        "number": 8,
+        "name": "Al-Anfal",
+        "forms": 762,
+        "coverage": 71.8,
+        "unresolved": 215,
+        "actions": 215,
+        "score": 0.5725
+      },
+      {
+        "number": 30,
+        "name": "Ar-Rum",
+        "forms": 544,
+        "coverage": 65.3,
+        "unresolved": 189,
+        "actions": 189,
+        "score": 0.5294
+      },
+      {
+        "number": 42,
+        "name": "Ash-Shuraa",
+        "forms": 555,
+        "coverage": 64.9,
+        "unresolved": 195,
+        "actions": 195,
+        "score": 0.5258
+      },
+      {
+        "number": 41,
+        "name": "Fussilat",
+        "forms": 594,
+        "coverage": 64.5,
+        "unresolved": 211,
+        "actions": 211,
+        "score": 0.5205
+      }
+    ],
+    "nextLongMaxCoverage": [
+      {
+        "number": 2,
+        "name": "Al-Baqarah",
+        "forms": 2899,
+        "coverage": 42.2,
+        "unresolved": 1675,
+        "actions": 1675
+      },
+      {
+        "number": 4,
+        "name": "An-Nisa",
+        "forms": 1889,
+        "coverage": 41.8,
+        "unresolved": 1100,
+        "actions": 1100
+      },
+      {
+        "number": 7,
+        "name": "Al-A'raf",
+        "forms": 1901,
+        "coverage": 46.4,
+        "unresolved": 1018,
+        "actions": 1018
+      },
+      {
+        "number": 3,
+        "name": "Ali 'Imran",
+        "forms": 1817,
+        "coverage": 50.4,
+        "unresolved": 902,
+        "actions": 902
+      },
+      {
+        "number": 6,
+        "name": "Al-An'am",
+        "forms": 1689,
+        "coverage": 52.5,
+        "unresolved": 803,
+        "actions": 803
+      },
+      {
+        "number": 5,
+        "name": "Al-Ma'idah",
+        "forms": 1544,
+        "coverage": 50.3,
+        "unresolved": 768,
+        "actions": 768
+      },
+      {
+        "number": 12,
+        "name": "Yusuf",
+        "forms": 1108,
+        "coverage": 44,
+        "unresolved": 621,
+        "actions": 621
+      },
+      {
+        "number": 18,
+        "name": "Al-Kahf",
+        "forms": 1066,
+        "coverage": 47,
+        "unresolved": 565,
+        "actions": 565
+      },
+      {
+        "number": 11,
+        "name": "Hud",
+        "forms": 1158,
+        "coverage": 53.5,
+        "unresolved": 539,
+        "actions": 539
+      },
+      {
+        "number": 17,
+        "name": "Al-Isra",
+        "forms": 1027,
+        "coverage": 48.5,
+        "unresolved": 529,
+        "actions": 529
+      }
+    ]
+  },
+  "recommendation": {
+    "nextLongSurahRuntimeTruth": {
+      "number": 29,
+      "name": "Al-'Ankabut",
+      "forms": 663,
+      "coverage": 79.3,
+      "unresolved": 137,
+      "actionsNeeded": 137,
+      "score": 0.6345
+    },
+    "alternative1": {
+      "number": 39,
+      "name": "Az-Zumar",
+      "actionsNeeded": 162,
+      "score": 0.6318
+    },
+    "alternative2": {
+      "number": 13,
+      "name": "Ar-Ra'd",
+      "actionsNeeded": 135,
+      "score": 0.6192
+    }
+  },
+  "benchmarks": {
+    "s46": {
+      "forms": 482,
+      "actions": 95,
+      "coverageBefore": 80.3,
+      "ready": true
+    },
+    "s36": {
+      "forms": 529,
+      "actions": 123,
+      "coverageBefore": 76.7,
+      "ready": true
+    }
+  },
+  "methodology": {
+    "runtimePaths": [
+      "PATH_A: word_translations",
+      "PATH_B: quran_words.lemma_id → lemma_translations",
+      "PATH_C: word_lemma_mapping → lemma_translations"
+    ],
+    "excluded": "linguistic_occurrences.hikma_lemma_id — NEVER used",
+    "scoringFormula": "balancedScore = size_norm*0.30 + coverage_norm*0.40 + effort_norm*0.30"
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "curriculumWrites": 0,
+    "protectedTables": "all unchanged"
+  }
+}

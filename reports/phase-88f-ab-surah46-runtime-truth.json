@@ -1,0 +1,1920 @@
+{
+  "phase": "88F-AB",
+  "verdict": "BLOCKED_NEEDS_EDITORIAL_REVIEW",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "timestamp": "2026-08-24T12:47:49.294Z",
+  "durationSeconds": 24.78,
+  "baseline": {
+    "surah46": {
+      "totalForms": 482,
+      "coveredForms": 387,
+      "unresolvedForms": 95,
+      "coveragePct": 80.2905,
+      "byPath": {
+        "A_word_tr": 380,
+        "B_direct_lemma": 1,
+        "C_wlm_lemma": 6
+      },
+      "readiness": "IN_PREPARATION"
+    },
+    "global": {
+      "frWordTranslations": 4532,
+      "frLemmaTranslations": 200,
+      "wordLemmaMappings": 220
+    }
+  },
+  "runtimeResolutionModel": {
+    "order": [
+      "1. word_translations (language='fr', is_validated=true)",
+      "2. quran_words.lemma_id → lemma_translations",
+      "3. word_lemma_mapping (confidence='safe') → lemma_translations",
+      "4. EN fallback (quran_words.meaning — not FR)"
+    ],
+    "notUsed": [
+      "linguistic_occurrences.hikma_lemma_id (MASAQ) — NOT consumed by resolveWordMeanings"
+    ]
+  },
+  "classification": [
+    {
+      "word_id": "c901797e-8505-4664-8537-8ef133cbbaf0",
+      "arabic": "خَلَتِ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "passer / s'écouler / être révolu",
+      "en_meaning": "and have already passed away"
+    },
+    {
+      "word_id": "1e7312a5-644a-4a84-ae2e-897f6b14026d",
+      "arabic": "أَنصِتُوا۟ ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "écouter en silence / faire silence",
+      "en_meaning": "Listen quietly"
+    },
+    {
+      "word_id": "41ed28dc-4ccc-4182-93cb-d6abb90a9710",
+      "arabic": "خَلْفِهِۦٓ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "and after him"
+    },
+    {
+      "word_id": "d356c859-932e-4155-897a-4783423ac251",
+      "arabic": "أَوْدِيَتِهِمْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "their valleys"
+    },
+    {
+      "word_id": "fcc493dd-867b-456b-9beb-8d3eb73be130",
+      "arabic": "شَهْرًا ۚ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "month(s)"
+    },
+    {
+      "word_id": "290ff2a7-9efe-4edf-a041-05a6f13f0526",
+      "arabic": "وَيُجِرْكُم",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "protéger / accorder refuge / sauvegarder",
+      "en_meaning": "and will protect you"
+    },
+    {
+      "word_id": "4aa44a07-ed6b-48d2-85fe-aef16344d165",
+      "arabic": "يَعْىَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "comprendre / saisir par l'intelligence",
+      "en_meaning": "tired"
+    },
+    {
+      "word_id": "d084b733-137b-4acd-b653-aa5b785b4952",
+      "arabic": "قَوْمِهِم",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "their people"
+    },
+    {
+      "word_id": "3883319c-cf25-4c52-9b0e-beaf1cbf66c2",
+      "arabic": "وَٱسْتَكْبَرْتُمْ ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "s'enorgueillir / être arrogant",
+      "en_meaning": "while you are arrogant"
+    },
+    {
+      "word_id": "8f9b9899-5815-47ab-844a-521f6be0ab7b",
+      "arabic": "شَيْـًٔا ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "anything"
+    },
+    {
+      "word_id": "d63c2d10-c45b-4789-bc6c-9d17c1811134",
+      "arabic": "حَضَرُوهُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "assister à / être présent / se présenter",
+      "en_meaning": "they attended it"
+    },
+    {
+      "word_id": "dd1dff97-8609-4a9a-95e9-eb2c94e10f37",
+      "arabic": "لِلْمُحْسِنِينَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "for the good-doers"
+    },
+    {
+      "word_id": "653e8980-f115-4b22-9563-46caccd81352",
+      "arabic": "ءَالِهَةًۢ ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "gods as a way of approach"
+    },
+    {
+      "word_id": "d42cbe97-306f-43b6-90f5-6a65c333593a",
+      "arabic": "ٱسْتَعْجَلْتُم",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "chercher à hâter / vouloir précipiter",
+      "en_meaning": "you were asking it to be hastened"
+    },
+    {
+      "word_id": "87cfb8c5-79a9-403e-8942-f0c43969cc0f",
+      "arabic": "مِثْلِهِۦ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "(the) like thereof"
+    },
+    {
+      "word_id": "6fa28f8e-29e8-48eb-8ce1-4d224768635b",
+      "arabic": "عَارِضًۭا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "(as) a cloud"
+    },
+    {
+      "word_id": "df92c435-3799-41a7-a236-38395ba096c4",
+      "arabic": "مَّكَّنَّـٰكُمْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "établir solidement / donner puissance",
+      "en_meaning": "We have established you"
+    },
+    {
+      "word_id": "61a4765a-abb8-49a3-9551-3669d8634ed3",
+      "arabic": "تَفْسُقُونَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "transgresser / être pervers",
+      "en_meaning": "defiantly disobedient"
+    },
+    {
+      "word_id": "8ee3c8d5-c81f-4219-a392-eaef7267598d",
+      "arabic": "أَخَا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "(the) brother"
+    },
+    {
+      "word_id": "631fe4d2-3ea5-4e1d-8ae8-3dc253584915",
+      "arabic": "۞ وَٱذْكُرْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "And mention"
+    },
+    {
+      "word_id": "3a90774c-0f7d-4640-905f-4e5f6e8395ec",
+      "arabic": "بِدْعًۭا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "a new (one)"
+    },
+    {
+      "word_id": "c7007821-97d6-4e73-bba0-ab959c572894",
+      "arabic": "تَسْتَعْجِل",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "chercher à hâter / être impatient",
+      "en_meaning": "seek to hasten"
+    },
+    {
+      "word_id": "9eacc5d8-46a4-4b71-bd6a-7b3029ea373f",
+      "arabic": "يُعْرَضُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "will be exposed"
+    },
+    {
+      "word_id": "a98f968c-4a98-4f5b-a21b-3b6058ab3acb",
+      "arabic": "طَرِيقٍۢ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "a Path"
+    },
+    {
+      "word_id": "ec59eef2-8c4a-43c5-b730-dba5ac3bdd5e",
+      "arabic": "ٱلْعَزْمِ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "fermeté / résolution / détermination",
+      "en_meaning": "those of determination"
+    },
+    {
+      "word_id": "decddc29-b8bc-480f-b4cc-1efb6ccc2b31",
+      "arabic": "أَتَعِدَانِنِىٓ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "Do you promise me"
+    },
+    {
+      "word_id": "9407d269-f2ec-4338-856e-58f8a2641927",
+      "arabic": "رِيحٌۭ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "a wind"
+    },
+    {
+      "word_id": "4e9952b4-2a80-49be-9d45-f89d225b33e2",
+      "arabic": "تُدَمِّرُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "détruire / anéantir / ravager",
+      "en_meaning": "Destroying"
+    },
+    {
+      "word_id": "630e7763-d864-4c09-b6c6-650a4b8f4f51",
+      "arabic": "وَٱسْتَمْتَعْتُم",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "jouir / profiter / tirer jouissance",
+      "en_meaning": "and you took your pleasures"
+    },
+    {
+      "word_id": "5061dee1-7f79-42e3-a1d3-88d030e8ee91",
+      "arabic": "يَسْتَغِيثَانِ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "appeler au secours / implorer assistance",
+      "en_meaning": "seek help"
+    },
+    {
+      "word_id": "a0862545-7c90-4e9d-b7e1-24fb0c6817c8",
+      "arabic": "ٱلْقُرُونُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "the generations"
+    },
+    {
+      "word_id": "076a55b1-0cf0-423b-958f-4e613a198167",
+      "arabic": "يَـٰقَوْمَنَآ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "O our people"
+    },
+    {
+      "word_id": "07f14d18-b725-45fa-8cec-e4235fdb4974",
+      "arabic": "وَلِيُوَفِّيَهُمْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "rétribuer pleinement / donner la pleine récompense",
+      "en_meaning": "and that He may fully compensate them"
+    },
+    {
+      "word_id": "be8c01d6-bbb8-4cd2-8e26-311604e78725",
+      "arabic": "وَأُبَلِّغُكُم",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "transmettre / communiquer / faire parvenir",
+      "en_meaning": "and I convey to you"
+    },
+    {
+      "word_id": "189e5067-5493-4c49-9e73-dee4186b5829",
+      "arabic": "يُفْعَلُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "être fait / être accompli / se faire",
+      "en_meaning": "will be done"
+    },
+    {
+      "word_id": "0803c6da-f641-43d1-ae7c-a73f28252d2e",
+      "arabic": "أَعْلَمُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "[I] know"
+    },
+    {
+      "word_id": "16f2aa46-7b5d-441a-80fb-db27fc53b8ea",
+      "arabic": "مَسَـٰكِنُهُمْ ۚ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "their dwellings"
+    },
+    {
+      "word_id": "cdf9af2e-f331-4d3d-a5a6-604bcdc4a675",
+      "arabic": "وَهُمَا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "et eux deux / tous les deux",
+      "en_meaning": "And they both"
+    },
+    {
+      "word_id": "3bcd36fe-3a83-4efa-823f-38f12acdf98e",
+      "arabic": "ٱلصِّدْقِ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "true"
+    },
+    {
+      "word_id": "76e71a81-44b8-4167-9c2c-5ed2815b4565",
+      "arabic": "يُرَىٰٓ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "être vu / être aperçu / être visible",
+      "en_meaning": "is seen"
+    },
+    {
+      "word_id": "258a8cf6-4f17-47d6-89c0-388b2511e934",
+      "arabic": "مُّسْتَقْبِلَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "approaching"
+    },
+    {
+      "word_id": "0e7de874-9cbd-4574-8d3f-2b40b934bb63",
+      "arabic": "وَوَضَعَتْهُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "enfanter / mettre au monde",
+      "en_meaning": "and gave birth to him"
+    },
+    {
+      "word_id": "b8bebd2c-22ca-427a-be32-05ea45fb3ef0",
+      "arabic": "بِٱلْأَحْقَافِ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "in the Al-Ahqaf "
+    },
+    {
+      "word_id": "6be4cdee-5feb-4864-8cdf-e198c233151b",
+      "arabic": "يُجِبْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "répondre / exaucer",
+      "en_meaning": "respond"
+    },
+    {
+      "word_id": "8d4b00fe-ed59-4546-b8a5-622048463de6",
+      "arabic": "بِخَلْقِهِنَّ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "by their creation"
+    },
+    {
+      "word_id": "bef0419e-ac67-4ec5-bbf4-a49c4df55896",
+      "arabic": "أَذْهَبْتُمْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "dissiper / faire disparaître / gaspiller",
+      "en_meaning": "You exhausted"
+    },
+    {
+      "word_id": "bb735f00-69ac-4df4-a0bb-1cfaf197b6ec",
+      "arabic": "أَوْلِيَآءُ ۚ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "protectors"
+    },
+    {
+      "word_id": "e9b7c1bc-2dfb-4bc8-a564-1327076ec44d",
+      "arabic": "مَكَّنَّـٰهُمْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "établir solidement / donner puissance",
+      "en_meaning": "We had established them"
+    },
+    {
+      "word_id": "379067ab-84cf-4083-8664-3a3220333d1e",
+      "arabic": "كِتَـٰبًا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "a Book"
+    },
+    {
+      "word_id": "6838279f-4652-4612-b01b-f24e38b9d2f4",
+      "arabic": "طَيِّبَـٰتِكُمْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "your good things"
+    },
+    {
+      "word_id": "b232fa0e-3fd2-4975-933c-c5e4af240c31",
+      "arabic": "قُرْبَانًا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "gods as a way of approach"
+    },
+    {
+      "word_id": "1e7aeea5-872e-4d84-8ab8-004581fa40ed",
+      "arabic": "سَبَقُونَآ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "nous devancer / nous précéder",
+      "en_meaning": "they (would) have preceded us"
+    },
+    {
+      "word_id": "54f6f8b7-0431-4c08-b007-01dc8933ae6a",
+      "arabic": "وَحَمْلُهُۥ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "porter (un enfant) / grossesse / charge",
+      "en_meaning": "And (the) bearing of him"
+    },
+    {
+      "word_id": "20b18ba2-07a8-4b20-81de-5794702ff182",
+      "arabic": "وَنَتَجَاوَزُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "passer outre / pardonner / ignorer",
+      "en_meaning": "and We will overlook"
+    },
+    {
+      "word_id": "0a6621f4-f2c5-44b8-940d-80aa1418d86c",
+      "arabic": "إِحْسَـٰنًا ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "bienfaisance / bonté / excellente conduite",
+      "en_meaning": "kindness"
+    },
+    {
+      "word_id": "64e1af59-1542-457b-881a-0378851cf327",
+      "arabic": "يَهْتَدُوا۟",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "être guidé / se guider",
+      "en_meaning": "they (are) guided"
+    },
+    {
+      "word_id": "80c24d9c-1521-41dc-8919-c2d465ea44e0",
+      "arabic": "وَأَفْـِٔدَةًۭ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "and hearts"
+    },
+    {
+      "word_id": "c4909978-804e-46d5-ac51-6a731eec2994",
+      "arabic": "حُشِرَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "rassembler / être rassemblé",
+      "en_meaning": "are gathered"
+    },
+    {
+      "word_id": "fd3ed953-d9c9-425c-9088-36eab5524a1e",
+      "arabic": "فَـَٔامَنَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "then he believed"
+    },
+    {
+      "word_id": "7e6d8196-6110-4265-8e07-6fcb114c8053",
+      "arabic": "عَمِلُوا۟ ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "agir / œuvrer / faire (des actions)",
+      "en_meaning": "they did"
+    },
+    {
+      "word_id": "70a51013-21a8-4c1a-81da-ef7d4d647923",
+      "arabic": "بِمُعْجِزٍۢ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "he can escape"
+    },
+    {
+      "word_id": "85bfe0e9-267f-44ba-8f50-901c9bb81775",
+      "arabic": "ذُرِّيَّتِىٓ ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "my offspring"
+    },
+    {
+      "word_id": "718e3a9d-0f6b-49b6-b680-7a115b8641d6",
+      "arabic": "ثَلَـٰثُونَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "(is) thirty"
+    },
+    {
+      "word_id": "c33ebd1c-9e35-405e-a1de-8c72089b5c99",
+      "arabic": "أَجِيبُوا۟",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "répondre / obéir à l'appel / exaucer",
+      "en_meaning": "Respond"
+    },
+    {
+      "word_id": "ed9a10fb-9e14-48f3-b2d1-ad5173cc0c01",
+      "arabic": "إِفْكُهُمْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "mensonge / tromperie / calomnie",
+      "en_meaning": "(was) their falsehood"
+    },
+    {
+      "word_id": "a26a3d35-c025-4f8d-b64b-c40d5bfaf9e4",
+      "arabic": "نَصَرَهُمُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "help them"
+    },
+    {
+      "word_id": "cb3e209e-ffc8-49fd-afde-26870c29b468",
+      "arabic": "دَاعِىَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "(to the) caller"
+    },
+    {
+      "word_id": "52a3c49f-592b-4061-9225-0fb623b3e86c",
+      "arabic": "قَدِيمٌۭ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "ancient"
+    },
+    {
+      "word_id": "54dc34aa-0714-439e-9bc6-cfddee2835db",
+      "arabic": "وَيْلَكَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "Woe to you"
+    },
+    {
+      "word_id": "a4345d2a-5754-4948-9c08-f83999789fa9",
+      "arabic": "بَلَـٰغٌۭ ۚ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "A notification"
+    },
+    {
+      "word_id": "deb96fb8-9384-4052-a0d1-204828266ac1",
+      "arabic": "أَنذَرَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "avertir / mettre en garde",
+      "en_meaning": "he warned"
+    },
+    {
+      "word_id": "b8c99dd0-e343-4e41-ba41-4307e76c8e59",
+      "arabic": "لِتَأْفِكَنَا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "détourner / écarter / tromper",
+      "en_meaning": "to turn us away"
+    },
+    {
+      "word_id": "6cab9b5b-d42d-498d-a32d-fc445183d584",
+      "arabic": "ءَامِنْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "Believe"
+    },
+    {
+      "word_id": "7290ff1f-b150-4b96-84c2-310d134122b0",
+      "arabic": "كُرْهًۭا ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "avec peine / à contrecœur",
+      "en_meaning": "(with) hardship"
+    },
+    {
+      "word_id": "81c109b8-1d72-4d02-b5fc-0cfa4dc05460",
+      "arabic": "وَبَلَغَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "atteindre / arriver à maturité",
+      "en_meaning": "and reaches"
+    },
+    {
+      "word_id": "faea9983-faee-4ee1-9ff2-562557b5c755",
+      "arabic": "لِوَٰلِدَيْهِ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "to his parents"
+    },
+    {
+      "word_id": "cbfc2fa4-721d-4289-91fd-42e79ce3a851",
+      "arabic": "وَكَفَرْتُم",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "and you disbelieve"
+    },
+    {
+      "word_id": "d6a5d8fd-777f-46b1-911d-f15e11085ec6",
+      "arabic": "نَتَقَبَّلُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "accepter / recevoir favorablement / agréer",
+      "en_meaning": "We will accept"
+    },
+    {
+      "word_id": "4ec7d35a-bd95-42a2-9048-e54cf6e006be",
+      "arabic": "أَفْـِٔدَتُهُم",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "their hearts"
+    },
+    {
+      "word_id": "cae85d9a-cbb3-470a-8446-d5ab4058fa83",
+      "arabic": "أَثَـٰرَةٍۢ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "a trace"
+    },
+    {
+      "word_id": "3ce2da86-780d-409c-938e-24c094a672f9",
+      "arabic": "دُعَآئِهِمْ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "invocation / leur appel / leur prière",
+      "en_meaning": "their calls"
+    },
+    {
+      "word_id": "2d73d135-1363-4a45-86fd-5a14e8489912",
+      "arabic": "لِّسَانًا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "(in) language"
+    },
+    {
+      "word_id": "1b4d77f9-2944-4d0b-95d9-e03cce0bd8b9",
+      "arabic": "وَأَبْصَـٰرًۭا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "and vision"
+    },
+    {
+      "word_id": "8554cd49-007d-4aba-97d8-cea3b4683371",
+      "arabic": "أُخْرَجَ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "faire sortir / être expulsé",
+      "en_meaning": "I will be brought forth"
+    },
+    {
+      "word_id": "3b8a5f0e-9c23-4ec2-9f54-736996112948",
+      "arabic": "سَمْعًۭا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "ouïe / audition / faculté d'entendre",
+      "en_meaning": "hearing"
+    },
+    {
+      "word_id": "bed74e8e-bfcb-49fe-8ebc-b4f52e851cff",
+      "arabic": "ٱلسَّمَـٰوَٰتِ ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "the heavens"
+    },
+    {
+      "word_id": "0902f90f-b7da-4ed0-b335-386449a9279c",
+      "arabic": "عَارِضٌۭ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "(is) a cloud"
+    },
+    {
+      "word_id": "24886639-8021-4f3b-8c99-f8f10be163d5",
+      "arabic": "حَيَاتِكُمُ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "votre vie / votre existence terrestre",
+      "en_meaning": "your life"
+    },
+    {
+      "word_id": "1937099f-d003-45b5-87b5-3a4ad55c3cf1",
+      "arabic": "سَنَةًۭ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "year(s)"
+    },
+    {
+      "word_id": "3fc6ef03-4ee9-406c-ae20-897e578bae80",
+      "arabic": "مُّمْطِرُنَا ۚ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "bringing us rain"
+    },
+    {
+      "word_id": "0a97ceab-9649-43fc-9cf7-5d9901bfaca6",
+      "arabic": "كُرْهًۭا",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "avec peine / à contrecœur / péniblement",
+      "en_meaning": "(with) hardship"
+    },
+    {
+      "word_id": "eecf456a-8924-4d2b-b18b-185ce12735a8",
+      "arabic": "وَبَيْنَكُمْ ۖ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "and between you"
+    },
+    {
+      "word_id": "670933f7-ef24-48b5-87fb-156d6f086d99",
+      "arabic": "ٱلْمَوْتَىٰ ۚ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "(to) the dead"
+    },
+    {
+      "word_id": "046c49de-8086-471f-be73-5ac2757b775d",
+      "arabic": "نَّهَارٍۭ ۚ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation_NEEDED",
+      "recommended_gloss": null,
+      "en_meaning": "a day"
+    },
+    {
+      "word_id": "e2cd95a9-960a-4c64-986b-944e78b41515",
+      "arabic": "صَرَفْنَآ",
+      "quran_words_lemma_id": null,
+      "wlm_lemma_id": null,
+      "has_runtime_lemma_link": false,
+      "recommended_action": "word_translation",
+      "recommended_gloss": "diriger / détourner / orienter vers",
+      "en_meaning": "We directed"
+    }
+  ],
+  "crossCheck88FY": {
+    "aFormsTotal": 34,
+    "aFormsRuntimeLinked": 0,
+    "aFormsRuntimeUnlinked": 34,
+    "fFormsTotal": 42,
+    "note": "88F-Y derived lemma_ids from MASAQ linguistic_occurrences.hikma_lemma_id, which the runtime resolver does NOT use. The runtime only resolves lemma through quran_words.lemma_id and word_lemma_mapping."
+  },
+  "comparison": {
+    "88F-Y": {
+      "classificationModel": "MASAQ linguistic_occurrences.hikma_lemma_id",
+      "lemmaForms": 34,
+      "wordTrForms": 42,
+      "totalActions": 75,
+      "readyAfterImport": false
+    },
+    "88F-AA": {
+      "classificationModel": "MASAQ (same as 88F-Y) + editorial glosses added",
+      "lemmaForms": 34,
+      "wordTrForms": 42,
+      "totalActions": 75,
+      "readyAfterImport": false,
+      "note": "Discovered structural gap but didn't reclassify"
+    },
+    "88F-AB": {
+      "classificationModel": "RUNTIME: resolveWordMeanings → word_tr | quran_words.lemma_id | WLM | EN fallback",
+      "lemmaForms": 0,
+      "wordTrForms": 95,
+      "totalActions": 95,
+      "readyAfterImport": true
+    }
+  },
+  "correctActionPlan": {
+    "wordTranslationsNeeded": 95,
+    "lemmaTranslationsViable": 0,
+    "totalActions": 95,
+    "expectedS46AfterImport": "482/482",
+    "readyAfterImport": true
+  },
+  "globalPropagationRuntimeTruth": {
+    "globalFormsUnlocked": 1,
+    "surahsAffected": 1,
+    "eightyEightFX_prediction": 168,
+    "overcountFactor": 168,
+    "note": "88F-X predicted 168 global forms and 84 surahs. This is inflated because it counted lemma→word links through linguistic_occurrences.hikma_lemma_id, which the runtime does not consume."
+  },
+  "importPreflight": {
+    "totalEntries": 95,
+    "readyForImport": 43,
+    "blocked": 52,
+    "payload": [
+      {
+        "table": "word_translations",
+        "word_id": "c901797e-8505-4664-8537-8ef133cbbaf0",
+        "arabic": "خَلَتِ",
+        "text": "passer / s'écouler / être révolu",
+        "rationale": "46:17",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "1e7312a5-644a-4a84-ae2e-897f6b14026d",
+        "arabic": "أَنصِتُوا۟ ۖ",
+        "text": "écouter en silence / faire silence",
+        "rationale": "46:29",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "41ed28dc-4ccc-4182-93cb-d6abb90a9710",
+        "arabic": "خَلْفِهِۦٓ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "d356c859-932e-4155-897a-4783423ac251",
+        "arabic": "أَوْدِيَتِهِمْ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "fcc493dd-867b-456b-9beb-8d3eb73be130",
+        "arabic": "شَهْرًا ۚ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "290ff2a7-9efe-4edf-a041-05a6f13f0526",
+        "arabic": "وَيُجِرْكُم",
+        "text": "protéger / accorder refuge / sauvegarder",
+        "rationale": "46:31",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "4aa44a07-ed6b-48d2-85fe-aef16344d165",
+        "arabic": "يَعْىَ",
+        "text": "comprendre / saisir par l'intelligence",
+        "rationale": "46:26",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "d084b733-137b-4acd-b653-aa5b785b4952",
+        "arabic": "قَوْمِهِم",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "3883319c-cf25-4c52-9b0e-beaf1cbf66c2",
+        "arabic": "وَٱسْتَكْبَرْتُمْ ۖ",
+        "text": "s'enorgueillir / être arrogant",
+        "rationale": "46:10",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "8f9b9899-5815-47ab-844a-521f6be0ab7b",
+        "arabic": "شَيْـًٔا ۖ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "d63c2d10-c45b-4789-bc6c-9d17c1811134",
+        "arabic": "حَضَرُوهُ",
+        "text": "assister à / être présent / se présenter",
+        "rationale": "46:29",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "dd1dff97-8609-4a9a-95e9-eb2c94e10f37",
+        "arabic": "لِلْمُحْسِنِينَ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "653e8980-f115-4b22-9563-46caccd81352",
+        "arabic": "ءَالِهَةًۢ ۖ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "d42cbe97-306f-43b6-90f5-6a65c333593a",
+        "arabic": "ٱسْتَعْجَلْتُم",
+        "text": "chercher à hâter / vouloir précipiter",
+        "rationale": "46:24",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "87cfb8c5-79a9-403e-8942-f0c43969cc0f",
+        "arabic": "مِثْلِهِۦ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "6fa28f8e-29e8-48eb-8ce1-4d224768635b",
+        "arabic": "عَارِضًۭا",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "df92c435-3799-41a7-a236-38395ba096c4",
+        "arabic": "مَّكَّنَّـٰكُمْ",
+        "text": "établir solidement / donner puissance",
+        "rationale": "46:26",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "61a4765a-abb8-49a3-9551-3669d8634ed3",
+        "arabic": "تَفْسُقُونَ",
+        "text": "transgresser / être pervers",
+        "rationale": "46:20",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "8ee3c8d5-c81f-4219-a392-eaef7267598d",
+        "arabic": "أَخَا",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "631fe4d2-3ea5-4e1d-8ae8-3dc253584915",
+        "arabic": "۞ وَٱذْكُرْ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "3a90774c-0f7d-4640-905f-4e5f6e8395ec",
+        "arabic": "بِدْعًۭا",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "c7007821-97d6-4e73-bba0-ab959c572894",
+        "arabic": "تَسْتَعْجِل",
+        "text": "chercher à hâter / être impatient",
+        "rationale": "46:35",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "9eacc5d8-46a4-4b71-bd6a-7b3029ea373f",
+        "arabic": "يُعْرَضُ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "a98f968c-4a98-4f5b-a21b-3b6058ab3acb",
+        "arabic": "طَرِيقٍۢ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "ec59eef2-8c4a-43c5-b730-dba5ac3bdd5e",
+        "arabic": "ٱلْعَزْمِ",
+        "text": "fermeté / résolution / détermination",
+        "rationale": "46:35",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "decddc29-b8bc-480f-b4cc-1efb6ccc2b31",
+        "arabic": "أَتَعِدَانِنِىٓ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "9407d269-f2ec-4338-856e-58f8a2641927",
+        "arabic": "رِيحٌۭ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "4e9952b4-2a80-49be-9d45-f89d225b33e2",
+        "arabic": "تُدَمِّرُ",
+        "text": "détruire / anéantir / ravager",
+        "rationale": "46:25",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "630e7763-d864-4c09-b6c6-650a4b8f4f51",
+        "arabic": "وَٱسْتَمْتَعْتُم",
+        "text": "jouir / profiter / tirer jouissance",
+        "rationale": "46:20",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "5061dee1-7f79-42e3-a1d3-88d030e8ee91",
+        "arabic": "يَسْتَغِيثَانِ",
+        "text": "appeler au secours / implorer assistance",
+        "rationale": "46:17",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "a0862545-7c90-4e9d-b7e1-24fb0c6817c8",
+        "arabic": "ٱلْقُرُونُ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "076a55b1-0cf0-423b-958f-4e613a198167",
+        "arabic": "يَـٰقَوْمَنَآ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "07f14d18-b725-45fa-8cec-e4235fdb4974",
+        "arabic": "وَلِيُوَفِّيَهُمْ",
+        "text": "rétribuer pleinement / donner la pleine récompense",
+        "rationale": "46:19",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "be8c01d6-bbb8-4cd2-8e26-311604e78725",
+        "arabic": "وَأُبَلِّغُكُم",
+        "text": "transmettre / communiquer / faire parvenir",
+        "rationale": "46:23",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "189e5067-5493-4c49-9e73-dee4186b5829",
+        "arabic": "يُفْعَلُ",
+        "text": "être fait / être accompli / se faire",
+        "rationale": "46:9",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "0803c6da-f641-43d1-ae7c-a73f28252d2e",
+        "arabic": "أَعْلَمُ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "16f2aa46-7b5d-441a-80fb-db27fc53b8ea",
+        "arabic": "مَسَـٰكِنُهُمْ ۚ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "cdf9af2e-f331-4d3d-a5a6-604bcdc4a675",
+        "arabic": "وَهُمَا",
+        "text": "et eux deux / tous les deux",
+        "rationale": "46:17",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "3bcd36fe-3a83-4efa-823f-38f12acdf98e",
+        "arabic": "ٱلصِّدْقِ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "76e71a81-44b8-4167-9c2c-5ed2815b4565",
+        "arabic": "يُرَىٰٓ",
+        "text": "être vu / être aperçu / être visible",
+        "rationale": "46:25",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "258a8cf6-4f17-47d6-89c0-388b2511e934",
+        "arabic": "مُّسْتَقْبِلَ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "0e7de874-9cbd-4574-8d3f-2b40b934bb63",
+        "arabic": "وَوَضَعَتْهُ",
+        "text": "enfanter / mettre au monde",
+        "rationale": "46:15",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "b8bebd2c-22ca-427a-be32-05ea45fb3ef0",
+        "arabic": "بِٱلْأَحْقَافِ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "6be4cdee-5feb-4864-8cdf-e198c233151b",
+        "arabic": "يُجِبْ",
+        "text": "répondre / exaucer",
+        "rationale": "46:5",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "8d4b00fe-ed59-4546-b8a5-622048463de6",
+        "arabic": "بِخَلْقِهِنَّ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "bef0419e-ac67-4ec5-bbf4-a49c4df55896",
+        "arabic": "أَذْهَبْتُمْ",
+        "text": "dissiper / faire disparaître / gaspiller",
+        "rationale": "46:20",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "bb735f00-69ac-4df4-a0bb-1cfaf197b6ec",
+        "arabic": "أَوْلِيَآءُ ۚ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "e9b7c1bc-2dfb-4bc8-a564-1327076ec44d",
+        "arabic": "مَكَّنَّـٰهُمْ",
+        "text": "établir solidement / donner puissance",
+        "rationale": "46:26",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "379067ab-84cf-4083-8664-3a3220333d1e",
+        "arabic": "كِتَـٰبًا",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "6838279f-4652-4612-b01b-f24e38b9d2f4",
+        "arabic": "طَيِّبَـٰتِكُمْ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "b232fa0e-3fd2-4975-933c-c5e4af240c31",
+        "arabic": "قُرْبَانًا",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "1e7aeea5-872e-4d84-8ab8-004581fa40ed",
+        "arabic": "سَبَقُونَآ",
+        "text": "nous devancer / nous précéder",
+        "rationale": "46:11",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "54f6f8b7-0431-4c08-b007-01dc8933ae6a",
+        "arabic": "وَحَمْلُهُۥ",
+        "text": "porter (un enfant) / grossesse / charge",
+        "rationale": "46:15",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "20b18ba2-07a8-4b20-81de-5794702ff182",
+        "arabic": "وَنَتَجَاوَزُ",
+        "text": "passer outre / pardonner / ignorer",
+        "rationale": "46:16",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "0a6621f4-f2c5-44b8-940d-80aa1418d86c",
+        "arabic": "إِحْسَـٰنًا ۖ",
+        "text": "bienfaisance / bonté / excellente conduite",
+        "rationale": "46:15",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "64e1af59-1542-457b-881a-0378851cf327",
+        "arabic": "يَهْتَدُوا۟",
+        "text": "être guidé / se guider",
+        "rationale": "46:11",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "80c24d9c-1521-41dc-8919-c2d465ea44e0",
+        "arabic": "وَأَفْـِٔدَةًۭ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "c4909978-804e-46d5-ac51-6a731eec2994",
+        "arabic": "حُشِرَ",
+        "text": "rassembler / être rassemblé",
+        "rationale": "46:6",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "fd3ed953-d9c9-425c-9088-36eab5524a1e",
+        "arabic": "فَـَٔامَنَ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "7e6d8196-6110-4265-8e07-6fcb114c8053",
+        "arabic": "عَمِلُوا۟ ۖ",
+        "text": "agir / œuvrer / faire (des actions)",
+        "rationale": "46:19",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "70a51013-21a8-4c1a-81da-ef7d4d647923",
+        "arabic": "بِمُعْجِزٍۢ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "85bfe0e9-267f-44ba-8f50-901c9bb81775",
+        "arabic": "ذُرِّيَّتِىٓ ۖ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "718e3a9d-0f6b-49b6-b680-7a115b8641d6",
+        "arabic": "ثَلَـٰثُونَ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "c33ebd1c-9e35-405e-a1de-8c72089b5c99",
+        "arabic": "أَجِيبُوا۟",
+        "text": "répondre / obéir à l'appel / exaucer",
+        "rationale": "46:31",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "ed9a10fb-9e14-48f3-b2d1-ad5173cc0c01",
+        "arabic": "إِفْكُهُمْ",
+        "text": "mensonge / tromperie / calomnie",
+        "rationale": "46:28",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "a26a3d35-c025-4f8d-b64b-c40d5bfaf9e4",
+        "arabic": "نَصَرَهُمُ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "cb3e209e-ffc8-49fd-afde-26870c29b468",
+        "arabic": "دَاعِىَ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "52a3c49f-592b-4061-9225-0fb623b3e86c",
+        "arabic": "قَدِيمٌۭ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "54dc34aa-0714-439e-9bc6-cfddee2835db",
+        "arabic": "وَيْلَكَ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "a4345d2a-5754-4948-9c08-f83999789fa9",
+        "arabic": "بَلَـٰغٌۭ ۚ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "deb96fb8-9384-4052-a0d1-204828266ac1",
+        "arabic": "أَنذَرَ",
+        "text": "avertir / mettre en garde",
+        "rationale": "46:21",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "b8c99dd0-e343-4e41-ba41-4307e76c8e59",
+        "arabic": "لِتَأْفِكَنَا",
+        "text": "détourner / écarter / tromper",
+        "rationale": "46:22",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "6cab9b5b-d42d-498d-a32d-fc445183d584",
+        "arabic": "ءَامِنْ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "7290ff1f-b150-4b96-84c2-310d134122b0",
+        "arabic": "كُرْهًۭا ۖ",
+        "text": "avec peine / à contrecœur",
+        "rationale": "46:15",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "81c109b8-1d72-4d02-b5fc-0cfa4dc05460",
+        "arabic": "وَبَلَغَ",
+        "text": "atteindre / arriver à maturité",
+        "rationale": "46:15",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "faea9983-faee-4ee1-9ff2-562557b5c755",
+        "arabic": "لِوَٰلِدَيْهِ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "cbfc2fa4-721d-4289-91fd-42e79ce3a851",
+        "arabic": "وَكَفَرْتُم",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "d6a5d8fd-777f-46b1-911d-f15e11085ec6",
+        "arabic": "نَتَقَبَّلُ",
+        "text": "accepter / recevoir favorablement / agréer",
+        "rationale": "46:16",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "4ec7d35a-bd95-42a2-9048-e54cf6e006be",
+        "arabic": "أَفْـِٔدَتُهُم",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "cae85d9a-cbb3-470a-8446-d5ab4058fa83",
+        "arabic": "أَثَـٰرَةٍۢ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "3ce2da86-780d-409c-938e-24c094a672f9",
+        "arabic": "دُعَآئِهِمْ",
+        "text": "invocation / leur appel / leur prière",
+        "rationale": "46:5",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "2d73d135-1363-4a45-86fd-5a14e8489912",
+        "arabic": "لِّسَانًا",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "1b4d77f9-2944-4d0b-95d9-e03cce0bd8b9",
+        "arabic": "وَأَبْصَـٰرًۭا",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "8554cd49-007d-4aba-97d8-cea3b4683371",
+        "arabic": "أُخْرَجَ",
+        "text": "faire sortir / être expulsé",
+        "rationale": "46:17",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "3b8a5f0e-9c23-4ec2-9f54-736996112948",
+        "arabic": "سَمْعًۭا",
+        "text": "ouïe / audition / faculté d'entendre",
+        "rationale": "46:26",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "bed74e8e-bfcb-49fe-8ebc-b4f52e851cff",
+        "arabic": "ٱلسَّمَـٰوَٰتِ ۖ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "0902f90f-b7da-4ed0-b335-386449a9279c",
+        "arabic": "عَارِضٌۭ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "24886639-8021-4f3b-8c99-f8f10be163d5",
+        "arabic": "حَيَاتِكُمُ",
+        "text": "votre vie / votre existence terrestre",
+        "rationale": "46:20",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "1937099f-d003-45b5-87b5-3a4ad55c3cf1",
+        "arabic": "سَنَةًۭ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "3fc6ef03-4ee9-406c-ae20-897e578bae80",
+        "arabic": "مُّمْطِرُنَا ۚ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "0a97ceab-9649-43fc-9cf7-5d9901bfaca6",
+        "arabic": "كُرْهًۭا",
+        "text": "avec peine / à contrecœur / péniblement",
+        "rationale": "46:15",
+        "action": "INSERT",
+        "status": "NEW"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "eecf456a-8924-4d2b-b18b-185ce12735a8",
+        "arabic": "وَبَيْنَكُمْ ۖ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "670933f7-ef24-48b5-87fb-156d6f086d99",
+        "arabic": "ٱلْمَوْتَىٰ ۚ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "046c49de-8086-471f-be73-5ac2757b775d",
+        "arabic": "نَّهَارٍۭ ۚ",
+        "text": null,
+        "rationale": "No pre-written gloss — needs editorial work",
+        "action": "BLOCKED_NEEDS_GLOSS",
+        "status": "BLOCKED"
+      },
+      {
+        "table": "word_translations",
+        "word_id": "e2cd95a9-960a-4c64-986b-944e78b41515",
+        "arabic": "صَرَفْنَآ",
+        "text": "diriger / détourner / orienter vers",
+        "rationale": "46:29",
+        "action": "INSERT",
+        "status": "NEW"
+      }
+    ],
+    "guarantees": {
+      "antiDuplicate": true,
+      "antiConflict": true,
+      "idempotent": true,
+      "noPlaceholderGlosses": true,
+      "noMasaqMappings": true,
+      "noMigrations": true,
+      "noSeeds": true,
+      "noCurriculumModification": true
+    }
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 errors",
+    "eslint": "0 errors, 0 warnings",
+    "readOnlyStaticCheck": "PASS (0 DB write calls)"
+  }
+}

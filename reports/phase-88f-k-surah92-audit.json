@@ -1,0 +1,1437 @@
+{
+  "phase": "88F-K",
+  "verdict": "PHASE_88F_K_COMPLETE",
+  "readOnly": true,
+  "timestamp": "2026-08-24T09:06:46.260Z",
+  "durationSeconds": 20.4,
+  "targetSurah": {
+    "number": 92,
+    "name": "Al-Layl"
+  },
+  "baseline": {
+    "totalForms": 62,
+    "coveredForms": 47,
+    "missingForms": 15,
+    "coveragePct": 0.7581,
+    "readiness": "IN_PREPARATION",
+    "totalOccurrences": 3942,
+    "coveredOccurrences": 3925,
+    "globalSnapshot": {
+      "quranWords": 21296,
+      "frUnionDistinctWordIds": 5290,
+      "frOccurrences": 56092,
+      "frPercentage": 0.2484,
+      "lemmaTranslations": 135,
+      "lemmaTranslationsFrValidated": 131,
+      "wordTranslationsFrValidated": 4492,
+      "s98StillReady": true
+    }
+  },
+  "historicalNote": "88F-I estimait S92 à ≈75,8 % avec 15 formes manquantes et 15 actions. Recalcul effectué depuis la DB actuelle (post-88F-J).",
+  "missingForms": [
+    {
+      "arabic": "سَعْيَكُمْ",
+      "wordId": "a05da7b5-8a41-4d60-9444-5cd2fd0f2071",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "سعي"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "your-efforts",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "your-efforts",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "GERUND",
+        "POSS_PRON"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 4,
+          "globalAyahNum": 6062
+        }
+      ],
+      "hamidullahS92": [
+        "Vos efforts sont divergents."
+      ],
+      "kazimirskiS92": [
+        "Vos efforts ont des fins différentes."
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « سعي » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "effort / s'efforcer / agir"
+    },
+    {
+      "arabic": "لَشَتَّىٰ",
+      "wordId": "5257b829-65e6-43ed-96be-1da4385d8fa7",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": "b134c0e2-c02c-4bfa-910f-f41dc6e6dde4",
+      "currentLemma": "شتى",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "شتى"
+      ],
+      "masaqHikmaLemmaIds": [
+        "b134c0e2-c02c-4bfa-910f-f41dc6e6dde4"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "(are)-surely-diverse",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "(are)-surely-diverse",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "NOUN_ABSTRACT",
+        "OTHER"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 4,
+          "globalAyahNum": 6062
+        }
+      ],
+      "hamidullahS92": [
+        "Vos efforts sont divergents."
+      ],
+      "kazimirskiS92": [
+        "Vos efforts ont des fins différentes."
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "dispersés / divers / séparés",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "بِٱلْحُسْنَىٰ",
+      "wordId": "bc49ba68-ee55-4028-9f20-dd86f064e391",
+      "occurrenceCount": 2,
+      "occurrenceCountInS92": 2,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": "d53c17f6-57e6-47c7-81d7-af93033fa12a",
+      "currentLemma": "حسني",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "حسنى"
+      ],
+      "masaqHikmaLemmaIds": [
+        "d53c17f6-57e6-47c7-81d7-af93033fa12a"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "in-the-best",
+      "masaqTopGlossShare": 0.5,
+      "masaqGlossesEn": [
+        {
+          "value": "in-the-best",
+          "count": 1
+        },
+        {
+          "value": "the-best",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 2
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "ADJ_COMP",
+        "DET",
+        "PREP"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 6,
+          "globalAyahNum": 6064
+        },
+        {
+          "ayahNum": 9,
+          "globalAyahNum": 6067
+        }
+      ],
+      "hamidullahS92": [
+        "et déclare véridique la plus belle récompense.",
+        "et traite de mensonge la plus belle récompense,"
+      ],
+      "kazimirskiS92": [
+        "Qui ajoute foi à la belle parole de la révélation",
+        "Qui regarde comme un mensonge la belle parole de la révélation. "
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "la plus belle (récompense) / le meilleur",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "فَسَنُيَسِّرُهُۥ",
+      "wordId": "ed0ee449-5926-4798-882c-65ae0c55c443",
+      "occurrenceCount": 2,
+      "occurrenceCountInS92": 2,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "يسر"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "then-we-will-ease-him",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "then-we-will-ease-him",
+          "count": 2
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 2
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CONJ",
+        "FUTURE_PART",
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 7,
+          "globalAyahNum": 6065
+        },
+        {
+          "ayahNum": 10,
+          "globalAyahNum": 6068
+        }
+      ],
+      "hamidullahS92": [
+        "Nous lui faciliterons la voie au plus grand bonheur.",
+        "Nous lui faciliterons la voie à la plus grande difficulté,"
+      ],
+      "kazimirskiS92": [
+        "À celui-là nous rendront facile la route du bonheur.",
+        "À celui-là nous rendront pénible la route qui conduit à l’adversité."
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « يسر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:2",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "faciliter / rendre aisé"
+    },
+    {
+      "arabic": "بَخِلَ",
+      "wordId": "2a7d6fcc-7faa-409d-8436-28e9df4b4e06",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "بخل"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "withholds",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "withholds",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "PV"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 8,
+          "globalAyahNum": 6066
+        }
+      ],
+      "hamidullahS92": [
+        "Et quand à celui qui est avare, se dispense (de l’adoration d’Allah),"
+      ],
+      "kazimirskiS92": [
+        "Mais celui qui est avare de ses biens et dédaigne tout le reste,"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « بخل » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "être avare / refuser (par avarice)"
+    },
+    {
+      "arabic": "وَٱسْتَغْنَىٰ",
+      "wordId": "054cc854-8daa-4c2b-a92a-0abbd269a0c0",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "استغنى"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "and-considers-himself-free-from-need",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "and-considers-himself-free-from-need",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CONJ",
+        "PV"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 8,
+          "globalAyahNum": 6066
+        }
+      ],
+      "hamidullahS92": [
+        "Et quand à celui qui est avare, se dispense (de l’adoration d’Allah),"
+      ],
+      "kazimirskiS92": [
+        "Mais celui qui est avare de ses biens et dédaigne tout le reste,"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « استغنى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "se passer de / se suffire à soi-même"
+    },
+    {
+      "arabic": "لِلْعُسْرَىٰ",
+      "wordId": "8fa11743-fb64-4d8d-8bd7-3d90fee17628",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": "afe85368-f5f5-4bcf-aa97-8b2d8513af5f",
+      "currentLemma": "عسرى",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "عسرى"
+      ],
+      "masaqHikmaLemmaIds": [
+        "afe85368-f5f5-4bcf-aa97-8b2d8513af5f"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "towards-[the]-difficulty",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "towards-[the]-difficulty",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "DET",
+        "NOUN_ABSTRACT",
+        "PREP"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 10,
+          "globalAyahNum": 6068
+        }
+      ],
+      "hamidullahS92": [
+        "Nous lui faciliterons la voie à la plus grande difficulté,"
+      ],
+      "kazimirskiS92": [
+        "À celui-là nous rendront pénible la route qui conduit à l’adversité."
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "difficulté / la plus dure (voie)",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "تَرَدَّىٰٓ",
+      "wordId": "1ad289c0-d33c-4614-bce7-7e037de96a83",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "تردى"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "he-falls",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "he-falls",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "PV"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 11,
+          "globalAyahNum": 6069
+        }
+      ],
+      "hamidullahS92": [
+        "et à rien ne lui serviront ses richesses quand il sera jeté (au Feu)."
+      ],
+      "kazimirskiS92": [
+        "Ses richesses ne lui serviront de rien, lorsqu’il périra misérablement dans la fosse de l’enfer? "
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « تردى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "tomber / se précipiter (vers la perte)"
+    },
+    {
+      "arabic": "فَأَنذَرْتُكُمْ",
+      "wordId": "93eca711-986a-4bcd-9809-972c23b16689",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "أنذر"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "so-i-warn-you",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "so-i-warn-you",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "OBJ_PRON",
+        "OTHER",
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 14,
+          "globalAyahNum": 6072
+        }
+      ],
+      "hamidullahS92": [
+        "Je vous ai donc avertis d’un Feu qui flambe."
+      ],
+      "kazimirskiS92": [
+        "Je vous ai déjà avertis du feu qui flamboie."
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « أنذر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "avertir / mettre en garde"
+    },
+    {
+      "arabic": "تَلَظَّىٰ",
+      "wordId": "9ca6c518-793d-4d38-b85f-871ca0f8ffff",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "تلظى"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "blazing",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "blazing",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "PV"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 14,
+          "globalAyahNum": 6072
+        }
+      ],
+      "hamidullahS92": [
+        "Je vous ai donc avertis d’un Feu qui flambe."
+      ],
+      "kazimirskiS92": [
+        "Je vous ai déjà avertis du feu qui flamboie."
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « تلظى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "flamber / s'embraser"
+    },
+    {
+      "arabic": "يَصْلَىٰهَآ",
+      "wordId": "4d12ce47-2345-444d-b107-402ef04382c6",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": null,
+      "currentLemma": null,
+      "resolutionPath": null,
+      "masaqStems": [
+        "صلا"
+      ],
+      "masaqHikmaLemmaIds": [],
+      "masaqQuality": 0,
+      "masaqTopGlossEn": "will-burn-(in)-it",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "will-burn-(in)-it",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 15,
+          "globalAyahNum": 6073
+        }
+      ],
+      "hamidullahS92": [
+        "où ne brûlera que le damné,"
+      ],
+      "kazimirskiS92": [
+        "Il n’y sera jeté que le misérable"
+      ],
+      "classification": "D_REVIEW_MAPPING",
+      "safeGloss": null,
+      "reviewReason": "stem MASAQ « صلا » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1",
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": "brûler / endurer (le feu)"
+    },
+    {
+      "arabic": "وَسَيُجَنَّبُهَا",
+      "wordId": "cf519c50-553d-4842-9dd3-abe0a44321f6",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": "32a1dec4-4450-4bd9-b28b-ba80e57a46a2",
+      "currentLemma": "جنب",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "جنب"
+      ],
+      "masaqHikmaLemmaIds": [
+        "32a1dec4-4450-4bd9-b28b-ba80e57a46a2"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "but-will-be-removed-from-it",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "but-will-be-removed-from-it",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "CONJ",
+        "FUTURE_PART",
+        "IMPERF_PREF",
+        "IV",
+        "OBJ_PRON"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 17,
+          "globalAyahNum": 6075
+        }
+      ],
+      "hamidullahS92": [
+        "alors qu’en sera écarté le pieux,"
+      ],
+      "kazimirskiS92": [
+        "L’homme pieux y échappera,"
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "écarter / éviter / être éloigné",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "ٱلْأَتْقَى",
+      "wordId": "651cfa56-c0e0-43f5-b791-4eac97ae94c1",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": "71f19c20-a9d6-4722-b536-bb05cf84ffa2",
+      "currentLemma": "أتقى",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "أتقى"
+      ],
+      "masaqHikmaLemmaIds": [
+        "71f19c20-a9d6-4722-b536-bb05cf84ffa2"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "the-righteous",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "the-righteous",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "ADJ_COMP",
+        "DET"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 17,
+          "globalAyahNum": 6075
+        }
+      ],
+      "hamidullahS92": [
+        "alors qu’en sera écarté le pieux,"
+      ],
+      "kazimirskiS92": [
+        "L’homme pieux y échappera,"
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "le plus pieux / craignant Dieu",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "لِأَحَدٍ",
+      "wordId": "c4e33877-3fa4-4130-bea2-29da3ba20327",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": "f8983c27-924a-464c-b366-286973a36194",
+      "currentLemma": "أحد",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "أحد"
+      ],
+      "masaqHikmaLemmaIds": [
+        "f8983c27-924a-464c-b366-286973a36194"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "for-anyone",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "for-anyone",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "NOUN_NUM",
+        "PREP"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 19,
+          "globalAyahNum": 6077
+        }
+      ],
+      "hamidullahS92": [
+        "et auprès de qui personne ne profite d’un bienfait intéressé,"
+      ],
+      "kazimirskiS92": [
+        "Et non pas pour qu’un bienfait de sa part lui soit rémunéré,"
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "un / personne / quelqu'un",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    },
+    {
+      "arabic": "تُجْزَىٰٓ",
+      "wordId": "937042dd-916e-45f3-b30f-0389bb5b374c",
+      "occurrenceCount": 1,
+      "occurrenceCountInS92": 1,
+      "surahs": [
+        92
+      ],
+      "currentLemmaId": "1743a3d0-263e-469b-9872-941401e2b207",
+      "currentLemma": "جزي",
+      "resolutionPath": "MASAQ",
+      "masaqStems": [
+        "جزى"
+      ],
+      "masaqHikmaLemmaIds": [
+        "1743a3d0-263e-469b-9872-941401e2b207"
+      ],
+      "masaqQuality": 1,
+      "masaqTopGlossEn": "to-be-recompensed",
+      "masaqTopGlossShare": 1,
+      "masaqGlossesEn": [
+        {
+          "value": "to-be-recompensed",
+          "count": 1
+        }
+      ],
+      "masaqMappingStatuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaqCompetingStems": false,
+      "masaqPos": [
+        "IMPERF_PREF",
+        "IV_PASS"
+      ],
+      "contextInS92": [
+        {
+          "ayahNum": 19,
+          "globalAyahNum": 6077
+        }
+      ],
+      "hamidullahS92": [
+        "et auprès de qui personne ne profite d’un bienfait intéressé,"
+      ],
+      "kazimirskiS92": [
+        "Et non pas pour qu’un bienfait de sa part lui soit rémunéré,"
+      ],
+      "classification": "A_SAFE_GLOSS",
+      "safeGloss": "rétribuer / récompenser",
+      "reviewReason": null,
+      "mappingLemmaId": null,
+      "mappingLemmaArabic": null,
+      "wordTrProposal": null
+    }
+  ],
+  "classification": {
+    "A_SAFE_GLOSS": 7,
+    "B_LEMMA_REVIEW": 0,
+    "C_SAFE_MAPPING": 0,
+    "D_REVIEW_MAPPING": 8,
+    "E_WORD_TRANSLATION": 0,
+    "F_ALREADY_RESOLVABLE": 0
+  },
+  "editorialEvidence": [
+    {
+      "arabic": "سَعْيَكُمْ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "سعي",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "effort / s'efforcer / agir",
+      "confidence": null,
+      "hamidullah": [
+        "Vos efforts sont divergents."
+      ],
+      "kazimirski": [
+        "Vos efforts ont des fins différentes."
+      ],
+      "masaqGlossEn": "your-efforts",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « سعي » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "لَشَتَّىٰ",
+      "lemma": "شتى",
+      "lemmaId": "b134c0e2-c02c-4bfa-910f-f41dc6e6dde4",
+      "masaqStem": "شتى",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "dispersés / divers / séparés",
+      "confidence": 0.85,
+      "hamidullah": [
+        "Vos efforts sont divergents."
+      ],
+      "kazimirski": [
+        "Vos efforts ont des fins différentes."
+      ],
+      "masaqGlossEn": "(are)-surely-diverse",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "بِٱلْحُسْنَىٰ",
+      "lemma": "حسني",
+      "lemmaId": "d53c17f6-57e6-47c7-81d7-af93033fa12a",
+      "masaqStem": "حسنى",
+      "occurrenceCount": 2,
+      "surahsCount": 1,
+      "proposedGloss": "la plus belle (récompense) / le meilleur",
+      "confidence": 0.85,
+      "hamidullah": [
+        "et déclare véridique la plus belle récompense.",
+        "et traite de mensonge la plus belle récompense,"
+      ],
+      "kazimirski": [
+        "Qui ajoute foi à la belle parole de la révélation",
+        "Qui regarde comme un mensonge la belle parole de la révélation. "
+      ],
+      "masaqGlossEn": "in-the-best",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "فَسَنُيَسِّرُهُۥ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "يسر",
+      "occurrenceCount": 2,
+      "surahsCount": 1,
+      "proposedGloss": "faciliter / rendre aisé",
+      "confidence": null,
+      "hamidullah": [
+        "Nous lui faciliterons la voie au plus grand bonheur.",
+        "Nous lui faciliterons la voie à la plus grande difficulté,"
+      ],
+      "kazimirski": [
+        "À celui-là nous rendront facile la route du bonheur.",
+        "À celui-là nous rendront pénible la route qui conduit à l’adversité."
+      ],
+      "masaqGlossEn": "then-we-will-ease-him",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « يسر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:2"
+    },
+    {
+      "arabic": "بَخِلَ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "بخل",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "être avare / refuser (par avarice)",
+      "confidence": null,
+      "hamidullah": [
+        "Et quand à celui qui est avare, se dispense (de l’adoration d’Allah),"
+      ],
+      "kazimirski": [
+        "Mais celui qui est avare de ses biens et dédaigne tout le reste,"
+      ],
+      "masaqGlossEn": "withholds",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « بخل » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "وَٱسْتَغْنَىٰ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "استغنى",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "se passer de / se suffire à soi-même",
+      "confidence": null,
+      "hamidullah": [
+        "Et quand à celui qui est avare, se dispense (de l’adoration d’Allah),"
+      ],
+      "kazimirski": [
+        "Mais celui qui est avare de ses biens et dédaigne tout le reste,"
+      ],
+      "masaqGlossEn": "and-considers-himself-free-from-need",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « استغنى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "لِلْعُسْرَىٰ",
+      "lemma": "عسرى",
+      "lemmaId": "afe85368-f5f5-4bcf-aa97-8b2d8513af5f",
+      "masaqStem": "عسرى",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "difficulté / la plus dure (voie)",
+      "confidence": 0.85,
+      "hamidullah": [
+        "Nous lui faciliterons la voie à la plus grande difficulté,"
+      ],
+      "kazimirski": [
+        "À celui-là nous rendront pénible la route qui conduit à l’adversité."
+      ],
+      "masaqGlossEn": "towards-[the]-difficulty",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "تَرَدَّىٰٓ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "تردى",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "tomber / se précipiter (vers la perte)",
+      "confidence": null,
+      "hamidullah": [
+        "et à rien ne lui serviront ses richesses quand il sera jeté (au Feu)."
+      ],
+      "kazimirski": [
+        "Ses richesses ne lui serviront de rien, lorsqu’il périra misérablement dans la fosse de l’enfer? "
+      ],
+      "masaqGlossEn": "he-falls",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « تردى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "فَأَنذَرْتُكُمْ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "أنذر",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "avertir / mettre en garde",
+      "confidence": null,
+      "hamidullah": [
+        "Je vous ai donc avertis d’un Feu qui flambe."
+      ],
+      "kazimirski": [
+        "Je vous ai déjà avertis du feu qui flamboie."
+      ],
+      "masaqGlossEn": "so-i-warn-you",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « أنذر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "تَلَظَّىٰ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "تلظى",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "flamber / s'embraser",
+      "confidence": null,
+      "hamidullah": [
+        "Je vous ai donc avertis d’un Feu qui flambe."
+      ],
+      "kazimirski": [
+        "Je vous ai déjà avertis du feu qui flamboie."
+      ],
+      "masaqGlossEn": "blazing",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « تلظى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "يَصْلَىٰهَآ",
+      "lemma": null,
+      "lemmaId": null,
+      "masaqStem": "صلا",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "brûler / endurer (le feu)",
+      "confidence": null,
+      "hamidullah": [
+        "où ne brûlera que le damné,"
+      ],
+      "kazimirski": [
+        "Il n’y sera jeté que le misérable"
+      ],
+      "masaqGlossEn": "will-burn-(in)-it",
+      "masaqQuality": 0,
+      "classification": "D_REVIEW_MAPPING",
+      "reviewReason": "stem MASAQ « صلا » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "arabic": "وَسَيُجَنَّبُهَا",
+      "lemma": "جنب",
+      "lemmaId": "32a1dec4-4450-4bd9-b28b-ba80e57a46a2",
+      "masaqStem": "جنب",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "écarter / éviter / être éloigné",
+      "confidence": 0.85,
+      "hamidullah": [
+        "alors qu’en sera écarté le pieux,"
+      ],
+      "kazimirski": [
+        "L’homme pieux y échappera,"
+      ],
+      "masaqGlossEn": "but-will-be-removed-from-it",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "ٱلْأَتْقَى",
+      "lemma": "أتقى",
+      "lemmaId": "71f19c20-a9d6-4722-b536-bb05cf84ffa2",
+      "masaqStem": "أتقى",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "le plus pieux / craignant Dieu",
+      "confidence": 0.85,
+      "hamidullah": [
+        "alors qu’en sera écarté le pieux,"
+      ],
+      "kazimirski": [
+        "L’homme pieux y échappera,"
+      ],
+      "masaqGlossEn": "the-righteous",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "لِأَحَدٍ",
+      "lemma": "أحد",
+      "lemmaId": "f8983c27-924a-464c-b366-286973a36194",
+      "masaqStem": "أحد",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "un / personne / quelqu'un",
+      "confidence": 0.85,
+      "hamidullah": [
+        "et auprès de qui personne ne profite d’un bienfait intéressé,"
+      ],
+      "kazimirski": [
+        "Et non pas pour qu’un bienfait de sa part lui soit rémunéré,"
+      ],
+      "masaqGlossEn": "for-anyone",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    },
+    {
+      "arabic": "تُجْزَىٰٓ",
+      "lemma": "جزي",
+      "lemmaId": "1743a3d0-263e-469b-9872-941401e2b207",
+      "masaqStem": "جزى",
+      "occurrenceCount": 1,
+      "surahsCount": 1,
+      "proposedGloss": "rétribuer / récompenser",
+      "confidence": 0.85,
+      "hamidullah": [
+        "et auprès de qui personne ne profite d’un bienfait intéressé,"
+      ],
+      "kazimirski": [
+        "Et non pas pour qu’un bienfait de sa part lui soit rémunéré,"
+      ],
+      "masaqGlossEn": "to-be-recompensed",
+      "masaqQuality": 1,
+      "classification": "A_SAFE_GLOSS",
+      "reviewReason": null
+    }
+  ],
+  "batchSafe": {
+    "lemmaGlosses": [
+      {
+        "lemma": "شتى",
+        "lemmaId": "b134c0e2-c02c-4bfa-910f-f41dc6e6dde4",
+        "gloss": "dispersés / divers / séparés"
+      },
+      {
+        "lemma": "حسني",
+        "lemmaId": "d53c17f6-57e6-47c7-81d7-af93033fa12a",
+        "gloss": "la plus belle (récompense) / le meilleur"
+      },
+      {
+        "lemma": "عسرى",
+        "lemmaId": "afe85368-f5f5-4bcf-aa97-8b2d8513af5f",
+        "gloss": "difficulté / la plus dure (voie)"
+      },
+      {
+        "lemma": "جنب",
+        "lemmaId": "32a1dec4-4450-4bd9-b28b-ba80e57a46a2",
+        "gloss": "écarter / éviter / être éloigné"
+      },
+      {
+        "lemma": "أتقى",
+        "lemmaId": "71f19c20-a9d6-4722-b536-bb05cf84ffa2",
+        "gloss": "le plus pieux / craignant Dieu"
+      },
+      {
+        "lemma": "أحد",
+        "lemmaId": "f8983c27-924a-464c-b366-286973a36194",
+        "gloss": "un / personne / quelqu'un"
+      },
+      {
+        "lemma": "جزي",
+        "lemmaId": "1743a3d0-263e-469b-9872-941401e2b207",
+        "gloss": "rétribuer / récompenser"
+      }
+    ],
+    "mappings": [],
+    "wordTranslations": []
+  },
+  "batchReview": [
+    {
+      "wordId": "a05da7b5-8a41-4d60-9444-5cd2fd0f2071",
+      "arabic": "سَعْيَكُمْ",
+      "issue": "stem MASAQ « سعي » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "wordId": "ed0ee449-5926-4798-882c-65ae0c55c443",
+      "arabic": "فَسَنُيَسِّرُهُۥ",
+      "issue": "stem MASAQ « يسر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:2"
+    },
+    {
+      "wordId": "2a7d6fcc-7faa-409d-8436-28e9df4b4e06",
+      "arabic": "بَخِلَ",
+      "issue": "stem MASAQ « بخل » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "wordId": "054cc854-8daa-4c2b-a92a-0abbd269a0c0",
+      "arabic": "وَٱسْتَغْنَىٰ",
+      "issue": "stem MASAQ « استغنى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "wordId": "1ad289c0-d33c-4614-bce7-7e037de96a83",
+      "arabic": "تَرَدَّىٰٓ",
+      "issue": "stem MASAQ « تردى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "wordId": "93eca711-986a-4bcd-9809-972c23b16689",
+      "arabic": "فَأَنذَرْتُكُمْ",
+      "issue": "stem MASAQ « أنذر » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "wordId": "9ca6c518-793d-4d38-b85f-871ca0f8ffff",
+      "arabic": "تَلَظَّىٰ",
+      "issue": "stem MASAQ « تلظى » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    },
+    {
+      "wordId": "4d12ce47-2345-444d-b107-402ef04382c6",
+      "arabic": "يَصْلَىٰهَآ",
+      "issue": "stem MASAQ « صلا » UNMAPPED — aucun hikma_lemma_id, quality=0, statuses=UNMAPPED:1"
+    }
+  ],
+  "simulations": {
+    "baseline": {
+      "newCoveredForms": 47,
+      "remainingForms": 15,
+      "coveragePct": 0.7581,
+      "isReady": false,
+      "remainingFormIds": [
+        "a05da7b5-8a41-4d60-9444-5cd2fd0f2071",
+        "5257b829-65e6-43ed-96be-1da4385d8fa7",
+        "bc49ba68-ee55-4028-9f20-dd86f064e391",
+        "ed0ee449-5926-4798-882c-65ae0c55c443",
+        "2a7d6fcc-7faa-409d-8436-28e9df4b4e06",
+        "054cc854-8daa-4c2b-a92a-0abbd269a0c0",
+        "8fa11743-fb64-4d8d-8bd7-3d90fee17628",
+        "1ad289c0-d33c-4614-bce7-7e037de96a83",
+        "93eca711-986a-4bcd-9809-972c23b16689",
+        "9ca6c518-793d-4d38-b85f-871ca0f8ffff",
+        "4d12ce47-2345-444d-b107-402ef04382c6",
+        "cf519c50-553d-4842-9dd3-abe0a44321f6",
+        "651cfa56-c0e0-43f5-b791-4eac97ae94c1",
+        "c4e33877-3fa4-4130-bea2-29da3ba20327",
+        "937042dd-916e-45f3-b30f-0389bb5b374c"
+      ]
+    },
+    "glossOnly": {
+      "newCoveredForms": 54,
+      "remainingForms": 8,
+      "coveragePct": 0.871,
+      "isReady": false,
+      "remainingFormIds": [
+        "a05da7b5-8a41-4d60-9444-5cd2fd0f2071",
+        "ed0ee449-5926-4798-882c-65ae0c55c443",
+        "2a7d6fcc-7faa-409d-8436-28e9df4b4e06",
+        "054cc854-8daa-4c2b-a92a-0abbd269a0c0",
+        "1ad289c0-d33c-4614-bce7-7e037de96a83",
+        "93eca711-986a-4bcd-9809-972c23b16689",
+        "9ca6c518-793d-4d38-b85f-871ca0f8ffff",
+        "4d12ce47-2345-444d-b107-402ef04382c6"
+      ]
+    },
+    "mappingOnly": {
+      "newCoveredForms": 47,
+      "remainingForms": 15,
+      "coveragePct": 0.7581,
+      "isReady": false,
+      "remainingFormIds": [
+        "a05da7b5-8a41-4d60-9444-5cd2fd0f2071",
+        "5257b829-65e6-43ed-96be-1da4385d8fa7",
+        "bc49ba68-ee55-4028-9f20-dd86f064e391",
+        "ed0ee449-5926-4798-882c-65ae0c55c443",
+        "2a7d6fcc-7faa-409d-8436-28e9df4b4e06",
+        "054cc854-8daa-4c2b-a92a-0abbd269a0c0",
+        "8fa11743-fb64-4d8d-8bd7-3d90fee17628",
+        "1ad289c0-d33c-4614-bce7-7e037de96a83",
+        "93eca711-986a-4bcd-9809-972c23b16689",
+        "9ca6c518-793d-4d38-b85f-871ca0f8ffff",
+        "4d12ce47-2345-444d-b107-402ef04382c6",
+        "cf519c50-553d-4842-9dd3-abe0a44321f6",
+        "651cfa56-c0e0-43f5-b791-4eac97ae94c1",
+        "c4e33877-3fa4-4130-bea2-29da3ba20327",
+        "937042dd-916e-45f3-b30f-0389bb5b374c"
+      ]
+    },
+    "wordTrOnly": {
+      "newCoveredForms": 47,
+      "remainingForms": 15,
+      "coveragePct": 0.7581,
+      "isReady": false,
+      "remainingFormIds": [
+        "a05da7b5-8a41-4d60-9444-5cd2fd0f2071",
+        "5257b829-65e6-43ed-96be-1da4385d8fa7",
+        "bc49ba68-ee55-4028-9f20-dd86f064e391",
+        "ed0ee449-5926-4798-882c-65ae0c55c443",
+        "2a7d6fcc-7faa-409d-8436-28e9df4b4e06",
+        "054cc854-8daa-4c2b-a92a-0abbd269a0c0",
+        "8fa11743-fb64-4d8d-8bd7-3d90fee17628",
+        "1ad289c0-d33c-4614-bce7-7e037de96a83",
+        "93eca711-986a-4bcd-9809-972c23b16689",
+        "9ca6c518-793d-4d38-b85f-871ca0f8ffff",
+        "4d12ce47-2345-444d-b107-402ef04382c6",
+        "cf519c50-553d-4842-9dd3-abe0a44321f6",
+        "651cfa56-c0e0-43f5-b791-4eac97ae94c1",
+        "c4e33877-3fa4-4130-bea2-29da3ba20327",
+        "937042dd-916e-45f3-b30f-0389bb5b374c"
+      ]
+    },
+    "safeCombination": {
+      "newCoveredForms": 54,
+      "remainingForms": 8,
+      "coveragePct": 0.871,
+      "isReady": false,
+      "remainingFormIds": [
+        "a05da7b5-8a41-4d60-9444-5cd2fd0f2071",
+        "ed0ee449-5926-4798-882c-65ae0c55c443",
+        "2a7d6fcc-7faa-409d-8436-28e9df4b4e06",
+        "054cc854-8daa-4c2b-a92a-0abbd269a0c0",
+        "1ad289c0-d33c-4614-bce7-7e037de96a83",
+        "93eca711-986a-4bcd-9809-972c23b16689",
+        "9ca6c518-793d-4d38-b85f-871ca0f8ffff",
+        "4d12ce47-2345-444d-b107-402ef04382c6"
+      ]
+    },
+    "completeAfterReview": {
+      "newCoveredForms": 62,
+      "remainingForms": 0,
+      "coveragePct": 1,
+      "isReady": true,
+      "remainingFormIds": []
+    }
+  },
+  "minimalPathToReady": {
+    "safeLemmaGlosses": 7,
+    "safeMappings": 0,
+    "safeWordTranslations": 0,
+    "reviewRequired": 8,
+    "distinctReviewForms": [
+      "سَعْيَكُمْ",
+      "فَسَنُيَسِّرُهُۥ",
+      "بَخِلَ",
+      "وَٱسْتَغْنَىٰ",
+      "تَرَدَّىٰٓ",
+      "فَأَنذَرْتُكُمْ",
+      "تَلَظَّىٰ",
+      "يَصْلَىٰهَآ"
+    ],
+    "canReach100WithSafeOnly": false,
+    "canReach100WithReview": true
+  },
+  "integrity": {
+    "orphanQuranWordsLemma": 0,
+    "orphanWordLemmaMapping": 0,
+    "orphanLinguisticOccurrences": 0,
+    "orphanLemmaTranslations": 0,
+    "duplicateWordLemmaMapping": 0,
+    "duplicateLemmaTranslations": 0,
+    "contradictoryDirectVsWlm": 0,
+    "existingTranslationsIntact": true,
+    "s98StillReady": true,
+    "curriculumUnchanged": true
+  },
+  "invariants": {
+    "databaseWrites": 0,
+    "lexicalWrites": 0,
+    "translationWrites": 0,
+    "curriculumWrites": 0,
+    "masaqWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "readOnly": true
+  },
+  "tests": {
+    "run": true,
+    "vitest": { "passed": 954, "total": 954 },
+    "scriptTypeScript": "PASS (0 errors)",
+    "scriptEslint": "PASS (0 errors, 0 warnings)",
+    "readOnlyStaticCheck": "PASS (0 DB write calls)"
+  },
+  "nextPhase": "PHASE 88F-L — import des éléments SAFE validés (7 lemma glosses → 54/62, 87.1 %), puis traitement séparé des 8 REVIEW (word_translations recommandées comme pour S98 Batch B).",
+  "reviewNote": "Les 8 formes REVIEW (D_REVIEW_MAPPING) ont toutes un stem MASAQ UNMAPPED avec quality=0 — aucun chemin lemma fiable n'existe. La voie la plus sûre est word_translation au niveau forme (comme pour تفرق/يؤتوا dans S98). Chaque forme a déjà une proposition word_tr documentée dans editorialEvidence.proposedGloss."
+}

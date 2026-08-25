@@ -1,0 +1,240 @@
+{
+  "phase": "88F-AS",
+  "verdict": "PHASE_88F_AS_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "editorialReadyForImport": true,
+  "timestamp": "2026-08-24T16:06:19.792Z",
+  "durationSeconds": 21.56,
+  "surah": {
+    "number": 62,
+    "name": "Al-Jumu'ah"
+  },
+  "baseline": {
+    "totalForms": 143,
+    "coveredForms": 122,
+    "unresolvedForms": 21,
+    "coveragePct": 85.3147,
+    "paths": {
+      "pathA_wordTr": 117,
+      "pathB_lemma": 1,
+      "pathC_wlm": 4
+    },
+    "classALemmaReachable": 0
+  },
+  "editorialGlosses": [
+    {
+      "word_id": "940f0b22-7499-43e5-bf41-df04bf6684ab",
+      "arabic": "ٱلْبَيْعَ ۚ",
+      "ayah": "62:9",
+      "gloss": "le commerce / les affaires",
+      "rationale": "Src: Hamidullah \"Ô vous qui avez cru ! Quand on appelle à la Ṣalāt du jour du Vendredi, accourez à l’invocation d’Allah et laissez tout n\" | EN hint: \"the business\" | 62:9",
+      "hamidullahSnippet": "Ô vous qui avez cru ! Quand on appelle à la Ṣalāt du jour du Vendredi, accourez à l’invocation d’Allah et laissez tout négoce . Cela est bien meilleur",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "fae159f4-9093-49ee-84c2-5062a81476cd",
+      "arabic": "هَادُوٓا۟",
+      "ayah": "62:6",
+      "gloss": "Jews",
+      "rationale": "Src: Hamidullah \"Dis : \"Ô vous qui pratiquez le judaïsme! Si vous prétendez être les bien aimés d’Allah à l’exclusion des autres, souhait\" | EN hint: \"(are) Jews\" | 62:6",
+      "hamidullahSnippet": "Dis : \"Ô vous qui pratiquez le judaïsme! Si vous prétendez être les bien aimés d’Allah à l’exclusion des autres, souhaitez donc la mort, si vous êtes ",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "9cf902f3-e763-4e47-954f-69746bcc1024",
+      "arabic": "تَفِرُّونَ",
+      "ayah": "62:8",
+      "gloss": "vous fuyez / vous fuyiez",
+      "rationale": "Src: Hamidullah \"Dis : \"La mort que vous fuyez va certes vous rencontrer. Ensuite vous serez ramenés à Celui qui connaît parfaitement le \" | EN hint: \"you flee\" | 62:8",
+      "hamidullahSnippet": "Dis : \"La mort que vous fuyez va certes vous rencontrer. Ensuite vous serez ramenés à Celui qui connaît parfaitement le monde Invisible et le monde vi",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "302f2dd4-f068-450d-a4e0-6d8d40386aa6",
+      "arabic": "ٱلْحِمَارِ",
+      "ayah": "62:5",
+      "gloss": "comme un âne / l'exemple d'un âne",
+      "rationale": "Src: Hamidullah \"Ceux qui ont été chargés de la Thora mais qui ne l’ont pas appliquée sont pareils à l’âne qui porte des livres. Quel mau\" | EN hint: \"the donkey\" | 62:5",
+      "hamidullahSnippet": "Ceux qui ont été chargés de la Thora mais qui ne l’ont pas appliquée sont pareils à l’âne qui porte des livres. Quel mauvais exemple que celui de ceux",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "61dbf024-f742-4523-bf65-8b353438e88e",
+      "arabic": "ٱلتِّجَـٰرَةِ ۚ",
+      "ayah": "62:11",
+      "gloss": "un commerce quelconque / une marchandise",
+      "rationale": "Src: Hamidullah \"Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qu\" | EN hint: \"(any) transaction\" | 62:11",
+      "hamidullahSnippet": "Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qui est auprès d’Allah est bien ",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "422e1a57-7e60-4122-9c99-c5d8113cfedc",
+      "arabic": "حُمِّلُوا۟",
+      "ayah": "62:5",
+      "gloss": "ont été chargés de / ont reçu en dépôt",
+      "rationale": "Src: Hamidullah \"Ceux qui ont été chargés de la Thora mais qui ne l’ont pas appliquée sont pareils à l’âne qui porte des livres. Quel mau\" | EN hint: \"were entrusted\" | 62:5",
+      "hamidullahSnippet": "Ceux qui ont été chargés de la Thora mais qui ne l’ont pas appliquée sont pareils à l’âne qui porte des livres. Quel mauvais exemple que celui de ceux",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "e71661be-7879-473b-be4a-333f7aae9c16",
+      "arabic": "ٱلْجُمُعَةِ",
+      "ayah": "62:9",
+      "gloss": "le jour du Vendredi / le jour de la congrégation",
+      "rationale": "Src: Hamidullah \"Ô vous qui avez cru ! Quand on appelle à la Ṣalāt du jour du Vendredi, accourez à l’invocation d’Allah et laissez tout n\" | EN hint: \"(of) Friday\" | 62:9",
+      "hamidullahSnippet": "Ô vous qui avez cru ! Quand on appelle à la Ṣalāt du jour du Vendredi, accourez à l’invocation d’Allah et laissez tout négoce . Cela est bien meilleur",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "3c78a4b2-1946-4907-bf61-2a45b764a0d4",
+      "arabic": "ٱلصَّلَوٰةُ",
+      "ayah": "62:10",
+      "gloss": "la prière",
+      "rationale": "Src: Hamidullah \"Puis quand la prière (As-Salât) est achevée, dispersez-vous sur la terre, et recherchez [quelque effet] de la grâce d’Al\" | EN hint: \"the prayer\" | 62:10",
+      "hamidullahSnippet": "Puis quand la prière (As-Salât) est achevée, dispersez-vous sur la terre, et recherchez [quelque effet] de la grâce d’Allah, et invoquez beaucoup Alla",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "202e1942-030a-4c37-999a-51efe4694a0e",
+      "arabic": "قَآئِمًۭا ۚ",
+      "ayah": "62:11",
+      "gloss": "debout / planté là",
+      "rationale": "Src: Hamidullah \"Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qu\" | EN hint: \"standing\" | 62:11",
+      "hamidullahSnippet": "Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qui est auprès d’Allah est bien ",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "8ed73563-9259-4392-87dc-2aee179d1440",
+      "arabic": "ٱللَّهْوِ",
+      "ayah": "62:11",
+      "gloss": "divertissement / amusement",
+      "rationale": "Src: Hamidullah \"Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qu\" | EN hint: \"the sport\" | 62:11",
+      "hamidullahSnippet": "Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qui est auprès d’Allah est bien ",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "cb1ce78e-aec9-4ca5-8d60-e539b59576aa",
+      "arabic": "يَحْمِلُوهَا",
+      "ayah": "62:5",
+      "gloss": "le portassent / le portaient",
+      "rationale": "Src: Hamidullah \"Ceux qui ont été chargés de la Thora mais qui ne l’ont pas appliquée sont pareils à l’âne qui porte des livres. Quel mau\" | EN hint: \"they bore it\" | 62:5",
+      "hamidullahSnippet": "Ceux qui ont été chargés de la Thora mais qui ne l’ont pas appliquée sont pareils à l’âne qui porte des livres. Quel mauvais exemple que celui de ceux",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "c8ec2fa5-f1c8-44dd-8f24-7e65b1eccd0a",
+      "arabic": "ٱنفَضُّوٓا۟",
+      "ayah": "62:11",
+      "gloss": "ils se précipitent / ils s'empressent vers",
+      "rationale": "Src: Hamidullah \"Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qu\" | EN hint: \"they rushed\" | 62:11",
+      "hamidullahSnippet": "Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qui est auprès d’Allah est bien ",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "939fd9c3-6c89-4d31-8c0c-fd8ba1f651db",
+      "arabic": "قُضِيَتِ",
+      "ayah": "62:10",
+      "gloss": "concluded",
+      "rationale": "Src: Hamidullah \"Puis quand la prière (As-Salât) est achevée, dispersez-vous sur la terre, et recherchez [quelque effet] de la grâce d’Al\" | EN hint: \"is concluded\" | 62:10",
+      "hamidullahSnippet": "Puis quand la prière (As-Salât) est achevée, dispersez-vous sur la terre, et recherchez [quelque effet] de la grâce d’Allah, et invoquez beaucoup Alla",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "492a6d1b-04c2-49fe-85f9-4590a3cfc80f",
+      "arabic": "أَسْفَارًۢا ۚ",
+      "ayah": "62:5",
+      "gloss": "des livres / des feuillets",
+      "rationale": "Src: Hamidullah \"Ceux qui ont été chargés de la Thora mais qui ne l’ont pas appliquée sont pareils à l’âne qui porte des livres. Quel mau\" | EN hint: \"books\" | 62:5",
+      "hamidullahSnippet": "Ceux qui ont été chargés de la Thora mais qui ne l’ont pas appliquée sont pareils à l’âne qui porte des livres. Quel mauvais exemple que celui de ceux",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "964cf1d1-5408-44e9-9207-10f6706592bf",
+      "arabic": "يَتَمَنَّوْنَهُۥٓ",
+      "ayah": "62:7",
+      "gloss": "ils le souhaiteraient / ils le désireraient",
+      "rationale": "Src: Hamidullah \"Or, ils ne la souhaiteront jamais, à cause de ce que leurs mains ont préparé. Allah cependant connaît bien les injustes.\" | EN hint: \"they will wish for it\" | 62:7",
+      "hamidullahSnippet": "Or, ils ne la souhaiteront jamais, à cause de ce que leurs mains ont préparé. Allah cependant connaît bien les injustes.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "5f7cd675-eb18-4151-8100-95f36ab17759",
+      "arabic": "ٱلْقُدُّوسِ",
+      "ayah": "62:1",
+      "gloss": "le Saint / le Pur",
+      "rationale": "Src: Hamidullah \"Ce qui est dans les cieux et ce qui sur la Terre glorifient Allah, le Souverain, le Pur, le Puissant, le Sage.\" | EN hint: \"the Holy\" | 62:1",
+      "hamidullahSnippet": "Ce qui est dans les cieux et ce qui sur la Terre glorifient Allah, le Souverain, le Pur, le Puissant, le Sage.",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "c26d6197-4350-45a6-b37c-820207b1f5a3",
+      "arabic": "مُلَـٰقِيكُمْ ۖ",
+      "ayah": "62:8",
+      "gloss": "qui vous rencontrera / vous rejoindra",
+      "rationale": "Src: Hamidullah \"Dis : \"La mort que vous fuyez va certes vous rencontrer. Ensuite vous serez ramenés à Celui qui connaît parfaitement le \" | EN hint: \"(will) meet you\" | 62:8",
+      "hamidullahSnippet": "Dis : \"La mort que vous fuyez va certes vous rencontrer. Ensuite vous serez ramenés à Celui qui connaît parfaitement le monde Invisible et le monde vi",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "7130b59f-afcf-4907-b730-998b75a3193b",
+      "arabic": "وَتَرَكُوكَ",
+      "ayah": "62:11",
+      "gloss": "et te laissèrent / et t'abandonnèrent",
+      "rationale": "Src: Hamidullah \"Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qu\" | EN hint: \"and left you\" | 62:11",
+      "hamidullahSnippet": "Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qui est auprès d’Allah est bien ",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "8262e403-92c2-40fb-bdf6-cc8742b97528",
+      "arabic": "لِلصَّلَوٰةِ",
+      "ayah": "62:9",
+      "gloss": "à la prière / pour la prière",
+      "rationale": "Src: Hamidullah \"Ô vous qui avez cru ! Quand on appelle à la Ṣalāt du jour du Vendredi, accourez à l’invocation d’Allah et laissez tout n\" | EN hint: \"for (the) prayer\" | 62:9",
+      "hamidullahSnippet": "Ô vous qui avez cru ! Quand on appelle à la Ṣalāt du jour du Vendredi, accourez à l’invocation d’Allah et laissez tout négoce . Cela est bien meilleur",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "2eec89fe-66de-49c7-8441-56469ac98821",
+      "arabic": "فَٱسْعَوْا۟",
+      "ayah": "62:9",
+      "gloss": "hâtez-vous / dirigez-vous",
+      "rationale": "Src: Hamidullah \"Ô vous qui avez cru ! Quand on appelle à la Ṣalāt du jour du Vendredi, accourez à l’invocation d’Allah et laissez tout n\" | EN hint: \"then hasten\" | 62:9",
+      "hamidullahSnippet": "Ô vous qui avez cru ! Quand on appelle à la Ṣalāt du jour du Vendredi, accourez à l’invocation d’Allah et laissez tout négoce . Cela est bien meilleur",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    },
+    {
+      "word_id": "01706a00-69e7-4b5d-b2ee-50debb5f01b9",
+      "arabic": "لَهْوًا",
+      "ayah": "62:11",
+      "gloss": "divertissement / amusement",
+      "rationale": "Src: Hamidullah \"Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qu\" | EN hint: \"a sport\" | 62:11",
+      "hamidullahSnippet": "Quand ils entrevoient quelque commerce ou quelque divertissement, ils s’y dispersent et te laissent debout. Dis : \"Ce qui est auprès d’Allah est bien ",
+      "classification": "A_WORD_TRANSLATION_REQUIRED"
+    }
+  ],
+  "validation": {
+    "totalGlosses": 21,
+    "expectedGlosses": 21,
+    "uniqueWordIds": 21,
+    "emptyGlosses": 0,
+    "validationIssues": 0,
+    "identitySafe": true
+  },
+  "simulation": {
+    "baselineCovered": 122,
+    "baselineTotal": 143,
+    "newWordTranslations": 21,
+    "afterImport": 143,
+    "afterImportPct": 100,
+    "ready": true
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "wlmCreated": 0,
+    "curriculumWrites": 0,
+    "noHikmaLemmaIdUsed": true,
+    "runtimeModelPure": true
+  }
+}

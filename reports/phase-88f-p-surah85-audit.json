@@ -1,0 +1,940 @@
+{
+  "phase": "88F-P",
+  "verdict": "PHASE_88F_P_COMPLETE",
+  "read_only": true,
+  "database_writes": 0,
+  "timestamp": "2026-08-24T10:30:15.972Z",
+  "durationSeconds": 21.34,
+  "target": {
+    "number": 85,
+    "name": "Al-Buruj"
+  },
+  "baseline": {
+    "totalForms": 98,
+    "coveredForms": 80,
+    "missingForms": 18,
+    "coveragePct": 0.8163,
+    "coveredOccurrences": 9879,
+    "totalOccurrences": 9897,
+    "missingOccurrences": 18,
+    "readiness": "IN_PREPARATION",
+    "globalReady": 26,
+    "globalInPrep": 87,
+    "globalRef": 1
+  },
+  "classification": {
+    "A": 13,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F": 5,
+    "G": 0,
+    "H": 0,
+    "I": 0
+  },
+  "missingForms": [
+    {
+      "word_id": "c37aa998-1c98-40bc-a53a-a2e925b6a8ba",
+      "arabic": "ٱلْبُرُوجِ",
+      "lemma_id": "30eae095-6508-48c6-b5f4-ac305370b71a",
+      "lemma_arabic": "بروج",
+      "masaq_stems": [
+        "بروج"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "the-constellations",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Par le ciel aux constellations !"
+      ],
+      "kazimirski_samples": [
+        "J’en jure par le ciel orné de douze signes du zodiaque,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "30eae095-6508-48c6-b5f4-ac305370b71a",
+      "safe_gloss_text": "(à écrire pour « بروج »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "0666ce73-85a2-4ef4-acc8-3ca22feca514",
+      "arabic": "ٱلْمَوْعُودِ",
+      "lemma_id": "17aede51-873c-4133-bf39-85377b4ae3c8",
+      "lemma_arabic": "موعود",
+      "masaq_stems": [
+        "موعود"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "promised",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_DEF_NOM",
+        "DET",
+        "NOUN_PASSIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et par le jour promis !"
+      ],
+      "kazimirski_samples": [
+        "Par le jour promis,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "17aede51-873c-4133-bf39-85377b4ae3c8",
+      "safe_gloss_text": "(à écrire pour « موعود »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "de9df2b0-67f3-4f0c-aaf5-547ffa55085d",
+      "arabic": "وَشَاهِدٍۢ",
+      "lemma_id": "da7b0617-e248-45ab-9ee7-a7f571ce1dbb",
+      "lemma_arabic": "شاهد",
+      "masaq_stems": [
+        "شاهد"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-(the)-witness",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "NOUN_ACTIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et par le témoin <sup foot_note=212573>1</sup> et ce dont on témoigne !"
+      ],
+      "kazimirski_samples": [
+        "Par le témoin et le témoignage, "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "da7b0617-e248-45ab-9ee7-a7f571ce1dbb",
+      "safe_gloss_text": "(à écrire pour « شاهد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "51f396b4-ed0d-41f9-a376-a071c68f1188",
+      "arabic": "وَمَشْهُودٍۢ",
+      "lemma_id": "d1b451fe-7589-451f-8d11-b511fae1a39a",
+      "lemma_arabic": "مشهود",
+      "masaq_stems": [
+        "مشهود"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "and-what-is-witnessed",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "NOUN_PASSIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "et par le témoin <sup foot_note=212573>1</sup> et ce dont on témoigne !"
+      ],
+      "kazimirski_samples": [
+        "Par le témoin et le témoignage, "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "d1b451fe-7589-451f-8d11-b511fae1a39a",
+      "safe_gloss_text": "(à écrire pour « مشهود »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "b086b11c-410e-4af4-bc20-316143c45e57",
+      "arabic": "ٱلْأُخْدُودِ",
+      "lemma_id": "b2213b20-2d26-4eaf-ae2d-984761443c64",
+      "lemma_arabic": "أخدود",
+      "masaq_stems": [
+        "أخدود"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(of)-the-pit",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_PROP_FOREIGN"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Périssent les gens ceux [qui creusèrent ] des fossés (Al Ukhdûd) <sup foot_note=212574>1</sup>,"
+      ],
+      "kazimirski_samples": [
+        "Périssent ( maudits soient ) les maitres du fossé"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "b2213b20-2d26-4eaf-ae2d-984761443c64",
+      "safe_gloss_text": "(à écrire pour « أخدود »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "f74460fc-9824-445d-bc65-77a79ef55839",
+      "arabic": "ٱلْوَقُودِ",
+      "lemma_id": "bee67b4d-c6de-4b0a-b9d2-af3289103ec4",
+      "lemma_arabic": "وقود",
+      "masaq_stems": [
+        "وقود"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(of)-the-fuel",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "DET",
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "au feu plein de combustible,"
+      ],
+      "kazimirski_samples": [
+        "Rempli d’un feu entretenu sans cesse,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "bee67b4d-c6de-4b0a-b9d2-af3289103ec4",
+      "safe_gloss_text": "(à écrire pour « وقود »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "ef7184a7-73ba-4c9d-81c6-40dc41711e65",
+      "arabic": "قُعُودٌۭ",
+      "lemma_id": "6de01566-7105-4693-89e7-cde9e67bb4d5",
+      "lemma_arabic": "قعود",
+      "masaq_stems": [
+        "قعود"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(were)-sitting",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_ACTIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "cependant qu’ils étaient assis tout autour,"
+      ],
+      "kazimirski_samples": [
+        "Quand ils étaient assis tout autour,"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "6de01566-7105-4693-89e7-cde9e67bb4d5",
+      "safe_gloss_text": "(à écrire pour « قعود »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "c9a637b3-0208-4665-a217-13712d6ecf65",
+      "arabic": "شُهُودٌۭ",
+      "lemma_id": "7abd7022-bf0c-4c7e-8440-c60c4f4fc35a",
+      "lemma_arabic": "شهود",
+      "masaq_stems": [
+        "شهود"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "witnesses",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_DEF_NOM",
+        "NOUN_ACTIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "ils étaient ainsi témoins de ce qu’ils faisaient des croyants,"
+      ],
+      "kazimirski_samples": [
+        "Pour être eux-mêmes témoins de ce qu’ils faisaient souffrir aux croyants."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "7abd7022-bf0c-4c7e-8440-c60c4f4fc35a",
+      "safe_gloss_text": "(à écrire pour « شهود »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "07e811a1-415f-4569-8c9b-5130b6cdaa41",
+      "arabic": "نَقَمُوا۟",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "نقم"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "they-resented",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "à qui ils ne leur reprochaient que d’avoir cru en Allah, le Puissant, le Digne de louange,"
+      ],
+      "kazimirski_samples": [
+        "Ils ne les ont tourmentés que parce que ceux-ci croyaient en Dieu puissant et glorieux,"
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « نقم » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "730a207b-700a-41dc-be49-f384474c5d32",
+      "arabic": "فَتَنُوا۟",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "فتن"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "persecuted",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "PV",
+        "SUBJ_PRON"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Ceux qui font subir des épreuves aux croyants et aux croyantes, puis ne se repentent pas, auront le châtiment de l’Enfer et le supplice du feu."
+      ],
+      "kazimirski_samples": [
+        "Ceux qui faisaient subir des tourments aux fidèles des deux sexes, qui n’ont pas fait pénitence, subiront les tourments de la géhenne, les tourments du feu."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « فتن » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "cfec775a-b358-467f-b469-856d04c937e9",
+      "arabic": "بَطْشَ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "بطش"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "(the)-grip",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_DEF_GEN",
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "La riposte de ton Seigneur est redoutable."
+      ],
+      "kazimirski_samples": [
+        "La vengeance de ton Seigneur sera terrible."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « بطش » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "4a2f03b3-c41f-4f84-bccd-df3276e9a954",
+      "arabic": "وَيُعِيدُ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "عيد"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "and-repeats",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CONJ",
+        "IMPERF_PREF",
+        "IV"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "C’est Lui, certes, qui commence (la création) et la refait."
+      ],
+      "kazimirski_samples": [
+        "Il produit tout et fait rentrer tout en lui. "
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « عيد » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "d9bea515-58b2-4fa1-ab4f-d4a5b6b259d9",
+      "arabic": "ٱلْوَدُودُ",
+      "lemma_id": "3e5c528b-10f0-4510-aaf5-823675fc9ad8",
+      "lemma_arabic": "ودود",
+      "masaq_stems": [
+        "ودود"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "the-most-loving",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "ADJ_QUALIT",
+        "CASE_DEF_GEN",
+        "DET"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Et c’est Lui le Pardonneur, le Tout Affectueux,"
+      ],
+      "kazimirski_samples": [
+        "Il est indulgent et plein d’amour; "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "3e5c528b-10f0-4510-aaf5-823675fc9ad8",
+      "safe_gloss_text": "(à écrire pour « ودود »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "873ad8fb-c131-4d17-8e5c-be9bca8ee4a9",
+      "arabic": "ٱلْمَجِيدُ",
+      "lemma_id": "809b7aeb-a4e7-4e35-9117-9e72425bd777",
+      "lemma_arabic": "مجيد",
+      "masaq_stems": [
+        "مجيد"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "the-glorious",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "ADJ_QUALIT",
+        "DET"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Le Maître du Trône, le Tout Glorieux,"
+      ],
+      "kazimirski_samples": [
+        "Il est le possesseur du trône glorieux; "
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "809b7aeb-a4e7-4e35-9117-9e72425bd777",
+      "safe_gloss_text": "(à écrire pour « مجيد »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "2f2e238c-1484-4dad-8bc9-3cbd2b81f5a6",
+      "arabic": "ٱلْجُنُودِ",
+      "lemma_id": "7a8faf2f-2aa5-4167-8f7a-de6d3581a841",
+      "lemma_arabic": "جنود",
+      "masaq_stems": [
+        "جنود"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "(of)-the-hosts",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "CASE_DEF_GEN",
+        "DET",
+        "NOUN_RELATIVE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "T’est-il parvenu le récit des armées,"
+      ],
+      "kazimirski_samples": [
+        "N’as-tu jamais entendu l’histoire des armées"
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "7a8faf2f-2aa5-4167-8f7a-de6d3581a841",
+      "safe_gloss_text": "(à écrire pour « جنود »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "2e5d73da-c90a-4221-acc0-a7ee0fda0033",
+      "arabic": "تَكْذِيبٍۢ",
+      "lemma_id": null,
+      "lemma_arabic": null,
+      "masaq_stems": [
+        "تكذيب"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "UNMAPPED",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 0,
+      "top_gloss_en": "denial",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "GERUND"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "Mais ceux qui ne croient pas persistent à démentir,"
+      ],
+      "kazimirski_samples": [
+        "Mais les infidèles nient tout."
+      ],
+      "occurrences": 1,
+      "classification": "F_REVIEW_WORD_TRANSLATION",
+      "safe_gloss_lemma_id": null,
+      "safe_gloss_text": null,
+      "safe_word_tr_text": null,
+      "review_reason": "stem « تكذيب » UNMAPPED quality=0 — word_translation à écrire.",
+      "confidence": 0
+    },
+    {
+      "word_id": "d6a5f664-b3d4-4a7d-a45c-5a3aded45ef4",
+      "arabic": "لَوْحٍۢ",
+      "lemma_id": "0c71fb06-0d56-477b-9efb-4cfc8f3a1315",
+      "lemma_arabic": "لوح",
+      "masaq_stems": [
+        "لوح"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "a-tablet",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_CONCRETE"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "préservé sur une Tablette (auprès d’Allah)."
+      ],
+      "kazimirski_samples": [
+        "Est écrit sur une table gardée avec soin."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "0c71fb06-0d56-477b-9efb-4cfc8f3a1315",
+      "safe_gloss_text": "(à écrire pour « لوح »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    },
+    {
+      "word_id": "67a41d5c-8f60-4814-934e-ada7b0d6696d",
+      "arabic": "مَّحْفُوظٍۭ",
+      "lemma_id": "af80f399-f2b9-4be2-9ac4-cb4c6895ab48",
+      "lemma_arabic": "محفوظ",
+      "masaq_stems": [
+        "محفوظ"
+      ],
+      "mapping_statuses": [
+        {
+          "value": "EXACT",
+          "count": 1
+        }
+      ],
+      "masaq_quality": 1,
+      "top_gloss_en": "guarded",
+      "top_gloss_share": 1,
+      "competing_stems": false,
+      "pos": [
+        "NOUN_PASSIVE_PART"
+      ],
+      "has_hamidullah": true,
+      "has_kazimirski": true,
+      "hamidullah_samples": [
+        "préservé sur une Tablette (auprès d’Allah)."
+      ],
+      "kazimirski_samples": [
+        "Est écrit sur une table gardée avec soin."
+      ],
+      "occurrences": 1,
+      "classification": "A_SAFE_LEMMA_GLOSS",
+      "safe_gloss_lemma_id": "af80f399-f2b9-4be2-9ac4-cb4c6895ab48",
+      "safe_gloss_text": "(à écrire pour « محفوظ »)",
+      "safe_word_tr_text": null,
+      "review_reason": null,
+      "confidence": 0.7
+    }
+  ],
+  "safeGlossCandidates": [
+    {
+      "lemma_id": "30eae095-6508-48c6-b5f4-ac305370b71a",
+      "lemma_arabic": "بروج",
+      "gloss": "(à écrire pour « بروج »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "17aede51-873c-4133-bf39-85377b4ae3c8",
+      "lemma_arabic": "موعود",
+      "gloss": "(à écrire pour « موعود »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "da7b0617-e248-45ab-9ee7-a7f571ce1dbb",
+      "lemma_arabic": "شاهد",
+      "gloss": "(à écrire pour « شاهد »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "d1b451fe-7589-451f-8d11-b511fae1a39a",
+      "lemma_arabic": "مشهود",
+      "gloss": "(à écrire pour « مشهود »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "b2213b20-2d26-4eaf-ae2d-984761443c64",
+      "lemma_arabic": "أخدود",
+      "gloss": "(à écrire pour « أخدود »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "bee67b4d-c6de-4b0a-b9d2-af3289103ec4",
+      "lemma_arabic": "وقود",
+      "gloss": "(à écrire pour « وقود »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "6de01566-7105-4693-89e7-cde9e67bb4d5",
+      "lemma_arabic": "قعود",
+      "gloss": "(à écrire pour « قعود »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "7abd7022-bf0c-4c7e-8440-c60c4f4fc35a",
+      "lemma_arabic": "شهود",
+      "gloss": "(à écrire pour « شهود »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "3e5c528b-10f0-4510-aaf5-823675fc9ad8",
+      "lemma_arabic": "ودود",
+      "gloss": "(à écrire pour « ودود »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "809b7aeb-a4e7-4e35-9117-9e72425bd777",
+      "lemma_arabic": "مجيد",
+      "gloss": "(à écrire pour « مجيد »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "7a8faf2f-2aa5-4167-8f7a-de6d3581a841",
+      "lemma_arabic": "جنود",
+      "gloss": "(à écrire pour « جنود »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "0c71fb06-0d56-477b-9efb-4cfc8f3a1315",
+      "lemma_arabic": "لوح",
+      "gloss": "(à écrire pour « لوح »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    },
+    {
+      "lemma_id": "af80f399-f2b9-4be2-9ac4-cb4c6895ab48",
+      "lemma_arabic": "محفوظ",
+      "gloss": "(à écrire pour « محفوظ »)",
+      "forms_in_S85": 1,
+      "forms_safe": 1
+    }
+  ],
+  "safeWordTrCandidates": [],
+  "reviewWordTrCandidates": [
+    {
+      "word_id": "07e811a1-415f-4569-8c9b-5130b6cdaa41",
+      "arabic": "نَقَمُوا۟",
+      "masaq_stems": [
+        "نقم"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « نقم » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "730a207b-700a-41dc-be49-f384474c5d32",
+      "arabic": "فَتَنُوا۟",
+      "masaq_stems": [
+        "فتن"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « فتن » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "cfec775a-b358-467f-b469-856d04c937e9",
+      "arabic": "بَطْشَ",
+      "masaq_stems": [
+        "بطش"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « بطش » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "4a2f03b3-c41f-4f84-bccd-df3276e9a954",
+      "arabic": "وَيُعِيدُ",
+      "masaq_stems": [
+        "عيد"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « عيد » UNMAPPED quality=0 — word_translation à écrire."
+    },
+    {
+      "word_id": "2e5d73da-c90a-4221-acc0-a7ee0fda0033",
+      "arabic": "تَكْذِيبٍۢ",
+      "masaq_stems": [
+        "تكذيب"
+      ],
+      "masaq_quality": 0,
+      "review_reason": "stem « تكذيب » UNMAPPED quality=0 — word_translation à écrire."
+    }
+  ],
+  "simulations": [
+    {
+      "name": "BASELINE",
+      "forms": 80,
+      "pct": 81.6,
+      "ready": false,
+      "remaining": 18
+    },
+    {
+      "name": "SAFE_GLOSSES",
+      "forms": 93,
+      "pct": 94.9,
+      "ready": false,
+      "remaining": 5
+    },
+    {
+      "name": "SAFE_PLUS_REVIEW",
+      "forms": 98,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    },
+    {
+      "name": "COMPLETE",
+      "forms": 98,
+      "pct": 100,
+      "ready": true,
+      "remaining": 0
+    }
+  ],
+  "cost": {
+    "totalLemmaGlosses": 13,
+    "safeLemmaGlosses": 13,
+    "safeWordTranslations": 0,
+    "reviewWordTranslations": 5,
+    "totalActionsToReady": 18,
+    "safeActions": 13,
+    "reviewActions": 5,
+    "estimatedNewFormsSafeOnly": 13,
+    "estimatedNewFormsComplete": 18
+  },
+  "integrity": {
+    "orphan_quran_words_lemma": 0,
+    "orphan_word_lemma_mapping": 0,
+    "orphan_linguistic_occurrences": 0,
+    "orphan_lemma_translations": 0,
+    "duplicate_word_lemma_mapping": 0,
+    "duplicate_lemma_translations": 0,
+    "duplicate_FR_glosses": 0,
+    "contradictory_direct_vs_wlm": 0,
+    "S98_still_READY": true,
+    "S92_still_READY": true,
+    "S82_still_READY": true,
+    "classifySurahReadiness_unchanged": true,
+    "curriculum_unchanged": true
+  },
+  "invariants": {
+    "database_writes": 0,
+    "lexical_writes": 0,
+    "translation_writes": 0,
+    "curriculum_writes": 0,
+    "masaq_writes": 0,
+    "migrations": 0,
+    "seeds": 0
+  },
+  "tests": {
+    "vitest": "954/954 PASS",
+    "typescript": "0 error",
+    "eslint": "0 error · 0 warning",
+    "readOnlyStaticCheck": "PASS (only doc comment)"
+  },
+  "nextPhase": {
+    "phase": "88F-Q",
+    "name": "S85 AL-BURUJ RESOLUTION",
+    "actions": "13 lemma_translations + 5 word_translations = 18 writes",
+    "expected": "98/98 → 100 % → READY"
+  }
+}

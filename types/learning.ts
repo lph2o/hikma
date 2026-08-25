@@ -169,6 +169,12 @@ export type UserSettings = {
   daily_duration: 5 | 10 | 15 | 20 | 30 | null;
   learning_pace: LearningPace | null;
   preferred_surah_number: number | null;
+  /** IANA timezone (ex. Europe/Paris). Null = UTC (fallback). */
+  timezone: string | null;
+  /** Rappel quotidien activé. Défaut false (opt-in). */
+  reminder_enabled: boolean;
+  /** Heure locale du rappel (HH:MM, 24h). Défaut "19:00". */
+  reminder_time: string;
   created_at: ISODateString;
   updated_at: ISODateString;
 };

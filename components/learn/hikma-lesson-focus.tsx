@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BodyLarge, BodyMedium, Caption, H2 } from "@/components/ui/typography";
 import type { LessonAyahContext } from "@/lib/learning/queries";
+import { VerseAudioButton } from "@/components/ui/verse-audio";
 
 export function HikmaLessonFocusHeader({
   title,
@@ -64,6 +65,10 @@ export function HikmaContextDisclosure({
                 </ArabicText>
               </CardContent>
             </Card>
+            <VerseAudioButton
+              globalAyahNumber={ayah.globalAyahNumber}
+              className="self-start"
+            />
             <div className="flex flex-col gap-3 rounded-2xl border border-border-subtle bg-background p-5 sm:p-6">
               <Caption>Traduction française</Caption>
               {ayah.french ? (

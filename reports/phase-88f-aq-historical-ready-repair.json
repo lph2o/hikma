@@ -1,0 +1,256 @@
+{
+  "phase": "88F-AQ",
+  "verdict": "PHASE_88F_AQ_COMPLETE",
+  "mode": "IDEMPOTENCE",
+  "timestamp": "2026-08-24T15:53:04.304Z",
+  "durationSeconds": 31.75,
+  "targetSurahs": [
+    92,
+    98,
+    82,
+    85,
+    90,
+    70
+  ],
+  "baselines": [
+    {
+      "surahNumber": 92,
+      "surahName": "Al-Layl",
+      "totalForms": 62,
+      "pathA": 61,
+      "pathB": 0,
+      "pathC": 1,
+      "unresolved": 0
+    },
+    {
+      "surahNumber": 98,
+      "surahName": "Al-Bayyinah",
+      "totalForms": 79,
+      "pathA": 74,
+      "pathB": 0,
+      "pathC": 5,
+      "unresolved": 0
+    },
+    {
+      "surahNumber": 82,
+      "surahName": "Al-Infitar",
+      "totalForms": 66,
+      "pathA": 65,
+      "pathB": 0,
+      "pathC": 1,
+      "unresolved": 0
+    },
+    {
+      "surahNumber": 85,
+      "surahName": "Al-Buruj",
+      "totalForms": 98,
+      "pathA": 95,
+      "pathB": 0,
+      "pathC": 3,
+      "unresolved": 0
+    },
+    {
+      "surahNumber": 90,
+      "surahName": "Al-Balad",
+      "totalForms": 73,
+      "pathA": 73,
+      "pathB": 0,
+      "pathC": 0,
+      "unresolved": 0
+    },
+    {
+      "surahNumber": 70,
+      "surahName": "Al-Ma'arij",
+      "totalForms": 189,
+      "pathA": 187,
+      "pathB": 0,
+      "pathC": 2,
+      "unresolved": 0
+    }
+  ],
+  "preflight": {
+    "payloadCount": 94,
+    "uniqueWordIds": 94,
+    "NEW": 0,
+    "EXISTING_SAME": 94,
+    "CONFLICT": 0,
+    "MISSING": 0,
+    "OUT_OF_SCOPE": 0,
+    "INVALID": 0
+  },
+  "import": {
+    "mode": "IDEMPOTENCE",
+    "wouldInsert": 0
+  },
+  "postRuntime": [
+    {
+      "surahNumber": 92,
+      "surahName": "Al-Layl",
+      "totalForms": 62,
+      "coveredForms": 62,
+      "coveragePct": 100,
+      "runtimePaths": {
+        "pathA": 61,
+        "pathB": 0,
+        "pathC": 1
+      },
+      "readiness": "READY",
+      "ready": true
+    },
+    {
+      "surahNumber": 98,
+      "surahName": "Al-Bayyinah",
+      "totalForms": 79,
+      "coveredForms": 79,
+      "coveragePct": 100,
+      "runtimePaths": {
+        "pathA": 74,
+        "pathB": 0,
+        "pathC": 5
+      },
+      "readiness": "READY",
+      "ready": true
+    },
+    {
+      "surahNumber": 82,
+      "surahName": "Al-Infitar",
+      "totalForms": 66,
+      "coveredForms": 66,
+      "coveragePct": 100,
+      "runtimePaths": {
+        "pathA": 65,
+        "pathB": 0,
+        "pathC": 1
+      },
+      "readiness": "READY",
+      "ready": true
+    },
+    {
+      "surahNumber": 85,
+      "surahName": "Al-Buruj",
+      "totalForms": 98,
+      "coveredForms": 98,
+      "coveragePct": 100,
+      "runtimePaths": {
+        "pathA": 95,
+        "pathB": 0,
+        "pathC": 3
+      },
+      "readiness": "READY",
+      "ready": true
+    },
+    {
+      "surahNumber": 90,
+      "surahName": "Al-Balad",
+      "totalForms": 73,
+      "coveredForms": 73,
+      "coveragePct": 100,
+      "runtimePaths": {
+        "pathA": 73,
+        "pathB": 0,
+        "pathC": 0
+      },
+      "readiness": "READY",
+      "ready": true
+    },
+    {
+      "surahNumber": 70,
+      "surahName": "Al-Ma'arij",
+      "totalForms": 189,
+      "coveredForms": 189,
+      "coveragePct": 100,
+      "runtimePaths": {
+        "pathA": 187,
+        "pathB": 0,
+        "pathC": 2
+      },
+      "readiness": "READY",
+      "ready": true
+    }
+  ],
+  "globalReconciliation": {
+    "readyCount": 33,
+    "notReadyCount": 80,
+    "referenceCount": 1,
+    "total": 114,
+    "consistencyCheck": true,
+    "readySurahs": [
+      13,
+      29,
+      36,
+      46,
+      70,
+      82,
+      85,
+      87,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114
+    ],
+    "s13Ready": true,
+    "s29Ready": true,
+    "s36Ready": true,
+    "s46Ready": true,
+    "s92Ready": true,
+    "s98Ready": true,
+    "s82Ready": true,
+    "s85Ready": true,
+    "s90Ready": true,
+    "s70Ready": true
+  },
+  "protectedTables": {
+    "quran_words": 0,
+    "word_lemma_mapping": 0,
+    "linguistic_occurrences": 0,
+    "lemma_translations": 0,
+    "translations": 0,
+    "curriculum": 0,
+    "learning_paths": 0,
+    "allDeltaZero": true
+  },
+  "frUnion": {
+    "before": 5337,
+    "after": 5337,
+    "delta": 0,
+    "wordTranslationsBefore": 5116,
+    "wordTranslationsAfter": 5116
+  },
+  "idempotence": {
+    "NEW": 0,
+    "EXISTING_SAME": 94,
+    "CONFLICT": 0,
+    "dbDelta": 0,
+    "pass": true
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "wlmCreated": 0,
+    "curriculumWrites": 0,
+    "migrations": 0,
+    "seeds": 0,
+    "classifySurahReadinessUnchanged": true
+  }
+}

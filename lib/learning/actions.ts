@@ -41,7 +41,7 @@ import {
   progressStateFromRow,
 } from "@/lib/learning/queries";
 import {
-  getActivityDate,
+  getLocalDateKey,
   insertUserSettings,
   updateUserSettings,
   getUserSettings,
@@ -289,10 +289,12 @@ export async function submitLessonResults(
   }
 
   const now = new Date();
+  const settings = await getUserSettings(client, user.id);
+  const timezone = settings?.timezone ?? null;
   return runLessonSubmission(
     results,
     (wordId, attempts) => persistWordAttempts(client, user.id, wordId, attempts, now),
-    () => recordLessonActivity(client, user.id, lessonId, getActivityDate(now)),
+    () => recordLessonActivity(client, user.id, lessonId, getLocalDateKey(now, timezone)),
   );
 }
 
@@ -325,7 +327,9 @@ export async function recordReviewAnswer(
   }
 
   try {
-    await recordWordActivity(client, user.id, wordId, getActivityDate(now));
+    const settings = await getUserSettings(client, user.id);
+    const timezone = settings?.timezone ?? null;
+    await recordWordActivity(client, user.id, wordId, getLocalDateKey(now, timezone));
     return { ok: true, activityRecorded: true };
   } catch (err) {
     console.error("recordWordActivity failed:", err);
@@ -523,7 +527,9 @@ export async function recordLessonActivityOnly(
   if (!user) return { ok: false, error: "Connecte-toi." };
 
   try {
-    await recordLessonActivity(client, user.id, lessonId, getActivityDate(new Date()));
+    const settings = await getUserSettings(client, user.id);
+    const timezone = settings?.timezone ?? null;
+    await recordLessonActivity(client, user.id, lessonId, getLocalDateKey(new Date(), timezone));
     return { ok: true, activityRecorded: true };
   } catch (err) {
     console.error("recordLessonActivityOnly failed:", err);
@@ -545,7 +551,9 @@ export async function recordWordActivityOnly(
   if (!user) return { ok: false, error: "Connecte-toi." };
 
   try {
-    await recordWordActivity(client, user.id, wordId, getActivityDate(new Date()));
+    const settings = await getUserSettings(client, user.id);
+    const timezone = settings?.timezone ?? null;
+    await recordWordActivity(client, user.id, wordId, getLocalDateKey(new Date(), timezone));
     return { ok: true, activityRecorded: true };
   } catch (err) {
     console.error("recordWordActivityOnly failed:", err);
@@ -874,9 +882,67 @@ export async function authenticate(
   redirect("/login");
 }
 
+/**
+ * Persiste le timezone IANA détecté automatiquement (Phase 77).
+ * Appelé UNE SEULE FOIS par TimezoneInit (côté client).
+ * Idempotent : n'écrit que si le timezone n'est pas déjà défini.
+ */
+export async function persistTimezone(timezone: string): Promise<void> {
+  const client = await createClient();
+  const {
+    data: { user },
+  } = await client.auth.getUser();
+  if (!user) return;
+
+  const settings = await getUserSettings(client, user.id);
+  // Déjà défini ou non null → ne pas écraser.
+  if (settings?.timezone) return;
+
+  // Valider la forme IANA basique (contient un /).
+  if (!timezone || !timezone.includes("/")) return;
+
+  if (settings) {
+    await updateUserSettings(client, user.id, { timezone });
+  }
+}
+
 /** Déconnexion. */
 export async function signOut(): Promise<void> {
   const client = await createClient();
   await client.auth.signOut();
   redirect("/");
+}
+
+// ---------------------------------------------------------------------------
+// Rappels (Phase 80)
+// ---------------------------------------------------------------------------
+
+/**
+ * Met à jour les préférences de rappel depuis /profile.
+ * Valide le format HH:MM côté serveur.
+ */
+export async function updateReminderPreferences(input: {
+  enabled: boolean;
+  time: string;
+}): Promise<{ ok: boolean; error?: string }> {
+  const client = await createClient();
+  const {
+    data: { user },
+  } = await client.auth.getUser();
+  if (!user) return { ok: false, error: "Connecte-toi." };
+
+  if (!/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(input.time)) {
+    return { ok: false, error: "Heure invalide (HH:MM attendu)." };
+  }
+
+  try {
+    await updateUserSettings(client, user.id, {
+      reminderEnabled: input.enabled,
+      reminderTime: input.time,
+    });
+    return { ok: true };
+  } catch (err) {
+    console.error("updateReminderPreferences failed:", err);
+    return { ok: false, error: "Impossible d'enregistrer." };
+  }
 }

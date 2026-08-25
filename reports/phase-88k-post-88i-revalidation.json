@@ -1,0 +1,87 @@
+{
+  "phase": "88K",
+  "stage": "POST_88I_REVALIDATION",
+  "verdict": "PHASE_88K_GET_SURAH_PROGRESS_CHUNKING_FIX_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "timestamp": "2026-08-25T17:48:53.031Z",
+  "root_cause": "getSurahProgressByUser portait le même motif que getSurahCatalog (finding CAT-000 de 88I) : lesson_words .in(\"lesson_id\", …) et lesson_sessions .in(\"lesson_id\", …) en une seule requête. Avec 547 leçons publiées (88H), la URL dépassait le seuil ≈ 396 ids / ≈ 14,7 Ko → « TypeError: fetch failed » sur /dashboard, /surahs, /surahs/[number], /profile et /learn.",
+  "correction": {
+    "phase88j": "getSurahCatalog : requête lesson_words chunkée (LESSON_ID_CHUNK_SIZE = 200, selectInChunks)",
+    "phase88k": "getSurahProgressByUser : lesson_words (is_new) ET lesson_sessions chunkées (même helper, LESSON_ID_CHUNK_SIZE = 200, 3 requêtes pour 547 ids, Promise.all, fusion déterministe, erreurs propagées)"
+  },
+  "files_changed": [
+    "lib/learning/queries.ts — getSurahCatalog (88J) + getSurahProgressByUser (88K)",
+    "tests/in-chunking.test.ts — bornes 88J (0/1/200/201/400/401/547/1001) + bornes 88K (0/1/199/200/201/399/400/401/547/1001) pour les DEUX requêtes + propagation d'erreur",
+    "scripts/phase-88j-get-surah-catalog-chunking.ts — vérification runtime catalogue (88J)",
+    "scripts/phase-88k-surah-progress-chunking.ts — vérification runtime progression + consommateurs (88K)",
+    "reports/phase-88k-post-88i-revalidation.json — ce rapport"
+  ],
+  "chunk_size": 200,
+  "chunk_size_constant": "LESSON_ID_CHUNK_SIZE (partagée 88J/88K)",
+  "query_counts": {
+    "before": "getSurahCatalog : 1 requête lesson_words .in(547 ids) → fetch failed ; getSurahProgressByUser : 1 requête lesson_words + 1 requête lesson_sessions .in(547 ids) → fetch failed",
+    "after": "3 requêtes maximum par table (547 / 200), jamais plus de 200 ids par requête"
+  },
+  "reaudit_88i": {
+    "method": "scripts/phase-88i-post-publication-e2e-ux-audit.ts réexécuté (fonctions de production réelles, READ-ONLY)",
+    "verdict": "PHASE_88I_E2E_AUDIT_PASS_WITH_NONBLOCKING_NOTES",
+    "previous_verdict": "PHASE_88I_E2E_AUDIT_BLOCKED (CAT-000 HIGH)",
+    "cat000": "RESOLVED",
+    "counts": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "NOTE": 1
+    },
+    "note": "unique NOTE restante : LSN-FULL-COUNT-NOTE (écart méthodologique 1824 vs 1439 formes, non bloquant, sans action)",
+    "checks": {
+      "CATALOGUE": "PASS — 10/10 sourates présentes, 34 parcours, getSurahCatalog() OK",
+      "PAGE SOURATE": "PASS — 10/10 parcours, 10 unités, 356 leçons publiées",
+      "PAGE LEÇON": "PASS — 20 leçons contrôlées, 0 glose vide, 0 fallback EN",
+      "FORMES FR": "PASS — forme=162 lemme=0 en=0 sur l'échantillon, 1439 formes distinctes globales",
+      "EXERCICES": "PASS — 1587 exercices générés, 0 anomalie",
+      "FREE-TEXT": "PASS — 559/559 FR_VERIFIED, 559 FORM_TO_MEANING, correcteur 0 échec/40",
+      "REVIEW": "PASS",
+      "FICHE MOT": "PASS — 9/9",
+      "RTL / ARABE": "PASS",
+      "AUDIO": "PASS",
+      "NON-RÉGRESSION": "PASS — 191 leçons préexistantes intactes, gloses 559/559"
+    }
+  },
+  "runtime_88k": {
+    "getSurahProgressByUser": "OK — 34 sourates, 547 leçons, statuts neutres, aucune fetch failed",
+    "getSurahCatalog": "OK — 34 parcours, 547 leçons, 10/10 READY",
+    "getLearningContext": "OK (parcours par défaut, utilisé par /dashboard et /learn)",
+    "reference_comparison": "somme par sourate en .in() unique (sûr, ≤ 60 ids) = 3196 = décompte chunké — concordance exacte"
+  },
+  "consumers": {
+    "pages": ["/surahs", "/surahs/[number]", "/profile", "/dashboard", "/learn"],
+    "production_functions": {
+      "getSurahCatalog": "OK",
+      "getSurahProgressByUser": "OK",
+      "getLearningContext": "OK"
+    },
+    "limitation": "pas d'environnement navigateur E2E disponible ; vérification via les fonctions de production réelles (même limite que l'audit 88I)"
+  },
+  "non_regression": {
+    "learning_paths": 34,
+    "units": 34,
+    "lessons": 547,
+    "lesson_words": 4503,
+    "lesson_sessions": 4,
+    "glosses_88f_be": "559/559 présentes, exactes, validées (source Hikma — lexique éditorial)",
+    "resolver": "inchangé (FORME > LEMME > EN), 0 fallback EN sur l'échantillon et sur le 559-set",
+    "curriculum": "inchangé (aucun seed, aucune écriture)"
+  },
+  "database_writes": 0,
+  "protected_data": "inchangée (comptages DB identiques aux états post-88H/88J : 34/34/547/4503)",
+  "technical_validation": {
+    "vitest": "975/975 passés (63 fichiers) — +9 tests 88J, +12 tests 88K, aucune régression",
+    "typescript": "0 nouvelle erreur (erreurs préexistantes hors périmètre, hors fichiers de la phase)",
+    "eslint": "0 erreur / 0 warning sur les fichiers de la phase"
+  },
+  "next_phase": "Aucune anomalie HIGH restante. Prochaines étapes possibles : supervision navigateur réelle des pages /surahs et /dashboard, ou vérification du rendu UX post-fix.",
+  "note_transparency": "Les rapports phase-88i-e2e-ux-audit.json et phase-88i-e2e-ux-issues.json ont été régénérés par la réexécution de l'audit 88I (état post-fix). L'état pré-fix (BLOCKED, CAT-000) est conservé dans tmp/88i-pre-88k/."
+}

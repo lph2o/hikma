@@ -1,0 +1,82 @@
+{
+  "phase": "88G",
+  "stage": "POST_IMPORT_LEXICAL_CONSUMPTION_AUDIT",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "timestamp": "2026-08-25T12:32:00.255Z",
+  "elapsedMs": 2010,
+  "1_schemaAndModel": {
+    "table": "public.word_translations",
+    "columns": [
+      "id",
+      "word_id",
+      "language",
+      "text",
+      "source_id",
+      "is_validated",
+      "validated_at",
+      "editorial_notes",
+      "created_at",
+      "updated_at"
+    ],
+    "uniqueConstraint": "word_translations_word_lang_source_key (word_id, language, source_id)",
+    "source": "Hikma — lexique éditorial (79e6412e-e349-4fe5-b29b-108237375a2d)"
+  },
+  "2_consumptionChain": {
+    "forme": "getValidatedFrenchMeanings → word_translations (fr, is_validated=true, updated_at DESC, chunked)",
+    "lemme": "getValidatedFrenchLemmaMeaningsByWord → quran_words.lemma_id direct puis word_lemma_mapping (safe) → lemma_translations (fr validé)",
+    "resolver": "resolveWordMeanings → FORME > LEMME > EN fallback (quran_words.meaning)",
+    "consumers": [
+      "app/(app)/learn/[slug]/page.tsx — getValidatedFrenchMeanings + getValidatedFrenchLemmaMeaningsByWord → buildWordBank(3 params)",
+      "review — même double lecture → resolveWordMeanings",
+      "word detail (getWordDetail) — même double lecture",
+      "surah catalog (getSurahCatalog) — même double lecture → effectiveFrPct",
+      "exercises — FORM_TO_MEANING généré uniquement si answerLanguageForMeaning === FR_VERIFIED"
+    ]
+  },
+  "3_formeLayer": {
+    "wordIdsAudités": 559,
+    "formesRésoluesFR": 559,
+    "formesAttendues": 559,
+    "absentesDeForme": 0,
+    "multiRowsParMot": 0
+  },
+  "4_lemmeLayer": {
+    "lemmaMapSize": 0,
+    "note": "la couche lemme est un complément : la glose FORME est prioritaire quand elle existe"
+  },
+  "5_resolutionReelle": {
+    "total": 559,
+    "frResolus": 559,
+    "exactMatchGlose": 559,
+    "enFallback": 0,
+    "frVerified": 559,
+    "issues": []
+  },
+  "6_freeTextCorrection": {
+    "gate": "answerLanguageForMeaning → FR_VERIFIED exige meaningLanguage=fr && isValidated=true && !fallback",
+    "eligible": 559,
+    "total": 559,
+    "note": "chaque glose « a / b » produit aussi les variantes « a » et « b » (glossVariants) pour la correction libre"
+  },
+  "7_catalogConsumption": {
+    "note": "getSurahCatalog (lib/learning/queries.ts:281-282) consomme exactement les mêmes getValidatedFrenchMeanings + getValidatedFrenchLemmaMeaningsByWord → resolveWordMeanings pour calculer effectiveFrCount",
+    "lessonsPubliees": 191,
+    "wordIdsLeçonsPubliees": 459,
+    "dontImports88FBE": 0
+  },
+  "8_sharedCrossSurah": {
+    "word_id": "07e38ce0-3cff-4860-ac97-53bfeb005226",
+    "arabic": "نَفْسِهِۦ",
+    "surahs": "64,75",
+    "gloss": "soi-même / son âme",
+    "resolue": "soi-même / son âme",
+    "uneSeuleLigne": true
+  },
+  "9_verdict": {
+    "identitySafe": true,
+    "qualityPass": true,
+    "verdict": "PHASE_88G_CONSUMPTION_PASS",
+    "databaseWrites": 0
+  }
+}

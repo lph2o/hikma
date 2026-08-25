@@ -300,16 +300,27 @@ function SurahCard({
         )}
 
         {isAvailable ? (
-          ctaHref ? (
-            <Button
-              render={<Link href={ctaHref} />}
-              variant={status === "in_progress" ? "default" : "outline"}
-              className="w-full"
-            >
-              {ctaLabel}
-              <ArrowRightIcon aria-hidden="true" />
-            </Button>
-          ) : null
+          <>
+            {ctaHref ? (
+              <Button
+                render={<Link href={ctaHref} />}
+                variant={status === "in_progress" ? "default" : "outline"}
+                className="w-full"
+              >
+                {ctaLabel}
+                <ArrowRightIcon aria-hidden="true" />
+              </Button>
+            ) : null}
+            {status !== "not_started" && (
+              <Link
+                href={`/surahs/${item.surahNumber}`}
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary-strong"
+              >
+                Voir les versets
+                <ArrowRightIcon className="size-3.5" aria-hidden="true" />
+              </Link>
+            )}
+          </>
         ) : (
           <div
             className="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm text-text-secondary"

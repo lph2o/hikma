@@ -1,0 +1,1129 @@
+{
+  "phase": "88F-AM",
+  "verdict": "PHASE_88F_AM_COMPLETE",
+  "readOnly": true,
+  "databaseWrites": 0,
+  "editorialReadyForImport": true,
+  "timestamp": "2026-08-24T15:12:57.378Z",
+  "durationSeconds": 24.1,
+  "surah": {
+    "number": 13,
+    "name": "Ar-Ra'd"
+  },
+  "baseline": {
+    "totalForms": 601,
+    "coveredForms": 466,
+    "unresolvedForms": 135,
+    "coveragePct": 77.5374,
+    "paths": {
+      "pathA_wordTr": 449,
+      "pathB_lemma": 1,
+      "pathC_wlm": 16
+    },
+    "classALemmaReachable": 0
+  },
+  "editorialGlosses": [
+    {
+      "word_id": "73d1e7a8-ae60-4a0a-959a-13874b1b8e96",
+      "arabic": "زَبَدٌۭ",
+      "ayah": "13:17",
+      "gloss": "écume",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"a foam\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "336903c6-a18c-44e3-82cc-2cf8b540561e",
+      "arabic": "ٱلْأُكُلِ ۚ",
+      "ayah": "13:4",
+      "gloss": "fruit / récolte",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"the fruit\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "5c68217e-b8a0-4b54-b115-1caa3fdb8db5",
+      "arabic": "بِبَـٰلِغِهِۦ ۚ",
+      "ayah": "13:14",
+      "gloss": "atteindre / rejoindre",
+      "rationale": "Src: Hamidullah \"À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune faço…\" | EN hint: \"reaches it\" | S13:13:14",
+      "hamidullahSnippet": "À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune façon; semblables à celui qui étend ses deux mains ver…"
+    },
+    {
+      "word_id": "6f71874c-2606-4540-859f-cc4f584a3505",
+      "arabic": "۞ مَّثَلُ",
+      "ayah": "13:35",
+      "gloss": "exemple / parabole",
+      "rationale": "Src: Hamidullah \"Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont pe…\" | EN hint: \"The example\" | S13:13:35",
+      "hamidullahSnippet": "Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont perpétuels, ainsi que son ombrage. Voilà la fin de c…"
+    },
+    {
+      "word_id": "37dad6da-9d6b-4e13-9826-abc26dac1137",
+      "arabic": "ٱلْحَسَنَةِ",
+      "ayah": "13:6",
+      "gloss": "le bien / la bonté",
+      "rationale": "Src: Hamidullah \"Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est pro…\" | EN hint: \"the good\" | S13:13:6",
+      "hamidullahSnippet": "Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est produit avant eux des châtiments exemplaires. Ton Sei…"
+    },
+    {
+      "word_id": "9b937868-20fe-482d-ab3a-670235748bc3",
+      "arabic": "مُسْتَخْفٍۭ",
+      "ayah": "13:10",
+      "gloss": "caché / secret",
+      "rationale": "Src: Hamidullah \"Sont égaux pour lui, celui parmi vous qui tient secrète sa parole, et celui qui la divulgue ; ainsi …\" | EN hint: \"(is) hidden\" | S13:13:10",
+      "hamidullahSnippet": "Sont égaux pour lui, celui parmi vous qui tient secrète sa parole, et celui qui la divulgue ; ainsi que celui qui se cache la nuit et celui qui se mon…"
+    },
+    {
+      "word_id": "cbd14996-d4b7-48b8-9975-4213daf67a00",
+      "arabic": "ٱلسَّيْلُ",
+      "ayah": "13:17",
+      "gloss": "le torrent",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"the torrent\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "728566d0-4a5b-4706-83c0-be3eacf55087",
+      "arabic": "ٱلْقَوْلِ ۗ",
+      "ayah": "13:33",
+      "gloss": "parole / mot",
+      "rationale": "Src: Hamidullah \"Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtan…\" | EN hint: \"the words\" | S13:13:33",
+      "hamidullahSnippet": "Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtant ils donnent des associés à Allah. Dis [leur:] \"N…"
+    },
+    {
+      "word_id": "2dc0a4af-cbd2-4090-9aeb-fd86e1ecbf66",
+      "arabic": "عُقْبَى",
+      "ayah": "13:22",
+      "gloss": "final / dernier / ultime",
+      "rationale": "Src: Hamidullah \"et ceux qui endurent dans la recherche de l’agrément de leur Seigneur , accomplissent la prière (As-…\" | EN hint: \"(is) the final attainment\" | S13:13:22",
+      "hamidullahSnippet": "et ceux qui endurent dans la recherche de l’agrément de leur Seigneur , accomplissent la prière (As-Salât) et dépensent (dans le bien), en secret et e…"
+    },
+    {
+      "word_id": "8ae61f8f-cbe6-4ef6-a9e5-26cbfe9953a7",
+      "arabic": "عَرَبِيًّۭا ۚ",
+      "ayah": "13:37",
+      "gloss": "en arabe",
+      "rationale": "Src: Hamidullah \"Ainsi l’avons-Nous fait descendre (le Coran) [sous forme] de loi en arabe. Et si tu suis leurs passi…\" | EN hint: \"(in) Arabic\" | S13:13:37",
+      "hamidullahSnippet": "Ainsi l’avons-Nous fait descendre (le Coran) [sous forme] de loi en arabe. Et si tu suis leurs passions après ce que tu as reçu comme savoir, alors il…"
+    },
+    {
+      "word_id": "dc5fc32f-de4a-48b2-9797-176d450cccc9",
+      "arabic": "أَعْنَاقِهِمْ ۖ",
+      "ayah": "13:5",
+      "gloss": "leurs cous / leurs nuques",
+      "rationale": "Src: Hamidullah \"Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, revie…\" | EN hint: \"their necks\" | S13:13:5",
+      "hamidullahSnippet": "Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, reviendrons-nous vraiment à une nouvelle création ?\" Ce…"
+    },
+    {
+      "word_id": "d22e8223-3684-48da-86df-fe0612c28b90",
+      "arabic": "يُسْقَىٰ",
+      "ayah": "13:4",
+      "gloss": "arrosé / irrigué",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"watered\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "43c9dd22-d2f7-4c88-bb15-35f4dc59f0a6",
+      "arabic": "فَسَالَتْ",
+      "ayah": "13:17",
+      "gloss": "et s'écoule / et coule",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"and flows\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "fb268982-e149-42ef-8205-769ef74642da",
+      "arabic": "بَعْضَهُۥ ۚ",
+      "ayah": "13:36",
+      "gloss": "une partie de cela",
+      "rationale": "Src: Hamidullah \"Et ceux à qui Nous avons déjà donné le Livre se réjouissent de ce qu’on a fait descendre vers toi. T…\" | EN hint: \"a part of it\" | S13:13:36",
+      "hamidullahSnippet": "Et ceux à qui Nous avons déjà donné le Livre se réjouissent de ce qu’on a fait descendre vers toi. Tandis que certaines factions en rejettent une part…"
+    },
+    {
+      "word_id": "f44d2bcb-19fc-4021-a820-f8fc02ce24fe",
+      "arabic": "ٱلسَّحَابَ",
+      "ayah": "13:12",
+      "gloss": "nuage",
+      "rationale": "Src: Hamidullah \"C’est lui qui vous fait voir l’éclair (qui vous inspire) crainte et espoir; et Il crée les nuages lo…\" | EN hint: \"the clouds\" | S13:13:12",
+      "hamidullahSnippet": "C’est lui qui vous fait voir l’éclair (qui vous inspire) crainte et espoir; et Il crée les nuages lourds. <sup foot_note=212073>1</sup>"
+    },
+    {
+      "word_id": "af617c6d-3189-4ba7-9bb9-3abfccb1fd1c",
+      "arabic": "يُغَيِّرُ",
+      "ayah": "13:11",
+      "gloss": "transformer / changer",
+      "rationale": "Src: Hamidullah \"Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par …\" | EN hint: \"change\" | S13:13:11",
+      "hamidullahSnippet": "Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par ordre d’Allah. En vérité, Allah ne modifie point l…"
+    },
+    {
+      "word_id": "08386087-65a6-41d0-a00e-77107558860a",
+      "arabic": "بِقَدَرِهَا",
+      "ayah": "13:17",
+      "gloss": "mesurer",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"according to their measure\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "9caf8617-579a-402f-838d-782af97bb530",
+      "arabic": "مُّتَجَـٰوِرَٰتٌۭ",
+      "ayah": "13:4",
+      "gloss": "voisines / contigues",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"neighboring\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "5b3933fc-1a94-4d64-85eb-d1dd35197837",
+      "arabic": "وَنَخِيلٌۭ",
+      "ayah": "13:4",
+      "gloss": "et les palmiers / et les dattiers",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"and date-palms\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "596ef5ed-4985-411b-bebc-168e35d1cbcf",
+      "arabic": "وَسَارِبٌۢ",
+      "ayah": "13:10",
+      "gloss": "aller / partir",
+      "rationale": "Src: Hamidullah \"Sont égaux pour lui, celui parmi vous qui tient secrète sa parole, et celui qui la divulgue ; ainsi …\" | EN hint: \"or goes freely\" | S13:13:10",
+      "hamidullahSnippet": "Sont égaux pour lui, celui parmi vous qui tient secrète sa parole, et celui qui la divulgue ; ainsi que celui qui se cache la nuit et celui qui se mon…"
+    },
+    {
+      "word_id": "1121b231-cc00-42d9-9d98-bff753767e1a",
+      "arabic": "حِلْيَةٍ",
+      "ayah": "13:17",
+      "gloss": "ornements / parures",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"ornaments\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "9e1cc88b-88f0-4793-8857-d5a0ad92cec0",
+      "arabic": "تُصِيبُهُم",
+      "ayah": "13:31",
+      "gloss": "les frapper / les atteindre",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"to strike them\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    },
+    {
+      "word_id": "e74e0f5b-1175-420f-9a8e-beac8164b004",
+      "arabic": "تُنَبِّـُٔونَهُۥ",
+      "ayah": "13:33",
+      "gloss": "L'informeriez-vous / L'enseignez-vous",
+      "rationale": "Src: Hamidullah \"Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtan…\" | EN hint: \"(do) you inform Him\" | S13:13:33",
+      "hamidullahSnippet": "Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtant ils donnent des associés à Allah. Dis [leur:] \"N…"
+    },
+    {
+      "word_id": "4bc951c0-408a-4869-a0f1-44c21eb8b615",
+      "arabic": "قُرْءَانًۭا",
+      "ayah": "13:31",
+      "gloss": "Coran / récitation",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"any Quran\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    },
+    {
+      "word_id": "1ec1708f-5aec-44bd-b76b-af45bb7931ba",
+      "arabic": "كُلِّمَ",
+      "ayah": "13:31",
+      "gloss": "dire / parler",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"could be made to speak\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    },
+    {
+      "word_id": "76f6a0c8-0922-4b50-b712-0817c7ffb749",
+      "arabic": "يُنكِرُ",
+      "ayah": "13:36",
+      "gloss": "rejeter / nier",
+      "rationale": "Src: Hamidullah \"Et ceux à qui Nous avons déjà donné le Livre se réjouissent de ce qu’on a fait descendre vers toi. T…\" | EN hint: \"deny\" | S13:13:36",
+      "hamidullahSnippet": "Et ceux à qui Nous avons déjà donné le Livre se réjouissent de ce qu’on a fait descendre vers toi. Tandis que certaines factions en rejettent une part…"
+    },
+    {
+      "word_id": "71fe6828-52a6-4884-96bb-f06fc90e8ba7",
+      "arabic": "فَاهُ",
+      "ayah": "13:14",
+      "gloss": "sa bouche",
+      "rationale": "Src: Hamidullah \"À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune faço…\" | EN hint: \"his mouth\" | S13:13:14",
+      "hamidullahSnippet": "À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune façon; semblables à celui qui étend ses deux mains ver…"
+    },
+    {
+      "word_id": "66638984-9389-4a38-b94c-181300cbf79f",
+      "arabic": "وَحُسْنُ",
+      "ayah": "13:29",
+      "gloss": "et le plus beau",
+      "rationale": "Src: Hamidullah \"Ceux qui croient et font de bonnes œuvres, auront le plus grand bien et aussi le plus bon retour.\" | EN hint: \"and a beautiful\" | S13:13:29",
+      "hamidullahSnippet": "Ceux qui croient et font de bonnes œuvres, auront le plus grand bien et aussi le plus bon retour."
+    },
+    {
+      "word_id": "0fc17a1f-a21c-45b7-89cb-fd58e4f0c026",
+      "arabic": "وَتَطْمَئِنُّ",
+      "ayah": "13:28",
+      "gloss": "et s'apaiser / se tranquilliser",
+      "rationale": "Src: Hamidullah \"ceux qui ont cru, et dont les cœurs se tranquillisent à l'évocation d'Allah.\" N'est ce point par l'é…\" | EN hint: \"and find satisfaction\" | S13:13:28",
+      "hamidullahSnippet": "ceux qui ont cru, et dont les cœurs se tranquillisent à l'évocation d'Allah.\" N'est ce point par l'évocation d'Allah que se tranquillisent les cœurs ?"
+    },
+    {
+      "word_id": "02e4cdf9-5df9-4fbe-9336-46a94eaa5dbc",
+      "arabic": "لِحُكْمِهِۦ ۚ",
+      "ayah": "13:41",
+      "gloss": "juger / le jugement",
+      "rationale": "Src: Hamidullah \"Ne voient-ils pas que Nous frappons à la terre et que Nous la réduisons de tous côtés ? C’est Allah …\" | EN hint: \"(of) His Judgment\" | S13:13:41",
+      "hamidullahSnippet": "Ne voient-ils pas que Nous frappons à la terre et que Nous la réduisons de tous côtés ? C’est Allah qui juge et personne ne peut s’opposer à Son jugem…"
+    },
+    {
+      "word_id": "4cde327c-be3d-4ca9-89b7-3d4b2f1bb241",
+      "arabic": "مُعَقِّبَـٰتٌۭ",
+      "ayah": "13:11",
+      "gloss": "ange",
+      "rationale": "Src: Hamidullah \"Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par …\" | EN hint: \"(are) successive (Angels)\" | S13:13:11",
+      "hamidullahSnippet": "Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par ordre d’Allah. En vérité, Allah ne modifie point l…"
+    },
+    {
+      "word_id": "844fb16f-276a-4ea6-bbb6-ce04d42ceda7",
+      "arabic": "بِأَنفُسِهِمْ ۗ",
+      "ayah": "13:11",
+      "gloss": "en eux-mêmes",
+      "rationale": "Src: Hamidullah \"Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par …\" | EN hint: \"(is) in themselves\" | S13:13:11",
+      "hamidullahSnippet": "Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par ordre d’Allah. En vérité, Allah ne modifie point l…"
+    },
+    {
+      "word_id": "14da581f-7fe2-4194-9e65-b3bdc19363f7",
+      "arabic": "جَدِيدٍ ۗ",
+      "ayah": "13:5",
+      "gloss": "nouveau / neuf",
+      "rationale": "Src: Hamidullah \"Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, revie…\" | EN hint: \"new\" | S13:13:5",
+      "hamidullahSnippet": "Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, reviendrons-nous vraiment à une nouvelle création ?\" Ce…"
+    },
+    {
+      "word_id": "efd124d5-b705-499f-aee7-b283c1f04aa7",
+      "arabic": "۞ أَفَمَن",
+      "ayah": "13:19",
+      "gloss": "est-ce que celui qui",
+      "rationale": "Src: Hamidullah \"Celui qui sait que ce qui t’est révélé de la part de ton Seigneur est la vérité, est-il semblable à …\" | EN hint: \"Then is (he) who\" | S13:13:19",
+      "hamidullahSnippet": "Celui qui sait que ce qui t’est révélé de la part de ton Seigneur est la vérité, est-il semblable à l’aveugle  ? Seuls les gens doués d’intelligence r…"
+    },
+    {
+      "word_id": "a1c69632-ff1a-458e-ad65-943628addf78",
+      "arabic": "مَـَٔابِ",
+      "ayah": "13:36",
+      "gloss": "retourner / revenir",
+      "rationale": "Src: Hamidullah \"Et ceux à qui Nous avons déjà donné le Livre se réjouissent de ce qu’on a fait descendre vers toi. T…\" | EN hint: \"(is) my return\" | S13:13:36",
+      "hamidullahSnippet": "Et ceux à qui Nous avons déjà donné le Livre se réjouissent de ce qu’on a fait descendre vers toi. Tandis que certaines factions en rejettent une part…"
+    },
+    {
+      "word_id": "31d04d34-85b6-4ff6-830b-8d223baadc09",
+      "arabic": "جُفَآءًۭ ۖ",
+      "ayah": "13:17",
+      "gloss": "écume / résidu",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"(as) scum\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "dfbbde6e-4757-420f-9160-b55b0aa7e65f",
+      "arabic": "أَشَقُّ ۖ",
+      "ayah": "13:34",
+      "gloss": "plus pénible / plus dur",
+      "rationale": "Src: Hamidullah \"Un châtiment les atteindra dans la vie présente. Et le châtiment de l’au-delà sera cependant plus éc…\" | EN hint: \"(is) harder\" | S13:13:34",
+      "hamidullahSnippet": "Un châtiment les atteindra dans la vie présente. Et le châtiment de l’au-delà sera cependant plus écrasant et ils n’auront nul protecteur contre Allah…"
+    },
+    {
+      "word_id": "13b4d961-994e-488a-a4de-6786c0bb59fd",
+      "arabic": "تَغِيضُ",
+      "ayah": "13:8",
+      "gloss": "diminuer / être insuffisant",
+      "rationale": "Src: Hamidullah \"Allah sait ce que porte chaque femelle, et de combien la période de gestation dans la matrice est éc…\" | EN hint: \"fall short\" | S13:13:8",
+      "hamidullahSnippet": "Allah sait ce que porte chaque femelle, et de combien la période de gestation dans la matrice est écourtée ou prolongée. Et toute chose a auprès de Lu…"
+    },
+    {
+      "word_id": "1820514d-cc63-493a-882e-29a994915c48",
+      "arabic": "تَحُلُّ",
+      "ayah": "13:31",
+      "gloss": "elle s'installerait / elle se poserait",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"it settles\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    },
+    {
+      "word_id": "f3a37c5d-1521-4acf-917e-8a5e5447b4d3",
+      "arabic": "خِيفَتِهِۦ",
+      "ayah": "13:13",
+      "gloss": "craindre / redouter",
+      "rationale": "Src: Hamidullah \"Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance …\" | EN hint: \"fear of Him\" | S13:13:13",
+      "hamidullahSnippet": "Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance les foudres dont Il atteint qui Il veut. Or ils di…"
+    },
+    {
+      "word_id": "8e1d8637-4bb6-4589-aac8-327689efb1ae",
+      "arabic": "فَيَمْكُثُ",
+      "ayah": "13:17",
+      "gloss": "demeure / reste",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"remains\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "2a7618fb-047c-45eb-b7c2-819bda32ea02",
+      "arabic": "يَسْتَجِيبُونَ",
+      "ayah": "13:14",
+      "gloss": "répondre / exaucer / obéir",
+      "rationale": "Src: Hamidullah \"À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune faço…\" | EN hint: \"they respond\" | S13:13:14",
+      "hamidullahSnippet": "À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune façon; semblables à celui qui étend ses deux mains ver…"
+    },
+    {
+      "word_id": "dc09129d-eb6f-445a-b69e-c7cc7d8934b9",
+      "arabic": "تَزْدَادُ ۖ",
+      "ayah": "13:8",
+      "gloss": "dépasser / excéder",
+      "rationale": "Src: Hamidullah \"Allah sait ce que porte chaque femelle, et de combien la période de gestation dans la matrice est éc…\" | EN hint: \"they exceed\" | S13:13:8",
+      "hamidullahSnippet": "Allah sait ce que porte chaque femelle, et de combien la période de gestation dans la matrice est écourtée ou prolongée. Et toute chose a auprès de Lu…"
+    },
+    {
+      "word_id": "5fe4e9df-831d-40f3-82db-ef9915a36f39",
+      "arabic": "ٱلنَّهَارَ ۚ",
+      "ayah": "13:3",
+      "gloss": "jour / journée",
+      "rationale": "Src: Hamidullah \"Et c’est Lui qui étendit la terre et y a placé montagnes et fleuves. Et de chaque espèce de fruits I…\" | EN hint: \"(with) the day\" | S13:13:3",
+      "hamidullahSnippet": "Et c’est Lui qui étendit la terre et y a placé montagnes et fleuves. Et de chaque espèce de fruits Il a établi deux éléments de couple. Il fait que la…"
+    },
+    {
+      "word_id": "3dbc338f-714e-42f7-822f-faafc347b4c6",
+      "arabic": "يَحْفَظُونَهُۥ",
+      "ayah": "13:11",
+      "gloss": "protéger / garder",
+      "rationale": "Src: Hamidullah \"Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par …\" | EN hint: \"who guard him\" | S13:13:11",
+      "hamidullahSnippet": "Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par ordre d’Allah. En vérité, Allah ne modifie point l…"
+    },
+    {
+      "word_id": "1b60621e-006f-4727-a4ff-eb8009d67eb8",
+      "arabic": "ٱلْمِيثَـٰقَ",
+      "ayah": "13:20",
+      "gloss": "restreindre / contracter / limiter",
+      "rationale": "Src: Hamidullah \"ceux qui remplissent leur engagement envers Allah et ne violent pas le pacte,\" | EN hint: \"the contract\" | S13:13:20",
+      "hamidullahSnippet": "ceux qui remplissent leur engagement envers Allah et ne violent pas le pacte,"
+    },
+    {
+      "word_id": "dcf061b9-721d-4f65-a455-3657cd5570ee",
+      "arabic": "قَبْلِهَآ",
+      "ayah": "13:30",
+      "gloss": "avant elle / qui l'a précédée",
+      "rationale": "Src: Hamidullah \"Ainsi, Nous t’envoyons dans une communauté - que d’autres communautés ont précédée - pour que tu leu…\" | EN hint: \"before it\" | S13:13:30",
+      "hamidullahSnippet": "Ainsi, Nous t’envoyons dans une communauté - que d’autres communautés ont précédée - pour que tu leur récites ce que Nous te révélons [le Coran], cepe…"
+    },
+    {
+      "word_id": "f3d56183-ab23-4d5d-8ea1-2b2155151f55",
+      "arabic": "فَعَجَبٌۭ",
+      "ayah": "13:5",
+      "gloss": "étonnant / prodigieux",
+      "rationale": "Src: Hamidullah \"Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, revie…\" | EN hint: \"then astonishing\" | S13:13:5",
+      "hamidullahSnippet": "Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, reviendrons-nous vraiment à une nouvelle création ?\" Ce…"
+    },
+    {
+      "word_id": "82447647-a2a6-43d6-ad96-b06149f55b1f",
+      "arabic": "لَشَدِيدُ",
+      "ayah": "13:6",
+      "gloss": "est sévère / d'une rigueur",
+      "rationale": "Src: Hamidullah \"Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est pro…\" | EN hint: \"(is) severe\" | S13:13:6",
+      "hamidullahSnippet": "Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est produit avant eux des châtiments exemplaires. Ton Sei…"
+    },
+    {
+      "word_id": "c96debcc-f31b-4428-a04d-8b91def43bf8",
+      "arabic": "وَظِلَـٰلُهُم",
+      "ayah": "13:15",
+      "gloss": "ombre / ombrage",
+      "rationale": "Src: Hamidullah \"Et c’est à Allah que se prosternent, bon gré mal gré, tous ceux qui sont dans les cieux et sur la Te…\" | EN hint: \"and (so do) their shadows\" | S13:13:15",
+      "hamidullahSnippet": "Et c’est à Allah que se prosternent, bon gré mal gré, tous ceux qui sont dans les cieux et sur la Terre, ainsi que leurs ombres, au début et à la fin …"
+    },
+    {
+      "word_id": "dcc026f8-3014-4542-ac78-c53d10b226a7",
+      "arabic": "دُعَآءُ",
+      "ayah": "13:14",
+      "gloss": "l'invocation / la supplication",
+      "rationale": "Src: Hamidullah \"À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune faço…\" | EN hint: \"(is) the supplication\" | S13:13:14",
+      "hamidullahSnippet": "À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune façon; semblables à celui qui étend ses deux mains ver…"
+    },
+    {
+      "word_id": "5309a691-ca5d-46b1-b2a8-17030ddfb416",
+      "arabic": "وَيَخْشَوْنَ",
+      "ayah": "13:21",
+      "gloss": "craindre / redouter",
+      "rationale": "Src: Hamidullah \"et ceux qui unissent ce qu’Allah a commandé d’unir, redoutent leur Seigneur et craignent une malheur…\" | EN hint: \"and fear\" | S13:13:21",
+      "hamidullahSnippet": "et ceux qui unissent ce qu’Allah a commandé d’unir, redoutent leur Seigneur et craignent une malheureuse reddition de compte, <sup foot_note=212078>1<…"
+    },
+    {
+      "word_id": "b64e46e2-1a73-49af-8b37-7182d6055a28",
+      "arabic": "ٱلْمُتَعَالِ",
+      "ayah": "13:9",
+      "gloss": "le Très-Haut / le Suprême",
+      "rationale": "Src: Hamidullah \"Le Connaisseur de ce qui est caché et de ce qui est apparent, Le Grand, Le Sublime.\" | EN hint: \"the Most High\" | S13:13:9",
+      "hamidullahSnippet": "Le Connaisseur de ce qui est caché et de ce qui est apparent, Le Grand, Le Sublime."
+    },
+    {
+      "word_id": "cd157ead-c21e-45e8-8ccd-3538c7495873",
+      "arabic": "وَصُدُّوا۟",
+      "ayah": "13:33",
+      "gloss": "et ils sont détournés",
+      "rationale": "Src: Hamidullah \"Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtan…\" | EN hint: \"and they are hindered\" | S13:13:33",
+      "hamidullahSnippet": "Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtant ils donnent des associés à Allah. Dis [leur:] \"N…"
+    },
+    {
+      "word_id": "34d8c088-45e3-45da-9b50-af1626bd2bc3",
+      "arabic": "طُوبَىٰ",
+      "ayah": "13:29",
+      "gloss": "béatitude / félicité",
+      "rationale": "Src: Hamidullah \"Ceux qui croient et font de bonnes œuvres, auront le plus grand bien et aussi le plus bon retour.\" | EN hint: \"blessedness\" | S13:13:29",
+      "hamidullahSnippet": "Ceux qui croient et font de bonnes œuvres, auront le plus grand bien et aussi le plus bon retour."
+    },
+    {
+      "word_id": "170295d4-c97e-474a-80b0-e7333df7bc39",
+      "arabic": "وَذُرِّيَّـٰتِهِمْ ۖ",
+      "ayah": "13:23",
+      "gloss": "enfant / descendance",
+      "rationale": "Src: Hamidullah \"les jardins d’Eden, où ils entreront, ainsi que tous ceux de leurs ascendants, conjoints et descenda…\" | EN hint: \"and their offsprings\" | S13:13:23",
+      "hamidullahSnippet": "les jardins d’Eden, où ils entreront, ainsi que tous ceux de leurs ascendants, conjoints et descendants, qui ont été de bons croyants. De chaque porte…"
+    },
+    {
+      "word_id": "0564dbe0-09e2-4253-8d25-bef6e906292d",
+      "arabic": "أَطْرَافِهَا ۚ",
+      "ayah": "13:41",
+      "gloss": "ses confins / ses bordures",
+      "rationale": "Src: Hamidullah \"Ne voient-ils pas que Nous frappons à la terre et que Nous la réduisons de tous côtés ? C’est Allah …\" | EN hint: \"its borders\" | S13:13:41",
+      "hamidullahSnippet": "Ne voient-ils pas que Nous frappons à la terre et que Nous la réduisons de tous côtés ? C’est Allah qui juge et personne ne peut s’opposer à Son jugem…"
+    },
+    {
+      "word_id": "375c0048-ccaf-42c7-b93c-0fc8be227d16",
+      "arabic": "قِطَعٌۭ",
+      "ayah": "13:4",
+      "gloss": "sont des parcelles / des portions",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"are tracks\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "0eeccc68-664d-4995-8fd6-cd548e663e78",
+      "arabic": "تَطْمَئِنُّ",
+      "ayah": "13:28",
+      "gloss": "et s'apaiser / se tranquilliser",
+      "rationale": "Src: Hamidullah \"ceux qui ont cru, et dont les cœurs se tranquillisent à l'évocation d'Allah.\" N'est ce point par l'é…\" | EN hint: \"find satisfaction\" | S13:13:28",
+      "hamidullahSnippet": "ceux qui ont cru, et dont les cœurs se tranquillisent à l'évocation d'Allah.\" N'est ce point par l'évocation d'Allah que se tranquillisent les cœurs ?"
+    },
+    {
+      "word_id": "bd7ad62a-3fc3-4fe9-ac61-6f57f2e52dc4",
+      "arabic": "يَمْحُوا۟",
+      "ayah": "13:39",
+      "gloss": "efface / abolit",
+      "rationale": "Src: Hamidullah \"Allah efface ou confirme ce qu’Il veut et l’écriture primordiale est auprès de Lui.\" | EN hint: \"(Is) eliminated\" | S13:13:39",
+      "hamidullahSnippet": "Allah efface ou confirme ce qu’Il veut et l’écriture primordiale est auprès de Lui."
+    },
+    {
+      "word_id": "4c911635-acb3-4840-9d5a-176c6bdb471b",
+      "arabic": "أُشْرِكَ",
+      "ayah": "13:36",
+      "gloss": "associer / donner des associés",
+      "rationale": "Src: Hamidullah \"Et ceux à qui Nous avons déjà donné le Livre se réjouissent de ce qu’on a fait descendre vers toi. T…\" | EN hint: \"I associate partners\" | S13:13:36",
+      "hamidullahSnippet": "Et ceux à qui Nous avons déjà donné le Livre se réjouissent de ce qu’on a fait descendre vers toi. Tandis que certaines factions en rejettent une part…"
+    },
+    {
+      "word_id": "134f34f6-a1c0-48d9-ade5-4b5a40053085",
+      "arabic": "تُرَٰبًا",
+      "ayah": "13:5",
+      "gloss": "poussière",
+      "rationale": "Src: Hamidullah \"Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, revie…\" | EN hint: \"dust\" | S13:13:5",
+      "hamidullahSnippet": "Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, reviendrons-nous vraiment à une nouvelle création ?\" Ce…"
+    },
+    {
+      "word_id": "a0476683-7c85-44ff-bbfd-5045fd3a398e",
+      "arabic": "وَزَرْعٌۭ",
+      "ayah": "13:4",
+      "gloss": "et les cultures / et les récoltes",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"and crops\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "f233e57f-4999-40ab-b166-64f500eeccc1",
+      "arabic": "دَآئِمٌۭ",
+      "ayah": "13:35",
+      "gloss": "éternel / perpétuel",
+      "rationale": "Src: Hamidullah \"Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont pe…\" | EN hint: \"(is) everlasting\" | S13:13:35",
+      "hamidullahSnippet": "Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont perpétuels, ainsi que son ombrage. Voilà la fin de c…"
+    },
+    {
+      "word_id": "47e52f78-49a0-4a8c-90b5-19bd10bbeb67",
+      "arabic": "رَّابِيًۭا ۚ",
+      "ayah": "13:17",
+      "gloss": "qui s'élève / en ascension",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"rising\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "456d4883-d28b-4b57-b8cd-d5cd92ba1909",
+      "arabic": "وَٱلْبَـٰطِلَ ۚ",
+      "ayah": "13:17",
+      "gloss": "mensonge / faux",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"and the falsehood\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "e3a30807-f66e-443c-aad3-b170b4ebe8a9",
+      "arabic": "كَسَبَتْ ۗ",
+      "ayah": "13:33",
+      "gloss": "elle a acquis / elle a accompli",
+      "rationale": "Src: Hamidullah \"Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtan…\" | EN hint: \"it has earned\" | S13:13:33",
+      "hamidullahSnippet": "Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtant ils donnent des associés à Allah. Dis [leur:] \"N…"
+    },
+    {
+      "word_id": "28d167a4-4c11-4f78-b25a-98f65956aae9",
+      "arabic": "ٱلثِّقَالَ",
+      "ayah": "13:12",
+      "gloss": "lourd / fardeau",
+      "rationale": "Src: Hamidullah \"C’est lui qui vous fait voir l’éclair (qui vous inspire) crainte et espoir; et Il crée les nuages lo…\" | EN hint: \"the heavy\" | S13:13:12",
+      "hamidullahSnippet": "C’est lui qui vous fait voir l’éclair (qui vous inspire) crainte et espoir; et Il crée les nuages lourds. <sup foot_note=212073>1</sup>"
+    },
+    {
+      "word_id": "1d39a48b-7fba-4c25-bde0-31b2f76f24cd",
+      "arabic": "وَعِندَهُۥٓ",
+      "ayah": "13:39",
+      "gloss": "et auprès de Lui",
+      "rationale": "Src: Hamidullah \"Allah efface ou confirme ce qu’Il veut et l’écriture primordiale est auprès de Lui.\" | EN hint: \"and with Him\" | S13:13:39",
+      "hamidullahSnippet": "Allah efface ou confirme ce qu’Il veut et l’écriture primordiale est auprès de Lui."
+    },
+    {
+      "word_id": "02339cdc-0024-4236-a96c-3939a216dd8d",
+      "arabic": "فَٱحْتَمَلَ",
+      "ayah": "13:17",
+      "gloss": "et emporte / et charrie",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"and carries\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "620f2005-f02c-4061-8330-90a4573661e2",
+      "arabic": "نَفْسٍۢ ۗ",
+      "ayah": "13:42",
+      "gloss": "âme / soi-même",
+      "rationale": "Src: Hamidullah \"Certes ceux d’avant eux ont manigancé (contre leur Messager) ; le stratagème tout entier appartient …\" | EN hint: \"soul\" | S13:13:42",
+      "hamidullahSnippet": "Certes ceux d’avant eux ont manigancé (contre leur Messager) ; le stratagème tout entier appartient à Allah. Il sait ce que chaque âme acquiert. Et le…"
+    },
+    {
+      "word_id": "5e513e90-48f6-4551-82c5-0bc2b5d41f7a",
+      "arabic": "ٱلرَّعْدُ",
+      "ayah": "13:13",
+      "gloss": "tonnerre",
+      "rationale": "Src: Hamidullah \"Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance …\" | EN hint: \"the thunder\" | S13:13:13",
+      "hamidullahSnippet": "Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance les foudres dont Il atteint qui Il veut. Or ils di…"
+    },
+    {
+      "word_id": "52cc335e-8f69-4e39-a562-b4617f0bd745",
+      "arabic": "وَنُفَضِّلُ",
+      "ayah": "13:4",
+      "gloss": "dépasser / excéder",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"but We cause to exceed\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "4922fdaa-565f-423e-a470-2d5aa177074e",
+      "arabic": "وَٱلْـَٔاصَالِ ۩",
+      "ayah": "13:15",
+      "gloss": "et au déclin du jour / et les après-midi",
+      "rationale": "Src: Hamidullah \"Et c’est à Allah que se prosternent, bon gré mal gré, tous ceux qui sont dans les cieux et sur la Te…\" | EN hint: \"and in the afternoons\" | S13:13:15",
+      "hamidullahSnippet": "Et c’est à Allah que se prosternent, bon gré mal gré, tous ceux qui sont dans les cieux et sur la Terre, ainsi que leurs ombres, au début et à la fin …"
+    },
+    {
+      "word_id": "0814dc0c-73c9-4a13-ab1a-6644ce281dd5",
+      "arabic": "سَمُّوهُمْ ۚ",
+      "ayah": "13:33",
+      "gloss": "nommez-les / désignez-les",
+      "rationale": "Src: Hamidullah \"Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtan…\" | EN hint: \"Name them\" | S13:13:33",
+      "hamidullahSnippet": "Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtant ils donnent des associés à Allah. Dis [leur:] \"N…"
+    },
+    {
+      "word_id": "dd4c0be7-8fc4-4113-8aa0-8d68c9da6bac",
+      "arabic": "ٱتَّقَوا۟ ۖ",
+      "ayah": "13:35",
+      "gloss": "les pieux / ceux qui craignent Allah",
+      "rationale": "Src: Hamidullah \"Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont pe…\" | EN hint: \"(are) righteous\" | S13:13:35",
+      "hamidullahSnippet": "Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont perpétuels, ainsi que son ombrage. Voilà la fin de c…"
+    },
+    {
+      "word_id": "7846088c-3f47-4ebe-9838-b7df152ca131",
+      "arabic": "كَخَلْقِهِۦ",
+      "ayah": "13:16",
+      "gloss": "comme Sa création / semblable à Sa création",
+      "rationale": "Src: Hamidullah \"Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en deh…\" | EN hint: \"like His creation\" | S13:13:16",
+      "hamidullahSnippet": "Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en dehors de Lui, des maîtres qui ne détiennent pour eux…"
+    },
+    {
+      "word_id": "6967c2eb-0e59-4810-b980-8baef47a2ce6",
+      "arabic": "صِنْوَانٌۭ",
+      "ayah": "13:4",
+      "gloss": "arbre",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"trees (growing) from a single root\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "3d794a62-289d-46cc-aa4c-aaf824665956",
+      "arabic": "ٱلصَّوَٰعِقَ",
+      "ayah": "13:13",
+      "gloss": "les foudres / les coups de tonnerre",
+      "rationale": "Src: Hamidullah \"Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance …\" | EN hint: \"the thunderbolts\" | S13:13:13",
+      "hamidullahSnippet": "Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance les foudres dont Il atteint qui Il veut. Or ils di…"
+    },
+    {
+      "word_id": "a5af452c-78bd-41f3-9798-165da21c4406",
+      "arabic": "ظُلْمِهِمْ ۖ",
+      "ayah": "13:6",
+      "gloss": "leur injustice / leur tort",
+      "rationale": "Src: Hamidullah \"Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est pro…\" | EN hint: \"their wrongdoing\" | S13:13:6",
+      "hamidullahSnippet": "Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est produit avant eux des châtiments exemplaires. Ton Sei…"
+    },
+    {
+      "word_id": "02dbafdd-ca69-4a8e-a41e-cba77e06b91c",
+      "arabic": "ٱلْمَثُلَـٰتُ ۗ",
+      "ayah": "13:6",
+      "gloss": "châtiment / punition",
+      "rationale": "Src: Hamidullah \"Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est pro…\" | EN hint: \"[the] similar punishments\" | S13:13:6",
+      "hamidullahSnippet": "Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est produit avant eux des châtiments exemplaires. Ton Sei…"
+    },
+    {
+      "word_id": "507104c1-4180-4f55-8f36-ae1cf2c64444",
+      "arabic": "بِمِقْدَارٍ",
+      "ayah": "13:8",
+      "gloss": "en juste proportion / avec mesure",
+      "rationale": "Src: Hamidullah \"Allah sait ce que porte chaque femelle, et de combien la période de gestation dans la matrice est éc…\" | EN hint: \"(is) in due proportion\" | S13:13:8",
+      "hamidullahSnippet": "Allah sait ce que porte chaque femelle, et de combien la période de gestation dans la matrice est écourtée ou prolongée. Et toute chose a auprès de Lu…"
+    },
+    {
+      "word_id": "26e8a990-0c54-4bee-97aa-022ed9e20da8",
+      "arabic": "وَيُنشِئُ",
+      "ayah": "13:12",
+      "gloss": "et fait naître / et forme",
+      "rationale": "Src: Hamidullah \"C’est lui qui vous fait voir l’éclair (qui vous inspire) crainte et espoir; et Il crée les nuages lo…\" | EN hint: \"and brings up\" | S13:13:12",
+      "hamidullahSnippet": "C’est lui qui vous fait voir l’éclair (qui vous inspire) crainte et espoir; et Il crée les nuages lourds. <sup foot_note=212073>1</sup>"
+    },
+    {
+      "word_id": "4364f43f-1c08-4c13-8ae0-b41542561422",
+      "arabic": "مَتَـٰعٍۢ",
+      "ayah": "13:17",
+      "gloss": "ustensiles / objets utilitaires",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"utensils\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "9c309d54-df2b-4275-9f73-fc1390a77e5f",
+      "arabic": "وَيُثْبِتُ ۖ",
+      "ayah": "13:39",
+      "gloss": "et confirme / et maintient",
+      "rationale": "Src: Hamidullah \"Allah efface ou confirme ce qu’Il veut et l’écriture primordiale est auprès de Lui.\" | EN hint: \"and confirms\" | S13:13:39",
+      "hamidullahSnippet": "Allah efface ou confirme ce qu’Il veut et l’écriture primordiale est auprès de Lui."
+    },
+    {
+      "word_id": "86301475-7e43-4295-ad93-fcb1208459ec",
+      "arabic": "وَٱلنُّورُ ۗ",
+      "ayah": "13:16",
+      "gloss": "lumière",
+      "rationale": "Src: Hamidullah \"Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en deh…\" | EN hint: \"and the light\" | S13:13:16",
+      "hamidullahSnippet": "Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en dehors de Lui, des maîtres qui ne détiennent pour eux…"
+    },
+    {
+      "word_id": "fb6a3939-3696-4656-bccd-1602f16255ca",
+      "arabic": "قَبْلِهِمُ",
+      "ayah": "13:6",
+      "gloss": "avant eux / qui les ont précédés",
+      "rationale": "Src: Hamidullah \"Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est pro…\" | EN hint: \"before them\" | S13:13:6",
+      "hamidullahSnippet": "Et ils te demandent de hâter [la venue] du malheur plutôt que celle du bonheur. Certes, il s’est produit avant eux des châtiments exemplaires. Ton Sei…"
+    },
+    {
+      "word_id": "b165513c-2c71-49b5-a7f6-1f893385b3b9",
+      "arabic": "وَعَلَيْنَا",
+      "ayah": "13:40",
+      "gloss": "et c'est sur Nous",
+      "rationale": "Src: Hamidullah \"Que Nous te fassions voir une partie de ce dont Nous les menaçons, ou que Nous te fassions mourir (a…\" | EN hint: \"and on Us\" | S13:13:40",
+      "hamidullahSnippet": "Que Nous te fassions voir une partie de ce dont Nous les menaçons, ou que Nous te fassions mourir (avant cela), ton devoir est seulement la communicat…"
+    },
+    {
+      "word_id": "bd7f2665-5656-4a8c-878a-bb420bb2d0bd",
+      "arabic": "بَعْضَهَا",
+      "ayah": "13:4",
+      "gloss": "certains / quelques",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"some of them\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "9d75d7d1-2d39-43a7-8816-2e9c63ac361a",
+      "arabic": "مَتَابِ",
+      "ayah": "13:30",
+      "gloss": "retourner / revenir",
+      "rationale": "Src: Hamidullah \"Ainsi, Nous t’envoyons dans une communauté - que d’autres communautés ont précédée - pour que tu leu…\" | EN hint: \"(is) my return\" | S13:13:30",
+      "hamidullahSnippet": "Ainsi, Nous t’envoyons dans une communauté - que d’autres communautés ont précédée - pour que tu leur récites ce que Nous te révélons [le Coran], cepe…"
+    },
+    {
+      "word_id": "3df7c304-8054-42d3-b72f-00fd8bd452cf",
+      "arabic": "قَوْلُهُمْ",
+      "ayah": "13:5",
+      "gloss": "dire / parler",
+      "rationale": "Src: Hamidullah \"Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, revie…\" | EN hint: \"(is) their saying\" | S13:13:5",
+      "hamidullahSnippet": "Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, reviendrons-nous vraiment à une nouvelle création ?\" Ce…"
+    },
+    {
+      "word_id": "e73d813a-fc06-4664-9908-359c7231b882",
+      "arabic": "ضَرًّۭا ۚ",
+      "ayah": "13:16",
+      "gloss": "un mal / un préjudice",
+      "rationale": "Src: Hamidullah \"Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en deh…\" | EN hint: \"(to) harm\" | S13:13:16",
+      "hamidullahSnippet": "Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en dehors de Lui, des maîtres qui ne détiennent pour eux…"
+    },
+    {
+      "word_id": "3ef5b735-83c9-4082-975b-c5537fd5a13c",
+      "arabic": "وَيُسَبِّحُ",
+      "ayah": "13:13",
+      "gloss": "et glorifie / et loue",
+      "rationale": "Src: Hamidullah \"Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance …\" | EN hint: \"And glorifies\" | S13:13:13",
+      "hamidullahSnippet": "Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance les foudres dont Il atteint qui Il veut. Or ils di…"
+    },
+    {
+      "word_id": "57917ac0-a776-4733-b2c9-9c8d4f97f535",
+      "arabic": "ٱلْكُفَّـٰرُ",
+      "ayah": "13:42",
+      "gloss": "les mécréants / les négateurs",
+      "rationale": "Src: Hamidullah \"Certes ceux d’avant eux ont manigancé (contre leur Messager) ; le stratagème tout entier appartient …\" | EN hint: \"the disbelievers\" | S13:13:42",
+      "hamidullahSnippet": "Certes ceux d’avant eux ont manigancé (contre leur Messager) ; le stratagème tout entier appartient à Allah. Il sait ce que chaque âme acquiert. Et le…"
+    },
+    {
+      "word_id": "90f0c3a4-36b0-414e-8a17-4be4d264bb7c",
+      "arabic": "الٓمٓر ۚ",
+      "ayah": "13:1",
+      "gloss": "Alif Lâm Mîm Râ (lettres initiales)",
+      "rationale": "Src: Hamidullah \"Alif, Lâm, Mîm, Râ . Voici les versets du Livre; et ce qui t’a été révélé par ton Seigneur est la vé…\" | EN hint: \"Alif Laam Mim Ra\" | S13:13:1",
+      "hamidullahSnippet": "Alif, Lâm, Mîm, Râ . Voici les versets du Livre; et ce qui t’a été révélé par ton Seigneur est la vérité ; mais la plupart des gens ne croient pas. <s…"
+    },
+    {
+      "word_id": "6017cc20-92d3-4d92-8d6b-511310b3d38a",
+      "arabic": "لَعَلَّكُم",
+      "ayah": "13:2",
+      "gloss": "peut-être / afin que vous",
+      "rationale": "Src: Hamidullah \"Allah est Celui qui a élevé [bien haut] les cieux sans piliers visibles. Puis, Il S’est établi [Ista…\" | EN hint: \"so that you may\" | S13:13:2",
+      "hamidullahSnippet": "Allah est Celui qui a élevé [bien haut] les cieux sans piliers visibles. Puis, Il S’est établi [Istawâ]  sur le Trône et a soumis le soleil et la lune…"
+    },
+    {
+      "word_id": "c46ec37d-acfc-4ba8-bc9c-eb5730b5f0e1",
+      "arabic": "لَهَدَى",
+      "ayah": "13:31",
+      "gloss": "guider / mener",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"surely, He would have guided\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    },
+    {
+      "word_id": "a0d822ef-d435-4905-922d-b0c932a1d5df",
+      "arabic": "ٱلْقَهَّـٰرُ",
+      "ayah": "13:16",
+      "gloss": "le Dominateur / le Tout-Puissant",
+      "rationale": "Src: Hamidullah \"Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en deh…\" | EN hint: \"the Irresistible\" | S13:13:16",
+      "hamidullahSnippet": "Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en dehors de Lui, des maîtres qui ne détiennent pour eux…"
+    },
+    {
+      "word_id": "59618992-c444-4f1e-ac88-dd4e46882060",
+      "arabic": "أَوْدِيَةٌۢ",
+      "ayah": "13:17",
+      "gloss": "les vallées",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"the valleys\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "41152ecc-9af7-4849-800b-f7a32e7edd7b",
+      "arabic": "تُوقِنُونَ",
+      "ayah": "13:2",
+      "gloss": "vous avez la certitude / vous êtes convaincus",
+      "rationale": "Src: Hamidullah \"Allah est Celui qui a élevé [bien haut] les cieux sans piliers visibles. Puis, Il S’est établi [Ista…\" | EN hint: \"believe with certainty\" | S13:13:2",
+      "hamidullahSnippet": "Allah est Celui qui a élevé [bien haut] les cieux sans piliers visibles. Puis, Il S’est établi [Istawâ]  sur le Trône et a soumis le soleil et la lune…"
+    },
+    {
+      "word_id": "bd502bbb-7ccb-450b-8805-e6a349d85d64",
+      "arabic": "زَبَدًۭا",
+      "ayah": "13:17",
+      "gloss": "écume",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"a foam\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "cf01b87d-2981-4e4f-a8f1-f254bcc29456",
+      "arabic": "يُوقِدُونَ",
+      "ayah": "13:17",
+      "gloss": "ils allument / ils chauffent",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"they heat\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "d88cb409-24b7-4018-aa13-8749c0047aa7",
+      "arabic": "ٱلْأَرْحَامُ",
+      "ayah": "13:8",
+      "gloss": "ventre / matrice",
+      "rationale": "Src: Hamidullah \"Allah sait ce que porte chaque femelle, et de combien la période de gestation dans la matrice est éc…\" | EN hint: \"the womb\" | S13:13:8",
+      "hamidullahSnippet": "Allah sait ce que porte chaque femelle, et de combien la période de gestation dans la matrice est écourtée ou prolongée. Et toute chose a auprès de Lu…"
+    },
+    {
+      "word_id": "c1bcb54d-fc18-4dc9-8d40-6d25d60f1072",
+      "arabic": "صِنْوَانٍۢ",
+      "ayah": "13:4",
+      "gloss": "arbre",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"trees (growing) from a single root\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "54dc5637-7496-4556-8599-374e3b4e683f",
+      "arabic": "بِشَىْءٍ",
+      "ayah": "13:14",
+      "gloss": "d'une chose / de quoi que ce soit",
+      "rationale": "Src: Hamidullah \"À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune faço…\" | EN hint: \"with a thing\" | S13:13:14",
+      "hamidullahSnippet": "À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune façon; semblables à celui qui étend ses deux mains ver…"
+    },
+    {
+      "word_id": "116d76f5-27f6-4926-bce3-ff5efe2e6d02",
+      "arabic": "وَالٍ",
+      "ayah": "13:11",
+      "gloss": "protecteur / tuteur / gardien",
+      "rationale": "Src: Hamidullah \"Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par …\" | EN hint: \"protector\" | S13:13:11",
+      "hamidullahSnippet": "Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par ordre d’Allah. En vérité, Allah ne modifie point l…"
+    },
+    {
+      "word_id": "6ce77990-9dcc-43d3-8589-73090095d691",
+      "arabic": "صَبَرْتُمْ ۚ",
+      "ayah": "13:24",
+      "gloss": "patience / être patient",
+      "rationale": "Src: Hamidullah \"\"Paix (Salâm) sur vous, pour ce que vous avez enduré !\" - Comme est bonne votre Demeure finale !\"\" | EN hint: \"you patiently endured\" | S13:13:24",
+      "hamidullahSnippet": "\"Paix (Salâm) sur vous, pour ce que vous avez enduré !\" - Comme est bonne votre Demeure finale !\""
+    },
+    {
+      "word_id": "c3450540-2bd0-4990-ba09-9ace05db1637",
+      "arabic": "حُكْمًا",
+      "ayah": "13:37",
+      "gloss": "autorité",
+      "rationale": "Src: Hamidullah \"Ainsi l’avons-Nous fait descendre (le Coran) [sous forme] de loi en arabe. Et si tu suis leurs passi…\" | EN hint: \"(to be) a judgment of authority\" | S13:13:37",
+      "hamidullahSnippet": "Ainsi l’avons-Nous fait descendre (le Coran) [sous forme] de loi en arabe. Et si tu suis leurs passions après ce que tu as reçu comme savoir, alors il…"
+    },
+    {
+      "word_id": "89a3f06d-6bf9-4276-9690-519e85278163",
+      "arabic": "تَعْجَبْ",
+      "ayah": "13:5",
+      "gloss": "tu t'étonnes / es-tu étonné",
+      "rationale": "Src: Hamidullah \"Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, revie…\" | EN hint: \"you (are) astonished\" | S13:13:5",
+      "hamidullahSnippet": "Et si tu dois t’étonner, rien de plus étonnant que leurs dires : \"Quand nous seront poussière, reviendrons-nous vraiment à une nouvelle création ?\" Ce…"
+    },
+    {
+      "word_id": "abeaaf89-4717-46ab-988e-b270ae9bd29f",
+      "arabic": "جَمِيعًا ۗ",
+      "ayah": "13:31",
+      "gloss": "tout / tous",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"all\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    },
+    {
+      "word_id": "78f60633-4845-408c-94b6-a1aed2be44c7",
+      "arabic": "أَعْمَىٰٓ ۚ",
+      "ayah": "13:19",
+      "gloss": "aveugle",
+      "rationale": "Src: Hamidullah \"Celui qui sait que ce qui t’est révélé de la part de ton Seigneur est la vérité, est-il semblable à …\" | EN hint: \"(is) blind\" | S13:13:19",
+      "hamidullahSnippet": "Celui qui sait que ce qui t’est révélé de la part de ton Seigneur est la vérité, est-il semblable à l’aveugle  ? Seuls les gens doués d’intelligence r…"
+    },
+    {
+      "word_id": "ad885213-56d2-4eb8-b170-bd40e3c5f6db",
+      "arabic": "جَهَرَ",
+      "ayah": "13:10",
+      "gloss": "divulgue / rend public",
+      "rationale": "Src: Hamidullah \"Sont égaux pour lui, celui parmi vous qui tient secrète sa parole, et celui qui la divulgue ; ainsi …\" | EN hint: \"publicizes\" | S13:13:10",
+      "hamidullahSnippet": "Sont égaux pour lui, celui parmi vous qui tient secrète sa parole, et celui qui la divulgue ; ainsi que celui qui se cache la nuit et celui qui se mon…"
+    },
+    {
+      "word_id": "f2fd48d2-66c8-4df3-a86d-133dda83f7d4",
+      "arabic": "أُكُلُهَا",
+      "ayah": "13:35",
+      "gloss": "nourriture / subsistance",
+      "rationale": "Src: Hamidullah \"Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont pe…\" | EN hint: \"Its food\" | S13:13:35",
+      "hamidullahSnippet": "Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont perpétuels, ainsi que son ombrage. Voilà la fin de c…"
+    },
+    {
+      "word_id": "015261d2-628b-4223-9eb5-818abfd7bda8",
+      "arabic": "قَارِعَةٌ",
+      "ayah": "13:31",
+      "gloss": "un cataclysme / un désastre",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"a disaster\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    },
+    {
+      "word_id": "856ddc7f-2a4b-4a63-9b6b-34cae77e7cc0",
+      "arabic": "لِّتَتْلُوَا۟",
+      "ayah": "13:30",
+      "gloss": "lire / réciter",
+      "rationale": "Src: Hamidullah \"Ainsi, Nous t’envoyons dans une communauté - que d’autres communautés ont précédée - pour que tu leu…\" | EN hint: \"so that you might recite\" | S13:13:30",
+      "hamidullahSnippet": "Ainsi, Nous t’envoyons dans une communauté - que d’autres communautés ont précédée - pour que tu leur récites ce que Nous te révélons [le Coran], cepe…"
+    },
+    {
+      "word_id": "5a2c2f7f-0de5-4db6-9c59-83d83f03133f",
+      "arabic": "لِيَبْلُغَ",
+      "ayah": "13:14",
+      "gloss": "atteindre / rejoindre",
+      "rationale": "Src: Hamidullah \"À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune faço…\" | EN hint: \"to reach\" | S13:13:14",
+      "hamidullahSnippet": "À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune façon; semblables à celui qui étend ses deux mains ver…"
+    },
+    {
+      "word_id": "03033d86-82d0-4ab5-bb78-5d61b74ed825",
+      "arabic": "وَذُرِّيَّةًۭ ۚ",
+      "ayah": "13:38",
+      "gloss": "enfant / descendance",
+      "rationale": "Src: Hamidullah \"Et Nous avons certes envoyé avant toi des Messagers, et leur avons donné des épouses et des descenda…\" | EN hint: \"and offspring\" | S13:13:38",
+      "hamidullahSnippet": "Et Nous avons certes envoyé avant toi des Messagers, et leur avons donné des épouses et des descendants. Et il n’appartient pas à un Messager d’apport…"
+    },
+    {
+      "word_id": "65017323-aead-4b02-9019-ccee878ef18e",
+      "arabic": "مُعَقِّبَ",
+      "ayah": "13:41",
+      "gloss": "Celui qui réduit / qui diminue",
+      "rationale": "Src: Hamidullah \"Ne voient-ils pas que Nous frappons à la terre et que Nous la réduisons de tous côtés ? C’est Allah …\" | EN hint: \"adjuster\" | S13:13:41",
+      "hamidullahSnippet": "Ne voient-ils pas que Nous frappons à la terre et que Nous la réduisons de tous côtés ? C’est Allah qui juge et personne ne peut s’opposer à Son jugem…"
+    },
+    {
+      "word_id": "9eb4ba9d-a962-4aee-89a1-3153801ac892",
+      "arabic": "فَتَشَـٰبَهَ",
+      "ayah": "13:16",
+      "gloss": "semblable / pareil",
+      "rationale": "Src: Hamidullah \"Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en deh…\" | EN hint: \"so that seemed alike\" | S13:13:16",
+      "hamidullahSnippet": "Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en dehors de Lui, des maîtres qui ne détiennent pour eux…"
+    },
+    {
+      "word_id": "3c0a436d-bb64-47b2-a9c5-51cd9b58c8a7",
+      "arabic": "بِقَوْمٍ",
+      "ayah": "13:11",
+      "gloss": "peuple / les gens",
+      "rationale": "Src: Hamidullah \"Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par …\" | EN hint: \"of a people\" | S13:13:11",
+      "hamidullahSnippet": "Il [l’homme] a par devant lui et derrière lui des Anges qui se relaient et qui veillent sur lui par ordre d’Allah. En vérité, Allah ne modifie point l…"
+    },
+    {
+      "word_id": "c8a5fc6a-2188-48d4-b1bf-b42eef404c43",
+      "arabic": "وَظِلُّهَا ۚ",
+      "ayah": "13:35",
+      "gloss": "ombre / ombrage",
+      "rationale": "Src: Hamidullah \"Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont pe…\" | EN hint: \"and its shade\" | S13:13:35",
+      "hamidullahSnippet": "Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont perpétuels, ainsi que son ombrage. Voilà la fin de c…"
+    },
+    {
+      "word_id": "60344013-25f6-41df-9bfd-db60c15bb76b",
+      "arabic": "كَبَـٰسِطِ",
+      "ayah": "13:14",
+      "gloss": "comme celui qui étend / qui déploie",
+      "rationale": "Src: Hamidullah \"À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune faço…\" | EN hint: \"like one who stretches\" | S13:13:14",
+      "hamidullahSnippet": "À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune façon; semblables à celui qui étend ses deux mains ver…"
+    },
+    {
+      "word_id": "f20db09e-b6e8-4a1e-8b4d-b128cbd14875",
+      "arabic": "ٱلْمَوْتَىٰ ۗ",
+      "ayah": "13:31",
+      "gloss": "les morts",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"the dead\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    },
+    {
+      "word_id": "5c0f6825-5f87-456b-9207-539e4bf47592",
+      "arabic": "قَآئِمٌ",
+      "ayah": "13:33",
+      "gloss": "le Gardien / Celui qui veille",
+      "rationale": "Src: Hamidullah \"Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtan…\" | EN hint: \"(is) a Maintainer\" | S13:13:33",
+      "hamidullahSnippet": "Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtant ils donnent des associés à Allah. Dis [leur:] \"N…"
+    },
+    {
+      "word_id": "5888a10b-805d-4cc3-8e3b-c75234f51ab8",
+      "arabic": "وَغَيْرُ",
+      "ayah": "13:4",
+      "gloss": "et non / et pas",
+      "rationale": "Src: Hamidullah \"Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, …\" | EN hint: \"and not\" | S13:13:4",
+      "hamidullahSnippet": "Et sur la terre il y a des parcelles voisines les unes des autres, des jardins [plantés] de vignes, et des céréales et des palmiers, en touffes ou esp…"
+    },
+    {
+      "word_id": "e71c92d3-cb13-4cfd-aa1c-da78f43dbd51",
+      "arabic": "ٱلزَّبَدُ",
+      "ayah": "13:17",
+      "gloss": "l'écume",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"the foam\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "e663dcc6-52f0-43a2-bf5d-88a8d787aaf8",
+      "arabic": "مُرْسَلًۭا ۚ",
+      "ayah": "13:43",
+      "gloss": "messager / envoyé",
+      "rationale": "Src: Hamidullah \"Et ceux qui ne croient pas disent : \"Tu n’es pas un Messager.\" Dis : \"Allah suffit, comme témoin ent…\" | EN hint: \"a Messenger\" | S13:13:43",
+      "hamidullahSnippet": "Et ceux qui ne croient pas disent : \"Tu n’es pas un Messager.\" Dis : \"Allah suffit, comme témoin entre vous et moi, et ceux qui ont la connaissance du…"
+    },
+    {
+      "word_id": "b9a80d0f-f682-4bc0-8b4c-9ae8c0ada534",
+      "arabic": "دَعْوَةُ",
+      "ayah": "13:14",
+      "gloss": "l'invocation / la supplication",
+      "rationale": "Src: Hamidullah \"À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune faço…\" | EN hint: \"(is) supplication\" | S13:13:14",
+      "hamidullahSnippet": "À Lui l’appel de la Vérité  ! Ceux qu’ils invoquent en dehors de Lui ne leur répondent d’aucune façon; semblables à celui qui étend ses deux mains ver…"
+    },
+    {
+      "word_id": "c0356e19-43af-4993-82f9-70bd7f7d0cc3",
+      "arabic": "أَفَٱتَّخَذْتُم",
+      "ayah": "13:16",
+      "gloss": "prendre / saisir",
+      "rationale": "Src: Hamidullah \"Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en deh…\" | EN hint: \"Have you then taken\" | S13:13:16",
+      "hamidullahSnippet": "Dis: “Qui est le Seigneur des cieux et de la Terre ? ” Dis : “Allah.” Dis : “Et prendrez-vous en dehors de Lui, des maîtres qui ne détiennent pour eux…"
+    },
+    {
+      "word_id": "06135403-1cc3-49cd-b23f-e3f7726cecb6",
+      "arabic": "وَأَنْهَـٰرًۭا ۖ",
+      "ayah": "13:3",
+      "gloss": "rivière / fleuve",
+      "rationale": "Src: Hamidullah \"Et c’est Lui qui étendit la terre et y a placé montagnes et fleuves. Et de chaque espèce de fruits I…\" | EN hint: \"and rivers\" | S13:13:3",
+      "hamidullahSnippet": "Et c’est Lui qui étendit la terre et y a placé montagnes et fleuves. Et de chaque espèce de fruits Il a établi deux éléments de couple. Il fait que la…"
+    },
+    {
+      "word_id": "966857fd-4639-430f-ada5-4086fa13902f",
+      "arabic": "ٱلْمِحَالِ",
+      "ayah": "13:13",
+      "gloss": "fort / force / puissance",
+      "rationale": "Src: Hamidullah \"Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance …\" | EN hint: \"(in) Strength\" | S13:13:13",
+      "hamidullahSnippet": "Le tonnerre Le glorifie par Sa louange, et aussi les Anges, sous l’effet de Sa crainte. Et Il lance les foudres dont Il atteint qui Il veut. Or ils di…"
+    },
+    {
+      "word_id": "f634a23e-7573-4e31-afb4-a381092059d2",
+      "arabic": "فَيَذْهَبُ",
+      "ayah": "13:17",
+      "gloss": "il disparaît / il s'en va",
+      "rationale": "Src: Hamidullah \"Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le f…\" | EN hint: \"it passes away\" | S13:13:17",
+      "hamidullahSnippet": "Il a fait descendre une eau du ciel à laquelle des vallées servent de lit, selon leur grandeur. Le flot débordé à charrié une écume flottante; et semb…"
+    },
+    {
+      "word_id": "30344a4f-dac1-4d82-be53-2dfa50e426a0",
+      "arabic": "بِظَـٰهِرٍۢ",
+      "ayah": "13:33",
+      "gloss": "clair / manifeste / évident",
+      "rationale": "Src: Hamidullah \"Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtan…\" | EN hint: \"of the apparent\" | S13:13:33",
+      "hamidullahSnippet": "Est-ce que Celui qui observe ce que chaque âme acquiert [est semblable aux associés ?...] Et pourtant ils donnent des associés à Allah. Dis [leur:] \"N…"
+    },
+    {
+      "word_id": "f33a532d-bb17-4906-8361-5fd5a8e5f97c",
+      "arabic": "وَّعُقْبَى",
+      "ayah": "13:35",
+      "gloss": "fin / terme",
+      "rationale": "Src: Hamidullah \"Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont pe…\" | EN hint: \"and (the) end\" | S13:13:35",
+      "hamidullahSnippet": "Tel est le Paradis qui a été promis aux pieux, sous lequel coulent les ruisseaux; ses fruits sont perpétuels, ainsi que son ombrage. Voilà la fin de c…"
+    },
+    {
+      "word_id": "3f4163b9-2c81-4cfa-99d3-dcd145e9f30d",
+      "arabic": "يَا۟يْـَٔسِ",
+      "ayah": "13:31",
+      "gloss": "savoir / connaître",
+      "rationale": "Src: Hamidullah \"S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les mort…\" | EN hint: \"know\" | S13:13:31",
+      "hamidullahSnippet": "S’il y avait un Coran à mettre les montagnes en marche, à fendre la terre ou à faire parler les morts (ce serait celui-ci). C’est plutôt à Allah le co…"
+    }
+  ],
+  "validation": {
+    "totalGlosses": 135,
+    "expectedGlosses": 135,
+    "uniqueWordIds": 135,
+    "emptyGlosses": 0,
+    "validationIssues": 0,
+    "identitySafe": true
+  },
+  "simulation": {
+    "baselineCovered": 466,
+    "baselineTotal": 601,
+    "newWordTranslations": 135,
+    "afterImport": 601,
+    "afterImportPct": 100,
+    "ready": true
+  },
+  "integrity": {
+    "databaseWrites": 0,
+    "masaqMappingsCreated": 0,
+    "wlmCreated": 0,
+    "curriculumWrites": 0
+  }
+}
