@@ -2,7 +2,7 @@
 // Composant serveur : toutes les scènes marketing restent déterministes entre SSR et hydratation.
 
 import Link from "next/link";
-import { ArrowRightIcon, Layers3Icon, SparklesIcon } from "lucide-react";
+import { ArrowRightIcon, SparklesIcon } from "lucide-react";
 import { LandingProductPreview } from "@/components/app/landing-product-preview";
 import { LandingProductStory } from "@/components/app/landing-product-story";
 import { Reveal } from "@/components/app/landing-reveal";
@@ -182,8 +182,8 @@ export function LandingPage({ authenticated = false }: { authenticated?: boolean
 
       <footer className="flex flex-col gap-4 border-t border-border-subtle pt-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-2">
-          <Layers3Icon className="size-4 text-primary-strong" aria-hidden="true" />
-          <span className="font-heading font-semibold">Hikma</span>
+          {/* Logo officiel (mot-symbole + emblème + signature), jamais un placeholder texte. */}
+          <HikmaLogo size="sm" className="size-10" />
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-text-secondary">
           <Link href="/learn/basmala" className="hover:text-text-primary">

@@ -33,10 +33,14 @@ describe("Hikma brand system — contracts", () => {
   });
 
   it("intègre le logo aux surfaces publiques prévues", () => {
-    expect(read("components/app/landing.tsx")).toContain("<HikmaLogo");
+    const landing = read("components/app/landing.tsx");
+    expect(landing).toContain("<HikmaLogo");
     expect(read("components/app/app-nav.tsx")).toContain("<HikmaLogo");
     expect(read("app/(auth)/login/page.tsx")).toContain("<HikmaLogo");
     expect(read("app/design-system/page.tsx")).toContain("Hikma Brand Identity");
+    // Le footer de la landing utilise le VRAI logo (aucun placeholder texte/icône).
+    expect(landing).not.toContain("Layers3Icon");
+    expect(landing).toMatch(/<footer[\s\S]*<HikmaLogo/);
   });
 
   it("réserve l’augmentation desktop à la navigation applicative", () => {
