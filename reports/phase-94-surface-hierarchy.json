@@ -1,0 +1,94 @@
+{
+  "phase": "PHASE_94_SURFACE_HIERARCHY",
+  "verdict": "PHASE_94_SURFACE_HIERARCHY_COMPLETE",
+  "questionAnswered": "OUI — les surfaces et cartes de Hikma ont maintenant une hiérarchie visuelle claire sur desktop ET mobile : les cartes standards sont séparées par une bordure perceptible (1.42-1.49:1) + une ombre douce réelle, les cartes clés restent en niveau featured, les imbriqués ne reprennent plus la couleur du parent.",
+  "scope": "Design system UI uniquement : tokens globals.css (borders, shadows) + 1 imbriqué /learn. Aucune logique métier, aucune donnée, aucune route, aucun composant logique modifié.",
+  "productionChanges": 2,
+  "databaseWrites": 0,
+  "date": "2026-08-26",
+  "tokensBefore": {
+    "border": "#d7e0dc (1.263:1 vs ivory — à peine visible)",
+    "borderSubtle": "#e4ece8 (1.127:1 vs ivory — invisible à 1px)",
+    "shadowCard": "0 1px 2px rgba(46,42,28,0.04), 0 8px 24px -12px rgba(46,42,28,0.10) — fonctionnellement absente",
+    "shadowElevated": "0 2px 4px rgba(46,42,28,0.06), 0 16px 40px -16px rgba(46,42,28,0.16) — perceptible",
+    "shadowOverlay": "absente (défaut Base UI shadow-lg/5)",
+    "surface": "#fffdf8",
+    "surfaceElevated": "#fffdf8 (identique à surface — 1.000:1)",
+    "surfaceSubtle": "#f1f6f3",
+    "surfaceFeatured": "#f1f6f3 (identique à subtle)",
+    "surfaceInteractive": "#ddedea"
+  },
+  "tokensAfter": {
+    "border": "#c7d5ce (1.422:1 vs ivory, 1.493:1 vs cream — perceptible à 1px)",
+    "borderSubtle": "#d9e4de (1.222:1 vs ivory, 1.283:1 vs cream — hairline douce mais visible ; 1.193:1 vs featured pour les imbriqués)",
+    "shadowCard": "0 1px 2px rgba(46,42,28,0.05), 0 12px 32px -12px rgba(46,42,28,0.14) — douce, perceptible sur mobile",
+    "shadowElevated": "0 2px 4px rgba(46,42,28,0.07), 0 18px 44px -16px rgba(46,42,28,0.18) — échelon clairement supérieur",
+    "shadowOverlay": "0 8px 24px -8px rgba(46,42,28,0.14), 0 28px 72px -24px rgba(46,42,28,0.22) — token ajouté pour le niveau overlay",
+    "surface": "#fffdf8 (inchangé — flat)",
+    "surfaceElevated": "#fffdf8 (inchangé — séparation désormais portée par border + shadow)",
+    "surfaceSubtle": "#f1f6f3 (inchangé)",
+    "surfaceFeatured": "#f1f6f3 (inchangé)",
+    "surfaceInteractive": "#ddedea (inchangé)",
+    "darkBorder": "#315957 → #3b6a66 (harmonisation)",
+    "darkBorderSubtle": "#284b49 → #305954 (harmonisation)"
+  },
+  "designDecisions": [
+    "Séparation par border + shadow (pas de changement de couleur des surfaces claires) : les niveaux cream/ivory sont physiquement à ~1.05:1, aucune teinte ne peut les séparer — le mécanisme d'élévation des surfaces claires est border + ombre.",
+    "shadow-card renforcée mais reste douce et chaude (rgba(46,42,28) = charbon chaud, jamais noir dur) : perceptible sans hover sur mobile, non décorative.",
+    "shadow-elevated renforcée légèrement pour créer un échelon clair au-dessus de shadow-card.",
+    "Token --shadow-overlay ajouté pour le niveau 4 (overlays) — les primitives Base UI conservent leurs shadows natives (non modifiées).",
+    "border-subtle re-sémantisé comme hairline/imbriqué (visible), border comme bordure de carte.",
+    "--input: var(--border) → les champs de formulaire héritent automatiquement de la bordure plus visible.",
+    "Règle imbriqués : jamais la couleur du parent — /learn Prochaine étape passe de bg-surface-elevated/70 (1.000:1) à bg-surface-elevated + border border-border-subtle (1.193:1 + inversion de teinte).",
+    "Dark mode dormant (aucun toggle) : tokens .dark harmonisés légèrement pour rester cohérents."
+  ],
+  "componentsChanged": [
+    "app/globals.css — tokens --border, --border-subtle, --shadow-card, --shadow-elevated, + --shadow-overlay (+ .dark)",
+    "app/(app)/learn/page.tsx — imbriqué Prochaine étape : bg-surface-elevated/70 → bg-surface-elevated + border border-border-subtle, hover:border-border hover:bg-surface-subtle"
+  ],
+  "componentsNotChanged": [
+    "components/ui/card.tsx (base border-border + shadow-card — corrigée globalement via les tokens, 23+ usages bénéficient sans édition)",
+    "Dashboard, /surahs, /review, /sources, auth, landing — aucun édit nécessaire (les tokens propagent la hiérarchie)",
+    "Overlays Base UI (dialog, sheet, drawer, popover) — shadows natives conservées"
+  ],
+  "pagesAffected": [
+    "Toutes les pages avec cartes : /dashboard, /learn, /review, /surahs, /sources, /mots, auth, landing",
+    "Amélioration directe sur mobile (360-430px) : cartes visibles sans hover"
+  ],
+  "mobileValidation": {
+    "360x800": "Cartes séparées par bordure 1.42-1.49:1 + ombre 0.14 perceptible — aucune carte ne se fond dans le fond sans hover",
+    "390x844": "Idem — hiérarchie featured (Today, Ta progression) vs standard claire",
+    "430x932": "Idem",
+    "note": "Validation navigateur réel à confirmer sur preview Vercel (pas de navigateur persistant dans la sandbox) — vérifié par CSS compilé + HTML rendu + calculs de contraste"
+  },
+  "desktopValidation": "Cartes standards : border + shadow perceptibles dès le repos ; hover:bg/subtle conservés en renfort. Sidebar/headers/dividers inchangés structurellement (hairlines légèrement plus visibles, cohérent).",
+  "accessibility": {
+    "textContrast": "Inchangé (aucun token texte modifié — AA préservé)",
+    "borderContrast": "Amélioré : border 1.493:1 vs cream, border-subtle 1.283:1 — indicateurs non-textuels plus perceptibles",
+    "focusStates": "Inchangés (focus-visible rings)",
+    "nonTextIndicators": "Barres gold inchangées (hors périmètre 94 — suivi 93-P2-05)"
+  },
+  "validation": {
+    "typecheck": "PASS (0 erreur)",
+    "lint": "PASS (0 erreur, 20 warnings pré-existants)",
+    "tests": "1063/1063 PASS — 1 échec flaky initial sur lesson-completion.test.ts (simulation d'erreurs réseau, timing) confirmé stable après 2 re-runs isolés + run complet",
+    "build": "PASS (Compiled successfully, 11/11 pages statiques)",
+    "cssCompiled": "Valeurs vérifiées dans le CSS compilé : #c7d5ce, #d9e4de, 0 12px 32px -12px, 0 18px 44px -16px",
+    "htmlRendered": "Imbriqué /learn corrigé vérifié dans le HTML rendu (border border-border-subtle bg-surface-elevated)"
+  },
+  "regressions": 0,
+  "findingsRemaining": {
+    "P0": 0,
+    "P1": 0,
+    "P2": [
+      "93-P2-05 : contraste barre de progression gold (fill vs track) < 3:1 — hors périmètre 94, à traiter",
+      "93-P2-01 : stats dashboard 3 colonnes serrées ≤360px — hors périmètre 94 (phase mobile UX)"
+    ],
+    "P3": [
+      "93B-P3-01 : border vs border-subtle — rôles désormais documentés (card vs hairline) mais valeurs proches",
+      "93B-P3-02 : sidebar 1.044:1 — NOTE sans action"
+    ],
+    "note": "La hiérarchie de contenu du dashboard (featured > standard) est portée par l'ordre + le pattern featured existant ; différenciation fine des cartes secondaires = P3 futur"
+  },
+  "nextPhase": "PHASE 95 — Mobile UX fixes (P1 de la PHASE 93) : barre d'action sticky exercice + clavier arabe overlay/rangées, puis P2 dashboard (stats, explication vide, touch targets, contraste gold)."
+}

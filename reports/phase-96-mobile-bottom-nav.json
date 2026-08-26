@@ -1,0 +1,76 @@
+{
+  "phase": "PHASE_96_MOBILE_NAVIGATION",
+  "verdict": "PHASE_96_MOBILE_NAVIGATION_COMPLETE",
+  "bottom_nav": "PASS",
+  "ui_link_underline": "PASS",
+  "mobile_ux": "PASS",
+  "accessibility": "PASS",
+  "safe_area": "PASS",
+  "learning_flow_compatibility": "PASS",
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "tests": "1084/1084 PASS",
+  "build": "PASS",
+  "database_writes": 0,
+  "regressions": 0,
+  "etat_initial": {
+    "bottom_nav": "barre pleine largeur border-t bg-background/95 backdrop-blur-sm, actif = bg-surface-interactive, items min-h-11 flex-1",
+    "underline_bug": "règle globale app/globals.css : a:not([data-no-hover-underline]):not(.inline-flex):hover -> text-decoration underline ; data-no-hover-underline jamais utilisé -> soulignait au hover la nav, les cartes leçons (HikmaLessonCard group block), le bloc Prochaine étape et tout lien non inline-flex"
+  },
+  "benchmark_principes": [
+    "icon-first + label conservés (5 onglets, aucun retrait sans preuve)",
+    "active indicator en pilule teal légère (Material 3 / apps éducatives premium)",
+    "surface flottante élévée : coins arrondis, marges, safe-area, translucide + blur",
+    "micro-interaction : scale 0.97 au tap, transitions 150ms, prefers-reduced-motion respecté"
+  ],
+  "design_choisi": {
+    "type": "barre flottante pilule (variante A/C hybride)",
+    "justification": "identité Hikma conservée (teal actif, cream surface), élévation L3/L4 du système 94 (border-subtle + shadow-elevated), aucun FAB, labels conservés, zones tactiles 44px+"
+  },
+  "modifications": [
+    {
+      "fichier": "components/app/app-nav.tsx",
+      "detail": "NavLink mobile : min-h-11 min-w-11 flex-1 flex-col items-center rounded-2xl px-2 py-1.5 text-xs active:scale-[0.97] ; actif mobile = bg-primary/10 text-primary-strong (pilule teal), actif desktop (sidebar) inchangé = bg-surface-interactive. Nav mobile : fixed inset-x-0 bottom-0 z-30 px-3 pb-[max(env(safe-area-inset-bottom),0.75rem)] md:hidden, barre mx-auto max-w-md rounded-[1.75rem] border-border-subtle bg-popover/95 p-1.5 shadow-elevated backdrop-blur-md"
+    },
+    {
+      "fichier": "app/globals.css",
+      "detail": "règle globale de hover-underline retirée -> a { text-decoration: none } ; le soulignement devient opt-in via underline/hover:underline (liens éditoriaux, déjà présents explicitement)"
+    },
+    {
+      "fichier": "app/(app)/layout.tsx",
+      "detail": "main pb-24 -> pb-28 md:pb-10 : dégagement pour la barre flottante (hauteur 56px + safe-area)"
+    }
+  ],
+  "underline_cause_racine": "règle globale app/globals.css @layer base : tout <a> non inline-flex recevait text-decoration underline au hover, y compris les liens de navigation (flex), les cartes leçons (group block) et les blocs cliquables. data-no-hover-underline (opt-out) n'était utilisé nulle part.",
+  "underline_corrige": {
+    "nav_item_hover": "none",
+    "carte_lecon_hover": "none",
+    "prochaine_etape_hover": "none",
+    "lien_editorial_hover": "underline (préservé)"
+  },
+  "validation_mobile": {
+    "method": "Chrome headless + session authentifiée réelle, hover simulé via Input.dispatchMouseEvent, mesures getBoundingClientRect + getComputedStyle",
+    "360px": "barre marges 12px, 5 items >= 52x64px, gap contenu 34px, 0 overflow",
+    "390px": "idem (items 52x67px), radius 28px, bg cream 95% + blur 12px + shadow-elevated",
+    "412px": "idem",
+    "430px": "idem",
+    "safe_area": "pb-[max(env(safe-area-inset-bottom),0.75rem)]",
+    "sticky_cta": "les pages leçon masquent la nav (isLessonFocus) -> aucune collision avec la barre sticky de la PHASE 95",
+    "clavier_arabe": "inchange, aucun recouvrement"
+  },
+  "validation_desktop": {
+    "sidebar": "inchangée (état actif bg-surface-interactive, indicateur w-0.5 left)",
+    "aucune_rege_mobile_fuite": "nav flottante md:hidden, tokens partagés non modifiés"
+  },
+  "tests_ajoutes": "tests/navigation.test.ts : 4 nouveaux contrats PHASE 96 (barre flottante, 5 items + aria-current + 44px, états actifs mobile/desktop, règle underline retirée)",
+  "fichiers_modifies": [
+    "components/app/app-nav.tsx",
+    "app/globals.css",
+    "app/(app)/layout.tsx",
+    "tests/navigation.test.ts"
+  ],
+  "points_restants": [
+    "validation visuelle humaine sur téléphone réel recommandée (barre flottante : perception premium à confirmer)",
+    "hover des liens textuels sans classe hover:underline perd l'effet de soulignement global (comportement voulu : UI links non soulignés)"
+  ]
+}

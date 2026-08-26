@@ -31,6 +31,14 @@ export function buildCsp(supabaseUrl: string, opts: { dev?: boolean } = {}): str
 
   const connectSrc = ["'self'", supabaseUrl, supabaseHost ? `wss://${supabaseHost}` : ""].filter(Boolean);
 
+  // media-src couvre DEUX sources audio distinctes :
+  //  - cdn.islamic.network → récitations des versets (URLs publiques fixes) ;
+  //  - <supabaseUrl>       → audio des MOTS (URLs signées Storage `word-audio`,
+  //    `https://<host>/storage/v1/object/sign/...`) — Phase 24F/24H.
+  // Sans cette origine, le navigateur bloque la lecture des mots (erreur
+  // « Impossible de lire l'audio »), comme constaté au runtime PHASE 91/92.
+  const mediaSrc = ["'self'", AUDIO_CDN_ORIGIN, supabaseUrl, "blob:"].filter(Boolean);
+
   const scriptSrc = opts.dev
     ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
     : "script-src 'self' 'unsafe-inline'";
@@ -42,7 +50,7 @@ export function buildCsp(supabaseUrl: string, opts: { dev?: boolean } = {}): str
     "img-src 'self' data: blob:",
     "font-src 'self' data:",
     `connect-src ${connectSrc.join(" ")}`,
-    `media-src 'self' ${AUDIO_CDN_ORIGIN} blob:`,
+    `media-src ${mediaSrc.join(" ")}`,
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",

@@ -246,7 +246,7 @@ function DashboardMain({
           <Caption>{summary.startedSurahs} commencée{summary.startedSurahs > 1 ? "s" : ""} · {summary.completedSurahs} terminée{summary.completedSurahs > 1 ? "s" : ""}</Caption>
         </div>
         <Card className="border-border-subtle bg-surface-elevated">
-          <CardContent className="gap-5 p-6 sm:p-7">
+          <CardContent className="flex flex-col gap-5 p-6 sm:p-7">
             <HikmaProgress
               value={summary.totalLessons > 0 ? Math.round((summary.completedLessons / summary.totalLessons) * 100) : 0}
               label={`${summary.completedLessons} leçon${summary.completedLessons > 1 ? "s" : ""} terminée${summary.completedLessons > 1 ? "s" : ""}`}

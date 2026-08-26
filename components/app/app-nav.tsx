@@ -17,10 +17,18 @@ function NavLink({ href, label, icon: Icon, mobile = false }: { href: string; la
       aria-current={active ? "page" : undefined}
       className={cn(
         "group relative flex min-h-11 items-center gap-3 rounded-xl font-medium outline-none transition-[background-color,color,transform] duration-150 ease-[var(--ease-hikma)] focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-sidebar",
-        mobile ? "min-w-11 flex-1 flex-col justify-center gap-1 px-2 py-2 text-xs" : "px-3 py-2.5 text-sm",
+        // Mobile (PHASE 96) : item de la barre flottante — zone tactile ≥ 44px,
+        // état actif en pilule teal légère, feedback de tap immédiat.
+        mobile
+          ? "min-h-11 min-w-11 flex-1 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-1.5 text-xs active:scale-[0.97]"
+          : "px-3 py-2.5 text-sm",
         active
-          ? "bg-surface-interactive text-primary-strong"
-          : "text-sidebar-foreground/76 hover:bg-surface-subtle hover:text-sidebar-foreground",
+          ? mobile
+            ? "bg-primary/10 text-primary-strong"
+            : "bg-surface-interactive text-primary-strong"
+          : mobile
+            ? "text-sidebar-foreground/60 hover:bg-surface-subtle hover:text-sidebar-foreground"
+            : "text-sidebar-foreground/76 hover:bg-surface-subtle hover:text-sidebar-foreground",
       )}
     >
       <Icon className={cn("shrink-0", mobile ? "size-5" : "size-5")} aria-hidden="true" />
@@ -64,15 +72,19 @@ export function AppNav() {
         </div>
       </aside>
 
+      {/* Bottom nav mobile (PHASE 96) — barre flottante pilule : surface cream
+       * translucide + hairline + shadow-elevated (L3/L4 du système 94), coins
+       * arrondis, marges horizontales et safe-area inférieure. Les 5 onglets et
+       * leurs libellés sont conservés. Masquée en mode leçon (header de focus). */}
       <nav
         className={cn(
-          "fixed inset-x-0 bottom-0 z-30 border-t border-border-subtle bg-background/95 px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur-sm md:hidden",
+          "fixed inset-x-0 bottom-0 z-30 px-3 pb-[max(env(safe-area-inset-bottom),0.75rem)] md:hidden",
           isLessonFocus && "hidden",
         )}
         aria-label="Navigation principale"
         aria-hidden={isLessonFocus}
       >
-        <div className="mx-auto flex min-h-16 max-w-xl items-stretch gap-1">
+        <div className="mx-auto flex max-w-md items-stretch gap-1 rounded-[1.75rem] border border-border-subtle bg-popover/95 p-1.5 shadow-elevated backdrop-blur-md">
           {NAV_ITEMS.map((item) => <NavLink key={item.href} {...item} mobile />)}
         </div>
       </nav>

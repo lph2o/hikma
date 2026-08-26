@@ -1,0 +1,197 @@
+{
+  "phase": "91-POST-DEPLOYMENT-DOMAIN-AUDIT",
+  "mode": "AUDIT_ONLY",
+  "date": "2026-08-26",
+  "audit_only_complete": true,
+  "production_changes": 0,
+  "database_writes": 0,
+  "verdict": "CONDITIONAL_GO_AUDIT_ONLY",
+  "code_production_ready": "YES",
+  "deployment_production_ready": "NO",
+  "blockers": "EXTERNAL_MANUAL",
+
+  "repo": {
+    "head": "a9527aa",
+    "dirty_files_total": 12,
+    "inherited_from_previous_requests": [
+      "app/robots.ts",
+      "app/sources/page.tsx",
+      "app/terms/page.tsx",
+      "components/app/landing.tsx",
+      "components/app/legal-doc.tsx",
+      "AGENTS.md",
+      "components/learn/daily-activity.tsx",
+      "components/ui/hikma.tsx",
+      "lib/config/csp.ts",
+      "tests/csp.test.ts"
+    ],
+    "untracked_reports": [
+      "reports/phase-91-vercel-deployment.json",
+      "reports/phase-91-vercel-deployment-summary.md"
+    ],
+    "changes_during_phase_91_audit": 0,
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "node_local": "25.5.0",
+    "engines_node": ">=20.9.0"
+  },
+
+  "vercel": {
+    "project": "hikma",
+    "framework": "nextjs",
+    "build_command": "default (next build)",
+    "install_command": "default",
+    "output_directory": "default (.next)",
+    "node_version": "24.x",
+    "production_branch": "main (default)",
+    "sso_protection": "disabled",
+    "github_connected": true,
+    "repo_link": "lph2o/hikma",
+    "domains_linked": [],
+    "deployments": [
+      { "url": "hikma-mxv075zta-lph2os-projects.vercel.app", "state": "READY", "target": "preview", "created": "2026-08-26T10:32", "note": "déploiement le plus récent — contient le fix audio CSP + fixes UI" },
+      { "url": "hikma-4113eqkxq-lph2os-projects.vercel.app", "state": "READY", "target": "preview", "created": "2026-08-25T22:46", "note": "déploiement de référence cité par l'utilisateur — bug audio présent (CSP sans Supabase)" },
+      { "url": "hikma-hwoo0qu1w-lph2os-projects.vercel.app", "state": "READY", "target": "production", "created": "2026-08-25T22:43", "note": "premier déploiement — framework non défini à l'époque, routes dynamiques cassées" }
+    ],
+    "production_aliases": [
+      { "alias": "hikma-delta.vercel.app", "points_to": "hikma-hwoo0qu1w-lph2os-projects.vercel.app", "status": "BROKEN" },
+      { "alias": "hikma-lph2os-projects.vercel.app", "points_to": "hikma-hwoo0qu1w-lph2os-projects.vercel.app", "status": "BROKEN" }
+    ],
+    "env_vars": {
+      "configured": ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"],
+      "targets": "preview, production",
+      "next_public_site_url": "ABSENT",
+      "secrets_exposed": false
+    }
+  },
+
+  "domain": {
+    "name": "hikma.top",
+    "purchased": "VERIFIED (Spaceship, NS launch1/launch2.spaceship.net)",
+    "dns": "PARKED — A records 34.216.117.25 / 54.149.79.189 = page de parking Spaceship, pas Vercel",
+    "www": "ABSENT (aucun enregistrement www)",
+    "cname": "ABSENT",
+    "vercel_linked": "NOT_LINKED (domains = [])",
+    "https": "NOT_WORKING (status 000, pas de serveur TLS)",
+    "production_domain": "NOT_CONFIGURED",
+    "probe_evidence": "curl https://hikma.top/ → status 000 ; HTTP :80 sur les IPs → Parking Page Spaceship"
+  },
+
+  "routes": {
+    "base": "https://hikma-4113eqkxq-lph2os-projects.vercel.app",
+    "public_200": [
+      "/", "/surahs", "/surahs/1", "/surahs/114", "/privacy", "/terms", "/sources", "/learn", "/login", "/forgot-password", "/reset-password", "/robots.txt", "/sitemap.xml"
+    ],
+    "private_guards": {
+      "dashboard": "NEXT_REDIRECT;replace;/login;307 (streamé)",
+      "profile": "NEXT_REDIRECT;replace;/login;307 (streamé)",
+      "review": "NEXT_REDIRECT;replace;/login;307 (streamé)",
+      "activity": "NEXT_REDIRECT;replace;/login;307 (streamé)",
+      "admin": "307 → /login (hard redirect)"
+    },
+    "not_found": {
+      "surahs_999": "HTTP 200 + contenu 404 streamé (quirk Next 16 documenté, pas une vulnérabilité)",
+      "random_invalid": "HTTP 404 + contenu 404"
+    },
+    "open_redirect": 0
+  },
+
+  "security": {
+    "csp_reference_deployment": "media-src 'self' https://cdn.islamic.network blob: — origine Supabase ABSENTE (bug audio des mots présent sur cette URL)",
+    "csp_latest_deployment": "media-src 'self' https://cdn.islamic.network https://akgblkwddjslbgoaxdfh.supabase.co blob: — fix audio LIVE",
+    "unsafe_eval_production": 0,
+    "headers": ["Content-Security-Policy", "Permissions-Policy", "Referrer-Policy", "Strict-Transport-Security (preload)", "X-Content-Type-Options nosniff", "X-Frame-Options DENY"],
+    "cookies": "aucun Set-Cookie sur les pages publiques (cookie de session Supabase uniquement après auth)",
+    "rls_anon": "0 ligne sur user_settings / user_word_progress / lesson_sessions / review_items / user_activity_words",
+    "dangerous_patterns": 0,
+    "service_role_in_client": 0,
+    "secrets_leak": 0
+  },
+
+  "seo": {
+    "site_url_on_vercel": "ABSENTE → canonical/og:url/og:title = http://localhost:3000 sur les déploiements actuels",
+    "proof_with_site_url": {
+      "build_env": "NEXT_PUBLIC_SITE_URL=https://hikma.top",
+      "canonical_home": "https://hikma.top",
+      "og_url": "https://hikma.top",
+      "canonical_surahs_1_with_utm": "https://hikma.top/surahs/1",
+      "sitemap_count": 116,
+      "sitemap_sample": ["https://hikma.top/", "https://hikma.top/surahs"],
+      "robots_sitemap": "https://hikma.top/sitemap.xml",
+      "localhost_references": 0
+    },
+    "sitemap_on_deployment": { "count": 116, "private_urls": 0, "domain": "localhost (à corriger via SITE_URL)" },
+    "robots_on_deployment": "Disallow: dashboard/profile/review/activity/admin/onboarding/login/forgot-password/reset-password/sources + Sitemap",
+    "og_image": "200, image/png, 838813 octets (P2 connu, non modifié)",
+    "icon_notes": "favicon.ico 200 ; /icon.png et /apple-icon.png 404 mais non référencés par les metadata (sans impact)"
+  },
+
+  "observability": {
+    "get": "405 (attendu, route POST-only)",
+    "post_invalid_payload": "400 (validation fonctionnelle)"
+  },
+
+  "validation": {
+    "typecheck": "PASS",
+    "lint": "PASS (0 erreur, 20 warnings pré-existants)",
+    "tests": "1058/1058 PASS (68 fichiers)",
+    "build": "PASS (avec NEXT_PUBLIC_SITE_URL=https://hikma.top)",
+    "npm_audit": "0 vulnérabilités"
+  },
+
+  "supabase": {
+    "project": "akgblkwddjslbgoaxdfh.supabase.co",
+    "rls": "VERIFIED (anon → 0 ligne sur 5 tables user)",
+    "word_audio": "21295 objets = 21295 références, signature OK (HEAD 200 audio/opus)",
+    "service_role_client": 0,
+    "production_project_confirmed": "NOT_VERIFIED"
+  },
+
+  "auth": {
+    "password_reset_e2e": "NOT_VERIFIED (aucun email réel envoyé)",
+    "redirect_urls_supabase": "NOT_VERIFIED (devront inclure https://hikma.top/reset-password)"
+  },
+
+  "findings": [
+    { "id": "91-A01", "severity": "P1", "finding": "Alias de production (hikma-delta.vercel.app et hikma-lph2os-projects.vercel.app) pointent vers le premier déploiement cassé (framework non défini) → 404 sur toutes les routes", "evidence": "curl : / /surahs /surahs/1 → 404 'The page could not be found' ; API : alias → hikma-hwoo0qu1w", "recommendation": "Redéployer la production (vercel --prod) sur le build actuel ou pousser main (auto-deploy) après approbation" },
+    { "id": "91-A02", "severity": "P1", "finding": "NEXT_PUBLIC_SITE_URL absente sur Vercel → canonical/OG/sitemap/robots en http://localhost:3000", "evidence": "Vercel env = 2 variables seulement ; canonical sur déploiement = localhost:3000 ; preuve build avec hikma.top → tout correct", "recommendation": "Ajouter NEXT_PUBLIC_SITE_URL=https://hikma.top (production, au build) avant tout déploiement production" },
+    { "id": "91-A03", "severity": "P1", "finding": "Domaine hikma.top acheté mais non relié à Vercel, DNS sur le parking Spaceship", "evidence": "Vercel domains=[] ; dig A = 34.216.117.25 / 54.149.79.189 (parking Spaceship) ; HTTPS status 000", "recommendation": "Ajouter hikma.top dans Vercel (domains) + configurer DNS (A vers Vercel ou CNAME cname.vercel-dns.com) côté Spaceship — action manuelle" },
+    { "id": "91-A04", "severity": "P2", "finding": "Déploiement de référence (4113eqkxq) : CSP media-src sans l'origine Supabase → bug audio des mots présent", "evidence": "media-src 'self' cdn.islamic.network blob:", "recommendation": "Utiliser le déploiement récent mxv075zta qui contient le fix (déjà en ligne)" },
+    { "id": "91-A05", "severity": "PASS", "finding": "Déploiement récent mxv075zta : fix audio CSP actif", "evidence": "media-src inclut https://akgblkwddjslbgoaxdfh.supabase.co", "recommendation": "Aucune" },
+    { "id": "91-A06", "severity": "MANUAL", "finding": "Password reset E2E réel non testé (aucun email)", "evidence": "—", "recommendation": "Tester après domaine + Redirect URLs" },
+    { "id": "91-A07", "severity": "MANUAL", "finding": "Redirect URLs Supabase non vérifiées (devront inclure https://hikma.top/reset-password)", "evidence": "—", "recommendation": "Configurer après liaison du domaine" },
+    { "id": "91-A08", "severity": "NOTE", "finding": "Projet Supabase actuel = akgblkwddjslbgoaxdfh.supabase.co — statut dev/prod à confirmer", "evidence": "—", "recommendation": "Confirmer le projet de production avant lancement" },
+    { "id": "91-A09", "severity": "P2", "finding": "OG image 838 Ko (P2 connu)", "evidence": "content-length 838813", "recommendation": "Compression post-lancement avec QA visuelle" },
+    { "id": "91-A10", "severity": "NOTE", "finding": "12 fichiers non commités (masquage /sources + fix audio/UI + rapports 91)", "evidence": "git status", "recommendation": "Committer consciemment avant le prochain push" }
+  ],
+
+  "answers": {
+    "deployment_vercel_production_ready": "NON — alias production cassé",
+    "build_vercel_correct": "OUI pour les déploiements preview récents, NON pour le premier (framework) qui porte l'alias production",
+    "node_runtime_compatible": "OUI (Vercel 24.x, engines >=20.9.0)",
+    "env_vars_correct": "PARTIEL — Supabase OK, SITE_URL absente",
+    "supabase_right_project": "VERIFIÉ pour le projet actuel, statut prod à confirmer",
+    "rls_active": "OUI (0 ligne anon sur 5 tables)",
+    "private_routes_protected": "OUI (4 guards streamés + /admin 307)",
+    "password_reset_real": "NOT_VERIFIED",
+    "domain_linked": "NON",
+    "https_working": "NON",
+    "canonical_hikma_top": "NON encore (dépend de SITE_URL au build)",
+    "sitemap_hikma_top": "NON encore (idem)",
+    "robots_hikma_top": "NON encore (idem)",
+    "og_hikma_top": "NON encore (idem)",
+    "localhost_leak": "OUI sur les déploiements actuels (fallback SITE_URL absente) — preuve : 0 avec SITE_URL au build",
+    "hikma_example_leak": "0",
+    "insecure_http_url": "0 (seuls les namespaces XML/SVG)",
+    "open_redirect": "0",
+    "secret_leak": "0",
+    "csp_production_intact": "OUI (fix audio inclus sur mxv075zta)",
+    "critical_assets": "OUI (logo, favicon, OG image, audio signature OK)",
+    "tests_1058": "OUI (1058/1058)",
+    "build_pass": "OUI",
+    "npm_audit_clean": "OUI (0 vulnérabilité)",
+    "database_writes_zero": true,
+    "p0_p1_exists": "P1 x 3 (alias production cassé, SITE_URL absente, domaine non relié) — tous externes ou config, aucun bug de code",
+    "what_blocks_launch": "Uniquement de la configuration externe : relier hikma.top à Vercel, DNS, HTTPS, SITE_URL au build, redéploiement production, Redirect URLs Supabase"
+  }
+}

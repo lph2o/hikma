@@ -118,9 +118,14 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* ---- Shadows (Hikma : diffuses, chaudes, jamais noires dures) ---- */
-  --shadow-card: 0 1px 2px rgba(46, 42, 28, 0.04), 0 8px 24px -12px rgba(46, 42, 28, 0.1);
-  --shadow-elevated: 0 2px 4px rgba(46, 42, 28, 0.06), 0 16px 40px -16px rgba(46, 42, 28, 0.16);
+  /* ---- Shadows (Hikma : diffuses, chaudes, jamais noires dures) ----
+   * Échelle d'élévation perceptible (Phase 94, audit 93B) : card < elevated < overlay.
+   * Les ombres sont le mécanisme d'élévation des surfaces claires — les couleurs
+   * cream/ivory seules restent à ~1.05:1 (indiscernables), c'est border + shadow
+   * qui séparent. Valeurs choisies pour rester perceptibles sur mobile sans hover. */
+  --shadow-card: 0 1px 2px rgba(46, 42, 28, 0.05), 0 12px 32px -12px rgba(46, 42, 28, 0.14);
+  --shadow-elevated: 0 2px 4px rgba(46, 42, 28, 0.07), 0 18px 44px -16px rgba(46, 42, 28, 0.18);
+  --shadow-overlay: 0 8px 24px -8px rgba(46, 42, 28, 0.14), 0 28px 72px -24px rgba(46, 42, 28, 0.22);
   --shadow-focus: 0 0 0 3px color-mix(in srgb, var(--focus) 24%, transparent);
 
   /* ---- Landing atmosphere (derived only from approved Hikma tokens) ----
@@ -141,6 +146,10 @@
   --animate-toast-error-even: toast-error-even 0.28s cubic-bezier(0.5, 1, 0.89, 1);
   --animate-feedback-in: feedback-in 0.25s cubic-bezier(0.32, 0.72, 0, 1);
   --animate-reward-pulse: reward-pulse 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  /* ---- Loader Hikma (94B) : lueur douce, reflet verre, vague du wordmark ---- */
+  --animate-hikma-glow: hikma-glow 2.8s ease-in-out infinite;
+  --animate-hikma-shine: hikma-shine 3.2s ease-in-out infinite;
+  --animate-hikma-word-wave: hikma-word-wave 1.8s ease-in-out infinite;
 
   @keyframes skeleton {
     to {
@@ -241,6 +250,35 @@
       transform: scale(1);
     }
   }
+  @keyframes hikma-glow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.86;
+    }
+  }
+  @keyframes hikma-shine {
+    /* Balayage du reflet, puis longue pause — discret, jamais agressif. */
+    0%,
+    58% {
+      background-position: 220% 0;
+    }
+    88%,
+    100% {
+      background-position: -120% 0;
+    }
+  }
+  @keyframes hikma-word-wave {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-3px);
+    }
+  }
 }
 
 :root {
@@ -280,8 +318,10 @@
   /* ---- Hikma neutrals ---- */
   --text-primary: var(--hikma-charcoal);
   --text-secondary: #536666;
-  --border: #d7e0dc;
-  --border-subtle: #e4ece8;
+  /* Bordure de carte (Phase 94) : ~1.55:1 sur cream — perceptible à 1px. */
+  --border: #c7d5ce;
+  /* Hairline / imbriqué (Phase 94) : ~1.29:1 sur cream — douce mais visible. */
+  --border-subtle: #d9e4de;
   --surface: var(--hikma-cream);
   --surface-elevated: #fffdf8;
   --surface-subtle: #f1f6f3;
@@ -366,8 +406,8 @@
   --surface-subtle: #122827;
   --surface-interactive: #245b58;
   --surface-featured: #1f4b49;
-  --border: #315957;
-  --border-subtle: #284b49;
+  --border: #3b6a66;
+  --border-subtle: #305954;
   --focus: #79c8bd;
 
   --foreground: var(--text-primary);
@@ -422,15 +462,13 @@
   html {
     @apply font-sans;
   }
-  /* Hover underline animé pour les liens texte (pas les boutons) */
-  a:not([data-no-hover-underline]):not(.inline-flex):hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-color: var(--primary-fur);
-  }
-  a:not([data-no-hover-underline]):not(.inline-flex) {
+  /* Liens UI : JAMAIS de soulignement par défaut (PHASE 96). L'ancienne règle
+   * globale soulignait au hover tout <a> non inline-flex — y compris la nav,
+   * les cartes leçons et les blocs cliquables. Le soulignement est désormais
+   * opt-in : `underline` / `hover:underline` sur les liens éditoriaux/textes
+   * uniquement (ils l'ont déjà explicitement). */
+  a {
     text-decoration: none;
-    transition: text-decoration-color 0.2s ease;
   }
 }
 

@@ -1,0 +1,61 @@
+{
+  "phase": "PHASE_96C_MOBILE_RESPONSIVE_OVERFLOW_FIX",
+  "verdict": "PHASE_96C_COMPLETE",
+  "root_cause": {
+    "component": "app/(app)/learn/page.tsx — section Résumé du parcours (grid)",
+    "element": "section.grid gap-5 lg:grid-cols-[1fr_0.7fr] + carte Ton chemin",
+    "problem": "sur mobile, grid-template-columns: none crée un track implicite auto dimensionné au max-content des items. La carte « Prochaine étape » a un max-content de 356px (titre en truncate/nowrap « Le chemin de ceux que Tu as comblés » + flèche + padding) -> la carte atteint 406px et déborde le conteneur (350px a 390 de viewport, 320px a 360)",
+    "mesures_avant": {
+      "learn360": "docSW 426 vs vw 360 (overflow 66px), carte 406px dans 320px disponibles",
+      "learn390": "docSW 426 vs vw 390 (overflow 36px), carte 406px dans 350px disponibles",
+      "learn430": "pas d'overflow documentaire mais overflow interne de la section (406 dans 390)",
+      "maxcontent_coupable": "lien Prochaine étape = 356px (mesure max-content) ; HikmaProgress = 308px ; ligne stats = 308px"
+    }
+  },
+  "fix_applique": [
+    {
+      "fichier": "app/(app)/learn/page.tsx",
+      "detail": "section grid -> grid grid-cols-1 gap-5 [&>*]:min-w-0 lg:grid-cols-[1fr_0.7fr] : colonne mobile explicite 1fr + min-w-0 sur les items (le track 1fr ne peut plus etre pousse par le max-content ; le contenu se reorganise dans la largeur disponible)"
+    },
+    {
+      "fichier": "app/(app)/learn/page.tsx",
+      "detail": "titre de Prochaine etape : suppression de la classe truncate (nowrap) -> le texte wrappe naturellement sur plusieurs lignes, la carte ne force plus 356px"
+    },
+    {
+      "fichier": "components/ui/hikma.tsx",
+      "detail": "HikmaProgress : ligne label/detail -> flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 + label flex-none font-medium (sans flex-1 ni truncate) : a <=390px le detail passe sur sa propre ligne et le label garde toute la largeur, jamais tronque"
+    }
+  ],
+  "mesures_apres": {
+    "learn360": "docSW 360 = vw, overflow false, scrollX 0, offenders 0, carte 320px, nav 360px, detail sur sa propre ligne (label complet 168px)",
+    "learn390": "docSW 390 = vw, overflow false, scrollX 0, offenders 0, carte 350px, nav 390px, detail sur sa propre ligne",
+    "learn430": "docSW 430 = vw, overflow false, scrollX 0, offenders 0, carte 390px, nav 430px, label et detail sur une seule ligne",
+    "desktop_1440": "docSW 1440 = vw, overflow false, cartes 553px et 387px (ratio 1fr/0.7fr intact), sidebar visible"
+  },
+  "dashboard_regression": "aucune : docSW = vw a 360/390/430 ; les seuls elements depassant le viewport sont les pastilles de la rangee scrollable « Revisions a venir » (overflow-x-auto volontaire, aucun overflow documentaire)",
+  "scroll_x": "0 initial et aucun scroll horizontal possible",
+  "bottom_nav": "PASS (nav revenue a la largeur du viewport : 360/390/430)",
+  "underline": "PASS (aucune classe underline ajoutee ; liens editoriaux intacts)",
+  "mobile_360": "PASS",
+  "mobile_390": "PASS",
+  "mobile_430": "PASS",
+  "tablet": "PASS",
+  "desktop": "PASS",
+  "typecheck": "PASS",
+  "lint": "PASS 0 errors",
+  "build": "PASS",
+  "tests": "1087/1087 PASS (1084 + 3 nouveaux tests de contrat responsive)",
+  "test_regression": "tests/learn-responsive-contract.test.ts : grid-cols-1 + [&>*]:min-w-0, titre sans truncate, ligne HikmaProgress flex-wrap + label flex-none",
+  "database_writes": 0,
+  "migrations": 0,
+  "lexical_writes": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "fichiers_modifies": [
+    "app/(app)/learn/page.tsx",
+    "components/ui/hikma.tsx",
+    "tests/learn-responsive-contract.test.ts"
+  ],
+  "note": "aucun overflow-x-hidden utilise comme camouflage ; le correctif traite la largeur intrinseque (max-content du grid auto) et laisse le contenu se reorganiser"
+}

@@ -1,0 +1,135 @@
+{
+  "phase": "91",
+  "title": "Vercel Production Deployment Setup",
+  "verdict": "PREVIEW_DEPLOYED",
+  "code_status": "CODE_READY",
+  "vercel_status": "PROJECT_CREATED_AND_LINKED",
+  "github_status": "CONNECTED",
+  "env_status": "PARTIAL (2 variables preview+production configurées; NEXT_PUBLIC_SITE_URL en attente du domaine réel)",
+  "supabase_status": "NOT_VERIFIED (projet de production) — connectivité anon vérifiée sur le preview",
+  "domain_status": "NOT_CONFIGURED",
+  "preview_status": "DEPLOYED_AND_VALIDATED",
+  "production_status": "NOT_DEPLOYED (alias production pointe encore sur le 1er déploiement cassé; bascule réelle en attente du domaine + confirmation)",
+  "database_writes": 0,
+  "preview_url": "https://hikma-4113eqkxq-lph2os-projects.vercel.app",
+  "production_alias": "hikma-delta.vercel.app (alias auto — PAS encore la vraie production)",
+  "deployment_history": [
+    {
+      "id": "dpl_BsumRmbY56Sz1oyvqJyjJa5eX5P4",
+      "result": "ECHEC FONCTIONNEL (premier déploiement, assigné automatiquement à production)",
+      "root_cause": "Projet créé via CLI sans preset framework (framework non défini) : le build next build s'exécute, les fichiers statiques sont servis (logo 200) mais AUCUNE route dynamique n'est routée vers les fonctions serveur (404 edge partout)",
+      "fix": "PATCH projet framework=nextjs puis redéploiement"
+    },
+    {
+      "id": "hikma-4113eqkxq (preview)",
+      "result": "DEPLOYED + VALIDATED",
+      "state": "READY"
+    }
+  ],
+  "environment_variables_configured": [
+    {
+      "name": "NEXT_PUBLIC_SUPABASE_URL",
+      "targets": ["preview", "production"],
+      "type": "encrypted"
+    },
+    {
+      "name": "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+      "targets": ["preview", "production"],
+      "type": "encrypted"
+    }
+  ],
+  "environment_variables_pending": [
+    {
+      "name": "NEXT_PUBLIC_SITE_URL",
+      "reason": "En attente du domaine de production réel — CRITIQUE pour canonical/OG/sitemap/robots (fallback localhost constaté sur le preview, comportement attendu)"
+    },
+    {
+      "name": "ADMIN_EMAILS",
+      "reason": "Optionnel — décision utilisateur (sinon admin désactivé par défaut)"
+    }
+  ],
+  "smoke_test": {
+    "public_routes": "PASS — /, /surahs, /surahs/1, /surahs/114, /privacy, /terms, /sources, /learn, /login, /forgot-password, /reset-password, /robots.txt, /sitemap.xml = 200",
+    "invalid_route": "PASS — /random-invalid = 404",
+    "private_routes": "PASS — dashboard/profile/review/activity = noindex,nofollow (redirect streamé) ; /admin = 307 (guard dur)",
+    "sources_masking": "PASS — /sources = noindex,nofollow (masquage déployé)",
+    "sitemap": "PASS — 116 URLs",
+    "robots": "PASS — 10 règles Disallow (dont /sources)",
+    "security_headers": "PASS — CSP sans unsafe-eval, HSTS preload, nosniff, X-Frame-Options DENY, referrer-policy",
+    "supabase_connectivity": "PASS — lecture anon ayahs HTTP 200 avec données sur le preview",
+    "content": "PASS — /surahs affiche le catalogue (114, Al-Fatiha, An-Nas) ; /surahs/1 rend la page avec versets",
+    "canonical": "FALLBACK LOCALHOST (attendu — NEXT_PUBLIC_SITE_URL non définie, domaine réel non fourni) — à corriger au déploiement production",
+    "false_positives_ecartes": [
+      "Les occurrences 'error' dans le payload RSC de /surahs/1 sont les références de l'error boundary (normal, pas une erreur)",
+      "Test direct surahs.name -> 400 colonne inexistante : erreur de MA colonne de test, pas de l'app"
+    ]
+  },
+  "project_settings": {
+    "framework": "nextjs (corrigé)",
+    "node_version": "24.x (Vercel)",
+    "build_command": "npm run build (next build) — hérité du preset",
+    "install_command": "npm install (hérité)",
+    "output_directory": "hérité preset",
+    "sso_protection": "désactivée (nécessaire : app publique avec sa propre auth ; la protection Vercel bloquait tout accès, y compris crawlers)",
+    "git_connection": "github.com/lph2o/hikma connecté (branche main, déploiements auto à venir)"
+  },
+  "findings": [
+    {
+      "id": "91-F1",
+      "severity": "FIXED",
+      "title": "Projet créé sans preset framework -> routes dynamiques 404",
+      "root_cause": "vercel project add sans --framework : framework non défini, build sans routing serverless",
+      "fix": "PATCH framework=nextjs + redéploiement — vérifié : toutes les routes 200"
+    },
+    {
+      "id": "91-F2",
+      "severity": "MANUAL",
+      "title": "Domaine de production non fourni",
+      "action": "Fournir le domaine (ex. hikma.app) pour configurer NEXT_PUBLIC_SITE_URL et le déploiement production final"
+    },
+    {
+      "id": "91-F3",
+      "severity": "MANUAL",
+      "title": "Alias production (hikma-delta.vercel.app) pointe encore sur le 1er déploiement cassé",
+      "action": "Après configuration du domaine + SITE_URL, lancer vercel --prod (bascule production) avec confirmation explicite"
+    },
+    {
+      "id": "91-F4",
+      "severity": "NOTE",
+      "title": "ADMIN_EMAILS non configurée sur Vercel",
+      "action": "À décider avant la production (sinon /admin désactivé)"
+    },
+    {
+      "id": "91-F5",
+      "severity": "NOTE",
+      "title": "Deployment Protection Vercel désactivée",
+      "action": "Nécessaire pour une app publique avec auth applicative ; à garder désactivée (vérifier si une protection alternative est souhaitée)"
+    }
+  ],
+  "blockers_for_production": [
+    "Domaine réel + NEXT_PUBLIC_SITE_URL",
+    "Confirmation explicite de l'utilisateur pour la bascule production"
+  ],
+  "pre_production_checklist": [
+    { "item": "Domaine + DNS", "status": "MANUAL" },
+    { "item": "NEXT_PUBLIC_SITE_URL au build", "status": "MANUAL" },
+    { "item": "ADMIN_EMAILS", "status": "MANUAL/OPTIONNEL" },
+    { "item": "Projet Supabase de production", "status": "MANUAL" },
+    { "item": "Redirect URLs Supabase (dont /reset-password)", "status": "MANUAL" },
+    { "item": "Test E2E réel du password reset", "status": "NOT_VERIFIED" },
+    { "item": "Backups / PITR", "status": "NOT_VERIFIED" },
+    { "item": "Monitoring / alertes", "status": "MANUAL" },
+    { "item": "Licence audio commerciale (R-009)", "status": "NOT_VERIFIED" },
+    { "item": "Code (builds/tests/SEO/sécurité)", "status": "PASS" }
+  ],
+  "validation": {
+    "TYPECHECK": "PASS",
+    "LINT": "PASS (0 erreur)",
+    "VITEST": "1058/1058 PASS",
+    "BUILD": "PASS (local et Vercel)",
+    "RUNTIME_PREVIEW": "PASS",
+    "DATABASE_WRITES": 0,
+    "SECRETS_EXPOSED": 0
+  },
+  "next_action": "Fournir le domaine de production -> configurer NEXT_PUBLIC_SITE_URL (+ADMIN_EMAILS si souhaité) -> confirmation explicite -> vercel --prod -> audit post-déploiement sur le vrai domaine"
+}

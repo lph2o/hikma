@@ -1,0 +1,91 @@
+{
+  "phase": "PHASE_96B_PREVIEW_VALIDATION",
+  "verdict": "PHASE_96B_PREVIEW_COMPLETE",
+  "vercel_preview": "PASS",
+  "vercel_preview_url": "https://hikma-bdltg6wo4-lph2os-projects.vercel.app",
+  "production_deployed": "NO",
+  "production_domain_changed": "NO",
+  "production_checks": {
+    "vercel_prod_executed": false,
+    "hikma_top_modified": false,
+    "alias_production_deplace": false,
+    "domaine_custom_change": false,
+    "variables_production_modifiees": false
+  },
+  "typecheck": "PASS",
+  "lint": "PASS 0 errors 20 warnings preexistants",
+  "build": "PASS",
+  "tests": "1084/1084 PASS",
+  "bottom_nav": "PASS",
+  "ui_link_underline": "PASS",
+  "mobile_responsive": "PASS",
+  "safe_area": "PASS",
+  "learning_flow": "PASS",
+  "desktop": "PASS",
+  "env": {
+    "env_required": 3,
+    "env_available_for_preview": 3,
+    "missing": 0,
+    "noms": [
+      "NEXT_PUBLIC_SITE_URL (Production, Preview)",
+      "NEXT_PUBLIC_SUPABASE_URL (Preview, Production)",
+      "NEXT_PUBLIC_SUPABASE_ANON_KEY (Preview, Production)"
+    ],
+    "secrets": "aucune valeur affichee; service-role key absente du runtime (scripts CLI uniquement)"
+  },
+  "validation_mobile": {
+    "method": "Chrome headless + CDP, session authentifiee reelle (login thiamabda@gmail.com sur le preview, meme Supabase), mesures getBoundingClientRect + getComputedStyle + capture screenshot avec analyse pixel",
+    "360px": {
+      "pill": "marges 12px (12 a 348), radius 28px, bg cream 95%, blur 12px, shadow-elevated",
+      "items": "5 items 61x52px, actif Accueil = bg teal 10% + texte rgb(11,85,82), inactifs muted 60%",
+      "overflow": "0 (scrollW 360 = clientW 360)"
+    },
+    "390px": {
+      "pill": "marges 12px (12 a 378), radius 28px, bg cream 95%, blur 12px, shadow-elevated",
+      "items": "5 items 67x52px, actif Accueil",
+      "overflow": "0"
+    },
+    "430px": {
+      "pill": "marges 12px (12 a 418), radius 28px, bg cream 95%, blur 12px, shadow-elevated",
+      "items": "5 items 75x52px, actif Accueil",
+      "overflow": "0"
+    },
+    "screenshot_pixels": "profil de ligne au milieu de la pill : fond des deux cotes (marges) puis pill pleine largeur interieure ; pixels de coin = fond ivoire (marges confirmees)"
+  },
+  "soulignements": {
+    "nav_hover": "none (mesure apres Input.dispatchMouseEvent reel)",
+    "carte_lecon_hover": "none (mesure)",
+    "liens_editoriaux": "PRESERVED (hover:underline explicite dans login-form, forgot-password-form, reset-password-form, cookie-notice, landing)"
+  },
+  "page_lecon": {
+    "route": "/learn/basmala (authentifie)",
+    "nav_masquee": "display none (isLessonFocus)",
+    "sticky_action_bar": "PRESENTE, collee au bas du viewport (y=844), bg 95% cream",
+    "overflow": "0"
+  },
+  "desktop": {
+    "viewport": "1440x900 sur /dashboard",
+    "sidebar": "visible",
+    "bottom_nav": "absente (md:hidden)",
+    "main_padding_bottom": "40px (md:pb-10, pas de pb-28 desktop)",
+    "overflow": "0"
+  },
+  "routes": {
+    "/": "200",
+    "/login": "200",
+    "/surahs": "200",
+    "/surahs/1": "200",
+    "/dashboard": "200 (guard auth -> redirect streamed NEXT_REDIRECT pour anonyme)",
+    "/robots.txt": "200 (Disallow dashboard/profile/review/activity)",
+    "/sitemap.xml": "200 (116 URLs)",
+    "/random-invalid": "404"
+  },
+  "architecture_note": "la coquille (bottom nav + sidebar) n'est rendue que pour les utilisateurs connectes (layout (app)) ; un visiteur anonyme sur /surahs ou /learn n'a pas de nav - design existant, non modifie par la phase",
+  "database_writes": 0,
+  "migrations": 0,
+  "regressions": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "next_action": "validation humaine sur telephone reel recommandee, puis decision explicite de l'utilisateur avant tout vercel --prod"
+}

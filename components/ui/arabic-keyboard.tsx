@@ -1,6 +1,6 @@
 "use client";
 
-// Clavier arabe virtuel Hikma (Phase 24H-B, refonte UX Phase 36G).
+// Clavier arabe virtuel Hikma (Phase 24H-B, refonte UX Phase 36G, Phase 95).
 //
 // Aide pédagogique à la SAISIE de la forme arabe : l'utilisateur qui récite
 // déjà le mot mais peine à le reconstituer retrouve ici des touches stables
@@ -14,6 +14,15 @@
 //   - sobre : la touche fraîchement utilisée est brièvement soulignée en doré,
 //     aucune animation lourde, aucune nouvelle dépendance.
 //
+// Phase 95 — mobile :
+//   - rangées ÉQUILIBRÉES (36 lettres = 6×6 sur mobile, 9×4 sur desktop) :
+//     plus aucune « queue » de 2-3 touches isolées ;
+//   - touches ≥ 44 px (h-11) et bouton de fermeture ≥ 44 px (size-11) ;
+//   - corps scrollable borné à 70dvh : le clavier ne peut pas masquer toute la
+//     question — le parent ramène la zone de saisie dans le viewport à
+//     l'ouverture (scrollIntoView) ;
+//   - safe-area : le padding bas du conteneur respecte env(safe-area-inset-bottom).
+//
 // Contrats préservés : aucune logique pédagogique ici — insertion / suppression
 // / espace / fermeture sont émis vers le parent via des callbacks purs
 // (lib/ui/arabic-input.ts). Aucun validateAnswer, aucun scoring, aucun SRS,
@@ -25,6 +34,7 @@ import { Caption } from "@/components/ui/typography";
 import {
   ARABIC_KEYBOARD_DIACRITICS,
   ARABIC_KEYBOARD_LETTERS,
+  chunkRows,
 } from "@/lib/ui/arabic-input";
 import { cn } from "@/lib/utils";
 
@@ -70,7 +80,7 @@ function diacriticLabel(char: string): string {
 
 /** Styles partagés d'une touche (bouton sémantique, focus visible, état pressé). */
 const KEY_BASE =
-  "flex h-10 select-none items-center justify-center rounded-lg border text-lg leading-none " +
+  "flex h-11 select-none items-center justify-center rounded-lg text-lg leading-none " +
   "transition-[background-color,border-color,transform] duration-100 ease-[var(--ease-hikma)] " +
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:ring-offset-background " +
   "active:scale-[0.96] disabled:opacity-50";
@@ -103,6 +113,13 @@ function Key({
     </button>
   );
 }
+
+/** Lettres aplaties puis re-découpées : 6 par rangée sur mobile, 9 sur desktop. */
+const ALL_LETTERS = ARABIC_KEYBOARD_LETTERS.flat();
+const LETTER_ROWS_MOBILE = chunkRows(ALL_LETTERS, 6);
+const LETTER_ROWS_SM = chunkRows(ALL_LETTERS, 9);
+const DIACRITIC_ROWS_MOBILE = chunkRows(ARABIC_KEYBOARD_DIACRITICS, 5);
+const DIACRITIC_ROWS_SM = chunkRows(ARABIC_KEYBOARD_DIACRITICS, 10);
 
 /**
  * Clavier arabe virtuel. Responsable uniquement de l'émission des actions
@@ -137,89 +154,133 @@ export function ArabicKeyboard({
       role="group"
       aria-label="Clavier arabe"
       className={cn(
-        "flex flex-col gap-2.5 rounded-2xl border border-border bg-surface-subtle p-3",
+        "flex max-h-[70dvh] flex-col gap-2.5 rounded-2xl border border-border bg-surface-subtle p-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]",
         className,
       )}
     >
-      {/* En-tête : libellé + UNE seule action de fermeture. */}
-      <div className="flex items-center justify-between gap-2">
+      {/* En-tête : libellé + UNE seule action de fermeture (toujours visible). */}
+      <div className="flex shrink-0 items-center justify-between gap-2">
         <Caption className="text-text-secondary">Clavier arabe</Caption>
         <button
           type="button"
           aria-label="Masquer le clavier arabe"
           onClick={onClose}
-          className="flex size-8 items-center justify-center rounded-md text-text-secondary transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1"
+          className="flex size-11 items-center justify-center rounded-md text-text-secondary transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1"
         >
-          <XIcon className="size-4" aria-hidden="true" />
+          <XIcon className="size-4.5" aria-hidden="true" />
         </button>
       </div>
 
-      {/* Lettres principales : positions stables, jamais réordonnées. */}
-      <div className="flex flex-col gap-1.5">
-        {ARABIC_KEYBOARD_LETTERS.map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className="grid grid-cols-7 gap-1 sm:grid-cols-10"
-          >
-            {row.map((char) => (
-              <Key
-                key={char}
-                lang="ar"
-                label={char}
-                onPress={() => insert(char)}
-                className={cn(
-                  "border-input bg-popover text-foreground hover:bg-accent/50",
-                  lastInserted === char &&
-                    "border-hikma-gold/60 bg-hikma-gold/15",
-                )}
-              >
-                {char}
-              </Key>
-            ))}
+      {/* Corps scrollable : le clavier reste borné, la question demeure visible. */}
+      <div className="min-h-0 overflow-y-auto">
+        {/* Lettres principales : positions stables, jamais réordonnées. */}
+        <div className="flex flex-col gap-1.5">
+          {/* Mobile : 6×6 équilibré */}
+          <div className="grid grid-cols-6 gap-1.5 sm:hidden">
+            {LETTER_ROWS_MOBILE.map((row, rowIndex) =>
+              row.map((char) => (
+                <Key
+                  key={`m-${rowIndex}-${char}`}
+                  lang="ar"
+                  label={char}
+                  onPress={() => insert(char)}
+                  className={cn(
+                    "border-input bg-popover text-foreground hover:bg-accent/50",
+                    lastInserted === char &&
+                      "border-hikma-gold/60 bg-hikma-gold/15",
+                  )}
+                >
+                  {char}
+                </Key>
+              )),
+            )}
           </div>
-        ))}
-      </div>
-
-      {/* Voyelles & signes : section secondaire, séparée et dorée. */}
-      <div className="flex flex-col gap-1.5 rounded-xl border border-hikma-gold/30 bg-hikma-gold/6 p-2">
-        <Caption className="text-text-secondary">Voyelles &amp; signes</Caption>
-        <div className="grid grid-cols-5 gap-1 sm:grid-cols-10">
-          {ARABIC_KEYBOARD_DIACRITICS.map((char) => (
-            <Key
-              key={char}
-              label={diacriticLabel(char)}
-              onPress={() => insert(char)}
-              className={cn(
-                "border-hikma-gold/30 bg-popover text-foreground hover:bg-hikma-gold/10",
-                lastInserted === char &&
-                  "border-hikma-gold/70 bg-hikma-gold/20",
-              )}
-            >
-              <span aria-hidden="true">
-                {DIACRITIC_CARRIER}
-                {char}
-              </span>
-            </Key>
-          ))}
+          {/* Desktop : 9×4 équilibré */}
+          <div className="hidden grid-cols-9 gap-1.5 sm:grid">
+            {LETTER_ROWS_SM.map((row, rowIndex) =>
+              row.map((char) => (
+                <Key
+                  key={`d-${rowIndex}-${char}`}
+                  lang="ar"
+                  label={char}
+                  onPress={() => insert(char)}
+                  className={cn(
+                    "border-input bg-popover text-foreground hover:bg-accent/50",
+                    lastInserted === char &&
+                      "border-hikma-gold/60 bg-hikma-gold/15",
+                  )}
+                >
+                  {char}
+                </Key>
+              )),
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* Actions : suppression + espace (le CTA « Vérifier » reste hors clavier). */}
-      <div className="grid grid-cols-5 gap-1.5">
-        <Key
-          label="Supprimer (retour arrière)"
-          onPress={onBackspace}
-          className="border-input bg-popover text-foreground hover:bg-accent/50"
-        >
-          ⌫
-        </Key>
-        <Key
-          label="Espace"
-          onPress={onSpace}
-          className="col-span-4 border-input bg-popover text-sm font-medium text-foreground hover:bg-accent/50"
-        >
-          Espace
-        </Key>
+        {/* Voyelles & signes : section secondaire, séparée et dorée. */}
+        <div className="mt-2.5 flex flex-col gap-1.5 rounded-xl border border-hikma-gold/30 bg-hikma-gold/6 p-2">
+          <Caption className="text-text-secondary">Voyelles &amp; signes</Caption>
+          <div className="grid grid-cols-5 gap-1.5 sm:hidden">
+            {DIACRITIC_ROWS_MOBILE.map((row, rowIndex) =>
+              row.map((char) => (
+                <Key
+                  key={`m-${rowIndex}-${char}`}
+                  label={diacriticLabel(char)}
+                  onPress={() => insert(char)}
+                  className={cn(
+                    "border-hikma-gold/30 bg-popover text-foreground hover:bg-hikma-gold/10",
+                    lastInserted === char &&
+                      "border-hikma-gold/70 bg-hikma-gold/20",
+                  )}
+                >
+                  <span aria-hidden="true">
+                    {DIACRITIC_CARRIER}
+                    {char}
+                  </span>
+                </Key>
+              )),
+            )}
+          </div>
+          <div className="hidden grid-cols-10 gap-1.5 sm:grid">
+            {DIACRITIC_ROWS_SM.map((row, rowIndex) =>
+              row.map((char) => (
+                <Key
+                  key={`d-${rowIndex}-${char}`}
+                  label={diacriticLabel(char)}
+                  onPress={() => insert(char)}
+                  className={cn(
+                    "border-hikma-gold/30 bg-popover text-foreground hover:bg-hikma-gold/10",
+                    lastInserted === char &&
+                      "border-hikma-gold/70 bg-hikma-gold/20",
+                  )}
+                >
+                  <span aria-hidden="true">
+                    {DIACRITIC_CARRIER}
+                    {char}
+                  </span>
+                </Key>
+              )),
+            )}
+          </div>
+        </div>
+
+        {/* Actions : suppression + espace (le CTA « Vérifier » reste hors clavier). */}
+        <div className="mt-2.5 grid grid-cols-5 gap-1.5">
+          <Key
+            label="Supprimer (retour arrière)"
+            onPress={onBackspace}
+            className="border-input bg-popover text-foreground hover:bg-accent/50"
+          >
+            ⌫
+          </Key>
+          <Key
+            label="Espace"
+            onPress={onSpace}
+            className="col-span-4 border-input bg-popover text-sm font-medium text-foreground hover:bg-accent/50"
+          >
+            Espace
+          </Key>
+        </div>
       </div>
     </div>
   );

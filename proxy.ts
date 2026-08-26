@@ -40,7 +40,21 @@ export async function proxy(request: NextRequest) {
   });
 
   // Déclenche le rafraîchissement du token si nécessaire (sans bloquer le rendu).
-  await supabase.auth.getClaims();
+  try {
+    await supabase.auth.getClaims();
+  } catch {
+    // Session cassée : refresh token inconnu ou révoqué (ex. refresh_token_not_found
+    // après rotation, réinitialisation de mot de passe, suppression de session).
+    // Impossible de rafraîchir → on purge les cookies de session pour sortir de
+    // l'état cassé, sinon chaque requête retente le refresh et échoue en boucle
+    // (erreurs répétées + redirections erratiques).
+    await supabase.auth.signOut().catch(() => {});
+    const ref = SUPABASE_URL ? new URL(SUPABASE_URL).hostname.split(".")[0] : "";
+    if (ref) {
+      const name = `sb-${ref}-auth-token`;
+      response.cookies.set(name, "", { maxAge: 0, path: "/" });
+    }
+  }
 
   return response;
 }

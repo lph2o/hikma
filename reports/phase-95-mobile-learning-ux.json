@@ -1,0 +1,83 @@
+{
+  "phase": "PHASE_95_MOBILE_LEARNING_UX",
+  "verdict": "PHASE_95_MOBILE_LEARNING_UX_COMPLETE",
+  "baseline": {
+    "phase_93_p1_01": "CTA Continuer hors ecran apres une reponse (feedback 300-500px)",
+    "phase_93_p1_02": "clavier arabe inline masquant la question + rangees desequilibrees 7/10/10/9 en grid-cols-7",
+    "phase_94": "surface hierarchy tokens implantes et valides"
+  },
+  "p1_fixed": [
+    {
+      "id": "93-P1-01",
+      "title": "CTA Continuer hors ecran apres une reponse",
+      "fix": "Barre d'action sticky mobile dans HikmaExerciseShell",
+      "details": "footer sticky bottom-0 z-10, fond bg-background/95 + backdrop-blur + hairline, safe-area env(safe-area-inset-bottom), pb max(0.75rem). sticky bottom-0 maintient le CTA au bas du viewport des que sa position naturelle passe sous la ligne de flottaison : le CTA est donc visible immediatement apres validation, sans scroll supplementaire. Desktop : sm:static, flex-row justify-end, sans bordure ni fond (comportement d'origine preserve). Aucun layout jump (le footer garde sa place dans le flux)."
+    },
+    {
+      "id": "93-P1-02",
+      "title": "Clavier arabe inline masquant la question + rangees cassees",
+      "fix": "Clavier reequilibre + borne + scroll-into-view",
+      "details": "36 lettres = 6x6 mobile (grid-cols-6) et 9x4 desktop (grid-cols-9) via chunkRows pur ; diacritiques 5x2 mobile / 10x1 desktop ; plus aucune queue de touches isolees. Touches h-11 (44px) et fermeture size-11 (44px). Corps max-h-[70dvh] + overflow-y-auto : le clavier ne peut pas masquer toute la question. Les deux parents (exercises/index + mini-review) font scrollIntoView block center a l'ouverture pour ramener la zone de saisie dans le viewport."
+    }
+  ],
+  "visual_qa": {
+    "status": "STATIC_VALIDATED",
+    "method": "markup SSR via renderToStaticMarkup + verification des classes dans le CSS compile de production",
+    "css_compiled_checked": [
+      "max-h-[70dvh]",
+      "grid-cols-6",
+      "safe-area-inset-bottom",
+      "position:sticky",
+      "backdrop-filter",
+      ".h-11 = calc(var(--spacing) * 11) = 44px",
+      ".size-11 = 44x44"
+    ],
+    "note": "La validation navigateur reelle (360-430px) reste a faire par l'utilisateur sur le preview Vercel, cet environnement ne pouvant pas maintenir un serveur persistant"
+  },
+  "mobile_breakpoints": {
+    "360": "rangees 6x6, touches 44px, clavier borne 70dvh, CTA sticky",
+    "390": "identique",
+    "430": "identique",
+    "sm_up": "9x4, footer statique (comportement desktop d'origine)"
+  },
+  "accessibility": {
+    "touches": "44px (norme 44x44)",
+    "fermeture": "44px + aria-label Masquer le clavier arabe",
+    "escape": "Echap ferme le clavier",
+    "focus_visible": "ring sur chaque touche et sur la fermeture",
+    "announcement": "labels arabes explicites, diacritiques nommes (fatha, damma...)",
+    "reduced_motion": "aucune animation nouvelle"
+  },
+  "interactions": {
+    "verifier": "bouton submit, disabled sans reponse",
+    "continuer": "sticky mobile, min-h-12 (48px), w-full",
+    "audio": "inchange",
+    "clavier": "ouverture avec scrollIntoView, fermeture X ou Echap"
+  },
+  "tests": {
+    "total": 1073,
+    "baseline_before_phase": 1064,
+    "added": 9,
+    "breakdown": {
+      "tests/mobile-learning-ux.test.ts": 5,
+      "tests/arabic-input.test.ts_ajouts": 4
+    },
+    "result": "1073/1073 PASS"
+  },
+  "typecheck": "PASS",
+  "lint": "0 erreur",
+  "build": "PASS",
+  "database_writes": 0,
+  "regressions": 0,
+  "dependencies_added": "NON",
+  "files_changed": [
+    "components/ui/arabic-keyboard.tsx",
+    "lib/ui/arabic-input.ts",
+    "components/learn/exercises/index.tsx",
+    "components/learn/mini-review.tsx",
+    "components/learn/exercises/hikma-exercise-shell.tsx",
+    "tests/mobile-learning-ux.test.ts",
+    "tests/arabic-input.test.ts"
+  ],
+  "next_phase": "Deploiement preview/production des phases 92-95 puis validation visuelle mobile reelle sur hikma.top"
+}

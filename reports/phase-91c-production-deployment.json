@@ -1,0 +1,113 @@
+{
+  "phase": "91C-PRODUCTION-DEPLOYMENT",
+  "date": "2026-08-26",
+  "verdict": "PHASE_91C_PRODUCTION_DEPLOYMENT_COMPLETE",
+  "code_production_ready": "YES",
+  "deployment_production_ready": "YES",
+  "site_live": "YES",
+  "https": "YES",
+  "dns": "YES",
+  "database_writes": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "note": 1,
+  "regressions": 0,
+
+  "before_deployment": {
+    "production_deployment": "hikma-hwoo0qu1w-lph2os-projects.vercel.app",
+    "production_deployment_status": "cassé (construit avant le fix framework — 404 sur toutes les routes, cause du 404 initial sur hikma.top)",
+    "next_public_site_url": "ABSENT",
+    "domains": ["hikma.top", "www.hikma.top"],
+    "www_redirect": "configurée (redirect=hikma.top)"
+  },
+
+  "vercel_configuration": {
+    "project": "hikma",
+    "framework": "nextjs",
+    "node_version": "24.x",
+    "production_branch": "main",
+    "env_after": ["NEXT_PUBLIC_SITE_URL[production,preview]", "NEXT_PUBLIC_SUPABASE_URL[production,preview]", "NEXT_PUBLIC_SUPABASE_ANON_KEY[production,preview]"],
+    "next_public_site_url_value": "https://hikma.top",
+    "site_url_in_source": false,
+    "deployment_used": "hikma-n7ed1688w-lph2os-projects.vercel.app",
+    "deployment_ready": true,
+    "aliased_to": "https://hikma.top"
+  },
+
+  "validation_routes": {
+    "public_200": ["/", "/surahs", "/surahs/1", "/surahs/114", "/privacy", "/terms", "/sources", "/learn", "/login", "/forgot-password", "/reset-password", "/robots.txt", "/sitemap.xml"],
+    "private_guards": {
+      "dashboard": "NEXT_REDIRECT /login 307",
+      "profile": "NEXT_REDIRECT /login 307",
+      "review": "NEXT_REDIRECT /login 307",
+      "activity": "NEXT_REDIRECT /login 307",
+      "admin": "307"
+    },
+    "settings": "404 (route inexistante — comportement correct)",
+    "not_found": { "random_invalid": "404", "surahs_999": "200 + contenu 404 streamé (quirk Next 16)" },
+    "observability_get": "405 (attendu)",
+    "home_content": "Hikma (page d'accueil réelle, plus de 404 Vercel)"
+  },
+
+  "seo": {
+    "canonical_home": "https://hikma.top",
+    "canonical_query_resistant": "https://hikma.top/surahs/1 pour /surahs/1?foo=bar",
+    "og_url": "https://hikma.top",
+    "og_title": "Hikma — Apprends le Coran mot par mot",
+    "og_image": "https://hikma.top/logo/logo_hikma.png (HTTP 200, image/png)",
+    "twitter_card": "summary_large_image",
+    "robots": "HTTP 200 — Sitemap: https://hikma.top/sitemap.xml",
+    "sitemap": { "count": 116, "localhost": 0, "vercel_app": 0, "private_routes": 0, "duplicates": 0 }
+  },
+
+  "security": {
+    "https": "valide (Let's Encrypt, apex + www)",
+    "http_to_https": "308 → https://hikma.top/",
+    "csp_present": true,
+    "csp_media_src": "media-src 'self' https://cdn.islamic.network https://akgblkwddjslbgoaxdfh.supabase.co blob: — fix audio des mots inclus en production",
+    "unsafe_eval_production": 0,
+    "headers": ["Content-Security-Policy", "Permissions-Policy", "Referrer-Policy", "Strict-Transport-Security preload", "X-Content-Type-Options nosniff", "X-Frame-Options DENY"],
+    "open_redirect": 0,
+    "secret_leak": 0,
+    "service_role_client": 0
+  },
+
+  "www": {
+    "certificate": "valide (Let's Encrypt, CN=www.hikma.top)",
+    "redirect": "307 → https://hikma.top/",
+    "note": "redirection 307 = défaut Vercel ; fonctionnel, mais un 301 permanent serait optimal pour la consolidation SEO de www vers apex (P2 éventuel)"
+  },
+
+  "vercel_technical_url": {
+    "deployment_url": "hikma-n7ed1688w-lph2os-projects.vercel.app",
+    "canonical_usage": 0,
+    "sitemap_usage": 0,
+    "og_usage": 0
+  },
+
+  "validation_suite": {
+    "typecheck": "PASS",
+    "lint": "PASS (0 erreur, 20 warnings pré-existants)",
+    "tests": "1058/1058 PASS (68 fichiers)",
+    "build": "PASS (NEXT_PUBLIC_SITE_URL=https://hikma.top)"
+  },
+
+  "database": { "writes": 0, "checks": "SELECT-only" },
+
+  "git_scope": {
+    "code_changes_during_91c": 0,
+    "inherited_dirty_files": 10,
+    "untracked_reports": 6,
+    "note": "aucun fichier de production modifié pendant 91C — uniquement configuration Vercel (variable + déploiement)"
+  },
+
+  "not_verified": [
+    "Password reset E2E réel (email)",
+    "Redirect URLs Supabase (dont https://hikma.top/reset-password)",
+    "Indexation Google/Bing (post-lancement)",
+    "Licence audio commerciale (R-009, monétisation)"
+  ],
+
+  "next_action": "CONFIGURER_SUPABASE_REDIRECT_URLS + TEST_E2E_RESET + GOOGLE_SEARCH_CONSOLE/BING puis surveillance post-lancement"
+}

@@ -51,9 +51,12 @@ export function HikmaProgress({ value, label, detail, className }: HikmaProgress
   const clamped = Math.min(100, Math.max(0, value));
   return (
     <div className={cn("flex flex-col gap-2", className)}>
-      <div className="flex items-baseline justify-between gap-4">
-        <BodyMedium className="font-medium">{label}</BodyMedium>
-        {detail ? <Caption>{detail}</Caption> : null}
+      {/* flex-wrap sans flex-1 sur le label : si label + détail ne tiennent pas sur une
+       * ligne (≤ ~390px), le détail passe sur sa propre ligne et le label garde toute
+       * la largeur, jamais tronqué (PHASE 96C) */}
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <BodyMedium className="flex-none font-medium">{label}</BodyMedium>
+        {detail ? <Caption className="shrink-0 text-right">{detail}</Caption> : null}
       </div>
       <div className="h-2 overflow-hidden rounded-full bg-hikma-gold/20" role="progressbar" aria-valuenow={clamped} aria-valuemin={0} aria-valuemax={100} aria-label={label}>
         <div className="h-full rounded-full bg-hikma-gold transition-transform duration-500 ease-[var(--ease-soft-out)]" style={{ transform: `scaleX(${clamped / 100})`, transformOrigin: "left" }} />

@@ -1,0 +1,71 @@
+{
+  "phase": "PHASE_97_PROFILE_REDESIGN",
+  "verdict": "PHASE_97_PROFILE_REDESIGN_COMPLETE",
+  "direction": "Identité → Mon apprentissage → Préférences → Compte & aide (rows de préférences + sous-pages, progressive disclosure)",
+  "avant": {
+    "header": "Mascot + nom + Membre depuis",
+    "stats": "grille de 4 cartes (Leçons, Mots appris, Maîtrisés, À réviser)",
+    "formulaire": "3 grosses cartes : Objectif quotidien, Rappels, Préférences d'apprentissage (7 champs/selects empilés + paragraphes explicatifs longs)",
+    "problème": "aspect formulaire administratif, pas une page Profil ; texte explicatif excessif ; même poids visuel pour tout"
+  },
+  "apres": {
+    "identite": "avatar initiales (cercle teal), nom H1, « Ton espace Hikma », lien « Modifier le nom », pastille dorée « X jours de régularité » (gold = accomplissement, seulement si streak > 0), « X mots appris · Y leçons », « Membre depuis »",
+    "mon_apprentissage": "6 rows (Objectif quotidien, Sourate de départ, Lecture de l'arabe, Relation avec le Coran, Temps souhaité, Rythme) — icône + libellé + valeur actuelle + chevron, groupées en une surface avec hairlines",
+    "preferences": "row Rappels (Activés · 19:00 / Désactivés)",
+    "compte_aide": "rows Confidentialité → /privacy, Conditions d'utilisation → /terms, Se déconnecter (destructif)",
+    "sous_pages": [
+      "/profile/nom",
+      "/profile/objectif",
+      "/profile/parcours",
+      "/profile/lecture",
+      "/profile/relation",
+      "/profile/temps",
+      "/profile/rythme",
+      "/profile/rappels"
+    ],
+    "supprime": "grosse carte Préférences d'apprentissage, paragraphes explicatifs longs, grille de statistiques (le Dashboard reste le lieu de la progression)"
+  },
+  "fichiers_crees": [
+    "lib/learning/preferences.ts (options + libellés, source unique)",
+    "components/app/profile-row.tsx",
+    "components/app/profile-preference-form.tsx",
+    "components/app/profile-option-page.tsx",
+    "components/app/display-name-form.tsx",
+    "app/(app)/profile/nom/page.tsx",
+    "app/(app)/profile/objectif/page.tsx",
+    "app/(app)/profile/parcours/page.tsx",
+    "app/(app)/profile/lecture/page.tsx",
+    "app/(app)/profile/relation/page.tsx",
+    "app/(app)/profile/temps/page.tsx",
+    "app/(app)/profile/rythme/page.tsx",
+    "app/(app)/profile/rappels/page.tsx"
+  ],
+  "fichiers_modifies": [
+    "app/(app)/profile/page.tsx (redesign complet)",
+    "components/app/learning-preferences.tsx (options extraites vers lib/learning/preferences.ts)"
+  ],
+  "validation_mobile": {
+    "390px": "identité + 8 rows rendus, ancien formulaire absent, grille stats absente, 0 overflow (docSW 390 = vw)",
+    "rows": ["Modifier le nom", "Objectif quotidien", "Sourate de départ", "Lecture de l'arabe", "Relation avec le Coran", "Temps souhaité", "Rythme", "Rappels"]
+  },
+  "regles_respectees": [
+    "gold réservé à la progression (pastille streak, SparklesIcon)",
+    "teal = actions/parcours (icônes de rows, avatar)",
+    "aucune statistique Dashboard dupliquée",
+    "sous-pages avec retour ← Profil (bouton retour navigateur fonctionne aussi)",
+    "rows ≥ 44px, focus visible, aria (radiogroup, aria-checked)",
+    "aucune modification de logique métier : updateLearningPreferences / updateDailyGoal / updateReminderPreferences / signOut réutilisés",
+    "DATABASE_WRITES = 0"
+  ],
+  "typecheck": "PASS",
+  "lint": "PASS 0 errors",
+  "tests": "1090/1090 PASS (1087 + 3 contrats card-spacing)",
+  "build": "PASS",
+  "database_writes": 0,
+  "migrations": 0,
+  "regressions": 0,
+  "p0": 0,
+  "p1": 0,
+  "p2": 0,
+  "next_phase": "validation visuelle humaine sur téléphone + déploiement preview avec les phases 96B-97"
+}

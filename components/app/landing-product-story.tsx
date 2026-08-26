@@ -71,7 +71,7 @@ function ContextPreview() {
   return (
     <BezelCard>
       <Card className="rounded-[calc(2rem-0.375rem)] border-border bg-surface-elevated shadow-none">
-        <CardContent className="gap-6 p-6 sm:p-8">
+        <CardContent className="flex flex-col gap-6 p-6 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <Caption className="text-primary-strong">COMPRENDRE · le contexte</Caption>
             <Caption className="text-text-secondary">Al-Fatiha · 1:1</Caption>
@@ -169,7 +169,7 @@ function ErrorPreview() {
   return (
     <BezelCard>
       <Card className="rounded-[calc(2rem-0.375rem)] border-border bg-surface-elevated shadow-none">
-        <CardContent className="gap-6 p-6 sm:p-8">
+        <CardContent className="flex flex-col gap-6 p-6 sm:p-8">
           <div className="flex flex-col gap-2">
             <Caption className="text-primary-strong">APRÈS LA RÉPONSE · recevoir du feedback</Caption>
             <H3>L’erreur devient un repère</H3>
@@ -263,7 +263,7 @@ export function LandingProductStory() {
         </div>
       </LandingAct>
 
-      <LandingAct id="one-word" eyebrow="One word · one method" title="La compréhension avance dans le même fil.">
+      <LandingAct id="one-word" eyebrow="Un mot · une méthode" title="La compréhension avance dans le même fil.">
         <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <AudioPreview />
           <ExercisePreview />

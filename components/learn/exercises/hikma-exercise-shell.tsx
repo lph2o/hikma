@@ -68,7 +68,9 @@ export function HikmaExerciseShell({
       </header>
 
       <Card className="rounded-4xl border-border-subtle bg-surface-elevated shadow-card">
-        <CardContent className="gap-6 p-6 sm:gap-8 sm:p-8">
+        {/* flex flex-col requis : sans lui le gap est un no-op et la ligne de
+         * séparation « Ce que tu apprends » colle aux éléments en dessous. */}
+        <CardContent className="flex flex-col gap-6 p-6 sm:gap-8 sm:p-8">
           <div className="flex flex-col gap-2 border-b border-border-subtle pb-5">
             <Caption className="text-primary-strong">Ce que tu apprends</Caption>
             <H3>{skill}</H3>
@@ -86,7 +88,12 @@ export function HikmaExerciseShell({
       ) : null}
 
       {primaryAction || secondaryAction ? (
-        <footer className="-mt-3 flex flex-col gap-3 pt-0 sm:flex-row sm:justify-end">
+        /* Barre d'action sticky sur mobile (93-P1-01) : le CTA principal reste
+         * accessible au pouce après la réponse, même si le feedback est long.
+         * Le sticky garde sa place dans le flux (pas de layout jump) ; le
+         * fond flouté + hairline le lisent sur le contenu ; safe-area iOS
+         * respectée. Desktop : comportement naturel d'origine (statique). */
+        <footer className="-mx-5 sticky bottom-0 z-10 mt-auto flex flex-col gap-3 border-t border-border-subtle bg-background/95 px-5 pb-[max(env(safe-area-inset-bottom),0.75rem)] pt-3 shadow-[0_-10px_28px_-20px_rgba(46,42,28,0.28)] backdrop-blur-md sm:static sm:mx-0 sm:mt-0 sm:flex-row sm:justify-end sm:border-0 sm:bg-transparent sm:px-0 sm:pb-0 sm:pt-0 sm:shadow-none sm:backdrop-blur-none">
           {secondaryAction}
           {primaryAction}
         </footer>

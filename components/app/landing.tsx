@@ -198,9 +198,6 @@ export function LandingPage({ authenticated = false }: { authenticated?: boolean
           <Link href="/terms" className="hover:text-text-primary">
             Conditions
           </Link>
-          <Link href="/sources" className="hover:text-text-primary">
-            Sources
-          </Link>
           <span>Apprendre avec patience.</span>
         </div>
       </footer>

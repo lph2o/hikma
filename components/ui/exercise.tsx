@@ -183,75 +183,77 @@ export function ExerciseFeedback({
       role="status"
       aria-live="polite"
       className={cn(
-        "flex items-start gap-3 rounded-2xl border p-4 animate-feedback-in sm:p-5",
-        isCorrect
-          ? "border-success/40 bg-success/8"
-          : isAmbiguous
-            ? "border-warning/40 bg-warning/8"
-            : "border-destructive/40 bg-destructive/8",
+        // PHASE 97B : le feedback est rendu à plat (les éléments remplacent la
+        // carte) — la sémantique correct/incorrect reste portée par l'icône,
+        // le titre coloré et les panneaux internes teintés (bonne réponse…).
+        // PHASE 97C : tout le contenu est centré — en-tête (icône + titre),
+        // message, encadrés de réponse, conseil, audio et bloc d'explication.
+        "flex flex-col items-center gap-3 text-center animate-feedback-in",
         className,
       )}
     >
-      <Icon className={cn("mt-0.5 size-5 shrink-0", titleClass)} aria-hidden="true" />
-      <div className="flex w-full min-w-0 flex-col gap-2">
+      <div className="flex items-center justify-center gap-2">
+        <Icon className={cn("size-5 shrink-0", titleClass)} aria-hidden="true" />
         <BodyMedium className={cn("font-semibold", titleClass)}>
           {isCorrect ? (correctTitle ?? message ?? FEEDBACK_TITLES[status]) : (message ?? FEEDBACK_TITLES[status])}
         </BodyMedium>
-        <BodyMedium className="text-text-secondary">
-          {isCorrect ? (correctMessage ?? FEEDBACK_MESSAGES[status]) : FEEDBACK_MESSAGES[status]}
-        </BodyMedium>
-        {!isCorrect ? (
-          <div className="grid gap-2 sm:grid-cols-2">
-            <div className="flex min-w-0 flex-col gap-2 rounded-xl border border-error/32 bg-error/8 p-3">
-              <Caption className="text-error-text">Ta réponse</Caption>
-              {userAnswer?.length ? (
-                ARABIC_RE.test(userAnswer) ? (
-                  <ArabicText className="text-h4 text-error-text">{userAnswer}</ArabicText>
-                ) : (
-                  <BodyMedium className="whitespace-pre-wrap break-words font-medium text-error-text">{userAnswer}</BodyMedium>
-                )
+      </div>
+      <BodyMedium className="text-text-secondary">
+        {isCorrect ? (correctMessage ?? FEEDBACK_MESSAGES[status]) : FEEDBACK_MESSAGES[status]}
+      </BodyMedium>
+      {!isCorrect ? (
+        /* Ta réponse / Réponse attendue : blocs compacts (w-fit), centrés,
+         * en moitié-moitié sur grand écran (sm:grid-cols-2). */
+        <div className="grid w-fit gap-3 sm:grid-cols-2">
+          <div className="flex flex-col gap-2 rounded-xl border border-error/32 bg-error/8 px-4 py-3">
+            <Caption className="text-error-text">Ta réponse</Caption>
+            {userAnswer?.length ? (
+              ARABIC_RE.test(userAnswer) ? (
+                <ArabicText className="text-h4 text-error-text">{userAnswer}</ArabicText>
               ) : (
-                <BodyMedium className="font-medium text-error-text">Aucune réponse</BodyMedium>
-              )}
-            </div>
-            {correctContent ? (
-              <div className="flex min-w-0 flex-col gap-2 rounded-xl border border-success/32 bg-success/8 p-3">
-                <Caption className="text-success-text">Réponse attendue</Caption>
-                {ARABIC_RE.test(correctContent) ? (
-                  <ArabicText className="text-h4 text-success-text">{correctContent}</ArabicText>
-                ) : (
-                  <BodyMedium className="font-medium text-success-text">{correctContent}</BodyMedium>
-                )}
-              </div>
-            ) : null}
-          </div>
-        ) : correctContent ? (
-          <div className="flex min-w-0 flex-col gap-2 rounded-xl border border-success/32 bg-success/8 p-3">
-            <Caption className="text-success-text">Bonne réponse</Caption>
-            {ARABIC_RE.test(correctContent) ? (
-              <ArabicText className="text-h4 text-success-text">{correctContent}</ArabicText>
+                <BodyMedium className="whitespace-pre-wrap break-words font-medium text-error-text">{userAnswer}</BodyMedium>
+              )
             ) : (
-              <BodyMedium className="font-medium text-success-text">{correctContent}</BodyMedium>
+              <BodyMedium className="font-medium text-error-text">Aucune réponse</BodyMedium>
             )}
           </div>
-        ) : null}
-        {explanation ? (
-          <BodyMedium className="text-muted-foreground">{explanation}</BodyMedium>
-        ) : null}
-        {shortRecall ? (
-          <BodyMedium className="text-muted-foreground">{shortRecall}</BodyMedium>
-        ) : null}
-        {explanationData?.audioUrl ? (
-          <AudioPlayer src={explanationData.audioUrl} label="Écouter le mot" className="self-start" />
-        ) : null}
-        {explanationData ? (
-          <HikmaExplanation
-            data={explanationData}
-            defaultOpen={status === "incorrect"}
-            showAudio={false}
-          />
-        ) : null}
-      </div>
+          {correctContent ? (
+            <div className="flex flex-col gap-2 rounded-xl border border-success/32 bg-success/8 px-4 py-3">
+              <Caption className="text-success-text">Réponse attendue</Caption>
+              {ARABIC_RE.test(correctContent) ? (
+                <ArabicText className="text-h4 text-success-text">{correctContent}</ArabicText>
+              ) : (
+                <BodyMedium className="font-medium text-success-text">{correctContent}</BodyMedium>
+              )}
+            </div>
+          ) : null}
+        </div>
+      ) : correctContent ? (
+        <div className="flex flex-col gap-2 rounded-xl border border-success/32 bg-success/8 px-4 py-3">
+          <Caption className="text-success-text">Bonne réponse</Caption>
+          {ARABIC_RE.test(correctContent) ? (
+            <ArabicText className="text-h4 text-success-text">{correctContent}</ArabicText>
+          ) : (
+            <BodyMedium className="font-medium text-success-text">{correctContent}</BodyMedium>
+          )}
+        </div>
+      ) : null}
+      {explanation ? (
+        <BodyMedium className="text-muted-foreground">{explanation}</BodyMedium>
+      ) : null}
+      {shortRecall ? (
+        <BodyMedium className="text-muted-foreground">{shortRecall}</BodyMedium>
+      ) : null}
+      {explanationData?.audioUrl ? (
+        <AudioPlayer src={explanationData.audioUrl} label="Écouter le mot" className="self-center" />
+      ) : null}
+      {explanationData ? (
+        <HikmaExplanation
+          data={explanationData}
+          defaultOpen={status === "incorrect"}
+          showAudio={false}
+        />
+      ) : null}
     </div>
   );
 }

@@ -1,0 +1,90 @@
+{
+  "phase": "91-DOMAIN-VERCEL",
+  "mode": "AUDIT_ONLY",
+  "date": "2026-08-26",
+  "database_writes": 0,
+  "verdict": "AUDIT_COMPLETE_AWAITING_AUTHORIZATION",
+  "target_domain": "https://hikma.top",
+  "canonical_domain": "hikma.top",
+
+  "vercel": {
+    "project": "hikma",
+    "framework": "nextjs",
+    "node_version": "24.x",
+    "production_branch": "main",
+    "domains_associated": ["hikma.top", "www.hikma.top"],
+    "domains_added_at": "2026-08-26 (autorisation utilisateur)",
+    "www_redirect_apex": "configured (redirect=hikma.top)",
+    "domains_verified_flag": true,
+    "domains_verified_note": "le flag verified=true reflète l'ajout côté Vercel ; le DNS pointe encore vers le parking Spaceship — le domaine ne sert pas Hikma tant que les records DNS ne sont pas créés",
+    "hikma_top_linked": true,
+    "production_deployment": "hikma-hwoo0qu1w-lph2os-projects.vercel.app",
+    "production_alias_broken": true,
+    "alias_notes": "hikma-delta.vercel.app et hikma-lph2os-projects.vercel.app pointent vers le premier déploiement construit avant le fix framework — 404 sur toutes les routes",
+    "env_vars": ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"],
+    "next_public_site_url": "ABSENT",
+    "sso_protection": "disabled",
+    "github_connected": "lph2o/hikma"
+  },
+
+  "dns": {
+    "nameservers": ["launch1.spaceship.net", "launch2.spaceship.net"],
+    "current_a_records": ["54.149.79.189", "34.216.117.25"],
+    "current_a_purpose": "page de parking Spaceship — inutiles pour Hikma, à remplacer",
+    "www_record": "ABSENT",
+    "cname": "ABSENT",
+    "txt": "non vérifiable (timeout dig, sans impact)",
+    "vercel_recommended": {
+      "apex": "A @ -> 76.76.21.21",
+      "www": "CNAME www -> cname.vercel-dns-0.com",
+      "source": "https://vercel.com/docs/domains/set-up-custom-domain (valeurs générales actuelles ; valeurs exactes confirmées par vercel domains inspect hikma.top après ajout)",
+      "nameservers_change": "PAS NÉCESSAIRE — Spaceship reste fournisseur DNS, on ajoute des enregistrements dans son panneau"
+    }
+  },
+
+  "repo": {
+    "site_url_config": "env-driven via NEXT_PUBLIC_SITE_URL (inlinée au build) — aucune modification de code requise",
+    "metadataBase_canonical_og": "résolus depuis NEXT_PUBLIC_SITE_URL (89O, prouvé : build avec https://hikma.top -> canonical/OG/sitemap/robots corrects, 0 localhost)",
+    "env_example_contains_site_url": true,
+    "code_changes_required": 0
+  },
+
+  "seo_current_on_vercel": {
+    "canonical": "http://localhost:3000 (fallback car NEXT_PUBLIC_SITE_URL absente)",
+    "og_url": "http://localhost:3000",
+    "sitemap": "116 URLs en localhost",
+    "robots_sitemap": "http://localhost:3000/sitemap.xml"
+  },
+
+  "required_changes": [
+    { "step": 1, "action": "Ajouter hikma.top au projet Vercel hikma (API/CLI vercel domains add)", "actor": "AGENT", "waiting": true },
+    { "step": 2, "action": "Ajouter www.hikma.top au projet Vercel + configurer la redirection www -> apex", "actor": "AGENT", "waiting": true },
+    { "step": 3, "action": "Remplacer chez Spaceship les 2 A records de parking par A @ -> 76.76.21.21 et ajouter CNAME www -> cname.vercel-dns-0.com", "actor": "USER (Spaceship)", "waiting": true },
+    { "step": 4, "action": "Attendre la propagation DNS puis vérification automatique par Vercel (vercel domains inspect)", "actor": "AGENT", "waiting": true },
+    { "step": 5, "action": "Configurer NEXT_PUBLIC_SITE_URL=https://hikma.top en production sur Vercel", "actor": "AGENT", "waiting": true },
+    { "step": 6, "action": "Lancer vercel --prod (corrige aussi l'alias production cassé)", "actor": "AGENT", "waiting": true },
+    { "step": 7, "action": "Valider HTTPS, canonical, OG, robots, sitemap, auth guards, CSP sur https://hikma.top", "actor": "AGENT", "waiting": true },
+    { "step": 8, "action": "Configurer les Redirect URLs Supabase (dont https://hikma.top/reset-password) + test E2E réel du password reset", "actor": "MANUAL", "waiting": true },
+    { "step": 9, "action": "Google Search Console + Bing Webmaster Tools : ajouter hikma.top, vérifier la propriété, soumettre https://hikma.top/sitemap.xml", "actor": "MANUAL (post-lancement)", "waiting": true }
+  ],
+
+  "spaceship_dns_block": {
+    "record_1": { "type": "A", "host": "@ (racine)", "value": "76.76.21.21", "ttl": "3600 (ou Auto)" },
+    "record_2": { "type": "CNAME", "host": "www", "value": "cname.vercel-dns-0.com", "ttl": "3600 (ou Auto)" },
+    "remove": "les 2 A records existants 54.149.79.189 et 34.216.117.25 (parking Spaceship, prouvés inutiles : ils servent une page de parking, pas Hikma)",
+    "do_not_remove": "les nameservers launch1/launch2.spaceship.net — aucune modification NS nécessaire"
+  },
+
+  "security": "CSP intacte, guards privés actifs, aucun secret exposé, DATABASE_WRITES = 0 — vérifié dans l'audit phase-91-post-deployment",
+
+  "not_verified": [
+    "Propagation DNS réelle (dépend de l'action Spaceship)",
+    "Certificat TLS sur hikma.top (sera provisionné par Vercel après DNS)",
+    "Redirection www -> apex en production réelle",
+    "Redirect URLs Supabase (nécessitent l'accès au dashboard Supabase)",
+    "Password reset E2E réel",
+    "Indexation Google/Bing (post-lancement)"
+  ],
+
+  "regressions": 0
+}

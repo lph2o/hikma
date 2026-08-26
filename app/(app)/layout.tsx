@@ -37,7 +37,9 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
       <AppNav />
       <div className="md:pl-64">
         <AppHeader />
-        <main className="pb-24 md:pb-10">{children}</main>
+        {/* pb-28 : dégagement pour la barre flottante mobile (PHASE 96) —
+         * hauteur ≈ 56px + safe-area, aucun contenu ni CTA caché derrière. */}
+        <main className="pb-28 md:pb-10">{children}</main>
       </div>
     </div>
   );

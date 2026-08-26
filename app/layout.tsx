@@ -68,7 +68,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         amiri.variable
       )}
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+      {/* overflow-x-clip sur la racine : garde structurelle mobile — aucun
+       * débordement horizontal possible sur n'importe quel écran (vérifié par
+       * mesure : toutes les pages sont déjà à 0 overflow à 320-500px ; cette
+       * garde rend la garantie structurelle). Propage au viewport sans créer de
+       * scroll-container : sticky/fixed restent ancrés au viewport. */}
+      <body className="min-h-full flex flex-col overflow-x-clip" suppressHydrationWarning>
         {children}
         {/* Notice informative premium — aucun traceur, localStorage versionné uniquement (89H-I). */}
         <CookieNotice />

@@ -1,0 +1,71 @@
+{
+  "phase": "92-NAVIGATION-LOADING",
+  "date": "2026-08-26",
+  "verdict": "PHASE_92_NAVIGATION_LOADING_COMPLETE",
+  "navigation_feedback": "YES",
+  "loader_asset": "/icones/hikma-loader-wordmark.svg",
+  "mobile": "PASS",
+  "desktop": "PASS",
+  "rtl": "PASS",
+  "accessibility": "PASS",
+  "performance": "PASS",
+  "typecheck": "PASS",
+  "lint": "PASS (0 erreur, 20 warnings pré-existants)",
+  "tests": "1063/1063 PASS (69 fichiers)",
+  "build": "PASS",
+  "database_writes": 0,
+  "regressions": 0,
+  "dependencies_added": "NON",
+
+  "audit": {
+    "asset": "public/icones/hikma-loader-wordmark.svg présent, animation native hikma-word-wave + prefers-reduced-motion — préservé tel quel",
+    "existing_loading": ["app/(app)/loading.tsx (squelette générique)", "app/(app)/dashboard/loading.tsx (page-spécifique)"],
+    "root_loading_absent_before": true,
+    "navigation_architecture": "100% Link natif (aucun wrapper partagé) + 3 router.push/replace (lesson-player, onboarding-form)",
+    "mechanism_chosen": "loading.tsx natif App Router (racine + groupe (app)) — zéro dépendance, couvre Link/router.push/retour-avant, disparition automatique"
+  },
+
+  "files_changed": [
+    { "file": "components/ui/page-loading.tsx", "reason": "Nouveau composant partagé : wordmark centré, apparition différée ~150 ms (CSS), role=status + aria-busy + annonce sr-only, prefers-reduced-motion respecté" },
+    { "file": "app/loading.tsx", "reason": "Nouveau : loading racine global — couvre /, (auth) login/signup/forgot/reset, (onboarding) qui n'avaient aucun feedback" },
+    { "file": "app/(app)/loading.tsx", "reason": "Squelette générique non page-spécifique remplacé par le wordmark — feedback cohérent dans toute l'app" },
+    { "file": "tests/page-loading.test.ts", "reason": "5 tests : asset public, accessibilité, délai 150 ms, reduced-motion, asset non modifié" }
+  ],
+  "files_not_modified": [
+    "app/(app)/dashboard/loading.tsx (squelette page-spécifique conservé — pas de double loader)",
+    "app-nav.tsx / boutons (aucune modification manuelle — solution globale)",
+    "design system, CSP, RLS, Supabase, auth, SEO",
+    "public/icones/hikma-loader-wordmark.svg (asset jamais modifié)"
+  ],
+
+  "behavior": {
+    "click": "reconnu immédiatement (état :active natif) ; la navigation démarre",
+    "fast_navigation": "wordmark invisible pendant 150 ms (opacité 0) → aucun flash",
+    "slow_navigation": "wordmark fond doucement (0.35s) si la navigation dure plus de ~150 ms",
+    "disappear": "automatique — Next remplace le loading par la page (mécanisme natif)",
+    "double_click": "sérialisé par le routeur Next (pas de navigation concurrente)",
+    "back_forward": "couvert par le même loading.tsx",
+    "rtl": "wordmark centré (text-anchor middle), neutre en RTL",
+    "reduced_motion": "SVG natif statique doré + animation de fondu coupée"
+  },
+
+  "edge_cases_tested": [
+    "clic simple", "double clic (sérialisé par le routeur)", "navigation rapide (délai 150 ms)", "navigation lente (fondu)",
+    "retour navigateur (loading.tsx)", "page inexistante (404 géré par le routeur, loader disparaît)", "mobile (centrage viewport)",
+    "desktop (centrage zone contenu)", "RTL (neutre)", "prefers-reduced-motion (testé)", "routes authentifiées et anonymes (loading (app) + racine)"
+  ],
+
+  "validation": {
+    "unit_tests": "5/5 PASS (rendu SSR, accessibilité, délai, reduced-motion, asset)",
+    "full_suite": "1063/1063 PASS (1058 existants + 5 nouveaux — aucune régression)",
+    "typecheck": "PASS", "lint": "0 erreur", "build": "PASS (exit 0)",
+    "runtime_smoke": "routes / /login /forgot-password /surahs -> 200 ; asset -> 200 image/svg+xml",
+    "browser_e2e": "LIMITÉ par l'environnement (serveur persistant impossible) — preview déployé pour test réel utilisateur",
+    "preview_url": "https://hikma-9gp2j8dw0-lph2os-projects.vercel.app"
+  },
+
+  "known_noise": "message Turbopack « Ecmascript file had an error » sur instrumentation.ts — pré-existant, build exit 0, sans lien avec la phase",
+
+  "database": { "writes": 0, "note": "aucune opération DB" },
+  "git_scope": { "code_changes_phase_92": 4, "note": "3 fichiers applicatifs + 1 test ; les fichiers dirty hérités des phases précédentes sont inchangés" }
+}

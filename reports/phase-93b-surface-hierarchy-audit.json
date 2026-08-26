@@ -1,0 +1,244 @@
+{
+  "phase": "PHASE_93B_SURFACE_HIERARCHY_AUDIT",
+  "status": "PHASE_93B_AUDIT_ONLY",
+  "auditOnly": true,
+  "productionChanges": 0,
+  "databaseWrites": 0,
+  "date": "2026-08-26",
+  "method": "Inventaire des tokens et composants de surface + calculs de luminance/contraste (WCAG relative luminance) + comptage des patterns de cartes réels + audit des pages (code et HTML rendu). Aucune modification.",
+  "verdict": {
+    "surfaceSystemStatus": "FLAT — seulement 2 paliers de lumière perceptibles (ivory, puis cream/subtle quasi identiques)",
+    "cardHierarchyStatus": "WEAK — cartes standards indiscernables du fond (1.050:1) et imbriqués même couleur que leur parent (1.000:1)",
+    "borderStatus": "WEAK — border-subtle à 1.127:1 vs ivory, fonctionnellement invisible à 1px",
+    "shadowStatus": "FUNCTIONALLY_ABSENT — shadow-card imperceptible sur ivory et cream",
+    "mobileStatus": "DEGRADED — sans hover, la séparation repose uniquement sur des hairlines invisibles",
+    "desktopStatus": "WEAK — partiellement compensé par hover:bg / hover:shadow, mais hiérarchie toujours plate"
+  },
+  "surfaceInventory": {
+    "pageBackground": { "token": "--background", "color": "#f8f8f0", "role": "ivory, niveau 0" },
+    "surface": { "token": "--surface", "color": "#fffdf8", "role": "cream — identique à surface-elevated/card/popover" },
+    "surfaceElevated": { "token": "--surface-elevated", "color": "#fffdf8", "role": "cream — AUCUNE élévation réelle (1.000:1 vs surface)" },
+    "card": { "token": "--card", "color": "#fffdf8", "role": "cream — même couleur que surface" },
+    "popover": { "token": "--popover", "color": "#fffdf8", "role": "cream — overlay sans teinte propre" },
+    "surfaceSubtle": { "token": "--surface-subtle", "color": "#f1f6f3", "role": "teinté teal pâle — identique à surface-featured" },
+    "surfaceFeatured": { "token": "--surface-featured", "color": "#f1f6f3", "role": "teinté teal pâle — même couleur que subtle" },
+    "surfaceInteractive": { "token": "--surface-interactive", "color": "#ddedea", "role": "teal-100, niveau hover/actif" },
+    "sidebar": { "token": "--sidebar", "color": "#eef4f1", "role": "1.044:1 vs ivory, séparée par border-r" },
+    "border": { "token": "--border", "color": "#d7e0dc", "role": "1.263:1 vs ivory — visible mais très doux" },
+    "borderSubtle": { "token": "--border-subtle", "color": "#e4ece8", "role": "1.127:1 vs ivory — invisible à 1px" },
+    "shadowCard": { "token": "--shadow-card", "color": "0 1px 2px rgba(46,42,28,0.04), 0 8px 24px -12px rgba(46,42,28,0.10)", "role": "fonctionnellement absente" },
+    "shadowElevated": { "token": "--shadow-elevated", "color": "0 2px 4px rgba(46,42,28,0.06), 0 16px 40px -16px rgba(46,42,28,0.16)", "role": "perceptible, pattern de référence" },
+    "radius": { "token": "--radius", "value": "0.625rem", "role": "échelle sm→4xl (0.375rem→1.625rem)" }
+  },
+  "measuredContrast": [
+    { "pair": "cream vs ivory (card sur page)", "ratio": "1.050:1", "status": "ZERO separation lumineuse" },
+    { "pair": "subtle/featured vs ivory", "ratio": "1.024:1", "status": "ZERO separation lumineuse" },
+    { "pair": "surface-elevated vs surface", "ratio": "1.000:1", "status": "IDENTIQUES — pas d'élévation" },
+    { "pair": "cream vs subtle (imbriqué)", "ratio": "1.075:1", "status": "quasi invisible" },
+    { "pair": "border vs ivory", "ratio": "1.263:1", "status": "visible mais très doux" },
+    { "pair": "border-subtle vs ivory", "ratio": "1.127:1", "status": "invisible à 1px" },
+    { "pair": "sidebar vs ivory", "ratio": "1.044:1", "status": "séparée par border-r uniquement" }
+  ],
+  "usagePatterns": {
+    "cartes_pattern_faible": 23,
+    "pattern_exact": "border-border-subtle bg-surface-elevated (bordure invisible + fond identique + shadow-card imperceptible)",
+    "surface_featured_usage": 25,
+    "shadow_elevated_usage": 15,
+    "border_primary_usage": 21,
+    "pattern_reference": "border-primary/20 + bg-surface-featured + shadow-elevated (TodayCard, Ta progression, sourate en vedette, CTA landing) — fonctionne",
+    "panneaux_colores": "success/8 + border-success/32, error/8 + border-error/32 — seuls imbriqués bien différenciés (par la couleur)"
+  },
+  "rootCause": "Combinaison de 4 facteurs : (1) couleurs de surface trop proches (cream/subtle à ~1.05:1 de l'ivory), (2) border-subtle invisible à 1px (1.127:1), (3) shadow-card fonctionnellement absente, (4) imbriqués de même couleur que leur parent (1.000:1). Le problème n'est PAS un manque de shadows à ajouter partout, mais l'absence d'un vrai palier d'élévation dans les tokens.",
+  "findings": {
+    "P0": [],
+    "P1": [
+      {
+        "id": "93B-P1-01",
+        "title": "Cartes standards indiscernables du fond de page",
+        "evidence": "cream (#fffdf8) sur ivory (#f8f8f0) = 1.050:1 ; border-subtle = 1.127:1 ; shadow-card imperceptible. Pattern dominant (23 usages) : border-border-subtle bg-surface-elevated. Pages : /dashboard (Tes sourates, activité, révisions, couverture), /learn (Comment avancer), /review, /surahs (non-vedette), /sources, /mots, auth.",
+        "impact": "La hiérarchie visuelle repose sur le padding seul ; sur mobile (pas de hover) les cartes se fondent dans le fond et l'empilement vertical devient un mur plat.",
+        "mobileDesktop": "BOTH (mobile plus critique)",
+        "classification": "UX_PROBLEM",
+        "recommendation": "Établir un vrai palier : cartes standalone en border (#d7e0dc) + shadow-card renforcée, ou teinte featured ; border-subtle réservé aux imbriqués."
+      },
+      {
+        "id": "93B-P1-02",
+        "title": "Cartes imbriquées de même couleur que leur parent",
+        "evidence": "Bloc « Prochaine étape » de /learn : bg-surface-elevated/70 dans une carte bg-surface-elevated = 1.000:1 (aucune séparation). Seul le padding suggère la structure.",
+        "impact": "L'imbrication n'est pas perçue ; le bloc semble être du texte flottant dans la carte.",
+        "mobileDesktop": "BOTH",
+        "classification": "UX_PROBLEM",
+        "recommendation": "Imbriqués toujours en surface-subtle + border-subtle (le dashboard « Prochaine étape » fait déjà ça correctement — généraliser le pattern)."
+      }
+    ],
+    "P2": [
+      {
+        "id": "93B-P2-01",
+        "title": "Tokens d'élévation dupliqués : 4 rôles pour 1 couleur, 2 rôles pour 1 couleur",
+        "evidence": "surface = surface-elevated = card = popover = #fffdf8 ; surface-subtle = surface-featured = #f1f6f3. Aucun vrai palier d'élévation dans le système de tokens.",
+        "recommendation": "Donner un rôle réel à chaque token (ex. surface = flat, surface-elevated = teinte featured ou cream + bordure visible)."
+      },
+      {
+        "id": "93B-P2-02",
+        "title": "Langage d'élévation incohérent au sein d'un même écran",
+        "evidence": "Dashboard : TodayCard (featured + border-primary/20 + shadow-elevated) à côté de « Tes sourates » (plain + faible) — deux langages d'élévation sur la même page.",
+        "recommendation": "Définir quelles cartes sont « clés » (featured) et lesquelles sont « standards » (border visible), et l'appliquer uniformément."
+      },
+      {
+        "id": "93B-P2-03",
+        "title": "shadow-card fonctionnellement absente",
+        "evidence": "0 1px 2px rgba(46,42,28,0.04) + 0 8px 24px -12px rgba(46,42,28,0.10) : sur ivory et cream la différence est sous le seuil de perception ; mobile sans hover = aucune élévation perçue.",
+        "recommendation": "Renforcer légèrement (~0.06/0.14, blur 12-24px) — coût paint négligeable, aucune incidence layout/scroll."
+      },
+      {
+        "id": "93B-P2-04",
+        "title": "Dashboard : pile de 5-6 cartes cream identiques",
+        "evidence": "Couverture, Tes sourates, activité, révisions s'empilent avec le même fond/bordure — monotonie et scroll long.",
+        "recommendation": "Certaines zones relèvent du container (section plate + hairline) plutôt que de la carte ; réduire le nombre de cartes (container ≠ card)."
+      },
+      {
+        "id": "93B-P2-05",
+        "title": "Grille /surahs : cartes non-vedette plates sur mobile",
+        "evidence": "SurahCard non-featured : border-border-subtle bg-surface-elevated, élévation uniquement au hover (absent sur mobile).",
+        "recommendation": "Bordure visible au repos sur mobile (border au lieu de border-subtle) ; réserver l'élévation au hover desktop."
+      }
+    ],
+    "P3": [
+      {
+        "id": "93B-P3-01",
+        "title": "border vs border-subtle : deux gris quasi identiques aux noms trompeurs",
+        "evidence": "#d7e0dc vs #e4ece8 (Δ 1.13:1 vs 1.26:1 sur ivory) — la distinction n'est pas perceptible.",
+        "recommendation": "Soit réserver border-subtle aux imbriqués (règle claire), soit fusionner les rôles."
+      },
+      {
+        "id": "93B-P3-02",
+        "title": "Sidebar 1.044:1 vs background, séparée par border-r seule",
+        "evidence": "#eef4f1 vs #f8f8f0 — acceptable sur desktop (bordure + zone persistante), à surveiller si une version mobile à tiroir voit le jour.",
+        "recommendation": "NOTE sans action immédiate."
+      }
+    ],
+    "NOTE": [
+      {
+        "id": "93B-N-01",
+        "title": "Les panneaux colorés sont le modèle de différenciation qui fonctionne",
+        "evidence": "Feedback success/error/warning (teinte 8% + bordure 32%) : la couleur sépare, pas l'élévation.",
+        "recommendation": "Pattern de référence pour tout imbriqué « de sens » (état, comparaison, explication)."
+      },
+      {
+        "id": "93B-N-02",
+        "title": "Le pattern featured fonctionne déjà",
+        "evidence": "25 usages surface-featured, 15 shadow-elevated, 21 border-primary : TodayCard, « Ta progression », sourate vedette, CTA landing sont bien différenciés.",
+        "recommendation": "Le généraliser comme « niveau élevé » de l'échelle."
+      },
+      {
+        "id": "93B-N-03",
+        "title": "Dark mode : tokens présents et cohérents, mais aucun toggle",
+        "evidence": "Bloc .dark dans globals.css — hors périmètre de cette phase (pas de bascule d'interface)."
+      }
+    ],
+    "OPPORTUNITY": [
+      {
+        "id": "93B-O-01",
+        "title": "Échelle d'élévation explicite Surface 0-4 dans les tokens",
+        "impact": "Forte — corrige la cause racine à la source (1 jeu de tokens, tous les composants suivent)",
+        "effort": "Faible (tokens + base Card)",
+        "priority": "P1"
+      },
+      {
+        "id": "93B-O-02",
+        "title": "Séparer --surface (flat) et --surface-elevated (élévation réelle)",
+        "impact": "Forte",
+        "effort": "Faible",
+        "priority": "P1"
+      },
+      {
+        "id": "93B-O-03",
+        "title": "Renforcer --shadow-card légèrement",
+        "impact": "Moyenne-forte (perception d'élévation sur toutes les cartes)",
+        "effort": "Négligeable",
+        "priority": "P1"
+      },
+      {
+        "id": "93B-O-04",
+        "title": "Cartes standalone : border au lieu de border-subtle",
+        "impact": "Moyenne-forte",
+        "effort": "Négligeable",
+        "priority": "P1"
+      },
+      {
+        "id": "93B-O-05",
+        "title": "Imbriqués : jamais la couleur du parent (surface-subtle + border-subtle)",
+        "impact": "Moyenne",
+        "effort": "Faible",
+        "priority": "P2"
+      },
+      {
+        "id": "93B-O-06",
+        "title": "Réduire le nombre de cartes du dashboard (container plat vs card)",
+        "impact": "Moyenne (respiration + hiérarchie)",
+        "effort": "Moyenne",
+        "priority": "P2"
+      }
+    ]
+  },
+  "elevationProposal": {
+    "level0_page": { "background": "ivory #f8f8f0", "border": "aucune", "shadow": "aucune" },
+    "level1_flatSection": { "background": "ivory ou cream", "border": "hairline border-subtle optionnelle", "shadow": "aucune", "usage": "sections et containers non-cliquables" },
+    "level2_card": { "background": "cream #fffdf8", "border": "border #d7e0dc", "shadow": "shadow-card renforcée (0.06 / 0.14)", "usage": "cartes standards" },
+    "level3_elevatedCard": { "background": "surface-featured #f1f6f3", "border": "border-primary/20", "shadow": "shadow-elevated", "usage": "cartes clés : TodayCard, progression, vedette" },
+    "level4_overlay": { "background": "popover cream", "border": "border", "shadow": "shadow-lg + backdrop", "usage": "modals, bottom sheets, menus" },
+    "nestedRule": "Jamais la couleur du parent : surface-subtle + border-subtle, ou teinte de sens (success/error/warning 8% + bordure 32%)",
+    "performanceNote": "Les box-shadows sont paint-only (pas de reflow) : renforcer shadow-card n'a aucun impact mesurable sur le scroll mobile ni le GPU. Privilégier quand même contraste de surface + bordure avant shadow (clarté > décoration)."
+  },
+  "pagesMostAffected": [
+    "/dashboard (Tes sourates, activité, révisions, couverture : 4 cartes faibles)",
+    "/learn (Comment avancer faible + bloc Prochaine étape invisible)",
+    "/surahs (grille non-vedette plate sur mobile)",
+    "/review, /sources, /mots, auth (cartes standards faibles)"
+  ],
+  "pagesWellDifferentiated": [
+    "Landing (featured + elevated + CTA final)",
+    "Dashboard TodayCard (featured + border-primary/20 + shadow-elevated)",
+    "Learn « Ta progression » (featured + elevated)",
+    "Tous les panneaux de feedback colorés"
+  ],
+  "reusableComponentsToFix": [
+    "components/ui/card.tsx (base : border + shadow-card) — 1 correctif répare ~23+ usages",
+    "tokens --surface / --surface-elevated / --shadow-card dans globals.css",
+    "Pattern imbriqué bg-surface-elevated/70 (learn Prochaine étape)"
+  ],
+  "whatNotToChange": [
+    "Identité chaude teal/gold/ivoire (pas de SaaS générique, pas de glassmorphism)",
+    "Le pattern featured existant (référence de l'élévation)",
+    "Panneaux colorés de feedback",
+    "Shadows diffuses chaudes (jamais noires dures)",
+    "Typographie, arabe/RTL, radius",
+    "Ne pas ajouter des bordure/shadow partout : la règle doit être « clarté > décoration »"
+  ],
+  "top10_visualProblems": [
+    "Cream sur ivory = 1.050:1 (cartes invisibles)",
+    "Imbriqués même couleur que parent = 1.000:1",
+    "border-subtle = 1.127:1 (invisible à 1px)",
+    "shadow-card fonctionnellement absente",
+    "4 tokens = 1 couleur (surface/surface-elevated/card/popover)",
+    "2 tokens = 1 couleur (subtle/featured)",
+    "Langage d'élévation incohérent au sein du dashboard",
+    "Grille /surahs plate sur mobile (hover absent)",
+    "Dashboard : 5-6 cartes identiques empilées",
+    "Sidebar 1.044:1, séparée par une seule hairline"
+  ],
+  "top10_recommendations": [
+    "Échelle Surface 0-4 explicite dans les tokens",
+    "Séparer surface vs surface-elevated (vraie élévation)",
+    "Cartes standalone : border (#d7e0dc) au lieu de border-subtle",
+    "Renforcer shadow-card (~0.06/0.14)",
+    "Imbriqués : jamais la couleur du parent",
+    "Réserver border-subtle aux imbriqués/hairlines",
+    "Uniformiser le langage d'élévation par écran (clé = featured, standard = border)",
+    "Grille /surahs : bordure visible au repos sur mobile",
+    "Convertir certaines zones dashboard en sections plates",
+    "Documenter la règle d'usage (gold décoratif vs significatif)"
+  ],
+  "regressions": 0,
+  "recommendedNextPhase": "PHASE 94 — Implémentation surface tokens + base Card (après approbation) : séparer les tokens, renforcer shadow-card, cartes standalone en border, imbriqués en surface-subtle, puis validation visuelle mobile 375px sur preview Vercel."
+}

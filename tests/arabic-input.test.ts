@@ -3,6 +3,7 @@ import {
   ARABIC_KEYBOARD_DIACRITICS,
   ARABIC_KEYBOARD_LETTERS,
   backspaceAtCursor,
+  chunkRows,
   insertTextAtCursor,
 } from "../lib/ui/arabic-input";
 
@@ -24,6 +25,31 @@ describe("clavier arabe — jeux de caractères", () => {
     expect(ARABIC_KEYBOARD_DIACRITICS).toContain("\u0651"); // shadda
     expect(ARABIC_KEYBOARD_DIACRITICS).toContain("\u0670"); // dagger alef
     expect(ARABIC_KEYBOARD_DIACRITICS).toContain("\u0671"); // wasla
+  });
+});
+
+describe("clavier arabe — rangées équilibrées (Phase 95)", () => {
+  it("36 lettres = 6×6 sur mobile (aucune queue isolée)", () => {
+    const rows = chunkRows(ARABIC_KEYBOARD_LETTERS.flat(), 6);
+    expect(rows.length).toBe(6);
+    for (const row of rows) expect(row.length).toBe(6);
+  });
+
+  it("36 lettres = 9×4 sur desktop (aucune queue isolée)", () => {
+    const rows = chunkRows(ARABIC_KEYBOARD_LETTERS.flat(), 9);
+    expect(rows.length).toBe(4);
+    for (const row of rows) expect(row.length).toBe(9);
+  });
+
+  it("préserve l'ordre et l'intégralité des lettres", () => {
+    const letters = ARABIC_KEYBOARD_LETTERS.flat();
+    const rebuilt = chunkRows(letters, 6).flat();
+    expect(rebuilt).toEqual(letters);
+  });
+
+  it("diacritiques : 5×2 mobile, 10×1 desktop", () => {
+    expect(chunkRows(ARABIC_KEYBOARD_DIACRITICS, 5).every((r) => r.length === 5)).toBe(true);
+    expect(chunkRows(ARABIC_KEYBOARD_DIACRITICS, 10).every((r) => r.length === 10)).toBe(true);
   });
 });
 

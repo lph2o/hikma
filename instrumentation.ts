@@ -18,8 +18,20 @@ import {
 
 export function register(): void {
   // Journal serveur unique au démarrage — visible dans les logs plateforme.
+  // process.version n'existe pas dans l'Edge Runtime (instrumentation.ts y est
+  // aussi bundlé) : accès indexé + garde de runtime pour éviter l'avertissement
+  // statique Turbopack « A Node.js API is used … not supported in the Edge
+  // Runtime » sans perdre l'info de version côté Node.
+  const isNodeRuntime = process.env.NEXT_RUNTIME !== "edge";
+  const nodeVersion = isNodeRuntime
+    ? (process as unknown as Record<string, unknown>)["version"]
+    : undefined;
   // eslint-disable-next-line no-console
-  console.log(serializeEvent(buildBootEvent({ node: process.version })));
+  console.log(
+    serializeEvent(
+      buildBootEvent({ node: typeof nodeVersion === "string" ? nodeVersion : "" }),
+    ),
+  );
 }
 
 export function onRequestError(

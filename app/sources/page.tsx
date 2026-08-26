@@ -5,7 +5,7 @@ export const metadata = {
   title: "Sources et attributions — Hikma",
   description:
     "Sources du texte coranique, des traductions, du lexique et des récitations audio utilisés par Hikma, avec leurs licences.",
-  alternates: { canonical: "/sources" },
+  robots: { index: false, follow: false },
 };
 
 type SourceRow = {

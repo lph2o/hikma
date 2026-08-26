@@ -40,7 +40,7 @@ type LessonSeed = {
 const CURRICULUM = {
   path: {
     slug: "quran-vocabulary",
-    title: "Quran Vocabulary",
+    title: "Vocabulaire du Coran",
     description: "Les mots essentiels du Coran, un mot à la fois.",
     sort_order: 1,
   },

@@ -222,7 +222,9 @@ export function ReviewPlayer({ items, exercises, isAuthenticated }: ReviewPlayer
       </div>
 
       <Card>
-        <CardContent className="gap-5 p-6">
+        {/* La carte contient la QUESTION uniquement ; le feedback se place en
+         * dessous, à plat sur la page (même grammaire que HikmaExerciseShell). */}
+        <CardContent className="flex flex-col gap-5 p-6">
           {exercise ? (
             <ExerciseCard exercise={exercise} answer={answer} result={result} onChoose={choose} />
           ) : (
@@ -260,7 +262,15 @@ export function ReviewPlayer({ items, exercises, isAuthenticated }: ReviewPlayer
               </div>
             </div>
           )}
+        </CardContent>
+      </Card>
 
+      {(selfAssessed && answer) || result ? (
+        <div
+          className="flex flex-col gap-4 border-t border-border-subtle pt-6 sm:gap-5 sm:pt-8"
+          data-slot="review-feedback"
+          aria-label="Feedback"
+        >
           {selfAssessed && answer ? (
             <div className="flex items-center gap-3 rounded-2xl border border-info/32 bg-info/4 p-4" role="status">
               <Mascot variant="learn" size="sm" message="Bien noté !" />
@@ -269,7 +279,6 @@ export function ReviewPlayer({ items, exercises, isAuthenticated }: ReviewPlayer
               </BodyMedium>
             </div>
           ) : null}
-
           {result ? (
             <FeedbackPanel
               result={result}
@@ -278,8 +287,8 @@ export function ReviewPlayer({ items, exercises, isAuthenticated }: ReviewPlayer
               userAnswer={answer?.content ?? null}
             />
           ) : null}
-        </CardContent>
-      </Card>
+        </div>
+      ) : null}
 
       <div className="flex justify-end">
         {answer != null ? (

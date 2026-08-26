@@ -48,12 +48,7 @@ export default function TermsPage() {
           Le texte coranique est reproduit à des fins éducatives (texte uthmani,
           base Tanzil). Les traductions appartiennent à leurs traducteurs
           respectifs et sont affichées à des fins d&apos;apprentissage. Le
-          lexique éditorial Hikma est une production originale du projet. Voir la
-          page{" "}
-          <a href="/sources" className="text-primary-strong hover:underline">
-            Sources
-          </a>{" "}
-          pour le détail des licences.
+          lexique éditorial Hikma est une production originale du projet.
         </BodySmall>
       </Section>
 

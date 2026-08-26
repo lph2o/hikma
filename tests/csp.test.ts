@@ -23,9 +23,12 @@ describe("buildCsp", () => {
     expect(csp).toContain(`connect-src 'self' ${SUPABASE} wss://xyzcompany.supabase.co`);
   });
 
-  it("autorise le CDN audio dans media-src uniquement", () => {
+  it("autorise le CDN audio (versets) ET l'origine Supabase (audio des mots) dans media-src uniquement", () => {
     const csp = buildCsp(SUPABASE);
-    expect(csp).toContain(`media-src 'self' ${AUDIO_CDN_ORIGIN} blob:`);
+    // Versets : CDN public. Mots : URLs signées Storage Supabase.
+    expect(csp).toContain(`media-src 'self' ${AUDIO_CDN_ORIGIN} ${SUPABASE} blob:`);
+    expect(csp).not.toContain(`connect-src 'self' ${AUDIO_CDN_ORIGIN}`);
+    // Le CDN audio ne doit jamais apparaître dans connect-src.
     expect(csp).not.toContain(`connect-src 'self' ${AUDIO_CDN_ORIGIN}`);
   });
 

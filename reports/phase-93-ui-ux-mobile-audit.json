@@ -1,0 +1,240 @@
+{
+  "phase": "PHASE_93_UI_UX_MOBILE_AUDIT",
+  "status": "PHASE_93_UI_UX_MOBILE_AUDIT_COMPLETE",
+  "auditOnly": true,
+  "productionChanges": 0,
+  "databaseWrites": 0,
+  "date": "2026-08-26",
+  "method": "Audit code + design system + rendu HTML réel (build production) + captures utilisateur mobile (7 écrans) + scans statiques responsive/accessibilité. Pas de navigateur persistant disponible (sandbox) : analyse visuelle basée sur les captures fournies et le markup rendu.",
+  "currentState": {
+    "stack": "Next.js 16.3 App Router / TypeScript / Tailwind v4 / Base UI",
+    "designTokens": "teal=action/chemin, gold=accomplissement/récompense, ivory/cream neutres, AA text variants",
+    "fonts": "Poppins (sans/heading) + Amiri (arabe) + Geist Mono",
+    "navigation": "sidebar desktop (md+) / bottom-nav 5 onglets mobile (Accueil, Apprendre, Sourates, Réviser, Profil) avec safe-area-inset-bottom ; mode immersion leçon sans chrome",
+    "typographyScale": "h1 32 / h2 24 / h3 20 / body-lg 17 / body-md 15 / caption 12 / display 56 ; arabe min 16px, 18px mobile, interligne 1.9",
+    "touchTargets": "boutons min-h-11 (44px) ; bottom-nav min-h-16 ; touches clavier arabe h-10 (40px) ; bouton fermer clavier 32px",
+    "loading": "wordmark Hikma différé 150ms (Phase 92)",
+    "states": "empty (review ×2, learn, coverage), error (leçon avec retry partiel), success (fin de leçon + confettis sourate), disabled/loading présents",
+    "accessibility": "focus-visible rings, aria (nav, radiogroup, role=status), prefers-reduced-motion global",
+    "rlsPrivacy": "inchangé — 0 tracker, notice cookie informative"
+  },
+  "scorecard": {
+    "visual_hierarchy": "7/10",
+    "mobile_ux": "6/10",
+    "navigation": "8/10",
+    "learning_ux": "7/10",
+    "dashboard": "6/10",
+    "typography": "8/10",
+    "arabic": "9/10",
+    "rtl": "9/10",
+    "accessibility": "7/10",
+    "micro_interactions": "6/10",
+    "responsive": "7/10",
+    "performance_ux": "7/10",
+    "design_consistency": "8/10",
+    "premium_feel": "6/10",
+    "overall_ux_score": "71/100",
+    "mobile_ux_score": "64/100"
+  },
+  "findings": {
+    "P0": [],
+    "P1": [
+      {
+        "id": "93-P1-01",
+        "title": "CTA « Continuer » hors écran après réponse dans le flux d'exercice",
+        "evidence": "HikmaExerciseShell : le footer (primaryAction) est placé APRÈS le feedback, sans sticky/fixed ; le panneau de feedback (comparaison + explication + audio + accordéon) mesure 300-500px sur mobile. Captures 0723/0725 : le feedback occupe la moitié de l'écran, le bouton est sous la ligne de flottaison.",
+        "impact": "Friction majeure : l'utilisateur doit scroller pour avancer après chaque réponse ; risque de double-tap ou de clic perdu ; rupture du rythme pédagogique.",
+        "classification": "BUG_UX_PROBLEM",
+        "recommendation": "Barre d'action sticky en bas (safe-area) dans le flux d'exercice : « Continuer » toujours visible/atteignable au pouce après la réponse."
+      },
+      {
+        "id": "93-P1-02",
+        "title": "Clavier arabe inline masque la question et rangées déséquilibrées",
+        "evidence": "ARABIC_KEYBOARD_LETTERS = [7][10][10][9] rendu en grid-cols-7 sur mobile → rangées 7 / 7+3 / 7+3 / 7+2 (queues de 3 touches, capture 0724). Le clavier est dans le flux de la page : sur petit écran la question « Lisez la réponse » passe hors champ (partiellement coupée en haut de la capture 0724).",
+        "impact": "L'apprenant perd le contexte de la question pendant la saisie ; le clavier semble visuellement cassé (rangées orphelines).",
+        "classification": "UX_PROBLEM",
+        "recommendation": "Clavier en overlay/bottom-sheet ancré en bas (ne pousse pas la question hors écran) et rangées équilibrées (7 par rangée : 5×7+1, ou 10 sur desktop)."
+      }
+    ],
+    "P2": [
+      {
+        "id": "93-P2-01",
+        "title": "Statistiques dashboard en 3 colonnes trop serrées ≤360px",
+        "evidence": "grid-cols-3 avec libellés « Mots étudiés / Mots maîtrisés / Maîtrise moyenne » ; capture 0722 : « Maîtrise moyenne » casse sur 2-3 lignes et la valeur 65% est écrasée.",
+        "recommendation": "2 colonnes ≤360px, ou grille horizontale défilante ; libellés courts (« Étudiés / Maîtrisés / Maîtrise »)."
+      },
+      {
+        "id": "93-P2-02",
+        "title": "Touch targets du clavier arabe sous 44px",
+        "evidence": "Touches h-10 (40px) ; bouton fermer ✕ size-8 (32px). Guideline mobile ≥44px.",
+        "recommendation": "min-h-11 (44px) sur les touches ; fermer ≥44px ou agrandir la zone de tap."
+      },
+      {
+        "id": "93-P2-03",
+        "title": "« Révisions à venir » : 7 colonnes très serrées ≤360px",
+        "evidence": "grid-cols-7 gap-1.5, étiquettes caption 12px : « Aujourd'hui » et « ven. 28 août » cassent sur 2-3 lignes dans ~40px.",
+        "recommendation": "Permettre le scroll horizontal ou condenser (jour seul + nombre) sur très petit écran."
+      },
+      {
+        "id": "93-P2-04",
+        "title": "Panneau « Explication indisponible » affiché sans données",
+        "evidence": "Capture 0725 : le bloc « Pourquoi ? Explication indisponible » s'affiche plein écran alors qu'aucune donnée d'explication n'existe pour نَعْبُدُ.",
+        "recommendation": "Masquer l'accordéon quand explanationData est null/indisponible (le feedback reste honnête sans le bloc vide)."
+      },
+      {
+        "id": "93-P2-05",
+        "title": "Contraste de la barre de progression dorée sous 3:1 (non-textuel)",
+        "evidence": "Fill hikma-gold (#c8a058) sur track hikma-gold/20 (≈ #f1f0e6) : contraste ≈2:1 ; WCAG exige 3:1 pour les indicateurs.",
+        "recommendation": "Assombrir le fill (gold-muted) ou éclaircir le track ; vérifier sur les variantes claires."
+      }
+    ],
+    "P3": [
+      {
+        "id": "93-P3-01",
+        "title": "Trois familles de polices (Poppins 4 graisses + Amiri + Geist Mono)",
+        "evidence": "next/font/google : Poppins 400/500/600/700 self-hosté + Amiri 400/700 + Geist Mono. Perf perçue correcte mais payload CSS/fonts non négligeable.",
+        "recommendation": "Évaluer Poppins 500/600 uniquement (ou variable subset) ; mesurer via Lighthouse post-déploiement."
+      },
+      {
+        "id": "93-P3-02",
+        "title": "Gold utilisé en décoratif (pill landing, confettis)",
+        "evidence": "EyebrowPill, boucle Hikma, confettis fin de sourate. Cohérent avec l'identité mais la règle « gold = récompense » est parfois étirée.",
+        "recommendation": "Conserver ; documenter la règle d'usage gold pour les futures phases."
+      }
+    ],
+    "NOTE": [
+      {
+        "id": "93-N-01",
+        "title": "Navigation mobile 5 onglets avec labels : claire et suffisante",
+        "evidence": "Bottom-nav min-h-16 + safe-area, état actif en pastille teal, icônes lucide. Pas de profondeur excessive (≤3 niveaux, retour explicite)."
+      },
+      {
+        "id": "93-N-02",
+        "title": "Scan responsive statique propre",
+        "evidence": "0 usage de 100vh/100vw abusif, 0 largeur fixe en px, overflow-x contenu (table/scroll-area), z-index maîtrisé (toasts, overlays)."
+      },
+      {
+        "id": "93-N-03",
+        "title": "États d'interface bien couverts",
+        "evidence": "Empty review (2 variantes avec mascotte), empty curriculum, empty couverture, erreur leçon avec distinction partiel/total, loading wordmark."
+      }
+    ],
+    "OPPORTUNITY": [
+      {
+        "id": "93-O-01",
+        "title": "Barre d'action sticky en bas d'exercice (pattern natif mobile)",
+        "impact": "Forte — résout 93-P1-01 et aligne le flux avec les apps d'apprentissage modernes.",
+        "effort": "Faible",
+        "priority": "P1"
+      },
+      {
+        "id": "93-O-02",
+        "title": "Clavier arabe en bottom-sheet overlay",
+        "impact": "Forte — résout 93-P1-02, garde la question visible.",
+        "effort": "Moyenne",
+        "priority": "P1"
+      },
+      {
+        "id": "93-O-03",
+        "title": "Dashboard « 5 secondes » : condenser 5-6 cartes empilées",
+        "impact": "Moyenne-forte — TodayCard est excellent ; couverture/sourates/activité/révisions pourraient fusionner en 2 sections max visibles sans scroll.",
+        "effort": "Moyenne",
+        "priority": "P2"
+      },
+      {
+        "id": "93-O-04",
+        "title": "Haptiques légères (navigator.vibrate) sur réponse correcte/incorrecte",
+        "impact": "Moyenne — renforce le micro-feedback mobile (avec respect prefers-reduced-motion et absence sur iOS Safari non supporté).",
+        "effort": "Faible",
+        "priority": "P3"
+      },
+      {
+        "id": "93-O-05",
+        "title": "Renforcer « Reprendre ma session » (dashboard → leçon en cours)",
+        "impact": "Moyenne — la reprise existe (Phase 24E) ; un CTA explicite « Reprendre » sur la session active du dashboard réduirait la friction de retour.",
+        "effort": "Faible",
+        "priority": "P2"
+      }
+    ]
+  },
+  "quickWins": [
+    "Footer sticky « Continuer » dans le flux d'exercice (93-P1-01)",
+    "Clavier arabe en overlay + rangées 7/7/7/7/7/1 sur mobile (93-P1-02)",
+    "Stats dashboard en 2 colonnes ≤360px (93-P2-01)",
+    "Masquer l'accordéon d'explication quand aucune donnée (93-P2-04)",
+    "Touches clavier min-h-11 + fermer ≥44px (93-P2-02)"
+  ],
+  "mobileArchitecture": {
+    "current": "Landing → Onboarding → Dashboard (Accueil) → Learn/Review/Surahs/Profile via bottom-nav 5 onglets ; leçon en mode immersion sans chrome",
+    "recommended": "Conserver la bottom-nav 5 onglets et le mode immersion leçon (sains) ; ajouter (1) barre d'action sticky dans les flux d'exercice/révision, (2) clavier en overlay, (3) dashboard condensé hiérarchisé (Today en tête, une seule section de progression visible sans scroll). Pas de refonte radicale nécessaire.",
+    "variants": [
+      "A (recommandé) : bottom-nav actuelle + barres d'action contextuelles sticky + clavier overlay",
+      "B : 4 onglets (fusion Sourates/Réviser dans Apprendre) + bouton flottant — non recommandé (perd la découverte directe)",
+      "C : bottom-nav + FAB central « Continuer » — rejeté (compétition avec le CTA principal déjà présent)"
+    ]
+  },
+  "roadmap": {
+    "P0": "Aucun",
+    "P1": "93-P1-01 barre d'action sticky exercice → 93-P1-02 clavier overlay + rangées",
+    "P2": "93-P2-01 stats dashboard → 93-P2-04 explication vide → 93-P2-02 touch targets → 93-P2-03 révisions serrées → 93-P2-05 contraste gold",
+    "P3": "93-P3-01 fonts → 93-P3-02 règle gold → haptiques (93-O-04)"
+  },
+  "whatNotToChange": [
+    "Identité teal/gold/ivoire et palette chaude",
+    "Mode immersion leçon (header de focus, sortie dédiée)",
+    "Honnêteté pédagogique : aucun XP/récompense inventée",
+    "Typographie arabe (Amiri, RTL, interligne 1.9, tailles ≥16px)",
+    "Posture privacy : 0 tracker, notice cookie informative",
+    "Structure des routes publiques Coran (/surahs, /surahs/[n], leçons publiques)"
+  ],
+  "regressions": 0,
+  "top10_ux_issues": [
+    "CTA exercice hors écran après réponse (P1)",
+    "Clavier arabe : question masquée + rangées déséquilibrées (P1)",
+    "Stats dashboard 3 colonnes serrées ≤360px (P2)",
+    "Touch targets clavier <44px (P2)",
+    "Explication indisponible affichée en bloc vide (P2)",
+    "Révisions à venir : étiquettes qui cassent ≤360px (P2)",
+    "Contraste barre dorée <3:1 (P2)",
+    "Dashboard : 5-6 cartes empilées, scroll long (OPPORTUNITY)",
+    "3 familles de polices, payload fonts (P3)",
+    "Micro-feedback : pas de retour haptique/immédiat sur certaines actions (OPPORTUNITY)"
+  ],
+  "top10_mobile_issues": [
+    "93-P1-01 CTA Continuer sous la ligne de flottaison",
+    "93-P1-02 clavier inline + rangées orphelines",
+    "93-P2-01 grille stats 3 colonnes",
+    "93-P2-02 touches 40px",
+    "93-P2-03 révisions 7 colonnes serrées",
+    "93-P2-04 bloc explication vide",
+    "93-P2-05 contraste barre gold",
+    "93-O-03 dashboard scroll long",
+    "93-O-04 pas de haptique",
+    "93-O-05 reprise de session peu mise en avant"
+  ],
+  "top10_quickWins": [
+    "Barre d'action sticky exercice",
+    "Clavier overlay + rangées 7/7/7/7/7/1",
+    "Stats 2 colonnes ≤360px",
+    "Masquer explication indisponible",
+    "Touches clavier ≥44px",
+    "Fermer clavier ≥44px",
+    "Libellés stats courts",
+    "Contraste track/fill gold",
+    "Condenser le dashboard",
+    "Haptiques correct/incorrect"
+  ],
+  "top10_product_opportunities": [
+    "Barre d'action sticky (pattern natif)",
+    "Clavier bottom-sheet",
+    "Dashboard condensé « 5 secondes »",
+    "CTA « Reprendre » session active",
+    "Haptiques légères",
+    "Mode révision plein écran immersion (comme la leçon)",
+    "Résumé hebdomadaire visuel (streak/semaine déjà présents → visualiser)",
+    "Partage de progression (mot du jour) — plus tard",
+    "Mode sombre complet à valider (tokens présents)",
+    "Gamification douce (jalons de sourates) — après licence audio commerciale"
+  ],
+  "recommendedNextPhase": "PHASE 94 — Mobile UX fixes prioritaires (P1) : barre d'action sticky exercice + clavier arabe overlay/rangées, puis P2 du roadmap. Validation navigateur réel sur preview Vercel après implémentation."
+}

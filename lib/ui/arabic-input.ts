@@ -31,6 +31,18 @@ export const ARABIC_KEYBOARD_DIACRITICS: readonly string[] = [
   "\u0671", // wasla
 ];
 
+/**
+ * Découpe une liste en rangées de `perRow` éléments (équilibre visuel du
+ * clavier : 36 lettres = 6×6 sur mobile, 9×4 sur desktop). Pure et testable.
+ */
+export function chunkRows<T>(items: readonly T[], perRow: number): T[][] {
+  const rows: T[][] = [];
+  for (let i = 0; i < items.length; i += perRow) {
+    rows.push(items.slice(i, i + perRow));
+  }
+  return rows;
+}
+
 /** Largeur d'une lettre arabe en code units UTF-16 (BMP : toujours 1). */
 function unitLength(text: string): number {
   return text.length;

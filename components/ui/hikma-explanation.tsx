@@ -67,19 +67,20 @@ export function HikmaExplanation({
       <Button
         type="button"
         variant="ghost"
-        className="min-h-11 w-full justify-between rounded-xl px-3 text-left text-info-text hover:bg-info/8"
+        className="min-h-11 w-full justify-center rounded-xl px-3 text-info-text hover:bg-info/8"
         aria-expanded={open}
         aria-controls={contentId}
         onClick={() => setOpen((value) => !value)}
       >
-        <span className="flex min-w-0 items-center gap-2">
+        {/* Icône + texte + chevron groupés, centrés ensemble (plus de chevron isolé à droite) */}
+        <span className="inline-flex min-w-0 items-center gap-2">
           <InfoIcon className="size-4 shrink-0 text-info" aria-hidden="true" />
           <span>Comprendre ce mot</span>
+          <ChevronDownIcon
+            className={cn("size-4 shrink-0 transition-transform duration-150 ease-[var(--ease-hikma)] motion-reduce:transition-none", open && "rotate-180")}
+            aria-hidden="true"
+          />
         </span>
-        <ChevronDownIcon
-          className={cn("size-4 shrink-0 transition-transform duration-150 ease-[var(--ease-hikma)] motion-reduce:transition-none", open && "rotate-180")}
-          aria-hidden="true"
-        />
       </Button>
 
       {open ? (

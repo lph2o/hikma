@@ -300,7 +300,14 @@ function ArabicRewriteStep({
                   type="button"
                   variant="outline"
                   size="sm"
-                  onClick={() => setKeyboardOpen(true)}
+                  onClick={() => {
+                    setKeyboardOpen(true);
+                    // Le clavier reste borné (70dvh) : ramène la question + la
+                    // zone de saisie dans le viewport (contexte jamais perdu).
+                    requestAnimationFrame(() =>
+                      inputRef.current?.scrollIntoView({ block: "center" }),
+                    );
+                  }}
                 >
                   ⌨ Clavier arabe
                 </Button>
