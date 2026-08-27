@@ -831,7 +831,10 @@ export async function getValidatedFrenchMeanings(
   const map = new Map<string, FrenchLexicalMeaning>();
   if (wordIds.length === 0) return map;
 
+  // TASK A1 (Phase A) : `id` ajouté au select — purement additif (traçabilité
+  // de la ligne gagnante pour le Content Studio). Filtres/ordre inchangés.
   const rows = await selectInChunks<{
+    id: string;
     word_id: string;
     text: string;
     validated_at: string | null;
@@ -839,7 +842,7 @@ export async function getValidatedFrenchMeanings(
   }>(wordIds, "word_translations", (batch) =>
     client
       .from("word_translations")
-      .select("word_id, text, validated_at, sources(name)")
+      .select("id, word_id, text, validated_at, sources(name)")
       .eq("language", "fr")
       .eq("is_validated", true)
       .in("word_id", batch)
@@ -857,6 +860,7 @@ export async function getValidatedFrenchMeanings(
       source: source ? { name: source.name } : null,
       validated: true,
       validatedAt: row.validated_at,
+      sourceRowId: row.id,
     });
   }
   return map;
@@ -876,9 +880,10 @@ export async function getValidatedFrenchLemmaMeanings(
   const map = new Map<string, FrenchLexicalMeaning>();
   if (lemmaIds.length === 0) return map;
 
+  // TASK A1 : `id` ajouté au select — additif uniquement.
   const { data, error } = await client
     .from("lemma_translations")
-    .select("lemma_id, text, validated_at, sources(name)")
+    .select("id, lemma_id, text, validated_at, sources(name)")
     .eq("language", "fr")
     .eq("is_validated", true)
     .in("lemma_id", lemmaIds)
@@ -886,6 +891,7 @@ export async function getValidatedFrenchLemmaMeanings(
   if (error) throw new Error(`lemma_translations : ${error.message}`);
 
   for (const row of (data ?? []) as Array<{
+    id: string;
     lemma_id: string;
     text: string;
     validated_at: string | null;
@@ -900,6 +906,7 @@ export async function getValidatedFrenchLemmaMeanings(
       source: source ? { name: source.name } : null,
       validated: true,
       validatedAt: row.validated_at,
+      sourceRowId: row.id,
     });
   }
   return map;
@@ -1284,6 +1291,8 @@ export type WordSenseExplanation = {
   text: string;
   source: string | null;
   validatedAt: string | null;
+  /** TASK A1 : id de la ligne `word_explanations` réellement retenue. */
+  sourceRowId?: string;
 };
 
 export async function getValidatedWordExplanations(
@@ -1293,9 +1302,10 @@ export async function getValidatedWordExplanations(
   const map = new Map<string, WordSenseExplanation>();
   if (wordIds.length === 0) return map;
 
+  // TASK A1 : `id` ajouté au select — additif uniquement.
   const { data, error } = await client
     .from("word_explanations")
-    .select("word_id, text, validated_at, sources(name)")
+    .select("id, word_id, text, validated_at, sources(name)")
     .eq("language", "fr")
     .eq("is_validated", true)
     .in("word_id", wordIds)
@@ -1303,6 +1313,7 @@ export async function getValidatedWordExplanations(
   if (error) throw new Error(`word_explanations : ${error.message}`);
 
   for (const row of (data ?? []) as Array<{
+    id: string;
     word_id: string;
     text: string;
     validated_at: string | null;
@@ -1316,6 +1327,7 @@ export async function getValidatedWordExplanations(
       text: row.text,
       source: source ? source.name : null,
       validatedAt: row.validated_at,
+      sourceRowId: row.id,
     });
   }
   return map;

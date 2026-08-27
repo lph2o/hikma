@@ -5,6 +5,7 @@ import { AppHeader } from "@/components/app/app-header";
 import { getUserSettings } from "@/lib/learning/activity";
 import { createClient } from "@/lib/supabase/server";
 import { isOnboardingComplete } from "@/lib/learning/onboarding";
+import { isAdminEmail } from "@/lib/content-studio/admin";
 
 export const dynamic = "force-dynamic";
 
@@ -32,9 +33,11 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
   const settings = await getUserSettings(client, user.id);
   if (!isOnboardingComplete(settings)) redirect("/onboarding");
 
+  const isAdminUser = isAdminEmail(user.email);
+
   return (
     <div className="min-h-dvh">
-      <AppNav />
+      <AppNav isAdminUser={isAdminUser} />
       <div className="md:pl-64">
         <AppHeader />
         {/* pb-28 : dégagement pour la barre flottante mobile (PHASE 96) —

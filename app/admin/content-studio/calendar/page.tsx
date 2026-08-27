@@ -1,0 +1,75 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound, redirect } from "next/navigation";
+import { CalendarDaysIcon } from "lucide-react";
+import { createClient } from "@/lib/supabase/server";
+import { isAdminEmail } from "@/lib/content-studio/admin";
+import { ContentRegistryService } from "@/lib/content-studio/registry";
+import { getContentStudioDbClient } from "@/lib/content-studio/client";
+import { StudioShell } from "@/components/content-studio/studio-shell";
+import { EditorialAgenda } from "@/components/content-studio/calendar/editorial-agenda";
+import {
+  Empty,
+  EmptyAction,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty";
+import { Button } from "@/components/ui/button";
+
+export const dynamic = "force-dynamic";
+export const metadata: Metadata = { robots: { index: false, follow: false } };
+
+export default async function ContentCalendarPage() {
+  const client = await createClient();
+  const {
+    data: { user },
+  } = await client.auth.getUser();
+  if (!user) redirect("/login");
+  if (!isAdminEmail(user.email)) notFound();
+
+  const registry = new ContentRegistryService(getContentStudioDbClient());
+  const page = await registry.list({ limit: 100 });
+
+  const empty = page.items.length === 0;
+
+  return (
+    <StudioShell active="calendar">
+      <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
+        <header className="mb-6 flex flex-col gap-1">
+          <h1 className="text-2xl font-bold tracking-tight text-white/95">
+            Calendrier Éditorial
+          </h1>
+          <p className="text-sm text-white/50">
+            Vision temporelle des contenus préparés, en cours d&apos;édition et prêts pour la publication.
+          </p>
+        </header>
+
+        {empty ? (
+          <Empty className="border-white/10 bg-[#0d1210]">
+            <EmptyHeader>
+              <EmptyMedia variant="icon" className="border-white/10 bg-white/5 text-white/60">
+                <CalendarDaysIcon aria-hidden="true" />
+              </EmptyMedia>
+              <EmptyTitle className="text-white/90">Aucun contenu planifié</EmptyTitle>
+              <EmptyDescription className="text-white/40">
+                Générez des vidéos dans la bibliothèque pour alimenter votre calendrier de publication.
+              </EmptyDescription>
+            </EmptyHeader>
+            <EmptyContent>
+              <EmptyAction>
+                <Button render={<Link href="/admin/content-studio" />}>
+                  Aller à la bibliothèque
+                </Button>
+              </EmptyAction>
+            </EmptyContent>
+          </Empty>
+        ) : (
+          <EditorialAgenda items={page.items} />
+        )}
+      </div>
+    </StudioShell>
+  );
+}

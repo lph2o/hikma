@@ -61,12 +61,22 @@ export type WordMeaning = {
   isValidated?: boolean;
 };
 
-/** Traduction lexicale française validée d'un mot (sortie de getValidatedFrenchMeanings). */
+/**
+ * Traduction lexicale française validée d'un mot (sortie de getValidatedFrenchMeanings).
+ *
+ * TASK A1 (Phase A — Content Studio API) : champ ADDITIF et OPTIONNEL
+ * `sourceRowId` — l'id de la ligne RÉELLEMENT retenue (`word_translations.id`
+ * ou `lemma_translations.id`). Aucun filtre, ordre, précédence ou comportement
+ * de résolution n'est modifié : seuls les `.select()` resolver ont été étendus.
+ * Les fixtures historiques sans ce champ restent compatibles (champ omis).
+ */
 export type FrenchLexicalMeaning = {
   text: string;
   source: TranslationSource | null;
   validated: boolean;
   validatedAt: string | null;
+  /** id de la ligne DB gagnante (TASK A1). Absent dans les fixtures legacy. */
+  sourceRowId?: string;
 };
 
 /**

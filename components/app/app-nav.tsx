@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { HikmaLogo } from "@/components/ui/hikma-logo";
 import { Caption } from "@/components/ui/typography";
 import { cn, isPathActive } from "@/lib/utils";
-import { APP_HOME_HREF, NAV_ITEMS } from "@/lib/navigation";
+import { APP_HOME_HREF, NAV_ITEMS, ADMIN_NAV_ITEMS } from "@/lib/navigation";
 
 function NavLink({ href, label, icon: Icon, mobile = false }: { href: string; label: string; icon: typeof NAV_ITEMS[number]["icon"]; mobile?: boolean }) {
   const pathname = usePathname();
@@ -38,7 +38,7 @@ function NavLink({ href, label, icon: Icon, mobile = false }: { href: string; la
   );
 }
 
-export function AppNav() {
+export function AppNav({ isAdminUser = false }: { isAdminUser?: boolean }) {
   const pathname = usePathname();
   const isLessonFocus = pathname.startsWith("/learn/") && !pathname.startsWith("/learn/units/");
 
@@ -56,7 +56,7 @@ export function AppNav() {
           <HikmaLogo size="md" className="size-[88px] lg:size-[104px]" />
         </Link>
 
-        <nav className="flex flex-1 flex-col gap-6 px-3 pt-8" aria-label="Sections de l’application">
+        <nav className="flex flex-1 flex-col gap-6 px-3 pt-8 overflow-y-auto" aria-label="Sections de l’application">
           <div className="flex flex-col gap-1">
             <Caption className="px-3 pb-2 text-label font-medium uppercase tracking-[0.12em] text-text-secondary">Apprendre</Caption>
             {NAV_ITEMS.filter((item) => item.group === "principal").map((item) => <NavLink key={item.href} {...item} />)}
@@ -65,6 +65,18 @@ export function AppNav() {
             <Caption className="px-3 pb-2 text-label font-medium uppercase tracking-[0.12em] text-text-secondary">Ton espace</Caption>
             {NAV_ITEMS.filter((item) => item.group === "compte").map((item) => <NavLink key={item.href} {...item} />)}
           </div>
+
+          {/* Section Administration (visible uniquement pour les admins) */}
+          {isAdminUser && (
+            <div className="flex flex-col gap-1 border-t border-border-subtle/60 pt-4">
+              <Caption className="px-3 pb-2 text-label font-bold uppercase tracking-[0.12em] text-hikma-gold">
+                Administration
+              </Caption>
+              {ADMIN_NAV_ITEMS.map((item) => (
+                <NavLink key={item.href} {...item} />
+              ))}
+            </div>
+          )}
         </nav>
 
         <div className="border-t border-border-subtle px-6 py-5">

@@ -11,6 +11,19 @@ import { buildSecurityHeaders } from "./lib/config/csp";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
 
+  // @remotion/renderer (Chrome headless + ffmpeg + compositor natif) ne peut
+  // pas être bundlé par Next.js : ces packages doivent rester EXTERNES et être
+  // chargés en runtime Node côté serveur (route de rendu Content Studio).
+  serverExternalPackages: [
+    "@remotion/bundler",
+    "@remotion/renderer",
+    "@remotion/compositor-darwin-x64",
+    "@remotion/compositor-linux-x64-gnu",
+    "@remotion/media-parser",
+    "@remotion/media-utils",
+    "@remotion/webcodecs",
+  ],
+
   async headers() {
     return [
       {
