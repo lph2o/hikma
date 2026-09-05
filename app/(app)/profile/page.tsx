@@ -22,7 +22,7 @@ import { Caption, H1 } from "@/components/ui/typography";
 import { isAdminEmail } from "@/lib/content-studio/admin";
 import {
   getGlobalWordStats,
-  getSurahCatalog,
+  getCachedSurahCatalog,
   getSurahProgressByUser,
 } from "@/lib/learning/queries";
 import { summarizeSurahProgress } from "@/lib/learning/active-path";
@@ -75,9 +75,9 @@ export default async function ProfilePage() {
 
   if (!user) redirect("/login");
 
-  const settings = await getUserSettings(client, user.id);
-  const catalog = await getSurahCatalog(client);
-  const [progress, words] = await Promise.all([
+  const [settings, catalog, progress, words] = await Promise.all([
+    getUserSettings(client, user.id),
+    getCachedSurahCatalog(client),
     getSurahProgressByUser(client, user.id),
     getGlobalWordStats(client, user.id),
   ]);

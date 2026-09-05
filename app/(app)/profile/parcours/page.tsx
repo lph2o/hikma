@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { ProfileOptionPage } from "@/components/app/profile-option-page";
 import { ProfilePreferenceForm } from "@/components/app/profile-preference-form";
 import { getUserSettings } from "@/lib/learning/activity";
-import { getSurahCatalog } from "@/lib/learning/queries";
+import { getCachedSurahCatalog } from "@/lib/learning/queries";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -18,7 +18,7 @@ export default async function ProfilePathPage() {
 
   const [settings, catalog] = await Promise.all([
     getUserSettings(client, user.id),
-    getSurahCatalog(client),
+    getCachedSurahCatalog(client),
   ]);
 
   const options: readonly (readonly [string, string])[] = catalog

@@ -10,6 +10,10 @@ import { buildSecurityHeaders } from "./lib/config/csp";
  */
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  compress: true,
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 
   // @remotion/renderer (Chrome headless + ffmpeg + compositor natif) ne peut
   // pas être bundlé par Next.js : ces packages doivent rester EXTERNES et être
@@ -26,6 +30,15 @@ const nextConfig: NextConfig = {
 
   async headers() {
     return [
+      {
+        source: "/logo/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
       {
         source: "/:path*",
         headers: buildSecurityHeaders({

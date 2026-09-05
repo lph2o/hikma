@@ -9,7 +9,7 @@ import { HikmaLessonCard } from "@/components/learn/hikma-lesson-card";
 import { validateCurriculum } from "@/lib/learning";
 import {
   getLearningContext,
-  getSurahCatalog,
+  getCachedSurahCatalog,
   getSurahProgressByUser,
   getActiveLessonSessionResolved,
 } from "@/lib/learning/queries";
@@ -32,7 +32,7 @@ export default async function LearnPage() {
   if (user) {
     const [settings, catalog, progress, activeSession] = await Promise.all([
       getUserSettings(client, user.id),
-      getSurahCatalog(client),
+      getCachedSurahCatalog(client),
       getSurahProgressByUser(client, user.id),
       getActiveLessonSessionResolved(client, user.id),
     ]);

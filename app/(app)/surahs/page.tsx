@@ -8,7 +8,7 @@ import { HikmaProgress } from "@/components/ui/hikma";
 import { Mascot } from "@/components/ui/mascot";
 import { BodyLarge, BodyMedium, Caption, H1, H2 } from "@/components/ui/typography";
 import {
-  getSurahCatalog,
+  getCachedSurahCatalog,
   getSurahProgressByUser,
   type SurahCatalogItem,
 } from "@/lib/learning/queries";
@@ -36,10 +36,16 @@ type ProgressEntry = { item: SurahCatalogItem; progress: SurahProgress | null };
 
 export default async function SurahsPage() {
   const client = await createClient();
-  const catalog = await getSurahCatalog(client);
-  const { data: { user } } = await client.auth.getUser();
-  const settings = user ? await getUserSettings(client, user.id) : null;
-  const progressRows = user ? await getSurahProgressByUser(client, user.id) : [];
+  const [{ data: { user } }, catalog] = await Promise.all([
+    client.auth.getUser(),
+    getCachedSurahCatalog(client),
+  ]);
+  const [settings, progressRows] = user
+    ? await Promise.all([
+        getUserSettings(client, user.id),
+        getSurahProgressByUser(client, user.id),
+      ])
+    : [null, []];
   const progressBySurah = new Map(progressRows.map((p) => [p.surahNumber, p]));
 
   const profile: OnboardingProfile = {

@@ -8,7 +8,7 @@ import { HikmaProgress } from "@/components/ui/hikma";
 import { BodyLarge, BodyMedium, BodySmall, Caption, H1, H2 } from "@/components/ui/typography";
 import { ActivityHistory, UpcomingReviews } from "@/components/learn/daily-activity";
 import {
-  getSurahCatalog,
+  getCachedSurahCatalog,
   getSurahProgressByUser,
   getActiveLessonSessionResolved,
   getGlobalWordStats,
@@ -70,24 +70,37 @@ export default async function DashboardPage() {
   } = await client.auth.getUser();
   if (!user) redirect("/login");
 
-  const settings = await getUserSettings(client, user.id);
-  const catalog = await getSurahCatalog(client);
+  // 1. Lot initial ultra-rapide : catalogue en cache (<1ms) + requêtes utilisateur indépendantes en parallèle
+  const [
+    catalog,
+    settings,
+    progress,
+    activeSession,
+    globalWords,
+    reviewDueCount,
+    coverage,
+  ] = await Promise.all([
+    getCachedSurahCatalog(client),
+    getUserSettings(client, user.id),
+    getSurahProgressByUser(client, user.id),
+    getActiveLessonSessionResolved(client, user.id),
+    getGlobalWordStats(client, user.id),
+    getReviewDueCount(client, user.id),
+    getQuranCoverage(client, user.id),
+  ]);
+
   const timezone = settings?.timezone ?? null;
   const now = new Date();
-  // today = jour local utilisateur (Phase 77). Cohérent avec les écritures
-  // d'activité (Phase 78) qui utilisent désormais getLocalDateKey().
   const today = getLocalDateKey(now, timezone);
-  const [goal, upcoming, history, progress, activeSession, globalWords, reviewDueCount, coverage, learningDays] =
+
+  // 2. Lot dépendant (timezone & coverage) exécuté en parallèle
+  const [goal, upcoming, history, learningDays, surahCoverage] =
     await Promise.all([
       getDailyGoalProgress(client, user.id, settings, today),
       getUpcomingReviewCounts(client, user.id, 7, now, timezone),
       getActivityHistory(client, user.id, 30, now, timezone),
-      getSurahProgressByUser(client, user.id),
-      getActiveLessonSessionResolved(client, user.id),
-      getGlobalWordStats(client, user.id),
-      getReviewDueCount(client, user.id),
-      getQuranCoverage(client, user.id),
       getDistinctLearningDays(client, user.id, timezone),
+      getCoverageBySurah(client, coverage?.comprehendedWordIds ?? []),
     ]);
 
   // Préférences déclaratives uniquement — jamais un diagnostic de niveau.
@@ -141,9 +154,6 @@ export default async function DashboardPage() {
     now,
     activeLessonSlug: selection.lessonSlug ?? null,
   });
-
-  // Couverture par sourate (Phase 83B) — 1 query batch.
-  const surahCoverage = await getCoverageBySurah(client, coverage?.comprehendedWordIds ?? []);
 
   const personalized = getPersonalizedLearningCopy(profile, { firstVisit, allDone });
   // La justification doit toujours correspondre à la sourate EFFECTIVEMENT

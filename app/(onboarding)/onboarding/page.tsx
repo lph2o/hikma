@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { OnboardingForm } from "@/components/app/onboarding-form";
 import { getUserSettings } from "@/lib/learning/activity";
-import { getSurahCatalog } from "@/lib/learning/queries";
+import { getCachedSurahCatalog } from "@/lib/learning/queries";
 import { isOnboardingComplete } from "@/lib/learning/onboarding";
 import { createClient } from "@/lib/supabase/server";
 
@@ -18,7 +18,7 @@ export default async function OnboardingPage() {
   const settings = await getUserSettings(client, user.id);
   if (isOnboardingComplete(settings)) redirect("/dashboard");
 
-  const catalog = await getSurahCatalog(client);
+  const catalog = await getCachedSurahCatalog(client);
 
   return (
     <main className="min-h-dvh bg-background px-4 py-8 sm:px-6 sm:py-16">

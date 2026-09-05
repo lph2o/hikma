@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRightIcon } from "lucide-react";
-import { getSurahAyahCoverage } from "@/lib/learning/queries";
-import { getSurahCatalog } from "@/lib/learning/queries";
-import { getSurahProgressByUser } from "@/lib/learning/queries";
+import { getSurahAyahCoverage, getCachedSurahCatalog, getSurahProgressByUser } from "@/lib/learning/queries";
 import { computeCoveragePercent } from "@/lib/learning/coverage";
 import { createClient } from "@/lib/supabase/server";
 import { ArabicText } from "@/components/ui/arabic-text";
@@ -97,21 +95,20 @@ export default async function SurahDetailPage({
   }
 
   const client = await createClient();
-  const {
-    data: { user },
-  } = await client.auth.getUser();
+  const [{ data: { user } }, catalog, { data: surahRows, error: surahError }] =
+    await Promise.all([
+      client.auth.getUser(),
+      getCachedSurahCatalog(client),
+      client
+        .from("surahs")
+        .select("id, number, name_arabic, name_transliteration, name_translation, ayah_count")
+        .eq("number", surahNumber)
+        .limit(1),
+    ]);
 
-  // Récupère métadonnées de la sourate.
-  const catalog = await getSurahCatalog(client);
   const catalogItem = catalog.find((c) => c.surahNumber === surahNumber);
   if (!catalogItem) notFound();
 
-  // Récupère l'ID interne de la sourate.
-  const { data: surahRows, error: surahError } = await client
-    .from("surahs")
-    .select("id, number, name_arabic, name_transliteration, name_translation, ayah_count")
-    .eq("number", surahNumber)
-    .limit(1);
   if (surahError || !surahRows?.length) notFound();
   const surah = surahRows[0] as SurahRow;
 
