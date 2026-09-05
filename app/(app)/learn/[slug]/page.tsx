@@ -42,6 +42,15 @@ import { BookOpenIcon } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
+/**
+ * Nombre maximum d'exercices accessibles sans compte (Page d'essai anonyme).
+ * Appliqué APRÈS interleaving — la session anonyme est structurellement bornée,
+ * pas seulement visuellement bloquée.
+ * Ne s'applique JAMAIS aux utilisateurs connectés.
+ */
+const ANONYMOUS_TRIAL_EXERCISE_LIMIT = 5;
+
+
 export async function generateMetadata({
   params,
 }: {
@@ -203,6 +212,14 @@ export default async function LessonPage({
   });
   exercises = buildInterleavedSequence(exercises);
   exercises = attachExerciseIdentities(lesson.id, exercises);
+
+  // Page d'essai anonyme : la session est limitée à N exercices.
+  // La limite est appliquée ICI, après interleaving + identities, de sorte
+  // que la queue complète n'est jamais exposée au client anonyme.
+  // Les utilisateurs connectés reçoivent toujours la séquence complète.
+  if (!user) {
+    exercises = exercises.slice(0, ANONYMOUS_TRIAL_EXERCISE_LIMIT);
+  }
 
   // Leçon suivante + progression du parcours (pour l'écran de fin).
   let nextLesson: { title: string; href: string } | null = null;

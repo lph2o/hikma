@@ -480,6 +480,7 @@ export function LessonPlayer({
         pathProgress={pathProgress}
         surahName={surahName}
         reinforcedWords={reinforcedWords}
+        isAuthenticated={isAuthenticated}
       />
     );
   }

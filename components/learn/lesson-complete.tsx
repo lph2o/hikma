@@ -10,12 +10,12 @@
 // pédagogique ni une nouvelle table.
 
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Sparkles, UserPlusIcon } from "lucide-react";
 import { Mascot } from "@/components/ui/mascot";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { BodyMedium, Caption, H2 } from "@/components/ui/typography";
+import { BodyMedium, BodySmall, Caption, H2 } from "@/components/ui/typography";
 import {
   getSurahCompletionCopy,
   isSurahCompletionTransition,
@@ -34,6 +34,9 @@ export type LessonCompleteProps = {
   surahName?: string | null;
   /** Nombre de mots renforcés en mini-révision de fin (0 = aucune). */
   reinforcedWords?: number;
+  /** false = visiteur anonyme (page d'essai) : CTA inscription affiché à la place
+   *  des boutons de navigation habituels. */
+  isAuthenticated?: boolean;
 };
 
 function StatCell({ label, value }: { label: string; value: string }) {
@@ -52,6 +55,7 @@ export function LessonComplete({
   pathProgress,
   surahName,
   reinforcedWords = 0,
+  isAuthenticated = true,
 }: LessonCompleteProps) {
   const percent =
     pathProgress && pathProgress.total > 0
@@ -137,35 +141,68 @@ export function LessonComplete({
         ) : null}
 
         <div className="flex w-full flex-col gap-2 pt-2">
-          {justCompletedSurah ? (
-            <Button render={<Link href="/surahs" />} size="lg" className="w-full min-h-12">
-              Voir mes sourates
-            </Button>
-          ) : nextLesson ? (
-            <Button
-              render={<Link href={nextLesson.href} />}
-              size="lg"
-              className="w-full min-h-12"
-            >
-              Continuer — {nextLesson.title}
-            </Button>
-          ) : null}
-          <Button
-            render={<Link href="/review" />}
-            variant="outline"
-            size="lg"
-            className="w-full min-h-12"
-          >
-            Réviser mes mots
-          </Button>
-          <Button
-            render={<Link href="/learn" />}
-            variant="ghost"
-            size="lg"
-            className="w-full min-h-12"
-          >
-            Retour au parcours
-          </Button>
+          {!isAuthenticated ? (
+            // CTA inscription pour les visiteurs anonymes (page d'essai terminée).
+            // La progression de cet essai n'est PAS sauvegardée — le message est
+            // honnête sur ce point et incite à créer un compte pour la prochaine fois.
+            <div className="flex flex-col items-center gap-4 rounded-2xl border border-primary/30 bg-primary/6 px-5 py-5">
+              <div className="flex flex-col items-center gap-1 text-center">
+                <UserPlusIcon className="mb-1 size-6 text-primary-strong" aria-hidden="true" />
+                <BodyMedium className="font-semibold text-text-primary">
+                  Crée ton compte gratuit
+                </BodyMedium>
+                <BodySmall className="text-text-secondary">
+                  Ta progression ne sera pas perdue à chaque session si tu as un compte.
+                  Rejoins Hikma pour que chaque leçon compte.
+                </BodySmall>
+              </div>
+              <div className="flex w-full flex-col gap-2">
+                <Button render={<Link href="/signup" />} size="lg" className="w-full min-h-12">
+                  Créer un compte — c&apos;est gratuit
+                </Button>
+                <Button
+                  render={<Link href="/login" />}
+                  variant="outline"
+                  size="lg"
+                  className="w-full min-h-12"
+                >
+                  Se connecter
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <>
+              {justCompletedSurah ? (
+                <Button render={<Link href="/surahs" />} size="lg" className="w-full min-h-12">
+                  Voir mes sourates
+                </Button>
+              ) : nextLesson ? (
+                <Button
+                  render={<Link href={nextLesson.href} />}
+                  size="lg"
+                  className="w-full min-h-12"
+                >
+                  Continuer — {nextLesson.title}
+                </Button>
+              ) : null}
+              <Button
+                render={<Link href="/review" />}
+                variant="outline"
+                size="lg"
+                className="w-full min-h-12"
+              >
+                Réviser mes mots
+              </Button>
+              <Button
+                render={<Link href="/learn" />}
+                variant="ghost"
+                size="lg"
+                className="w-full min-h-12"
+              >
+                Retour au parcours
+              </Button>
+            </>
+          )}
         </div>
       </CardContent>
     </Card>
