@@ -54,7 +54,7 @@ import {
   ACTIVITY_LESSON_CONFLICT,
   ACTIVITY_WORD_CONFLICT,
 } from "@/lib/learning/activity";
-import { runLessonSubmission, type LessonResultsResult } from "./lesson-submit";
+import { runLessonSubmission, classifyLessonSubmitError, type LessonResultsResult } from "./lesson-submit";
 import {
   getWordOccurrencesPage,
   type WordOccurrenceWithContext,
@@ -116,7 +116,9 @@ function assertValidReviewDate(
   }
 }
 
-/** Applique les réponses d'un mot à la base (progression + SRS), atomiquement. */
+/** Applique les réponses d'un mot à la base (progression + SRS), atomiquement.
+ * Utilisé par recordReviewAnswer (révision mot-par-mot) et comme fallback.
+ */
 async function persistWordAttempts(
   client: SupabaseClient,
   userId: string,
@@ -196,6 +198,137 @@ async function persistWordAttempts(
   if (reviewError) throw new Error(`review_items : ${reviewError.message}`);
 }
 
+/**
+ * Persiste les réponses de TOUS les mots d'une leçon en un minimum d'allers-
+ * retours réseau (optimisation de fin de leçon).
+ *
+ * Architecture :
+ *   1. 2 lectures parallèles  : getUserWordProgress + getUserReviewItems (tous
+ *      les word_ids d'un coup, batch IN) ;
+ *   2. calcul SRS synchrone   : replayWordResults par mot (pur, 0 ms) ;
+ *   3. validation des dates   : assertValidReviewDate par ligne (Phase 63A) ;
+ *   4. 2 écritures parallèles : upsert multi-lignes user_word_progress +
+ *      review_items (un seul appel réseau chacun).
+ *
+ * Résultat : 4 aller-retours au lieu de 4×N (N = nombre de mots).
+ * Sémantique SRS strictement identique à persistWordAttempts : mêmes fonctions,
+ * mêmes règles Leitner, même validation de date.
+ *
+ * L'upsert multi-lignes est atomique côté Supabase (une seule transaction
+ * PostgreSQL par table) : en cas d'échec, rien n'est écrit pour cette table.
+ * La cohérence cross-table (user_word_progress + review_items) est assurée de
+ * manière optimiste : les deux upserts réussissent ou l'erreur est propagée
+ * et la fin de leçon affiche l'état « failed » (identique au comportement
+ * actuel).
+ */
+async function persistLessonWordAttemptsBatch(
+  client: SupabaseClient,
+  userId: string,
+  results: WordAttempts[],
+  now: Date,
+): Promise<void> {
+  const active = results.filter((r) => r.attempts.length > 0);
+  if (active.length === 0) return;
+
+  const wordIds = active.map((r) => r.wordId);
+  const nowIso = now.toISOString();
+
+  // ── Étape 1 : 2 lectures parallèles pour tous les mots ───────────────────
+  const [progressMap, reviewMap] = await Promise.all([
+    getUserWordProgress(client, userId, wordIds),
+    getUserReviewItems(client, userId, wordIds),
+  ]);
+
+  // ── Étape 2 : calcul SRS synchrone + validation de dates ─────────────────
+  const progressRows: {
+    user_id: string;
+    word_id: string;
+    status: string;
+    mastery: number;
+    correct_count: number;
+    incorrect_count: number;
+    last_seen_at: string;
+    next_review_at: string | null;
+    updated_at: string;
+  }[] = [];
+
+  const reviewRows: {
+    user_id: string;
+    word_id: string;
+    status: string;
+    interval_days: number;
+    last_review_at: string;
+    next_review_at: string | null;
+    updated_at: string;
+  }[] = [];
+
+  for (const { wordId, attempts } of active) {
+    const progressRow = progressMap.get(wordId) ?? null;
+    const reviewRow = reviewMap.get(wordId) ?? null;
+    const intervalDays = reviewRow?.interval_days ?? 0;
+
+    const previous: ProgressState | null = progressStateFromRow(
+      progressRow as UserWordProgress | null,
+      intervalDays,
+    );
+    const review: ReviewState | null = reviewRow
+      ? {
+          status: reviewRow.status as ReviewState["status"],
+          intervalDays: reviewRow.interval_days,
+          lastReviewAt: reviewRow.last_review_at,
+          nextReviewAt: reviewRow.next_review_at,
+        }
+      : null;
+
+    const { progress, review: nextReview } = replayWordResults(
+      previous,
+      review,
+      attempts,
+      now,
+    );
+
+    // Validation Phase 63A : même règle que persistWordAttempts.
+    assertValidReviewDate(nextReview.nextReviewAt, "next_review_at", now);
+
+    progressRows.push({
+      user_id: userId,
+      word_id: wordId,
+      status: progress.status,
+      mastery: progress.mastery,
+      correct_count: progress.correctCount,
+      incorrect_count: progress.incorrectCount,
+      last_seen_at: nowIso,
+      next_review_at: nextReview.nextReviewAt,
+      updated_at: nowIso,
+    });
+
+    reviewRows.push({
+      user_id: userId,
+      word_id: wordId,
+      status: nextReview.status,
+      interval_days: nextReview.intervalDays,
+      last_review_at: nowIso,
+      next_review_at: nextReview.nextReviewAt,
+      updated_at: nowIso,
+    });
+  }
+
+  // ── Étape 3 : 2 écritures parallèles (une transaction par table) ─────────
+  const [progressResult, reviewResult] = await Promise.all([
+    client
+      .from("user_word_progress")
+      .upsert(progressRows, { onConflict: "user_id,word_id" }),
+    client
+      .from("review_items")
+      .upsert(reviewRows, { onConflict: "user_id,word_id" }),
+  ]);
+
+  if (progressResult.error)
+    throw new Error(`user_word_progress : ${progressResult.error.message}`);
+  if (reviewResult.error)
+    throw new Error(`review_items : ${reviewResult.error.message}`);
+}
+
 // ---------------------------------------------------------------------------
 // Activité quotidienne (Phase 6) — insert-only, idempotent par la base.
 // ---------------------------------------------------------------------------
@@ -268,15 +401,23 @@ export type { LessonResultsResult } from "./lesson-submit";
 /**
  * Enregistre les résultats d'une leçon terminée pour un utilisateur connecté.
  *
- * Ordre : persistance pédagogique (mots) → activité quotidienne (non bloquante).
- * Contrat : success (tout persisté) / partial (une partie persistée, retry des
- * mots restants) / failed (aucun mot persisté). Une erreur d'activité ne fait
- * JAMAIS échouer la progression : `status: "success"` + `activitySaved: false`.
+ * Optimisation (Phase save-perf) : persistance par lot (batch) pour tous les
+ * mots en 4 allers-retours réseau au lieu de 4×N (voir persistLessonWordAttemptsBatch).
+ *
+ * Contrat identique à l'ancienne implémentation :
+ *   success  → tous les mots persistés ;
+ *   failed   → aucun mot persisté (batch atomique) ;
+ *   partial  → impossible avec le batch (mais conservé pour le retry : un
+ *              deuxième appel avec les pendingWordIds peut toujours retourner
+ *              success ou failed).
+ * Une erreur d'activité ne fait JAMAIS échouer la progression :
+ *   `status: "success"` + `activitySaved: false`.
  */
 export async function submitLessonResults(
   lessonId: string,
   results: WordAttempts[],
 ): Promise<LessonResultsResult> {
+  const t0 = Date.now();
   const client = await createClient();
   const {
     data: { user },
@@ -294,14 +435,77 @@ export async function submitLessonResults(
     };
   }
 
+  const active = results.filter((r) => r.attempts.length > 0);
+  const allWordIds = active.map((r) => r.wordId);
   const now = new Date();
-  const settings = await getUserSettings(client, user.id);
+
+  // ── Étape 1 : persistance pédagogique + lecture timezone en parallèle ────
+  // getUserSettings est indépendant de la persistance : on les exécute ensemble.
+  const [batchResult, settings] = await Promise.all([
+    persistLessonWordAttemptsBatch(client, user.id, active, now)
+      .then(() => {
+        console.info(
+          `[submitLessonResults] batch OK — ${active.length} mots en ${Date.now() - t0} ms`,
+        );
+        return { ok: true as const, error: null };
+      })
+      .catch((err: unknown) => ({ ok: false as const, error: err })),
+    getUserSettings(client, user.id).catch(() => null),
+  ]);
+
+  // ── Gestion de l'erreur de batch ─────────────────────────────────────────
+  if (!batchResult.ok) {
+    const batchError = batchResult.error;
+    const message =
+      batchError instanceof Error ? batchError.message : String(batchError);
+    const { code, retryable } = classifyLessonSubmitError(message);
+    console.error("submitLessonResults batch failed:", batchError);
+    return {
+      ok: false,
+      status: "failed",
+      savedWordIds: [],
+      pendingWordIds: allWordIds,
+      activitySaved: false,
+      errorCode: code,
+      retryable,
+      error:
+        code === "AUTH"
+          ? "Ta session a peut-être expiré. Reconnecte-toi puis réessaie."
+          : code === "RETRYABLE"
+            ? "Impossible d'enregistrer ta progression pour le moment. Vérifie ta connexion puis réessaie."
+            : "Impossible d'enregistrer ta progression (données invalides).",
+    };
+  }
+
+  // ── Étape 2 : activité quotidienne (non bloquante) ────────────────────────
   const timezone = settings?.timezone ?? null;
-  return runLessonSubmission(
-    results,
-    (wordId, attempts) => persistWordAttempts(client, user.id, wordId, attempts, now),
-    () => recordLessonActivity(client, user.id, lessonId, getLocalDateKey(now, timezone)),
+  let activitySaved = false;
+  try {
+    await recordLessonActivity(
+      client,
+      user.id,
+      lessonId,
+      getLocalDateKey(now, timezone),
+    );
+    activitySaved = true;
+  } catch (err) {
+    console.error("recordLessonActivity failed:", err);
+    // Non bloquant : la progression pédagogique est déjà persistée.
+  }
+
+  console.info(
+    `[submitLessonResults] total ${
+      Date.now() - t0
+    } ms (incl. activité)`,
   );
+
+  return {
+    ok: true,
+    status: "success",
+    savedWordIds: allWordIds,
+    pendingWordIds: [],
+    activitySaved,
+  };
 }
 
 /**

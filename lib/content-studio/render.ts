@@ -20,18 +20,18 @@ import { join } from "node:path";
 import { mkdir } from "node:fs/promises";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition } from "@remotion/renderer";
-import {
-  buildVideoContentFromQuiz,
-  buildVideoContentFromReveal,
-  buildVideoContentFromDeepDive,
-  buildVideoContentFromFrequencyFact,
-  buildVideoContentFromSurahHighlight,
-  toVideoSceneData,
-} from "./video/pipeline";
+import { toVideoSceneData } from "./video/pipeline";
+import { buildVideoContentForTemplate } from "./video/content-dispatch";
 import type { ContentStudioItem } from "./types";
-import { getEffectiveSceneData, hashEffectiveScenes } from "./editor/state";
+import {
+  getEffectiveGraphics,
+  getEffectiveSceneData,
+  hashEffectiveGraphics,
+  hashEffectiveScenes,
+} from "./editor/state";
 import { resolveContentStudioAudio, type ContentStudioAudio } from "./audio";
 import { getContentStudioDbClient } from "./client";
+import { hikmaWebpackOverride } from "../../remotion/bundler-config";
 
 // Contrats constants du rendu (gélés Phase A/B) — définis ICI pour éviter
 // d'importer remotion/Root (qui charge le runtime React de Remotion et rend la
@@ -50,21 +50,20 @@ export function effectiveScenesOf(
   audio?: ContentStudioAudio,
 ): {
   scenes: ReturnType<typeof toVideoSceneData>["scenes"];
+  graphics: ReturnType<typeof getEffectiveGraphics>;
   effectiveHash: string;
   hasEdits: boolean;
 } {
-  const content =
-    item.templateKey === "WORD_QUIZ_V1"
-      ? buildVideoContentFromQuiz(item.payload as never, audio)
-      : item.templateKey === "VERSE_DEEP_DIVE_V1"
-        ? buildVideoContentFromDeepDive(item.payload as never, audio)
-        : item.templateKey === "FREQUENCY_FACT_V1"
-          ? buildVideoContentFromFrequencyFact(item.payload as never, audio)
-          : item.templateKey === "SURAH_HIGHLIGHT_V1"
-            ? buildVideoContentFromSurahHighlight(item.payload as never, audio)
-            : buildVideoContentFromReveal(item.payload as never, audio);
+  const content = buildVideoContentForTemplate(item.templateKey, item.payload, audio);
   const { scenes, hasEdits } = getEffectiveSceneData(content, item.editorState as never);
-  return { scenes, effectiveHash: hashEffectiveScenes(scenes), hasEdits };
+  const graphics = getEffectiveGraphics(item.editorState as never);
+  // Hash combiné : les clips graphiques participent à l'invalidation du rendu.
+  // Sans graphics, hash IDENTIQUE à l'historique (rétro-compatibilité totale).
+  const effectiveHash =
+    graphics.length > 0
+      ? `${hashEffectiveScenes(scenes)}-${hashEffectiveGraphics(graphics)}`
+      : hashEffectiveScenes(scenes);
+  return { scenes, graphics, effectiveHash, hasEdits };
 }
 
 /** Durée (frames) et dimensions de référence (contrat 1080×1920 30fps). */
@@ -73,16 +72,7 @@ export function renderTargets(item: ContentStudioItem): {
   width: number;
   height: number;
 } {
-  const content =
-    item.templateKey === "WORD_QUIZ_V1"
-      ? buildVideoContentFromQuiz(item.payload as never)
-      : item.templateKey === "VERSE_DEEP_DIVE_V1"
-        ? buildVideoContentFromDeepDive(item.payload as never)
-        : item.templateKey === "FREQUENCY_FACT_V1"
-          ? buildVideoContentFromFrequencyFact(item.payload as never)
-          : item.templateKey === "SURAH_HIGHLIGHT_V1"
-            ? buildVideoContentFromSurahHighlight(item.payload as never)
-            : buildVideoContentFromReveal(item.payload as never);
+  const content = buildVideoContentForTemplate(item.templateKey, item.payload);
   const derived = toVideoSceneData(content);
   return { fps: derived.fps, width: derived.width, height: derived.height };
 }
@@ -116,29 +106,45 @@ export async function renderEffectiveVideoToFile(
       ayahNumber?: number;
       globalAyahNumber?: number | null;
     };
+    words?: { wordId: string }[];
   } | null;
+
+  // Speed Vocab : audio résolu pour TOUS les mots (batch unique) — PREVIEW ==
+  // RENDER exige que le rendu MP4 reçoive exactement les mêmes pistes que
+  // l'éditeur (page admin passe les mêmes extraWordIds).
+  const extraWordIds =
+    item.templateKey === "VOCAB_SPEED_RUN_V1"
+      ? (payloadAny?.words ?? [])
+          .map((w) => w.wordId)
+          .filter((id) => id && id !== item.wordId)
+      : [];
 
   const audio = await resolveContentStudioAudio(client, {
     wordId: item.wordId,
+    extraWordIds,
     ayahId: payloadAny?.sources?.ayahId,
     globalAyahNumber: payloadAny?.firstOccurrence?.globalAyahNumber,
     surahNumber: payloadAny?.firstOccurrence?.surahNumber,
     ayahNumber: payloadAny?.firstOccurrence?.ayahNumber,
   });
 
-  const { scenes, effectiveHash } = effectiveScenesOf(item, audio);
+  const { scenes, graphics, effectiveHash } = effectiveScenesOf(item, audio);
   const { width, height } = renderTargets(item);
   const durationInFrames = scenes.reduce((acc, s) => acc + s.durationInFrames, 0);
 
   // turbopackIgnore : le bundle Remotion est un job serveur lourd — Next ne doit
   // pas tracer/inclure tout le projet dans cet App Route (Chrome/ffmpeg externes).
   const entryPoint = join(/* turbopackIgnore: true */ process.cwd(), "remotion", "index.ts");
-  const serveUrl = await bundle({ entryPoint, onProgress: () => {} });
+  const serveUrl = await bundle({
+    entryPoint,
+    onProgress: () => {},
+    webpackOverride: hikmaWebpackOverride,
+  });
 
   const composition = await selectComposition({
     serveUrl,
     id: COMPOSITION_ID,
-    inputProps: { scenes },
+    inputProps: { scenes, graphics },
   });
 
   if (composition.width !== width || composition.height !== height) {
@@ -157,7 +163,7 @@ export async function renderEffectiveVideoToFile(
     serveUrl,
     codec: "h264",
     outputLocation,
-    inputProps: { scenes },
+    inputProps: { scenes, graphics },
   });
 
   return {

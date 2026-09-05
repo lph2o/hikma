@@ -41,4 +41,10 @@ describe("Admin Navigation & Authorization", () => {
       process.env.ADMIN_EMAILS = original;
     }
   });
+
+  it("ADMIN_NAV_ITEMS matches the routes expected on mobile admin profile page", () => {
+    const adminRoutes = ADMIN_NAV_ITEMS.map((item) => item.href);
+    expect(adminRoutes).toContain("/admin/content-studio");
+    expect(adminRoutes).toContain("/admin");
+  });
 });

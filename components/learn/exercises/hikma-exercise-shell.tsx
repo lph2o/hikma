@@ -36,6 +36,9 @@ export type HikmaExerciseShellProps = {
   secondaryAction?: ReactNode;
   status?: "ready" | "selected" | "feedback" | "loading";
   className?: string;
+  stepLabel?: string;
+  statusLabel?: string;
+  progressValue?: number;
 };
 
 /** Grammaire visuelle commune des exercices, sans logique métier. */
@@ -49,20 +52,27 @@ export function HikmaExerciseShell({
   secondaryAction,
   status = "ready",
   className,
+  stepLabel,
+  statusLabel,
+  progressValue,
 }: HikmaExerciseShellProps) {
-  const progress = total > 0 ? (step / total) * 100 : 0;
+  const calculatedProgress = total > 0 ? (step / total) * 100 : 0;
+  const progress = progressValue ?? calculatedProgress;
+  const displayStepLabel = stepLabel ?? `Exercice ${step} sur ${total}`;
+  const displayStatusLabel =
+    statusLabel ?? (feedback ? "Réponse enregistrée" : "À toi de jouer");
 
   return (
     <section
       className={cn("flex flex-col gap-7", className)}
-      aria-label={`Exercice ${step} sur ${total}`}
+      aria-label={displayStepLabel}
       data-slot="hikma-exercise-shell"
       data-status={status}
     >
       <header className="flex flex-col gap-3">
         <div className="flex items-baseline justify-between gap-4">
-          <Caption className="text-primary-strong">Exercice {step} sur {total}</Caption>
-          <Caption>{feedback ? "Réponse enregistrée" : "À toi de jouer"}</Caption>
+          <Caption className="text-primary-strong">{displayStepLabel}</Caption>
+          <Caption>{displayStatusLabel}</Caption>
         </div>
         <HikmaProgress value={progress} label={skill} />
       </header>

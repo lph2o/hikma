@@ -60,9 +60,9 @@ export async function POST(request: Request): Promise<Response> {
       { status: 500 },
     );
   }
-  if (!item || item.templateKey === "FREQUENCY_FACT_V1") {
+  if (!item) {
     return NextResponse.json(
-      { error: { code: "CONTENT_NOT_FOUND", message: "Contenu introuvable ou non vidéo-able" } },
+      { error: { code: "CONTENT_NOT_FOUND", message: "Contenu introuvable" } },
       { status: 404 },
     );
   }

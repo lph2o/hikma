@@ -56,6 +56,15 @@ import {
   type LessonSessionState,
   type WordAttempts,
 } from "@/lib/learning/session";
+import {
+  initExerciseQueue,
+  handlePassExercise,
+  handleCompleteExercise,
+  isQueueFinished,
+  getRepriseRemainingCount,
+  type ExerciseQueueState,
+} from "@/lib/learning/session-queue";
+import { exerciseIdentity } from "@/components/learn/exercises/exercise-identity";
 import { ExerciseCard } from "@/components/learn/exercises";
 import { exerciseSkillLabel, HikmaExerciseShell } from "@/components/learn/exercises/hikma-exercise-shell";
 import { FeedbackPanel } from "@/components/learn/exercises/options-exercise";
@@ -127,7 +136,9 @@ export function LessonPlayer({
   const initialIndex = resumeState
     ? clampSessionIndex(resumeState.currentExerciseIndex, exercises.length)
     : 0;
-  const [index, setIndex] = useState(initialIndex);
+  const [queue, setQueue] = useState<ExerciseQueueState>(() =>
+    initExerciseQueue(exercises, initialIndex),
+  );
   const [answer, setAnswer] = useState<ExerciseAnswer | null>(null);
   const [results, setResults] = useState<WordAttempts[]>(
     resumeState?.results ?? [],
@@ -144,6 +155,7 @@ export function LessonPlayer({
   // true si la dernière erreur est un succès PARTIEL (une partie déjà persistée).
   const [errorIsPartial, setErrorIsPartial] = useState(false);
   const [quitOpen, setQuitOpen] = useState(false);
+  const [isQuitting, setIsQuitting] = useState(false);
   // Mini-révision de fin (Phase 36C) : mots à re-présenter + nombre renforcé.
   // Retry d'écriture arabe (Phase 36E) : mots ratés sur `meaning_to_form`.
   const [reviewWords, setReviewWords] = useState<DiscoveryWord[]>([]);
@@ -162,8 +174,8 @@ export function LessonPlayer({
   // true une fois les réponses de compétence soumises (anti double soumission).
   const skillAttemptsSubmitted = useRef(false);
 
-  const finished = index >= exercises.length;
-  const current = finished ? null : (exercises[index] ?? null);
+  const finished = isQueueFinished(queue);
+  const current = queue.current;
   const isSelfAssessment =
     current?.type === "WORD_RECOGNITION" ||
     current?.type === "PRONUNCIATION_GUIDED";
@@ -201,19 +213,25 @@ export function LessonPlayer({
 
   /** Quitte la leçon en sauvegardant la session (si connecté). */
   async function handleQuit() {
-    setQuitOpen(false);
-    if (
-      isAuthenticated &&
-      hasSessionProgress({ currentExerciseIndex: index, results, skillAttempts })
-    ) {
-      await saveLessonSession({
-        lessonId,
-        currentExerciseIndex: index,
-        results,
-        skillAttempts,
-      });
+    if (isQuitting) return;
+    setIsQuitting(true);
+    try {
+      if (
+        isAuthenticated &&
+        hasSessionProgress({ currentExerciseIndex: queue.mainIndex, results, skillAttempts })
+      ) {
+        await saveLessonSession({
+          lessonId,
+          currentExerciseIndex: queue.mainIndex,
+          results,
+          skillAttempts,
+        });
+      }
+    } catch (err) {
+      console.error("Erreur lors de la sauvegarde de la session:", err);
+    } finally {
+      router.push("/learn");
     }
-    router.push("/learn");
   }
 
   function choose(option: GeneratedOption) {
@@ -227,6 +245,38 @@ export function LessonPlayer({
     setAnswer({ content });
   }
 
+  /** Passe la question en cours : ajout à la file de reprise et passage immédiat. */
+  function handlePass() {
+    if (!current || answer != null || phase !== "playing") return;
+
+    let nextResults = results;
+    let nextSkillAttempts = skillAttempts;
+
+    const id = exerciseIdentity(current);
+    const alreadyPassed = queue.passedExerciseIds.includes(id);
+
+    // Si la question n'a pas encore été passée, on enregistre l'échec initial (non correct)
+    // pour le SRS, sans doublon statistique même si elle est re-passée plus tard.
+    if (!alreadyPassed && !isSelfAssessment) {
+      nextResults = appendAttempt(results, current.metadata.targetWordId, false);
+      setResults(nextResults);
+
+      const skill = skillForExerciseType(current.type);
+      if (skill) {
+        nextSkillAttempts = [
+          ...skillAttempts,
+          { wordId: current.metadata.targetWordId, skill, correct: false },
+        ];
+        setSkillAttempts(nextSkillAttempts);
+      }
+    }
+
+    setAnswer(null);
+    const nextQueue = handlePassExercise(queue);
+    setQueue(nextQueue);
+    persistSession(nextQueue.mainIndex, nextResults, nextSkillAttempts);
+  }
+
   /** Passe à l'exercice suivant (ou termine la session) — jamais de double soumission. */
   function continueNext() {
     if (!current) return;
@@ -238,9 +288,15 @@ export function LessonPlayer({
 
     let nextResults = results;
     let nextSkillAttempts = skillAttempts;
+
+    const id = exerciseIdentity(current);
+    const alreadyPassed = queue.passedExerciseIds.includes(id);
+
     // L'auto-évaluation (WORD_RECOGNITION) n'est pas notée par le moteur :
     // on ne l'enregistre pas dans la progression. AMBIGUOUS est également neutre.
-    if (!isSelfAssessment && !isAmbiguous) {
+    // Si la question a déjà été passée auparavant, son résultat a déjà été
+    // comptabilisé comme non acquis (false) : on ne ré-enregistre pas de tentative supplémentaire.
+    if (!alreadyPassed && !isSelfAssessment && !isAmbiguous) {
       const correct = result?.correct === true;
       nextResults = appendAttempt(
         results,
@@ -261,7 +317,10 @@ export function LessonPlayer({
     }
 
     setAnswer(null);
-    if (index + 1 >= exercises.length) {
+    const nextQueue = handleCompleteExercise(queue);
+    setQueue(nextQueue);
+
+    if (isQueueFinished(nextQueue)) {
       // Renforcement de fin (Phases 36C + 36E), SANS re-grading ni re-SRS :
       //  - retry d'écriture arabe pour les mots ratés sur `meaning_to_form` ;
       //  - auto-évaluation pour les AUTRES mots incorrects (jamais en double).
@@ -288,9 +347,7 @@ export function LessonPlayer({
       }
       void finish(nextResults, nextSkillAttempts);
     } else {
-      const nextIndex = index + 1;
-      setIndex(nextIndex);
-      persistSession(nextIndex, nextResults, nextSkillAttempts);
+      persistSession(nextQueue.mainIndex, nextResults, nextSkillAttempts);
     }
   }
 
@@ -360,7 +417,9 @@ export function LessonPlayer({
     }
 
     // 4. Session terminée : on nettoie l'état de reprise (leçon complétée).
-    await clearLessonSession(lessonId).catch((err) => {
+    //    Non bloquant : la progression est déjà persistée ; une erreur ici
+    //    n'affecte pas l'utilisateur (la session expirerait naturellement).
+    void clearLessonSession(lessonId).catch((err) => {
       console.error("clearLessonSession failed:", err);
     });
 
@@ -472,19 +531,47 @@ export function LessonPlayer({
 
   const correctContent = result?.correctOption?.content ?? null;
 
+  const isReprise = queue.isReprise;
+  const remainingReprise = getRepriseRemainingCount(queue);
+  const stepLabel = isReprise
+    ? `À renforcer · Encore ${remainingReprise} question${remainingReprise > 1 ? "s" : ""}`
+    : `Exercice ${Math.min(queue.mainIndex + 1, exercises.length)} sur ${exercises.length}`;
+
+  const statusLabel = answer
+    ? "Réponse enregistrée"
+    : isReprise
+      ? "Reprenons celle-ci"
+      : "À toi de jouer";
+
+  const progressValue = isReprise
+    ? exercises.length > 0
+      ? ((exercises.length - remainingReprise) / exercises.length) * 100
+      : 100
+    : exercises.length > 0
+      ? ((queue.mainIndex + 1) / exercises.length) * 100
+      : 0;
+
   return (
     <div className="flex flex-col gap-6">
       {/* Header de focus : sortie et position, sans réintroduire le chrome global. */}
       <HikmaLessonFocusHeader
         title={lessonTitle}
-        stepLabel={`Exercice ${Math.min(index + 1, exercises.length)} sur ${exercises.length}`}
+        stepLabel={stepLabel}
         exit={(
-        <AlertDialog open={quitOpen} onOpenChange={setQuitOpen}>
+        <AlertDialog
+          open={quitOpen}
+          onOpenChange={(open) => {
+            if (!isQuitting) setQuitOpen(open);
+          }}
+        >
           <Button
             variant="ghost"
             size="icon"
             aria-label="Quitter la leçon"
-            onClick={() => setQuitOpen(true)}
+            disabled={isQuitting}
+            onClick={() => {
+              if (!isQuitting) setQuitOpen(true);
+            }}
           >
             <XIcon />
           </Button>
@@ -498,16 +585,22 @@ export function LessonPlayer({
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <Button variant="outline" onClick={() => setQuitOpen(false)}>
+              <Button
+                variant="outline"
+                disabled={isQuitting}
+                onClick={() => setQuitOpen(false)}
+              >
                 Continuer la leçon
               </Button>
               <Button
                 variant="destructive"
+                loading={isQuitting}
+                disabled={isQuitting}
                 onClick={() => {
                   void handleQuit();
                 }}
               >
-                Quitter
+                {isQuitting ? "Quitter..." : "Quitter"}
               </Button>
             </AlertDialogFooter>
           </AlertDialogPopup>
@@ -517,8 +610,11 @@ export function LessonPlayer({
 
       {/* Shell visuel commun : l'exercice spécialisé conserve son interaction. */}
       <HikmaExerciseShell
-        step={Math.min(index + 1, exercises.length)}
+        step={Math.min(queue.mainIndex + 1, exercises.length)}
         total={exercises.length}
+        stepLabel={stepLabel}
+        statusLabel={statusLabel}
+        progressValue={progressValue}
         skill={exerciseSkillLabel(current.type)}
         status={answer ? "feedback" : "ready"}
         feedback={answer ? (
@@ -537,11 +633,23 @@ export function LessonPlayer({
                 exercise={current}
                 correctContent={correctContent}
                 userAnswer={answer?.content ?? null}
-                isMilestone={index === exercises.length - 1}
+                isMilestone={isQueueFinished(queue)}
               />
             ) : null}
           </>
         ) : undefined}
+        secondaryAction={
+          answer == null ? (
+            <Button
+              variant="ghost"
+              size="lg"
+              onClick={handlePass}
+              className="w-full min-h-12 text-muted-foreground hover:text-foreground sm:w-auto"
+            >
+              Passer
+            </Button>
+          ) : null
+        }
         primaryAction={
           answer != null ? (
             <Button size="lg" onClick={continueNext} className="w-full min-h-12 sm:w-auto sm:min-w-48">

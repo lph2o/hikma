@@ -42,7 +42,11 @@ export const WordScene: React.FC<{
   audioMuted?: boolean;
   audioFadeIn?: number;
   audioFadeOut?: number;
-}> = ({ arabic, transliteration, motion, hero, audioUrl, audioVolume = 1, audioMuted = false, audioFadeIn = 0, audioFadeOut = 0 }) => {
+  /** Masque le mot arabe quand il est promu dans l'éditeur graphique. */
+  hideArabic?: boolean;
+  /** Masque la translittération quand elle est promue dans l'éditeur graphique. */
+  hideTransliteration?: boolean;
+}> = ({ arabic, transliteration, motion, hero, audioUrl, audioVolume = 1, audioMuted = false, audioFadeIn = 0, audioFadeOut = 0, hideArabic = false, hideTransliteration = false }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const cfg = normalizeMotion(motion, "word");
@@ -147,6 +151,9 @@ export const WordScene: React.FC<{
             transform: entrance.transform,
           }}
         >
+          {/* Mot arabe — masqué si promu dans l'éditeur graphique (le clip
+              TextGraphicClip le remplace, présentation sous contrôle user). */}
+          {!hideArabic && (
           <div style={{ position: "relative", display: "inline-block" }}>
             {/* Halo doux derrière le mot (secondaire — jamais un néon). */}
             {h.glow.enabled ? (
@@ -234,8 +241,9 @@ export const WordScene: React.FC<{
               </MirrorReflection>
             ) : null}
           </div>
+          )}
         </div>
-        {transliteration ? (
+        {!hideTransliteration && transliteration ? (
           <div
             style={{
               marginTop: 150,

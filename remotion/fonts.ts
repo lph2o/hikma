@@ -6,8 +6,16 @@ import { loadFont as loadPoppins } from "@remotion/google-fonts/Poppins";
 import { loadFont as loadAmiri } from "@remotion/google-fonts/Amiri";
 
 export const fonts = {
-  poppins: loadPoppins(),
-  amiri: loadAmiri(),
+  poppins: loadPoppins("normal", {
+    weights: ["400", "500", "600", "700"],
+    subsets: ["latin"],
+    ignoreTooManyRequestsWarning: true,
+  }),
+  amiri: loadAmiri("normal", {
+    weights: ["400", "700"],
+    subsets: ["arabic"],
+    ignoreTooManyRequestsWarning: true,
+  }),
 };
 
 export const fontFamilyLatin = fonts.poppins.fontFamily;

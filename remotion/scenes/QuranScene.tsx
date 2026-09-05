@@ -29,6 +29,8 @@ export const QuranScene: React.FC<{
   audioFadeOut?: number;
   verseConfig?: VerseDisplayConfig;
   studiedWord?: string;
+  /** Masque la référence (subtext) quand elle est promue dans l'éditeur. */
+  hideSubtext?: boolean;
 }> = ({
   excerpt,
   reference,
@@ -40,6 +42,7 @@ export const QuranScene: React.FC<{
   audioFadeOut = 0,
   verseConfig,
   studiedWord,
+  hideSubtext = false,
 }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
@@ -135,19 +138,21 @@ export const QuranScene: React.FC<{
           </div>
         )}
 
-        {/* 4. RÉFÉRENCE DE LA SOURATE & VERSET */}
-        <div
-          style={{
-            marginTop: showTranslation ? 8 : 24,
-            fontSize: 34,
-            fontWeight: 500,
-            color: HIKMA_THEME.goldBright,
-            letterSpacing: 1,
-            fontFamily: fontFamilyLatin,
-          }}
-        >
-          {reference}
-        </div>
+        {/* 4. RÉFÉRENCE DE LA SOURATE & VERSET (masquée si promue) */}
+        {!hideSubtext && (
+          <div
+            style={{
+              marginTop: showTranslation ? 8 : 24,
+              fontSize: 34,
+              fontWeight: 500,
+              color: HIKMA_THEME.goldBright,
+              letterSpacing: 1,
+              fontFamily: fontFamilyLatin,
+            }}
+          >
+            {reference}
+          </div>
+        )}
       </div>
     </SceneShell>
   );

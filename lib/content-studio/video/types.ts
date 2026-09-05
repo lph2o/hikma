@@ -18,7 +18,8 @@ export type VideoTemplateKey =
   | "WORD_QUIZ_V1"
   | "VERSE_DEEP_DIVE_V1"
   | "FREQUENCY_FACT_V1"
-  | "SURAH_HIGHLIGHT_V1";
+  | "SURAH_HIGHLIGHT_V1"
+  | "VOCAB_SPEED_RUN_V1";
 
 /** Confiance de la glose (politique Phase A : FORME→VERIFIED, LEMME→PARTIAL). */
 export type VideoMeaningConfidence = "VERIFIED" | "PARTIAL";
@@ -55,12 +56,27 @@ export type VideoContent = {
   explanation: string | null;
   /** Texte CTA (payload.cta?.text) — null si absent. */
   cta: string | null;
+  /**
+   * Speed Vocab (VOCAB_SPEED_RUN_V1) — liste complète des mots diffusés
+   * (additif, ignoré par les autres templates). Chaque entrée provient du
+   * payload validé : aucune invention.
+   */
+  speedVocabWords?: readonly {
+    wordId: string;
+    arabic: string;
+    transliteration: string | null;
+    meaning: string;
+    occurrenceCount: number;
+  }[];
   /** URLs audio réelles résolues (mot et verset) et durées en secondes. */
   audio?: {
     wordAudioUrl?: string | null;
     verseAudioUrl?: string | null;
     wordAudioDuration?: number | null;
     verseAudioDuration?: number | null;
+    /** Audio MULTI-MOTS (Speed Vocab) : URL signée + durée par word_id. */
+    wordAudioUrls?: Record<string, string | null>;
+    wordAudioDurations?: Record<string, number>;
   };
   /** Traçabilité source + licence (instantanés du payload). */
   metadata: {

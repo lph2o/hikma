@@ -50,7 +50,8 @@ export function HikmaLessonCard({
         "relative overflow-hidden border-border-subtle bg-surface-elevated shadow-card transition-[border-color,box-shadow,transform,background-color] duration-150 ease-[var(--ease-hikma)]",
         current && "border-primary/35 bg-surface-featured shadow-elevated",
         locked && "bg-surface-subtle opacity-78",
-        !locked && "group-hover:-translate-y-px group-hover:border-primary/35 group-hover:shadow-elevated",
+        !locked &&
+          "group-hover:-translate-y-px group-hover:border-primary/35 group-hover:shadow-elevated group-active:scale-[0.99] group-active:opacity-90 group-active:translate-y-0",
       )}
     >
       <CardContent className="gap-4 p-5 sm:p-6">

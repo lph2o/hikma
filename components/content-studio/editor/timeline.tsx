@@ -32,15 +32,40 @@ import {
   RotateCwIcon,
 } from "lucide-react";
 import type { VideoScene } from "@/lib/content-studio/video/types";
+import type { GraphicClipBase } from "@/lib/content-studio/graphics/graphic-clip";
 import {
   computeSnapPoints,
   snapToPoints,
-  trimSceneStart,
-  trimSceneEnd,
   splitScene,
   nudgeSceneDuration,
+  moveGraphicClip,
 } from "@/lib/content-studio/editor/timeline-ops";
 import { cn } from "@/lib/utils";
+
+const GRAPHIC_LABEL: Record<string, string> = {
+  text: "Texte",
+  shape: "Forme",
+  svg: "SVG",
+  sticker: "Sticker",
+  background: "Fond",
+  three: "3D",
+};
+
+function graphicLabel(c: GraphicClipBase): string {
+  if (c.kind === "text") {
+    const t = (c as unknown as { text?: string; source?: { sceneIndex: number; field: string } }).text ?? "";
+    const label = `Texte${t ? ` : “${t.slice(0, 14)}”` : ""}`;
+    // Texte hérité promu (source scène) — même clip, même piste G1.
+    return (c as { source?: { sceneIndex: number; field: string } }).source
+      ? `Scène · ${label}`
+      : label;
+  }
+  if (c.kind === "shape") {
+    const s = (c as unknown as { shape?: string }).shape ?? "";
+    return `Forme : ${s}`;
+  }
+  return GRAPHIC_LABEL[c.kind] ?? c.kind;
+}
 
 const CLIP_BG: Record<string, string> = {
   intro: "rgba(61, 158, 138, 0.32)",
@@ -95,6 +120,12 @@ type TimelineProps = {
   onSeek: (frame: number) => void;
   onSelectScene: (index: number) => void;
   onScenesChange?: (scenes: VideoScene[]) => void;
+  /** Clips graphiques (texte, formes…) — piste G1. */
+  graphics?: GraphicClipBase[];
+  /** Clip graphique sélectionné (id). */
+  selectedGraphicId?: string | null;
+  onSelectGraphic?: (id: string | null) => void;
+  onGraphicsChange?: (clips: GraphicClipBase[]) => void;
 };
 
 export function Timeline({
@@ -108,6 +139,10 @@ export function Timeline({
   onSeek,
   onSelectScene,
   onScenesChange,
+  graphics = [],
+  selectedGraphicId = null,
+  onSelectGraphic,
+  onGraphicsChange,
 }: TimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -129,10 +164,21 @@ export function Timeline({
   const [redoStack, setRedoStack] = useState<VideoScene[][]>([]);
 
   // Dragging states
-  const dragMode = useRef<"playhead" | "trim-in" | "trim-out" | "move" | null>(null);
+  const dragMode = useRef<"playhead" | "trim-in" | "trim-out" | "move" | "g-move" | "g-trim-in" | "g-trim-out" | null>(null);
   const dragSceneIndex = useRef<number>(-1);
   const dragStartX = useRef<number>(0);
   const dragStartDuration = useRef<number>(0);
+  const dragGraphicId = useRef<string | null>(null);
+  // Snapshots AU DÉBUT du drag : le delta (depuis dragStartX) est TOUJOURS
+  // appliqué au snapshot, jamais à l'état courant re-rendu — sinon chaque
+  // pointermove ajoute le delta cumulé à une valeur déjà décalée (trim/move
+  // 2×, 3×… trop rapide). Même règle que l'overlay canvas.
+  const dragSceneSnapshot = useRef<{ durationInFrames: number } | null>(null);
+  const dragGraphicSnapshot = useRef<{ startFrame: number; durationInFrames: number } | null>(null);
+  // Échelle FIGÉE au début du drag (px/frame). Pendant un trim, la durée totale
+  // change (layout flexbox proportionnel) ⇒ `rect.width / durationInFrames` se
+  // re-calibrerait à chaque move et fausserait le mapping pixels → frames.
+  const dragPxPerFrame = useRef<number>(0);
 
   // Push to history before mutating
   const pushHistory = useCallback(
@@ -182,6 +228,15 @@ export function Timeline({
     },
     [durationInFrames, snapEnabled, snapPoints],
   );
+
+  // Échelle pixels → frames FIGÉE au début d'un drag (trim/move). La durée
+  // totale change pendant un trim ⇒ une échelle recalculée à chaque move
+  // déformerait le mapping (déplacement trop rapide / lent).
+  const snapshotPxPerFrame = (): number => {
+    const el = trackRef.current;
+    if (!el) return 0;
+    return el.getBoundingClientRect().width / Math.max(1, durationInFrames);
+  };
 
   // Auto-scroll pendant playback
   useEffect(() => {
@@ -234,12 +289,14 @@ export function Timeline({
         handleRedo();
       }
 
-      // Nudge (← / →)
+      // Nudge (← / →) : scène active ou clip graphique sélectionné
       if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-        if (activeIndex >= 0 && activeIndex < scenes.length && !videoLocked) {
-          e.preventDefault();
-          const step = e.shiftKey ? 5 : 1;
-          const delta = e.key === "ArrowLeft" ? -step : step;
+        e.preventDefault();
+        const step = e.shiftKey ? 5 : 1;
+        const delta = e.key === "ArrowLeft" ? -step : step;
+        if (selectedGraphicId && onGraphicsChange) {
+          onGraphicsChange(moveGraphicClip(graphics, selectedGraphicId, delta));
+        } else if (activeIndex >= 0 && activeIndex < scenes.length && !videoLocked) {
           const updated = nudgeSceneDuration(scenes, activeIndex, delta);
           pushHistory(updated);
         }
@@ -248,7 +305,7 @@ export function Timeline({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeIndex, scenes, videoLocked, handleUndo, handleRedo, pushHistory, handleSplitAtPlayhead]);
+  }, [activeIndex, scenes, videoLocked, handleUndo, handleRedo, pushHistory, handleSplitAtPlayhead, graphics, selectedGraphicId, onGraphicsChange]);
 
   // Drag playhead
   const handlePlayheadPointerDown = (e: React.PointerEvent) => {
@@ -268,6 +325,8 @@ export function Timeline({
     dragSceneIndex.current = index;
     dragStartX.current = e.clientX;
     dragStartDuration.current = scenes[index].durationInFrames;
+    dragSceneSnapshot.current = { durationInFrames: scenes[index].durationInFrames };
+    dragPxPerFrame.current = snapshotPxPerFrame();
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
 
@@ -280,6 +339,8 @@ export function Timeline({
     dragSceneIndex.current = index;
     dragStartX.current = e.clientX;
     dragStartDuration.current = scenes[index].durationInFrames;
+    dragSceneSnapshot.current = { durationInFrames: scenes[index].durationInFrames };
+    dragPxPerFrame.current = snapshotPxPerFrame();
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
 
@@ -291,33 +352,118 @@ export function Timeline({
       return;
     }
 
-    const idx = dragSceneIndex.current;
-    if (idx < 0 || idx >= scenes.length) return;
-
     const el = trackRef.current;
     if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const pxPerFrame = rect.width / durationInFrames;
+    // Échelle du drag : FIGÉE au pointerdown (dragPxPerFrame), fallback calcul
+    // direct si absente. Ne JAMAIS recalculer pendant le drag (la durée totale
+    // change pendant un trim ⇒ l'échelle vivante fausserait le mapping).
+    const pxPerFrame = dragPxPerFrame.current > 0 ? dragPxPerFrame.current : el.getBoundingClientRect().width / durationInFrames;
     const deltaX = e.clientX - dragStartX.current;
     const deltaFrames = Math.round(deltaX / pxPerFrame);
+
+    // --- Clip GRAPHIQUE (piste G1) : move / trim ---
+    if (
+      dragMode.current === "g-move" ||
+      dragMode.current === "g-trim-in" ||
+      dragMode.current === "g-trim-out"
+    ) {
+      const gid = dragGraphicId.current;
+      const gsnap = dragGraphicSnapshot.current;
+      if (!gid || !gsnap || !onGraphicsChange) return;
+      if (dragMode.current === "g-move") {
+        // startFrame ABSOLU depuis le snapshot (le delta cumulé ne doit jamais
+        // s'ajouter à l'état courant : déplacement 1:1 avec le pointeur).
+        onGraphicsChange(
+          graphics.map((c) =>
+            c.id === gid ? { ...c, startFrame: Math.max(0, gsnap.startFrame + deltaFrames) } : c,
+          ),
+        );
+      } else if (dragMode.current === "g-trim-out") {
+        onGraphicsChange(
+          graphics.map((c) =>
+            c.id === gid
+              ? { ...c, durationInFrames: Math.max(1, gsnap.durationInFrames + deltaFrames) }
+              : c,
+          ),
+        );
+      } else {
+        onGraphicsChange(
+          graphics.map((c) => {
+            if (c.id !== gid) return c;
+            const newDuration = Math.max(1, gsnap.durationInFrames - deltaFrames);
+            const actualDelta = gsnap.durationInFrames - newDuration;
+            return {
+              ...c,
+              startFrame: Math.max(0, gsnap.startFrame + actualDelta),
+              durationInFrames: newDuration,
+            };
+          }),
+        );
+      }
+      return;
+    }
+
+    const idx = dragSceneIndex.current;
+    if (idx < 0 || idx >= scenes.length) return;
 
     const isRipple = editMode === "RIPPLE";
 
     if (dragMode.current === "trim-out") {
-      const next = trimSceneEnd(scenes, idx, deltaFrames, isRipple);
+      // Durée ABSOLUE depuis le snapshot (jamais depuis l'état courant) :
+      // sans snapshot, le delta cumulé s'ajouterait à chaque move → 2× trop vite.
+      const snap = dragSceneSnapshot.current;
+      if (!snap) return;
+      const newDuration = Math.max(1, snap.durationInFrames + deltaFrames);
+      const next = scenes.map((s, i) => (i === idx ? { ...s, durationInFrames: newDuration } : s));
       onScenesChange?.(next);
     } else if (dragMode.current === "trim-in") {
-      const next = trimSceneStart(scenes, idx, deltaFrames, isRipple);
+      const snap = dragSceneSnapshot.current;
+      if (!snap) return;
+      const newDuration = Math.max(1, snap.durationInFrames - deltaFrames);
+      const actualDelta = snap.durationInFrames - newDuration;
+      const next = scenes.map((s, i) => {
+        if (i !== idx) return s;
+        return { ...s, durationInFrames: newDuration };
+      });
+      // Ripple : compense les scènes PRÉCÉDENTES pour stabiliser la fin.
+      if (isRipple && actualDelta !== 0) {
+        return onScenesChange?.(
+          next.map((s, i) => {
+            if (i >= idx) return s;
+            const d = Math.max(1, s.durationInFrames + actualDelta);
+            return { ...s, durationInFrames: d };
+          }),
+        );
+      }
       onScenesChange?.(next);
     }
   };
 
   const handlePointerUp = (e: React.PointerEvent) => {
     if (dragMode.current && dragMode.current !== "playhead") {
+      if (
+        dragMode.current === "g-move" ||
+        dragMode.current === "g-trim-in" ||
+        dragMode.current === "g-trim-out"
+      ) {
+        // Le clip graphique a déjà été appliqué via onGraphicsChange pendant le drag.
+        dragMode.current = null;
+        dragGraphicId.current = null;
+        try {
+          (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+        } catch {
+          // ignore
+        }
+        return;
+      }
       pushHistory(scenes);
     }
     dragMode.current = null;
     dragSceneIndex.current = -1;
+    dragGraphicId.current = null;
+    dragSceneSnapshot.current = null;
+    dragGraphicSnapshot.current = null;
+    dragPxPerFrame.current = 0;
     try {
       (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
     } catch {
@@ -325,11 +471,61 @@ export function Timeline({
     }
   };
 
-  // Audio tracks
-  const wordSceneIndex = scenes.findIndex((s) => s.kind === "word" && s.audioUrl);
+  // Handlers de drag des clips graphiques (piste G1)
+  const handleGraphicPointerDown = (e: React.PointerEvent, id: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onSelectGraphic?.(id);
+    dragMode.current = "g-move";
+    dragGraphicId.current = id;
+    dragStartX.current = e.clientX;
+    const g = graphics.find((c) => c.id === id);
+    dragGraphicSnapshot.current = g
+      ? { startFrame: g.startFrame, durationInFrames: g.durationInFrames }
+      : null;
+    dragPxPerFrame.current = snapshotPxPerFrame();
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const handleGraphicTrimInDown = (e: React.PointerEvent, id: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onSelectGraphic?.(id);
+    dragMode.current = "g-trim-in";
+    dragGraphicId.current = id;
+    dragStartX.current = e.clientX;
+    const g = graphics.find((c) => c.id === id);
+    dragGraphicSnapshot.current = g
+      ? { startFrame: g.startFrame, durationInFrames: g.durationInFrames }
+      : null;
+    dragPxPerFrame.current = snapshotPxPerFrame();
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const handleGraphicTrimOutDown = (e: React.PointerEvent, id: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onSelectGraphic?.(id);
+    dragMode.current = "g-trim-out";
+    dragGraphicId.current = id;
+    dragStartX.current = e.clientX;
+    const g = graphics.find((c) => c.id === id);
+    dragGraphicSnapshot.current = g
+      ? { startFrame: g.startFrame, durationInFrames: g.durationInFrames }
+      : null;
+    dragPxPerFrame.current = snapshotPxPerFrame();
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  // Audio tracks — TOUS les clips audio mot (formats en série comme Speed
+  // Vocab : chaque scène « Mot N/5 » possède SA prononciation), pas seulement
+  // le premier. Le verset reste un clip unique (récitation continue).
+  const wordSceneIndexes = scenes
+    .map((s, i) => ({ s, i }))
+    .filter(({ s }) => s.kind === "word" && s.audioUrl)
+    .map(({ i }) => i);
   const verseSceneIndex = scenes.findIndex((s) => s.kind === "quran" && s.audioUrl);
 
-  const wordTrack = wordSceneIndex >= 0 ? scenes[wordSceneIndex] : null;
   const verseTrack = verseSceneIndex >= 0 ? scenes[verseSceneIndex] : null;
 
   const playheadPct = durationInFrames > 0 ? (frame / durationInFrames) * 100 : 0;
@@ -516,6 +712,15 @@ export function Timeline({
             <span className="text-[7px] text-white/40 truncate">Mot</span>
           </div>
 
+          {/* G1 Graphics Track Header */}
+          <div className="flex h-9 flex-col justify-between rounded-lg border border-white/8 bg-fuchsia-950/20 p-1">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-[9px] font-bold text-fuchsia-300">G1</span>
+              <span className="text-[7px] text-white/30 font-mono">{graphics.length}</span>
+            </div>
+            <span className="text-[7px] text-white/40 truncate">Graphiques</span>
+          </div>
+
           {/* A2 Verse Audio Track Header */}
           <div className="flex h-9 flex-col justify-between rounded-lg border border-white/8 bg-emerald-950/20 p-1">
             <div className="flex items-center justify-between">
@@ -644,22 +849,26 @@ export function Timeline({
               })}
             </div>
 
-            {/* 3. PISTE A1 : AUDIO DU MOT */}
+            {/* 3. PISTE A1 : AUDIOS DES MOTS (un clip par scène mot sonore) */}
             <div className="relative h-9 w-full rounded-xl border border-white/8 bg-black/40 overflow-hidden">
-              {wordTrack ? (
-                (() => {
-                  const startF = starts[wordSceneIndex] ?? 0;
-                  const durF = wordTrack.audioDuration
-                    ? Math.round(wordTrack.audioDuration * fps)
-                    : wordTrack.durationInFrames;
+              {wordSceneIndexes.length > 0 ? (
+                wordSceneIndexes.map((idx) => {
+                  const track = scenes[idx]!;
+                  const startF = starts[idx] ?? 0;
+                  const durF = track.audioDuration
+                    ? Math.round(track.audioDuration * fps)
+                    : track.durationInFrames;
                   const leftPct = durationInFrames > 0 ? (startF / durationInFrames) * 100 : 0;
                   const widthPct = durationInFrames > 0 ? (durF / durationInFrames) * 100 : 0;
                   const isPlaying = frame >= startF && frame < startF + durF;
+                  const shortLabel =
+                    wordSceneIndexes.length > 1 ? `Mot ${wordSceneIndexes.indexOf(idx) + 1}` : "Prononciation Mot";
 
                   return (
                     <div
+                      key={`audio-word-${idx}`}
                       onClick={() => {
-                        onSelectScene(wordSceneIndex);
+                        onSelectScene(idx);
                         onSeek(startF);
                       }}
                       className={cn(
@@ -675,17 +884,76 @@ export function Timeline({
                       }}
                     >
                       <Volume2Icon className="size-3 shrink-0" />
-                      <span className="truncate text-[9px] font-bold">Prononciation Mot</span>
+                      <span className="truncate text-[9px] font-bold">{shortLabel}</span>
                       <span className="ml-auto font-mono text-[8px] opacity-70">
-                        {((wordTrack.audioDuration ?? durF / fps)).toFixed(1)}s
+                        {(track.audioDuration ?? durF / fps).toFixed(1)}s
                       </span>
                     </div>
                   );
-                })()
+                })
               ) : (
                 <div className="flex h-full items-center px-3 text-[9px] text-white/30 italic">
                   Aucun audio mot
                 </div>
+              )}
+            </div>
+
+            {/* 3.5. PISTE G1 : CLIPS GRAPHIQUES (texte, formes…) — move + trim */}
+            <div className="relative h-9 w-full rounded-xl border border-white/8 bg-black/40 overflow-hidden">
+              {graphics.length === 0 ? (
+                <div className="flex h-full items-center px-3 text-[9px] text-white/30 italic">
+                  Aucun élément graphique (ajoutez un texte ou une forme dans l&apos;Inspector)
+                </div>
+              ) : (
+                graphics.map((clip) => {
+                  const leftPct = durationInFrames > 0 ? (clip.startFrame / durationInFrames) * 100 : 0;
+                  const widthPct = durationInFrames > 0 ? (clip.durationInFrames / durationInFrames) * 100 : 0;
+                  const isActive = selectedGraphicId === clip.id;
+                  const kindColor =
+                    clip.kind === "text"
+                      ? "border-hikma-teal-400/60 bg-hikma-teal-900/60 text-hikma-teal-100"
+                      : clip.kind === "three"
+                        ? "border-violet-400/60 bg-violet-950/70 text-violet-100"
+                        : "border-fuchsia-400/60 bg-fuchsia-950/70 text-fuchsia-100";
+                  return (
+                    <div
+                      key={clip.id}
+                      onPointerDown={(e) => handleGraphicPointerDown(e, clip.id)}
+                      className={cn(
+                        "absolute top-0.5 bottom-0.5 flex items-center gap-1.5 rounded-lg border px-2 cursor-grab touch-none transition-all",
+                        kindColor,
+                        isActive && "ring-2 ring-hikma-gold shadow-[0_0_12px_rgba(201,168,76,0.5)]",
+                      )}
+                      style={{
+                        left: `${leftPct}%`,
+                        width: `${Math.max(5, widthPct)}%`,
+                        minWidth: 64,
+                      }}
+                      title="Glisser pour déplacer — bords pour trimer"
+                    >
+                      {/* Trim In handle (gauche) */}
+                      <div
+                        onPointerDown={(e) => handleGraphicTrimInDown(e, clip.id)}
+                        aria-label={`Raccourcir début ${graphicLabel(clip)}`}
+                        className="absolute inset-y-0 left-0 w-2.5 cursor-col-resize touch-none flex items-center justify-center hover:bg-white/20 rounded-l-lg"
+                      >
+                        <div className="h-4 w-0.5 rounded-full bg-white/60" />
+                      </div>
+                      <span className="truncate text-[9px] font-bold">{graphicLabel(clip)}</span>
+                      <span className="ml-auto font-mono text-[8px] opacity-70">
+                        {clip.durationInFrames}f
+                      </span>
+                      {/* Trim Out handle (droite) */}
+                      <div
+                        onPointerDown={(e) => handleGraphicTrimOutDown(e, clip.id)}
+                        aria-label={`Rallonger fin ${graphicLabel(clip)}`}
+                        className="absolute inset-y-0 right-0 w-2.5 cursor-col-resize touch-none flex items-center justify-center hover:bg-white/20 rounded-r-lg"
+                      >
+                        <div className="h-4 w-0.5 rounded-full bg-white/60" />
+                      </div>
+                    </div>
+                  );
+                })
               )}
             </div>
 

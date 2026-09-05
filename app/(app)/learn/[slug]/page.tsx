@@ -89,19 +89,43 @@ export default async function LessonPage({
   // Seules les leçons publiées sont accessibles (le parcours ne propose que celles-ci).
   if (lesson.status !== "published") notFound();
 
-  // Lexique français Hikma VALIDÉ — forme puis lemme (Phase 17C) — fallback EN sinon.
-  const [frenchByWord, lemmaFrenchByWord] = await Promise.all([
-    getValidatedFrenchMeanings(client, words.map((w) => w.word.id)),
-    getValidatedFrenchLemmaMeaningsByWord(client, words.map((w) => w.word.id)),
-  ]);
-  const bank = buildWordBank(words, frenchByWord, lemmaFrenchByWord);
   const wordIds = words.map((w) => w.word.id);
 
-  // Audio réel Muallim : URL signées (une par forme). Jamais d'audio simulé.
-  // `audio.registered` distingue « aucun audio enregistré » (badge) d'un
-  // échec technique de signature (journalisé côté serveur, jamais présenté
-  // comme « indisponible »).
-  const audio = await getWordAudioState(client, wordIds);
+  // Parallélisation complète des requêtes indépendantes (Phase 98 / Lot 4).
+  // Seul getLessonWithWords reste en amont pour fournir wordIds.
+  const [
+    frenchByWord,
+    lemmaFrenchByWord,
+    audio,
+    contextByWord,
+    lemmaByWord,
+    linguisticByWord,
+    explanationsByWord,
+    explanationContextsByWord,
+    userSkillProgress,
+    ayahContext,
+    ctx,
+    resumeState,
+  ] = await Promise.all([
+    getValidatedFrenchMeanings(client, wordIds),
+    getValidatedFrenchLemmaMeaningsByWord(client, wordIds),
+    getWordAudioState(client, wordIds),
+    getWordAyahContexts(client, wordIds, surahNumber),
+    getWordLemmaRelations(client, wordIds),
+    getWordLinguisticEvidence(client, wordIds, surahNumber),
+    getValidatedWordExplanations(client, wordIds),
+    getValidatedWordExplanationContexts(client, wordIds),
+    user ? getUserSkillProgress(client, user.id, wordIds) : Promise.resolve(new Map()),
+    getLessonAyahContext(client, wordIds, 3, surahNumber),
+    getLearningContext(
+      client,
+      user?.id ?? null,
+      result.surahNumber != null ? { surahNumber: result.surahNumber } : {},
+    ),
+    user ? getLessonSession(client, user.id, lesson.id) : Promise.resolve(null),
+  ]);
+
+  const bank = buildWordBank(words, frenchByWord, lemmaFrenchByWord);
   const audioByWord = audio.urls;
 
   // Prononciation guidée (24H-Q1) : un seul exercice auto-évalué, sur le
@@ -117,23 +141,6 @@ export default async function LessonPage({
         })
       : null;
 
-  // Contexte réel du verset (CONTEXT_RECOGNITION) + relations forme→lemme
-  // réelles (LEMMA_RELATION). Aucune donnée inventée : un mot sans contexte ou
-  // sans « frère » de lemme ne produira simplement pas l'exercice correspondant.
-  // Couche linguistique MASAQ (Phase 24I) — lecture seule, sourate 1 uniquement
-  // (seule sourate importée). EXPLICATION uniquement : aucun effet sur le
-  // grading, le SRS, la maîtrise, le word bank ni la génération des exercices.
-  // Couche « explication de sens » (Phase 44B) : formulations validées, résolues
-  // par FORME puis par contexte (surah:ayah) — passive, aucun effet moteur.
-  const [contextByWord, lemmaByWord, linguisticByWord, explanationsByWord, explanationContextsByWord] =
-    await Promise.all([
-      getWordAyahContexts(client, wordIds, surahNumber),
-      getWordLemmaRelations(client, wordIds),
-      getWordLinguisticEvidence(client, wordIds, surahNumber),
-      getValidatedWordExplanations(client, wordIds),
-      getValidatedWordExplanationContexts(client, wordIds),
-    ]);
-
   // Séquence d'exercices :
   //   - utilisateur connecté → séquence CUMULATIVE ordonnée par compétence
   //     (reconnaissance → rappel → audio), en sautant les compétences déjà
@@ -141,8 +148,7 @@ export default async function LessonPage({
   //   - visiteur → ordre par défaut (déterministe).
   let exercises: GeneratedExercise[];
   if (user) {
-    const progress = await getUserSkillProgress(client, user.id, wordIds);
-    exercises = buildCumulativeSequence(bank, progress)
+    exercises = buildCumulativeSequence(bank, userSkillProgress)
       .map((step) =>
         generateExercise(step.exerciseType, {
           target: bank.find((b) => b.wordId === step.wordId)!,
@@ -166,21 +172,11 @@ export default async function LessonPage({
   }
 
   // Q2-B — discrimination phonétique (exposition limitée, déterministe).
-  // Ajouté APRÈS la séquence de base (visiteur comme connecté) : jamais plus de
-  // PHONETIC_DISCRIMINATION_MAX_PER_LESSON exercices par leçon, uniquement pour
-  // les mots ayant un audio réel ET une caractéristique phonétique réellement
-  // présente. Alimente la compétence audio_recognition (aucune nouvelle skill).
   exercises = [
     ...exercises,
     ...generatePhoneticDiscriminationSet(bank, audioByWord, lesson.difficulty),
   ];
-  // L'explication après erreur réutilise les mêmes données vérifiées que la
-  // génération : aucune requête ni donnée pédagogique parallèle n'est créée.
-  // Ces champs restent optionnels et n'apparaissent qu'après soumission.
-  // Explication de sens (Phase 44B) : générique validée, ou override contextuel
-  // si le verset du mot (contexte réel de l'exercice) est couvert. Résolution
-  // PURE (resolveSenseExplanation) : aucune inférence, l'absence d'explication
-  // est un état valide.
+
   exercises = exercises.map((exercise) => {
     const target = bank.find((word) => word.wordId === exercise.metadata.targetWordId);
     const wordId = exercise.metadata.targetWordId;
@@ -208,20 +204,7 @@ export default async function LessonPage({
   exercises = buildInterleavedSequence(exercises);
   exercises = attachExerciseIdentities(lesson.id, exercises);
 
-  // Contexte du verset étudié, en FRANÇAIS réel (table translations, Hamidullah).
-  const ayahContext = await getLessonAyahContext(
-    client,
-    words.map((w) => w.word.id),
-    3,
-    surahNumber,
-  );
-
   // Leçon suivante + progression du parcours (pour l'écran de fin).
-  const ctx = await getLearningContext(
-    client,
-    user?.id ?? null,
-    result.surahNumber != null ? { surahNumber: result.surahNumber } : {},
-  );
   let nextLesson: { title: string; href: string } | null = null;
   let pathProgress: { completed: number; total: number } | null = null;
   // Nom de la sourate (transliteration) pour la célébration — jamais inventé.
@@ -239,12 +222,6 @@ export default async function LessonPage({
   // Sens mot-à-mot : la langue pédagogique est le français. Si un FR Hikma
   // validé existe il est utilisé ; sinon repli explicite sur la gloss EN.
   const meaningFallback = bank.some((b) => b.meaningFallback);
-
-  // Session persistante (Phase 24E) : reprise exacte de la position pour un
-  // utilisateur connecté (séquence déterministe reconstruite au chargement).
-  const resumeState = user
-    ? await getLessonSession(client, user.id, lesson.id)
-    : null;
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-col gap-8 px-5 py-6 sm:px-8 sm:py-8">

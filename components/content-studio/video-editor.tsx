@@ -13,6 +13,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { Player, type PlayerRef } from "@remotion/player";
 import { HikmaWordVideo } from "@/remotion/HikmaWordVideo";
 import type { VideoScene, WordHeroSettings } from "@/lib/content-studio/video/types";
+import type { GraphicClipBase } from "@/lib/content-studio/graphics/graphic-clip";
 import type { ContentItemStatus, RenderStatus } from "@/lib/content-studio/types";
 import {
   saveThenRender,
@@ -29,6 +30,35 @@ import { Timeline } from "@/components/content-studio/editor/timeline";
 import { InspectorTabs } from "@/components/content-studio/editor/inspector-tabs";
 import { SceneThumbnail } from "@/components/content-studio/editor/scene-thumbnail";
 import {
+  ShapesPanel,
+  TextGraphicsPanel,
+} from "@/components/content-studio/editor/text-graphics-panel";
+import { ThreePanel } from "@/components/content-studio/editor/three-graphics-panel";
+import {
+  buildTextAnimation,
+  createTextGraphicClip,
+  defaultTextGraphicClip,
+  type TextGraphicClip,
+} from "@/lib/content-studio/graphics/text-graphic";
+import {
+  isLegacyTextPromoted,
+  legacyTextKey,
+  listLegacyTexts,
+  type LegacyTextDescriptor,
+} from "@/lib/content-studio/graphics/legacy-text-adapter";
+import {
+  createShapeGraphicClip,
+  defaultShapeGraphicClip,
+  type ShapeGraphicClip,
+} from "@/lib/content-studio/graphics/shape-graphic";
+import {
+  createThreeGraphicClip,
+  type ThreeGraphicClip,
+} from "@/lib/content-studio/graphics/three-graphic";
+import { duplicateGraphicClip } from "@/lib/content-studio/editor/timeline-ops";
+import { RenderProgressModal } from "@/components/content-studio/editor/render-progress-modal";
+import { InteractiveGraphicsOverlay } from "@/components/content-studio/editor/interactive-graphics-overlay";
+import {
   SlidersHorizontalIcon,
   XIcon,
   ArrowUpIcon,
@@ -36,6 +66,10 @@ import {
   CopyIcon,
   Trash2Icon,
   DownloadIcon,
+  PlayCircleIcon,
+  ZoomInIcon,
+  ZoomOutIcon,
+  MaximizeIcon,
 } from "lucide-react";
 
 type EditableTextField = "text" | "subtext" | "arabic" | "transliteration";
@@ -86,6 +120,8 @@ export type VideoEditorProps = {
   width: number;
   height: number;
   initialScenes: VideoScene[];
+  /** Clips graphiques (texte…) chargés depuis editor_state — optionnels. */
+  initialGraphics?: GraphicClipBase[];
   status: string;
   renderStatus: string;
   renderPath: string | null;
@@ -109,10 +145,13 @@ export function VideoEditor({
   width,
   height,
   initialScenes,
+  initialGraphics,
   status,
   renderStatus: initialRenderStatus,
 }: VideoEditorProps) {
   const [scenes, setScenes] = useState<VideoScene[]>(initialScenes);
+  const [graphics, setGraphics] = useState<GraphicClipBase[]>(initialGraphics ?? []);
+  const [selectedGraphicId, setSelectedGraphicId] = useState<string | null>(null);
   const [selected, setSelected] = useState(0);
   const [saveState, setSaveState] = useState<StudioSaveState>("saved");
   const [playing, setPlaying] = useState(false);
@@ -120,19 +159,93 @@ export function VideoEditor({
   const [renderPhase, setRenderPhase] = useState<RenderPhase>("idle");
   const [renderError, setRenderError] = useState<string | null>(null);
   const [renderStatus, setRenderStatus] = useState<RenderStatus>(
-    initialRenderStatus === "RENDERED" || initialRenderStatus === "RENDERING"
-      ? (initialRenderStatus as RenderStatus)
-      : "NOT_RENDERED",
+    initialRenderStatus === "RENDERED" ? "RENDERED" : "NOT_RENDERED",
   );
   const [renderResult, setRenderResult] = useState<{
     signedUrl?: string;
     storagePath?: string;
     durationInFrames?: number;
   } | null>(null);
+  const [renderModalOpen, setRenderModalOpen] = useState(false);
 
   const [frame, setFrame] = useState(0);
   const [inspectorOpen, setInspectorOpen] = useState(false);
+  const [previewZoom, setPreviewZoom] = useState(1);
+  // Panneau inférieur (Transport + Timeline) redimensionnable au drag : le stage
+  // (flex-1) absorbe l'espace libéré ⇒ le canvas grandit. Hauteur persistée en
+  // localStorage ; `null` = hauteur naturelle (mobile / premier chargement).
+  // ⚠️ HYDRATATION : on initialise TOUJOURS à null (rendu serveur et client
+  // identiques) ; la hauteur persistée est lue APRÈS montage (effet ci-dessous).
+  const [timelinePanelH, setTimelinePanelH] = useState<number | null>(null);
+  const centerColRef = useRef<HTMLDivElement>(null);
+  const bottomPanelRef = useRef<HTMLDivElement>(null);
+  const timelineDrag = useRef<{ startY: number; startH: number; maxH: number } | null>(null);
   const playerRef = useRef<PlayerRef>(null);
+
+  // Restauration post-hydratation de la hauteur persistée (jamais pendant le
+  // premier rendu : éviter tout mismatch SSR/client).
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem("hikma:timelinePanelH");
+      if (!raw) return;
+      const v = Number(raw);
+      // lecture localStorage impossible côté serveur : restauration
+      // obligatoirement post-montage (pattern anti-mismatch d'hydratation)
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (Number.isFinite(v) && v >= 120 && v <= 1200) setTimelinePanelH(v);
+    } catch {
+      /* localStorage indisponible (SSR/sandbox) */
+    }
+  }, []);
+
+  // Persistance de la hauteur du panneau Timeline
+  useEffect(() => {
+    if (timelinePanelH == null) return;
+    try {
+      window.localStorage.setItem("hikma:timelinePanelH", String(timelinePanelH));
+    } catch {
+      /* localStorage indisponible (SSR/sandbox) */
+    }
+  }, [timelinePanelH]);
+
+  // Drag vertical du séparateur : mesurer la hauteur courante du panneau au
+  // début (auto ou explicit), puis appliquer le delta pointeur 1:1 en px,
+  // borné [120, colonne - 160] pour garder un canvas utilisable.
+  const startTimelineDrag = useCallback(
+    (e: React.PointerEvent) => {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const panel = bottomPanelRef.current;
+      const col = centerColRef.current;
+      if (!panel || !col) return;
+      const colH = col.getBoundingClientRect().height;
+      const current = timelinePanelH ?? panel.getBoundingClientRect().height;
+      timelineDrag.current = {
+        startY: e.clientY,
+        startH: current,
+        maxH: Math.max(colH - 160, 220),
+      };
+      const move = (ev: PointerEvent) => {
+        const d = timelineDrag.current;
+        if (!d) return;
+        const delta = d.startY - ev.clientY; // tirer vers le haut ⇒ panneau plus petit
+        setTimelinePanelH(Math.round(Math.min(Math.max(d.startH + delta, 120), d.maxH)));
+      };
+      const up = () => {
+        timelineDrag.current = null;
+        window.removeEventListener("pointermove", move);
+        window.removeEventListener("pointerup", up);
+        document.body.style.cursor = "";
+        document.body.style.userSelect = "";
+      };
+      window.addEventListener("pointermove", move);
+      window.addEventListener("pointerup", up);
+      document.body.style.cursor = "row-resize";
+      document.body.style.userSelect = "none";
+    },
+    [timelinePanelH],
+  );
 
   const durationInFrames = useMemo(
     () => scenes.reduce((acc, s) => acc + s.durationInFrames, 0),
@@ -367,6 +480,7 @@ export function VideoEditor({
       const form = new FormData();
       form.set("contentKey", contentKey);
       form.set("scenes", JSON.stringify(scenes));
+      if (graphics.length > 0) form.set("graphics", JSON.stringify(graphics));
       try {
         const result = await saveEditorState(form);
         if (result.ok) {
@@ -385,7 +499,7 @@ export function VideoEditor({
         return false;
       }
     },
-    [contentKey, scenes],
+    [contentKey, scenes, graphics],
   );
 
   const runRender = useCallback(async () => {
@@ -393,6 +507,7 @@ export function VideoEditor({
     setRenderStatus("RENDERING");
     setRenderError(null);
     setRenderResult(null);
+    setRenderModalOpen(true);
 
     const outcome = await saveThenRender({
       saveState,
@@ -405,25 +520,39 @@ export function VideoEditor({
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ contentKey }),
           });
-        } catch {
+        } catch (fetchErr) {
           setRenderPhase("failed");
           setRenderStatus("FAILED");
-          setRenderError("Impossible de contacter le serveur de rendu.");
+          setRenderError(
+            fetchErr instanceof Error ? fetchErr.message : "Impossible de contacter le serveur de rendu.",
+          );
           return;
         }
+
+        const contentType = res.headers.get("content-type") ?? "";
+        if (!contentType.includes("application/json")) {
+          const rawText = await res.text().catch(() => "");
+          setRenderPhase("failed");
+          setRenderStatus("FAILED");
+          setRenderError(
+            `Erreur serveur (${res.status}) : ${rawText.slice(0, 120) || res.statusText || "Réponse non-JSON"}`,
+          );
+          return;
+        }
+
         let data: RenderResponse;
         try {
           data = (await res.json()) as RenderResponse;
         } catch {
           setRenderPhase("failed");
           setRenderStatus("FAILED");
-          setRenderError("Réponse de rendu invalide.");
+          setRenderError(`Réponse de rendu invalide (${res.status}).`);
           return;
         }
         if (!res.ok || data.error) {
           setRenderPhase("failed");
           setRenderStatus("FAILED");
-          setRenderError(data.error?.message ?? "Échec du rendu.");
+          setRenderError(data.error?.message ?? `Échec du rendu (${res.status}).`);
           return;
         }
         setRenderPhase("done");
@@ -468,6 +597,15 @@ export function VideoEditor({
       }
       if (e.key === "Escape") {
         setInspectorOpen(false);
+        setSelectedGraphicId(null);
+        return;
+      }
+      // Suppression du clip graphique sélectionné (Delete / Backspace)
+      if ((e.key === "Delete" || e.key === "Backspace") && selectedGraphicId) {
+        e.preventDefault();
+        setGraphics((g) => g.filter((c) => c.id !== selectedGraphicId));
+        setSelectedGraphicId(null);
+        setSaveState("unsaved");
         return;
       }
       if (e.target instanceof HTMLElement && e.target.closest("button, a, input, textarea, select")) return;
@@ -486,7 +624,7 @@ export function VideoEditor({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [runSave, frame, fps, seekToFrame, handlePlayPause]);
+  }, [runSave, frame, fps, seekToFrame, handlePlayPause, selectedGraphicId]);
 
   const editReady = scenes.length > 0 && durationInFrames / fps >= 0.1;
   const saveDisabled = saveState === "saving" || saveState === "saved";
@@ -501,6 +639,362 @@ export function VideoEditor({
   // ---------------------------------------------------------------------------
   // Shared Inspector Component
   // ---------------------------------------------------------------------------
+
+  // ---------------------------------------------------------------------------
+  // Graphics (texte) — état local + sauvegarde dans editor_state.graphics
+  // ---------------------------------------------------------------------------
+
+  // Décalage en cascade : chaque NOUVEL élément (texte ou forme) se place à
+  // CÔTÉ des précédents au lieu d'exactement au-dessus (tous seraient empilés
+  // à 0.5/0.5). Motif diagonal de 8 positions, puis retour au centre — le
+  // premier élément garde sa position par défaut. Retourne un DELTA (px
+  // normalisés) appliqué à la position de base du clip.
+  const cascadeDelta = (count: number): { dx: number; dy: number } => {
+    const i = count % 8;
+    return { dx: i * 0.045, dy: -i * 0.045 * 0.55 };
+  };
+
+  const addTextGraphic = useCallback(() => {
+    const id = `text-${crypto.randomUUID()}`;
+    // Création au PLAYHEAD + au-DESSUS des autres (z-index max+1) : le nouveau
+    // clip est immédiatement visible, sélectionné et prêt à être déplacé.
+    setGraphics((g) => {
+      const zIndex = g.reduce((m, c) => Math.max(m, c.zIndex), 0) + 1;
+      const base = defaultTextGraphicClip();
+      const d = cascadeDelta(g.length);
+      return [
+        ...g,
+        createTextGraphicClip({
+          ...base,
+          id,
+          startFrame: frame,
+          zIndex,
+          transform: {
+            ...base.transform,
+            x: base.transform.x + d.dx,
+            y: base.transform.y + d.dy,
+          },
+        }),
+      ];
+    });
+    setSelectedGraphicId(id);
+    setSaveState("unsaved");
+  }, [frame]);
+
+  const isTextGraphicClip = (c: GraphicClipBase): c is TextGraphicClip =>
+    c.kind === "text";
+
+  const updateTextGraphic = useCallback(
+    (id: string, patch: Partial<TextGraphicClip>) => {
+      setGraphics((g) =>
+        g.map((c) => {
+          if (!isTextGraphicClip(c) || c.id !== id) return c;
+          return createTextGraphicClip({
+            id: c.id,
+            startFrame: c.startFrame,
+            durationInFrames: c.durationInFrames,
+            zIndex: c.zIndex,
+            transform: c.transform,
+            keyframes: c.keyframes,
+            text: c.text,
+            style: c.style,
+            animation: c.animation,
+            direction: c.direction,
+            // Préserver l'origine (texte hérité promu) : sans cette ligne,
+            // toute édition détacherait le clip de sa scène et l'original
+            // réapparaîtrait en double dans le rendu.
+            source: c.source,
+            ...patch,
+          });
+        }),
+      );
+      setSaveState("unsaved");
+    },
+    [],
+  );
+
+  const removeTextGraphic = useCallback((id: string) => {
+    setGraphics((g) => g.filter((c) => c.id !== id));
+    setSaveState("unsaved");
+  }, []);
+
+  // --- Formes --------------------------------------------------------------
+  const addShapeGraphic = useCallback(
+    (shape: ShapeGraphicClip["shape"]) => {
+      const id = `shape-${crypto.randomUUID()}`;
+      // Création au PLAYHEAD + au-DESSUS des autres (z-index max+1) + décalage
+      // en cascade (jamais empilé exactement sur le précédent).
+      setGraphics((g) => {
+        const zIndex = g.reduce((m, c) => Math.max(m, c.zIndex), 0) + 1;
+        const base = defaultShapeGraphicClip();
+        const d = cascadeDelta(g.length);
+        return [
+          ...g,
+          createShapeGraphicClip({
+            ...base,
+            shape,
+            id,
+            startFrame: frame,
+            zIndex,
+            transform: {
+              ...base.transform,
+              x: base.transform.x + d.dx,
+              y: base.transform.y + d.dy,
+            },
+          }),
+        ];
+      });
+      setSelectedGraphicId(id);
+      setSaveState("unsaved");
+    },
+    [frame],
+  );
+
+  const isShapeGraphicClip = (c: GraphicClipBase): c is ShapeGraphicClip =>
+    c.kind === "shape";
+
+  const updateShapeGraphic = useCallback(
+    (id: string, patch: Partial<ShapeGraphicClip>) => {
+      setGraphics((g) =>
+        g.map((c) => {
+          if (!isShapeGraphicClip(c) || c.id !== id) return c;
+          return createShapeGraphicClip({
+            id: c.id,
+            startFrame: c.startFrame,
+            durationInFrames: c.durationInFrames,
+            zIndex: c.zIndex,
+            transform: c.transform,
+            keyframes: c.keyframes,
+            shape: c.shape,
+            fill: c.fill,
+            stroke: c.stroke,
+            roundness: c.roundness,
+            sides: c.sides,
+            thickness: c.thickness,
+            aspect: c.aspect,
+            ...patch,
+          });
+        }),
+      );
+      setSaveState("unsaved");
+    },
+    [],
+  );
+
+  const removeShapeGraphic = useCallback((id: string) => {
+    setGraphics((g) => g.filter((c) => c.id !== id));
+    setSaveState("unsaved");
+  }, []);
+
+  // --- Objets 3D ------------------------------------------------------------
+  const addThreeGraphic = useCallback(
+    (geometry: ThreeGraphicClip["geometry"]["kind"] = "box") => {
+      const id = `three-${crypto.randomUUID()}`;
+      // Création au PLAYHEAD + au-DESSUS des autres (z-index max+1) + décalage
+      // en cascade (jamais empilé exactement sur le précédent).
+      setGraphics((g) => {
+        const zIndex = g.reduce((m, c) => Math.max(m, c.zIndex), 0) + 1;
+        const base = createThreeGraphicClip({
+          id,
+          startFrame: frame,
+          durationInFrames: 120,
+          zIndex,
+          geometry: { kind: geometry },
+        });
+        const d = cascadeDelta(g.length);
+        return [
+          ...g,
+          {
+            ...base,
+            transform: {
+              ...base.transform,
+              x: base.transform.x + d.dx,
+              y: base.transform.y + d.dy,
+            },
+          },
+        ];
+      });
+      setSelectedGraphicId(id);
+      setSaveState("unsaved");
+    },
+    [frame],
+  );
+
+  const isThreeGraphicClip = (c: GraphicClipBase): c is ThreeGraphicClip =>
+    c.kind === "three";
+
+  const updateThreeGraphic = useCallback(
+    (id: string, patch: Partial<ThreeGraphicClip>) => {
+      setGraphics((g) =>
+        g.map((c) => {
+          if (!isThreeGraphicClip(c) || c.id !== id) return c;
+          return createThreeGraphicClip({
+            id: c.id,
+            startFrame: c.startFrame,
+            durationInFrames: c.durationInFrames,
+            zIndex: c.zIndex,
+            transform: c.transform,
+            keyframes: c.keyframes,
+            geometry: c.geometry,
+            material: c.material,
+            lighting: c.lighting,
+            camera: c.camera,
+            ...patch,
+          });
+        }),
+      );
+      setSaveState("unsaved");
+    },
+    [],
+  );
+
+  const removeThreeGraphic = useCallback((id: string) => {
+    setGraphics((g) => g.filter((c) => c.id !== id));
+    setSaveState("unsaved");
+  }, []);
+
+  const duplicateGraphic = useCallback((id: string) => {
+    setGraphics((g) => duplicateGraphicClip(g, id));
+    setSaveState("unsaved");
+  }, []);
+
+  /** Monte un clip graphique au-dessus de tous (z-index maximal + 1). */
+  const bringGraphicToFront = useCallback((id: string) => {
+    setGraphics((g) => {
+      const max = g.reduce((m, c) => Math.max(m, c.zIndex), 0);
+      return g.map((c) => (c.id === id ? { ...c, zIndex: max + 1 } : c));
+    });
+    setSaveState("unsaved");
+  }, []);
+
+  /** Descend un clip graphique sous tous les autres (z-index minimal − 1). */
+  const sendGraphicToBack = useCallback((id: string) => {
+    setGraphics((g) => {
+      const min = g.reduce((m, c) => Math.min(m, c.zIndex), 0);
+      return g.map((c) => (c.id === id ? { ...c, zIndex: min - 1 } : c));
+    });
+    setSaveState("unsaved");
+  }, []);
+
+  // ---------------------------------------------------------------------------
+  // TEXTES HÉRITÉS (UNIFICATION) — promotion lazy d'un texte de scène en
+  // VRAI TextGraphicClip : rendu par GraphicsOverlay, éditable partout
+  // (Inspector / Timeline G1 / drag-resize-rotate Preview), persisté dans
+  // editor_state.graphics, MP4 identique. La scène masque l'original tant que
+  // le clip existe (source). Le verset Quran (quran.arabic) est PROTÉGÉ.
+  // ---------------------------------------------------------------------------
+
+  /** Textes de scènes non promus et visibles au frame courant (hitboxes). */
+  const legacyHits = useMemo(() => {
+    const hits: LegacyTextDescriptor[] = [];
+    for (let i = 0; i < scenes.length; i++) {
+      const scene = scenes[i];
+      const start = starts[i];
+      if (!scene || frame < start || frame >= start + scene.durationInFrames) continue;
+      for (const d of listLegacyTexts(scene, i)) {
+        if (d.protected) continue;
+        if (isLegacyTextPromoted(graphics, i, d.field)) continue;
+        hits.push(d);
+      }
+    }
+    return hits;
+  }, [scenes, starts, frame, graphics]);
+
+  /** Clés des textes hérités déjà promus (pour désactiver les boutons ✎). */
+  const promotedKeys = useMemo(
+    () =>
+      graphics
+        .filter(
+          (g): g is TextGraphicClip =>
+            g.kind === "text" && !!(g as TextGraphicClip).source,
+        )
+        .map((g) => legacyTextKey(g.source!.sceneIndex, g.source!.field)),
+    [graphics],
+  );
+
+  /** Promeut un texte de scène en TextGraphicClip (au PLAYHEAD de la scène). */
+  const promoteLegacyText = useCallback(
+    (sceneIndex: number, field: EditableTextField) => {
+      const scene = scenes[sceneIndex];
+      if (!scene) return;
+      const content = scene[field];
+      if (typeof content !== "string" || content.length === 0) return;
+      const desc = listLegacyTexts(scene, sceneIndex).find((d) => d.field === field);
+      if (!desc || desc.protected) return;
+      if (isLegacyTextPromoted(graphics, sceneIndex, field)) return;
+      const id = `legacy-${sceneIndex}-${field}-${crypto.randomUUID()}`;
+      setGraphics((g) => {
+        const zIndex = g.reduce((m, c) => Math.max(m, c.zIndex), 0) + 1;
+        return [
+          ...g,
+          createTextGraphicClip({
+            id,
+            text: desc.content,
+            direction: desc.direction,
+            startFrame: starts[sceneIndex],
+            durationInFrames: scene.durationInFrames,
+            zIndex,
+            style: desc.style,
+            transform: desc.transform,
+            animation: buildTextAnimation("fade", {
+              inDurationFrames: 15,
+              outDurationFrames: 0,
+            }),
+            source: { sceneIndex, field: desc.field },
+          }),
+        ];
+      });
+      // Le clip promu est immédiatement sélectionné → son éditeur complet
+      // (TextClipEditor) s'ouvre dans l'Inspector, sans double rendu.
+      setSelectedGraphicId(id);
+      setSaveState("unsaved");
+    },
+    [scenes, starts, graphics],
+  );
+
+  const graphicsPanel = (
+    <>
+      <TextGraphicsPanel
+        graphics={graphics}
+        selectedId={selectedGraphicId}
+        onSelect={setSelectedGraphicId}
+        onAddText={addTextGraphic}
+        onUpdateText={updateTextGraphic}
+        onRemove={removeTextGraphic}
+        onDuplicate={duplicateGraphic}
+        onBringToFront={bringGraphicToFront}
+        onSendToBack={sendGraphicToBack}
+        frame={frame}
+        onSeek={seekToFrame}
+      />
+      <ShapesPanel
+        graphics={graphics}
+        selectedId={selectedGraphicId}
+        onSelect={setSelectedGraphicId}
+        onAddShape={addShapeGraphic}
+        onUpdateShape={updateShapeGraphic}
+        onRemove={removeShapeGraphic}
+        onDuplicate={duplicateGraphic}
+        onBringToFront={bringGraphicToFront}
+        onSendToBack={sendGraphicToBack}
+        frame={frame}
+        onSeek={seekToFrame}
+      />
+      <ThreePanel
+        graphics={graphics}
+        selectedId={selectedGraphicId}
+        onSelect={setSelectedGraphicId}
+        onAddThree={addThreeGraphic}
+        onUpdateThree={updateThreeGraphic}
+        onRemove={removeThreeGraphic}
+        onDuplicate={duplicateGraphic}
+        onBringToFront={bringGraphicToFront}
+        onSendToBack={sendGraphicToBack}
+        frame={frame}
+        onSeek={seekToFrame}
+      />
+    </>
+  );
 
   const inspectorBody = selectedScene ? (
     <div className="flex flex-col">
@@ -568,12 +1062,21 @@ export function VideoEditor({
         onHero={updateHero}
         onAudio={updateSceneAudio}
         onVerseConfig={updateVerseConfig}
+        onPromoteText={(index, field) => promoteLegacyText(index, field)}
+        promotedKeys={promotedKeys}
       />
     </div>
   ) : null;
 
   return (
-    <div className="flex w-full flex-1 flex-col select-none">
+    // ARCHITECTURE LAYOUT STABLE : l'éditeur occupe exactement la hauteur du
+    // viewport (moins le header studio h-14). `lg:flex-none` est CRUCIAL : sans
+    // lui, flex-grow:1 (flex-1) étire le root pour remplir son parent, qui
+    // grandit lui-même avec le contenu (chaîne circulaire via min-h-dvh du
+    // shell) — la hauteur explicite serait ignorée et l'Inspector repousserait
+    // la Timeline. La grille est bornée par `lg:grid-rows-[minmax(0,1fr)]` :
+    // l'Inspector scroll en interne, la page ne s'allonge jamais.
+    <div className="flex w-full flex-1 flex-col select-none lg:h-[calc(100dvh-3.5rem)] lg:flex-none lg:overflow-y-auto">
       <ProjectHeader
         eyebrow={templateKey}
         title={title ?? templateKey}
@@ -591,9 +1094,11 @@ export function VideoEditor({
       />
 
       {/* ── UNIFIED RESPONSIVE WORKSPACE ───────────────────────────────── */}
-      <div className="mx-auto flex w-full max-w-[1600px] flex-1 flex-col lg:grid lg:grid-cols-[240px_minmax(0,1fr)_320px] lg:gap-0 lg:px-4 lg:py-5">
+      {/* Rangée de grille BORNÉE (minmax(0,1fr)) : les colonnes ne peuvent
+          plus s'étendre au-delà de la zone — l'Inspector scroll en interne. */}
+      <div className="mx-auto flex min-h-0 w-full max-w-[1600px] flex-1 flex-col lg:grid lg:grid-cols-[240px_minmax(0,1fr)_320px] lg:grid-rows-[minmax(0,1fr)] lg:gap-0 lg:overflow-hidden lg:px-4 lg:py-5">
         {/* Left: Scenes List (Desktop only) */}
-        <aside className="hidden flex-col gap-1.5 rounded-l-2xl border border-white/8 bg-black/40 p-3 lg:flex">
+        <aside className="hidden min-h-0 flex-col gap-1.5 rounded-l-2xl border border-white/8 bg-black/40 p-3 lg:flex">
           <span className="px-1 text-[10px] font-bold uppercase tracking-wider text-white/40">
             Scènes de montage ({scenes.length})
           </span>
@@ -634,13 +1139,26 @@ export function VideoEditor({
         </aside>
 
         {/* Center: Stage + Transport + Storyboard + Timeline (SINGLE Player mounted) */}
-        <div className="flex min-w-0 flex-1 flex-col border-white/8 bg-[#090d0b] lg:border-y">
-          {/* 1. Preview 9:16 Dominant */}
+        <div ref={centerColRef} className="flex min-h-0 min-w-0 flex-1 flex-col border-white/8 bg-[#090d0b] lg:border-y">
+          {/* 1. Preview 9:16 Dominant — flex-1 min-h-0 : la zone peut se
+              comprimer sans déborder (la Timeline reste visible dessous). */}
           <div
-            className="flex flex-1 items-center justify-center px-4 py-4 sm:p-6"
+            className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden px-4 py-4 sm:p-6"
             style={STAGE_BG}
           >
-            <div className="relative w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px] xl:max-w-[360px]">
+            {/* Boîte 9:16 contrainte par le STAGE.
+                MOBILE : `relative w-full` + `aspect-ratio` → taille par la
+                largeur (270×480), le stage grandit avec elle (flux vertical).
+                DESKTOP : `lg:absolute lg:inset-0 lg:m-auto lg:w-auto` +
+                `aspect-ratio` + `max-h-full` sur le MÊME élément → le
+                navigateur transfère la contrainte de hauteur sur la largeur
+                (234×417 = 9/16 exact mesuré) et le canvas se plie à la place
+                disponible sans chevaucher le transport ni la Timeline.
+                PAS de `h-fit` (rend max-h-full inopérant). */}
+            <div
+              className="relative mx-auto w-full max-h-full max-w-[270px] sm:max-w-[300px] lg:absolute lg:inset-0 lg:m-auto lg:w-auto lg:max-w-[320px] xl:max-w-[360px]"
+              style={{ aspectRatio: "9/16", transform: `scale(${previewZoom})` }}
+            >
               {/* Info badge top */}
               <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between rounded-t-xl bg-black/50 px-3 py-1 backdrop-blur-md">
                 <Caption className="font-mono text-[9px] sm:text-[10px] text-white/70">
@@ -651,15 +1169,12 @@ export function VideoEditor({
                 </Caption>
               </div>
 
-              {/* Video Canvas — SINGLE Remotion Player instance */}
-              <div
-                className="overflow-hidden rounded-2xl shadow-[0_20px_60px_-14px_rgba(0,0,0,0.9)] ring-1 ring-white/10"
-                style={{ aspectRatio: "9/16" }}
-              >
+              {/* Video Canvas — SINGLE Remotion Player instance + couche d'édition */}
+              <div className="relative h-full w-full overflow-hidden rounded-2xl shadow-[0_20px_60px_-14px_rgba(0,0,0,0.9)] ring-1 ring-white/10">
                 <Player
                   ref={playerRef}
                   component={HikmaWordVideo}
-                  inputProps={{ scenes }}
+                  inputProps={{ scenes, graphics }}
                   durationInFrames={durationInFrames}
                   fps={fps}
                   compositionWidth={width}
@@ -670,11 +1185,92 @@ export function VideoEditor({
                   acknowledgeRemotionLicense
                   style={{ width: "100%", height: "100%" }}
                 />
+                {/* Édition visuelle : sélection / drag / resize / rotation des
+                    clips graphiques + hitboxes des TEXTES HÉRITÉS (clic =
+                    promotion dans l'éditeur unifié). Ne modifie QUE
+                    editor_state.graphics. */}
+                {(graphics.length > 0 || legacyHits.length > 0) && (
+                  <InteractiveGraphicsOverlay
+                    graphics={graphics}
+                    selectedId={selectedGraphicId}
+                    frame={frame}
+                    width={width}
+                    height={height}
+                    onSelect={setSelectedGraphicId}
+                    onChange={(next) => {
+                      setGraphics(next);
+                      setSaveState("unsaved");
+                    }}
+                    legacyHits={legacyHits}
+                    zoom={previewZoom}
+                    onPromoteLegacy={(sceneIndex, field) =>
+                      promoteLegacyText(sceneIndex, field as EditableTextField)
+                    }
+                  />
+                )}
               </div>
+            </div>
+
+            {/* Zoom Preview (canvas) — 0.5x → 2x, indépendant du zoom Timeline.
+                La boîte est scale()'ée depuis son centre ; `overflow-hidden` du
+                stage la rogne aux bords sans jamais chevaucher le transport ni
+                la Timeline. */}
+            <div className="absolute right-3 top-3 z-30 flex items-center gap-0.5 rounded-full border border-white/10 bg-black/70 px-2 py-1 backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => setPreviewZoom((z) => Math.max(0.5, Math.round((z - 0.25) * 100) / 100))}
+                disabled={previewZoom <= 0.5}
+                aria-label="Réduire le canvas"
+                className="flex size-7 items-center justify-center rounded-full text-white/70 transition-all hover:bg-white/10 hover:text-white disabled:pointer-events-none disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hikma-teal-500/60"
+              >
+                <ZoomOutIcon className="size-3.5" />
+              </button>
+              <span className="w-9 text-center font-mono text-[10px] text-white/80">
+                {Math.round(previewZoom * 100)}%
+              </span>
+              <button
+                type="button"
+                onClick={() => setPreviewZoom((z) => Math.min(2, Math.round((z + 0.25) * 100) / 100))}
+                disabled={previewZoom >= 2}
+                aria-label="Agrandir le canvas"
+                className="flex size-7 items-center justify-center rounded-full text-white/70 transition-all hover:bg-white/10 hover:text-white disabled:pointer-events-none disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hikma-teal-500/60"
+              >
+                <ZoomInIcon className="size-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setPreviewZoom(1)}
+                aria-label="Remettre le zoom du canvas à 100%"
+                title="Remettre à 100%"
+                className="flex size-7 items-center justify-center rounded-full text-white/70 transition-all hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hikma-teal-500/60"
+              >
+                <MaximizeIcon className="size-3.5" />
+              </button>
             </div>
           </div>
 
-          {/* 2. Transport Bar */}
+          {/* Séparateur drag vertical (desktop) — redimensionne le panneau
+              Transport + Timeline ; le stage flex-1 grandit d'autant. */}
+          <div
+            role="separator"
+            aria-orientation="horizontal"
+            aria-label="Redimensionner la hauteur de la Timeline"
+            title="Glisser pour redimensionner la Timeline"
+            onPointerDown={startTimelineDrag}
+            className="group relative z-20 hidden h-2.5 shrink-0 cursor-row-resize touch-none items-center justify-center border-t border-white/8 bg-black/50 transition-colors hover:bg-black/70 lg:flex"
+          >
+            <span className="flex items-center gap-1">
+              <span className="block h-0.5 w-8 rounded-full bg-white/25 transition-colors group-hover:bg-hikma-teal-400 group-active:bg-hikma-teal-400" />
+            </span>
+          </div>
+
+          {/* 2. Panneau inférieur : Transport + Storyboard + Timeline
+              (hauteur pilotée par le séparateur ci-dessus). */}
+          <div
+            ref={bottomPanelRef}
+            className="flex shrink-0 flex-col"
+            style={timelinePanelH != null ? { height: timelinePanelH } : undefined}
+          >
           <div className="border-t border-white/8 bg-black/40 py-1">
             <TransportBar
               frame={frame}
@@ -706,8 +1302,9 @@ export function VideoEditor({
             />
           </div>
 
-          {/* 4. Timeline */}
-          <div className="border-t border-white/8 bg-black/60 p-3 sm:p-4">
+          {/* 4. Timeline — min-h-0 + overflow : quand le panneau est réduit,
+              la Timeline scroll en interne au lieu de déborder. */}
+          <div className="min-h-0 flex-1 overflow-y-auto border-t border-white/8 bg-black/60 p-3 sm:p-4">
             <Timeline
               scenes={scenes}
               activeIndex={activeIndex}
@@ -719,9 +1316,17 @@ export function VideoEditor({
               onSeek={seekToFrame}
               onSelectScene={seekToScene}
               onScenesChange={handleScenesChange}
+              graphics={graphics}
+              selectedGraphicId={selectedGraphicId}
+              onSelectGraphic={setSelectedGraphicId}
+              onGraphicsChange={(next) => {
+                setGraphics(next);
+                setSaveState("unsaved");
+              }}
             />
           </div>
 
+          </div>
           {/* 5. Mobile Inspector Trigger Button (< lg) */}
           {selectedScene && (
             <div className="px-3 pt-3 pb-6 lg:hidden">
@@ -742,33 +1347,47 @@ export function VideoEditor({
           )}
         </div>
 
-        {/* Right: Inspector (Desktop permanent sidebar) */}
-        <aside className="hidden flex-col overflow-y-auto rounded-r-2xl border border-white/8 bg-black/40 lg:flex">
+        {/* Right: Inspector (Desktop permanent sidebar) — hauteur BORNÉE par
+            la rangée minmax(0,1fr) + min-h-0 + overflow-y-auto : le scroll est
+            LOCAL à l'Inspector, la Timeline reste stable en dessous. */}
+        <aside className="hidden min-h-0 flex-col overflow-y-auto rounded-r-2xl border border-white/8 bg-black/40 lg:flex">
           {inspectorBody}
+          {graphicsPanel}
         </aside>
       </div>
 
       {/* Result / Error Banners */}
       {renderResult?.signedUrl && (
-        <div className="mx-4 mt-4 flex items-center justify-between gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-4 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+        <div className="mx-4 mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-4 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
           <div className="flex items-center gap-2.5">
             <span className="flex size-7 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
               ✓
             </span>
             <div>
               <span className="block text-xs font-bold text-emerald-300">Vidéo MP4 prête à la diffusion</span>
-              <span className="text-[10px] text-white/50">Rendu effectué avec succès</span>
+              <span className="text-[10px] text-white/50">Rendu effectué avec succès (1080×1920 @ 30fps)</span>
             </div>
           </div>
-          <a
-            href={renderResult.signedUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-emerald-500"
-          >
-            <DownloadIcon className="size-3.5" />
-            <span>Voir / Télécharger</span>
-          </a>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setRenderModalOpen(true)}
+              className="flex items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/15 px-3 py-1.5 text-xs font-bold text-emerald-300 hover:bg-emerald-500/25"
+            >
+              <PlayCircleIcon className="size-3.5" />
+              <span>Visualiser le rendu</span>
+            </button>
+            <a
+              href={renderResult.signedUrl}
+              download={`${templateKey}.mp4`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-emerald-500"
+            >
+              <DownloadIcon className="size-3.5" />
+              <span>Télécharger</span>
+            </a>
+          </div>
         </div>
       )}
 
@@ -788,6 +1407,19 @@ export function VideoEditor({
           </Button>
         </div>
       )}
+
+      {/* ── REAL-TIME RENDER PROGRESS & VISUALIZATION MODAL ────────────── */}
+      <RenderProgressModal
+        isOpen={renderModalOpen}
+        onClose={() => setRenderModalOpen(false)}
+        renderPhase={renderPhase}
+        renderError={renderError}
+        renderResult={renderResult}
+        totalFrames={durationInFrames}
+        templateKey={templateKey}
+        title={title ?? templateKey}
+        onRetry={() => void runRender()}
+      />
 
       {/* ── MOBILE BOTTOM SHEET (Half-height, Draggable handle) ────────── */}
       {selectedScene && inspectorOpen && (
@@ -819,6 +1451,7 @@ export function VideoEditor({
               </button>
             </div>
             {inspectorBody}
+            {graphicsPanel}
           </div>
         </div>
       )}

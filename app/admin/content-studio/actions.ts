@@ -10,7 +10,10 @@ import { ContentGenerationService } from "@/lib/content-studio/generate";
 import { ContentRegistryService } from "@/lib/content-studio/registry";
 import { getContentStudioDbClient } from "@/lib/content-studio/client";
 import { isGeneratableTemplate } from "@/lib/content-studio/types";
-import { sanitizeEditorScenes } from "@/lib/content-studio/editor/state";
+import {
+  sanitizeEditorGraphics,
+  sanitizeEditorScenes,
+} from "@/lib/content-studio/editor/state";
 
 const STUDIO_PATH = "/admin/content-studio";
 
@@ -50,9 +53,28 @@ export async function saveEditorState(formData: FormData): Promise<SaveEditorRes
   const { scenes, reason } = sanitizeEditorScenes(parsed);
   if (!scenes) return { ok: false, reason: `EDIT_REJECTED:${reason}` };
 
+  // Clips graphiques (additifs, optionnels) — sanitization stricte aussi.
+  const rawGraphics = formData.get("graphics");
+  let graphics: unknown;
+  if (rawGraphics !== null) {
+    try {
+      graphics = JSON.parse(String(rawGraphics));
+    } catch {
+      return { ok: false, reason: "EDIT_BAD_JSON_GRAPHICS" };
+    }
+  }
+  const sanitizedGraphics =
+    graphics === undefined ? undefined : sanitizeEditorGraphics(graphics);
+  if (sanitizedGraphics && !sanitizedGraphics.graphics) {
+    return { ok: false, reason: `EDIT_REJECTED:${sanitizedGraphics.reason}` };
+  }
+
   try {
     const registry = new ContentRegistryService(getContentStudioDbClient());
-    await registry.updateEditorState(contentKey, { scenes });
+    await registry.updateEditorState(contentKey, {
+      scenes,
+      ...(sanitizedGraphics ? { graphics: sanitizedGraphics.graphics } : {}),
+    });
     revalidatePath(STUDIO_PATH);
     return { ok: true, savedAt: new Date().toISOString() };
   } catch (error) {

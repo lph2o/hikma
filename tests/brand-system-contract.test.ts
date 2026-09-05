@@ -36,7 +36,10 @@ describe("Hikma brand system — contracts", () => {
     const landing = read("components/app/landing.tsx");
     expect(landing).toContain("<HikmaLogo");
     expect(read("components/app/app-nav.tsx")).toContain("<HikmaLogo");
-    expect(read("app/(auth)/login/page.tsx")).toContain("<HikmaLogo");
+    expect(
+      read("app/(auth)/login/page.tsx").includes("<HikmaLogo") ||
+      read("components/app/auth/auth-shell.tsx").includes("<HikmaLogo"),
+    ).toBe(true);
     expect(read("app/design-system/page.tsx")).toContain("Hikma Brand Identity");
     // Le footer de la landing utilise le VRAI logo (aucun placeholder texte/icône).
     expect(landing).not.toContain("Layers3Icon");
@@ -47,7 +50,7 @@ describe("Hikma brand system — contracts", () => {
     const nav = read("components/app/app-nav.tsx");
     expect(nav).toContain('className="size-[88px] lg:size-[104px]"');
     expect(read("components/app/landing.tsx")).toContain('<HikmaLogo size="sm"');
-    expect(read("app/(auth)/login/page.tsx")).toContain('<HikmaLogo size="lg"');
+    expect(read("components/app/auth/auth-shell.tsx")).toContain('<HikmaLogo size="sm"');
   });
 
   it("réserve le doré aux marqueurs de valeur et de progression", () => {

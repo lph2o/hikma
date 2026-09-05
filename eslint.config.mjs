@@ -5,6 +5,17 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  // Fichiers portés depuis OpenReel (MIT) : les paramètres inutilisés sont
+  // préfixés `_` par convention (source OpenReel) — autoriser explicitement.
+  {
+    files: ["lib/content-studio/graphics/**/*.ts"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ],
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

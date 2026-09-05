@@ -231,6 +231,92 @@ export function nudgeSceneDuration(
 }
 
 // ---------------------------------------------------------------------------
+// GRAPHIC CLIPS (LOT 3) : move / trim des clips graphiques (texte, formes…).
+// Fonctions PURES (frames, bornes sûres) — mêmes règles que les scènes.
+// ---------------------------------------------------------------------------
+
+/**
+ * Déplace un clip graphique de `deltaFrames` (décalage horizontal).
+ * `startFrame` jamais négatif. Retourne `clips` inchangé si delta = 0.
+ */
+export function moveGraphicClip<C extends { readonly startFrame: number; readonly id: string }>(
+  clips: readonly C[],
+  id: string,
+  deltaFrames: number,
+): C[] {
+  if (deltaFrames === 0) return clips as C[];
+  return clips.map((c) =>
+    c.id === id ? { ...c, startFrame: Math.max(0, c.startFrame + Math.round(deltaFrames)) } : c,
+  );
+}
+
+/**
+ * Trim du bord DROIT d'un clip graphique : `deltaFrames` positif = rallonge,
+ * négatif = raccourcit. `durationInFrames` jamais < 1.
+ */
+export function trimGraphicClipEnd<C extends { readonly durationInFrames: number; readonly id: string }>(
+  clips: readonly C[],
+  id: string,
+  deltaFrames: number,
+): C[] {
+  if (deltaFrames === 0) return clips as C[];
+  return clips.map((c) =>
+    c.id === id
+      ? { ...c, durationInFrames: Math.max(1, c.durationInFrames + Math.round(deltaFrames)) }
+      : c,
+  );
+}
+
+/**
+ * Trim du bord GAUCHE d'un clip graphique : réduit la durée depuis la gauche
+ * (le clip démarre plus tard). `durationInFrames` jamais < 1.
+ * Convention NLE : tirer le bord gauche vers la droite raccourcit la durée
+ * (startFrame augmente, durationInFrames diminue) ; vers la gauche rallonge.
+ */
+export function trimGraphicClipStart<C extends {
+  readonly startFrame: number;
+  readonly durationInFrames: number;
+  readonly id: string;
+}>(clips: readonly C[], id: string, deltaFrames: number): C[] {
+  if (deltaFrames === 0) return clips as C[];
+  return clips.map((c) => {
+    if (c.id !== id) return c;
+    const delta = Math.round(deltaFrames);
+    const newDuration = Math.max(1, c.durationInFrames - delta);
+    const actualDelta = c.durationInFrames - newDuration;
+    return {
+      ...c,
+      startFrame: Math.max(0, c.startFrame + actualDelta),
+      durationInFrames: newDuration,
+    };
+  });
+}
+
+/**
+ * Duplique un clip graphique avec un NOUVEL id (jamais deux ids identiques).
+ * La copie est décalée de 10 frames (ou en fin si trop proche de la fin).
+ */
+export function duplicateGraphicClip<C extends { readonly id: string; readonly startFrame: number; readonly durationInFrames: number }>(
+  clips: readonly C[],
+  id: string,
+): C[] {
+  const src = clips.find((c) => c.id === id);
+  if (!src) return clips as C[];
+  const copy: C = { ...src, id: `${id}-copy-${clips.length}`, startFrame: src.startFrame + 10 };
+  return [...clips, copy];
+}
+
+/**
+ * Supprime un clip graphique par id.
+ */
+export function removeGraphicClip<C extends { readonly id: string }>(
+  clips: readonly C[],
+  id: string,
+): C[] {
+  return clips.filter((c) => c.id !== id);
+}
+
+// ---------------------------------------------------------------------------
 // RIPPLE SHIFT : décale toutes les scènes après `fromIndex` de `deltaFrames`
 // ---------------------------------------------------------------------------
 

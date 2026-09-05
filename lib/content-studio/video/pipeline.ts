@@ -8,6 +8,7 @@
 // peut évoluer dans la couche Content Studio sans toucher au moteur).
 
 import type { RevealPayloadV1, QuizPayloadV1 } from "@/lib/content-api/types";
+import type { SpeedVocabPayloadV1 } from "@/lib/content-api/speed-vocab-types";
 import {
   renderHookText,
   type HookIdV1,
@@ -30,6 +31,15 @@ export const SCENE_FRAMES = {
   quran: 90, // 3 s (fallback si pas d'audio de verset)
   explanation: 90, // 3 s
   cta: 45, // 1,5 s
+} as const;
+
+/**
+ * Rythme SPEED VOCAB (VOCAB_SPEED_RUN_V1) — déterministe, par frames :
+ * mot 3,5 s + sens 3 s ⇒ 5 mots ≈ 33 s (cible 30–60 s), 3 mots ≈ 22 s.
+ */
+export const SPEED_VOCAB_FRAMES = {
+  word: 105,
+  meaning: 90,
 } as const;
 
 export const VIDEO_FPS = 30 as const;
@@ -172,6 +182,53 @@ export function buildVideoContentFromSurahHighlight(
   };
 }
 
+/** VOCAB_SPEED_RUN_V1 → VideoContent (série rapide 3–5 mots, 30–60 s). */
+export function buildVideoContentFromSpeedVocab(
+  payload: SpeedVocabPayloadV1,
+  audio?: ContentStudioAudio,
+): VideoContent {
+  const hook = renderHookText(payload.hookVariant.id as HookIdV1, 0);
+  const first = payload.words[0];
+  return {
+    contentKey: payload.contentKey,
+    language: "fr",
+    templateKey: "VOCAB_SPEED_RUN_V1",
+    word: {
+      id: first.wordId,
+      arabic: first.arabic,
+      transliteration: first.transliteration,
+    },
+    hook: hook.text,
+    meaning: first.meaning,
+    meaningConfidence:
+      first.meaningSource === "LEMME" ? "PARTIAL" : "VERIFIED",
+    occurrenceCount: first.occurrenceCount,
+    firstOccurrence: null, // ce format ne rend pas de verset
+    explanation: null,
+    cta: payload.cta?.text ?? null,
+    speedVocabWords: payload.words.map((w) => ({
+      wordId: w.wordId,
+      arabic: w.arabic,
+      transliteration: w.transliteration,
+      meaning: w.meaning,
+      occurrenceCount: w.occurrenceCount,
+    })),
+    audio,
+    metadata: {
+      meaningSourceId: first.meaningSourceId,
+      meaningSourceTable:
+        first.meaningSource === "FORME" ? "word_translations" : "lemma_translations",
+      ayahId: null,
+      licenseSnapshot: {
+        verseTranslation: payload.licenses.verseTranslation,
+        audio: payload.licenses.audio,
+        dataset: payload.licenses.dataset,
+        assets: payload.licenses.assets,
+      },
+    },
+  };
+}
+
 /** Ajoute une scène si sa condition est remplie (aucune scène vide). */
 function pushScene(
   scenes: VideoScene[],
@@ -214,14 +271,21 @@ export function toVideoSceneData(
           ? "Hikma · Fréquence Coran"
           : content.templateKey === "SURAH_HIGHLIGHT_V1"
             ? "Hikma · Mots Clés"
-            : "Hikma · Un mot du Coran",
+            : content.templateKey === "VOCAB_SPEED_RUN_V1"
+              ? "Hikma · Speed Vocab"
+              : "Hikma · Un mot du Coran",
     text: content.hook,
   });
 
   // 2. Mot — arabe Uthmani (RTL), jamais normalisé + audio du mot synchronisé.
+  //    Rythme Speed Vocab : scènes plus longues (pas d'audio par mot).
+  const effectiveWordFrames =
+    content.templateKey === "VOCAB_SPEED_RUN_V1"
+      ? SPEED_VOCAB_FRAMES.word
+      : wordDurationInFrames;
   pushScene(scenes, {
     kind: "word",
-    durationInFrames: wordDurationInFrames,
+    durationInFrames: effectiveWordFrames,
     title: "Le mot",
     arabic: content.word.arabic,
     transliteration: content.word.transliteration,
@@ -232,11 +296,16 @@ export function toVideoSceneData(
   // 3. Sens — glose FR validée.
   pushScene(scenes, {
     kind: "meaning",
-    durationInFrames: SCENE_FRAMES.meaning,
+    durationInFrames:
+      content.templateKey === "VOCAB_SPEED_RUN_V1"
+        ? SPEED_VOCAB_FRAMES.meaning
+        : SCENE_FRAMES.meaning,
     title:
       content.templateKey === "FREQUENCY_FACT_V1"
         ? `Fréquence (${content.occurrenceCount} occurrences)`
-        : "Que signifie ce mot ?",
+        : content.templateKey === "VOCAB_SPEED_RUN_V1" && content.speedVocabWords
+          ? `Sens 1/${content.speedVocabWords.length}`
+          : "Que signifie ce mot ?",
     text: content.meaning,
     subtext: content.word.transliteration,
   });
@@ -269,6 +338,44 @@ export function toVideoSceneData(
         },
       },
     });
+  }
+
+  // 4-bis. SPEED VOCAB — une scène « word » + « meaning » PAR MOT (rythme
+  // rapide déterministe), entre la scène mot initiale et le CTA. Chaque mot
+  // provient du payload validé ; durées = constantes par frames, MAJORÉES de
+  // la durée réelle de l'audio du mot (jamais coupé — même contrat que la
+  // scène mot 1 : SCENE_FRAMES.word en plancher).
+  if (content.templateKey === "VOCAB_SPEED_RUN_V1" && content.speedVocabWords) {
+    const wordUrls = audioOverrides?.wordAudioUrls ?? content.audio?.wordAudioUrls;
+    const wordDurations =
+      audioOverrides?.wordAudioDurations ?? content.audio?.wordAudioDurations;
+    for (let i = 1; i < content.speedVocabWords.length; i++) {
+      const w = content.speedVocabWords[i];
+      const url = w.wordId ? (wordUrls?.[w.wordId] ?? null) : null;
+      const dur =
+        typeof wordDurations?.[w.wordId] === "number"
+          ? (wordDurations[w.wordId] as number)
+          : null;
+      pushScene(scenes, {
+        kind: "word",
+        durationInFrames:
+          typeof dur === "number" && dur > 0
+            ? Math.max(SPEED_VOCAB_FRAMES.word, Math.round(dur * VIDEO_FPS))
+            : SPEED_VOCAB_FRAMES.word,
+        title: `Mot ${i + 1}/${content.speedVocabWords.length}`,
+        arabic: w.arabic,
+        transliteration: w.transliteration,
+        audioUrl: url,
+        audioDuration: dur,
+      });
+      pushScene(scenes, {
+        kind: "meaning",
+        durationInFrames: SPEED_VOCAB_FRAMES.meaning,
+        title: `Sens ${i + 1}/${content.speedVocabWords.length}`,
+        text: w.meaning,
+        subtext: w.transliteration,
+      });
+    }
   }
 
   // 5. Explication — uniquement si présente (jamais générée).

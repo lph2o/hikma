@@ -92,9 +92,10 @@ describe("Content Studio Templates & Pipelines", () => {
     expect(isImplementedFormat("VERSE_DEEP_DIVE_V1")).toBe(true);
     expect(isImplementedFormat("FREQUENCY_FACT_V1")).toBe(true);
     expect(isImplementedFormat("SURAH_HIGHLIGHT_V1")).toBe(true);
+    expect(isImplementedFormat("VOCAB_SPEED_RUN_V1")).toBe(true); // LOT 2 Speed Vocab
 
     expect(isImplementedFormat("ROOT_FAMILY_V1")).toBe(false);
-    expect(IMPLEMENTED_FORMAT_KEYS.length).toBe(5);
+    expect(IMPLEMENTED_FORMAT_KEYS.length).toBe(6);
   });
 
   it("buildVideoContentFromDeepDive builds proper immersion content and scenes", () => {

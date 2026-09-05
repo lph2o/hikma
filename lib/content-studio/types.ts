@@ -31,7 +31,8 @@ export type StudioTemplateKey =
   | "WORD_REVEAL_V1"
   | "VERSE_DEEP_DIVE_V1"
   | "FREQUENCY_FACT_V1"
-  | "SURAH_HIGHLIGHT_V1";
+  | "SURAH_HIGHLIGHT_V1"
+  | "VOCAB_SPEED_RUN_V1";
 
 /** Templates générables dans le Content Studio. */
 export const GENERATABLE_TEMPLATES = [
@@ -40,6 +41,7 @@ export const GENERATABLE_TEMPLATES = [
   "VERSE_DEEP_DIVE_V1",
   "FREQUENCY_FACT_V1",
   "SURAH_HIGHLIGHT_V1",
+  "VOCAB_SPEED_RUN_V1",
 ] as const;
 export type GeneratableTemplateKey = (typeof GENERATABLE_TEMPLATES)[number];
 

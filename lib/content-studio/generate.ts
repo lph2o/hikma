@@ -41,7 +41,9 @@ export class ContentGenerationService {
     const outcome =
       params.templateKey === "WORD_QUIZ_V1"
         ? await this.contentApi.buildQuiz(params.wordId)
-        : await this.contentApi.buildReveal(params.wordId);
+        : params.templateKey === "VOCAB_SPEED_RUN_V1"
+          ? await this.contentApi.buildSpeedVocab()
+          : await this.contentApi.buildReveal(params.wordId);
 
     if (outcome.status === "REJECTED") {
       return { status: "REJECTED", code: outcome.code, message: outcome.message };
@@ -51,10 +53,15 @@ export class ContentGenerationService {
     let templateKey: StudioTemplateKey = payload.templateKey;
     let contentKey = payload.contentKey;
 
+    // wordId de registre : payload.word.id (contrats V1) ou sources.wordId
+    // (contrats multi-mots comme VOCAB_SPEED_RUN_V1).
+    const registryWordId =
+      "word" in payload ? payload.word.id : (payload.sources as { wordId: string }).wordId;
+
     if (params.templateKey !== "WORD_QUIZ_V1" && params.templateKey !== "WORD_REVEAL_V1") {
       templateKey = params.templateKey;
       contentKey = computeContentKey({
-        wordId: payload.word.id,
+        wordId: registryWordId,
         templateKey: params.templateKey,
         templateVersion: payload.templateVersion,
         hookVariantId: payload.hookVariant.id,
@@ -69,7 +76,7 @@ export class ContentGenerationService {
       templateKey,
       templateVersion: payload.templateVersion,
       language: payload.language,
-      wordId: payload.word.id,
+      wordId: registryWordId,
       hookVariantId: payload.hookVariant.id,
       ctaId: "cta" in payload && payload.cta ? payload.cta.id : null,
       payload: payload as unknown as Record<string, unknown>,

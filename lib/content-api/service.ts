@@ -39,6 +39,13 @@ import {
   validateQuizBlock,
   validateRevealPayloadV1,
 } from "./validators";
+import {
+  SPEED_VOCAB_MAX_WORDS,
+  SPEED_VOCAB_MIN_WORDS,
+  type SpeedVocabPayloadV1,
+  type SpeedVocabWordEntry,
+} from "./speed-vocab-types";
+import { validateSpeedVocabPayloadV1 } from "./speed-vocab-validators";
 import type {
   FirstOccurrenceBlock,
   MeaningSourceTable,
@@ -614,6 +621,177 @@ export class ContentStudioService {
       render: RENDER_V1,
     };
     return { status: "GENERATED", payload: quiz };
+  }
+
+  /**
+   * VOCAB_SPEED_RUN_V1 — Speed Vocab 60s (LOT 2 Video Factory).
+   *
+   * Sélection DÉTERMINISTE de 3–5 mots réels :
+   *   1. candidats = mots avec ≥1 glose FR FORME validée (listWordCandidates,
+   *      ordre id ASC — MÊME mécanique que le sélecteur admin) ;
+   *   2. occurrences exactes par COUNT PostgREST (exactOccurrenceCount) ;
+   *   3. tri occurrences DESC, tie-break id ASC → N premiers (N = 5 par défaut).
+   *
+   * Gloses : resolveChannelBatch (FORME > LEMME) — zéro glose non validée.
+   * Aucune invention : si moins de 3 mots complets ⇒ REJECTED.
+   */
+  async buildSpeedVocab(params?: {
+    targetCount?: number;
+    seenContentKeys?: ReadonlySet<string>;
+  }): Promise<Outcome<SpeedVocabPayloadV1>> {
+    const targetCount = Math.min(
+      Math.max(Math.trunc(params?.targetCount ?? SPEED_VOCAB_MAX_WORDS), SPEED_VOCAB_MIN_WORDS),
+      SPEED_VOCAB_MAX_WORDS,
+    );
+
+    // 1. Candidats réels (id ASC déterministe) — largeur 3× la cible pour
+    //    absorber les rejets de glose/occurrences sans détruire le déterminisme.
+    const candRes = await this.listWordCandidates({
+      limit: CANDIDATES_MAX_LIMIT,
+      offset: 0,
+    });
+    const candidateIds = candRes.items.map((i) => i.wordId);
+    if (candidateIds.length === 0) {
+      return {
+        status: "REJECTED",
+        code: "NO_VALIDATED_MEANING",
+        message: "Aucun candidat avec glose FR validée",
+      };
+    }
+
+    // 2. Occurrences exactes par mot (COUNT head:true).
+    const scored: { wordId: string; occ: number }[] = [];
+    for (const id of candidateIds) {
+      const occ = await exactOccurrenceCount(this.client, id);
+      if (occ > 0) scored.push({ wordId: id, occ });
+    }
+
+    // 3. Tri déterministe : occurrences DESC, tie-break id ASC.
+    scored.sort((a, b) =>
+      b.occ !== a.occ ? b.occ - a.occ : a.wordId < b.wordId ? -1 : 1,
+    );
+    const picked = scored.slice(0, targetCount).map((s) => s.wordId);
+    if (picked.length < SPEED_VOCAB_MIN_WORDS) {
+      return {
+        status: "REJECTED",
+        code: "NO_VALIDATED_MEANING",
+        message: `Seulement ${picked.length} mot(s) complet(s) — 3 requis minimum`,
+      };
+    }
+
+    // 4. Gloses validées batch (FORME > LEMME) + identités arabes exactes.
+    const { channels, entries, sourceRowIds } = await resolveChannelBatch(
+      this.client,
+      picked,
+    );
+    const wordRows = new Map<string, { arabic: string; transliteration: string | null }>();
+    for (let i = 0; i < picked.length; i += 200) {
+      const batch = picked.slice(i, i + 200);
+      const { data, error } = await this.client
+        .from("quran_words")
+        .select("id, arabic, transliteration")
+        .in("id", batch);
+      if (error) throw new Error(`speed-vocab quran_words : ${error.message}`);
+      for (const row of (data ?? []) as Array<{
+        id: string;
+        arabic: string;
+        transliteration: string | null;
+      }>) {
+        wordRows.set(row.id, { arabic: row.arabic, transliteration: row.transliteration });
+      }
+    }
+
+    // 5. Assemble les entrées COMPLÈTES uniquement (ordre `picked` conservé).
+    const words: SpeedVocabWordEntry[] = [];
+    for (const id of picked) {
+      const entry = entries.get(id);
+      const row = wordRows.get(id);
+      const occ = scored.find((s) => s.wordId === id)?.occ ?? 0;
+      const channel = channels.get(id);
+      const srcId = sourceRowIds.get(id);
+      if (!entry?.meaning || !row?.arabic || !channel || !srcId || occ <= 0) continue;
+      const idCheck = validateArabicIdentity(row.arabic);
+      if (!idCheck.ok) continue; // REJECT OVER GUESS : mot incomplet ⇒ exclu
+      words.push({
+        wordId: id,
+        arabic: row.arabic, // valeur DB EXACTE
+        transliteration: row.transliteration,
+        meaning: entry.meaning,
+        meaningSource: channel,
+        meaningSourceId: srcId,
+        occurrenceCount: occ,
+      });
+    }
+    if (words.length < SPEED_VOCAB_MIN_WORDS) {
+      return {
+        status: "REJECTED",
+        code: "NO_VALIDATED_MEANING",
+        message: `Seulement ${words.length} mot(s) avec glose validée — 3 requis`,
+      };
+    }
+
+    // 6. contentKey idempotent sur la liste triée (wordIds|template|version).
+    const contentKey = computeContentKey({
+      wordId: words[0].wordId,
+      templateKey: "VOCAB_SPEED_RUN_V1",
+      templateVersion: "1",
+      hookVariantId: words.map((w) => w.wordId).sort().join(","),
+      language: "fr",
+    });
+
+    const hook = renderHookText("HOOK_H2", 0);
+    const ctaId = "CTA_LEARN_02" as const;
+    const ctaDef = CTAS_V1[ctaId];
+
+    const tables = new Set(words.map((w) =>
+      w.meaningSource === "FORME" ? "word_translations" : "lemma_translations",
+    ));
+    const meaningSourceTable: "word_translations" | "lemma_translations" | "mixed" =
+      tables.size === 1
+        ? words[0].meaningSource === "FORME"
+          ? "word_translations"
+          : "lemma_translations"
+        : "mixed";
+
+    const captionText = words
+      .map((w) => w.arabic)
+      .join(" · ") + ` — ${words.length} mots coraniques en 60 secondes.`;
+
+    const draft: SpeedVocabPayloadV1 = {
+      contentKey,
+      templateKey: "VOCAB_SPEED_RUN_V1",
+      templateVersion: "1",
+      language: "fr",
+      status: "GENERATED",
+      words,
+      hookVariant: hook.ref,
+      cta: {
+        id: ctaId,
+        version: ctaDef.version,
+        funnelStage: ctaDef.funnelStage,
+        text: ctaDef.text,
+      },
+      caption: {
+        text: captionText,
+        language: "fr",
+        hashtags: [...HASHTAGS_FR],
+      },
+      licenses: LICENSES_V1,
+      sources: {
+        wordId: words[0].wordId, // colonne content_items.word_id NOT NULL
+        meaningSourceIds: words.map((w) => w.meaningSourceId),
+        meaningSourceTable,
+        ayahId: null, // aucun verset rendu par ce format
+      },
+      render: RENDER_V1,
+    };
+
+    // VALIDATION AVANT GENERATED (REJECT OVER GUESS).
+    const verdict = validateSpeedVocabPayloadV1(draft, {
+      seenContentKeys: params?.seenContentKeys,
+    });
+    if (!verdict.ok) return { status: "REJECTED", ...verdict };
+    return { status: "GENERATED", payload: draft };
   }
 
 }

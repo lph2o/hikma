@@ -29,9 +29,12 @@
   "dependencies": {
     "@base-ui/react": "^1.7.0",
     "@daypicker/react": "^10.0.1",
+    "@react-three/fiber": "9.7.0",
     "@remotion/player": "^4.0.518",
+    "@remotion/three": "4.0.518",
     "@supabase/ssr": "^0.12.4",
     "@supabase/supabase-js": "^2.112.3",
+    "@types/three": "0.185.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.31.0",
@@ -39,6 +42,7 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "tailwind-merge": "^3.6.0",
+    "three": "0.185.0",
     "zustand": "^5.0.15"
   },
   "devDependencies": {

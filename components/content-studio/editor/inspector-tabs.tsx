@@ -92,18 +92,49 @@ function FieldInput({
   value,
   index,
   onChange,
+  onPromote,
+  promoted,
 }: {
   label: string;
   field: EditableTextField;
   value: string;
   index: number;
   onChange: (field: EditableTextField, index: number, value: string | null) => void;
+  /** Promeut ce texte hérité dans l'éditeur graphique unifié (si proposé). */
+  onPromote?: () => void;
+  /** true = déjà promu (un clip graphique le remplace). */
+  promoted?: boolean;
 }) {
   const isArabic = field === "arabic";
   return (
     <label className="flex flex-col gap-1.5">
-      <span className="text-[10px] font-bold uppercase tracking-wider text-white/50">
+      <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/50">
         {label}
+        {onPromote && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onPromote();
+            }}
+            disabled={promoted}
+            aria-label={`Rendre ${label} éditable dans l'éditeur graphique`}
+            title={
+              promoted
+                ? "Texte déjà édité en graphique — supprimez le clip (piste G1) pour restaurer l'original"
+                : "Rendre ce texte éditable dans l'éditeur graphique (police, couleur, effets, animation…)"
+            }
+            className={cn(
+              "flex size-4 items-center justify-center rounded border text-[9px] font-bold leading-none transition-colors",
+              promoted
+                ? "border-hikma-teal-500/50 bg-hikma-teal-600/20 text-hikma-teal-300"
+                : "border-amber-500/40 bg-amber-900/20 text-hikma-gold hover:bg-amber-800/40",
+            )}
+          >
+            {promoted ? "✓" : "✎"}
+          </button>
+        )}
       </span>
       <input
         type="text"
@@ -199,6 +230,8 @@ export function InspectorTabs({
   onHero,
   onAudio,
   onVerseConfig,
+  onPromoteText,
+  promotedKeys,
 }: {
   scene: VideoScene;
   index: number;
@@ -208,6 +241,10 @@ export function InspectorTabs({
   onHero: (patch: (hero: WordHeroSettings) => WordHeroSettings) => void;
   onAudio?: (patch: Partial<VideoScene>) => void;
   onVerseConfig?: (patch: (cfg: VerseDisplayConfig) => VerseDisplayConfig) => void;
+  /** Promeut un texte hérité (scène) dans l'éditeur graphique unifié. */
+  onPromoteText?: (index: number, field: EditableTextField) => void;
+  /** Clés `${index}:${field}` des textes déjà promus (bouton ✓ désactivé). */
+  promotedKeys?: readonly string[];
 }) {
   const [activeTab, setActiveTab] = useState<InspectorTabId>("content");
   const editableFields = SCENE_EDITABLE[scene.kind] ?? [];
@@ -261,6 +298,10 @@ export function InspectorTabs({
                 const label = FIELD_LABELS[field];
                 const rawVal = scene[field];
                 const val = typeof rawVal === "string" ? rawVal : "";
+                // VERSET CORANIQUE : protégé — le renderer arabe + Golden
+                // Follower + la récitation continue restent intacts (mission).
+                const isProtected = scene.kind === "quran" && field === "arabic";
+                const isPromoted = promotedKeys?.includes(`${index}:${field}`) ?? false;
                 return (
                   <FieldInput
                     key={field}
@@ -269,6 +310,12 @@ export function InspectorTabs({
                     value={val}
                     index={index}
                     onChange={onField}
+                    onPromote={
+                      !isProtected && onPromoteText
+                        ? () => onPromoteText(index, field)
+                        : undefined
+                    }
+                    promoted={isPromoted}
                   />
                 );
               })

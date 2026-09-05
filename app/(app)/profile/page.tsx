@@ -6,6 +6,7 @@ import {
   BookOpenIcon,
   Clock3Icon,
   FileTextIcon,
+  FilmIcon,
   GaugeIcon,
   LanguagesIcon,
   LogOutIcon,
@@ -18,6 +19,7 @@ import {
 import type { ReactNode } from "react";
 import { ProfileRow } from "@/components/app/profile-row";
 import { Caption, H1 } from "@/components/ui/typography";
+import { isAdminEmail } from "@/lib/content-studio/admin";
 import {
   getGlobalWordStats,
   getSurahCatalog,
@@ -105,6 +107,8 @@ export default async function ProfilePage() {
         day: "numeric",
       })
     : null;
+
+  const isAdminUser = isAdminEmail(user.email);
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-col gap-10 px-6 py-10">
@@ -211,6 +215,30 @@ export default async function ProfilePage() {
           />
         </GroupedRows>
       </section>
+
+      {/* Section Administration (visible sur mobile pour les administrateurs) */}
+      {isAdminUser && (
+        <section className="flex flex-col gap-3 md:hidden" aria-labelledby="admin-title">
+          <h2 id="admin-title" className="sr-only">
+            Administration
+          </h2>
+          <SectionLabel>Administration</SectionLabel>
+          <GroupedRows>
+            <ProfileRow
+              icon={FilmIcon}
+              label="Content Studio"
+              value="Studio &amp; création vidéo"
+              href="/admin/content-studio"
+            />
+            <ProfileRow
+              icon={ShieldCheckIcon}
+              label="Administration"
+              value="Tableau de bord"
+              href="/admin"
+            />
+          </GroupedRows>
+        </section>
+      )}
 
       {/* Compte & aide */}
       <section className="flex flex-col gap-3" aria-labelledby="account-title">

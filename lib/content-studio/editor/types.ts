@@ -15,8 +15,15 @@
 // données du corpus (quran_words, ayahs, translations) restent intouchables.
 
 import type { VideoScene } from "@/lib/content-studio/video/types";
+import type { GraphicClipBase } from "@/lib/content-studio/graphics/graphic-clip";
 
-/** Couche d'édition vidéo persistée — liste complète des scènes éditées. */
+/**
+ * Couche d'édition vidéo persistée — liste complète des scènes éditées + clips
+ * graphiques (texte, forme, SVG, sticker, background, 3D) ADDITIFS : les
+ * anciens editor_state sans `graphics` continuent de fonctionner à l'identique.
+ */
 export type VideoEditorState = {
   scenes: VideoScene[];
+  /** Clips graphiques superposés aux scènes (collection optionnelle). */
+  graphics?: GraphicClipBase[];
 };

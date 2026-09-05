@@ -59,9 +59,18 @@ describe("buildExportBundle (B7)", () => {
     expect(bundle.sceneData).toEqual(expected);
   });
 
-  it("FREQUENCY_FACT_V1 (sans builder) → sceneData null, jamais inventé", () => {
+  it("FREQUENCY_FACT_V1 → sceneData dérivée (dispatch unifié, montage complet à l'export)", () => {
     const ff = { ...item, templateKey: "FREQUENCY_FACT_V1" as const };
     const bundle = buildExportBundle(ff);
+    // Depuis le dispatch unique (content-dispatch.ts), FREQUENCY_FACT possède
+    // un builder réel : l'export embarque le montage dérivé (jamais inventé).
+    expect(bundle.sceneData).not.toBeNull();
+    expect(bundle.sceneData!.scenes.length).toBeGreaterThan(0);
+  });
+
+  it("clé de template sans builder → sceneData null (jamais inventé)", () => {
+    const unknown = { ...item, templateKey: "TEMPLATE_FUTUR_V1" as never };
+    const bundle = buildExportBundle(unknown);
     expect(bundle.sceneData).toBeNull();
   });
 });

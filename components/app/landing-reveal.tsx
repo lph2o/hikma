@@ -1,7 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useEffect, useRef, useState, type CSSProperties, type ElementType, type ReactNode } from "react";
+import { AppElementType } from "@/lib/react/jsx-elements";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
 /**
  * Apparition en cascade (scroll reveal) pour la landing.
@@ -24,7 +25,7 @@ export function Reveal({
   className?: string;
   /** Délai en ms pour l'effet en cascade entre éléments. */
   delay?: number;
-  as?: ElementType;
+  as?: AppElementType;
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(true);
@@ -50,7 +51,10 @@ export function Reveal({
     return () => observer.disconnect();
   }, []);
 
-  const Comp = (as ?? "div") as ElementType;
+  // Tag dynamique typé SÛR : R3F v9 injecte des clés `never` dans
+  // JSX.IntrinsicElements, ce qui casserait `React.ElementType` (voir
+  // lib/react/jsx-elements.ts).
+  const Comp = (as ?? "div") as AppElementType;
 
   return (
     <Comp

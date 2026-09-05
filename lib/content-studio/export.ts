@@ -5,11 +5,8 @@
 // exporté n'a jamais été publié tant qu'un adapter de publication n'a pas
 // retourné un identifiant de publication (publishing.ts).
 
-import {
-  buildVideoContentFromQuiz,
-  buildVideoContentFromReveal,
-  toVideoSceneData,
-} from "./video/pipeline";
+import { toVideoSceneData } from "./video/pipeline";
+import { buildVideoContentForTemplate } from "./video/content-dispatch";
 import type { VideoSceneData } from "./video/types";
 import type { ContentStudioItem } from "./types";
 
@@ -31,20 +28,17 @@ export type ExportBundle = {
   };
 };
 
-/** Recalcule le montage vidéo depuis le payload (déterministe). */
+/** Recalcule le montage vidéo depuis le payload (déterministe, dispatch unique). */
 function sceneDataFromPayload(item: ContentStudioItem): VideoSceneData | null {
-  if (item.templateKey === "WORD_REVEAL_V1") {
+  // Le dispatch central couvre toutes les clés de StudioTemplateKey ; le
+  // fallback null ne concerne qu'une future clé sans builder (jamais inventé).
+  try {
     return toVideoSceneData(
-      buildVideoContentFromReveal(item.payload as Parameters<typeof buildVideoContentFromReveal>[0]),
+      buildVideoContentForTemplate(item.templateKey, item.payload),
     );
+  } catch {
+    return null;
   }
-  if (item.templateKey === "WORD_QUIZ_V1") {
-    return toVideoSceneData(
-      buildVideoContentFromQuiz(item.payload as Parameters<typeof buildVideoContentFromQuiz>[0]),
-    );
-  }
-  // FREQUENCY_FACT_V1 : pas de builder en V1 → pas de montage (jamais inventé).
-  return null;
 }
 
 export function buildExportBundle(item: ContentStudioItem): ExportBundle {

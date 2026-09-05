@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { UpcomingReviews, ActivityHistory, formatDayLabel } from "../components/learn/daily-activity";
 
 const days = Array.from({ length: 7 }, (_, i) => {
-  const d = new Date("2026-08-26T12:00:00Z");
+  const d = new Date();
   d.setUTCDate(d.getUTCDate() + i);
   return { date: d.toISOString().slice(0, 10), dueCount: i % 3 };
 });

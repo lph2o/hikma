@@ -51,7 +51,7 @@ export type OptionsExerciseProps = {
   onSubmitText?: (content: string) => void;
 };
 
-function optionVariant(
+export function optionVariant(
   option: GeneratedOption,
   answer: ExerciseAnswer | null,
   result: AnswerResult | null,

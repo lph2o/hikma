@@ -8,16 +8,13 @@ import { getContentStudioDbClient } from "@/lib/content-studio/client";
 import { ContentStudioService } from "@/lib/content-api/service";
 import { getContentStudioClient } from "@/lib/content-api/client";
 import type { ContentItemStatus, ContentStudioItem } from "@/lib/content-studio/types";
-import {
-  buildVideoContentFromQuiz,
-  buildVideoContentFromReveal,
-  buildVideoContentFromDeepDive,
-  buildVideoContentFromFrequencyFact,
-  buildVideoContentFromSurahHighlight,
-  toVideoSceneData,
-} from "@/lib/content-studio/video/pipeline";
+import { buildVideoContentForTemplate } from "@/lib/content-studio/video/content-dispatch";
+import { toVideoSceneData } from "@/lib/content-studio/video/pipeline";
 import type { VideoScene } from "@/lib/content-studio/video/types";
-import { resolveEffectiveSceneData } from "@/lib/content-studio/editor/state";
+import {
+  getEffectiveGraphics,
+  resolveEffectiveSceneData,
+} from "@/lib/content-studio/editor/state";
 import { VideoEditor } from "@/components/content-studio/video-editor";
 import { StudioShell } from "@/components/content-studio/studio-shell";
 import { ContentGrid } from "@/components/content-studio/library/content-grid";
@@ -71,16 +68,7 @@ function effectiveScenes(
   height: number;
   hasEdits: boolean;
 } {
-  const content =
-    item.templateKey === "WORD_QUIZ_V1"
-      ? buildVideoContentFromQuiz(item.payload as never, audio)
-      : item.templateKey === "VERSE_DEEP_DIVE_V1"
-        ? buildVideoContentFromDeepDive(item.payload as never, audio)
-        : item.templateKey === "FREQUENCY_FACT_V1"
-          ? buildVideoContentFromFrequencyFact(item.payload as never, audio)
-          : item.templateKey === "SURAH_HIGHLIGHT_V1"
-            ? buildVideoContentFromSurahHighlight(item.payload as never, audio)
-            : buildVideoContentFromReveal(item.payload as never, audio);
+  const content = buildVideoContentForTemplate(item.templateKey, item.payload, audio);
   const data = toVideoSceneData(content);
   const resolved = resolveEffectiveSceneData(content, editorState as never);
   return {
@@ -150,10 +138,22 @@ export default async function ContentStudioPage({
         ayahNumber?: number;
         globalAyahNumber?: number | null;
       };
+      words?: { wordId: string }[];
     } | null;
+
+    // Speed Vocab : l'audio est résolu pour TOUS les mots de la série (batch
+    // unique), pas seulement le mot principal — chaque scène « Mot N/5 » doit
+    // embarquer sa prononciation réelle.
+    const extraWordIds =
+      item.templateKey === "VOCAB_SPEED_RUN_V1"
+        ? (payloadAny?.words ?? [])
+            .map((w) => w.wordId)
+            .filter((id) => id && id !== item.wordId)
+        : [];
 
     const audio = await resolveContentStudioAudio(client, {
       wordId: item.wordId,
+      extraWordIds,
       ayahId: payloadAny?.sources?.ayahId,
       globalAyahNumber: payloadAny?.firstOccurrence?.globalAyahNumber,
       surahNumber: payloadAny?.firstOccurrence?.surahNumber,
@@ -178,8 +178,9 @@ export default async function ContentStudioPage({
             width={width}
             height={height}
             initialScenes={scenes}
+            initialGraphics={getEffectiveGraphics(item.editorState as never)}
             status={item.status}
-            renderStatus={item.renderStatus}
+            renderStatus={item.renderStatus === "RENDERED" ? "RENDERED" : "NOT_RENDERED"}
             renderPath={item.renderPath}
             hasEdits={hasEdits}
           />

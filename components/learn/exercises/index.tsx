@@ -16,9 +16,11 @@ import { AudioPlayer } from "@/components/ui/audio-player";
 import { ArabicKeyboard } from "@/components/ui/arabic-keyboard";
 import { backspaceAtCursor, insertTextAtCursor } from "@/lib/ui/arabic-input";
 import type { ExerciseType } from "@/lib/exercises";
+import { cn } from "@/lib/utils";
 import {
   OptionsExercise,
   OptionContent,
+  optionVariant,
   type OptionsExerciseProps,
 } from "./options-exercise";
 import {
@@ -275,81 +277,33 @@ export function ContextRecognitionExercise(props: OptionsExerciseProps) {
 /**
  * AUDIO_TO_WORD — écouter le mot puis identifier la forme arabe (QCM).
  */
-function AudioToWordExercise({ exercise, answer, onChoose }: OptionsExerciseProps) {
-  const audioUrl = exercise.metadata.audioUrl as string | undefined;
-  const options = stableOptionOrder(
-    exercise.options,
-    `${exercise.type}:${exercise.metadata.targetWordId}:${exercise.prompt}`,
-  );
+function AudioToWordExercise(props: OptionsExerciseProps) {
+  const audioUrl = props.exercise.metadata.audioUrl as string | undefined;
   return (
     <div className="flex flex-col gap-5">
       {audioUrl ? (
         <AudioPlayer key={audioUrl} src={audioUrl} label="Écouter le mot" />
       ) : null}
-      <BodyLarge className="text-center">{exercise.prompt}</BodyLarge>
-      <div className="grid gap-2 sm:grid-cols-2" role="radiogroup" aria-label="Options de réponse" onKeyDown={handleRadioGroupKeyDown}>
-        {options.map((option) => {
-          const isChosen = answer?.optionIndex === option.position - 1;
-          return (
-            <Button
-              key={option.position}
-              variant={isChosen ? "secondary" : "outline"}
-              className="h-auto min-h-12 whitespace-normal px-4 py-3 justify-center"
-              role="radio"
-              aria-checked={isChosen}
-              disabled={answer != null}
-              onClick={() => onChoose(option)}
-            >
-              <OptionContent content={option.content} />
-            </Button>
-          );
-        })}
-      </div>
+      <OptionsExercise {...props} />
     </div>
   );
 }
 
-/** WORD_TO_AUDIO — forme affichée + écoute, puis auto-évaluation notée. */
-function WordToAudioExercise({ exercise, answer, onChoose }: OptionsExerciseProps) {
-  const audioUrl = exercise.metadata.audioUrl as string | undefined;
-  const options = stableOptionOrder(
-    exercise.options,
-    `${exercise.type}:${exercise.metadata.targetWordId}:${exercise.prompt}`,
-  );
+/** WORD_TO_AUDIO — forme affichée + écoute, puis choix noté. */
+function WordToAudioExercise(props: OptionsExerciseProps) {
+  const audioUrl = props.exercise.metadata.audioUrl as string | undefined;
+  const arabic = props.exercise.metadata.arabic;
   return (
     <div className="flex flex-col gap-5">
-      {exercise.metadata.arabic ? (
+      {arabic ? (
         <ArabicText className="text-h2 text-center font-normal">
-          {exercise.metadata.arabic}
+          {arabic}
         </ArabicText>
       ) : null}
       {audioUrl ? (
         <AudioPlayer key={audioUrl} src={audioUrl} label="Écouter la prononciation" />
       ) : null}
-      <BodyLarge className="text-center">{exercise.prompt}</BodyLarge>
-      <div className="grid gap-2 sm:grid-cols-2" role="radiogroup" aria-label="Auto-évaluation" onKeyDown={handleRadioGroupKeyDown}>
-        {options.map((option) => {
-          const isChosen = answer?.optionIndex === option.position - 1;
-          return (
-            <button
-              key={option.position}
-              type="button"
-              role="radio"
-              aria-checked={isChosen}
-              disabled={answer != null}
-              onClick={() => onChoose(option)}
-              className={
-                "h-12 rounded-lg border px-4 text-base font-medium transition-colors " +
-                (isChosen
-                  ? "border-primary bg-secondary text-secondary-foreground"
-                  : "border-input bg-popover text-foreground hover:bg-accent/50")
-              }
-            >
-              {option.content}
-            </button>
-          );
-        })}
-      </div>
+      <OptionsExercise {...props} />
     </div>
   );
 }
@@ -363,7 +317,12 @@ function WordToAudioExercise({ exercise, answer, onChoose }: OptionsExerciseProp
  * Accessibilité : une alternative visuelle (« Afficher le mot ») est proposée
  * pour ne jamais dépendre exclusivement du son.
  */
-function PhoneticDiscriminationExercise({ exercise, answer, onChoose }: OptionsExerciseProps) {
+function PhoneticDiscriminationExercise({
+  exercise,
+  answer,
+  result,
+  onChoose,
+}: OptionsExerciseProps) {
   const [showWord, setShowWord] = useState(false);
   const audioUrl = exercise.metadata.audioUrl as string | undefined;
   const symbols = (exercise.metadata.phoneticSymbols as Record<string, string> | undefined) ?? {};
@@ -387,11 +346,15 @@ function PhoneticDiscriminationExercise({ exercise, answer, onChoose }: OptionsE
         {options.map((option) => {
           const isChosen = answer?.optionIndex === option.position - 1;
           const symbol = symbols[option.content];
+          const { variant, className } = optionVariant(option, answer, result);
           return (
             <Button
               key={option.position}
-              variant={isChosen ? "secondary" : "outline"}
-              className="h-auto min-h-12 whitespace-normal px-4 py-3 justify-center"
+              variant={variant}
+              className={cn(
+                "h-auto min-h-12 whitespace-normal px-4 py-3 justify-center",
+                className,
+              )}
               role="radio"
               aria-checked={isChosen}
               disabled={answer != null}

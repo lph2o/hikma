@@ -11,6 +11,7 @@
 
 import { join } from "node:path";
 import { bundle } from "@remotion/bundler";
+import { hikmaWebpackOverride } from "../remotion/bundler-config";
 import { renderMedia, selectComposition } from "@remotion/renderer";
 import { ContentStudioService } from "../lib/content-api/service";
 import { getContentStudioClient } from "../lib/content-api/client";
@@ -69,6 +70,7 @@ async function main(): Promise<void> {
   const serveUrl = await bundle({
     entryPoint,
     onProgress: (p) => process.stdout.write(`   bundle ${Math.min(Math.round(p * 100), 100)}%\r`),
+    webpackOverride: hikmaWebpackOverride,
   });
   process.stdout.write("\n");
 

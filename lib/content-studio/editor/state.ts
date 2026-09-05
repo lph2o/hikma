@@ -15,6 +15,14 @@ import {
   type WordHeroSettings,
   type VerseDisplayConfig,
 } from "@/lib/content-studio/video/types";
+import { sanitizeGraphicClipBase } from "@/lib/content-studio/graphics/graphic-clip";
+import {
+  createTextGraphicClip,
+  sanitizeTextSource,
+} from "@/lib/content-studio/graphics/text-graphic";
+import { sanitizeShapeClip } from "@/lib/content-studio/graphics/shape-graphic";
+import { createThreeGraphicClip } from "@/lib/content-studio/graphics/three-graphic";
+import type { GraphicClipBase } from "@/lib/content-studio/graphics/graphic-clip";
 import type { VideoEditorState } from "./types";
 
 const clampInt = (v: number, min: number, max: number): number =>
@@ -384,12 +392,41 @@ export function getEffectiveSceneData(
   if (editorState && Array.isArray(editorState.scenes) && editorState.scenes.length > 0) {
     const clean = editorState.scenes.map((s, i) => {
       const cleaned = cleanScene(s);
-      if (!cleaned.audioUrl && derivedScenes[i]?.audioUrl) {
-        cleaned.audioUrl = derivedScenes[i].audioUrl;
+
+      // Correspondance robuste avec la scène dérivée (même kind à l'index courant ou première occurrence du kind)
+      const matchingDerived =
+        derivedScenes[i]?.kind === s.kind
+          ? derivedScenes[i]
+          : derivedScenes.find((d) => d.kind === s.kind);
+
+      if (matchingDerived) {
+        // Rafraîchir l'URL audio depuis la source dérivée officielle (évite les URLs signées expirées et les mauvais ponts audio)
+        if (!cleaned.audioUrl || cleaned.audioUrl === "") {
+          cleaned.audioUrl = matchingDerived.audioUrl ?? null;
+        } else if (matchingDerived.audioUrl && (s.kind === "word" || s.kind === "quran")) {
+          cleaned.audioUrl = matchingDerived.audioUrl;
+        }
+
+        if (cleaned.audioDuration == null && matchingDerived.audioDuration != null) {
+          cleaned.audioDuration = matchingDerived.audioDuration;
+        } else if (matchingDerived.audioDuration != null && (s.kind === "word" || s.kind === "quran")) {
+          cleaned.audioDuration = matchingDerived.audioDuration;
+        }
+
+        // Si la durée de la scène Coran était le fallback par défaut (90 frames / 3s)
+        // ou inférieure à l'audio réel du verset, aligner exactement sur la durée de récitation
+        if (
+          s.kind === "quran" &&
+          typeof matchingDerived.audioDuration === "number" &&
+          matchingDerived.audioDuration > 0
+        ) {
+          const exactAudioFrames = Math.max(1, Math.round(matchingDerived.audioDuration * 30));
+          if (cleaned.durationInFrames === 90 || cleaned.durationInFrames < exactAudioFrames) {
+            cleaned.durationInFrames = exactAudioFrames;
+          }
+        }
       }
-      if (cleaned.audioDuration === undefined && derivedScenes[i]?.audioDuration) {
-        cleaned.audioDuration = derivedScenes[i].audioDuration;
-      }
+
       return cleaned;
     });
     return { scenes: clean, derivedScenes, hasEdits: true };
@@ -427,5 +464,177 @@ export function hashEffectiveScenes(scenes: readonly VideoSceneInput[]): string 
       s.verseConfig ?? null,
     ]),
   );
+  return createHash("sha256").update(serialized.join("\n")).digest("hex");
+}
+
+// ---------------------------------------------------------------------------
+// CLIPS GRAPHIQUES (LOT 1) — couche additive, rétro-compatible.
+// Les clips graphiques (texte/forme/SVG/sticker/background/3D) sont stockés
+// dans editor_state.graphics et RENDUS par la même composition (Preview == Render).
+// Sanitization STRICTE (jamais NaN/Infinity, bornes sûres), hash stable.
+// ---------------------------------------------------------------------------
+
+/**
+ * Sanitisation STRICTE de la collection graphics (défense serveur).
+ * Chaque clip est re-sanitisé (base + kind) ; les clips invalides sont DROPPÉS.
+ */
+export function sanitizeEditorGraphics(
+  raw: unknown,
+): { graphics: GraphicClipBase[] | null; reason?: string } {
+  if (!Array.isArray(raw)) {
+    return { graphics: null, reason: "not_array" };
+  }
+  if (raw.length === 0) return { graphics: [] };
+
+  const graphics: GraphicClipBase[] = [];
+  for (const rawClip of raw) {
+    if (typeof rawClip !== "object" || rawClip === null) {
+      return { graphics: null, reason: "invalid_clip" };
+    }
+    const c = rawClip as Record<string, unknown>;
+    const kind = c.kind;
+    if (kind === "text") {
+      const clip = createTextGraphicClip({
+        id: typeof c.id === "string" ? c.id : undefined,
+        startFrame: typeof c.startFrame === "number" ? c.startFrame : undefined,
+        durationInFrames:
+          typeof c.durationInFrames === "number" ? c.durationInFrames : undefined,
+        zIndex: typeof c.zIndex === "number" ? c.zIndex : undefined,
+        transform:
+          typeof c.transform === "object" && c.transform !== null
+            ? (c.transform as Record<string, unknown>)
+            : undefined,
+        keyframes: Array.isArray(c.keyframes) ? (c.keyframes as never) : undefined,
+        text: typeof c.text === "string" ? c.text : "",
+        style:
+          typeof c.style === "object" && c.style !== null
+            ? (c.style as Record<string, unknown>)
+            : undefined,
+        animation:
+          typeof c.animation === "object" && c.animation !== null
+            ? (c.animation as never)
+            : undefined,
+        direction: c.direction === "rtl" ? "rtl" : "ltr",
+        source: sanitizeTextSource(c.source),
+      });
+      graphics.push(clip);
+    } else if (kind === "shape") {
+      // Forme : payload détaillé sanitisé (forme/fill/stroke/épaisseur).
+      graphics.push(sanitizeShapeClip(c));
+    } else if (kind === "three") {
+      // Clip 3D : payload détaillé sanitisé (géométrie/matériau/lumières/
+      // caméra) — jamais NaN/Infinity, bornes sûres, rétrocompatible.
+      graphics.push(
+        createThreeGraphicClip({
+          id: typeof c.id === "string" ? c.id : undefined,
+          startFrame: typeof c.startFrame === "number" ? c.startFrame : undefined,
+          durationInFrames:
+            typeof c.durationInFrames === "number" ? c.durationInFrames : undefined,
+          zIndex: typeof c.zIndex === "number" ? c.zIndex : undefined,
+          transform:
+            typeof c.transform === "object" && c.transform !== null
+              ? (c.transform as Record<string, unknown>)
+              : undefined,
+          keyframes: Array.isArray(c.keyframes) ? (c.keyframes as never) : undefined,
+          geometry:
+            typeof c.geometry === "object" && c.geometry !== null
+              ? (c.geometry as Record<string, unknown>)
+              : undefined,
+          material:
+            typeof c.material === "object" && c.material !== null
+              ? (c.material as Record<string, unknown>)
+              : undefined,
+          lighting:
+            typeof c.lighting === "object" && c.lighting !== null
+              ? (c.lighting as Record<string, unknown>)
+              : undefined,
+          camera:
+            typeof c.camera === "object" && c.camera !== null
+              ? (c.camera as Record<string, unknown>)
+              : undefined,
+        }),
+      );
+    } else if (GRAPHIC_KINDS.has(kind as string)) {
+      // SVG/stickers/backgrounds/3D : base sanitisée (payload détaillé ajouté
+      // par leurs modules respectifs dans les lots suivants).
+      const base = sanitizeGraphicClipBase({
+        kind: kind as GraphicClipBase["kind"],
+        id: typeof c.id === "string" ? c.id : undefined,
+        startFrame: typeof c.startFrame === "number" ? c.startFrame : undefined,
+        durationInFrames:
+          typeof c.durationInFrames === "number" ? c.durationInFrames : undefined,
+        zIndex: typeof c.zIndex === "number" ? c.zIndex : undefined,
+        transform:
+          typeof c.transform === "object" && c.transform !== null
+            ? (c.transform as Record<string, unknown>)
+            : undefined,
+        keyframes: Array.isArray(c.keyframes) ? (c.keyframes as never) : undefined,
+      });
+      graphics.push({ ...base, kind: kind as GraphicClipBase["kind"] });
+    } else {
+      // kind inconnu → REJET global : un clip corrompu ne doit jamais effacer
+      // silencieusement toute la collection graphique à la sauvegarde.
+      return { graphics: null, reason: "unknown_kind:" + String(kind) };
+    }
+  }
+  return { graphics };
+}
+
+const GRAPHIC_KINDS = new Set<string>([
+  "text",
+  "shape",
+  "svg",
+  "sticker",
+  "background",
+  "three",
+]);
+
+/**
+ * Graphics EFFECTIFS d'un editor_state : collection re-sanitisée à la lecture
+ * (on ne fait jamais confiance aux données stockées). [] si absente.
+ */
+export function getEffectiveGraphics(
+  editorState: VideoEditorState | null | undefined,
+): GraphicClipBase[] {
+  if (!editorState || !Array.isArray(editorState.graphics)) return [];
+  const { graphics } = sanitizeEditorGraphics(editorState.graphics);
+  return graphics ?? [];
+}
+
+/**
+ * Hash STABLE des clips graphiques — invalidation de rendu : toute
+ * modification visuelle d'un clip (texte, style, transform, keyframes, durée)
+ * change le hash ⇒ le MP4 stocké est considéré obsolète.
+ */
+export function hashEffectiveGraphics(graphics: readonly GraphicClipBase[]): string {
+  const serialized = graphics.map((g) => {
+    const r = g as unknown as Record<string, unknown>;
+    return JSON.stringify([
+      g.kind,
+      g.startFrame,
+      g.durationInFrames,
+      g.zIndex,
+      g.transform,
+      g.keyframes ?? null,
+      // Texte
+      r.text ?? "",
+      r.style ?? null,
+      r.animation ?? null,
+      r.direction ?? null,
+      // Source (promotion d'un texte hérité) — participe au hash du rendu
+      r.source ?? null,
+      // Formes
+      r.shape ?? null,
+      r.fill ?? null,
+      r.stroke ?? null,
+      r.roundness ?? null,
+      r.sides ?? null,
+      r.thickness ?? null,
+      r.aspect ?? null,
+      r.shadow ?? null,
+      r.glow ?? null,
+      r.blur ?? null,
+    ]);
+  });
   return createHash("sha256").update(serialized.join("\n")).digest("hex");
 }

@@ -98,33 +98,64 @@ export function ReviewPlayer({ items, exercises, isAuthenticated }: ReviewPlayer
     }
     setPhase("submitting");
 
-    // 1. Persistance pédagogique (mots non encore sauvegardés uniquement).
+    // 1. Persistance pédagogique en parallèle (mots non encore sauvegardés uniquement).
     const pending = pendingWordAttempts(finalResults, savedWordIds.current);
-    for (const r of pending) {
-      const res = await recordReviewAnswer(r.wordId, r.attempts[r.attempts.length - 1] ?? false);
-      if (!res.ok) {
-        setError(res.error ?? "Une erreur est survenue.");
+    if (pending.length > 0) {
+      const results = await Promise.all(
+        pending.map(async (r) => {
+          const res = await recordReviewAnswer(
+            r.wordId,
+            r.attempts[r.attempts.length - 1] ?? false,
+          );
+          return { wordId: r.wordId, res };
+        }),
+      );
+
+      let firstError: string | null = null;
+      for (const { wordId, res } of results) {
+        if (res.ok) {
+          savedWordIds.current = [...savedWordIds.current, wordId];
+          if (!res.activityRecorded) {
+            pendingActivity.current = [...pendingActivity.current, wordId];
+          }
+        } else if (!firstError) {
+          firstError = res.error ?? "Une erreur est survenue.";
+        }
+      }
+
+      if (firstError) {
+        setError(firstError);
         setPhase("error");
         return;
       }
-      savedWordIds.current = [...savedWordIds.current, r.wordId];
-      // Persisté mais activité absente → à terminer séparément (idempotent).
-      if (!res.activityRecorded) {
-        pendingActivity.current = [...pendingActivity.current, r.wordId];
-      }
     }
 
-    // 2. Activité restante — sans rejouer la progression pédagogique.
+    // 2. Activité restante en parallèle — sans rejouer la progression pédagogique.
     if (pendingActivity.current.length > 0) {
-      for (const wordId of pendingActivity.current) {
-        const res = await recordWordActivityOnly(wordId);
+      const activityResults = await Promise.all(
+        pendingActivity.current.map(async (wordId) => {
+          const res = await recordWordActivityOnly(wordId);
+          return { wordId, res };
+        }),
+      );
+
+      const remainingPending: string[] = [];
+      let activityError: string | null = null;
+      for (const { wordId, res } of activityResults) {
         if (!res.ok) {
-          setError("Impossible d'enregistrer l'activité du jour. Réessaie.");
-          setPhase("error");
-          return;
+          remainingPending.push(wordId);
+          if (!activityError) {
+            activityError = "Impossible d'enregistrer l'activité du jour. Réessaie.";
+          }
         }
       }
-      pendingActivity.current = [];
+      pendingActivity.current = remainingPending;
+
+      if (activityError) {
+        setError(activityError);
+        setPhase("error");
+        return;
+      }
     }
     setPhase("complete");
   }

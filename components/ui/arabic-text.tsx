@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
-import type { ElementType, HTMLAttributes, ReactNode } from "react";
+import { AppElementType } from "@/lib/react/jsx-elements";
+import type { HTMLAttributes, ReactNode } from "react";
 
 export type ArabicTextScale = "inline" | "small" | "word" | "verse" | "hero";
 
-type ArabicTextProps<T extends ElementType> = {
+type ArabicTextProps<T extends keyof React.JSX.IntrinsicElements | React.ComponentType> = {
   /** Élément HTML à rendre (défaut : `span`). */
   as?: T;
   className?: string;
@@ -20,14 +21,17 @@ type ArabicTextProps<T extends ElementType> = {
  * - aucun `letter-spacing` ni transformation de casse, pour préserver les
  *   ligatures et les diacritiques.
  */
-export function ArabicText<T extends ElementType = "span">({
+export function ArabicText<T extends AppElementType = "span">({
   as,
   className,
   children,
   scale = "inline",
   ...props
 }: ArabicTextProps<T>) {
-  const Tag = (as ?? "span") as ElementType;
+  // Tag dynamique typé SÛR : R3F v9 injecte des clés `never` dans
+  // JSX.IntrinsicElements, ce qui casserait `React.ElementType` (voir
+  // lib/react/jsx-elements.ts).
+  const Tag = (as ?? "span") as AppElementType;
 
   const scaleClass = {
     inline: "text-base",
