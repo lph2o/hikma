@@ -24,6 +24,8 @@
     "import:wbw-audio": "tsx scripts/import-huggingface-wbw-audio.ts",
     "verify:rls": "tsx scripts/verify-rls.ts",
     "render:video": "tsx scripts/render-content-video.ts",
+    "render:item": "tsx scripts/render-content-item.ts",
+    "render:worker": "tsx scripts/render-content-item.ts --worker",
     "verify:persistence": "tsx scripts/verify-persistence.ts"
   },
   "dependencies": {

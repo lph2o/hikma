@@ -555,13 +555,61 @@ export function VideoEditor({
           setRenderError(data.error?.message ?? `Échec du rendu (${res.status}).`);
           return;
         }
-        setRenderPhase("done");
-        setRenderStatus("RENDERED");
-        setRenderResult({
-          signedUrl: data.signedUrl,
-          storagePath: data.storagePath,
-          durationInFrames: data.durationInFrames,
-        });
+        // Si le rendu est synchrone et déjà terminé
+        if (data.renderStatus === "RENDERED" && data.signedUrl) {
+          setRenderPhase("done");
+          setRenderStatus("RENDERED");
+          setRenderResult({
+            signedUrl: data.signedUrl,
+            storagePath: data.storagePath,
+            durationInFrames: data.durationInFrames,
+          });
+          return;
+        }
+
+        // Rendu asynchrone (Cloud Worker / GitHub Actions) : polling toutes les 3s
+        const pollStart = Date.now();
+        const maxPollMs = 15 * 60 * 1000; // 15 min max
+
+        while (Date.now() - pollStart < maxPollMs) {
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+          try {
+            const pollRes = await fetch(
+              `/api/admin/content-studio/render?contentKey=${encodeURIComponent(contentKey)}`,
+            );
+            if (!pollRes.ok) continue;
+            const pollData = (await pollRes.json()) as {
+              renderStatus?: string;
+              signedUrl?: string;
+              renderPath?: string;
+              renderError?: string;
+            };
+
+            if (pollData.renderStatus === "RENDERED" && pollData.signedUrl) {
+              setRenderPhase("done");
+              setRenderStatus("RENDERED");
+              setRenderResult({
+                signedUrl: pollData.signedUrl,
+                storagePath: pollData.renderPath,
+                durationInFrames: data.durationInFrames,
+              });
+              return;
+            }
+
+            if (pollData.renderStatus === "FAILED") {
+              setRenderPhase("failed");
+              setRenderStatus("FAILED");
+              setRenderError(pollData.renderError || "Le rendu a échoué.");
+              return;
+            }
+          } catch {
+            // Tolérance aux micro-coupures réseau sur mobile
+          }
+        }
+
+        setRenderPhase("failed");
+        setRenderStatus("FAILED");
+        setRenderError("Délai de rendu dépassé (timeout 15 min).");
       },
     });
 
