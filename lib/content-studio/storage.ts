@@ -82,13 +82,22 @@ export async function uploadRenderedVideo(
   return { storagePath, signedUrl: signed?.signedUrl ?? "", sizeBytes: size };
 }
 
-/** URL signée fraîche pour un path stocké (à la demande, ex. consult de la vidéo). */
-export async function signedUrlForVideo(storagePath: string): Promise<string | null> {
+/** URL signée fraîche pour un path stocké (à la demande, ex. consult ou téléchargement forcé de la vidéo). */
+export async function signedUrlForVideo(
+  storagePath: string,
+  options?: { download?: boolean | string },
+): Promise<string | null> {
   if (!storagePath) return null;
   const client = getContentStudioDbClient();
   const { data, error } = await client.storage
     .from(VIDEO_BUCKET)
-    .createSignedUrl(storagePath, 60 * 60);
+    .createSignedUrl(
+      storagePath,
+      60 * 60,
+      options?.download !== undefined
+        ? { download: typeof options.download === "string" ? options.download : true }
+        : undefined,
+    );
   if (error || !data) return null;
   return data.signedUrl;
 }

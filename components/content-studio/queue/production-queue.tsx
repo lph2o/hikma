@@ -110,8 +110,7 @@ export function ProductionQueue({ items }: { items: ContentStudioItem[] }) {
                     <div className="flex items-center gap-2">
                       {item.renderPath && (
                         <a
-                          href={item.renderPath}
-                          download
+                          href={`/api/admin/content-studio/download?contentKey=${encodeURIComponent(item.contentKey)}`}
                           className="flex size-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
                           title="Télécharger MP4"
                         >

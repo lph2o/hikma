@@ -85,8 +85,11 @@ export async function GET(request: Request): Promise<Response> {
   }
 
   let signedUrl: string | null = null;
+  let downloadUrl: string | null = null;
   if (item.renderStatus === "RENDERED" && item.renderPath) {
+    const filename = `${item.templateKey}-${item.contentKey.slice(0, 8)}.mp4`;
     signedUrl = await signedUrlForVideo(item.renderPath).catch(() => null);
+    downloadUrl = await signedUrlForVideo(item.renderPath, { download: filename }).catch(() => null);
   }
 
   return NextResponse.json({
@@ -97,6 +100,7 @@ export async function GET(request: Request): Promise<Response> {
     renderError: item.renderError,
     renderedAt: item.renderedAt,
     signedUrl: signedUrl ?? undefined,
+    downloadUrl: downloadUrl ?? undefined,
     previewUrl: signedUrl ?? undefined,
   });
 }

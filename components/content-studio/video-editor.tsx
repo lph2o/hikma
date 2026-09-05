@@ -131,6 +131,7 @@ export type VideoEditorProps = {
 type RenderResponse = {
   renderStatus: string;
   signedUrl?: string;
+  downloadUrl?: string;
   storagePath?: string;
   durationInFrames?: number;
   fps?: number;
@@ -163,6 +164,7 @@ export function VideoEditor({
   );
   const [renderResult, setRenderResult] = useState<{
     signedUrl?: string;
+    downloadUrl?: string;
     storagePath?: string;
     durationInFrames?: number;
   } | null>(null);
@@ -561,6 +563,7 @@ export function VideoEditor({
           setRenderStatus("RENDERED");
           setRenderResult({
             signedUrl: data.signedUrl,
+            downloadUrl: data.downloadUrl,
             storagePath: data.storagePath,
             durationInFrames: data.durationInFrames,
           });
@@ -581,6 +584,7 @@ export function VideoEditor({
             const pollData = (await pollRes.json()) as {
               renderStatus?: string;
               signedUrl?: string;
+              downloadUrl?: string;
               renderPath?: string;
               renderError?: string;
             };
@@ -590,6 +594,7 @@ export function VideoEditor({
               setRenderStatus("RENDERED");
               setRenderResult({
                 signedUrl: pollData.signedUrl,
+                downloadUrl: pollData.downloadUrl,
                 storagePath: pollData.renderPath,
                 durationInFrames: data.durationInFrames,
               });
@@ -1426,11 +1431,8 @@ export function VideoEditor({
               <span>Visualiser le rendu</span>
             </button>
             <a
-              href={renderResult.signedUrl}
-              download={`${templateKey}.mp4`}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-emerald-500"
+              href={`/api/admin/content-studio/download?contentKey=${encodeURIComponent(contentKey)}`}
+              className="flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 active:scale-[0.98]"
             >
               <DownloadIcon className="size-3.5" />
               <span>Télécharger</span>

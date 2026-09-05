@@ -26,6 +26,7 @@ export interface RenderProgressModalProps {
   renderError: string | null;
   renderResult: {
     signedUrl?: string;
+    downloadUrl?: string;
     storagePath?: string;
     durationInFrames?: number;
   } | null;
@@ -90,6 +91,7 @@ export function RenderProgressModal({
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [simulatedFrame, setSimulatedFrame] = useState(1);
   const [copied, setCopied] = useState(false);
+  const [downloading, setDownloading] = useState(false);
   const startTimeRef = useRef<number | null>(null);
 
   // Timer d'avancement simulé fluide et synchronisé avec la phase réelle
@@ -151,6 +153,42 @@ export function RenderProgressModal({
     void navigator.clipboard.writeText(renderResult.signedUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const filename = `${(title || templateKey || "hikma-video").replace(/[^a-zA-Z0-9_\u0600-\u06FF-]/g, "_")}.mp4`;
+  const effectiveDownloadUrl =
+    renderResult?.downloadUrl ||
+    (renderResult?.signedUrl
+      ? renderResult.signedUrl.includes("download=")
+        ? renderResult.signedUrl
+        : `${renderResult.signedUrl}&download=${encodeURIComponent(filename)}`
+      : "");
+
+  const handleDownload = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!effectiveDownloadUrl && !renderResult?.signedUrl) return;
+
+    setDownloading(true);
+    try {
+      // 1. Tente le téléchargement direct par Blob (évite l'ouverture du lecteur vidéo dans le navigateur)
+      const targetUrl = renderResult?.signedUrl || effectiveDownloadUrl;
+      const res = await fetch(targetUrl);
+      if (!res.ok) throw new Error("Fetch blob failed");
+      const blob = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 2000);
+    } catch {
+      // 2. Fallback direct avec Content-Disposition: attachment (déclenche le téléchargement natif navigateur)
+      window.location.href = effectiveDownloadUrl;
+    } finally {
+      setDownloading(false);
+    }
   };
 
   const formatTime = (sec: number) => {
@@ -274,16 +312,15 @@ export function RenderProgressModal({
                 </div>
 
                 <div className="flex flex-wrap gap-2.5 pt-2">
-                  <a
-                    href={renderResult.signedUrl}
-                    download={`${templateKey}.mp4`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 text-xs font-bold text-white shadow-lg transition-transform hover:bg-emerald-500 active:scale-[0.98]"
+                  <button
+                    type="button"
+                    onClick={handleDownload}
+                    disabled={downloading}
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 text-xs font-bold text-white shadow-lg transition-transform hover:bg-emerald-500 active:scale-[0.98] disabled:opacity-75"
                   >
-                    <DownloadIcon className="size-4" />
-                    <span>Télécharger MP4</span>
-                  </a>
+                    <DownloadIcon className={cn("size-4", downloading && "animate-bounce")} />
+                    <span>{downloading ? "Téléchargement en cours..." : "Télécharger MP4"}</span>
+                  </button>
 
                   <button
                     type="button"
