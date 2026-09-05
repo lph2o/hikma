@@ -80,7 +80,7 @@ function diacriticLabel(char: string): string {
 
 /** Styles partagés d'une touche (bouton sémantique, focus visible, état pressé). */
 const KEY_BASE =
-  "flex h-11 select-none items-center justify-center rounded-lg text-lg leading-none " +
+  "flex h-9 sm:h-11 select-none items-center justify-center rounded-lg text-base sm:text-lg leading-none " +
   "transition-[background-color,border-color,transform] duration-100 ease-[var(--ease-hikma)] " +
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:ring-offset-background " +
   "active:scale-[0.96] disabled:opacity-50";
@@ -154,20 +154,20 @@ export function ArabicKeyboard({
       role="group"
       aria-label="Clavier arabe"
       className={cn(
-        "flex max-h-[70dvh] flex-col gap-2.5 rounded-2xl border border-border bg-surface-subtle p-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]",
+        "flex max-h-[46dvh] sm:max-h-[65dvh] flex-col gap-2 rounded-2xl border border-border-subtle bg-surface-subtle/95 p-2.5 sm:p-3.5 pb-[max(env(safe-area-inset-bottom),0.5rem)] shadow-sm backdrop-blur-xs overscroll-contain",
         className,
       )}
     >
-      {/* En-tête : libellé + UNE seule action de fermeture (toujours visible). */}
-      <div className="flex shrink-0 items-center justify-between gap-2">
-        <Caption className="text-text-secondary">Clavier arabe</Caption>
+      {/* En-tête compact : libellé + fermeture toujours accessible en haut à droite. */}
+      <div className="flex shrink-0 items-center justify-between gap-2 px-1">
+        <span className="text-xs font-medium text-text-secondary">Clavier arabe</span>
         <button
           type="button"
           aria-label="Masquer le clavier arabe"
           onClick={onClose}
-          className="flex size-11 items-center justify-center rounded-md text-text-secondary transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1"
+          className="flex size-8 sm:size-9 items-center justify-center rounded-lg text-text-secondary transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1"
         >
-          <XIcon className="size-4.5" aria-hidden="true" />
+          <XIcon className="size-4" aria-hidden="true" />
         </button>
       </div>
 
@@ -217,10 +217,10 @@ export function ArabicKeyboard({
           </div>
         </div>
 
-        {/* Voyelles & signes : section secondaire, séparée et dorée. */}
-        <div className="mt-2.5 flex flex-col gap-1.5 rounded-xl border border-hikma-gold/30 bg-hikma-gold/6 p-2">
-          <Caption className="text-text-secondary">Voyelles &amp; signes</Caption>
-          <div className="grid grid-cols-5 gap-1.5 sm:hidden">
+        {/* Voyelles & signes : section secondaire compacte, séparée et dorée. */}
+        <div className="mt-2 flex flex-col gap-1 rounded-xl border border-hikma-gold/25 bg-hikma-gold/5 p-1.5 sm:p-2">
+          <span className="px-0.5 text-[11px] font-medium text-text-secondary">Voyelles &amp; signes</span>
+          <div className="grid grid-cols-5 gap-1 sm:hidden">
             {DIACRITIC_ROWS_MOBILE.map((row, rowIndex) =>
               row.map((char) => (
                 <Key
@@ -228,7 +228,7 @@ export function ArabicKeyboard({
                   label={diacriticLabel(char)}
                   onPress={() => insert(char)}
                   className={cn(
-                    "border-hikma-gold/30 bg-popover text-foreground hover:bg-hikma-gold/10",
+                    "h-7.5 border-hikma-gold/30 bg-popover text-sm text-foreground hover:bg-hikma-gold/10",
                     lastInserted === char &&
                       "border-hikma-gold/70 bg-hikma-gold/20",
                   )}
@@ -241,7 +241,7 @@ export function ArabicKeyboard({
               )),
             )}
           </div>
-          <div className="hidden grid-cols-10 gap-1.5 sm:grid">
+          <div className="hidden grid-cols-10 gap-1 sm:grid">
             {DIACRITIC_ROWS_SM.map((row, rowIndex) =>
               row.map((char) => (
                 <Key
@@ -249,7 +249,7 @@ export function ArabicKeyboard({
                   label={diacriticLabel(char)}
                   onPress={() => insert(char)}
                   className={cn(
-                    "border-hikma-gold/30 bg-popover text-foreground hover:bg-hikma-gold/10",
+                    "h-9 border-hikma-gold/30 bg-popover text-foreground hover:bg-hikma-gold/10",
                     lastInserted === char &&
                       "border-hikma-gold/70 bg-hikma-gold/20",
                   )}
@@ -265,18 +265,18 @@ export function ArabicKeyboard({
         </div>
 
         {/* Actions : suppression + espace (le CTA « Vérifier » reste hors clavier). */}
-        <div className="mt-2.5 grid grid-cols-5 gap-1.5">
+        <div className="mt-2 grid grid-cols-5 gap-1.5">
           <Key
             label="Supprimer (retour arrière)"
             onPress={onBackspace}
-            className="border-input bg-popover text-foreground hover:bg-accent/50"
+            className="h-8.5 sm:h-10 border-input bg-popover text-foreground hover:bg-accent/50"
           >
             ⌫
           </Key>
           <Key
             label="Espace"
             onPress={onSpace}
-            className="col-span-4 border-input bg-popover text-sm font-medium text-foreground hover:bg-accent/50"
+            className="col-span-4 h-8.5 sm:h-10 border-input bg-popover text-xs sm:text-sm font-medium text-foreground hover:bg-accent/50"
           >
             Espace
           </Key>

@@ -26,16 +26,16 @@ describe("Phase 95 — clavier arabe mobile (93-P1-02)", () => {
     expect(html).not.toContain("grid-cols-7");
   });
 
-  it("touches ≥ 44 px (h-11) et bouton fermer ≥ 44 px (size-11)", () => {
+  it("touches compactes mobile (h-9) / desktop (sm:h-11) et bouton fermer compact", () => {
     const html = keyboardMarkup();
-    const keyCount = (html.match(/flex h-11 select-none/g) ?? []).length;
-    expect(keyCount).toBeGreaterThanOrEqual(46); // 36 lettres + 10 diacritiques
-    expect(html).toContain("flex size-11 items-center justify-center rounded-md");
+    const keyCount = (html.match(/flex h-9 sm:h-11 select-none/g) ?? []).length;
+    expect(keyCount).toBeGreaterThanOrEqual(46); // 36 lettres + diacritiques/actions
+    expect(html).toContain("flex size-8 sm:size-9 items-center justify-center rounded-lg");
   });
 
-  it("reste borné : max-h-[70dvh] + corps scrollable (la question demeure visible)", () => {
+  it("reste borné : max-h-[46dvh] mobile / sm:max-h-[65dvh] + corps scrollable (la question demeure visible)", () => {
     const html = keyboardMarkup();
-    expect(html).toContain("max-h-[70dvh]");
+    expect(html).toContain("max-h-[46dvh]");
     expect(html).toContain("min-h-0 overflow-y-auto");
   });
 

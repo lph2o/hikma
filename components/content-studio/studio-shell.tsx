@@ -96,58 +96,52 @@ export function StudioShell({
   return (
     <div
       data-studio="dark"
-      className="flex min-h-dvh w-full flex-col text-white"
+      className="flex min-h-[calc(100dvh-3.5rem)] w-full flex-col text-white"
       style={{
-        background: "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(201, 168, 76, 0.04), transparent 70%), linear-gradient(180deg, #090e0c 0%, #070b09 100%)",
+        background:
+          "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(201, 168, 76, 0.04), transparent 70%), linear-gradient(180deg, #090e0c 0%, #070b09 100%)",
       }}
     >
-      {/* Studio header */}
-      <header
+      {/* Studio contextual sub-nav — intégré dans AdminShell */}
+      <div
         className={cn(
-          "z-30 border-b border-white/8",
-          sticky && "sticky top-0",
+          "z-10 border-b border-white/8 px-4 sm:px-6 py-2.5",
+          sticky && "sticky top-14",
         )}
         style={{
-          background: "rgba(9, 14, 12, 0.90)",
-          backdropFilter: "blur(20px)",
-          boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.5)",
+          background: "rgba(9, 14, 12, 0.92)",
+          backdropFilter: "blur(16px)",
         }}
       >
-        <div className="mx-auto flex h-14 w-full max-w-[1600px] items-center justify-between gap-3 px-3.5 sm:gap-4 sm:px-6">
-          {/* Studio Brand */}
-          <Link
-            href="/admin"
-            className="flex shrink-0 items-center gap-2.5 rounded-lg py-1 transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hikma-teal-500/60"
-            aria-label="Retour à l'administration Hikma"
-          >
+        <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
             <span
               aria-hidden="true"
-              className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-hikma-gold/30 bg-gradient-to-br from-hikma-gold/20 to-hikma-gold/5 shadow-[0_0_12px_rgba(201,168,76,0.15)]"
+              className="flex size-6 shrink-0 items-center justify-center rounded-md border border-hikma-gold/30 bg-hikma-gold/10"
             >
-              <FilmIcon className="size-4 text-hikma-gold" />
+              <FilmIcon className="size-3.5 text-hikma-gold" />
             </span>
-            <div className="flex flex-col">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-hikma-gold-muted/80">
-                Hikma
-              </span>
-              <span className="text-[13px] font-bold leading-none tracking-tight text-white/90">
-                Content Studio
-              </span>
-            </div>
-          </Link>
+            <span className="text-xs font-semibold text-white/80">
+              Studio Vidéo 9:16
+            </span>
+          </div>
 
           {/* Navigation Tabs */}
           <nav
             aria-label="Espaces du studio"
-            className="flex min-w-0 items-center gap-1.5 overflow-x-auto py-1"
+            className="flex min-w-0 items-center gap-1.5 overflow-x-auto"
             style={{ scrollbarWidth: "none" }}
           >
             {TABS.map((tab) => (
-              <StudioNavLink key={tab.key} tab={tab} active={active === tab.key} />
+              <StudioNavLink
+                key={tab.key}
+                tab={tab}
+                active={active === tab.key}
+              />
             ))}
           </nav>
         </div>
-      </header>
+      </div>
 
       {/* Main Workspace Area */}
       <main className={cn("flex w-full min-w-0 flex-1 flex-col", className)}>
@@ -156,3 +150,4 @@ export function StudioShell({
     </div>
   );
 }
+

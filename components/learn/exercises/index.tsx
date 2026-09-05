@@ -193,32 +193,41 @@ function RecallExercise({ exercise, answer, onSubmitText }: OptionsExerciseProps
             placeholder={
               isArabic ? "Écris le mot arabe…" : "Écris ta réponse en français…"
             }
-            className="h-12 w-full rounded-lg border border-input bg-popover px-4 text-base text-foreground outline-none focus:ring-2 focus:ring-ring"
+            className={cn(
+              "h-11 sm:h-12 w-full rounded-xl border border-input bg-popover px-4 text-foreground shadow-xs outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
+              isArabic ? "text-center text-xl sm:text-2xl font-amiri" : "text-base",
+            )}
           />
           {isArabic && !keyboardOpen ? (
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                setKeyboardOpen(true);
-                // Le clavier reste borné (70dvh) : ramène la question + la zone
-                // de saisie dans le viewport pour ne jamais perdre le contexte.
-                requestAnimationFrame(() =>
-                  inputRef.current?.scrollIntoView({ block: "center" }),
-                );
-              }}
-            >
-              ⌨ Clavier arabe
-            </Button>
+            <div className="flex justify-center">
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="h-8 rounded-full border-border-subtle bg-surface-subtle/80 px-3.5 text-xs font-medium text-text-secondary hover:bg-surface-elevated hover:text-foreground"
+                onClick={() => {
+                  setKeyboardOpen(true);
+                  // Le clavier reste borné (46dvh) : ramène la question + la zone
+                  // de saisie dans le viewport pour ne jamais perdre le contexte.
+                  requestAnimationFrame(() =>
+                    inputRef.current?.scrollIntoView({ block: "center", behavior: "smooth" }),
+                  );
+                }}
+              >
+                ⌨ Clavier arabe
+              </Button>
+            </div>
           ) : null}
           {isArabic && keyboardOpen ? (
-            <ArabicKeyboard
-              onInsert={insertChar}
-              onBackspace={backspace}
-              onSpace={() => insertChar(" ")}
-              onClose={() => setKeyboardOpen(false)}
-            />
+            <div className="w-full max-w-md mx-auto">
+              <ArabicKeyboard
+                onInsert={insertChar}
+                onBackspace={backspace}
+                onSpace={() => insertChar(" ")}
+                onClose={() => setKeyboardOpen(false)}
+                className="w-full"
+              />
+            </div>
           ) : null}
           <Button type="submit" size="lg" disabled={!value.trim()}>
             Vérifier

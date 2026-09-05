@@ -344,18 +344,29 @@ function ArabicRewriteStep({
   return (
     <>
       <Card className="rounded-4xl border-primary/18 bg-surface-featured shadow-elevated">
-        <CardContent className="items-center gap-5 p-6 text-center sm:p-8">
-          <Caption className="text-primary-strong">Le sens</Caption>
-          {word.meaning ? (
-            <BodyLarge>{word.meaning}</BodyLarge>
-          ) : (
-            <BodyMedium className="text-text-secondary">Sens indisponible pour ce mot.</BodyMedium>
-          )}
-          <BodyLarge className="font-medium">Écris le mot arabe :</BodyLarge>
+        <CardContent className="flex flex-col items-center gap-3.5 p-4 text-center sm:gap-4 sm:p-6">
+          {/* 1. Sens à retrouver (dominant) */}
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-primary-strong">
+              Le sens
+            </span>
+            {word.meaning ? (
+              <h2 className="text-xl font-bold leading-snug text-foreground sm:text-2xl">
+                {word.meaning}
+              </h2>
+            ) : (
+              <BodyMedium className="text-text-secondary">Sens indisponible pour ce mot.</BodyMedium>
+            )}
+          </div>
 
           {!attempted ? (
-            <>
+            <div className="flex w-full flex-col items-center gap-3">
+              {/* 2. Zone de réponse */}
+              <label htmlFor="arabic-rewrite-input" className="text-xs font-medium text-text-secondary sm:text-sm">
+                Écris le mot arabe :
+              </label>
               <input
+                id="arabic-rewrite-input"
                 ref={inputRef}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
@@ -367,45 +378,59 @@ function ArabicRewriteStep({
                 autoCapitalize="off"
                 spellCheck={false}
                 aria-label={`Écris le mot arabe correspondant à « ${word.meaning ?? ""} »`}
-                className="h-14 w-full max-w-xs rounded-lg border border-input bg-popover px-4 text-center text-2xl text-foreground outline-none focus:ring-2 focus:ring-ring"
+                className="h-11 sm:h-12 w-full max-w-xs rounded-xl border border-input bg-popover px-4 text-center text-xl sm:text-2xl font-amiri text-foreground shadow-xs outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
+
+              {/* 3. Outil optionnel : clavier arabe */}
               {!keyboardOpen ? (
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  onClick={() => {
-                    setKeyboardOpen(true);
-                    // Le clavier reste borné (70dvh) : ramène la question + la
-                    // zone de saisie dans le viewport (contexte jamais perdu).
-                    requestAnimationFrame(() =>
-                      inputRef.current?.scrollIntoView({ block: "center" }),
-                    );
-                  }}
-                >
-                  ⌨ Clavier arabe
-                </Button>
+                <div className="flex flex-col items-center gap-1.5 pt-0.5">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="h-8 rounded-full border-border-subtle bg-surface-subtle/80 px-3.5 text-xs font-medium text-text-secondary hover:bg-surface-elevated hover:text-foreground"
+                    onClick={() => {
+                      setKeyboardOpen(true);
+                      // Le clavier reste borné (46dvh) : ramène la question + la
+                      // zone de saisie dans le viewport (contexte jamais perdu).
+                      requestAnimationFrame(() =>
+                        inputRef.current?.scrollIntoView({ block: "center", behavior: "smooth" }),
+                      );
+                    }}
+                  >
+                    ⌨ Clavier arabe
+                  </Button>
+                  <Caption className="text-xs text-text-tertiary">
+                    {getArabicRewriteReassuranceCopy()}
+                  </Caption>
+                </div>
               ) : null}
+
               {keyboardOpen ? (
-                <ArabicKeyboard
-                  onInsert={insertChar}
-                  onBackspace={backspace}
-                  onSpace={() => insertChar(" ")}
-                  onClose={() => setKeyboardOpen(false)}
-                />
+                <div className="flex w-full max-w-md flex-col items-center gap-1.5">
+                  <ArabicKeyboard
+                    onInsert={insertChar}
+                    onBackspace={backspace}
+                    onSpace={() => insertChar(" ")}
+                    onClose={() => setKeyboardOpen(false)}
+                    className="w-full"
+                  />
+                  <Caption className="text-xs text-text-tertiary">
+                    {getArabicRewriteReassuranceCopy()}
+                  </Caption>
+                </div>
               ) : null}
-              <Caption className="text-text-secondary">
-                {getArabicRewriteReassuranceCopy()}
-              </Caption>
-              <div className="flex w-full flex-col gap-2 sm:flex-row sm:justify-center">
-                <Button size="lg" className="min-h-12" onClick={() => setAttempted(true)}>
+
+              {/* 4. Actions d'exercice */}
+              <div className="flex w-full flex-col gap-2 pt-1 sm:flex-row sm:justify-center">
+                <Button size="lg" className="min-h-11 sm:min-h-12" onClick={() => setAttempted(true)}>
                   Réessayer
                 </Button>
-                <Button variant="ghost" className="min-h-12" onClick={onNext}>
+                <Button variant="ghost" className="min-h-11 sm:min-h-12 text-text-secondary" onClick={onNext}>
                   Passer
                 </Button>
               </div>
-            </>
+            </div>
           ) : (
             <div className="flex w-full flex-col items-center gap-3">
               <BodyMedium className={exact ? "text-success-text" : "text-text-secondary"}>
