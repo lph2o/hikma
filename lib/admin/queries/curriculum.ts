@@ -121,32 +121,42 @@ export async function getAdminCurriculumPaths(): Promise<AdminCurriculumPathItem
 
   const items: AdminCurriculumPathItem[] = [];
 
-  for (const p of pathsRes.data as Array<{
+  for (const raw of (pathsRes.data ?? []) as unknown as Array<{
     id: string;
     slug: string;
     title: string;
-    surahs: {
-      id: string;
-      number: number;
-      name_transliteration: string;
-      name_arabic: string;
-      ayah_count: number;
-    } | null;
+    surahs:
+      | {
+          id: string;
+          number: number;
+          name_transliteration: string;
+          name_arabic: string;
+          ayah_count: number;
+        }
+      | Array<{
+          id: string;
+          number: number;
+          name_transliteration: string;
+          name_arabic: string;
+          ayah_count: number;
+        }>
+      | null;
   }>) {
-    const lessonIds = lessonsByPath.get(p.id) ?? [];
+    const surah = Array.isArray(raw.surahs) ? raw.surahs[0] ?? null : raw.surahs;
+    const lessonIds = lessonsByPath.get(raw.id) ?? [];
     let wordsCount = 0;
     for (const lid of lessonIds) {
       wordsCount += wordsPerLesson.get(lid) ?? 0;
     }
 
     items.push({
-      id: p.id,
-      slug: p.slug,
-      title: p.title,
-      surahNumber: p.surahs?.number ?? 0,
-      surahName: p.surahs?.name_transliteration ?? "Sourate",
-      surahArabic: p.surahs?.name_arabic ?? "",
-      ayahCount: p.surahs?.ayah_count ?? 0,
+      id: raw.id,
+      slug: raw.slug,
+      title: raw.title,
+      surahNumber: surah?.number ?? 0,
+      surahName: surah?.name_transliteration ?? "Sourate",
+      surahArabic: surah?.name_arabic ?? "",
+      ayahCount: surah?.ayah_count ?? 0,
       lessonCount: lessonIds.length,
       wordsCount,
     });
@@ -359,7 +369,10 @@ export async function getAdminCurriculumSurahDetail(
 
   // 5. Récupérer les leçons si le parcours existe
   let lessons: AdminCurriculumSurahDetail["lessons"] = [];
-  const unit = (path?.units as Array<{ id: string; title: string }> | undefined)?.[0];
+  const rawUnits = path?.units as unknown;
+  const unit = Array.isArray(rawUnits)
+    ? (rawUnits[0] as { id: string; title: string } | undefined)
+    : (rawUnits as { id: string; title: string } | undefined);
 
   if (unit) {
     const { data: lessonRows } = await db
